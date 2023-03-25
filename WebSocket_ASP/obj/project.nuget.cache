@@ -1,0 +1,88 @@
+{
+  "version": 2,
+  "dgSpecHash": "pSdEk1DyYXq4j3apTA5SO4/q9zcAg32bmIbjvrT/pk0vBan0LSoGSDpuPMSVpkzAMMhkOZI4MTdSbJawCBVD1w==",
+  "success": true,
+  "projectFilePath": "E:\\user\\desktop\\專題\\WebSocket_ASP\\WebSocket_ASP\\WebSocket_ASP.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\asd88\\.nuget\\packages\\microsoft.aspnet.signalr.core\\2.4.3\\microsoft.aspnet.signalr.core.2.4.3.nupkg.sha512",
+    "C:\\Users\\asd88\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\asd88\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\asd88\\.nuget\\packages\\microsoft.owin\\2.1.0\\microsoft.owin.2.1.0.nupkg.sha512",
+    "C:\\Users\\asd88\\.nuget\\packages\\microsoft.owin.security\\2.1.0\\microsoft.owin.security.2.1.0.nupkg.sha512",
+    "C:\\Users\\asd88\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\asd88\\.nuget\\packages\\newtonsoft.json\\6.0.4\\newtonsoft.json.6.0.4.nupkg.sha512",
+    "C:\\Users\\asd88\\.nuget\\packages\\owin\\1.0.0\\owin.1.0.0.nupkg.sha512",
+    "C:\\Users\\asd88\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
+    "C:\\Users\\asd88\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
+    "C:\\Users\\asd88\\.nuget\\packages\\system.net.websockets\\4.3.0\\system.net.websockets.4.3.0.nupkg.sha512",
+    "C:\\Users\\asd88\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
+    "C:\\Users\\asd88\\.nuget\\packages\\system.reflection.primitives\\4.3.0\\system.reflection.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\asd88\\.nuget\\packages\\system.resources.resourcemanager\\4.3.0\\system.resources.resourcemanager.4.3.0.nupkg.sha512",
+    "C:\\Users\\asd88\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
+    "C:\\Users\\asd88\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
+    "C:\\Users\\asd88\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
+    "C:\\Users\\asd88\\.nuget\\packages\\websocketsharp\\1.0.3-rc11\\websocketsharp.1.0.3-rc11.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "已使用 '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' 而非專案目標架構 'net6.0' 還原了套件 'Microsoft.AspNet.SignalR.Core 2.4.3'。此套件與您的專案並非完全相容。",
+      "libraryId": "Microsoft.AspNet.SignalR.Core",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "已使用 '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' 而非專案目標架構 'net6.0' 還原了套件 'Microsoft.Owin 2.1.0'。此套件與您的專案並非完全相容。",
+      "libraryId": "Microsoft.Owin",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "已使用 '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' 而非專案目標架構 'net6.0' 還原了套件 'Microsoft.Owin.Security 2.1.0'。此套件與您的專案並非完全相容。",
+      "libraryId": "Microsoft.Owin.Security",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "已使用 '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' 而非專案目標架構 'net6.0' 還原了套件 'Newtonsoft.Json 6.0.4'。此套件與您的專案並非完全相容。",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "已使用 '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' 而非專案目標架構 'net6.0' 還原了套件 'Owin 1.0.0'。此套件與您的專案並非完全相容。",
+      "libraryId": "Owin",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "已使用 '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' 而非專案目標架構 'net6.0' 還原了套件 'WebSocketSharp 1.0.3-rc11'。此套件與您的專案並非完全相容。",
+      "libraryId": "WebSocketSharp",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}

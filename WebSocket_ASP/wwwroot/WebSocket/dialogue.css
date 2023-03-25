@@ -1,0 +1,92 @@
+#dialog-box {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 35%;
+    height: 25%;
+    background-color: white;
+    border: 1px solid gray;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    opacity: 100%;
+}
+
+.dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #1d3461;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.dialog-close-btn {
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.dialog {
+    overflow-y: auto;
+    margin: 0px;
+    padding: 10px;
+    height: 100%;
+}
+
+.dialog-body {
+    float: left;
+}
+
+.dialog-time {
+    float: right;
+}
+
+
+.dialog-footer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid gray;
+}
+
+#dialog-input {
+    flex: 1;
+    margin-right: 10px;
+    padding: 5px;
+    border: none;
+    border-bottom: 2px solid #1d3461;
+    outline: none;
+    font-size: 16px;
+}
+
+#dialog-send-btn {
+    padding: 5px 10px;
+    background-color: #1d3461;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.dialog-message {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.dialog-message-self {
+    background-color: #1d3461;
+    color: white;
+    align-self: flex-end;
+}
+
+.dialog-message-other {
+    background-color: #f2f2f2;
+    color: black;
+    align-self: flex-start;
+}
