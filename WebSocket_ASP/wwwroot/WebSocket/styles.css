@@ -141,7 +141,6 @@ button:active {
   position: absolute;
   opacity: 90%;
   top: -12px;
-  left: -5px;
   font-size: 5px;
   padding: 1px 2px 1px;
   border-radius: 3px;
@@ -152,10 +151,10 @@ button:active {
   white-space: nowrap;
 }
 
-.Character_coins {
+/* .Character_coins {
   margin-left: 1px;
   color: gold;
-}
+} */
 
 /* Coins */
 .Coin_sprite {
