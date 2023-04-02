@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\final_REPO\\final\\final\\webapi\\webapi.csproj": {}
+    "E:\\user\\desktop\\專題\\Git\\final_REPO\\final\\final\\webapi\\webapi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\final_REPO\\final\\final\\webapi\\webapi.csproj": {
+    "E:\\user\\desktop\\專題\\Git\\final_REPO\\final\\final\\webapi\\webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\final_REPO\\final\\final\\webapi\\webapi.csproj",
+        "projectUniqueName": "E:\\user\\desktop\\專題\\Git\\final_REPO\\final\\final\\webapi\\webapi.csproj",
         "projectName": "webapi",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\final_REPO\\final\\final\\webapi\\webapi.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\final_REPO\\final\\final\\webapi\\obj\\",
+        "projectPath": "E:\\user\\desktop\\專題\\Git\\final_REPO\\final\\final\\webapi\\webapi.csproj",
+        "packagesPath": "C:\\Users\\asd88\\.nuget\\packages\\",
+        "outputPath": "E:\\user\\desktop\\專題\\Git\\final_REPO\\final\\final\\webapi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\code\\UI\\NugetPackage"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\NevronOpenVision.22.10.19.12.config"
+          "C:\\Users\\asd88\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "D:\\code\\UI\\NugetPackage\\nevronopenvision": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -48,6 +48,10 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.4, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
