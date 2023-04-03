@@ -1,4 +1,0 @@
-C:\Users\Admin\Desktop\final_REPO\final\final\vueapp\obj\Debug\vueapp.esproj.SuggestedBindingRedirects.cache
-C:\Users\Admin\Desktop\final_REPO\final\final\vueapp\obj\Debug\vueapp.esproj.CoreCompileInputs.cache
-E:\user\desktop\專題\Git\final_REPO\final\final\vueapp\obj\Debug\vueapp.esproj.SuggestedBindingRedirects.cache
-E:\user\desktop\專題\Git\final_REPO\final\final\vueapp\obj\Debug\vueapp.esproj.CoreCompileInputs.cache
