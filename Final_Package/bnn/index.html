@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        .container {
+            border: 1px solid #aaa;
+        }
+
+        .row {
+            margin: 1rem;
+            padding-bottom: 2rem;
+        }
+
+        .content {
+            background-color: #e7e7e7;
+        }
+
+        .content>.row {
+            display: flex;
+        }
+
+        .content-body {
+            flex: 1 1 70%;
+        }
+
+        .side {
+            flex: 1 1 30%;
+        }
+
+
+        .head {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .timeSpan {
+            padding-left: 0;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-evenly;
+        }
+
+        .timeSpan>li {
+            text-align: center;
+            width: 100%;
+            list-style-type: none;
+            background-color: white;
+            border: 1px solid rgb(55, 156, 223);
+            display: block;
+            cursor: pointer;
+        }
+
+        .timeSpan>.start {
+            border-radius: 1rem 0 0 1rem;
+            border-right: none;
+        }
+
+        .timeSpan>.end {
+            border-radius: 0 1rem 1rem 0;
+            border-left: none;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            line-height: 3rem;
+            font-weight: bold;
+            border-bottom: 1px solid rgb(55, 156, 223);
+        }
+
+        .note {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .note>ul {
+            padding: 0;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            list-style-type: none;
+            text-align: center;
+            font-size: 1.2rem;
+            background-color: white;
+            border-radius: 1rem;
+        }
+
+        .note-left {
+            width: 30%;
+        }
+
+        .note-left>.notes {
+            padding-left: 0;
+            padding-top: 1rem;
+        }
+
+        .note-right {
+            width: 70%;
+        }
+
+        .note-right>li {
+            margin-top: 0.5rem;
+            margin-bottom: 5rem;
+            list-style-type: none;
+        }
+
+        .note-right>li>canvas {
+            width: auto;
+        }
+
+        .note-text {
+            font-size: 3rem;
+            font-weight: bolder;
+            list-style-type: none;
+        }
+
+        table {
+            margin-top: 1rem;
+            table-layout: fixed;
+            width: 100%;
+        }
+
+
+        .tdata>tr>th,
+        td {
+            border: 1px solid #aaa;
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container content px-5">
+        <div class="row">
+            <div class="col content-body gx-5">
+                <div class="title">
+                    同時在線人數
+                </div>
+                <div class="head">
+                    <div class="note">
+                        <ul class="note-left">
+                            <ul class="notes">累計人數
+                                <li class="note-text">200人</li>
+                            </ul>
+                            <ul class="notes">平均上線時數
+                                <li class="note-text">3hr</li>
+                            </ul>
+                        </ul>
+                        <ul class="notes note-right">上線時段
+                            <li><canvas class="border bg-light"></canvas></li>
+                        </ul>
+                    </div>
+                    <ul class="timeSpan">
+                        <li class="end">日</li>
+                        <li>月</li>
+                        <li class="start">年</li>
+                    </ul>
+                    <canvas class="border bg-light">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
