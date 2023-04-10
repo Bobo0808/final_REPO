@@ -43,7 +43,7 @@ select {
 
 button[type="submit"] {
     padding: 10px;
-    background-color: #f05462;
+    background-color: #006B9F;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -52,5 +52,11 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #006B9F;
+    background-color: #f05462;
+
+}
+
+.show-password {
+    position: relative;
+
 }
