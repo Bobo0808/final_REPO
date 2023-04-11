@@ -1,0 +1,23 @@
+html {
+  font-size: 200px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 200px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+span{
+    font-size:100px;
+
+}
