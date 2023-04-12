@@ -26,7 +26,7 @@
 						</a>
 					</li>
 					<li class="side-btn">
-						<a asp-area="Account" asp-controller="Home" asp-action="Index">
+						<a asp-area="Account" asp-controller="Account_Home" asp-action="Index">
 							<i class="fa fa-solid fa-users fa-sm"></i>
 							<span class="text">會員狀態</span>
 						</a>
@@ -88,17 +88,11 @@
 						</div>
 					</form>
 					<a href="#" class="profile">
-						<img src="img/people.png">
+						<img src="~/img/people.png">
 					</a>
 				</nav>
 
-				<div>
-					<div class="container">
-						<div role="main" class="pb-3">
-							@RenderBody()
-						</div>
-					</div>
-				</div>
+				
 				<main role="main" class="pb-3">
 					<div class="container">
 						@RenderBody()
