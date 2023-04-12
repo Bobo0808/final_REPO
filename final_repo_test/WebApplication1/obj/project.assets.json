@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\iSpan\\Desktop\\專案\\final\\final_REPO\\final_repo_test\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\WebApplication1\\WebApplication1.csproj",
+      "projectPath": "C:\\Users\\iSpan\\Desktop\\專案\\final\\final_REPO\\final_repo_test\\WebApplication1\\WebApplication1.csproj",
       "packagesPath": "C:\\Users\\iSpan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\WebApplication1\\obj\\",
+      "outputPath": "C:\\Users\\iSpan\\Desktop\\專案\\final\\final_REPO\\final_repo_test\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
