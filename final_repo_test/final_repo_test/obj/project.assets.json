@@ -8,23 +8,23 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\iSpan\\.nuget\\packages\\": {},
+    "C:\\Users\\asd88\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\final_repo_test.csproj",
+      "projectUniqueName": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\final_repo_test.csproj",
       "projectName": "final_repo_test",
-      "projectPath": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\final_repo_test.csproj",
-      "packagesPath": "C:\\Users\\iSpan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\obj\\",
+      "projectPath": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\final_repo_test.csproj",
+      "packagesPath": "C:\\Users\\asd88\\.nuget\\packages\\",
+      "outputPath": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\iSpan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\asd88\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

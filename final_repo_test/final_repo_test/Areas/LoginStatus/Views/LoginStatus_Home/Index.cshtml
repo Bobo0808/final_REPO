@@ -1,9 +1,12 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Login Status";
     Layout = "_Layout";
+    
 }
 @section Styles{
     <link href="~/css/LoginStatus/site.css" rel="stylesheet" />
+   
 }
 
 <div class="row">
@@ -25,7 +28,7 @@
                 </ul>
                 <ul class="notes note-right">
                     上線時段
-                    <li><canvas class="border bg-light"></canvas></li>
+                    <li><canvas id="headChart" class="border bg-light"></canvas></li>
                 </ul>
             </div>
             <ul class="timeSpan">
@@ -33,8 +36,52 @@
                 <li>月</li>
                 <li class="start">年</li>
             </ul>
-            <canvas class="border bg-light">
+            <canvas id="mainChart" class="border bg-light">
             </canvas>
         </div>
     </div>
 </div>
+
+@section Scripts{
+	<script src="~/chart.js/dist/chart.umd.js"></script>
+    <script>
+        const mainCtx = document.getElementById('mainChart');
+        const headCtx = document.getElementById('headChart');
+        new Chart(mainCtx, {
+            type: 'line',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        new Chart(headCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+}

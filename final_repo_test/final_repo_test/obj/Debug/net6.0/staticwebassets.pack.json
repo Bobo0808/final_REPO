@@ -1,283 +1,751 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\final_repo_test.bundle.scp.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\final_repo_test.bundle.scp.css",
       "PackagePath": "staticwebassets\\final_repo_test.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\css\\DebugLog\\site.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\LICENSE.md",
+      "PackagePath": "staticwebassets\\chart.js\\LICENSE.md"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\README.md",
+      "PackagePath": "staticwebassets\\chart.js\\README.md"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\auto\\auto.cjs",
+      "PackagePath": "staticwebassets\\chart.js\\auto\\auto.cjs"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\auto\\auto.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\auto\\auto.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\auto\\auto.js",
+      "PackagePath": "staticwebassets\\chart.js\\auto\\auto.js"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\auto\\package.json",
+      "PackagePath": "staticwebassets\\chart.js\\auto\\package.json"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chart.cjs",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\chart.cjs"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chart.cjs.map",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\chart.cjs.map"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chart.js",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\chart.js"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chart.js.map",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\chart.js.map"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chart.umd.js",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\chart.umd.js"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chart.umd.js.map",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\chart.umd.js.map"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chunks\\helpers.segment.cjs",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\chunks\\helpers.segment.cjs"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chunks\\helpers.segment.cjs.map",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\chunks\\helpers.segment.cjs.map"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chunks\\helpers.segment.js",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\chunks\\helpers.segment.js"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chunks\\helpers.segment.js.map",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\chunks\\helpers.segment.js.map"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.bar.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\controllers\\controller.bar.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.bubble.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\controllers\\controller.bubble.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.doughnut.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\controllers\\controller.doughnut.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.line.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\controllers\\controller.line.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.pie.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\controllers\\controller.pie.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.polarArea.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\controllers\\controller.polarArea.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.radar.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\controllers\\controller.radar.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.scatter.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\controllers\\controller.scatter.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\index.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\controllers\\index.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.adapters.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\core\\core.adapters.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.animation.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\core\\core.animation.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.animations.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\core\\core.animations.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.animations.defaults.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\core\\core.animations.defaults.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.animator.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\core\\core.animator.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.config.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\core\\core.config.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.controller.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\core\\core.controller.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.datasetController.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\core\\core.datasetController.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.defaults.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\core\\core.defaults.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.element.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\core\\core.element.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.interaction.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\core\\core.interaction.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.layouts.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\core\\core.layouts.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.layouts.defaults.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\core\\core.layouts.defaults.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.plugins.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\core\\core.plugins.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.registry.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\core\\core.registry.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.scale.autoskip.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\core\\core.scale.autoskip.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.scale.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\core\\core.scale.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.scale.defaults.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\core\\core.scale.defaults.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.ticks.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\core\\core.ticks.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.typedRegistry.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\core\\core.typedRegistry.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\index.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\core\\index.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\elements\\element.arc.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\elements\\element.arc.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\elements\\element.bar.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\elements\\element.bar.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\elements\\element.line.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\elements\\element.line.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\elements\\element.point.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\elements\\element.point.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\elements\\index.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\elements\\index.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers.cjs",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\helpers.cjs"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers.cjs.map",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\helpers.cjs.map"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers.js",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\helpers.js"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers.js.map",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\helpers.js.map"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.canvas.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\helpers\\helpers.canvas.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.collection.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\helpers\\helpers.collection.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.color.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\helpers\\helpers.color.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.config.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\helpers\\helpers.config.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.core.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\helpers\\helpers.core.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.curve.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\helpers\\helpers.curve.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.dom.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\helpers\\helpers.dom.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.easing.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\helpers\\helpers.easing.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.extras.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\helpers\\helpers.extras.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.interpolation.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\helpers\\helpers.interpolation.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.intl.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\helpers\\helpers.intl.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.math.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\helpers\\helpers.math.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.options.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\helpers\\helpers.options.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.rtl.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\helpers\\helpers.rtl.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.segment.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\helpers\\helpers.segment.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\index.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\helpers\\index.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\types.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\helpers\\types.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\index.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\index.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\index.umd.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\index.umd.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\platform\\index.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\platform\\index.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\platform\\platform.base.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\platform\\platform.base.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\platform\\platform.basic.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\platform\\platform.basic.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\platform\\platform.dom.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\platform\\platform.dom.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\index.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\plugins\\index.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.colors.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\plugins\\plugin.colors.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.decimation.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\plugins\\plugin.decimation.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.drawing.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\plugins\\plugin.filler\\filler.drawing.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.helper.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\plugins\\plugin.filler\\filler.helper.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.options.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\plugins\\plugin.filler\\filler.options.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.segment.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\plugins\\plugin.filler\\filler.segment.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.target.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\plugins\\plugin.filler\\filler.target.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.target.stack.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\plugins\\plugin.filler\\filler.target.stack.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\index.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\plugins\\plugin.filler\\index.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\simpleArc.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\plugins\\plugin.filler\\simpleArc.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.legend.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\plugins\\plugin.legend.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.subtitle.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\plugins\\plugin.subtitle.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.title.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\plugins\\plugin.title.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.tooltip.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\plugins\\plugin.tooltip.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\index.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\scales\\index.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\scale.category.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\scales\\scale.category.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\scale.linear.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\scales\\scale.linear.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\scale.linearbase.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\scales\\scale.linearbase.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\scale.logarithmic.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\scales\\scale.logarithmic.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\scale.radialLinear.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\scales\\scale.radialLinear.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\scale.time.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\scales\\scale.time.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\scale.timeseries.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\scales\\scale.timeseries.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\types.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\animation.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\types\\animation.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\basic.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\types\\basic.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\color.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\types\\color.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\geometric.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\types\\geometric.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\helpers\\helpers.canvas.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\types\\helpers\\helpers.canvas.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\helpers\\helpers.segment.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\types\\helpers\\helpers.segment.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\helpers\\index.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\types\\helpers\\index.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\index.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\types\\index.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\layout.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\types\\layout.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\utils.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\dist\\types\\utils.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\helpers\\helpers.cjs",
+      "PackagePath": "staticwebassets\\chart.js\\helpers\\helpers.cjs"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\helpers\\helpers.d.ts",
+      "PackagePath": "staticwebassets\\chart.js\\helpers\\helpers.d.ts"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\helpers\\helpers.js",
+      "PackagePath": "staticwebassets\\chart.js\\helpers\\helpers.js"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\helpers\\package.json",
+      "PackagePath": "staticwebassets\\chart.js\\helpers\\package.json"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\package.json",
+      "PackagePath": "staticwebassets\\chart.js\\package.json"
+    },
+    {
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\css\\DebugLog\\site.css",
       "PackagePath": "staticwebassets\\css\\DebugLog\\site.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\css\\LoginStatus\\site.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\css\\LoginStatus\\site.css",
       "PackagePath": "staticwebassets\\css\\LoginStatus\\site.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\css\\site.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\css\\style.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\favicon.ico",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\fontawesome-iconpicker\\css\\fontawesome-iconpicker.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\fontawesome-iconpicker\\css\\fontawesome-iconpicker.css",
       "PackagePath": "staticwebassets\\fontawesome-iconpicker\\css\\fontawesome-iconpicker.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\fontawesome-iconpicker\\css\\fontawesome-iconpicker.min.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\fontawesome-iconpicker\\css\\fontawesome-iconpicker.min.css",
       "PackagePath": "staticwebassets\\fontawesome-iconpicker\\css\\fontawesome-iconpicker.min.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\fontawesome-iconpicker\\js\\fontawesome-iconpicker.js",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\fontawesome-iconpicker\\js\\fontawesome-iconpicker.js",
       "PackagePath": "staticwebassets\\fontawesome-iconpicker\\js\\fontawesome-iconpicker.js"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\fontawesome-iconpicker\\js\\fontawesome-iconpicker.min.js",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\fontawesome-iconpicker\\js\\fontawesome-iconpicker.min.js",
       "PackagePath": "staticwebassets\\fontawesome-iconpicker\\js\\fontawesome-iconpicker.min.js"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\people.png",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\people.png",
       "PackagePath": "staticwebassets\\img\\people.png"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\js\\script.js",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\js\\script.js",
       "PackagePath": "staticwebassets\\js\\script.js"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\js\\site.js",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
