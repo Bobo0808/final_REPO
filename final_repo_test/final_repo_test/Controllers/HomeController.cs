@@ -4,6 +4,7 @@ using System.Diagnostics;
 
 namespace final_repo_test.Controllers
 {
+    
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
