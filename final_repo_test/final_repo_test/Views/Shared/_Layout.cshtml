@@ -8,19 +8,20 @@
 	<link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet' asp-append-version="true">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" asp-append-version="true" />
-	</head>
+	@RenderSection("Styles", required: false)
+</head>
 <body>
 	<div>
 		<div>
 			<section id="sidebar">
-				<a class="brand" asp-area="" asp-controller="Home" asp-action="Index">
+				<a class="brand" asp-area="LoginStatus" asp-controller="LoginStatus_Home" asp-action="Index">
 					<i class="fa fa-solid fa-kiwi-bird fa-shake"></i>
 
 					<span class="text">ChickenLife</span>
 				</a>
 				<ul class="side-menu top">
 					<li class="active side-btn">
-						<a asp-area="" asp-controller="Home" asp-action="">
+						<a asp-area="LoginStatus" asp-controller="LoginStatus_Home" asp-action="Index">
 							<i class="fa fa-solid fa-chart-line"></i>
 							<span class="text">儀表板</span>
 						</a>
@@ -62,7 +63,7 @@
 						</a>
 					</li>
 					<li class="side-btn">
-						<a asp-area="" asp-controller="Home" asp-action="">
+						<a asp-area="DebugLog" asp-controller="DebugLog_Home" asp-action="Index">
 							<i class="fa fa-solid fa-bug-slash"></i>
 							<span class="text">除錯分析</span>
 						</a>

@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Login Status";
+    Layout = "_Layout";
+}
+@section Styles{
+    <link href="~/css/LoginStatus/site.css" rel="stylesheet" />
+}
+
+<div class="row">
+    <div class="col content-body gx-5">
+        <div class="title">
+            同時在線人數
+        </div>
+        <div class="head">
+            <div class="note">
+                <ul class="note-left">
+                    <ul class="notes">
+                        累計人數
+                        <li class="note-text">200人</li>
+                    </ul>
+                    <ul class="notes">
+                        平均上線時數
+                        <li class="note-text">3hr</li>
+                    </ul>
+                </ul>
+                <ul class="notes note-right">
+                    上線時段
+                    <li><canvas class="border bg-light"></canvas></li>
+                </ul>
+            </div>
+            <ul class="timeSpan">
+                <li class="end">日</li>
+                <li>月</li>
+                <li class="start">年</li>
+            </ul>
+            <canvas class="border bg-light">
+            </canvas>
+        </div>
+    </div>
+</div>
