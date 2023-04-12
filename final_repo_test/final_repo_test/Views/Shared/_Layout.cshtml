@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet' asp-append-version="true">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" asp-append-version="true" />
-	@RenderSection("Styles", required: false)
+	@await RenderSectionAsync("Styles", required: false)
 </head>
 <body>
 	<div>
