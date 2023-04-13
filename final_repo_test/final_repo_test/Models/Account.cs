@@ -6,9 +6,9 @@ namespace final_repo_test.Models
     {
         [Key]
         public int A_ID { get; set; }
-        public string A_Name { get; set; }
-        public string UserName { get; set; }
-        public string UserPWD { get; set; }
+        public string? A_Name { get; set; }
+        public string? UserName { get; set; }
+        public string? UserPWD { get; set; }
         public int? A_Gender { get; set; }
         public DateTime? Birthday { get; set; }
         public int? A_level { get; set; }
