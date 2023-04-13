@@ -12,7 +12,7 @@ namespace final_repo_test.Models
         public int? A_Gender { get; set; }
         public DateTime? Birthday { get; set; }
         public int? A_level { get; set; }
-        public string A_Email { get; set; }
+        public string? A_Email { get; set; }
         public string? A_Phone { get; set; }
         public string? A_add { get; set; }
         public DateTime A_RegisteredAt { get; set; }
