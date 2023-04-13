@@ -36,7 +36,8 @@ html {
 }
 
 body.dark {
-	background-image: linear-gradient(to right, #434343 0%, black 100%);
+	/* background-image: linear-gradient(to right, #434343 0%, black 100%); */
+	background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
 }
 
 body {
@@ -44,17 +45,6 @@ body {
 	height: 100%;
 
 }
-
-
-main {
-	background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
-	border-radius: 15px;
-	margin-left: 2%;
-	width: 95%;
-	height: 88vh;
-	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-}
-
 
 
 #sidebar {
@@ -76,8 +66,13 @@ main {
 }
 
 #sidebar.dark {
-	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	background-color: transparent;
+	background-image: linear-gradient(60deg, #29323c8c 0%, #242930de 50%);
+	backdrop-filter: blur(4px);
+
+
 }
+
 
 
 #sidebar::--webkit-scrollbar {
@@ -297,12 +292,15 @@ main {
 
 #Search.form-input.dark button {
 	background-color: #e5eceb;
-	background-image: linear-gradient(60deg, #42658d 0%, #5e8ec0 100%);
+	/* background-image: linear-gradient(60deg, #42658d 0%, #5e8ec0 100%); */
+	background-image: linear-gradient(to left, #bee0d0 0%, #44415d 100%);
 }
 
 #Search.form-input.dark input {
 	background-color: #e5eceb;
-	background-image: linear-gradient(60deg, #526377 0%, #73889e 100%);
+	/* background-image: linear-gradient(60deg, #526377 0%, #73889e 100%); */
+	background-image: linear-gradient(to right, #bcddce 0%, #41425d 100%);
+
 }
 
 
@@ -451,4 +449,156 @@ main {
 	#content main .table-data .todo .todo-list {
 		min-width: 420px;
 	}
+}
+
+
+
+/* main內容 */
+
+
+main.table {
+	/* background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%); */
+	/* background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
+	background-color: #b4c7e6b6; */
+	/* background-color: #1621334b; */
+	border-radius: 20px;
+	border: 1px solid rgba(192, 191, 191, 0.445);
+	margin-left: 2%;
+	width: 95%;
+	height: 90vh;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	color: rgb(255, 255, 255);
+	padding: 20px;
+	/* overflow: hidden; */
+}
+
+.tables {
+	/* background-color: #ff0909cc; */
+	width: 100%;
+	align-items: center;
+	height: 78vh;
+	color: rgb(255, 255, 255);
+	overflow: hidden;
+	/* background-color: #DB504A; */
+
+}
+
+.CreateNew_form {
+	display: flex;
+	justify-content: start;
+	align-items: first baseline;
+	/* background-color: #b923b2; */
+	margin: 10px;
+	margin-bottom: 30px;
+	/* padding: 20px; */
+	background-color: #33384d2c;
+
+
+}
+
+.CreateNew_form legend {
+	font-weight: bold;
+	font-size: 1.3rem;
+	width: auto;
+	height: auto;
+	border-radius: 15px;
+}
+
+.CreateNew_form {
+	/* border: none; */
+	border: 1px solid rgba(192, 191, 191, 0.445);
+	padding: 30px;
+	border-radius: 15px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.CreateNew_form input {
+	margin-right: 15px;
+	padding: 5px;
+	border-radius: 3px;
+	height: 30px;
+	background-color: transparent;
+	border: 1px solid rgb(207, 207, 207);
+	outline: none;
+	font-size: 1rem;
+	color: #FFFFFF;
+}
+
+.CreateNew_form .label {
+	font-size: 20px;
+	margin-right: 5px;
+}
+
+.Detail_table,
+.Detail_table th,
+.Detail_table td {
+	padding: 1rem;
+	border-collapse: collapse;
+	text-align: left;
+}
+
+.Detail_table {
+	width: 100%;
+}
+
+.table_header {
+	width: auto;
+	height: 10%;
+	/* background-color: #091f41;
+	background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%); */
+	padding: 1.8rem 2rem;
+	border-radius: 30px 30px 0px 0px;
+}
+
+.Dtable_body {
+
+	width: 98%;
+	max-height: calc(80% - 1.6rem);
+	background-color: #d1d4d43b;
+	/* margin: .8rem auto; */
+	border-radius: .6rem;
+	overflow: auto;
+	margin: 10px;
+	border: 1px solid rgba(192, 191, 191, 0.445);
+}
+
+
+.Dtable_body::-webkit-scrollbar {
+	width: 0.5rem;
+	height: 0.5rem;
+}
+
+.Dtable_body::-webkit-scrollbar-thumb {
+	border-radius: .5rem;
+	background-color: #4c596d8c;
+	visibility: hidden;
+}
+
+.Dtable_body:hover::-webkit-scrollbar-thumb {
+	visibility: visible;
+}
+
+.Detail_table th {
+	position: sticky;
+	top: 0;
+	left: 0;
+	/* background-color: rgba(23, 30, 41, 0.623); */
+
+	background-color: #353c44
+}
+
+.Detail_table tbody tr:nth-child(even) {
+	background-color: #525d69
+}
+
+.Detail_table tbody tr:hover {
+	background-color: #DB504A;
+}
+
+.Detail_table tr td:nth-last-child(-n+2) {
+	text-align: center;
+}
+
+.Detail_table td i:hover {
+	cursor: pointer;
 }
