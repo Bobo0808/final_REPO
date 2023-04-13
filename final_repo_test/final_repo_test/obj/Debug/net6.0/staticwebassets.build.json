@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HgaPXryVp+xmGKu1mOGbGZgtOAZ1fSbS0MDF0b0WOLY=",
+  "Hash": "jZWrCveJkJRb7vibtnhdCnoxPu6SLlZxjJorbqb62LQ=",
   "Source": "final_repo_test",
   "BasePath": "_content/final_repo_test",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "final_repo_test\\wwwroot",
       "Source": "final_repo_test",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\obj\\Debug\\net6.0\\scopedcss\\bundle\\final_repo_test.styles.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\obj\\Debug\\net6.0\\scopedcss\\bundle\\final_repo_test.styles.css",
       "SourceId": "final_repo_test",
       "SourceType": "Computed",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "final_repo_test.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\obj\\Debug\\net6.0\\scopedcss\\bundle\\final_repo_test.styles.css"
+      "OriginalItemSpec": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\obj\\Debug\\net6.0\\scopedcss\\bundle\\final_repo_test.styles.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\final_repo_test.bundle.scp.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\final_repo_test.bundle.scp.css",
       "SourceId": "final_repo_test",
       "SourceType": "Computed",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "final_repo_test.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\final_repo_test.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\final_repo_test.bundle.scp.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\auto\\auto.cjs",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\auto\\auto.cjs",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/auto/auto.cjs",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\auto\\auto.cjs"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\auto\\auto.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\auto\\auto.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/auto/auto.d.ts",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\auto\\auto.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\auto\\auto.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\auto\\auto.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/auto/auto.js",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\auto\\auto.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\auto\\package.json",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\auto\\package.json",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/auto/package.json",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\auto\\package.json"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chart.cjs",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chart.cjs",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/chart.cjs",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\chart.cjs"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chart.cjs.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chart.cjs.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/chart.cjs.map",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\chart.cjs.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chart.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chart.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/chart.js",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\chart.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chart.js.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chart.js.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/chart.js.map",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\chart.js.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chart.umd.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chart.umd.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/chart.umd.js",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\chart.umd.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chart.umd.js.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chart.umd.js.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/chart.umd.js.map",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\chart.umd.js.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chunks\\helpers.segment.cjs",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chunks\\helpers.segment.cjs",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/chunks/helpers.segment.cjs",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\chunks\\helpers.segment.cjs"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chunks\\helpers.segment.cjs.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chunks\\helpers.segment.cjs.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/chunks/helpers.segment.cjs.map",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\chunks\\helpers.segment.cjs.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chunks\\helpers.segment.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chunks\\helpers.segment.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/chunks/helpers.segment.js",
       "AssetKind": "All",
@@ -272,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\chunks\\helpers.segment.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chunks\\helpers.segment.js.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\chunks\\helpers.segment.js.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/chunks/helpers.segment.js.map",
       "AssetKind": "All",
@@ -289,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\chunks\\helpers.segment.js.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.bar.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.bar.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/controllers/controller.bar.d.ts",
       "AssetKind": "All",
@@ -306,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\controllers\\controller.bar.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.bubble.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.bubble.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/controllers/controller.bubble.d.ts",
       "AssetKind": "All",
@@ -323,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\controllers\\controller.bubble.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.doughnut.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.doughnut.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/controllers/controller.doughnut.d.ts",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\controllers\\controller.doughnut.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.line.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.line.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/controllers/controller.line.d.ts",
       "AssetKind": "All",
@@ -357,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\controllers\\controller.line.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.pie.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.pie.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/controllers/controller.pie.d.ts",
       "AssetKind": "All",
@@ -374,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\controllers\\controller.pie.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.polarArea.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.polarArea.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/controllers/controller.polarArea.d.ts",
       "AssetKind": "All",
@@ -391,10 +391,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\controllers\\controller.polarArea.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.radar.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.radar.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/controllers/controller.radar.d.ts",
       "AssetKind": "All",
@@ -408,10 +408,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\controllers\\controller.radar.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.scatter.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\controller.scatter.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/controllers/controller.scatter.d.ts",
       "AssetKind": "All",
@@ -425,10 +425,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\controllers\\controller.scatter.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\index.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\controllers\\index.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/controllers/index.d.ts",
       "AssetKind": "All",
@@ -442,10 +442,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\controllers\\index.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.adapters.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.adapters.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/core/core.adapters.d.ts",
       "AssetKind": "All",
@@ -459,10 +459,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\core\\core.adapters.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.animation.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.animation.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/core/core.animation.d.ts",
       "AssetKind": "All",
@@ -476,10 +476,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\core\\core.animation.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.animations.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.animations.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/core/core.animations.d.ts",
       "AssetKind": "All",
@@ -493,10 +493,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\core\\core.animations.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.animations.defaults.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.animations.defaults.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/core/core.animations.defaults.d.ts",
       "AssetKind": "All",
@@ -510,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\core\\core.animations.defaults.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.animator.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.animator.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/core/core.animator.d.ts",
       "AssetKind": "All",
@@ -527,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\core\\core.animator.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.config.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.config.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/core/core.config.d.ts",
       "AssetKind": "All",
@@ -544,10 +544,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\core\\core.config.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.controller.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.controller.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/core/core.controller.d.ts",
       "AssetKind": "All",
@@ -561,10 +561,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\core\\core.controller.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.datasetController.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.datasetController.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/core/core.datasetController.d.ts",
       "AssetKind": "All",
@@ -578,10 +578,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\core\\core.datasetController.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.defaults.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.defaults.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/core/core.defaults.d.ts",
       "AssetKind": "All",
@@ -595,10 +595,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\core\\core.defaults.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.element.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.element.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/core/core.element.d.ts",
       "AssetKind": "All",
@@ -612,10 +612,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\core\\core.element.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.interaction.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.interaction.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/core/core.interaction.d.ts",
       "AssetKind": "All",
@@ -629,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\core\\core.interaction.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.layouts.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.layouts.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/core/core.layouts.d.ts",
       "AssetKind": "All",
@@ -646,10 +646,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\core\\core.layouts.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.layouts.defaults.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.layouts.defaults.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/core/core.layouts.defaults.d.ts",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\core\\core.layouts.defaults.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.plugins.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.plugins.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/core/core.plugins.d.ts",
       "AssetKind": "All",
@@ -680,10 +680,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\core\\core.plugins.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.registry.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.registry.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/core/core.registry.d.ts",
       "AssetKind": "All",
@@ -697,10 +697,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\core\\core.registry.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.scale.autoskip.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.scale.autoskip.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/core/core.scale.autoskip.d.ts",
       "AssetKind": "All",
@@ -714,10 +714,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\core\\core.scale.autoskip.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.scale.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.scale.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/core/core.scale.d.ts",
       "AssetKind": "All",
@@ -731,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\core\\core.scale.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.scale.defaults.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.scale.defaults.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/core/core.scale.defaults.d.ts",
       "AssetKind": "All",
@@ -748,10 +748,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\core\\core.scale.defaults.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.ticks.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.ticks.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/core/core.ticks.d.ts",
       "AssetKind": "All",
@@ -765,10 +765,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\core\\core.ticks.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.typedRegistry.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\core.typedRegistry.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/core/core.typedRegistry.d.ts",
       "AssetKind": "All",
@@ -782,10 +782,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\core\\core.typedRegistry.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\index.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\core\\index.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/core/index.d.ts",
       "AssetKind": "All",
@@ -799,10 +799,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\core\\index.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\elements\\element.arc.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\elements\\element.arc.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/elements/element.arc.d.ts",
       "AssetKind": "All",
@@ -816,10 +816,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\elements\\element.arc.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\elements\\element.bar.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\elements\\element.bar.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/elements/element.bar.d.ts",
       "AssetKind": "All",
@@ -833,10 +833,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\elements\\element.bar.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\elements\\element.line.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\elements\\element.line.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/elements/element.line.d.ts",
       "AssetKind": "All",
@@ -850,10 +850,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\elements\\element.line.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\elements\\element.point.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\elements\\element.point.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/elements/element.point.d.ts",
       "AssetKind": "All",
@@ -867,10 +867,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\elements\\element.point.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\elements\\index.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\elements\\index.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/elements/index.d.ts",
       "AssetKind": "All",
@@ -884,10 +884,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\elements\\index.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers.cjs",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers.cjs",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/helpers.cjs",
       "AssetKind": "All",
@@ -901,10 +901,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\helpers.cjs"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers.cjs.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers.cjs.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/helpers.cjs.map",
       "AssetKind": "All",
@@ -918,10 +918,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\helpers.cjs.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/helpers.js",
       "AssetKind": "All",
@@ -935,10 +935,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\helpers.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers.js.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers.js.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/helpers.js.map",
       "AssetKind": "All",
@@ -952,10 +952,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\helpers.js.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.canvas.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.canvas.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/helpers/helpers.canvas.d.ts",
       "AssetKind": "All",
@@ -969,10 +969,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\helpers\\helpers.canvas.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.collection.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.collection.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/helpers/helpers.collection.d.ts",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\helpers\\helpers.collection.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.color.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.color.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/helpers/helpers.color.d.ts",
       "AssetKind": "All",
@@ -1003,10 +1003,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\helpers\\helpers.color.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.config.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.config.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/helpers/helpers.config.d.ts",
       "AssetKind": "All",
@@ -1020,10 +1020,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\helpers\\helpers.config.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.core.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.core.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/helpers/helpers.core.d.ts",
       "AssetKind": "All",
@@ -1037,10 +1037,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\helpers\\helpers.core.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.curve.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.curve.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/helpers/helpers.curve.d.ts",
       "AssetKind": "All",
@@ -1054,10 +1054,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\helpers\\helpers.curve.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.dom.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.dom.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/helpers/helpers.dom.d.ts",
       "AssetKind": "All",
@@ -1071,10 +1071,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\helpers\\helpers.dom.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.easing.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.easing.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/helpers/helpers.easing.d.ts",
       "AssetKind": "All",
@@ -1088,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\helpers\\helpers.easing.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.extras.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.extras.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/helpers/helpers.extras.d.ts",
       "AssetKind": "All",
@@ -1105,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\helpers\\helpers.extras.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.interpolation.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.interpolation.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/helpers/helpers.interpolation.d.ts",
       "AssetKind": "All",
@@ -1122,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\helpers\\helpers.interpolation.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.intl.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.intl.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/helpers/helpers.intl.d.ts",
       "AssetKind": "All",
@@ -1139,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\helpers\\helpers.intl.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.math.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.math.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/helpers/helpers.math.d.ts",
       "AssetKind": "All",
@@ -1156,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\helpers\\helpers.math.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.options.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.options.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/helpers/helpers.options.d.ts",
       "AssetKind": "All",
@@ -1173,10 +1173,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\helpers\\helpers.options.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.rtl.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.rtl.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/helpers/helpers.rtl.d.ts",
       "AssetKind": "All",
@@ -1190,10 +1190,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\helpers\\helpers.rtl.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.segment.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\helpers.segment.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/helpers/helpers.segment.d.ts",
       "AssetKind": "All",
@@ -1207,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\helpers\\helpers.segment.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\index.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\index.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/helpers/index.d.ts",
       "AssetKind": "All",
@@ -1224,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\helpers\\index.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\types.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\helpers\\types.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/helpers/types.d.ts",
       "AssetKind": "All",
@@ -1241,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\helpers\\types.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\index.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\index.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/index.d.ts",
       "AssetKind": "All",
@@ -1258,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\index.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\index.umd.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\index.umd.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/index.umd.d.ts",
       "AssetKind": "All",
@@ -1275,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\index.umd.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\platform\\index.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\platform\\index.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/platform/index.d.ts",
       "AssetKind": "All",
@@ -1292,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\platform\\index.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\platform\\platform.base.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\platform\\platform.base.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/platform/platform.base.d.ts",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\platform\\platform.base.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\platform\\platform.basic.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\platform\\platform.basic.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/platform/platform.basic.d.ts",
       "AssetKind": "All",
@@ -1326,10 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\platform\\platform.basic.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\platform\\platform.dom.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\platform\\platform.dom.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/platform/platform.dom.d.ts",
       "AssetKind": "All",
@@ -1343,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\platform\\platform.dom.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\index.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\index.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/plugins/index.d.ts",
       "AssetKind": "All",
@@ -1360,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\plugins\\index.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.colors.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.colors.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/plugins/plugin.colors.d.ts",
       "AssetKind": "All",
@@ -1377,10 +1377,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\plugins\\plugin.colors.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.decimation.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.decimation.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/plugins/plugin.decimation.d.ts",
       "AssetKind": "All",
@@ -1394,10 +1394,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\plugins\\plugin.decimation.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.drawing.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.drawing.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/plugins/plugin.filler/filler.drawing.d.ts",
       "AssetKind": "All",
@@ -1411,10 +1411,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.drawing.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.helper.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.helper.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/plugins/plugin.filler/filler.helper.d.ts",
       "AssetKind": "All",
@@ -1428,10 +1428,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.helper.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.options.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.options.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/plugins/plugin.filler/filler.options.d.ts",
       "AssetKind": "All",
@@ -1445,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.options.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.segment.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.segment.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/plugins/plugin.filler/filler.segment.d.ts",
       "AssetKind": "All",
@@ -1462,10 +1462,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.segment.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.target.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.target.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/plugins/plugin.filler/filler.target.d.ts",
       "AssetKind": "All",
@@ -1479,10 +1479,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.target.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.target.stack.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.target.stack.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/plugins/plugin.filler/filler.target.stack.d.ts",
       "AssetKind": "All",
@@ -1496,10 +1496,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\filler.target.stack.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\index.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\index.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/plugins/plugin.filler/index.d.ts",
       "AssetKind": "All",
@@ -1513,10 +1513,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\index.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\simpleArc.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\simpleArc.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/plugins/plugin.filler/simpleArc.d.ts",
       "AssetKind": "All",
@@ -1530,10 +1530,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\plugins\\plugin.filler\\simpleArc.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.legend.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.legend.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/plugins/plugin.legend.d.ts",
       "AssetKind": "All",
@@ -1547,10 +1547,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\plugins\\plugin.legend.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.subtitle.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.subtitle.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/plugins/plugin.subtitle.d.ts",
       "AssetKind": "All",
@@ -1564,10 +1564,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\plugins\\plugin.subtitle.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.title.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.title.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/plugins/plugin.title.d.ts",
       "AssetKind": "All",
@@ -1581,10 +1581,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\plugins\\plugin.title.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.tooltip.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\plugins\\plugin.tooltip.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/plugins/plugin.tooltip.d.ts",
       "AssetKind": "All",
@@ -1598,10 +1598,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\plugins\\plugin.tooltip.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\index.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\index.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/scales/index.d.ts",
       "AssetKind": "All",
@@ -1615,10 +1615,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\scales\\index.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\scale.category.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\scale.category.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/scales/scale.category.d.ts",
       "AssetKind": "All",
@@ -1632,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\scales\\scale.category.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\scale.linear.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\scale.linear.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/scales/scale.linear.d.ts",
       "AssetKind": "All",
@@ -1649,10 +1649,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\scales\\scale.linear.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\scale.linearbase.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\scale.linearbase.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/scales/scale.linearbase.d.ts",
       "AssetKind": "All",
@@ -1666,10 +1666,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\scales\\scale.linearbase.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\scale.logarithmic.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\scale.logarithmic.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/scales/scale.logarithmic.d.ts",
       "AssetKind": "All",
@@ -1683,10 +1683,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\scales\\scale.logarithmic.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\scale.radialLinear.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\scale.radialLinear.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/scales/scale.radialLinear.d.ts",
       "AssetKind": "All",
@@ -1700,10 +1700,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\scales\\scale.radialLinear.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\scale.time.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\scale.time.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/scales/scale.time.d.ts",
       "AssetKind": "All",
@@ -1717,10 +1717,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\scales\\scale.time.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\scale.timeseries.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\scales\\scale.timeseries.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/scales/scale.timeseries.d.ts",
       "AssetKind": "All",
@@ -1734,10 +1734,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\scales\\scale.timeseries.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/types.d.ts",
       "AssetKind": "All",
@@ -1751,10 +1751,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\types.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\animation.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\animation.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/types/animation.d.ts",
       "AssetKind": "All",
@@ -1768,10 +1768,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\types\\animation.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\basic.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\basic.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/types/basic.d.ts",
       "AssetKind": "All",
@@ -1785,10 +1785,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\types\\basic.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\color.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\color.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/types/color.d.ts",
       "AssetKind": "All",
@@ -1802,10 +1802,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\types\\color.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\geometric.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\geometric.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/types/geometric.d.ts",
       "AssetKind": "All",
@@ -1819,10 +1819,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\types\\geometric.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\helpers\\helpers.canvas.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\helpers\\helpers.canvas.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/types/helpers/helpers.canvas.d.ts",
       "AssetKind": "All",
@@ -1836,10 +1836,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\types\\helpers\\helpers.canvas.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\helpers\\helpers.segment.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\helpers\\helpers.segment.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/types/helpers/helpers.segment.d.ts",
       "AssetKind": "All",
@@ -1853,10 +1853,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\types\\helpers\\helpers.segment.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\helpers\\index.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\helpers\\index.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/types/helpers/index.d.ts",
       "AssetKind": "All",
@@ -1870,10 +1870,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\types\\helpers\\index.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\index.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\index.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/types/index.d.ts",
       "AssetKind": "All",
@@ -1887,10 +1887,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\types\\index.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\layout.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\layout.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/types/layout.d.ts",
       "AssetKind": "All",
@@ -1904,10 +1904,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\types\\layout.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\utils.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\dist\\types\\utils.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/dist/types/utils.d.ts",
       "AssetKind": "All",
@@ -1921,10 +1921,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\dist\\types\\utils.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\helpers\\helpers.cjs",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\helpers\\helpers.cjs",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/helpers/helpers.cjs",
       "AssetKind": "All",
@@ -1938,10 +1938,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\helpers\\helpers.cjs"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\helpers\\helpers.d.ts",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\helpers\\helpers.d.ts",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/helpers/helpers.d.ts",
       "AssetKind": "All",
@@ -1955,10 +1955,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\helpers\\helpers.d.ts"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\helpers\\helpers.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\helpers\\helpers.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/helpers/helpers.js",
       "AssetKind": "All",
@@ -1972,10 +1972,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\helpers\\helpers.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\helpers\\package.json",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\helpers\\package.json",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/helpers/package.json",
       "AssetKind": "All",
@@ -1989,10 +1989,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\helpers\\package.json"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\LICENSE.md",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\LICENSE.md",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/LICENSE.md",
       "AssetKind": "All",
@@ -2006,10 +2006,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\LICENSE.md"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\package.json",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\package.json",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/package.json",
       "AssetKind": "All",
@@ -2023,10 +2023,10 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\package.json"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\README.md",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\chart.js\\README.md",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "chart.js/README.md",
       "AssetKind": "All",
@@ -2040,10 +2040,27 @@
       "OriginalItemSpec": "wwwroot\\chart.js\\README.md"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\css\\DebugLog\\site.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\css\\AccountStyle\\style2.css",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "css/AccountStyle/style2.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\AccountStyle\\style2.css"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\css\\DebugLog\\site.css",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "css/DebugLog/site.css",
       "AssetKind": "All",
@@ -2057,10 +2074,10 @@
       "OriginalItemSpec": "wwwroot\\css\\DebugLog\\site.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\css\\LoginStatus\\site.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\css\\LoginStatus\\site.css",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "css/LoginStatus/site.css",
       "AssetKind": "All",
@@ -2074,10 +2091,10 @@
       "OriginalItemSpec": "wwwroot\\css\\LoginStatus\\site.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\css\\site.css",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -2091,10 +2108,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\css\\style.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\css\\style.css",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "css/style.css",
       "AssetKind": "All",
@@ -2108,10 +2125,10 @@
       "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\favicon.ico",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -2125,10 +2142,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\fontawesome-iconpicker\\css\\fontawesome-iconpicker.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\fontawesome-iconpicker\\css\\fontawesome-iconpicker.css",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "fontawesome-iconpicker/css/fontawesome-iconpicker.css",
       "AssetKind": "All",
@@ -2142,10 +2159,10 @@
       "OriginalItemSpec": "wwwroot\\fontawesome-iconpicker\\css\\fontawesome-iconpicker.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\fontawesome-iconpicker\\css\\fontawesome-iconpicker.min.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\fontawesome-iconpicker\\css\\fontawesome-iconpicker.min.css",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "fontawesome-iconpicker/css/fontawesome-iconpicker.min.css",
       "AssetKind": "All",
@@ -2159,10 +2176,10 @@
       "OriginalItemSpec": "wwwroot\\fontawesome-iconpicker\\css\\fontawesome-iconpicker.min.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\fontawesome-iconpicker\\js\\fontawesome-iconpicker.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\fontawesome-iconpicker\\js\\fontawesome-iconpicker.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "fontawesome-iconpicker/js/fontawesome-iconpicker.js",
       "AssetKind": "All",
@@ -2176,10 +2193,10 @@
       "OriginalItemSpec": "wwwroot\\fontawesome-iconpicker\\js\\fontawesome-iconpicker.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\fontawesome-iconpicker\\js\\fontawesome-iconpicker.min.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\fontawesome-iconpicker\\js\\fontawesome-iconpicker.min.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "fontawesome-iconpicker/js/fontawesome-iconpicker.min.js",
       "AssetKind": "All",
@@ -2193,10 +2210,418 @@
       "OriginalItemSpec": "wwwroot\\fontawesome-iconpicker\\js\\fontawesome-iconpicker.min.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\people.png",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\dashboard (2).png",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/dashboard (2).png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\dashboard (2).png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\dashboard.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/dashboard.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\dashboard.png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\help-web-button.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/help-web-button.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\help-web-button.png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\icons8_search_16.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/icons8_search_16.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\icons8_search_16.png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\icons8_search_32.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/icons8_search_32.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\icons8_search_32.png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\income.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/income.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\income.png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\info.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/info.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\info.png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\notifications.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/notifications.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\notifications.png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\payment.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/payment.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\payment.png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\Plus_15px.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/Plus_15px.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\Plus_15px.png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\Plus_18px.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/Plus_18px.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\Plus_18px.png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\reading-book (1).png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/reading-book (1).png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\reading-book (1).png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\school.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/school.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\school.png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\schools.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/schools.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\schools.png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\search.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/search.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\search.png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\search_15px.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/search_15px.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\search_15px.png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\settings.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/settings.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\settings.png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\students.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/students.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\students.png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\teacher2.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/teacher2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\teacher2.png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\teachers.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/teachers.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\teachers.png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\trash_15px.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/trash_15px.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\trash_15px.png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\trash_18px.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/trash_18px.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\trash_18px.png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\trash_20px.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/trash_20px.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\trash_20px.png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\Account\\user.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "BasePath": "_content/final_repo_test",
+      "RelativePath": "img/Account/user.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\user.png"
+    },
+    {
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\img\\people.png",
+      "SourceId": "final_repo_test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "img/people.png",
       "AssetKind": "All",
@@ -2210,10 +2635,10 @@
       "OriginalItemSpec": "wwwroot\\img\\people.png"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\js\\script.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\js\\script.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "js/script.js",
       "AssetKind": "All",
@@ -2227,10 +2652,10 @@
       "OriginalItemSpec": "wwwroot\\js\\script.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\js\\site.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -2244,10 +2669,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -2261,10 +2686,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -2278,10 +2703,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -2295,10 +2720,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -2312,10 +2737,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -2329,10 +2754,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -2346,10 +2771,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -2363,10 +2788,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -2380,10 +2805,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -2397,10 +2822,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -2414,10 +2839,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -2431,10 +2856,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -2448,10 +2873,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -2465,10 +2890,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -2482,10 +2907,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -2499,10 +2924,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -2516,10 +2941,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -2533,10 +2958,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -2550,10 +2975,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -2567,10 +2992,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -2584,10 +3009,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -2601,10 +3026,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -2618,10 +3043,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -2635,10 +3060,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -2652,10 +3077,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -2669,10 +3094,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -2686,10 +3111,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -2703,10 +3128,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -2720,10 +3145,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -2737,10 +3162,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -2754,10 +3179,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -2771,10 +3196,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -2788,10 +3213,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -2805,10 +3230,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -2822,10 +3247,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -2839,10 +3264,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -2856,10 +3281,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -2873,10 +3298,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -2890,10 +3315,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -2907,10 +3332,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -2924,10 +3349,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -2941,10 +3366,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -2958,10 +3383,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -2975,10 +3400,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -2992,10 +3417,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -3009,10 +3434,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -3026,10 +3451,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -3043,10 +3468,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -3060,10 +3485,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -3077,10 +3502,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -3094,10 +3519,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -3111,10 +3536,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -3128,10 +3553,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -3145,10 +3570,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -3162,10 +3587,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -3179,10 +3604,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -3196,10 +3621,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "final_repo_test",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\final_repo_test\\wwwroot\\",
       "BasePath": "_content/final_repo_test",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",

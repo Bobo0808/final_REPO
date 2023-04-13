@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\WebApplication1\\WebApplication1.csproj": {}
+    "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\WebApplication1\\WebApplication1.csproj": {
+    "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\WebApplication1\\WebApplication1.csproj",
-        "packagesPath": "C:\\Users\\asd88\\.nuget\\packages\\",
-        "outputPath": "E:\\user\\desktop\\專題\\Final_REPO\\final_repo_test\\WebApplication1\\obj\\",
+        "projectPath": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\WebApplication1\\WebApplication1.csproj",
+        "packagesPath": "C:\\Users\\iSpan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\iSpan\\Desktop\\final_REPO\\final_repo_test\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\asd88\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\iSpan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
