@@ -2,7 +2,7 @@
 
 namespace final_repo_test.Models
 {
-    public class Debuglog
+    public class DebugLog
     {
         [Key]
         public int D_ID { get; set; }
