@@ -1,0 +1,119 @@
+.row {
+    margin: 1rem;
+    padding-bottom: 2rem;
+}
+
+.content {
+    background-color: #e7e7e7;
+}
+
+    .content > .row {
+        display: flex;
+    }
+
+.content-body {
+    flex: 1 1 70%;
+}
+
+.side {
+    flex: 1 1 30%;
+}
+
+
+.head {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.timeSpan {
+    padding-left: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+}
+
+    .timeSpan > li {
+        text-align: center;
+        width: 100%;
+        list-style-type: none;
+        background-color: white;
+        border: 1px solid rgb(55, 156, 223);
+        display: block;
+        cursor: pointer;
+    }
+
+    .timeSpan > .start {
+        border-radius: 1rem 0 0 1rem;
+        border-right: none;
+    }
+
+    .timeSpan > .end {
+        border-radius: 0 1rem 1rem 0;
+        border-left: none;
+    }
+
+.title {
+    font-size: 1.5rem;
+    line-height: 3rem;
+    font-weight: bold;
+    border-bottom: 1px solid rgb(55, 156, 223);
+}
+
+.note {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+    .note > ul {
+        padding: 0;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        list-style-type: none;
+        text-align: center;
+        font-size: 1.2rem;
+        background-color: white;
+        border-radius: 1rem;
+    }
+
+.note-left {
+    width: 30%;
+}
+
+    .note-left > .notes {
+        padding-left: 0;
+        padding-top: 1rem;
+    }
+
+.note-right {
+    width: 70%;
+}
+
+    .note-right > li {
+        margin-top: 0.5rem;
+        margin-bottom: 5rem;
+        list-style-type: none;
+    }
+
+        .note-right > li > canvas {
+            width: auto;
+        }
+
+.note-text {
+    font-size: 3rem;
+    font-weight: bolder;
+    list-style-type: none;
+}
+
+table {
+    margin-top: 1rem;
+    table-layout: fixed;
+    width: 100%;
+}
+
+
+.tdata > tr > th,
+td {
+    border: 1px solid #aaa;
+    padding: 0.5rem;
+}
