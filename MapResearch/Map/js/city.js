@@ -48,7 +48,7 @@ collisionsMap.forEach((row, i) => {
                 }
             }))
         }
-        console.log(boundaries);
+        // console.log(boundaries);
     })
 })
 
@@ -76,6 +76,9 @@ function checkForCharacterCollision({
     // monitor for character collision
     for (let i = 0; i < boundaries.length; i++) {
         const boundary = boundaries[i]
+        // console.log(`boundary.position.x${[i]}=` + boundary.position.x);
+        // console.log(`boundary.position.y${[i]}=` + boundary.position.y);
+        console.log(`${[i]}=` + boundary);
         if (
             rectangularCollision({
                 rectangle1: player,
