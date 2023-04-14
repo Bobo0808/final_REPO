@@ -15,10 +15,7 @@
 
 <body>
     <div class="container">
-        <header>
-            <h1></h1>
-        </header>
-        <main>
+
             <table>
                 <tr>
                     <th>檢舉編號</th>
@@ -52,24 +49,23 @@
                 <tr>
                     <th>操作</th>
                     <td>
-                        <form action="">
-                            
+                        <form action="submit" method="post">
+                            <div id="status">
+                                <input type="radio" id="status1" name="status" value="未處理" checked>
+                                <label for="status1">處理中</label>
+                                <input type="radio" id="status2" name="status" value="已處理">
+                                <label for="status2">已處理</label>
+                                
+                            </div>
+                            <div>
+                                <label for="message">留言</label>
+                                <textarea id="message" name="message" required></textarea>
+                                <button class="btn-approve">完成</button>
+                            </div>
                         </form>
                     </td>
                 </tr>
-
-                <tr>
-                    <td>1</td>
-
-                    <td>
-                        <button class="btn-approve">批准</button>
-                        <button>處理中</button>
-                        <button class="btn-reject">拒絕</button>
-                    </td>
-                </tr>
             </table>
-        </main>
-
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
