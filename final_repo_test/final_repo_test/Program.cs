@@ -1,6 +1,8 @@
 using final_repo_test.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
+//Debugger.Launch();
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -11,6 +13,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 
 var app = builder.Build();
+if (args.Length == 1 && args[0].ToLower() == "seeddata")
+{
+    Seeding.SeedData(app);
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
