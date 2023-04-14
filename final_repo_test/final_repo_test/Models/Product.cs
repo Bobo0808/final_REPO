@@ -17,5 +17,6 @@ namespace final_repo_test.Models
         public string? P_Discount { get; set; }
         public bool? P_Discontinuted { get; set; }
 
+        public ICollection<OrderDetail>? OrderDetails { get; set; }
     }
 }

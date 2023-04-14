@@ -10,5 +10,7 @@ namespace final_repo_test.Models
         public string? Contact { get; set; }
         public string? Email { get; set; }
         public string? Phone { get; set; }
+
+        public ICollection<Ads> Ads { get; set; }
     }
 }

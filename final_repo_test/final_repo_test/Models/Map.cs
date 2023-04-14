@@ -13,5 +13,7 @@ namespace final_repo_test.Models
         public int M_minY { get; set; }
         public int M_maxX { get; set; }
         public int M_maxY { get; set; }
+        public ICollection<Map_BlockSpace>? Map_BlockSpaces { get; set; }
+        public ICollection<Map_ADArea> Map_ADAreas { get; set; }
     }
 }

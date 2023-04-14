@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace final_repo_test.Models
 {
@@ -6,16 +7,18 @@ namespace final_repo_test.Models
     {
         [Key]
         public int Ad_ID { get; set; }
-        public string? Ad_Name { get; set; }
-        public string? Ad_Desc { get; set; }
-        public int? Ads_ItemID { get; set; }
-        public int? LocationID { get; set; }
-        public string? ImageURL { get; set; }
-        public string? TargetURL { get; set; }
-        public int? Click { get; set; }
-
-
-
-
+        [ForeignKey("Partner")]
+        public int PartnerID { get; set; }
+        public Partner Partner { get; set; }
+        [ForeignKey("CaseTable")]
+        public int CaseID { get; set; }
+        public CaseTable CaseTable { get; set; }
+        public DateTime Ad_StartTime { get; set; }
+        public DateTime Ad_EndTime { get; set; }
+        public int  Ad_DayCount { get; set; }
+        public string? Ad_ImageURL { get; set; }
+        public string? Ad_TargetURL { get; set; }
+        public int Ad_Clicks { get; set; }
+        public string? Ad_Description { get; set; }
     }
 }
