@@ -75,3 +75,16 @@ window.addEventListener('load', function () {
 	document.getElementById('switch-mode').dispatchEvent(new Event('change'));
 });
 
+var editBtn = document.getElementsByClassName('fa-pen-to-square');
+
+for (var i = 0; i < editBtn.length; i++) {
+	editBtn[i].addEventListener('click', function () {
+		var editCells = document.getElementsByClassName('editableCell');
+		for (var j = 0; j < editCells.length; j++) {
+			editCells[j].contentEditable = !editCells[j].isContentEditable;
+		}
+	});
+}
+
+
+
