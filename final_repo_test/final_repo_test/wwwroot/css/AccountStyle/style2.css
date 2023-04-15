@@ -4,6 +4,11 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+.container{
+    overflow:auto;
+    max-height:100%;
+    max-width;100%;
+}
 
 body {
     min-height: 100vh;
@@ -87,7 +92,7 @@ td {
 .content .content-2 .acount {
     min-height: 50vh;
     flex: 5;
-    background: white;
+    background: gray;
     margin: 0 25px 25px 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
@@ -98,7 +103,7 @@ td {
 
 .content .content-2 .recent-payment {
     flex: 2;
-    background: white;
+    background: gray;
     margin: 0 25px 25px 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;

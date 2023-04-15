@@ -5,6 +5,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.container {
+    overflow: auto;
+}
+
 body {
     min-height: 100vh;
 }
@@ -91,6 +95,7 @@ td {
     margin: 0 25px 25px 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
+    overflow: auto;
     flex-direction: column;
 }
 
@@ -102,6 +107,7 @@ td {
     margin: 0 25px 25px 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
+    overflow: auto;
     flex-direction: column;
 }
 
