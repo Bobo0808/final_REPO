@@ -76,6 +76,24 @@ namespace final_repo_test.Migrations
                     b.HasKey("A_ID");
 
                     b.ToTable("Accounts", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            A_ID = 1,
+                            A_Coin = 999999,
+                            A_Email = "Test@gmail.com",
+                            A_Gender = 0,
+                            A_Name = "Test",
+                            A_NickName = "Test",
+                            A_Phone = "0900000000",
+                            A_RegisteredAt = new DateTime(2023, 4, 15, 23, 23, 13, 993, DateTimeKind.Local).AddTicks(914),
+                            A_add = "Test",
+                            A_level = 99,
+                            Birthday = new DateTime(2023, 4, 15, 23, 23, 13, 993, DateTimeKind.Local).AddTicks(904),
+                            UserName = "Test",
+                            UserPWD = "Test"
+                        });
                 });
 
             modelBuilder.Entity("final_repo_test.Models.Ads", b =>
@@ -865,7 +883,7 @@ namespace final_repo_test.Migrations
                     b.HasOne("final_repo_test.Models.Account", "ReportedAccount")
                         .WithMany("ReportedReports")
                         .HasForeignKey("ReportedA_ID")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Account");
@@ -884,7 +902,7 @@ namespace final_repo_test.Migrations
                     b.HasOne("final_repo_test.Models.Account", "TargetAccount")
                         .WithMany("TargetSocieties")
                         .HasForeignKey("TargetA_ID")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Account");

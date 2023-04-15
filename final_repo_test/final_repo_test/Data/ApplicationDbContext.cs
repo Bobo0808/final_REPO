@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System.Data;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+using final_repo_test.Data.Enum;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace final_repo_test.Data
 {
@@ -54,16 +56,30 @@ namespace final_repo_test.Data
                     .IsRequired();
 
                 b.HasKey(x=>x.A_ID);
-                b.HasMany(x => x.Reports).WithOne(x => x.Account).HasForeignKey(x=>x.A_ID).HasPrincipalKey(x=>x.A_ID);
-                b.HasMany(x => x.ReportedReports).WithOne(x => x.ReportedAccount).HasForeignKey(x=>x.ReportedA_ID).HasPrincipalKey(x=>x.A_ID);
+               
+
                 b.HasMany(x => x.DebugLogs).WithOne(x => x.Account).HasForeignKey(x=>x.A_ID).HasPrincipalKey(x=>x.A_ID);
                 b.HasMany(x => x.LoginStaus).WithOne(x => x.Account).HasForeignKey(x => x.A_ID).HasPrincipalKey(x => x.A_ID);
                 b.HasMany(x => x.Orders).WithOne(x => x.Account).HasForeignKey(x => x.A_ID).HasPrincipalKey(x => x.A_ID);
-                b.HasMany(x => x.Societies).WithOne(x => x.Account).HasForeignKey(x => x.A_ID).HasPrincipalKey(x => x.A_ID);
-                b.HasMany(x => x.TargetSocieties).WithOne(x => x.TargetAccount).HasForeignKey(x => x.TargetA_ID).HasPrincipalKey(x => x.A_ID);
                 b.ToTable("Accounts");
-
+                b.HasData(new Account()
+                {
+                    A_ID = 1,
+                    A_Name = "Test",
+                    UserName = "Test",
+                    UserPWD = "Test",
+                    A_Gender = Gender.男,
+                    Birthday = DateTime.Now,
+                    A_level = 99,
+                    A_Email = "Test@gmail.com",
+                    A_Phone = "0900000000",
+                    A_add = "Test",
+                    A_RegisteredAt = DateTime.Now,
+                    A_NickName = "Test",
+                    A_Coin = 999999,
+                });
             });
+
 
             modelBuilder.Entity<Ads>( b =>
             {
@@ -94,6 +110,7 @@ namespace final_repo_test.Data
 
                 b.ToTable("Ads");
             });
+
 
             modelBuilder.Entity<CaseTable>(b =>
             {
@@ -323,6 +340,50 @@ namespace final_repo_test.Data
                 b.HasMany(x => x.Ads).WithOne(x => x.Partner).HasForeignKey(x=>x.PartnerID).HasPrincipalKey(x=>x.P_ID);
                 b.ToTable("Partners");
             });
+            modelBuilder.Entity<Report>(b =>
+            {
+                b.Property(x => x.R_ID)
+                    .ValueGeneratedOnAdd();
+
+                b.Property(x => x.A_ID);
+
+                b.Property(x => x.R_Reason)
+                    .IsRequired();
+
+                b.Property(x => x.R_Reply)
+                    .IsRequired();
+
+                b.Property(x => x.R_ReportStatus);
+
+                b.Property(x => x.R_ReportType);
+
+                b.Property(x => x.R_Time);
+
+                b.Property(x => x.ReportedA_ID);
+                b.HasKey(x => x.R_ID);
+
+                b.ToTable("Reports");
+            });
+            modelBuilder.Entity<Society>(b =>
+            {
+                b.Property(x => x.S_ID)
+                    .ValueGeneratedOnAdd();
+
+                b.Property(x => x.A_ID);
+
+                b.Property(x => x.CreateAt);
+
+                b.Property(x => x.S_Notes)
+                    .IsRequired();
+
+                b.Property(x => x.TargetA_ID);
+
+                b.Property(x => x.UpdateAt);
+
+                b.HasKey(x => x.S_ID);
+                //b.HasOne(x => x.Account).WithMany(x => x.Societies).HasForeignKey(x => x.A_ID).HasPrincipalKey(x => x.A_ID).OnDelete(DeleteBehavior.Cascade);
+                b.ToTable("Societies");
+            });
 
             modelBuilder.Entity<Product>(b =>
             {
@@ -356,54 +417,15 @@ namespace final_repo_test.Data
 
                 b.ToTable("Products");
             });
-            
-            modelBuilder.Entity<Report>(b =>
-            {
-                b.Property(x=>x.R_ID)
-                    .ValueGeneratedOnAdd();
 
-                b.Property(x=>x.A_ID);
+            modelBuilder.Entity<Report>().HasOne(x => x.Account).WithMany(x => x.Reports).HasForeignKey(x => x.A_ID).HasPrincipalKey(x => x.A_ID).OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Report>().HasOne(x => x.ReportedAccount).WithMany(x => x.ReportedReports).HasForeignKey(x => x.ReportedA_ID).HasPrincipalKey(x => x.A_ID).OnDelete(DeleteBehavior.Restrict);
 
-                b.Property(x=>x.R_Reason)
-                    .IsRequired();
-
-                b.Property(x=>x.R_Reply)
-                    .IsRequired();
-
-                b.Property(x=>x.R_ReportStatus);
-
-                b.Property(x=>x.R_ReportType);
-
-                b.Property(x=>x.R_Time);
-
-                b.Property(x=>x.ReportedA_ID);
-                b.HasKey(x=>x.R_ID);
-                b.HasOne(x => x.Account).WithMany(x => x.Reports).HasForeignKey(x => x.A_ID).HasPrincipalKey(x=>x.A_ID).OnDelete(DeleteBehavior.Cascade);
-                b.HasOne(x => x.ReportedAccount).WithMany(x => x.ReportedReports).HasForeignKey(x => x.ReportedA_ID).HasPrincipalKey(x => x.A_ID).OnDelete(DeleteBehavior.Restrict);
-                b.ToTable("Reports");
-            });
-
-            modelBuilder.Entity<Society>(b =>
-            {
-                b.Property(x=>x.S_ID)
-                    .ValueGeneratedOnAdd();
-
-                b.Property(x=>x.A_ID);
-
-                b.Property(x=>x.CreateAt);
-
-                b.Property(x=>x.S_Notes)
-                    .IsRequired();
-
-                b.Property(x=>x.TargetA_ID);
-
-                b.Property(x=>x.UpdateAt);
-
-                b.HasKey(x=>x.S_ID);
-                b.HasOne(x => x.Account).WithMany(x => x.Societies).HasForeignKey(x=>x.A_ID).HasPrincipalKey(x => x.A_ID).OnDelete(DeleteBehavior.Cascade);
-                b.HasOne(x => x.TargetAccount).WithMany(x => x.TargetSocieties).HasForeignKey(x => x.TargetA_ID).HasPrincipalKey(x => x.A_ID).OnDelete(DeleteBehavior.Restrict);
-                b.ToTable("Societies");
-            });
+            //modelBuilder.Entity<Society>().HasOne(x => x.TargetAccount).WithMany(x => x.TargetSocieties).HasForeignKey(x => x.TargetA_ID).HasPrincipalKey(x => x.A_ID).OnDelete(DeleteBehavior.Cascade);
+            //modelBuilder.Entity<Account>().HasMany(x => x.Reports).WithOne(x => x.Account).HasForeignKey(x => x.A_ID).HasPrincipalKey(x => x.A_ID).OnDelete(DeleteBehavior.Cascade);
+            //modelBuilder.Entity<Account>().HasMany(x => x.ReportedReports).WithOne(x => x.ReportedAccount).HasForeignKey(x => x.ReportedA_ID).HasPrincipalKey(x => x.A_ID).OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Account>().HasMany(x => x.TargetSocieties).WithOne(x => x.TargetAccount).HasForeignKey(x => x.TargetA_ID).HasPrincipalKey(x => x.A_ID).OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Account>().HasMany(x => x.Societies).WithOne(x => x.Account).HasForeignKey(x => x.A_ID).HasPrincipalKey(x => x.A_ID).OnDelete(DeleteBehavior.Cascade);
         }
 
         public DbSet<Account> Accounts { get; set; } = default!;

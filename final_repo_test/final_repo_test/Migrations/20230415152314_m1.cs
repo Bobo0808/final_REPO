@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace final_repo_test.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class m1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -259,7 +259,7 @@ namespace final_repo_test.Migrations
                         column: x => x.ReportedA_ID,
                         principalTable: "Accounts",
                         principalColumn: "A_ID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -288,7 +288,7 @@ namespace final_repo_test.Migrations
                         column: x => x.TargetA_ID,
                         principalTable: "Accounts",
                         principalColumn: "A_ID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -511,6 +511,11 @@ namespace final_repo_test.Migrations
                         principalColumn: "P_ID",
                         onDelete: ReferentialAction.Restrict);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Accounts",
+                columns: new[] { "A_ID", "A_Coin", "A_Email", "A_Gender", "A_Name", "A_NickName", "A_Phone", "A_RegisteredAt", "A_add", "A_level", "Birthday", "UserName", "UserPWD" },
+                values: new object[] { 1, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 4, 15, 23, 23, 13, 993, DateTimeKind.Local).AddTicks(914), "Test", 99, new DateTime(2023, 4, 15, 23, 23, 13, 993, DateTimeKind.Local).AddTicks(904), "Test", "Test" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Ads_CaseID",
