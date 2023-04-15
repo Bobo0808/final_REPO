@@ -6,13 +6,12 @@ using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace final_repo_test.Data
 {
-    public class ApplicationDbContext: IdentityDbContext
+    public class ApplicationDbContext: DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext>options):base(options)
         {
             
         }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
