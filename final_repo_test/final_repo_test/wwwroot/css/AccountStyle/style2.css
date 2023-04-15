@@ -7,7 +7,7 @@
 .container{
     overflow:auto;
     max-height:100%;
-    max-width;100%;
+    max-width:100%;
 }
 
 body {
@@ -59,6 +59,8 @@ th,
 td {
     text-align: left;
     padding: 8px;
+    color:black;
+    
 }
 
 .content .cards {
@@ -92,7 +94,7 @@ td {
 .content .content-2 .acount {
     min-height: 50vh;
     flex: 5;
-    background: gray;
+    background: white;
     margin: 0 25px 25px 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
@@ -103,7 +105,7 @@ td {
 
 .content .content-2 .recent-payment {
     flex: 2;
-    background: gray;
+    background: white;
     margin: 0 25px 25px 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
@@ -117,7 +119,7 @@ td {
 
 
 /*RWD*/
-@media screen and (max-width:1050px) {
+/*@media screen and (max-width:1050px) {
     .side-menu li {
         font-size: 18px;
     }
@@ -162,5 +164,5 @@ td {
     .container .content .content-2 .recent-payment table th:nth-child(2),
     .container .content .content-2 .recent-payment table th:nth-child(2) {
         display: none;
-    }
+    }*/
 }
