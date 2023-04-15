@@ -12,8 +12,8 @@ using final_repo_test.Data;
 namespace final_repo_test.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230415074543_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20230415162258_m1")]
+    partial class m1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
