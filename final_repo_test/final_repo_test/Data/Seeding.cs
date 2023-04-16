@@ -33,6 +33,7 @@ namespace final_repo_test.Data
                             A_Coin = 999999,
                         }
                     });
+                    context.SaveChanges();
                 }
             }
         }
