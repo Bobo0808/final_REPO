@@ -34,6 +34,7 @@ namespace final_repo_test.Data
                         }
                     });
                 }
+                context.SaveChanges();
             }
         }
     }
