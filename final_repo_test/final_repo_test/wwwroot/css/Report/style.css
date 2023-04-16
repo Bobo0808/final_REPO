@@ -1,11 +1,23 @@
-
+.container {
+    border: 1px solid #aaa;
+    margin: auto 100px;
+}
 
 .accordion-button {
     font-size: 1.5rem;
 }
 
 .table {
-    vertical-align: middle;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
 }
 
 .button {
@@ -13,10 +25,10 @@
     justify-content: space-evenly;
 }
 
-    .button > button {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
+.button>button {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
 
 .title {
     padding-left: 0.5rem;

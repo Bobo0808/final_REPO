@@ -1,32 +1,6 @@
-*{
-    padding:0;
-    margin:0;
-}
-
 .row {
     margin: 1rem;
-}
-
-.container{
-    max-width:100%;
-    max-height:100%;
-    overflow:auto;
-}
-
-#headChart  {
-    max-width: 100%;
-    max-height: 100%;
-}
-
-#mainChart {
-    max-width: 100%;
-    max-height: 100%;
-    height:100%;
-    width:100%;
-}
-
-p, li {
-    color: black
+    padding-bottom: 2rem;
 }
 
 .content {
@@ -37,6 +11,13 @@ p, li {
         display: flex;
     }
 
+.content-body {
+    flex: 1 1 70%;
+}
+
+.side {
+    flex: 1 1 30%;
+}
 
 
 .head {
@@ -57,7 +38,7 @@ p, li {
         width: 100%;
         list-style-type: none;
         background-color: white;
-        border: 1px solid #e8e8e8;
+        border: 1px solid rgb(55, 156, 223);
         display: block;
         cursor: pointer;
     }
@@ -73,10 +54,10 @@ p, li {
     }
 
 .title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 3rem;
     font-weight: bold;
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 1px solid rgb(55, 156, 223);
 }
 
 .note {
@@ -85,15 +66,14 @@ p, li {
 }
 
     .note > ul {
-        height:100%;
-        margin:1rem;
         padding: 0;
+        margin-left: 1rem;
+        margin-right: 1rem;
         list-style-type: none;
         text-align: center;
-        font-size: 1.6em;
+        font-size: 1.2rem;
         background-color: white;
         border-radius: 1rem;
-        
     }
 
 .note-left {
@@ -106,13 +86,12 @@ p, li {
     }
 
 .note-right {
-    color:black;
-    width: 45%;
+    width: 70%;
 }
 
     .note-right > li {
         margin-top: 0.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 5rem;
         list-style-type: none;
     }
 

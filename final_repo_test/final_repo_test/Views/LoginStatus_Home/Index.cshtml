@@ -6,6 +6,7 @@
 }
 @section Styles{
     <link href="~/css/LoginStatus/site.css" rel="stylesheet" />
+   
 }
 
 <div class="row">
@@ -16,14 +17,14 @@
         <div class="head">
             <div class="note">
                 <ul class="note-left">
-                    <li class="notes">
+                    <ul class="notes">
                         累計人數
-                        <p class="note-text">200人</p>
-                    </li>
-                    <li class="notes">
+                        <li class="note-text">200人</li>
+                    </ul>
+                    <ul class="notes">
                         平均上線時數
-                        <p class="note-text">3hr</p>
-                    </li>
+                        <li class="note-text">3hr</li>
+                    </ul>
                 </ul>
                 <ul class="notes note-right">
                     上線時段
@@ -41,31 +42,13 @@
     </div>
 </div>
 
-@section Script{
-	<script src="~/chart.js/dist/chart.umd.js"></script>
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.1/chart.min.js"></script>
     <script>
-        const mainCtx = document.getElementById('mainChart');
-        const headCtx = document.getElementById('headChart');
-        new Chart(mainCtx, {
-            type: 'line',
-            data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-        new Chart(headCtx, {
-            type: 'pie',
+        const ctx = document.getElementById('mainChart');
+
+        new Chart(ctx, {
+            type: 'bar',
             data: {
                 labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
                 datasets: [{
