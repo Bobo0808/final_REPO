@@ -6,7 +6,7 @@ namespace final_repo_test.Areas.Report.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View("../Views/Report_Home/index.cshtml");
         }
     }
 }

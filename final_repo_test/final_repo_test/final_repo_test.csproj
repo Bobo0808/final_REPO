@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Report\Views\Report_Home\" />
     <Folder Include="wwwroot\img\Account\" />
   </ItemGroup>
 
