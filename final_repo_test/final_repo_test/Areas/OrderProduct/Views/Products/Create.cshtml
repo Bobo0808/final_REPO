@@ -1,0 +1,73 @@
+﻿@model final_repo_test.Models.Product
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="P_Name" class="control-label"></label>
+                <input asp-for="P_Name" class="form-control" />
+                <span asp-validation-for="P_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="P_ProductType" class="control-label"></label>
+                <select asp-for="P_ProductType" class="form-control"></select>
+                <span asp-validation-for="P_ProductType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="P_Price" class="control-label"></label>
+                <input asp-for="P_Price" class="form-control" />
+                <span asp-validation-for="P_Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="P_Image" class="control-label"></label>
+                <input asp-for="P_Image" class="form-control" />
+                <span asp-validation-for="P_Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="P_Describe" class="control-label"></label>
+                <input asp-for="P_Describe" class="form-control" />
+                <span asp-validation-for="P_Describe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="P_Instock" class="control-label"></label>
+                <input asp-for="P_Instock" class="form-control" />
+                <span asp-validation-for="P_Instock" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="P_Date" class="control-label"></label>
+                <input asp-for="P_Date" class="form-control" />
+                <span asp-validation-for="P_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="P_Discount" class="control-label"></label>
+                <input asp-for="P_Discount" class="form-control" />
+                <span asp-validation-for="P_Discount" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="P_Discontinuted" /> @Html.DisplayNameFor(model => model.P_Discontinuted)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

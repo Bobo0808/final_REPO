@@ -1,0 +1,82 @@
+﻿@model final_repo_test.Models.Order;
+
+
+@section Styles{
+
+}
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="container">
+    <h1>Create</h1>
+
+    <h4>Order</h4>
+    <hr />
+    <div class="row overflow-auto m-auto">
+        <div class="">
+            <form asp-action="Create" class="row g-3 needs-validation" novalidate>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="col-md-4">
+                    <label asp-for="A_ID" class="control-label"></label>
+                    <select asp-for="A_ID" asp-items="ViewBag.CustomerIdList" class="form-control">
+                        <option>---請選擇客戶---</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="O_Date" class="control-label"></label>
+                    <input asp-for="O_Date" class="form-control" />
+                    <span asp-validation-for="O_Date" class="text-danger"></span>
+                </div>
+                <div class="col-md-2">
+                    <label asp-for="O_TotalPrice" class="control-label"></label>
+                    <input asp-for="O_TotalPrice" class="form-control" />
+                    <span asp-validation-for="O_TotalPrice" class="text-danger"></span>
+                </div>
+                <div class="col-md-2">
+                    <label asp-for="O_Cancle" class="control-label"></label>
+                    <input type="checkbox" asp-for="O_Cancle" class="form-check-input" />
+                    <span asp-validation-for="O_Cancle" class="text-danger"></span>
+                </div>
+                @*<div class="form-group">
+
+                @*<label asp-for="OAId" class="control-label"></label>
+                <input asp-for="OAId" class="form-control" />
+                <span asp-validation-for="OAId" class="text-danger"></span>
+                <label asp-for="OAId" class="control-label"></label>
+                <select asp-for="OAId" asp-items="ViewBag.CustomerIdList" class="form-control">
+                <option>---請選擇客戶ID---</option>
+                </select>
+                </div>
+                <div class="form-group">
+                <label asp-for="ODate" class="control-label"></label>
+                <input asp-for="ODate" class="form-control" />
+                <span asp-validation-for="ODate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                <label asp-for="OTotalPrice" class="control-label"></label>
+                <input asp-for="OTotalPrice" class="form-control" />
+                <span asp-validation-for="OTotalPrice" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                <label asp-for="OCancel" class="control-label"></label>
+                <input type="checkbox" asp-for="OCancel" class="form-check-input" />
+                <span asp-validation-for="OCancel" class="text-danger"></span>
+                </div>*@
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+@section Script {
+	<script src="~/js/orderproduct/create.min.js"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

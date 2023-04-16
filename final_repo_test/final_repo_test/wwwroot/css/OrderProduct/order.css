@@ -1,0 +1,27 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+table tbody tr {
+    height: 10%;
+}
+
+table tbody {
+    align-items: flex-start;
+}
+
+.table {
+    table-layout: fixed
+}
+
+.box {
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    border-radius: 15px;
+    margin-left: 2%;
+    width: 95%;
+    height: 88vh;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+}

@@ -1,0 +1,22 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box {
+    overflow: auto;
+}
+
+.bordandcolor {
+    margin: 0 auto;
+    border-radius: 15px;
+    border: 1px solid black;
+    width: 90%;
+    align-items: center;
+}
+
+.test {
+    float: right;
+    /* 文字在右邊 */
+}

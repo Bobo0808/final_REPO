@@ -1,0 +1,14 @@
+[
+  {
+    "outputFileName": "wwwroot/js/OrderProduct/create.min.js",
+    "inputFiles": [
+      "wwwroot/js/OrderProduct/create.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/OrderProduct/ProductIndex.min.css",
+    "inputFiles": [
+      "wwwroot/css/OrderProduct/ProductIndex.css"
+    ]
+  }
+]
