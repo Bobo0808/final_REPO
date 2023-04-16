@@ -8,42 +8,37 @@
     <link href="~/css/LoginStatus/site.css" rel="stylesheet" />
 }
 
-<div class="container">
-    <div class="row">
-        <div class="col content-body gx-5">
-            <div class="title">
-                同時在線人數
+<div class="row">
+    <div class="col content-body gx-5">
+        <div class="title">
+            同時在線人數
+        </div>
+        <div class="head">
+            <div class="note">
+                <ul class="note-left">
+                    <li class="notes">
+                        累計人數
+                        <p class="note-text">200人</p>
+                    </li>
+                    <li class="notes">
+                        平均上線時數
+                        <p class="note-text">3hr</p>
+                    </li>
+                </ul>
+                <ul class="notes note-right">
+                    上線時段
+                    <li><canvas id="headChart" class="border bg-light"></canvas></li>
+                </ul>
             </div>
-            <div class="head">
-                <div class="note">
-                    <ul class="note-left">
-                        <li class="notes">
-                            累計人數
-                            <p class="note-text">200人</p>
-                        </li>
-                        <li class="notes">
-                            平均上線時數
-                            <p class="note-text">3hr</p>
-                        </li>
-                    </ul>
-                    <ul class="notes note-right">
-                        上線時段
-                        <li><canvas id="headChart" class="border bg-light"></canvas></li>
-                    </ul>
-                </div>
-            </div>
+            <ul class="timeSpan">
+                <li class="end">日</li>
+                <li>月</li>
+                <li class="start">年</li>
+            </ul>
+            <canvas id="mainChart" class="border bg-light">
+            </canvas>
         </div>
     </div>
-    <div class="row">
-        <ul class="timeSpan">
-            <li class="end">日</li>
-            <li>月</li>
-            <li class="start">年</li>
-        </ul>
-        <canvas id="mainChart" class="border bg-light">
-        </canvas>
-    </div>
-
 </div>
 
 @section Script{
@@ -70,7 +65,7 @@
             }
         });
         new Chart(headCtx, {
-            type: 'doughnut',
+            type: 'pie',
             data: {
                 labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
                 datasets: [{

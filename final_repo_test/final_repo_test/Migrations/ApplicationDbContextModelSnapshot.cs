@@ -135,7 +135,7 @@ namespace final_repo_test.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Case_PricePerDay")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Case_ID");
 
@@ -368,7 +368,7 @@ namespace final_repo_test.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("O_TotalPrice")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("O_ID");
 
@@ -392,10 +392,10 @@ namespace final_repo_test.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("Od_Sum")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("Od_UnitPrice")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("P_ID")
                         .HasColumnType("int");
@@ -667,7 +667,7 @@ namespace final_repo_test.Migrations
                     b.HasOne("final_repo_test.Models.Account", "ReportedAccount")
                         .WithMany("ReportedReports")
                         .HasForeignKey("ReportedA_ID")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Account");
@@ -686,7 +686,7 @@ namespace final_repo_test.Migrations
                     b.HasOne("final_repo_test.Models.Account", "TargetAccount")
                         .WithMany("TargetSocieties")
                         .HasForeignKey("TargetA_ID")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Account");

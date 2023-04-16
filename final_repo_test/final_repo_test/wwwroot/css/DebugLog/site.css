@@ -1,7 +1,4 @@
-.container{
-    max-height:100%;
-    max-width:100%;
-}
+
 
 .accordion-button {
     font-size: 1.5rem;
@@ -9,7 +6,6 @@
 
 .table {
     vertical-align: middle;
-    overflow:auto;
 }
 
 .button {
@@ -25,7 +21,6 @@
 .title {
     padding-left: 0.5rem;
     font-size: 2rem;
-    border-bottom: 1px solid #e8e8e8;
 }
 
 .row {
