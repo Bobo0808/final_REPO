@@ -58,10 +58,19 @@ namespace final_repo_test.Repositroy
                         result.Mainx.Add(DateTime.Now.AddDays(i));
                         result.Mainy.Add((await _context.LoginStaus.Where(s => s.L_cTime.Day == DateTime.Now.AddDays(i).Day).ToListAsync()).Count);
                     }
-                    //for(int i = 0; i < result.Headx.Count; i++)
-                    //{
-
-                    //}
+                    int itemp = 1;
+                    for (int i = 0; i < result.Headx.Count; i++)
+                    {
+                        if (itemp < result.Headx.Count)
+                        {
+                            result.Heady.Add((await _context.LoginStaus.Where(s => s.L_cTime.TimeOfDay >= result.Headx[i] && s.L_cTime.TimeOfDay <= result.Headx[itemp]).ToListAsync()).Count);
+                        }
+                        else
+                        {
+                            result.Heady.Add((await _context.LoginStaus.Where(s => s.L_cTime.TimeOfDay >= result.Headx[i]).ToListAsync()).Count);
+                        }
+                        itemp++;
+                    }
                     break;
                 case "Week":
                     DateTime tempWeek = DateTime.Now.AddDays(-49);

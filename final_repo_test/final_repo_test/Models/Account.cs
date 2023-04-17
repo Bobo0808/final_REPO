@@ -1,4 +1,5 @@
 ﻿using final_repo_test.Data.Enum;
+using Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -26,6 +27,7 @@ namespace final_repo_test.Models
         public string A_NickName { get; set; } = default!;
         public int A_Coin { get; set; } = default!;
 
+        public ICollection<CardOrder>? CardOrders { get; set; }
         public ICollection<Order>? Orders { get; set; }
         //[InverseProperty(nameof(Report.Account))]
         public ICollection<Report>? Reports { get; set; }
