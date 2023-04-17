@@ -242,49 +242,49 @@ namespace final_repo_test.Data
                     L_ID = 1,
                     A_ID = 1,
                     L_cTime = DateTime.Now,
-                    L_dcTime = DateTime.Now
+                    L_dcTime = DateTime.Now.AddHours(1)
                 },
                          new LoginStaus()
                          {
                              L_ID = 2,
                              A_ID = 1,
-                             L_cTime = DateTime.Now.AddDays(-1),
-                             L_dcTime = DateTime.Now.AddDays(-1)
+                             L_cTime = DateTime.Now.AddDays(-1).AddHours(-2),
+                             L_dcTime = DateTime.Now.AddDays(-1).AddHours(-1)
                          },
                           new LoginStaus()
                           {
                               L_ID = 3,
                               A_ID = 1,
-                              L_cTime = DateTime.Now.AddDays(-2),
-                              L_dcTime = DateTime.Now.AddDays(-2)
+                              L_cTime = DateTime.Now.AddDays(-2).AddHours(-3),
+                              L_dcTime = DateTime.Now.AddDays(-2).AddHours(-2)
                           },
                            new LoginStaus()
                            {
                                L_ID = 4,
                                A_ID = 1,
-                               L_cTime = DateTime.Now.AddDays(-3),
-                               L_dcTime = DateTime.Now.AddDays(-3)
+                               L_cTime = DateTime.Now.AddDays(-3).AddHours(-4),
+                               L_dcTime = DateTime.Now.AddDays(-3).AddHours(-3)
                            },
                             new LoginStaus()
                             {
                                 L_ID = 5,
                                 A_ID = 1,
-                                L_cTime = DateTime.Now.AddDays(-4),
-                                L_dcTime = DateTime.Now.AddDays(-4)
+                                L_cTime = DateTime.Now.AddDays(-4).AddHours(-5),
+                                L_dcTime = DateTime.Now.AddDays(-4).AddHours(-4)
                             },
                               new LoginStaus()
                               {
                                   L_ID = 6,
                                   A_ID = 1,
-                                  L_cTime = DateTime.Now.AddDays(-4),
-                                  L_dcTime = DateTime.Now.AddDays(-4)
+                                  L_cTime = DateTime.Now.AddDays(-4).AddHours(-6),
+                                  L_dcTime = DateTime.Now.AddDays(-4).AddHours(-5)
                               },
                                 new LoginStaus()
                                 {
                                     L_ID = 7,
                                     A_ID = 1,
-                                    L_cTime = DateTime.Now.AddDays(-4),
-                                    L_dcTime = DateTime.Now.AddDays(-4)
+                                    L_cTime = DateTime.Now.AddDays(-4).AddHours(-7),
+                                    L_dcTime = DateTime.Now.AddDays(-4).AddHours(-6)
                                 });
 
                 b.ToTable("LoginStaus");
