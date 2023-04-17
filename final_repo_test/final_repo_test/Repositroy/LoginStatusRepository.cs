@@ -55,9 +55,13 @@ namespace final_repo_test.Repositroy
                     for(int i = -6; i <= 0; i++)
                     {
                         Console.WriteLine(DateTime.Now.AddDays(i));
-                        result.x.Add(DateTime.Now.AddDays(i));
-                        result.y.Add((await _context.LoginStaus.Where(s => s.L_cTime == DateTime.Now.AddDays(i)).ToListAsync()).Count);
+                        result.Mainx.Add(DateTime.Now.AddDays(i));
+                        result.Mainy.Add((await _context.LoginStaus.Where(s => s.L_cTime.Day == DateTime.Now.AddDays(i).Day).ToListAsync()).Count);
                     }
+                    //for(int i = 0; i < result.Headx.Count; i++)
+                    //{
+
+                    //}
                     break;
                 case "Week":
                     DateTime tempWeek = DateTime.Now.AddDays(-49);

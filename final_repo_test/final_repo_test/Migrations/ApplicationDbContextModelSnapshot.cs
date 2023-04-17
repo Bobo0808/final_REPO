@@ -65,6 +65,9 @@ namespace final_repo_test.Migrations
                     b.Property<DateTime>("Birthday")
                         .HasColumnType("Date");
 
+                    b.Property<int>("P_id")
+                        .HasColumnType("int");
+
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -74,6 +77,8 @@ namespace final_repo_test.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("A_ID");
+
+                    b.HasIndex("P_id");
 
                     b.ToTable("Accounts", (string)null);
 
@@ -87,10 +92,11 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 4, 17, 3, 52, 29, 119, DateTimeKind.Local).AddTicks(8527),
+                            A_RegisteredAt = new DateTime(2023, 4, 17, 13, 24, 28, 673, DateTimeKind.Local).AddTicks(1337),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 4, 17, 3, 52, 29, 119, DateTimeKind.Local).AddTicks(8517),
+                            Birthday = new DateTime(2023, 4, 17, 13, 24, 28, 673, DateTimeKind.Local).AddTicks(1336),
+                            P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
                         });
@@ -271,50 +277,50 @@ namespace final_repo_test.Migrations
                         {
                             L_ID = 1,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 17, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5033),
-                            L_dcTime = new DateTime(2023, 4, 17, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5039)
+                            L_cTime = new DateTime(2023, 4, 17, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2760),
+                            L_dcTime = new DateTime(2023, 4, 17, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2767)
                         },
                         new
                         {
                             L_ID = 2,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 16, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5040),
-                            L_dcTime = new DateTime(2023, 4, 16, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5048)
+                            L_cTime = new DateTime(2023, 4, 16, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2768),
+                            L_dcTime = new DateTime(2023, 4, 16, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2771)
                         },
                         new
                         {
                             L_ID = 3,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 15, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5048),
-                            L_dcTime = new DateTime(2023, 4, 15, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5049)
+                            L_cTime = new DateTime(2023, 4, 15, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2772),
+                            L_dcTime = new DateTime(2023, 4, 15, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2772)
                         },
                         new
                         {
                             L_ID = 4,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 14, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5050),
-                            L_dcTime = new DateTime(2023, 4, 14, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5051)
+                            L_cTime = new DateTime(2023, 4, 14, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2773),
+                            L_dcTime = new DateTime(2023, 4, 14, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2773)
                         },
                         new
                         {
                             L_ID = 5,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 13, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5052),
-                            L_dcTime = new DateTime(2023, 4, 13, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5052)
+                            L_cTime = new DateTime(2023, 4, 13, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2774),
+                            L_dcTime = new DateTime(2023, 4, 13, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2774)
                         },
                         new
                         {
                             L_ID = 6,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 13, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5053),
-                            L_dcTime = new DateTime(2023, 4, 13, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5054)
+                            L_cTime = new DateTime(2023, 4, 13, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2775),
+                            L_dcTime = new DateTime(2023, 4, 13, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2775)
                         },
                         new
                         {
                             L_ID = 7,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 13, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5055),
-                            L_dcTime = new DateTime(2023, 4, 13, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5055)
+                            L_cTime = new DateTime(2023, 4, 13, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2776),
+                            L_dcTime = new DateTime(2023, 4, 13, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2776)
                         });
                 });
 
@@ -549,6 +555,34 @@ namespace final_repo_test.Migrations
                     b.HasKey("P_ID");
 
                     b.ToTable("Products", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            P_ID = 1,
+                            P_Date = new DateTime(2023, 4, 17, 13, 24, 28, 673, DateTimeKind.Local).AddTicks(1319),
+                            P_Describe = "Regular Fit反摺袖襯衫",
+                            P_Discontinuted = false,
+                            P_Discount = " ",
+                            P_Image = "1.jpg",
+                            P_Instock = 99,
+                            P_Name = "反摺袖襯衫",
+                            P_Price = 699,
+                            P_ProductType = 1
+                        },
+                        new
+                        {
+                            P_ID = 2,
+                            P_Date = new DateTime(2023, 4, 17, 13, 24, 28, 673, DateTimeKind.Local).AddTicks(1322),
+                            P_Describe = "Regular Fit棉麻短袖襯衫",
+                            P_Discontinuted = false,
+                            P_Discount = " ",
+                            P_Image = "2.jpg",
+                            P_Instock = 99,
+                            P_Name = "短袖襯衫",
+                            P_Price = 499,
+                            P_ProductType = 0
+                        });
                 });
 
             modelBuilder.Entity("final_repo_test.Models.Report", b =>
@@ -622,6 +656,17 @@ namespace final_repo_test.Migrations
                     b.HasIndex("TargetA_ID");
 
                     b.ToTable("Societies", (string)null);
+                });
+
+            modelBuilder.Entity("final_repo_test.Models.Account", b =>
+                {
+                    b.HasOne("final_repo_test.Models.Product", "Product")
+                        .WithMany("Accounts")
+                        .HasForeignKey("P_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("final_repo_test.Models.Ads", b =>
@@ -806,6 +851,8 @@ namespace final_repo_test.Migrations
 
             modelBuilder.Entity("final_repo_test.Models.Product", b =>
                 {
+                    b.Navigation("Accounts");
+
                     b.Navigation("OrderDetails");
                 });
 #pragma warning restore 612, 618
