@@ -65,24 +65,19 @@
     <script>
 
         const day = [];
+        const time = [];
         var tmp = @Html.Raw(Json.Serialize(Model));
         console.log(tmp);
         for(var i=0;i<tmp.mainx.length;i++){
             day.push({ x: tmp.mainx[i], y: tmp.mainy[i] });
         }
-        
+        for(var i =0;i<tmp.headx.length;i++){
+            time.push({x: tmp.headx[i], y: tmp.heady[i]});
+        }
 
-        const week = [
-            { x: Date.parse('2021-11-01'), y: 28 },
-            { x: Date.parse('2021-11-08'), y: 18 },
-            { x: Date.parse('2021-11-15'), y: 13 },
-            { x: Date.parse('2021-11-22'), y: 32 },
-            { x: Date.parse('2021-11-29'), y: 45 },
-        ]
-
-        const data = {
+        const mainData = {
             datasets: [{
-                label: 'Weekly Sales',
+                label: '上線人數',
                 data: day,
                 backgroundColor: [
                     'rgba(255, 26, 104, 0.2)',
@@ -106,11 +101,16 @@
             }]
         };
 
-
+        const headData = {
+            datasets: [{
+                label: '各時段在線人數',
+                data: time
+            }]
+        };
      
         const mainConfig = {
             type: 'line',
-            data,
+            data: mainData,
             options: {
                 scales: {
                     x: {
@@ -128,21 +128,14 @@
             }
         };
         const headConfig = {
-            type: 'doughnut',
-            data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    borderWidth: 1
-                }]
-            },
+            type: 'line',
+            data: headData,
             options: {
                 scales: {
                     x: {
                         type: 'time',
                         time: {
-                            unit: 'day'
+                            unit:'hour'
                         }
                     },
                     y: {
@@ -150,7 +143,7 @@
                     }
                 },
                 responsive: true,
-                maintainAspectRatio: true
+                maintainAspectRatio: false
             }
         };
 

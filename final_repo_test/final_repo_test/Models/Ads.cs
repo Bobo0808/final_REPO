@@ -22,5 +22,14 @@ namespace final_repo_test.Models
         public string? Ad_TargetURL { get; set; } = default!;
         public int Ad_Clicks { get; set; } = default!;
         public string? Ad_Description { get; set; } = default!;
+        [Column(TypeName = "Date")]
+        public DateTime Ad_PaymentDueDate { get; set; } = default!;
+        [Column(TypeName = "Date")]
+        public DateTime Ad_TimeOfPayment { get; set; } = default!;
+        public int Ad_ActiveStatus { get; set; } = default!;
+        [ForeignKey("Ads_OrderStatus")]
+        public int OS_ID { get; set; } = default!;
+        public Ads_OrderStatus Ads_OrderStatus { get; set; } = default!;
+        public int AD_FinalPaymentAmount { get; set; } = default!;
     }
 }
