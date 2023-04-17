@@ -4,6 +4,11 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+.container{
+    overflow:auto;
+    max-height:100%;
+    max-width:100%;
+}
 
 body {
     min-height: 100vh;
@@ -54,6 +59,8 @@ th,
 td {
     text-align: left;
     padding: 8px;
+    color:black;
+    
 }
 
 .content .cards {
@@ -112,7 +119,7 @@ td {
 
 
 /*RWD*/
-@media screen and (max-width:1050px) {
+/*@media screen and (max-width:1050px) {
     .side-menu li {
         font-size: 18px;
     }
@@ -157,5 +164,5 @@ td {
     .container .content .content-2 .recent-payment table th:nth-child(2),
     .container .content .content-2 .recent-payment table th:nth-child(2) {
         display: none;
-    }
+    }*/
 }

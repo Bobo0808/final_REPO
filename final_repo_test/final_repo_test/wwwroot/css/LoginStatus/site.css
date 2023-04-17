@@ -1,6 +1,43 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+.selection {
+    margin: 0;
+    display: flex;
+    justify-content: end;
+    align-items: baseline
+}
+
 .row {
     margin: 1rem;
-    padding-bottom: 2rem;
+}
+
+.container{
+    max-width:100%;
+    max-height:100%;
+    overflow:auto;
+}
+
+.chartContainer {
+    max-height:100%;
+}
+
+#headChart {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#mainChart {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 1rem;
+    
+}
+
+p, li {
+    color: black
 }
 
 .content {
@@ -11,13 +48,6 @@
         display: flex;
     }
 
-.content-body {
-    flex: 1 1 70%;
-}
-
-.side {
-    flex: 1 1 30%;
-}
 
 
 .head {
@@ -27,18 +57,20 @@
 }
 
 .timeSpan {
-    padding-left: 0;
+    margin:0;
+    width:20rem;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-evenly;
 }
 
     .timeSpan > li {
+
         text-align: center;
         width: 100%;
         list-style-type: none;
         background-color: white;
-        border: 1px solid rgb(55, 156, 223);
+        border: 1px solid #e8e8e8;
         display: block;
         cursor: pointer;
     }
@@ -54,10 +86,11 @@
     }
 
 .title {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    width:40%;
     line-height: 3rem;
     font-weight: bold;
-    border-bottom: 1px solid rgb(55, 156, 223);
+    border-bottom: 1px solid #e8e8e8;
 }
 
 .note {
@@ -66,14 +99,13 @@
 }
 
     .note > ul {
+        max-height:100%;
         padding: 0;
-        margin-left: 1rem;
-        margin-right: 1rem;
         list-style-type: none;
         text-align: center;
-        font-size: 1.2rem;
-        background-color: white;
-        border-radius: 1rem;
+        font-size: 1.6em;
+      
+        
     }
 
 .note-left {
@@ -81,17 +113,23 @@
 }
 
     .note-left > .notes {
-        padding-left: 0;
-        padding-top: 1rem;
+        padding: 0;
+        background-color: white;
+        border-radius: 1rem;
+        margin:3rem;
     }
 
 .note-right {
-    width: 70%;
+    justify-content:center;
+    background-color: white;
+    border-radius: 1rem;
+    color: black;
+    width: 45%;
 }
 
     .note-right > li {
         margin-top: 0.5rem;
-        margin-bottom: 5rem;
+        margin-bottom: 1rem;
         list-style-type: none;
     }
 
