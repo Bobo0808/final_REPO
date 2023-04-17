@@ -9,7 +9,10 @@
   <ItemGroup>
     <Folder Include="Areas\AD\Data\" />
     <Folder Include="Areas\AD\Models\" />
+    <Folder Include="Areas\Login\Data\" />
+    <Folder Include="Areas\Login\Models\" />
     <Folder Include="Data\Enum\LoginStatus\" />
+    <Folder Include="wwwroot\css\NewFolder\" />
     <Folder Include="wwwroot\img\Account\" />
   </ItemGroup>
 
