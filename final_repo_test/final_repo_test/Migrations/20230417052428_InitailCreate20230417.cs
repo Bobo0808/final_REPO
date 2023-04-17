@@ -5,34 +5,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace final_repo_test.Migrations
 {
-    public partial class m1 : Migration
+    public partial class InitailCreate20230417 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "Accounts",
-                columns: table => new
-                {
-                    A_ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    A_Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserPWD = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    A_Gender = table.Column<int>(type: "int", nullable: false),
-                    Birthday = table.Column<DateTime>(type: "Date", nullable: false),
-                    A_level = table.Column<int>(type: "int", nullable: false),
-                    A_Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    A_Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    A_add = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    A_RegisteredAt = table.Column<DateTime>(type: "Date", nullable: false),
-                    A_NickName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    A_Coin = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Accounts", x => x.A_ID);
-                });
-
             migrationBuilder.CreateTable(
                 name: "CaseTables",
                 columns: table => new
@@ -125,6 +101,123 @@ namespace final_repo_test.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Products", x => x.P_ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "BlockSpaces",
+                columns: table => new
+                {
+                    Mb_ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    M_ID = table.Column<int>(type: "int", nullable: false),
+                    Mb_starX = table.Column<int>(type: "int", nullable: false),
+                    Mb_starY = table.Column<int>(type: "int", nullable: false),
+                    Mb_EndX = table.Column<int>(type: "int", nullable: false),
+                    Mb_EndY = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BlockSpaces", x => x.Mb_ID);
+                    table.ForeignKey(
+                        name: "FK_BlockSpaces_Maps_M_ID",
+                        column: x => x.M_ID,
+                        principalTable: "Maps",
+                        principalColumn: "M_ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Map_ADAreas",
+                columns: table => new
+                {
+                    Area_ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    M_ID = table.Column<int>(type: "int", nullable: false),
+                    CaseID = table.Column<int>(type: "int", nullable: false),
+                    Area_StartX = table.Column<int>(type: "int", nullable: false),
+                    Area_EndX = table.Column<int>(type: "int", nullable: false),
+                    Area_StartY = table.Column<int>(type: "int", nullable: false),
+                    Area_EndY = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Map_ADAreas", x => x.Area_ID);
+                    table.ForeignKey(
+                        name: "FK_Map_ADAreas_CaseTables_CaseID",
+                        column: x => x.CaseID,
+                        principalTable: "CaseTables",
+                        principalColumn: "Case_ID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Map_ADAreas_Maps_M_ID",
+                        column: x => x.M_ID,
+                        principalTable: "Maps",
+                        principalColumn: "M_ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Ads",
+                columns: table => new
+                {
+                    Ad_ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PartnerID = table.Column<int>(type: "int", nullable: false),
+                    CaseID = table.Column<int>(type: "int", nullable: false),
+                    Ad_StartTime = table.Column<DateTime>(type: "Date", nullable: false),
+                    Ad_EndTime = table.Column<DateTime>(type: "Date", nullable: false),
+                    Ad_DayCount = table.Column<int>(type: "int", nullable: false),
+                    Ad_ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Ad_TargetURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Ad_Clicks = table.Column<int>(type: "int", nullable: false),
+                    Ad_Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Ads", x => x.Ad_ID);
+                    table.ForeignKey(
+                        name: "FK_Ads_CaseTables_CaseID",
+                        column: x => x.CaseID,
+                        principalTable: "CaseTables",
+                        principalColumn: "Case_ID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Ads_Partners_PartnerID",
+                        column: x => x.PartnerID,
+                        principalTable: "Partners",
+                        principalColumn: "P_ID",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Accounts",
+                columns: table => new
+                {
+                    A_ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    A_Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserPWD = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    A_Gender = table.Column<int>(type: "int", nullable: false),
+                    Birthday = table.Column<DateTime>(type: "Date", nullable: false),
+                    P_id = table.Column<int>(type: "int", nullable: false),
+                    A_level = table.Column<int>(type: "int", nullable: false),
+                    A_Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    A_Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    A_add = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    A_RegisteredAt = table.Column<DateTime>(type: "Date", nullable: false),
+                    A_NickName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    A_Coin = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Accounts", x => x.A_ID);
+                    table.ForeignKey(
+                        name: "FK_Accounts_Products_P_id",
+                        column: x => x.P_id,
+                        principalTable: "Products",
+                        principalColumn: "P_ID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -253,92 +346,6 @@ namespace final_repo_test.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "BlockSpaces",
-                columns: table => new
-                {
-                    Mb_ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    M_ID = table.Column<int>(type: "int", nullable: false),
-                    Mb_starX = table.Column<int>(type: "int", nullable: false),
-                    Mb_starY = table.Column<int>(type: "int", nullable: false),
-                    Mb_EndX = table.Column<int>(type: "int", nullable: false),
-                    Mb_EndY = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_BlockSpaces", x => x.Mb_ID);
-                    table.ForeignKey(
-                        name: "FK_BlockSpaces_Maps_M_ID",
-                        column: x => x.M_ID,
-                        principalTable: "Maps",
-                        principalColumn: "M_ID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Map_ADAreas",
-                columns: table => new
-                {
-                    Area_ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    M_ID = table.Column<int>(type: "int", nullable: false),
-                    CaseID = table.Column<int>(type: "int", nullable: false),
-                    Area_StartX = table.Column<int>(type: "int", nullable: false),
-                    Area_EndX = table.Column<int>(type: "int", nullable: false),
-                    Area_StartY = table.Column<int>(type: "int", nullable: false),
-                    Area_EndY = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Map_ADAreas", x => x.Area_ID);
-                    table.ForeignKey(
-                        name: "FK_Map_ADAreas_CaseTables_CaseID",
-                        column: x => x.CaseID,
-                        principalTable: "CaseTables",
-                        principalColumn: "Case_ID",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Map_ADAreas_Maps_M_ID",
-                        column: x => x.M_ID,
-                        principalTable: "Maps",
-                        principalColumn: "M_ID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Ads",
-                columns: table => new
-                {
-                    Ad_ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    PartnerID = table.Column<int>(type: "int", nullable: false),
-                    CaseID = table.Column<int>(type: "int", nullable: false),
-                    Ad_StartTime = table.Column<DateTime>(type: "Date", nullable: false),
-                    Ad_EndTime = table.Column<DateTime>(type: "Date", nullable: false),
-                    Ad_DayCount = table.Column<int>(type: "int", nullable: false),
-                    Ad_ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Ad_TargetURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Ad_Clicks = table.Column<int>(type: "int", nullable: false),
-                    Ad_Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Ads", x => x.Ad_ID);
-                    table.ForeignKey(
-                        name: "FK_Ads_CaseTables_CaseID",
-                        column: x => x.CaseID,
-                        principalTable: "CaseTables",
-                        principalColumn: "Case_ID",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Ads_Partners_PartnerID",
-                        column: x => x.PartnerID,
-                        principalTable: "Partners",
-                        principalColumn: "P_ID",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "OrderDetails",
                 columns: table => new
                 {
@@ -368,23 +375,38 @@ namespace final_repo_test.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "P_ID", "P_Date", "P_Describe", "P_Discontinuted", "P_Discount", "P_Image", "P_Instock", "P_Name", "P_Price", "P_ProductType" },
+                values: new object[] { 1, new DateTime(2023, 4, 17, 13, 24, 28, 673, DateTimeKind.Local).AddTicks(1319), "Regular Fit反摺袖襯衫", false, " ", "1.jpg", 99, "反摺袖襯衫", 699, 1 });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "P_ID", "P_Date", "P_Describe", "P_Discontinuted", "P_Discount", "P_Image", "P_Instock", "P_Name", "P_Price", "P_ProductType" },
+                values: new object[] { 2, new DateTime(2023, 4, 17, 13, 24, 28, 673, DateTimeKind.Local).AddTicks(1322), "Regular Fit棉麻短袖襯衫", false, " ", "2.jpg", 99, "短袖襯衫", 499, 0 });
+
+            migrationBuilder.InsertData(
                 table: "Accounts",
-                columns: new[] { "A_ID", "A_Coin", "A_Email", "A_Gender", "A_Name", "A_NickName", "A_Phone", "A_RegisteredAt", "A_add", "A_level", "Birthday", "UserName", "UserPWD" },
-                values: new object[] { 1, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 4, 17, 3, 52, 29, 119, DateTimeKind.Local).AddTicks(8527), "Test", 99, new DateTime(2023, 4, 17, 3, 52, 29, 119, DateTimeKind.Local).AddTicks(8517), "Test", "Test" });
+                columns: new[] { "A_ID", "A_Coin", "A_Email", "A_Gender", "A_Name", "A_NickName", "A_Phone", "A_RegisteredAt", "A_add", "A_level", "Birthday", "P_id", "UserName", "UserPWD" },
+                values: new object[] { 1, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 4, 17, 13, 24, 28, 673, DateTimeKind.Local).AddTicks(1337), "Test", 99, new DateTime(2023, 4, 17, 13, 24, 28, 673, DateTimeKind.Local).AddTicks(1336), 1, "Test", "Test" });
 
             migrationBuilder.InsertData(
                 table: "LoginStaus",
                 columns: new[] { "L_ID", "A_ID", "L_cTime", "L_dcTime" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2023, 4, 17, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5033), new DateTime(2023, 4, 17, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5039) },
-                    { 2, 1, new DateTime(2023, 4, 16, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5040), new DateTime(2023, 4, 16, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5048) },
-                    { 3, 1, new DateTime(2023, 4, 15, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5048), new DateTime(2023, 4, 15, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5049) },
-                    { 4, 1, new DateTime(2023, 4, 14, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5050), new DateTime(2023, 4, 14, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5051) },
-                    { 5, 1, new DateTime(2023, 4, 13, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5052), new DateTime(2023, 4, 13, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5052) },
-                    { 6, 1, new DateTime(2023, 4, 13, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5053), new DateTime(2023, 4, 13, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5054) },
-                    { 7, 1, new DateTime(2023, 4, 13, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5055), new DateTime(2023, 4, 13, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5055) }
+                    { 1, 1, new DateTime(2023, 4, 17, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2760), new DateTime(2023, 4, 17, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2767) },
+                    { 2, 1, new DateTime(2023, 4, 16, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2768), new DateTime(2023, 4, 16, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2771) },
+                    { 3, 1, new DateTime(2023, 4, 15, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2772), new DateTime(2023, 4, 15, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2772) },
+                    { 4, 1, new DateTime(2023, 4, 14, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2773), new DateTime(2023, 4, 14, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2773) },
+                    { 5, 1, new DateTime(2023, 4, 13, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2774), new DateTime(2023, 4, 13, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2774) },
+                    { 6, 1, new DateTime(2023, 4, 13, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2775), new DateTime(2023, 4, 13, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2775) },
+                    { 7, 1, new DateTime(2023, 4, 13, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2776), new DateTime(2023, 4, 13, 13, 24, 28, 672, DateTimeKind.Local).AddTicks(2776) }
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Accounts_P_id",
+                table: "Accounts",
+                column: "P_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Ads_CaseID",
@@ -499,10 +521,10 @@ namespace final_repo_test.Migrations
                 name: "Orders");
 
             migrationBuilder.DropTable(
-                name: "Products");
+                name: "Accounts");
 
             migrationBuilder.DropTable(
-                name: "Accounts");
+                name: "Products");
         }
     }
 }

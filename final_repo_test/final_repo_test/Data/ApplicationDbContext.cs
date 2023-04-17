@@ -52,23 +52,9 @@ namespace final_repo_test.Data
 
                 b.Property(x=>x.UserPWD)
                     .IsRequired();
-                b.HasData(new Account()
-                {
-                    A_ID = 1,
-                    A_Name = "Test",
-                    UserName = "Test",
-                    UserPWD = "Test",
-                    A_Gender = Gender.男,
-                    Birthday = DateTime.Now,
-                    A_level = 99,
-                    A_Email = "Test@gmail.com",
-                    A_Phone = "0900000000",
-                    A_add = "Test",
-                    A_RegisteredAt = DateTime.Now,
-                    A_NickName = "Test",
-                    A_Coin = 999999,
-                });
+                
                 b.HasKey(x=>x.A_ID);
+                b.HasOne(x => x.Product).WithMany(x => x.Accounts).HasForeignKey(x => x.P_id);
                 b.HasMany(x => x.Reports).WithOne(x => x.Account).HasForeignKey(x=>x.A_ID).HasPrincipalKey(x=>x.A_ID);
                 b.HasMany(x => x.ReportedReports).WithOne(x => x.ReportedAccount).HasForeignKey(x=>x.ReportedA_ID).HasPrincipalKey(x=>x.A_ID);
                 b.HasMany(x => x.DebugLogs).WithOne(x => x.Account).HasForeignKey(x=>x.A_ID).HasPrincipalKey(x=>x.A_ID);
@@ -416,6 +402,7 @@ namespace final_repo_test.Data
                 b.Property(x=>x.P_ProductType);
 
                 b.HasKey(x=>x.P_ID);
+             
                 b.HasMany(x => x.OrderDetails).WithOne(x => x.Product).HasForeignKey(x=>x.P_ID).HasPrincipalKey(x=>x.P_ID);
 
                 b.ToTable("Products");
@@ -468,6 +455,53 @@ namespace final_repo_test.Data
                 b.HasOne(x => x.TargetAccount).WithMany(x => x.TargetSocieties).HasForeignKey(x => x.TargetA_ID).HasPrincipalKey(x => x.A_ID).OnDelete(DeleteBehavior.Restrict);
                 b.ToTable("Societies");
             });
+            modelBuilder.Entity<Product>().HasData(
+                   new Product()
+                   {
+                       P_ID = 1,
+                       P_Name = "反摺袖襯衫",
+                       P_ProductType = ProductType.休閒風格,
+                       P_Price = 699,
+                       P_Image = "1.jpg",
+                       P_Describe = "Regular Fit反摺袖襯衫",
+                       P_Instock = 99,
+                       P_Date = DateTime.Now,
+                       P_Discount = " ",
+                       P_Discontinuted = false,
+
+                   },
+                   new Product()
+                   {
+                       P_ID = 2,
+                       P_Name = "短袖襯衫",
+                       P_ProductType = ProductType.文青風格,
+                       P_Price = 499,
+                       P_Image = "2.jpg",
+                       P_Describe = "Regular Fit棉麻短袖襯衫",
+                       P_Instock = 99,
+                       P_Date = DateTime.Now,
+                       P_Discount = " ",
+                       P_Discontinuted = false,
+
+                   });
+            modelBuilder.Entity<Account>().HasData(new Account()
+            {
+                A_ID = 1,
+                A_Name = "Test",
+                UserName = "Test",
+                UserPWD = "Test",
+                A_Gender = Gender.男,
+                Birthday = DateTime.Now,
+                A_level = 99,
+                A_Email = "Test@gmail.com",
+                A_Phone = "0900000000",
+                A_add = "Test",
+                A_RegisteredAt = DateTime.Now,
+                A_NickName = "Test",
+                A_Coin = 999999,
+                P_id = 1,
+            });
+           
         }
 
         public DbSet<Account> Accounts { get; set; } = default!;
