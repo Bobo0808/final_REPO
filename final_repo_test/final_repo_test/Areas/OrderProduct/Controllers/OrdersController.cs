@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace final_repo_test.Areas.OrderProduct.Controllers
 {
-    [Area(areaName: "OrderProduct")]
+    //[Area(areaName: "Orders")]
     public class OrdersController : Controller
     {
         public readonly ApplicationDbContext _context;

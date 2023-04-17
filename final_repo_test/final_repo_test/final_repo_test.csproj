@@ -11,10 +11,6 @@
     <Folder Include="Areas\AD\Models\" />
     <Folder Include="Areas\Login\Data\" />
     <Folder Include="Areas\Login\Models\" />
-    <Folder Include="Areas\MapEdit\Controllers\" />
-    <Folder Include="Areas\MapEdit\Data\" />
-    <Folder Include="Areas\MapEdit\Models\" />
-    <Folder Include="Areas\MapEdit\Views\" />
     <Folder Include="Data\Enum\LoginStatus\" />
     <Folder Include="wwwroot\css\NewFolder\" />
     <Folder Include="wwwroot\img\Account\" />
