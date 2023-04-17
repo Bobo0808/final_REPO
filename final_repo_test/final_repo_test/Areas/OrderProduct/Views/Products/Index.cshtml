@@ -1,0 +1,94 @@
+﻿@model IEnumerable<final_repo_test.Models.Product>;
+
+@section Styles{
+	<link href="~/css/orderproduct/productindex.min.css" rel="stylesheet" />
+}
+@{
+    ViewData["Title"] = "Product";
+}
+<div class="overflow-auto m-auto container">
+    <h1>Index</h1>
+
+    <p>
+        <a asp-area="OrderProduct" asp-controller="Products" asp-action="Create">Create New</a>
+    </p>
+    <table class="table table-hover ">
+        <thead>
+            <tr>
+                <th>編輯</th>
+                <th>
+                    @Html.DisplayNameFor(model => model.P_Image)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.P_Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.P_ProductType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.P_Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.P_Describe)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.P_Instock)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.P_Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.P_Discount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.P_Discontinuted)
+                </th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-area="OrderProduct" asp-controller="Products" asp-action="Edit" asp-route-id="@item.P_ID">Edit</a> |<br>
+                        <a asp-area="OrderProduct" asp-controller="Products" asp-action="Details" asp-route-id="@item.P_ID">Details</a> |<br>
+                        <a asp-area="OrderProduct" asp-controller="Products" asp-action="Delete" asp-route-id="@item.P_ID">Delete</a>|
+                    </td>
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.PImage)*@
+                        <partial name="_ShowPhotoPartial" model="@item" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.P_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.P_ProductType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.P_Price)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.P_Describe)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.P_Instock)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.P_Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.P_Discount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.P_Discontinuted)
+                    </td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
