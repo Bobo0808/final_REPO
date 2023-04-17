@@ -67,8 +67,8 @@
         const day = [];
         var tmp = @Html.Raw(Json.Serialize(Model));
         console.log(tmp);
-        for(var i=0;i<tmp.x.length;i++){
-            day.push({ x: tmp.x[i], y: tmp.y[i] });
+        for(var i=0;i<tmp.mainx.length;i++){
+            day.push({ x: tmp.mainx[i], y: tmp.mainy[i] });
         }
         
 
