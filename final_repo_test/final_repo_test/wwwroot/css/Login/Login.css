@@ -4,13 +4,13 @@
     font-family: 'poppins', sans-serif;
 }
 
-section {
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     width: 100%;
-    background: gray;
+    /*background: gray;*/
 }
 
 .form-box {
