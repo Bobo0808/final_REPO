@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System.Data;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+using final_repo_test.Data.Enum;
 
 namespace final_repo_test.Data
 {
@@ -51,7 +52,22 @@ namespace final_repo_test.Data
 
                 b.Property(x=>x.UserPWD)
                     .IsRequired();
-
+                b.HasData(new Account()
+                {
+                    A_ID = 1,
+                    A_Name = "Test",
+                    UserName = "Test",
+                    UserPWD = "Test",
+                    A_Gender = Gender.男,
+                    Birthday = DateTime.Now,
+                    A_level = 99,
+                    A_Email = "Test@gmail.com",
+                    A_Phone = "0900000000",
+                    A_add = "Test",
+                    A_RegisteredAt = DateTime.Now,
+                    A_NickName = "Test",
+                    A_Coin = 999999,
+                });
                 b.HasKey(x=>x.A_ID);
                 b.HasMany(x => x.Reports).WithOne(x => x.Account).HasForeignKey(x=>x.A_ID).HasPrincipalKey(x=>x.A_ID);
                 b.HasMany(x => x.ReportedReports).WithOne(x => x.ReportedAccount).HasForeignKey(x=>x.ReportedA_ID).HasPrincipalKey(x=>x.A_ID);
@@ -184,6 +200,55 @@ namespace final_repo_test.Data
 
                 b.HasKey(x => x.L_ID) ;
                 b.HasOne(x => x.Account).WithMany(x => x.LoginStaus).HasForeignKey(x => x.A_ID).HasPrincipalKey(x=>x.A_ID).OnDelete(DeleteBehavior.Restrict);
+                b.HasData(new LoginStaus()
+                {
+                    L_ID = 1,
+                    A_ID = 1,
+                    L_cTime = DateTime.Now,
+                    L_dcTime = DateTime.Now
+                },
+                         new LoginStaus()
+                         {
+                             L_ID = 2,
+                             A_ID = 1,
+                             L_cTime = DateTime.Now.AddDays(-1),
+                             L_dcTime = DateTime.Now.AddDays(-1)
+                         },
+                          new LoginStaus()
+                          {
+                              L_ID = 3,
+                              A_ID = 1,
+                              L_cTime = DateTime.Now.AddDays(-2),
+                              L_dcTime = DateTime.Now.AddDays(-2)
+                          },
+                           new LoginStaus()
+                           {
+                               L_ID = 4,
+                               A_ID = 1,
+                               L_cTime = DateTime.Now.AddDays(-3),
+                               L_dcTime = DateTime.Now.AddDays(-3)
+                           },
+                            new LoginStaus()
+                            {
+                                L_ID = 5,
+                                A_ID = 1,
+                                L_cTime = DateTime.Now.AddDays(-4),
+                                L_dcTime = DateTime.Now.AddDays(-4)
+                            },
+                              new LoginStaus()
+                              {
+                                  L_ID = 6,
+                                  A_ID = 1,
+                                  L_cTime = DateTime.Now.AddDays(-4),
+                                  L_dcTime = DateTime.Now.AddDays(-4)
+                              },
+                                new LoginStaus()
+                                {
+                                    L_ID = 7,
+                                    A_ID = 1,
+                                    L_cTime = DateTime.Now.AddDays(-4),
+                                    L_dcTime = DateTime.Now.AddDays(-4)
+                                });
 
                 b.ToTable("LoginStaus");
             });

@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using final_repo_test.Data;
+using final_repo_test.Interfaces;
+using final_repo_test.ViewModels.LoginStatus;
+using Microsoft.AspNetCore.Mvc;
 
 namespace final_repo_test.Areas.LoginStatus.Controllers
 {
@@ -7,9 +10,15 @@ namespace final_repo_test.Areas.LoginStatus.Controllers
 
     public class LoginStatus_HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly ILoginStatusRepository _loginStatusRepository;
+        public LoginStatus_HomeController(ILoginStatusRepository loginStatusRepository)
         {
-            return View();
+            _loginStatusRepository = loginStatusRepository;
+        }
+        public async Task<IActionResult> Index(string Chart = "Day")
+        {
+            GetDayViewModel data = await _loginStatusRepository.GetDay(Chart);
+            return View(data);
         }
     }
 }

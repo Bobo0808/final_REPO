@@ -76,6 +76,24 @@ namespace final_repo_test.Migrations
                     b.HasKey("A_ID");
 
                     b.ToTable("Accounts", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            A_ID = 1,
+                            A_Coin = 999999,
+                            A_Email = "Test@gmail.com",
+                            A_Gender = 0,
+                            A_Name = "Test",
+                            A_NickName = "Test",
+                            A_Phone = "0900000000",
+                            A_RegisteredAt = new DateTime(2023, 4, 17, 3, 52, 29, 119, DateTimeKind.Local).AddTicks(8527),
+                            A_add = "Test",
+                            A_level = 99,
+                            Birthday = new DateTime(2023, 4, 17, 3, 52, 29, 119, DateTimeKind.Local).AddTicks(8517),
+                            UserName = "Test",
+                            UserPWD = "Test"
+                        });
                 });
 
             modelBuilder.Entity("final_repo_test.Models.Ads", b =>
@@ -247,6 +265,57 @@ namespace final_repo_test.Migrations
                     b.HasIndex("A_ID");
 
                     b.ToTable("LoginStaus", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            L_ID = 1,
+                            A_ID = 1,
+                            L_cTime = new DateTime(2023, 4, 17, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5033),
+                            L_dcTime = new DateTime(2023, 4, 17, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5039)
+                        },
+                        new
+                        {
+                            L_ID = 2,
+                            A_ID = 1,
+                            L_cTime = new DateTime(2023, 4, 16, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5040),
+                            L_dcTime = new DateTime(2023, 4, 16, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5048)
+                        },
+                        new
+                        {
+                            L_ID = 3,
+                            A_ID = 1,
+                            L_cTime = new DateTime(2023, 4, 15, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5048),
+                            L_dcTime = new DateTime(2023, 4, 15, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5049)
+                        },
+                        new
+                        {
+                            L_ID = 4,
+                            A_ID = 1,
+                            L_cTime = new DateTime(2023, 4, 14, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5050),
+                            L_dcTime = new DateTime(2023, 4, 14, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5051)
+                        },
+                        new
+                        {
+                            L_ID = 5,
+                            A_ID = 1,
+                            L_cTime = new DateTime(2023, 4, 13, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5052),
+                            L_dcTime = new DateTime(2023, 4, 13, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5052)
+                        },
+                        new
+                        {
+                            L_ID = 6,
+                            A_ID = 1,
+                            L_cTime = new DateTime(2023, 4, 13, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5053),
+                            L_dcTime = new DateTime(2023, 4, 13, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5054)
+                        },
+                        new
+                        {
+                            L_ID = 7,
+                            A_ID = 1,
+                            L_cTime = new DateTime(2023, 4, 13, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5055),
+                            L_dcTime = new DateTime(2023, 4, 13, 3, 52, 29, 124, DateTimeKind.Local).AddTicks(5055)
+                        });
                 });
 
             modelBuilder.Entity("final_repo_test.Models.Map", b =>
