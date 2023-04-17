@@ -13,8 +13,8 @@ namespace final_repo_test.Models
         [ForeignKey("Product")]
         public int P_ID { get; set; } = default!;
         public Product Product { get; set; } = default!;
-        public Decimal Od_UnitPrice { get; set; } = default!;
-        public Decimal Od_Sum { get; set; } = default!;
+        public int Od_UnitPrice { get; set; } = default!;
+        public int Od_Sum { get; set; } = default!;
         public int Od_Quantity { get; set; } = default!;
 
     }

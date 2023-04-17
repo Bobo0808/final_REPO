@@ -89,11 +89,62 @@ namespace final_repo_test.Data
 
                 b.Property(x=>x.PartnerID);
 
+                b.Property(x => x.Ad_PaymentDueDate);
+                b.Property(x => x.Ad_TimeOfPayment);
+                b.Property(x => x.Ad_ActiveStatus);
+                b.Property(x => x.OS_ID);
+                b.Property(x => x.AD_FinalPaymentAmount);
+
                 b.HasKey(x=>x.Ad_ID);
+                b.HasOne(x => x.Ads_OrderStatus).WithMany(x => x.Ads).HasForeignKey(x => x.OS_ID);
                 b.HasOne(x => x.CaseTable).WithMany(x => x.Ads).HasForeignKey(x => x.CaseID).HasPrincipalKey(x=>x.Case_ID).OnDelete(DeleteBehavior.Restrict);
                 b.HasOne(x => x.Partner).WithMany(x => x.Ads).HasForeignKey(x => x.PartnerID).HasPrincipalKey(x=>x.P_ID).OnDelete(DeleteBehavior.Restrict);
 
                 b.ToTable("Ads");
+            });
+            modelBuilder.Entity<Ads_OrderStatus>(b =>
+            {
+                b.Property(x => x.OS_ID).ValueGeneratedOnAdd();
+                b.Property(x => x.OS_Name);
+
+                b.Property(x => x.OS_FullfillmentRate);
+                b.Property(x => x.OS_PaymentMultiplier);
+                b.HasKey(x => x.OS_ID);
+            });
+
+            modelBuilder.Entity<CardType>(b =>
+            {
+                b.Property(x => x.CT_ID).ValueGeneratedOnAdd();
+                b.Property(x => x.CT_Name);
+
+                b.HasKey(x => x.CT_ID);
+            });
+
+            modelBuilder.Entity<Card>(b =>
+            {
+                b.Property(x => x.CA_ID).ValueGeneratedOnAdd();
+                b.Property(x => x.CA_Name);
+                b.Property(x => x.CT_ID);
+                b.Property(x => x.CA_Price);
+                b.Property(x => x.CA_Image);
+                b.Property(x => x.CA_Describe);
+                b.Property(x => x.CA_Date);
+                b.Property(x => x.CA_Discontinuted);
+
+                b.HasKey(x => x.CT_ID);
+                b.HasOne(x=>x.CardType).WithMany(x=>x.Cards).HasForeignKey(x=>x.CT_ID);
+            });
+
+            modelBuilder.Entity<CardOrder>(b =>
+            {
+                b.Property(x => x.CO_ID).ValueGeneratedOnAdd();
+                b.Property(x => x.A_ID);
+                b.Property(x => x.CA_Price);
+                b.Property(x => x.CO_Quantity);
+
+                b.HasKey(x => x.CO_ID);
+                b.HasOne(x => x.Account).WithMany(x => x.CardOrders).HasForeignKey(x => x.A_ID);
+                b.HasOne(x => x.Card).WithMany(x => x.CardOrders).HasForeignKey(x => x.CA_Price);
             });
 
             modelBuilder.Entity<CaseTable>(b =>
@@ -368,7 +419,7 @@ namespace final_repo_test.Data
 
                 b.Property(x=>x.Phone)
                     .IsRequired();
-
+                b.Property(x => x.P_Note);
                 b.HasKey(x=>x.P_ID);
                 b.HasMany(x => x.Ads).WithOne(x => x.Partner).HasForeignKey(x=>x.PartnerID).HasPrincipalKey(x=>x.P_ID);
                 b.ToTable("Partners");
@@ -466,7 +517,7 @@ namespace final_repo_test.Data
                        P_Describe = "Regular Fit反摺袖襯衫",
                        P_Instock = 99,
                        P_Date = DateTime.Now,
-                       P_Discount = " ",
+                       P_Discount = 0,
                        P_Discontinuted = false,
 
                    },
@@ -480,7 +531,7 @@ namespace final_repo_test.Data
                        P_Describe = "Regular Fit棉麻短袖襯衫",
                        P_Instock = 99,
                        P_Date = DateTime.Now,
-                       P_Discount = " ",
+                       P_Discount = 0,
                        P_Discontinuted = false,
 
                    });
