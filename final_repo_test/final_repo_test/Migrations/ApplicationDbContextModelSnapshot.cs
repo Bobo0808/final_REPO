@@ -92,10 +92,17 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
+<<<<<<< HEAD
+                            A_RegisteredAt = new DateTime(2023, 4, 18, 9, 24, 48, 947, DateTimeKind.Local).AddTicks(1192),
+                            A_add = "Test",
+                            A_level = 99,
+                            Birthday = new DateTime(2023, 4, 18, 9, 24, 48, 947, DateTimeKind.Local).AddTicks(1190),
+=======
                             A_RegisteredAt = new DateTime(2023, 4, 18, 16, 7, 39, 751, DateTimeKind.Local).AddTicks(5453),
                             A_add = "Test",
                             A_level = 99,
                             Birthday = new DateTime(2023, 4, 18, 16, 7, 39, 751, DateTimeKind.Local).AddTicks(5452),
+>>>>>>> main
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
@@ -412,50 +419,85 @@ namespace final_repo_test.Migrations
                         {
                             L_ID = 1,
                             A_ID = 1,
+<<<<<<< HEAD
+                            L_cTime = new DateTime(2023, 4, 18, 9, 24, 48, 946, DateTimeKind.Local).AddTicks(2226),
+                            L_dcTime = new DateTime(2023, 4, 18, 10, 24, 48, 946, DateTimeKind.Local).AddTicks(2234)
+=======
                             L_cTime = new DateTime(2023, 4, 18, 16, 7, 39, 750, DateTimeKind.Local).AddTicks(6475),
                             L_dcTime = new DateTime(2023, 4, 18, 17, 7, 39, 750, DateTimeKind.Local).AddTicks(6484)
+>>>>>>> main
                         },
                         new
                         {
                             L_ID = 2,
                             A_ID = 1,
+<<<<<<< HEAD
+                            L_cTime = new DateTime(2023, 4, 17, 7, 24, 48, 946, DateTimeKind.Local).AddTicks(2237),
+                            L_dcTime = new DateTime(2023, 4, 17, 8, 24, 48, 946, DateTimeKind.Local).AddTicks(2238)
+=======
                             L_cTime = new DateTime(2023, 4, 17, 14, 7, 39, 750, DateTimeKind.Local).AddTicks(6490),
                             L_dcTime = new DateTime(2023, 4, 17, 15, 7, 39, 750, DateTimeKind.Local).AddTicks(6490)
+>>>>>>> main
                         },
                         new
                         {
                             L_ID = 3,
                             A_ID = 1,
+<<<<<<< HEAD
+                            L_cTime = new DateTime(2023, 4, 16, 6, 24, 48, 946, DateTimeKind.Local).AddTicks(2239),
+                            L_dcTime = new DateTime(2023, 4, 16, 7, 24, 48, 946, DateTimeKind.Local).AddTicks(2239)
+=======
                             L_cTime = new DateTime(2023, 4, 16, 13, 7, 39, 750, DateTimeKind.Local).AddTicks(6491),
                             L_dcTime = new DateTime(2023, 4, 16, 14, 7, 39, 750, DateTimeKind.Local).AddTicks(6492)
+>>>>>>> main
                         },
                         new
                         {
                             L_ID = 4,
                             A_ID = 1,
+<<<<<<< HEAD
+                            L_cTime = new DateTime(2023, 4, 15, 5, 24, 48, 946, DateTimeKind.Local).AddTicks(2240),
+                            L_dcTime = new DateTime(2023, 4, 15, 6, 24, 48, 946, DateTimeKind.Local).AddTicks(2241)
+=======
                             L_cTime = new DateTime(2023, 4, 15, 12, 7, 39, 750, DateTimeKind.Local).AddTicks(6493),
                             L_dcTime = new DateTime(2023, 4, 15, 13, 7, 39, 750, DateTimeKind.Local).AddTicks(6514)
+>>>>>>> main
                         },
                         new
                         {
                             L_ID = 5,
                             A_ID = 1,
+<<<<<<< HEAD
+                            L_cTime = new DateTime(2023, 4, 14, 4, 24, 48, 946, DateTimeKind.Local).AddTicks(2241),
+                            L_dcTime = new DateTime(2023, 4, 14, 5, 24, 48, 946, DateTimeKind.Local).AddTicks(2242)
+=======
                             L_cTime = new DateTime(2023, 4, 14, 11, 7, 39, 750, DateTimeKind.Local).AddTicks(6515),
                             L_dcTime = new DateTime(2023, 4, 14, 12, 7, 39, 750, DateTimeKind.Local).AddTicks(6516)
+>>>>>>> main
                         },
                         new
                         {
                             L_ID = 6,
                             A_ID = 1,
+<<<<<<< HEAD
+                            L_cTime = new DateTime(2023, 4, 14, 3, 24, 48, 946, DateTimeKind.Local).AddTicks(2243),
+                            L_dcTime = new DateTime(2023, 4, 14, 4, 24, 48, 946, DateTimeKind.Local).AddTicks(2243)
+=======
                             L_cTime = new DateTime(2023, 4, 14, 10, 7, 39, 750, DateTimeKind.Local).AddTicks(6516),
                             L_dcTime = new DateTime(2023, 4, 14, 11, 7, 39, 750, DateTimeKind.Local).AddTicks(6517)
+>>>>>>> main
                         },
                         new
                         {
                             L_ID = 7,
                             A_ID = 1,
+<<<<<<< HEAD
+                            L_cTime = new DateTime(2023, 4, 14, 2, 24, 48, 946, DateTimeKind.Local).AddTicks(2244),
+                            L_dcTime = new DateTime(2023, 4, 14, 3, 24, 48, 946, DateTimeKind.Local).AddTicks(2244)
+=======
                             L_cTime = new DateTime(2023, 4, 14, 9, 7, 39, 750, DateTimeKind.Local).AddTicks(6518),
                             L_dcTime = new DateTime(2023, 4, 14, 10, 7, 39, 750, DateTimeKind.Local).AddTicks(6518)
+>>>>>>> main
                         });
                 });
 
@@ -698,7 +740,11 @@ namespace final_repo_test.Migrations
                         new
                         {
                             P_ID = 1,
+<<<<<<< HEAD
+                            P_Date = new DateTime(2023, 4, 18, 9, 24, 48, 947, DateTimeKind.Local).AddTicks(1172),
+=======
                             P_Date = new DateTime(2023, 4, 18, 16, 7, 39, 751, DateTimeKind.Local).AddTicks(5435),
+>>>>>>> main
                             P_Describe = "Regular Fit反摺袖襯衫",
                             P_Discontinuted = false,
                             P_Discount = 0,
@@ -711,7 +757,11 @@ namespace final_repo_test.Migrations
                         new
                         {
                             P_ID = 2,
+<<<<<<< HEAD
+                            P_Date = new DateTime(2023, 4, 18, 9, 24, 48, 947, DateTimeKind.Local).AddTicks(1176),
+=======
                             P_Date = new DateTime(2023, 4, 18, 16, 7, 39, 751, DateTimeKind.Local).AddTicks(5439),
+>>>>>>> main
                             P_Describe = "Regular Fit棉麻短袖襯衫",
                             P_Discontinuted = false,
                             P_Discount = 0,
