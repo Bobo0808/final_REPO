@@ -116,7 +116,10 @@ namespace final_repo_test.Data
             {
                 b.Property(x => x.CT_ID).ValueGeneratedOnAdd();
                 b.Property(x => x.CT_Name);
-
+                b.HasData(new CardType() { CT_ID = 1, CT_Name = "綠界" },new CardType()
+                {
+                    CT_ID = 2,CT_Name= "LinePay"
+                });
                 b.HasKey(x => x.CT_ID);
             });
 
