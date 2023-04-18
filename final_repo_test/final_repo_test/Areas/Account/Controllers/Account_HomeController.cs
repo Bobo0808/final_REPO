@@ -7,7 +7,7 @@ namespace final_repo_test.Areas.Account.Controllers
     {
         public IActionResult Index()
         {
-            return View("~/Areas/Account/Views/Account_Home/Index.cshtml");
+            return View();
         }
     }
 }
