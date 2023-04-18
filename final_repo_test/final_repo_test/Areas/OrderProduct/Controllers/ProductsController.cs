@@ -46,7 +46,7 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
                 return NotFound();
             }
 
-            return View("~/Areas/OrderProduct/Views/Products/Details.cshtml",product);
+            return View("~/Areas/OrderProduct/Views/Products/Details.cshtml", product);
         }
         // GET: Products/Create
         public IActionResult Create()
@@ -61,19 +61,23 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("P_ID,P_Name,P_ProductType,P_Price,P_Image,P_Describe,P_Instock,P_Date,P_Discount,P_Discontinuted")] Product product, IFormFile file1)
         {
-            if (ModelState.IsValid)
+            //if (ModelState.IsValid)
+            //{
+            if (file1 != null)
             {
-                if (file1 != null)
-                {
-                    string PictureName = UploadFile(file1);
-                    product.P_Image = PictureName;
-                }
-                //SetPicture(product);
-                _context.Add(product);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                string PictureName = UploadFile(file1);
+                product.P_Image = PictureName;
             }
-            return View("~/Areas/OrderProduct/Views/Products/Index.cshtml", product);
+            else
+            {
+                product.P_Image = "No_Image_Available.jpg";
+            }
+            //SetPicture(product);
+            _context.Add(product);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+            //}
+            //return View("~/Areas/OrderProduct/Views/Products/Index.cshtml", product);
         }
         // GET: Products/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -103,33 +107,40 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
             {
                 return NotFound();
             }
-
-            if (ModelState.IsValid)
+            try
             {
-                try
+
+                if (file1 != null)
                 {
-                    if (file1 != null)
-                    {
-                        string PictureName = UploadFile(file1);
-                        product.P_Image = PictureName;
-                    }
+                    string PictureName = UploadFile(file1);
+                    product.P_Image = PictureName;
                     _context.Update(product);
-                    await _context.SaveChangesAsync();
                 }
-                catch (DbUpdateConcurrencyException)
+                else
                 {
-                    if (!ProductExists(product.P_ID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    var imagename = await _context.Products.Where(m => m.P_ID == id).Select(p => p.P_Image).FirstOrDefaultAsync();
+                    product.P_Image = imagename;
+                    _context.Update(product);
                 }
-                return RedirectToAction(nameof(Index));
+
+
+                await _context.SaveChangesAsync();
+
             }
-            return View("~/Areas/OrderProduct/Views/Products/Index.cshtml", product);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!ProductExists(product.P_ID))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return RedirectToAction(nameof(Index));
+
+            //return View("~/Areas/OrderProduct/Views/Products/Index.cshtml", product);
         }
 
         // GET: Products/Delete/5
@@ -184,7 +195,7 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
             //IFormFile.Length 檔案大小
 
             //檔案儲存路徑
-            string strFilePath = _env.ContentRootPath + @"wwwroot\images\";
+            string strFilePath = _env.ContentRootPath + @"wwwroot\img\producttest";
 
             //上傳檔案內容長度>0，表示有檔案上傳
             //if(file1.Length > 0)

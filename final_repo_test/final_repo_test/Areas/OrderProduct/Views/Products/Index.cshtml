@@ -1,16 +1,16 @@
 ﻿@model IEnumerable<final_repo_test.Models.Product>;
 
 @section Styles{
-	<link href="~/css/orderproduct/productindex.min.css" rel="stylesheet" />
+    <link href="~/css/orderproduct/productindex.min.css" rel="stylesheet" />
 }
 @{
     ViewData["Title"] = "Product";
 }
 <div class="overflow-auto m-auto container">
-    <h1>Index</h1>
+    <h1>商品</h1>
 
     <p>
-        <a asp-area="OrderProduct" asp-controller="Products" asp-action="Create">Create New</a>
+        <a class="btn btn-secondary" asp-area="OrderProduct" asp-controller="Products" asp-action="Create">Create New</a>
     </p>
     <table class="table table-hover ">
         <thead>
@@ -66,23 +66,23 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.P_ProductType)
                     </td>
-                    <td>
+                    <td class="tdcenter">
                         @Html.DisplayFor(modelItem => item.P_Price)
                     </td>
 
                     <td>
                         @Html.DisplayFor(modelItem => item.P_Describe)
                     </td>
-                    <td>
+                    <td class="tdcenter">
                         @Html.DisplayFor(modelItem => item.P_Instock)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.P_Date)
                     </td>
-                    <td>
+                    <td class="tdcenter">
                         @Html.DisplayFor(modelItem => item.P_Discount)
                     </td>
-                    <td>
+                    <td class="tdcenter">
                         @Html.DisplayFor(modelItem => item.P_Discontinuted)
                     </td>
 

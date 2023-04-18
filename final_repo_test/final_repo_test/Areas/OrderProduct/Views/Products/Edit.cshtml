@@ -8,56 +8,15 @@
 <div class="container box">
 
 
-    <h1 class="m-0">Edit</h1>
+    <h1 class="m-0">商品編輯</h1>
 
     <h4 class="m-0">Product</h4>
     <hr />
     <div class="row">
-        <div class="col-md-4">
-            <form asp-action="Edit" enctype="multipart/form-data">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" asp-for="P_ID" />
-                <div class="form-group">
-                    <label asp-for="P_Name" class="control-label"></label>
-                    <input asp-for="P_Name" class="form-control" />
-                    <span asp-validation-for="P_Name" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="P_ProductType" class="control-label"></label>
-                    <input asp-for="P_ProductType" class="form-control" />
-                    <span asp-validation-for="P_ProductType" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="P_Price" class="control-label"></label>
-                    <input asp-for="P_Price" class="form-control" />
-                    <span asp-validation-for="P_Price" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="P_Describe" class="control-label"></label>
-                    <input asp-for="P_Describe" class="form-control" />
-                    <span asp-validation-for="P_Describe" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="P_Instock" class="control-label"></label>
-                    <input asp-for="P_Instock" class="form-control" />
-                    <span asp-validation-for="P_Instock" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="P_Date" class="control-label"></label>
-                    <input asp-for="P_Date" class="form-control" />
-                    <span asp-validation-for="P_Date" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="P_Discount" class="control-label"></label>
-                    <input asp-for="P_Discount" class="form-control" />
-                    <span asp-validation-for="P_Discount" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="P_Discontinuted" class="control-label"></label>
-                    <input asp-for="P_Discontinuted" class="form-control" />
-                    <span asp-validation-for="P_Discontinuted" class="text-danger"></span>
-                </div>
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="P_ID" />
+            <div class="col-md-7 col-sm-3 test">
                 <div class="form-group">
                     <label asp-for="P_Image" class="control-label"></label>
                     <partial name="_ShowPhotoPartial" />
@@ -65,15 +24,60 @@
                     @*<input asp-for="PImage" class="form-control" />
                     <span asp-validation-for="PImage" class="text-danger"></span>*@
                 </div>
-                <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+            <div class="col-md-5 col-sm-3  bg-secondary radius">
+                <div class="form-group mx-2">
+                    <label asp-for="P_Name" class="control-label"></label>
+                    <input asp-for="P_Name" class="form-control" />
+                    <span asp-validation-for="P_Name" class="text-danger"></span>
                 </div>
-            </form>
-        </div>
+                <div class="form-group mx-2">
+                    <label asp-for="P_ProductType" class="control-label"></label>
+                    <input asp-for="P_ProductType" class="form-control" />
+                    <span asp-validation-for="P_ProductType" class="text-danger"></span>
+                </div>
+                <div class="form-group mx-2">
+                    <label asp-for="P_Price" class="control-label"></label>
+                    <input asp-for="P_Price" class="form-control" />
+                    <span asp-validation-for="P_Price" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mx-2">
+                    <label asp-for="P_Describe" class="control-label"></label>
+                    <input asp-for="P_Describe" class="form-control" />
+                    <span asp-validation-for="P_Describe" class="text-danger"></span>
+                </div>
+                <div class="form-group mx-2">
+                    <label asp-for="P_Instock" class="control-label"></label>
+                    <input asp-for="P_Instock" class="form-control" />
+                    <span asp-validation-for="P_Instock" class="text-danger"></span>
+                </div>
+                <div class="form-group mx-2">
+                    <label asp-for="P_Date" class="control-label"></label>
+                    <input asp-for="P_Date" class="form-control" />
+                    <span asp-validation-for="P_Date" class="text-danger"></span>
+                </div>
+                <div class="form-group mx-2">
+                    <label asp-for="P_Discount" class="control-label"></label>
+                    <input asp-for="P_Discount" class="form-control" />
+                    <span asp-validation-for="P_Discount" class="text-danger"></span>
+                </div>
+                <div class="form-group mx-2 mb-3">
+                    <label asp-for="P_Discontinuted" class="control-label"></label><br>
+                    <input type="checkbox" asp-for="P_Discontinuted" class="form-check-input" />
+                    <span asp-validation-for="P_Discontinuted" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="form-group my-1">
+                <input type="submit" value="Save" class="btn btn-secondary" />
+            </div>
+        </form>
     </div>
 
     <div>
-        <a asp-action="Index">Back to List</a>
+        <a class="btn btn-secondary" asp-action="Index">Back to List</a>
     </div>
 </div>
 @section Script {

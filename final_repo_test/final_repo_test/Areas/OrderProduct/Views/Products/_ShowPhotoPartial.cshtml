@@ -2,12 +2,12 @@
 
 @if (Model.P_Image != null)
 {
-    <img class="img-fluid img-thumbnail" src="@Url.Content($"~/img/producttest/{Model.P_Image}")"
+    <img class="img-fluid" src="@Url.Content($"~/img/producttest/{Model.P_Image}")"
          title="@Html.DisplayFor(model=>model.P_Name)" />
 }
 else
 {
-    <img class="img-fluid img-thumbnail" src="@Url.Content("~/img/producttest/No_Image_Available.jpg")"
+    <img class="img-fluid" src="@Url.Content("~/img/producttest/No_Image_Available.jpg")"
          title="尚無圖片" />
 
 }

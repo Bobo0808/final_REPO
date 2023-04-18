@@ -28,5 +28,11 @@
     "inputFiles": [
       "wwwroot/css/OrderProduct/Edit.css"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/css/OrderProduct/Delete.min.css",
+    "inputFiles": [
+      "wwwroot/css/OrderProduct/Delete.css"
+    ]
   }
 ]

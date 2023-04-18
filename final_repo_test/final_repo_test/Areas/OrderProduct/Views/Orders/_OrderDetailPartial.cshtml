@@ -1,5 +1,67 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Tuple<Order, List<OrderDetail>, List<Product>>
+
 @{
+    ViewData["Title"] = "Order Detail";
 }
+
+
+
+<div class="container mt-4 box">
+    <h4>Order Details</h4>
+    <table class="table radius">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="order-detail-list">
+
+            @foreach (var odetails in Model.Item2)
+            {
+                <tr>
+                    <td>
+                        <select class="form-control product-list" name="@Html.NameFor(model => odetails.P_ID)" required>
+                            @foreach (var product in Model.Item3)
+                            {
+                                var selected = (odetails.P_ID == product.P_ID) ? "selected" : "";
+                                <option value="@product.P_ID" selected="@selected">@product.P_Name</option>
+                            }
+                        </select>
+                    </td>
+                    <td>
+                        <input id="quantity" type="number" class="form-control quantity" name="quantity" min="1" value="@odetails.Od_Quantity" required />
+                    </td>
+                    <td>
+                        <span class="form-control price">@odetails.Od_UnitPrice</span>
+                        @*<input type="number" class="form-control price" name="price" step="0.01" min="0" value="@odetails.Od_UnitPrice" required />*@
+                    </td>
+                    <td>
+                        <span class="total-price">@odetails.Od_Quantity * @odetails.Od_UnitPrice</span>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger delete-order-detail" data-order-detail-id="@odetails.Od_ID">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3"></td>
+                <td>
+                    <strong>Total:</strong>
+                    <span id="total-price">@Model.Item2.Sum(od => od.Od_Quantity * od.Od_UnitPrice)</span>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <button type="button" class="btn btn-primary" id="add-order-detail">Add Order Detail</button>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
