@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace final_repo_test.Migrations
 {
-    public partial class _20230417 : Migration
+    public partial class m1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -468,32 +468,40 @@ namespace final_repo_test.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Products",
-                columns: new[] { "P_ID", "P_Date", "P_Describe", "P_Discontinuted", "P_Discount", "P_Image", "P_Instock", "P_Name", "P_Price", "P_ProductType" },
-                values: new object[] { 1, new DateTime(2023, 4, 17, 17, 35, 4, 201, DateTimeKind.Local).AddTicks(913), "Regular Fit反摺袖襯衫", false, 0, "1.jpg", 99, "反摺袖襯衫", 699, 1 });
+                table: "CardType",
+                columns: new[] { "CT_ID", "CT_Name" },
+                values: new object[,]
+                {
+                    { 1, "綠界" },
+                    { 2, "LinePay" }
+                });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "P_ID", "P_Date", "P_Describe", "P_Discontinuted", "P_Discount", "P_Image", "P_Instock", "P_Name", "P_Price", "P_ProductType" },
-                values: new object[] { 2, new DateTime(2023, 4, 17, 17, 35, 4, 201, DateTimeKind.Local).AddTicks(917), "Regular Fit棉麻短袖襯衫", false, 0, "2.jpg", 99, "短袖襯衫", 499, 0 });
+                values: new object[,]
+                {
+                    { 1, new DateTime(2023, 4, 18, 16, 7, 39, 751, DateTimeKind.Local).AddTicks(5435), "Regular Fit反摺袖襯衫", false, 0, "1.jpg", 99, "反摺袖襯衫", 699, 1 },
+                    { 2, new DateTime(2023, 4, 18, 16, 7, 39, 751, DateTimeKind.Local).AddTicks(5439), "Regular Fit棉麻短袖襯衫", false, 0, "2.jpg", 99, "短袖襯衫", 499, 0 }
+                });
 
             migrationBuilder.InsertData(
                 table: "Accounts",
                 columns: new[] { "A_ID", "A_Coin", "A_Email", "A_Gender", "A_Name", "A_NickName", "A_Phone", "A_RegisteredAt", "A_add", "A_level", "Birthday", "P_id", "UserName", "UserPWD" },
-                values: new object[] { 1, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 4, 17, 17, 35, 4, 201, DateTimeKind.Local).AddTicks(933), "Test", 99, new DateTime(2023, 4, 17, 17, 35, 4, 201, DateTimeKind.Local).AddTicks(932), 1, "Test", "Test" });
+                values: new object[] { 1, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 4, 18, 16, 7, 39, 751, DateTimeKind.Local).AddTicks(5453), "Test", 99, new DateTime(2023, 4, 18, 16, 7, 39, 751, DateTimeKind.Local).AddTicks(5452), 1, "Test", "Test" });
 
             migrationBuilder.InsertData(
                 table: "LoginStaus",
                 columns: new[] { "L_ID", "A_ID", "L_cTime", "L_dcTime" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2023, 4, 17, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1943), new DateTime(2023, 4, 17, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1950) },
-                    { 2, 1, new DateTime(2023, 4, 16, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1951), new DateTime(2023, 4, 16, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1955) },
-                    { 3, 1, new DateTime(2023, 4, 15, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1956), new DateTime(2023, 4, 15, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1957) },
-                    { 4, 1, new DateTime(2023, 4, 14, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1957), new DateTime(2023, 4, 14, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1957) },
-                    { 5, 1, new DateTime(2023, 4, 13, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1958), new DateTime(2023, 4, 13, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1958) },
-                    { 6, 1, new DateTime(2023, 4, 13, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1959), new DateTime(2023, 4, 13, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1959) },
-                    { 7, 1, new DateTime(2023, 4, 13, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1960), new DateTime(2023, 4, 13, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1960) }
+                    { 1, 1, new DateTime(2023, 4, 18, 16, 7, 39, 750, DateTimeKind.Local).AddTicks(6475), new DateTime(2023, 4, 18, 17, 7, 39, 750, DateTimeKind.Local).AddTicks(6484) },
+                    { 2, 1, new DateTime(2023, 4, 17, 14, 7, 39, 750, DateTimeKind.Local).AddTicks(6490), new DateTime(2023, 4, 17, 15, 7, 39, 750, DateTimeKind.Local).AddTicks(6490) },
+                    { 3, 1, new DateTime(2023, 4, 16, 13, 7, 39, 750, DateTimeKind.Local).AddTicks(6491), new DateTime(2023, 4, 16, 14, 7, 39, 750, DateTimeKind.Local).AddTicks(6492) },
+                    { 4, 1, new DateTime(2023, 4, 15, 12, 7, 39, 750, DateTimeKind.Local).AddTicks(6493), new DateTime(2023, 4, 15, 13, 7, 39, 750, DateTimeKind.Local).AddTicks(6514) },
+                    { 5, 1, new DateTime(2023, 4, 14, 11, 7, 39, 750, DateTimeKind.Local).AddTicks(6515), new DateTime(2023, 4, 14, 12, 7, 39, 750, DateTimeKind.Local).AddTicks(6516) },
+                    { 6, 1, new DateTime(2023, 4, 14, 10, 7, 39, 750, DateTimeKind.Local).AddTicks(6516), new DateTime(2023, 4, 14, 11, 7, 39, 750, DateTimeKind.Local).AddTicks(6517) },
+                    { 7, 1, new DateTime(2023, 4, 14, 9, 7, 39, 750, DateTimeKind.Local).AddTicks(6518), new DateTime(2023, 4, 14, 10, 7, 39, 750, DateTimeKind.Local).AddTicks(6518) }
                 });
 
             migrationBuilder.CreateIndex(
