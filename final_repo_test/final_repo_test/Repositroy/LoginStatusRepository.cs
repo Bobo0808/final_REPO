@@ -50,11 +50,10 @@ namespace final_repo_test.Repositroy
                 case "Day":
                     DateTime tempDay = DateTime.Now.AddDays(-6);
                     var list = await _context.LoginStaus.Where(s => s.L_cTime > tempDay).ToListAsync();
-                    result.Average = list.Sum(x => x.L_dcTime.Second - x.L_cTime.Second)/list.Count;
-                    
+                    result.Average = (int)Math.Round(list.Sum(x => (x.L_dcTime.Subtract(x.L_cTime).TotalHours)) / list.Count);
+                    result.UserCount = list.GroupBy(x => x.A_ID).Count();
                     for(int i = -6; i <= 0; i++)
                     {
-                        Console.WriteLine(DateTime.Now.AddDays(i));
                         result.Mainx.Add(DateTime.Now.AddDays(i));
                         result.Mainy.Add((await _context.LoginStaus.Where(s => s.L_cTime.Day == DateTime.Now.AddDays(i).Day).ToListAsync()).Count);
                     }
@@ -73,7 +72,28 @@ namespace final_repo_test.Repositroy
                     }
                     break;
                 case "Week":
-                    DateTime tempWeek = DateTime.Now.AddDays(-49);
+                    DateTime tempWeek = DateTime.Now.AddDays(-48);
+                    var listWeek = await _context.LoginStaus.Where(s => s.L_cTime > tempWeek).ToListAsync();
+                    result.Average = (int)Math.Round(listWeek.Sum(x => (x.L_dcTime.Subtract(x.L_cTime).TotalHours)) / listWeek.Count);
+                    result.UserCount = listWeek.GroupBy(x => x.A_ID).Count();
+                    for (int i = -6; i <= 0; i++)
+                    {
+                        result.Mainx.Add(DateTime.Now.AddDays(i));
+                        result.Mainy.Add((await _context.LoginStaus.Where(s => s.L_cTime.Day == DateTime.Now.AddDays(i).Day).ToListAsync()).Count);
+                    }
+                    int jtemp = 1;
+                    for (int i = 0; i < result.Headx.Count; i++)
+                    {
+                        if (jtemp < result.Headx.Count)
+                        {
+                            result.Heady.Add((await _context.LoginStaus.Where(s => s.L_cTime.TimeOfDay >= result.Headx[i] && s.L_cTime.TimeOfDay <= result.Headx[jtemp]).ToListAsync()).Count);
+                        }
+                        else
+                        {
+                            result.Heady.Add((await _context.LoginStaus.Where(s => s.L_cTime.TimeOfDay >= result.Headx[i]).ToListAsync()).Count);
+                        }
+                        jtemp++;
+                    }
                     break;
                 case "Month":
                     DateTime tempMonth = DateTime.Now.AddMonths(-7);
