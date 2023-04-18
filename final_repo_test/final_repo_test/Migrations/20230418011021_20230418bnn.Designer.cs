@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using final_repo_test.Data;
 
@@ -11,9 +12,10 @@ using final_repo_test.Data;
 namespace final_repo_test.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230418011021_20230418bnn")]
+    partial class _20230418bnn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -92,17 +94,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-<<<<<<< HEAD
-                            A_RegisteredAt = new DateTime(2023, 4, 17, 17, 35, 4, 201, DateTimeKind.Local).AddTicks(933),
-                            A_add = "Test",
-                            A_level = 99,
-                            Birthday = new DateTime(2023, 4, 17, 17, 35, 4, 201, DateTimeKind.Local).AddTicks(932),
-=======
                             A_RegisteredAt = new DateTime(2023, 4, 18, 9, 10, 21, 299, DateTimeKind.Local).AddTicks(5481),
                             A_add = "Test",
                             A_level = 99,
                             Birthday = new DateTime(2023, 4, 18, 9, 10, 21, 299, DateTimeKind.Local).AddTicks(5480),
->>>>>>> refs/remotes/origin/bnn
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
@@ -274,8 +269,6 @@ namespace final_repo_test.Migrations
                     b.HasKey("CT_ID");
 
                     b.ToTable("CardType");
-<<<<<<< HEAD
-=======
 
                     b.HasData(
                         new
@@ -288,7 +281,6 @@ namespace final_repo_test.Migrations
                             CT_ID = 2,
                             CT_Name = "LinePay"
                         });
->>>>>>> refs/remotes/origin/bnn
                 });
 
             modelBuilder.Entity("final_repo_test.Models.CaseTable", b =>
@@ -422,85 +414,50 @@ namespace final_repo_test.Migrations
                         {
                             L_ID = 1,
                             A_ID = 1,
-<<<<<<< HEAD
-                            L_cTime = new DateTime(2023, 4, 17, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1943),
-                            L_dcTime = new DateTime(2023, 4, 17, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1950)
-=======
                             L_cTime = new DateTime(2023, 4, 18, 9, 10, 21, 298, DateTimeKind.Local).AddTicks(6978),
                             L_dcTime = new DateTime(2023, 4, 18, 10, 10, 21, 298, DateTimeKind.Local).AddTicks(6986)
->>>>>>> refs/remotes/origin/bnn
                         },
                         new
                         {
                             L_ID = 2,
                             A_ID = 1,
-<<<<<<< HEAD
-                            L_cTime = new DateTime(2023, 4, 16, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1951),
-                            L_dcTime = new DateTime(2023, 4, 16, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1955)
-=======
                             L_cTime = new DateTime(2023, 4, 17, 7, 10, 21, 298, DateTimeKind.Local).AddTicks(6994),
                             L_dcTime = new DateTime(2023, 4, 17, 8, 10, 21, 298, DateTimeKind.Local).AddTicks(6995)
->>>>>>> refs/remotes/origin/bnn
                         },
                         new
                         {
                             L_ID = 3,
                             A_ID = 1,
-<<<<<<< HEAD
-                            L_cTime = new DateTime(2023, 4, 15, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1956),
-                            L_dcTime = new DateTime(2023, 4, 15, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1957)
-=======
                             L_cTime = new DateTime(2023, 4, 16, 6, 10, 21, 298, DateTimeKind.Local).AddTicks(6995),
                             L_dcTime = new DateTime(2023, 4, 16, 7, 10, 21, 298, DateTimeKind.Local).AddTicks(6996)
->>>>>>> refs/remotes/origin/bnn
                         },
                         new
                         {
                             L_ID = 4,
                             A_ID = 1,
-<<<<<<< HEAD
-                            L_cTime = new DateTime(2023, 4, 14, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1957),
-                            L_dcTime = new DateTime(2023, 4, 14, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1957)
-=======
                             L_cTime = new DateTime(2023, 4, 15, 5, 10, 21, 298, DateTimeKind.Local).AddTicks(6996),
                             L_dcTime = new DateTime(2023, 4, 15, 6, 10, 21, 298, DateTimeKind.Local).AddTicks(6997)
->>>>>>> refs/remotes/origin/bnn
                         },
                         new
                         {
                             L_ID = 5,
                             A_ID = 1,
-<<<<<<< HEAD
-                            L_cTime = new DateTime(2023, 4, 13, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1958),
-                            L_dcTime = new DateTime(2023, 4, 13, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1958)
-=======
                             L_cTime = new DateTime(2023, 4, 14, 4, 10, 21, 298, DateTimeKind.Local).AddTicks(6998),
                             L_dcTime = new DateTime(2023, 4, 14, 5, 10, 21, 298, DateTimeKind.Local).AddTicks(6998)
->>>>>>> refs/remotes/origin/bnn
                         },
                         new
                         {
                             L_ID = 6,
                             A_ID = 1,
-<<<<<<< HEAD
-                            L_cTime = new DateTime(2023, 4, 13, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1959),
-                            L_dcTime = new DateTime(2023, 4, 13, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1959)
-=======
                             L_cTime = new DateTime(2023, 4, 14, 3, 10, 21, 298, DateTimeKind.Local).AddTicks(6999),
                             L_dcTime = new DateTime(2023, 4, 14, 4, 10, 21, 298, DateTimeKind.Local).AddTicks(6999)
->>>>>>> refs/remotes/origin/bnn
                         },
                         new
                         {
                             L_ID = 7,
                             A_ID = 1,
-<<<<<<< HEAD
-                            L_cTime = new DateTime(2023, 4, 13, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1960),
-                            L_dcTime = new DateTime(2023, 4, 13, 17, 35, 4, 200, DateTimeKind.Local).AddTicks(1960)
-=======
                             L_cTime = new DateTime(2023, 4, 14, 2, 10, 21, 298, DateTimeKind.Local).AddTicks(7000),
                             L_dcTime = new DateTime(2023, 4, 14, 3, 10, 21, 298, DateTimeKind.Local).AddTicks(7000)
->>>>>>> refs/remotes/origin/bnn
                         });
                 });
 
@@ -743,11 +700,7 @@ namespace final_repo_test.Migrations
                         new
                         {
                             P_ID = 1,
-<<<<<<< HEAD
-                            P_Date = new DateTime(2023, 4, 17, 17, 35, 4, 201, DateTimeKind.Local).AddTicks(913),
-=======
                             P_Date = new DateTime(2023, 4, 18, 9, 10, 21, 299, DateTimeKind.Local).AddTicks(5462),
->>>>>>> refs/remotes/origin/bnn
                             P_Describe = "Regular Fit反摺袖襯衫",
                             P_Discontinuted = false,
                             P_Discount = 0,
@@ -760,11 +713,7 @@ namespace final_repo_test.Migrations
                         new
                         {
                             P_ID = 2,
-<<<<<<< HEAD
-                            P_Date = new DateTime(2023, 4, 17, 17, 35, 4, 201, DateTimeKind.Local).AddTicks(917),
-=======
                             P_Date = new DateTime(2023, 4, 18, 9, 10, 21, 299, DateTimeKind.Local).AddTicks(5467),
->>>>>>> refs/remotes/origin/bnn
                             P_Describe = "Regular Fit棉麻短袖襯衫",
                             P_Discontinuted = false,
                             P_Discount = 0,

@@ -36,7 +36,7 @@
                     <ul class="note-left">
                         <li class="notes">
                             累計人數
-                            <p class="note-text">200人</p>
+                    <p class="note-text">@Model.UserCount 人</p>
                         </li>
                         <li class="notes">
                             平均上線時數
@@ -61,6 +61,8 @@
 @section Script{
 	<script src="~/chart.js/dist/chart.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.1"></script>
    
     <script>
 
@@ -72,7 +74,7 @@
             day.push({ x: tmp.mainx[i], y: tmp.mainy[i] });
         }
         for(var i =0;i<tmp.headx.length;i++){
-            time.push({x: tmp.headx[i], y: tmp.heady[i]});
+            time.push({ x: tmp.headx[i], y: tmp.heady[i] });
         }
 
         const mainData = {
@@ -100,11 +102,14 @@
                 borderWidth: 1
             }]
         };
-
+        var headY = time.map(e=>moment(e.x,'HH:mm'));
+        var headX = time.map(e=>+e.y);
         const headData = {
+            labels: headY,
             datasets: [{
-                label: '各時段在線人數',
-                data: time
+                data: headX,
+                label:"上線人數",
+                fill:true
             }]
         };
      
@@ -127,6 +132,7 @@
                 maintainAspectRatio: false
             }
         };
+        
         const headConfig = {
             type: 'line',
             data: headData,
@@ -135,11 +141,13 @@
                     x: {
                         type: 'time',
                         time: {
-                            unit:'hour'
+                            parser: 'HH:mm:ss',
+                            unit: 'hour',
+                            displayFormats: {
+                                hour: 'HH:mm'
+                            },
+                            tooltipFormat: 'D MMM YYYY - HH:mm:ss'
                         }
-                    },
-                    y: {
-                        beginAtZero: true
                     }
                 },
                 responsive: true,
