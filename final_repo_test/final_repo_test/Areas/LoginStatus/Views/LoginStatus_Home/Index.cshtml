@@ -19,14 +19,14 @@
         </div>
         <div class="col selection">
             <ul class="timeSpan">
-                <li class="end">
-                    <a asp-area="LoginStatus" asp-controller="LoginStatus_Home" asp-action="Index" asp-route-itemid="Day">日</a>
+                <li id="day" class="end">
+                    <a asp-area="LoginStatus" asp-controller="LoginStatus_Home" asp-action="Index" asp-route-id="Day">日</a>
                 </li>
-                <li>
-                    <a asp-area="LoginStatus" asp-controller="LoginStatus_Home" asp-action="Index" asp-route-itemid="Week">週</a>
+                <li id="week">
+                    <a asp-area="LoginStatus" asp-controller="LoginStatus_Home" asp-action="Index" asp-route-id="Week">週</a>
                 </li>
-                <li class="start">
-                    <a asp-area="LoginStatus" asp-controller="LoginStatus_Home" asp-action="Index" asp-route-itemid="Month">月</a>
+                <li id="month" class="start">
+                    <a asp-area="LoginStatus" asp-controller="LoginStatus_Home" asp-action="Index" asp-route-id="Month">月</a>
                 </li>
             </ul>
         </div>
@@ -76,7 +76,7 @@
         for(var i =0;i<tmp.headx.length;i++){
             time.push({ x: tmp.headx[i], y: tmp.heady[i] });
         }
-
+        document.getElementById(tmp.unit).style.backgroundColor = "#819695";
         const mainData = {
             datasets: [{
                 label: '上線人數',
@@ -112,7 +112,7 @@
                 fill:true
             }]
         };
-     
+        console.log(tmp.unit);
         const mainConfig = {
             type: 'line',
             data: mainData,
@@ -121,7 +121,8 @@
                     x: {
                         type: 'time',
                         time: {
-                            unit: 'day'
+                            unit: tmp.unit,
+                            tooltipFormat: 'MMM DD'
                         }
                     },
                     y: {
@@ -146,7 +147,7 @@
                             displayFormats: {
                                 hour: 'HH:mm'
                             },
-                            tooltipFormat: 'D MMM YYYY - HH:mm:ss'
+                            tooltipFormat: 'HH:mm:ss'
                         }
                     }
                 },

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace final_repo_test.Areas.LoginStatus.Controllers
 {
     [Area("LoginStatus")]
-
+    [Route("/LoginStatus/Home/{action}/{id?}")]
 
     public class LoginStatus_HomeController : Controller
     {
@@ -15,9 +15,10 @@ namespace final_repo_test.Areas.LoginStatus.Controllers
         {
             _loginStatusRepository = loginStatusRepository;
         }
-        public async Task<IActionResult> Index(string Chart = "Day")
+        public async Task<IActionResult> Index(string id)
         {
-            GetDayViewModel data = await _loginStatusRepository.GetDay(Chart);
+            Console.WriteLine(id);
+            GetDayViewModel data = await _loginStatusRepository.GetDay(id);
             return View(data);
         }
     }
