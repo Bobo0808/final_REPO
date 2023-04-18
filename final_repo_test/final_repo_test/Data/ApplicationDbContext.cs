@@ -16,7 +16,7 @@ namespace final_repo_test.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Account>( b =>
+            modelBuilder.Entity<UserAccount>( b =>
             {
                 b.Property(x=>x.A_ID)
                     .ValueGeneratedOnAdd();
@@ -538,7 +538,7 @@ namespace final_repo_test.Data
                        P_Discontinuted = false,
 
                    });
-            modelBuilder.Entity<Account>().HasData(new Account()
+            modelBuilder.Entity<UserAccount>().HasData(new UserAccount()
             {
                 A_ID = 1,
                 A_Name = "Test",
@@ -558,7 +558,7 @@ namespace final_repo_test.Data
            
         }
 
-        public DbSet<Account> Accounts { get; set; } = default!;
+        public DbSet<UserAccount> Accounts { get; set; } = default!;
         public DbSet<Ads> Ads { get; set; } = default!;
         public DbSet<CaseTable> CaseTables { get; set; } = default!;
         public DbSet<DebugLog> DebugLogs { get; set; } = default!;

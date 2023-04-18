@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace final_repo_test.Models
 {
-    public class Account
+    public class UserAccount
     {
         [Key]
         public int A_ID { get; set; } = default!;

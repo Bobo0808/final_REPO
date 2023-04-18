@@ -58,7 +58,7 @@ namespace final_repo_test.Areas.Account.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("A_ID,A_Name,UserName,UserPWD,A_Gender,Birthday,P_id,A_level,A_Email,A_Phone,A_add,A_RegisteredAt,A_NickName,A_Coin")] Account account)
+        public async Task<IActionResult> Create([Bind("A_ID,A_Name,UserName,UserPWD,A_Gender,Birthday,P_id,A_level,A_Email,A_Phone,A_add,A_RegisteredAt,A_NickName,A_Coin")] UserAccount account)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +92,7 @@ namespace final_repo_test.Areas.Account.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("A_ID,A_Name,UserName,UserPWD,A_Gender,Birthday,P_id,A_level,A_Email,A_Phone,A_add,A_RegisteredAt,A_NickName,A_Coin")] Account account)
+        public async Task<IActionResult> Edit(int id, [Bind("A_ID,A_Name,UserName,UserPWD,A_Gender,Birthday,P_id,A_level,A_Email,A_Phone,A_add,A_RegisteredAt,A_NickName,A_Coin")] UserAccount account)
         {
             if (id != account.A_ID)
             {
