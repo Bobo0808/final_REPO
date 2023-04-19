@@ -1,10 +1,10 @@
 ﻿
 var orderDetailTemplate = '<tr>' +
     '<td>' +
-    '<select class="form-control product-list" name="odetails[0].P_ID" required></select>' +
+    '<select class="form-control product-list" name="odetails.P_ID" required></select>' +
     '</td>' +
     '<td>' +
-    '<input type="number" class="form-control quantity" name="odetails[0].Od_Quantity" min="1" value="1" required />' +
+    '<input type="number" class="form-control quantity" name="odetails.Od_Quantity" min="1" value="1" required />' +
     '</td>' +
     '<td>' +
     '<span class="form-control price">0</span>' +
@@ -28,13 +28,13 @@ $(function () {
         var select = newOrderDetail.find('.product-list');
         for (var i = 0; i < products.length; i++) {
             select.append($('<option>', {
-                value: products[i].P_ID,
-                text: products[i].P_Name,
+                value: products[i].p_ID,
+                text: products[i].p_Name,
             }));
         }
         $('#order-detail-list').append(newOrderDetail);
     });
-    $(document).on('change', '.product-list', function() {
+    $(document).on('change', '.product-list', function () {
         var row = $(this).closest('tr');
         var productId = $(this).val();
 
@@ -89,7 +89,7 @@ $(function () {
         });
 
         $('#total-price').text(totalPrice.toFixed(0));
-        $('#ordertotalprice').text(totalPrice.toFixed(0)); 
+        $('#ordertotalprice').text(totalPrice.toFixed(0));
     }
 
     function test() {

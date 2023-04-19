@@ -16,7 +16,7 @@ namespace final_repo_test.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Account>( b =>
+            modelBuilder.Entity<UserAccount>( b =>
             {
                 b.Property(x=>x.A_ID)
                     .ValueGeneratedOnAdd();
@@ -116,7 +116,10 @@ namespace final_repo_test.Data
             {
                 b.Property(x => x.CT_ID).ValueGeneratedOnAdd();
                 b.Property(x => x.CT_Name);
-
+                b.HasData(new CardType() { CT_ID = 1, CT_Name = "綠界" },new CardType()
+                {
+                    CT_ID = 2,CT_Name= "LinePay"
+                });
                 b.HasKey(x => x.CT_ID);
             });
 
@@ -242,49 +245,49 @@ namespace final_repo_test.Data
                     L_ID = 1,
                     A_ID = 1,
                     L_cTime = DateTime.Now,
-                    L_dcTime = DateTime.Now
+                    L_dcTime = DateTime.Now.AddHours(1)
                 },
                          new LoginStaus()
                          {
                              L_ID = 2,
                              A_ID = 1,
-                             L_cTime = DateTime.Now.AddDays(-1),
-                             L_dcTime = DateTime.Now.AddDays(-1)
+                             L_cTime = DateTime.Now.AddDays(-1).AddHours(-2),
+                             L_dcTime = DateTime.Now.AddDays(-1).AddHours(-1)
                          },
                           new LoginStaus()
                           {
                               L_ID = 3,
                               A_ID = 1,
-                              L_cTime = DateTime.Now.AddDays(-2),
-                              L_dcTime = DateTime.Now.AddDays(-2)
+                              L_cTime = DateTime.Now.AddDays(-2).AddHours(-3),
+                              L_dcTime = DateTime.Now.AddDays(-2).AddHours(-2)
                           },
                            new LoginStaus()
                            {
                                L_ID = 4,
                                A_ID = 1,
-                               L_cTime = DateTime.Now.AddDays(-3),
-                               L_dcTime = DateTime.Now.AddDays(-3)
+                               L_cTime = DateTime.Now.AddDays(-3).AddHours(-4),
+                               L_dcTime = DateTime.Now.AddDays(-3).AddHours(-3)
                            },
                             new LoginStaus()
                             {
                                 L_ID = 5,
                                 A_ID = 1,
-                                L_cTime = DateTime.Now.AddDays(-4),
-                                L_dcTime = DateTime.Now.AddDays(-4)
+                                L_cTime = DateTime.Now.AddDays(-4).AddHours(-5),
+                                L_dcTime = DateTime.Now.AddDays(-4).AddHours(-4)
                             },
                               new LoginStaus()
                               {
                                   L_ID = 6,
                                   A_ID = 1,
-                                  L_cTime = DateTime.Now.AddDays(-4),
-                                  L_dcTime = DateTime.Now.AddDays(-4)
+                                  L_cTime = DateTime.Now.AddDays(-4).AddHours(-6),
+                                  L_dcTime = DateTime.Now.AddDays(-4).AddHours(-5)
                               },
                                 new LoginStaus()
                                 {
                                     L_ID = 7,
                                     A_ID = 1,
-                                    L_cTime = DateTime.Now.AddDays(-4),
-                                    L_dcTime = DateTime.Now.AddDays(-4)
+                                    L_cTime = DateTime.Now.AddDays(-4).AddHours(-7),
+                                    L_dcTime = DateTime.Now.AddDays(-4).AddHours(-6)
                                 });
 
                 b.ToTable("LoginStaus");
@@ -535,7 +538,7 @@ namespace final_repo_test.Data
                        P_Discontinuted = false,
 
                    });
-            modelBuilder.Entity<Account>().HasData(new Account()
+            modelBuilder.Entity<UserAccount>().HasData(new UserAccount()
             {
                 A_ID = 1,
                 A_Name = "Test",
@@ -555,7 +558,7 @@ namespace final_repo_test.Data
            
         }
 
-        public DbSet<Account> Accounts { get; set; } = default!;
+        public DbSet<UserAccount> Accounts { get; set; } = default!;
         public DbSet<Ads> Ads { get; set; } = default!;
         public DbSet<CaseTable> CaseTables { get; set; } = default!;
         public DbSet<DebugLog> DebugLogs { get; set; } = default!;

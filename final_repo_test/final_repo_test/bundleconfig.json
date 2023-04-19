@@ -10,6 +10,7 @@
     "inputFiles": [
       "wwwroot/css/OrderProduct/ProductIndex.css"
     ]
+<<<<<<< HEAD
   },
   {
     "outputFileName": "wwwroot/css/OrderProduct/Create.min.css",
@@ -34,5 +35,7 @@
     "inputFiles": [
       "wwwroot/css/OrderProduct/Delete.css"
     ]
+=======
+>>>>>>> main
   }
 ]

@@ -80,17 +80,23 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
             ViewBag.CustomerIdList = new SelectList(customerList, "CustomerId", "CustomerUserName");
 
             //載入多個資料
-            var order = new Order();
-            var orderdetail = new OrderDetail();
-            var orderdetails = new List<OrderDetail>();
+            //var order = new Order();
+            //var orderdetail = new OrderDetail();
+            //var orderdetails = new List<OrderDetail>();
             // 塞入一個 OrderDetail
-            orderdetails.Add(orderdetail);
+            //orderdetails.Add(orderdetail);
 
             //載入商品
-            var productList = _context.Products.ToList();
-            var viewModel = new Tuple<Order, List<OrderDetail>, List<Product>>(order, orderdetails, productList);
+            //var productList = _context.Products.ToList();
+            //var viewModel = new Tuple<Order, List<OrderDetail>, List<Product>>(order, orderdetails, productList);
 
-            return View("~/Areas/OrderProduct/Views/Orders/Create.cshtml", viewModel);
+            //return View("~/Areas/OrderProduct/Views/Orders/Create.cshtml", viewModel);
+
+            ViewOrder viewOrder = new ViewOrder();
+            viewOrder.Order = new Order();
+            viewOrder.OrderDetails = new List<OrderDetail>();
+            viewOrder.Products = _context.Products.ToList();
+            return View("~/Areas/OrderProduct/Views/Orders/Create.cshtml", viewOrder);
         }
 
         // POST: Orders/Create
@@ -105,13 +111,14 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
 
             if (ModelState.IsValid)
             {
+
                 _context.Add(order);
                 await _context.SaveChangesAsync();
-                int orderId = order.O_ID;
 
-                foreach (OrderDetail item in orderDetails)
+                var NewOrderDetail = new OrderDetail();
+                foreach (var item in orderDetails)
                 {
-                    item.O_ID = orderId;
+                    item.O_ID = order.O_ID;
                     _context.Add(item);
                 }
 

@@ -13,13 +13,13 @@
 
 <body>
 	<section id="sidebar">
-		<a class="brand" asp-area="LoginStatus" asp-controller="LoginStatus_Home" asp-action="Index">
+		<a class="brand" asp-area="LoginStatus" asp-controller="LoginStatus_Home" asp-action="Index" asp-route-id="Day">
 			<i class="fa fa-solid fa-kiwi-bird fa-shake"></i>
 			<span class="text">ChickenLife</span>
 		</a>
 		<ul class="side-menu top">
 			<li class="active side-btn">
-				<a asp-area="LoginStatus" asp-controller="LoginStatus_Home" asp-action="Index">
+				<a asp-area="LoginStatus" asp-controller="LoginStatus_Home" asp-action="Index" asp-route-id="Day">
 					<i class="fa fa-solid fa-chart-line"></i>
 					<span class="text">儀表板</span>
 				</a>
@@ -63,7 +63,13 @@
 			<li class="side-btn">
 				<a asp-area="AD" asp-controller="AD_Home" asp-action="Index">
 					<i class="fa fa-solid fa-rectangle-ad"></i>
-					<span class="text">廣告廠商</span>
+					<span class="text">廣告合作</span>
+				</a>
+			</li>
+			<li class="side-btn">
+				<a asp-area="AD" asp-controller="ADUpdate_Home" asp-action="Index">
+					<i class="fa fa-solid fa-circle-arrow-up"></i>
+					<span class="text">廣告上架</span>
 				</a>
 			</li>
 			<li class="side-btn">

@@ -1,4 +1,5 @@
-﻿@model Tuple<Order, List<OrderDetail>, List<Product>>
+﻿@*@model List<final_repo_test.Models.OrderDetail>*@
+@model final_repo_test.Areas.OrderProduct.ViewModels.ViewOrder
 
 @{
     ViewData["Title"] = "Order Detail";
@@ -8,6 +9,8 @@
 
 <div class="container mt-4 box">
     <h4>Order Details</h4>
+
+    @*<form asp-action="Create">*@
     <table class="table radius">
         <thead>
             <tr>
@@ -20,12 +23,12 @@
         </thead>
         <tbody id="order-detail-list">
 
-            @foreach (var odetails in Model.Item2)
+            @foreach (var odetails in Model.OrderDetails)
             {
                 <tr>
                     <td>
                         <select class="form-control product-list" name="@Html.NameFor(model => odetails.P_ID)" required>
-                            @foreach (var product in Model.Item3)
+                            @foreach (var product in Model.Products)
                             {
                                 var selected = (odetails.P_ID == product.P_ID) ? "selected" : "";
                                 <option value="@product.P_ID" selected="@selected">@product.P_Name</option>
@@ -36,11 +39,11 @@
                         <input id="quantity" type="number" class="form-control quantity" name="quantity" min="1" value="@odetails.Od_Quantity" required />
                     </td>
                     <td>
-                        <span class="form-control price">@odetails.Od_UnitPrice</span>
+                        <span asp-for="@odetails.Od_UnitPrice" class="form-control price">@odetails.Od_UnitPrice</span>
                         @*<input type="number" class="form-control price" name="price" step="0.01" min="0" value="@odetails.Od_UnitPrice" required />*@
                     </td>
                     <td>
-                        <span class="total-price">@odetails.Od_Quantity * @odetails.Od_UnitPrice</span>
+                        <span asp-for="@odetails.Od_Sum" class="total-price">@odetails.Od_Quantity * @odetails.Od_UnitPrice</span>
                     </td>
                     <td>
                         <button type="button" class="btn btn-danger delete-order-detail" data-order-detail-id="@odetails.Od_ID">Delete</button>
@@ -53,7 +56,7 @@
                 <td colspan="3"></td>
                 <td>
                     <strong>Total:</strong>
-                    <span id="total-price">@Model.Item2.Sum(od => od.Od_Quantity * od.Od_UnitPrice)</span>
+                    <span id="total-price">@Model.OrderDetails.Sum(od => od.Od_Quantity * od.Od_UnitPrice)</span>
                 </td>
                 <td></td>
             </tr>
@@ -64,4 +67,6 @@
             </tr>
         </tfoot>
     </table>
+    @*</form>*@
+
 </div>
