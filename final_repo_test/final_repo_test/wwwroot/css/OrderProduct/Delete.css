@@ -14,14 +14,6 @@
     overflow: auto;
 }
 
-.bordandcolor {
-    margin: 0 auto;
-    border-radius: 15px;
-    border: 1px solid black;
-    width: 95%;
-    align-items: center;
-}
-
 .test {
     float: right;
     /* 文字在右邊 */
@@ -29,50 +21,16 @@
 }
 
 img {
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 350px;
+    max-height: 350px;
     object-fit: cover;
     object-position: center;
     margin: 5px;
 }
 
-.overflow {
-    overflow: auto;
-}
-
-
 .radius {
     border-radius: 15px;
     border: 1px solid black;
-}
-
-.table {
-    border-collapse: separate;
-    width: 80%;
-}
-
-.height {
-    height: 90%;
-}
-
-tr td:nth-child(1) {
-    width: 40%;
-}
-
-tr td:nth-child(2) {
-    width: 20%;
-}
-
-tr td:nth-child(3) {
-    width: 20%;
-}
-
-tr td:nth-child(4) {
-    width: 10%;
-}
-
-tr td:nth-child(5) {
-    width: 10%;
 }
 
 h1, h3 {
@@ -80,6 +38,6 @@ h1, h3 {
     color: #6c757d;
 }
 
-.gray, h4 {
+h4 {
     color: #6c757d;
 }
