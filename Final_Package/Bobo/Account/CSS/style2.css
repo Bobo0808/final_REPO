@@ -71,10 +71,7 @@ td {
     flex-wrap: wrap;
 }
 
-
 .content .cards .card {
-
-
     width: 250px;
     height: 150px;
     background-color: white;
@@ -85,13 +82,12 @@ td {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/*
 .content .content-2 {
     min-height: 60vh;
     display: flex;
     justify-items: flex-start;
     flex-wrap: wrap;
-    
+    /* 根據Flex可用空間會自動換行 */
 
 }
 
@@ -121,10 +117,10 @@ td {
 .content .content-2 .recent-payment table td:nth-child(1) img {
     height: 40px;
     width: 40px;
-} */
+}
 
 
-
+/*RWD*/
 @media screen and (max-width:1050px) {
     .side-menu li {
         font-size: 18px;

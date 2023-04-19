@@ -1,186 +1,157 @@
 ﻿@{
     ViewData["Title"] = "Account";
     Layout = "_Layout";
-
+    
 }
-
-
 @section Styles{
     <link href="~/css/accountstyle/style2.css" rel="stylesheet" />
 }
 
-    <section class="tables">
-        <fieldset class="CreateNew_form">
-            <legend>新增會員</legend>
-            <div class="CreateForm_title">
-                <span style="width: 100px;">
-                    <span class="label">會員名稱</span>
-                    <input type="text" required="required" style="width: 100%">
-                </span>
-                <span style="width: 100px;">
-                    <span class="label">暱稱</span>
-                    <input type="text" required="required" style="width: 100%">
-                </span>
-                <span style="width: 150px;">
-                    <span class="label">e-mail</span>
-                    <input type="text" required="required" style="width: 100%">
-                </span>
-                <span style="width: 150px;">
-                    <span class="label">生日</span>
-                    <input type="date" required="required" style="width: 100%">
-                </span>
-                <span style="width: 150px;">
-                    <span class="label">電話</span>
-                    <input type="text" required="required" style="width: 100%">
-                </span>
-                <span style="width: 150px;">
-                    <span class="label">性別</span>
-                    <select id="gender" name="gender" style="width: 100%; height: 30px;">
-                        <option value="">請選擇</option>
-                        <option value="male">男</option>
-                        <option value="female">女</option>
-                        <option value="other">其他</option>
-                    </select>
-                </span>
-                <span style="width: 100px;">
-                    <span class="label">會員等級</span>
-                    <select id="gender" name="gender" style="width: 100%; height: 30px;">
-                        <option value="">請選擇</option>
-                        <option value="Normal">普通</option>
-                        <option value="VIP">VIP</option>
-                        <option value="VVIP">VVIP</option>
-                    </select>
-                </span>
+
+<body>
+    <div class="container">
+       <div class="content">
+        <div class="cards">
+            <div class="card">
+                <div class="box">
+                    <h1>2194</h1>
+                    <h3>Accounts</h3>
+                </div>
+                <div class="icon-case">
+                    <img src="~/img/account/students.png"/>
+                </div>
             </div>
-        </fieldset>
-        <section class=" Dtable_body">
-            <table class="Detail_table">
-                <thead>
-                    <tr>
-                        <th>會員ID</th>
-                        <th>姓名</th>
-                        <th>暱稱</th>
-                        <th>e-mail</th>
-                        <th>電話</th>
-                        <th>性別</th>
-                        <th>生日</th>
-                        <th>會員等級</th>
-                        <th>修改</th>
-                        <th>刪除</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>2</td>
-                        <td>Chanel</td>
-                        <td>Fat Chick</td>
-                        <td>asdwer462@gmail.com</td>
-                        <td>0985413267</td>
-                        <td>女</td>
-                        <td>1999/08/08</td>
-                        <td>Normal</td>
-                        <td><i class="fa-solid fa-pen-to-square"></i></td>
-                        <td><i class="fa-solid fa-trash-can"></i></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Chanel</td>
-                        <td>Fat Chick</td>
-                        <td>asdwer462@gmail.com</td>
-                        <td>0985413267</td>
-                        <td>女</td>
-                        <td>1999/08/08</td>
-                        <td>Normal</td>
-                        <td><i class="fa-solid fa-pen-to-square"></i></td>
-                        <td><i class="fa-solid fa-trash-can"></i></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Chanel</td>
-                        <td>Fat Chick</td>
-                        <td>asdwer462@gmail.com</td>
-                        <td>0985413267</td>
-                        <td>女</td>
-                        <td>1999/08/08</td>
-                        <td>Normal</td>
-                        <td><i class="fa-solid fa-pen-to-square"></i></td>
-                        <td><i class="fa-solid fa-trash-can"></i></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Chanel</td>
-                        <td>Fat Chick</td>
-                        <td>asdwer462@gmail.com</td>
-                        <td>0985413267</td>
-                        <td>女</td>
-                        <td>1999/08/08</td>
-                        <td>Normal</td>
-                        <td><i class="fa-solid fa-pen-to-square"></i></td>
-                        <td><i class="fa-solid fa-trash-can"></i></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Chanel</td>
-                        <td>Fat Chick</td>
-                        <td>asdwer462@gmail.com</td>
-                        <td>0985413267</td>
-                        <td>女</td>
-                        <td>1999/08/08</td>
-                        <td>Normal</td>
-                        <td><i class="fa-solid fa-pen-to-square"></i></td>
-                        <td><i class="fa-solid fa-trash-can"></i></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Chanel</td>
-                        <td>Fat Chick</td>
-                        <td>asdwer462@gmail.com</td>
-                        <td>0985413267</td>
-                        <td>女</td>
-                        <td>1999/08/08</td>
-                        <td>Normal</td>
-                        <td><i class="fa-solid fa-pen-to-square"></i></td>
-                        <td><i class="fa-solid fa-trash-can"></i></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Chanel</td>
-                        <td>Fat Chick</td>
-                        <td>asdwer462@gmail.com</td>
-                        <td>0985413267</td>
-                        <td>女</td>
-                        <td>1999/08/08</td>
-                        <td>Normal</td>
-                        <td><i class="fa-solid fa-pen-to-square"></i></td>
-                        <td><i class="fa-solid fa-trash-can"></i></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Chanel</td>
-                        <td>Fat Chick</td>
-                        <td>asdwer462@gmail.com</td>
-                        <td>0985413267</td>
-                        <td>女</td>
-                        <td>1999/08/08</td>
-                        <td>Normal</td>
-                        <td><i class="fa-solid fa-pen-to-square"></i></td>
-                        <td><i class="fa-solid fa-trash-can"></i></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Chanel</td>
-                        <td>Fat Chick</td>
-                        <td>asdwer462@gmail.com</td>
-                        <td>0985413267</td>
-                        <td>女</td>
-                        <td>1999/08/08</td>
-                        <td>Normal</td>
-                        <td><i class="fa-solid fa-pen-to-square"></i></td>
-                        <td><i class="fa-solid fa-trash-can"></i></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+            <div class="card">
+                <div class="box">
+                    <h1>53</h1>
+                    <h3>未知</h3>
+                </div>
+                <div class="icon-case">
+                    <img src="~/img/account/teachers.png"/>
+                </div>
+            </div>
+            <div class="card">
+                <div class="box">
+                    <h1>5</h1>
+                    <h3>不知道要放啥</h3>
+                </div>
+                <div class="icon-case">
+                    <img src="~/img/account/schools.png"/>
+                </div>
+            </div>
+            <div class="card">
+                <div class="box">
+                    <h1>350000</h1>
+                    <h3>營業額</h3>
+                </div>
+                <div class="icon-case">
+                    <img src="~/img/account/income.png"/>
+                </div>
+            </div>
 
-    </section>
+        </div>
+        <div class="content-2">
+            <div class="acount">
+                <div class="title">
+                    <h2>會員資料表</h2> 
+                    <a href="#" class="btn">View All</a>
+                </div>
+                <table>
+                    <tr>
+                        <th>名字</th>
+                        <th>餘額</th>
+                        <th>權限</th>
+                        <th>option</th>
+                    </tr>
+                    <tr>
+                        <td>Bobo</td>
+                        <td>$120</td>
+                        <td>Normal</td>
+                        <td><a href="#" class="btn">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>Bnn</td>
+                        <td>$120</td>
+                        <td>Normal</td>
+                        <td><a href="#" class="btn">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>Sandy</td>
+                        <td>$120</td>
+                        <td>Normal</td>
+                        <td><a href="#" class="btn">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>Ray</td>
+                        <td>$120</td>
+                        <td>Normal</td>
+                        <td><a href="#" class="btn">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>Frank</td>
+                        <td>$120</td>
+                        <td>Normal</td>
+                        <td><a href="#" class="btn">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>Ashtar</td>
+                        <td>$120</td>
+                        <td>Normal</td>
+                        <td><a href="#" class="btn">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>Bnn</td>
+                        <td>$120</td>
+                        <td>Normal</td>
+                        <td><a href="#" class="btn">View</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="recent-payment">
+                <table>
+                    <div class="title">
+                        <h2>最近消費</h2>
+                        <a href="#" class="btn">View All</a>
+                    </div>
+                    <tr>
+                        <th>Profile</th>
+                        <th>Name</th>
+                        <th>option</th>
+                    </tr>
+                    <tr>
+                        <td><img src="~/img/account/user.png"/></td>
+                        <td>Bobo</td>
+                        <td><img src="~/img/account/info.png"/></td>
+                    </tr>
+                    <tr>
+                        <td><img src="~/img/account/user.png"/></td>
+                        <td>Bobo</td>
+                        <td><img src="~/img/account/info.png"/></td>
+                    </tr>
+                    <tr>
+                        <td><img src="~/img/account/user.png"/></td>
+                        <td>Bobo</td>
+                        <td><img src="~/img/account/info.png"/></td>
+                    </tr>
+                    <tr>
+                        <td><img src="~/img/account/user.png"/></td>
+                        <td>Bobo</td>
+                        <td><img src="~/img/account/info.png"/></td>
+                    </tr>
+                    <tr>
+                        <td><img src="~/img/account/user.png"/></td>
+                        <td>Bobo</td>
+                        <td><img src="~/img/account/info.png"/></td>
+                    </tr>
+                    <tr>
+                        <td><img src="~/img/account/user.png"/></td>
+                        <td>Bobo</td>
+                        <td><img src="~/img/account/info.png"/></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+      </div>
 
+    </div>
+</body>
