@@ -9,7 +9,7 @@ namespace final_repo_test.Models
         public int O_ID { get; set; } = default!;
         [ForeignKey("Account")]
         public int A_ID { get; set; } = default!;
-        public Account Account { get; set; } = default!;
+        public UserAccount Account { get; set; } = default!;
         public DateTime O_Date { get; set; } = default!;
         public int O_TotalPrice { get; set; } = default!;
         public bool O_Cancle { get; set; } = default!;

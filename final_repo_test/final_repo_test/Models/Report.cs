@@ -10,10 +10,10 @@ namespace final_repo_test.Models
         public int R_ID { get; set; } = default!;
         [ForeignKey("ReportAccount")]
         public int A_ID { get; set; } = default!;
-        public Account Account { get; set; } = default!;
+        public UserAccount Account { get; set; } = default!;
         [ForeignKey("ReportedAccount")]
         public int ReportedA_ID { get; set; } = default!;
-        public Account ReportedAccount { get; set; } = default!;
+        public UserAccount ReportedAccount { get; set; } = default!;
         public DateTime R_Time { get; set; } = default!;
         public ReportType R_ReportType { get; set; } = default!;
         public string R_Reason { get; set; } = default!;
