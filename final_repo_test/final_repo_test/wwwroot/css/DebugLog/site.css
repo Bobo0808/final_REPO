@@ -33,6 +33,11 @@
     padding-bottom: 2rem;
 }
 
+.Content{
+    display:flex;
+    flex-direction:row;
+}
+
 .btnClear {
     display: flex;
     justify-content: end;

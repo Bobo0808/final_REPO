@@ -1,4 +1,5 @@
-﻿@{
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
     ViewData["Title"] = "Debug Log";
     Layout = "_Layout";
 }
@@ -15,88 +16,105 @@
             <button type="button" class="btn btn-primary">清空已解決</button>
         </div>
     </div>
-    <div class="row table">
-        <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        未解決
-                    </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                     data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <table class="table table-hover table-striped">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>用戶ID</th>
-                                    <th>時間</th>
-                                    <th>是否解決</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th>1</th>
-                                    <th>1</th>
-                                    <th>2023/04/10 07:30:12</th>
-                                    <th>否</th>
-                                    <th class="button">
-                                        <button type="button" class="btn btn-danger">Details</button>
-                                        <button type="button" class="btn btn-danger">
-                                            <i class="fa-sharp fa-regular fa-circle-check"></i>
-                                        </button>
-                                    </th>
-                                </tr>
-                            </tbody>
-                        </table>
+    <div class="row Content">
+        <div class="col table">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            未解決
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>用戶ID</th>
+                                        <th>時間</th>
+                                        <th>是否解決</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach(var i in Model)
+                                    {
+                                        if (i.D_isSolved == true)
+                                        {
+                                            <tr>
+                                                <th>@i.D_ID</th>
+                                                <th>@i.A_ID</th>
+                                                <th>@i.D_time</th>
+                                                <th>@i.D_isSolved</th>
+                                                <th class="button">
+                                                    <a asp-area="DebugLog" asp-controller="DebugLog_Home" asp-action="Detail" asp-route-id="@i.D_ID" class="btn btn-danger">Details</a>
+                                                    <a asp-area="DebugLog" asp-controller="DebugLog_Home" asp-action="Edit" asp-route-id="@i.D_ID" onclick="return confirm('要將是否解決更改為否嗎？')" type="button" class="btn btn-danger">
+                                                        <i class="fa-sharp fa-regular fa-circle-check"></i>
+                                                    </a>
+                                                </th>
+                                            </tr>
+                                        }
+                                    }
+                                  
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col table">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            已解決
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>用戶ID</th>
+                                        <th>時間</th>
+                                        <th>是否解決</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var i in Model)
+                                    {
+                                        if (i.D_isSolved != true)
+                                        {
+                                            <tr>
+                                                <th>@i.D_ID</th>
+                                                <th>@i.A_ID</th>
+                                                <th>@i.D_time</th>
+                                                <th>@i.D_isSolved</th>
+                                                <th class="button">
+                                                    <a asp-area="DebugLog" asp-controller="DebugLog_Home" asp-action="Detail" asp-route-id="@i.D_ID" class="btn btn-danger">Details</a>
+                                                    <a asp-area="DebugLog" asp-controller="DebugLog_Home" asp-action="Edit" asp-route-id="@i.D_ID" onclick="return confirm('要將是否解決更改為是嗎？')"type="button" class="btn btn-danger">
+                                                        <i class="fa-sharp fa-regular fa-circle-xmark "></i>
+                                                    </a>
+                                                </th>
+                                            </tr>
+                                        }
+                                    }
+                                  
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row table">
-        <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        已解決
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                     data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <table class="table table-hover table-striped">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>用戶ID</th>
-                                    <th>時間</th>
-                                    <th>是否解決</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th>1</th>
-                                    <th>1</th>
-                                    <th>2023/04/10 07:30:12</th>
-                                    <th>是</th>
-                                    <th class="button">
-                                        <button type="button" class="btn btn-danger">Details</button>
-                                        <button type="button" class="btn btn-danger">
-                                            <i class="fa-sharp fa-regular fa-circle-xmark "></i>
-                                        </button>
-                                    </th>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 </div>

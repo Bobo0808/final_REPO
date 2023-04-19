@@ -183,6 +183,29 @@ namespace final_repo_test.Data
 
                 b.HasKey(x=>x.D_ID);
                 b.HasOne(x => x.Account).WithMany(x => x.DebugLogs).HasForeignKey(x => x.A_ID).HasPrincipalKey(x=>x.A_ID).OnDelete(DeleteBehavior.Restrict);
+                b.HasData(new DebugLog
+                {
+                    D_ID = 1,
+                    A_ID = 1,
+                    D_event = "test",
+                    D_time = DateTime.Now,
+                    D_isSolved = true,
+                }, new DebugLog
+                {
+                    D_ID = 2,
+                    A_ID = 1,
+                    D_event = "test",
+                    D_time = DateTime.Now,
+                    D_isSolved = true,
+                }, new DebugLog
+                {
+                    D_ID = 3,
+                    A_ID = 1,
+                    D_event = "test",
+                    D_time = DateTime.Now,
+                    D_isSolved = false,
+                }
+                );
                 b.ToTable("DebugLogs");
             });
 
