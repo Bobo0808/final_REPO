@@ -14,32 +14,6 @@ namespace final_repo_test.Repositroy
         {
             _context = context;
         }
-        public async Task<GetAverageViewModel> GetAverage()
-        {
-            var list = await _context.LoginStaus.ToListAsync();
-            double temp = 0;
-            GetAverageViewModel result = new GetAverageViewModel();
-            for (int i  = 0; i < list.Count; i++)
-            {
-                temp += (list[i].L_dcTime.Subtract(list[i].L_cTime).TotalHours);
-            }
-            result.Average = Convert.ToInt32(temp);
-            return result;
-        }
-
-        public async Task<GetTimeViewModel> GetTime()
-        {
-            var list = await _context.LoginStaus.ToListAsync();
-            GetTimeViewModel result = new GetTimeViewModel();
-            return result;
-        }
-
-        public async Task<GetTotalCountViewModel> GetTotalCount()
-        {
-            var list = await _context.LoginStaus.ToListAsync();
-            GetTotalCountViewModel result = new GetTotalCountViewModel();
-            return result;
-        }
 
         public async Task<GetDayViewModel> GetDay(string Chart)
         {
