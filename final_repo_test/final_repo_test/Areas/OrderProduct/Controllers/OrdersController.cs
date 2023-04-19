@@ -4,10 +4,12 @@ using final_repo_test.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
+
 
 namespace final_repo_test.Areas.OrderProduct.Controllers
 {
-    //[Area(areaName: "Orders")]
+    [Area(areaName: "OrderProduct")]
     public class OrdersController : Controller
     {
         public readonly ApplicationDbContext _context;
@@ -64,7 +66,7 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
                 return NotFound();
             }
 
-            return View("~/Areas/OrderProduct/Views/Orders/Details.cshtml",order);
+            return View("~/Areas/OrderProduct/Views/Orders/Details.cshtml", order);
         }
 
         // GET: Orders/Create
@@ -75,9 +77,26 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
                 CustomerId = c.A_ID,
                 CustomerUserName = c.A_Name
             }).ToList();
-            //ViewData["OAId"] = new SelectList(_context.Accounts, "AId", "AId");
             ViewBag.CustomerIdList = new SelectList(customerList, "CustomerId", "CustomerUserName");
-            return View("~/Areas/OrderProduct/Views/Orders/Create.cshtml");
+
+            //載入多個資料
+            //var order = new Order();
+            //var orderdetail = new OrderDetail();
+            //var orderdetails = new List<OrderDetail>();
+            // 塞入一個 OrderDetail
+            //orderdetails.Add(orderdetail);
+
+            //載入商品
+            //var productList = _context.Products.ToList();
+            //var viewModel = new Tuple<Order, List<OrderDetail>, List<Product>>(order, orderdetails, productList);
+
+            //return View("~/Areas/OrderProduct/Views/Orders/Create.cshtml", viewModel);
+
+            ViewOrder viewOrder = new ViewOrder();
+            viewOrder.Order = new Order();
+            viewOrder.OrderDetails = new List<OrderDetail>();
+            viewOrder.Products = _context.Products.ToList();
+            return View("~/Areas/OrderProduct/Views/Orders/Create.cshtml", viewOrder);
         }
 
         // POST: Orders/Create
@@ -86,17 +105,36 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public async Task<IActionResult> Create([Bind("A_ID,O_Date,O_TotalPrice,O_Cancle")] Order order)
+        //public async Task<IActionResult> Create([Bind("A_ID,O_Date,O_TotalPrice,O_Cancle")] Order order)
+        public async Task<IActionResult> Create([Bind("O_ID,A_ID,O_Date,O_TotalPrice,O_Cancle")] Order order, List<OrderDetail> orderDetails)
         {
+
             if (ModelState.IsValid)
             {
+
                 _context.Add(order);
+                await _context.SaveChangesAsync();
+
+                var NewOrderDetail = new OrderDetail();
+                foreach (var item in orderDetails)
+                {
+                    item.O_ID = order.O_ID;
+                    _context.Add(item);
+                }
+
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            //ViewData["OAId"] = new SelectList(_context.Accounts, "AId", "AId", order.OAId);
-            ViewBag.order=order;
-            return View("~/Areas/OrderProduct/Views/Orders/index.cshtml",order);
+            ViewBag.CustomerIdList = new SelectList(_context.Accounts, "A_ID", "A_Name", order.A_ID);
+
+            //if (ModelState.IsValid)
+            //{
+            //    _context.Add(order);
+            //    await _context.SaveChangesAsync();
+            //    return RedirectToAction(nameof(Index));
+            //}
+            //ViewBag.order=order;
+            return View("~/Areas/OrderProduct/Views/Orders/index.cshtml", order);
         }
 
         // GET: Orders/Edit/5
@@ -115,7 +153,7 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
             ViewData["A_ID"] = new SelectList(_context.Accounts, "A_ID", "A_ID", order.A_ID);
 
             //return View(order);
-            return View("~/Areas/OrderProduct/Views/Orders/Edit.cshtml",order);
+            return View("~/Areas/OrderProduct/Views/Orders/Edit.cshtml", order);
         }
 
         // POST: Orders/Edit/5
@@ -197,7 +235,43 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
             return (_context.Orders?.Any(e => e.O_ID == id)).GetValueOrDefault();
         }
 
+        [HttpPost]
+        public ActionResult DeleteOrderDetail(int orderDetailId)
+        {
+            try
+            {
+                // Retrieve the order detail object based on the given orderDetailId parameter
+                var orderDetail = _context.OrderDetails.Find(orderDetailId);
+
+                if (orderDetail != null)
+                {
+                    _context.OrderDetails.Remove(orderDetail);
+                    _context.SaveChanges();
 
 
+                    return Ok();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+
+        //訂單
+        public IActionResult GetProductPrice(int productId)
+        {
+            var product = _context.Products.FirstOrDefault(p => p.P_ID == productId);
+            if (product == null)
+            {
+                throw new Exception("Product not found.");
+            }
+            return Json(product.P_Price);
+        }
     }
 }

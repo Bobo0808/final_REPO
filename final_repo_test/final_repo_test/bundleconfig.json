@@ -10,5 +10,32 @@
     "inputFiles": [
       "wwwroot/css/OrderProduct/ProductIndex.css"
     ]
+<<<<<<< HEAD
+  },
+  {
+    "outputFileName": "wwwroot/css/OrderProduct/Create.min.css",
+    "inputFiles": [
+      "wwwroot/css/OrderProduct/Create.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/OrderProduct/Detail.min.css",
+    "inputFiles": [
+      "wwwroot/css/OrderProduct/Detail.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/OrderProduct/Edit.min.css",
+    "inputFiles": [
+      "wwwroot/css/OrderProduct/Edit.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/OrderProduct/Delete.min.css",
+    "inputFiles": [
+      "wwwroot/css/OrderProduct/Delete.css"
+    ]
+=======
+>>>>>>> main
   }
 ]

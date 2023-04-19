@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace final_repo_test.Models
 {
-    public class Product
+    public partial class Product
     {
         [Key]
         public int P_ID { get; set; } = default!;
