@@ -7,5 +7,15 @@
 }
 
 td {
-    white-space: nowrap;
+    white-space: normal;
+    word-wrap: break-word;
+    width: 5%;
+}
+
+input[type="checkbox"] {
+    transform: scale(2);
+}
+
+.tdcenter {
+    text-align: center;
 }
