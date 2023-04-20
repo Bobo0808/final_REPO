@@ -1,4 +1,5 @@
-﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+﻿@model final_repo_test.Models.DebugLog
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "Debug Log Detail";
     Layout = "_Layout";
@@ -8,33 +9,26 @@
 }
 <div class="container">
     <div class="row title">詳細資料</div>
-    <div class="row body">
+    <form method="post" asp-action="Detail" enctype="multipart/form-data" class="row body">
         <div class="row content">
             <div class="col">ID</div>
             <div class="col">
-                <input class="form-control" type="text" value="@Model.D_ID"
-                       aria-label="@Model.D_ID" disabled readonly>
+                <input class="form-control" asp-for="D_ID" type="text" value="@Model.D_ID"
+                       aria-label="@Model.D_ID" readonly>
             </div>
         </div>
         <div class="row content">
             <div class="col">用戶ID</div>
             <div class="col">
-                <input class="form-control" type="text" value="@Model.A_ID"
-                       aria-label="@Model.A_ID" disabled readonly>
+                <input class="form-control" asp-for="A_ID" type="text" value="@Model.A_ID"
+                       aria-label="@Model.A_ID" readonly>
             </div>
         </div>
         <div class="row content">
             <div class="col">時間</div>
             <div class="col">
-                <input class="form-control" type="text" value="@Model.D_time"
-                       aria-label="@Model.D_time" disabled readonly>
-            </div>
-        </div>
-        <div class="row content">
-            <div class="col">事件</div>
-            <div class="col event">
-                <textarea class="form-control" disabled readonly
-                          rows="3">@Model.D_event</textarea>
+                <input class="form-control" asp-for="D_time" type="text" value="@Model.D_time"
+                       aria-label="@Model.D_time" readonly>
             </div>
         </div>
         <div class="row content">
@@ -42,24 +36,47 @@
             <div class="col">
                 @if (Model.D_isSolved == true)
                 {
-                    <input class="form-control" type="text" value="是"
-                           aria-label="@Model.D_isSolved" disabled readonly>
-                }else{
-                    <input class="form-control" type="text" value="否"
-                           aria-label="@Model.D_isSolved" disabled readonly>
+                    <input class="form-control" asp-for="D_isSolved" type="text" value="是"
+                           aria-label="@Model.D_isSolved" readonly>
                 }
-                
+                else
+                {
+                    <input class="form-control" asp-for="D_isSolved" type="text" value="否"
+                           aria-label="@Model.D_isSolved" readonly>
+                }
+
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="box buttonPrev">
-            <a asp-area="DebugLog" asp-controller="DebugLog_Home" asp-action="Index" type="button" class="btn btn-primary">返回上一頁</a>
+        <div class="row content">
+            <div class="col">事件</div>
+            <div class="col event">
+                <textarea asp-for="D_event" class="form-control" readonly
+                          rows="3">@Model.D_event</textarea>
+            </div>
         </div>
-    </div>
+        <div class="row content">
+            <div class="col">備註</div>
+            <div class="col event">
+                <textarea asp-for="D_Comment" class="form-control"
+                          rows="3">@Model.D_Comment</textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="box buttonPrev">
+                <button type="submit" class="btn btn-primary">儲存編輯</button>
+            </div>
+            <div class="box buttonPrev">
+                <a asp-area="DebugLog" asp-controller="DebugLog_Home" asp-action="Index" type="button" class="btn btn-primary">返回上一頁</a>
+            </div>
+        </div>
+    </form>
+  
 </div>
 
 @section Script{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
     <script>
         const tx = document.getElementsByTagName("textarea");
         for (let i = 0; i < tx.length; i++) {

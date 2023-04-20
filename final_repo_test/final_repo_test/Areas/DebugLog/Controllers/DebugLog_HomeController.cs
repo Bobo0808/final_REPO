@@ -19,12 +19,7 @@ namespace final_repo_test.Areas.DebugLogs.Controllers
             return View(debugLogs);
         }
 
-        public async Task<IActionResult> Detail(int id)
-        {
-            Console.WriteLine(id);
-            DebugLog debugLog = await _debugLogRepository.GetIdAsync(id);
-            return View(debugLog);
-        }
+      
 
         public async Task<IActionResult> Edit(int id)
         {
@@ -38,6 +33,28 @@ namespace final_repo_test.Areas.DebugLogs.Controllers
             IEnumerable<DebugLog> debugLogs = await _debugLogRepository.DeleteIsSolved();
             _debugLogRepository.Save();
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Detail(int id)
+        {
+            DebugLog debugLog = await _debugLogRepository.GetIdAsync(id);
+            return View(debugLog);
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Detail(DebugLog debugLog)
+        {
+            var temp = await _debugLogRepository.GetIdAsync(debugLog.D_ID);
+            if(temp!= null)
+            {
+                temp.D_Comment = debugLog.D_Comment;
+                _debugLogRepository.Save();
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("Index");
+            
         }
     }
 }
