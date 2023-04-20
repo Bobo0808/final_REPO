@@ -9,7 +9,7 @@ namespace final_repo_test.Areas.OrderProduct.ViewModels
         public int A_ID { get; set; }
         public DateTime? O_Date { get; set; }
         public int? O_TotalPrice { get; set; }
-        public bool O_Cancle { get; set; }
+        public string O_Satus { get; set; }
 
         public string? UserName { get; set; }
 

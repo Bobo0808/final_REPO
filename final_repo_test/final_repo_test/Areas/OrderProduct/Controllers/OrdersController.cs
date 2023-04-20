@@ -27,13 +27,13 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
             {
                 var account = _context.Accounts.FirstOrDefault(a => a.A_ID == order.A_ID);
                 var accountName = account != null ? account.UserName : "";
-
+                var orderstatus = order.O_Cancle == true ? "訂單取消" : "訂單完成";
                 var orderViewModel = new ViewOrder
                 {
                     O_ID = order.O_ID,
                     O_TotalPrice = order.O_TotalPrice,
                     O_Date = order.O_Date,
-                    O_Cancle = order.O_Cancle,
+                    O_Satus = orderstatus,
                     UserName = accountName
                 };
                 orderViewModels.Add(orderViewModel);
@@ -47,28 +47,31 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
         // GET: Orders/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            var orderdetailList = _context.OrderDetails.Select(od => new {
-                OrderId = od.Od_ID,
 
-            }).ToList();
-            //ViewData["OAId"] = new SelectList(_context.Accounts, "AId", "AId");
-            ViewBag.CustomerIdList = new SelectList(orderdetailList, "OrderId");
-            if (id == null || _context.Orders == null)
-            {
-                return NotFound();
-            }
+            //var resultViewModel = from od in _context.OrderDetails
+            //                      join o in _context.Orders
+            //                      on od.O_ID equals o.O_ID into dt2
+            //                      from o in dt2.DefaultIfEmpty()
+            //                      where o.O_ID == id
+            //                      select new OrderDetailViewModel { selectDetails = od, selectOrder = o };
 
-            var order = await _context.Orders
-                .Include(o => o.A_ID)
-                .FirstOrDefaultAsync(m => m.O_ID == id);
-            if (order == null)
-            {
-                return NotFound();
-            }
-
-            return View("~/Areas/OrderProduct/Views/Orders/Details.cshtml", order);
+            var resultViewModel = from od in _context.OrderDetails
+                                  join o in _context.Orders
+                                  on od.O_ID equals o.O_ID into dt2
+                                  from o in dt2.DefaultIfEmpty()
+                                  join p in _context.Products
+                                  on od.P_ID equals p.P_ID into dt3
+                                  from p in dt3.DefaultIfEmpty()
+                                  where o.O_ID == id
+                                  select new OrderDetailViewModel
+                                  {
+                                      selectDetails = od,
+                                      selectOrder = o,
+                                      ProductName = p != null ? p.P_Name : ""
+                                  };
+            return View(resultViewModel);
         }
-
+        #region 新增(已廢除
         // GET: Orders/Create
         public IActionResult Create()
         {
@@ -136,7 +139,7 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
             //ViewBag.order=order;
             return View("~/Areas/OrderProduct/Views/Orders/index.cshtml", order);
         }
-
+        #endregion
         // GET: Orders/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -168,8 +171,7 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
+
                 try
                 {
                     _context.Update(order);
@@ -186,10 +188,10 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
-            }
+
             ViewData["A_ID"] = new SelectList(_context.Accounts, "A_ID", "A_ID", order.A_ID);
-            return View("~/Areas/OrderProduct/Views/Orders/index.cshtml", order);
+
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Orders/Delete/5

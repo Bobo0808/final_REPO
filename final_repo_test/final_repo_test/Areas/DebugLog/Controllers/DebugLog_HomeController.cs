@@ -32,5 +32,12 @@ namespace final_repo_test.Areas.DebugLogs.Controllers
             _debugLogRepository.Update(debugLogs);
             return RedirectToAction("Index");
         }
+
+        public async Task<IActionResult> Delete()
+        {
+            IEnumerable<DebugLog> debugLogs = await _debugLogRepository.DeleteIsSolved();
+            _debugLogRepository.Save();
+            return RedirectToAction("Index");
+        }
     }
 }
