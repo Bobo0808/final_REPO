@@ -7,7 +7,7 @@
 	<link href="~/css/debuglog/detail.css" rel="stylesheet" />
 }
 <div class="container">
-    <div class="row title">Details</div>
+    <div class="row title">詳細資料</div>
     <div class="row body">
         <div class="row content">
             <div class="col">ID</div>
@@ -40,8 +40,15 @@
         <div class="row content">
             <div class="col">是否解決</div>
             <div class="col">
-                <input class="form-control" type="text" value="@Model.D_isSolved"
-                       aria-label="@Model.D_isSolved" disabled readonly>
+                @if (Model.D_isSolved == true)
+                {
+                    <input class="form-control" type="text" value="是"
+                           aria-label="@Model.D_isSolved" disabled readonly>
+                }else{
+                    <input class="form-control" type="text" value="否"
+                           aria-label="@Model.D_isSolved" disabled readonly>
+                }
+                
             </div>
         </div>
     </div>

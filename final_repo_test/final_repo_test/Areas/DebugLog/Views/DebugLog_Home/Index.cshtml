@@ -13,7 +13,7 @@
     </div>
     <div class="row ">
         <div class="box btnClear">
-            <button type="button" class="btn btn-primary">清空已解決</button>
+            <a asp-area="DebugLog" asp-controller="DebugLog_Home" asp-action="Delete" onclick="return confirm('是否要清空已解決的問題？')" type="button" class="btn btn-primary">清空已解決</a>
         </div>
     </div>
     <div class="row Content">
@@ -42,16 +42,16 @@
                                 <tbody>
                                     @foreach(var i in Model)
                                     {
-                                        if (i.D_isSolved == true)
+                                        if (i.D_isSolved == false)
                                         {
                                             <tr>
                                                 <th>@i.D_ID</th>
                                                 <th>@i.A_ID</th>
                                                 <th>@i.D_time</th>
-                                                <th>@i.D_isSolved</th>
+                                                <th>否</th>
                                                 <th class="button">
-                                                    <a asp-area="DebugLog" asp-controller="DebugLog_Home" asp-action="Detail" asp-route-id="@i.D_ID" class="btn btn-danger">Details</a>
-                                                    <a asp-area="DebugLog" asp-controller="DebugLog_Home" asp-action="Edit" asp-route-id="@i.D_ID" onclick="return confirm('要將是否解決更改為否嗎？')" type="button" class="btn btn-danger">
+                                                    <a asp-area="DebugLog" asp-controller="DebugLog_Home" asp-action="Detail" asp-route-id="@i.D_ID" class="btn btn-danger">詳細資料</a>
+                                                    <a asp-area="DebugLog" asp-controller="DebugLog_Home" asp-action="Edit" asp-route-id="@i.D_ID" onclick="return confirm('要將是否解決更改為是嗎？')" type="button" class="btn btn-danger">
                                                         <i class="fa-sharp fa-regular fa-circle-check"></i>
                                                     </a>
                                                 </th>
@@ -91,16 +91,16 @@
                                 <tbody>
                                     @foreach (var i in Model)
                                     {
-                                        if (i.D_isSolved != true)
+                                        if (i.D_isSolved == true)
                                         {
                                             <tr>
                                                 <th>@i.D_ID</th>
                                                 <th>@i.A_ID</th>
                                                 <th>@i.D_time</th>
-                                                <th>@i.D_isSolved</th>
+                                                <th>是</th>
                                                 <th class="button">
-                                                    <a asp-area="DebugLog" asp-controller="DebugLog_Home" asp-action="Detail" asp-route-id="@i.D_ID" class="btn btn-danger">Details</a>
-                                                    <a asp-area="DebugLog" asp-controller="DebugLog_Home" asp-action="Edit" asp-route-id="@i.D_ID" onclick="return confirm('要將是否解決更改為是嗎？')"type="button" class="btn btn-danger">
+                                                    <a asp-area="DebugLog" asp-controller="DebugLog_Home" asp-action="Detail" asp-route-id="@i.D_ID" class="btn btn-danger">詳細資料</a>
+                                                    <a asp-area="DebugLog" asp-controller="DebugLog_Home" asp-action="Edit" asp-route-id="@i.D_ID" onclick="return confirm('要將是否解決更改為否嗎？')"type="button" class="btn btn-danger">
                                                         <i class="fa-sharp fa-regular fa-circle-xmark "></i>
                                                     </a>
                                                 </th>
