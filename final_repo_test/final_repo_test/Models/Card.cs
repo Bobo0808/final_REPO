@@ -9,9 +9,7 @@ namespace final_repo_test.Models
         [Key]
         public int CA_ID { get; set; }
         public string CA_Name { get; set; } = default!;
-        [ForeignKey("CardType")]
-        public int CT_ID { get; set; } = default!;
-        public CardType CardType { get; set; } = default!;
+
         public int CA_Price { get; set; } = default!;
         public string CA_Image { get; set; } = default!;
         public string CA_Describe { get; set; } = default!;
