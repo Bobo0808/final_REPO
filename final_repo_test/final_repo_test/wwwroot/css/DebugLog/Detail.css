@@ -1,0 +1,43 @@
+﻿.container {
+    border: 1px solid #aaa;
+}
+
+
+
+.title {
+    padding-top: 1rem;
+    font-size: 2rem;
+}
+
+.row {
+    padding-bottom: 2rem;
+    flex-direction: column;
+}
+
+.content {
+}
+
+.col {
+    padding-top: 1rem;
+    color:black;
+}
+
+.box {
+    display: flex;
+    justify-content: end;
+}
+
+textarea {
+    resize: none;
+    text-align:justify;
+}
+
+.buttonPrev {
+    margin-top: 1rem;
+    padding-right: 0;
+    padding-left:0;
+}
+
+.body {
+    background-color: aliceblue;
+}
