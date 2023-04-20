@@ -11,7 +11,7 @@ namespace final_repo_test.Models
         public int A_ID { get; set; } = default!;
         public UserAccount Account { get; set; } = default!;
         [ForeignKey("Card")]
-        public int CA_Price { get; set; } = default!;
+        public int CA_ID { get; set; } = default!;
         public Card Card { get; set; } = default!;
         [ForeignKey("CardType")]
         public int CT_ID { get; set; } = default!;

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace final_repo_test.Migrations
 {
-    public partial class _20230420bnn : Migration
+    public partial class m1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -25,7 +25,25 @@ namespace final_repo_test.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CardType",
+                name: "Cards",
+                columns: table => new
+                {
+                    CA_ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CA_Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CA_Price = table.Column<int>(type: "int", nullable: false),
+                    CA_Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CA_Describe = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CA_Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CA_Discontinuted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Cards", x => x.CA_ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CardTypes",
                 columns: table => new
                 {
                     CT_ID = table.Column<int>(type: "int", nullable: false)
@@ -34,7 +52,7 @@ namespace final_repo_test.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CardType", x => x.CT_ID);
+                    table.PrimaryKey("PK_CardTypes", x => x.CT_ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -130,31 +148,6 @@ namespace final_repo_test.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Products", x => x.P_ID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Card",
-                columns: table => new
-                {
-                    CA_ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CA_Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CT_ID = table.Column<int>(type: "int", nullable: false),
-                    CA_Price = table.Column<int>(type: "int", nullable: false),
-                    CA_Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CA_Describe = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CA_Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CA_Discontinuted = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Card", x => x.CA_ID);
-                    table.ForeignKey(
-                        name: "FK_Card_CardType_CT_ID",
-                        column: x => x.CT_ID,
-                        principalTable: "CardType",
-                        principalColumn: "CT_ID",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -286,36 +279,36 @@ namespace final_repo_test.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CardOrder",
+                name: "CardOrders",
                 columns: table => new
                 {
                     CO_ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     A_ID = table.Column<int>(type: "int", nullable: false),
-                    CA_Price = table.Column<int>(type: "int", nullable: false),
+                    CA_ID = table.Column<int>(type: "int", nullable: false),
                     CT_ID = table.Column<int>(type: "int", nullable: false),
                     CO_Sum = table.Column<int>(type: "int", nullable: false),
                     CO_Quantity = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CardOrder", x => x.CO_ID);
+                    table.PrimaryKey("PK_CardOrders", x => x.CO_ID);
                     table.ForeignKey(
-                        name: "FK_CardOrder_Accounts_A_ID",
+                        name: "FK_CardOrders_Accounts_A_ID",
                         column: x => x.A_ID,
                         principalTable: "Accounts",
                         principalColumn: "A_ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CardOrder_Card_CA_Price",
-                        column: x => x.CA_Price,
-                        principalTable: "Card",
+                        name: "FK_CardOrders_Cards_CA_ID",
+                        column: x => x.CA_ID,
+                        principalTable: "Cards",
                         principalColumn: "CA_ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CardOrder_CardType_CT_ID",
+                        name: "FK_CardOrders_CardTypes_CT_ID",
                         column: x => x.CT_ID,
-                        principalTable: "CardType",
+                        principalTable: "CardTypes",
                         principalColumn: "CT_ID",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -475,16 +468,7 @@ namespace final_repo_test.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Card",
-                columns: new[] { "CA_ID", "CA_Date", "CA_Describe", "CA_Discontinuted", "CA_Image", "CA_Name", "CA_Price", "CT_ID" },
-                values: new object[,]
-                {
-                    { 1, new DateTime(2023, 4, 20, 13, 55, 31, 222, DateTimeKind.Local).AddTicks(2255), "100元換200點", false, "點數.png", "100元換200點", 100, 0 },
-                    { 2, new DateTime(2023, 4, 20, 13, 55, 31, 222, DateTimeKind.Local).AddTicks(2257), "200元換350點", false, "點數.png", "200元換350點", 200, 0 }
-                });
-
-            migrationBuilder.InsertData(
-                table: "CardType",
+                table: "CardTypes",
                 columns: new[] { "CT_ID", "CT_Name" },
                 values: new object[,]
                 {
@@ -493,26 +477,35 @@ namespace final_repo_test.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Cards",
+                columns: new[] { "CA_ID", "CA_Date", "CA_Describe", "CA_Discontinuted", "CA_Image", "CA_Name", "CA_Price" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(2023, 4, 20, 16, 7, 10, 541, DateTimeKind.Local).AddTicks(2758), "100元換200點", false, "點數.png", "100元換200點", 100 },
+                    { 2, new DateTime(2023, 4, 20, 16, 7, 10, 541, DateTimeKind.Local).AddTicks(2759), "200元換350點", false, "點數.png", "200元換350點", 200 }
+                });
+
+            migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "P_ID", "P_Date", "P_Describe", "P_Discontinuted", "P_Discount", "P_Image", "P_Instock", "P_Name", "P_Price", "P_ProductType" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 4, 20, 13, 55, 31, 222, DateTimeKind.Local).AddTicks(2203), "Regular Fit反摺袖襯衫", false, 0, "1.jpg", 99, "反摺袖襯衫", 699, 1 },
-                    { 2, new DateTime(2023, 4, 20, 13, 55, 31, 222, DateTimeKind.Local).AddTicks(2207), "Regular Fit棉麻短袖襯衫", false, 0, "2.jpg", 99, "短袖襯衫", 499, 0 }
+                    { 1, new DateTime(2023, 4, 20, 16, 7, 10, 541, DateTimeKind.Local).AddTicks(2769), "Regular Fit反摺袖襯衫", false, 0, "1.jpg", 99, "反摺袖襯衫", 699, 1 },
+                    { 2, new DateTime(2023, 4, 20, 16, 7, 10, 541, DateTimeKind.Local).AddTicks(2771), "Regular Fit棉麻短袖襯衫", false, 0, "2.jpg", 99, "短袖襯衫", 499, 0 }
                 });
 
             migrationBuilder.InsertData(
                 table: "Accounts",
                 columns: new[] { "A_ID", "A_Coin", "A_Email", "A_Gender", "A_Name", "A_NickName", "A_Phone", "A_RegisteredAt", "A_add", "A_level", "Birthday", "P_id", "UserName", "UserPWD" },
-                values: new object[] { 1, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 4, 20, 13, 55, 31, 222, DateTimeKind.Local).AddTicks(2222), "Test", 99, new DateTime(2023, 4, 20, 13, 55, 31, 222, DateTimeKind.Local).AddTicks(2221), 1, "Test", "Test" });
+                values: new object[] { 1, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 4, 20, 16, 7, 10, 541, DateTimeKind.Local).AddTicks(2716), "Test", 99, new DateTime(2023, 4, 20, 16, 7, 10, 541, DateTimeKind.Local).AddTicks(2713), 1, "Test", "Test" });
 
             migrationBuilder.InsertData(
-                table: "CardOrder",
-                columns: new[] { "CO_ID", "A_ID", "CA_Price", "CO_Quantity", "CO_Sum", "CT_ID" },
+                table: "CardOrders",
+                columns: new[] { "CO_ID", "A_ID", "CA_ID", "CO_Quantity", "CO_Sum", "CT_ID" },
                 values: new object[,]
                 {
-                    { 1, 1, 100, 1, 100, 1 },
-                    { 2, 1, 200, 2, 400, 2 }
+                    { 1, 1, 1, 1, 100, 1 },
+                    { 2, 1, 2, 2, 400, 2 }
                 });
 
             migrationBuilder.InsertData(
@@ -520,9 +513,9 @@ namespace final_repo_test.Migrations
                 columns: new[] { "D_ID", "A_ID", "D_event", "D_isSolved", "D_time" },
                 values: new object[,]
                 {
-                    { 1, 1, "test", true, new DateTime(2023, 4, 20, 13, 55, 31, 221, DateTimeKind.Local).AddTicks(1682) },
-                    { 2, 1, "test", true, new DateTime(2023, 4, 20, 13, 55, 31, 221, DateTimeKind.Local).AddTicks(1690) },
-                    { 3, 1, "test", false, new DateTime(2023, 4, 20, 13, 55, 31, 221, DateTimeKind.Local).AddTicks(1691) }
+                    { 1, 1, "test", true, new DateTime(2023, 4, 20, 16, 7, 10, 540, DateTimeKind.Local).AddTicks(2349) },
+                    { 2, 1, "test", true, new DateTime(2023, 4, 20, 16, 7, 10, 540, DateTimeKind.Local).AddTicks(2359) },
+                    { 3, 1, "test", false, new DateTime(2023, 4, 20, 16, 7, 10, 540, DateTimeKind.Local).AddTicks(2360) }
                 });
 
             migrationBuilder.InsertData(
@@ -530,13 +523,13 @@ namespace final_repo_test.Migrations
                 columns: new[] { "L_ID", "A_ID", "L_cTime", "L_dcTime" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2023, 4, 20, 13, 55, 31, 221, DateTimeKind.Local).AddTicks(2777), new DateTime(2023, 4, 20, 14, 55, 31, 221, DateTimeKind.Local).AddTicks(2779) },
-                    { 2, 1, new DateTime(2023, 4, 19, 11, 55, 31, 221, DateTimeKind.Local).AddTicks(2784), new DateTime(2023, 4, 19, 12, 55, 31, 221, DateTimeKind.Local).AddTicks(2784) },
-                    { 3, 1, new DateTime(2023, 4, 18, 10, 55, 31, 221, DateTimeKind.Local).AddTicks(2785), new DateTime(2023, 4, 18, 11, 55, 31, 221, DateTimeKind.Local).AddTicks(2786) },
-                    { 4, 1, new DateTime(2023, 4, 17, 9, 55, 31, 221, DateTimeKind.Local).AddTicks(2787), new DateTime(2023, 4, 17, 10, 55, 31, 221, DateTimeKind.Local).AddTicks(2787) },
-                    { 5, 1, new DateTime(2023, 4, 16, 8, 55, 31, 221, DateTimeKind.Local).AddTicks(2788), new DateTime(2023, 4, 16, 9, 55, 31, 221, DateTimeKind.Local).AddTicks(2788) },
-                    { 6, 1, new DateTime(2023, 4, 16, 7, 55, 31, 221, DateTimeKind.Local).AddTicks(2789), new DateTime(2023, 4, 16, 8, 55, 31, 221, DateTimeKind.Local).AddTicks(2794) },
-                    { 7, 1, new DateTime(2023, 4, 16, 6, 55, 31, 221, DateTimeKind.Local).AddTicks(2794), new DateTime(2023, 4, 16, 7, 55, 31, 221, DateTimeKind.Local).AddTicks(2795) }
+                    { 1, 1, new DateTime(2023, 4, 20, 16, 7, 10, 540, DateTimeKind.Local).AddTicks(3594), new DateTime(2023, 4, 20, 17, 7, 10, 540, DateTimeKind.Local).AddTicks(3596) },
+                    { 2, 1, new DateTime(2023, 4, 19, 14, 7, 10, 540, DateTimeKind.Local).AddTicks(3600), new DateTime(2023, 4, 19, 15, 7, 10, 540, DateTimeKind.Local).AddTicks(3601) },
+                    { 3, 1, new DateTime(2023, 4, 18, 13, 7, 10, 540, DateTimeKind.Local).AddTicks(3602), new DateTime(2023, 4, 18, 14, 7, 10, 540, DateTimeKind.Local).AddTicks(3603) },
+                    { 4, 1, new DateTime(2023, 4, 17, 12, 7, 10, 540, DateTimeKind.Local).AddTicks(3603), new DateTime(2023, 4, 17, 13, 7, 10, 540, DateTimeKind.Local).AddTicks(3604) },
+                    { 5, 1, new DateTime(2023, 4, 16, 11, 7, 10, 540, DateTimeKind.Local).AddTicks(3605), new DateTime(2023, 4, 16, 12, 7, 10, 540, DateTimeKind.Local).AddTicks(3605) },
+                    { 6, 1, new DateTime(2023, 4, 16, 10, 7, 10, 540, DateTimeKind.Local).AddTicks(3606), new DateTime(2023, 4, 16, 11, 7, 10, 540, DateTimeKind.Local).AddTicks(3606) },
+                    { 7, 1, new DateTime(2023, 4, 16, 9, 7, 10, 540, DateTimeKind.Local).AddTicks(3607), new DateTime(2023, 4, 16, 10, 7, 10, 540, DateTimeKind.Local).AddTicks(3607) }
                 });
 
             migrationBuilder.InsertData(
@@ -544,8 +537,8 @@ namespace final_repo_test.Migrations
                 columns: new[] { "O_ID", "A_ID", "O_Cancle", "O_Date", "O_TotalPrice" },
                 values: new object[,]
                 {
-                    { 1, 1, false, new DateTime(2023, 4, 20, 13, 55, 31, 222, DateTimeKind.Local).AddTicks(2231), 2396m },
-                    { 2, 1, false, new DateTime(2023, 4, 20, 13, 55, 31, 222, DateTimeKind.Local).AddTicks(2233), 1198m }
+                    { 1, 1, false, new DateTime(2023, 4, 20, 16, 7, 10, 541, DateTimeKind.Local).AddTicks(2779), 2396m },
+                    { 2, 1, false, new DateTime(2023, 4, 20, 16, 7, 10, 541, DateTimeKind.Local).AddTicks(2781), 1198m }
                 });
 
             migrationBuilder.InsertData(
@@ -585,23 +578,18 @@ namespace final_repo_test.Migrations
                 column: "M_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Card_CT_ID",
-                table: "Card",
-                column: "CT_ID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CardOrder_A_ID",
-                table: "CardOrder",
+                name: "IX_CardOrders_A_ID",
+                table: "CardOrders",
                 column: "A_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CardOrder_CA_Price",
-                table: "CardOrder",
-                column: "CA_Price");
+                name: "IX_CardOrders_CA_ID",
+                table: "CardOrders",
+                column: "CA_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CardOrder_CT_ID",
-                table: "CardOrder",
+                name: "IX_CardOrders_CT_ID",
+                table: "CardOrders",
                 column: "CT_ID");
 
             migrationBuilder.CreateIndex(
@@ -669,7 +657,7 @@ namespace final_repo_test.Migrations
                 name: "BlockSpaces");
 
             migrationBuilder.DropTable(
-                name: "CardOrder");
+                name: "CardOrders");
 
             migrationBuilder.DropTable(
                 name: "DebugLogs");
@@ -699,7 +687,10 @@ namespace final_repo_test.Migrations
                 name: "Partners");
 
             migrationBuilder.DropTable(
-                name: "Card");
+                name: "Cards");
+
+            migrationBuilder.DropTable(
+                name: "CardTypes");
 
             migrationBuilder.DropTable(
                 name: "CaseTables");
@@ -709,9 +700,6 @@ namespace final_repo_test.Migrations
 
             migrationBuilder.DropTable(
                 name: "Orders");
-
-            migrationBuilder.DropTable(
-                name: "CardType");
 
             migrationBuilder.DropTable(
                 name: "Accounts");
