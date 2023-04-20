@@ -5,11 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace final_repo_test.Migrations
 {
-<<<<<<<< HEAD:final_repo_test/final_repo_test/Migrations/20230420120735_20230420.cs
-    public partial class _20230420 : Migration
-========
     public partial class _20230420bnn : Migration
->>>>>>>> main:final_repo_test/final_repo_test/Migrations/20230420145147_20230420bnn.cs
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -485,13 +481,8 @@ namespace final_repo_test.Migrations
                 columns: new[] { "CA_ID", "CA_Date", "CA_Describe", "CA_Discontinuted", "CA_Image", "CA_Name", "CA_Price" },
                 values: new object[,]
                 {
-<<<<<<<< HEAD:final_repo_test/final_repo_test/Migrations/20230420120735_20230420.cs
-                    { 1, new DateTime(2023, 4, 20, 20, 7, 34, 842, DateTimeKind.Local).AddTicks(8364), "100元換200點", false, "點數.png", "100元換200點", 100 },
-                    { 2, new DateTime(2023, 4, 20, 20, 7, 34, 842, DateTimeKind.Local).AddTicks(8366), "200元換350點", false, "點數.png", "200元換350點", 200 }
-========
                     { 1, new DateTime(2023, 4, 20, 22, 51, 47, 414, DateTimeKind.Local).AddTicks(5126), "100元換200點", false, "點數.png", "100元換200點", 100 },
                     { 2, new DateTime(2023, 4, 20, 22, 51, 47, 414, DateTimeKind.Local).AddTicks(5127), "200元換350點", false, "點數.png", "200元換350點", 200 }
->>>>>>>> main:final_repo_test/final_repo_test/Migrations/20230420145147_20230420bnn.cs
                 });
 
             migrationBuilder.InsertData(
@@ -499,21 +490,13 @@ namespace final_repo_test.Migrations
                 columns: new[] { "P_ID", "P_Date", "P_Describe", "P_Discontinuted", "P_Discount", "P_Image", "P_Instock", "P_Name", "P_Price", "P_ProductType" },
                 values: new object[,]
                 {
-<<<<<<<< HEAD:final_repo_test/final_repo_test/Migrations/20230420120735_20230420.cs
-                    { 1, new DateTime(2023, 4, 20, 20, 7, 34, 842, DateTimeKind.Local).AddTicks(8376), "Regular Fit反摺袖襯衫", false, 0, "1.jpg", 99, "反摺袖襯衫", 699, 1 },
-                    { 2, new DateTime(2023, 4, 20, 20, 7, 34, 842, DateTimeKind.Local).AddTicks(8377), "Regular Fit棉麻短袖襯衫", false, 0, "2.jpg", 99, "短袖襯衫", 499, 0 }
-========
                     { 1, new DateTime(2023, 4, 20, 22, 51, 47, 414, DateTimeKind.Local).AddTicks(5141), "Regular Fit反摺袖襯衫", false, 0, "1.jpg", 99, "反摺袖襯衫", 699, 1 },
                     { 2, new DateTime(2023, 4, 20, 22, 51, 47, 414, DateTimeKind.Local).AddTicks(5143), "Regular Fit棉麻短袖襯衫", false, 0, "2.jpg", 99, "短袖襯衫", 499, 0 }
->>>>>>>> main:final_repo_test/final_repo_test/Migrations/20230420145147_20230420bnn.cs
                 });
 
             migrationBuilder.InsertData(
                 table: "Accounts",
                 columns: new[] { "A_ID", "A_Coin", "A_Email", "A_Gender", "A_Name", "A_NickName", "A_Phone", "A_RegisteredAt", "A_add", "A_level", "Birthday", "P_id", "UserName", "UserPWD" },
-<<<<<<<< HEAD:final_repo_test/final_repo_test/Migrations/20230420120735_20230420.cs
-                values: new object[] { 1, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 4, 20, 20, 7, 34, 842, DateTimeKind.Local).AddTicks(8321), "Test", 99, new DateTime(2023, 4, 20, 20, 7, 34, 842, DateTimeKind.Local).AddTicks(8317), 1, "Test", "Test" });
-========
                 values: new object[,]
                 {
                     { 1, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 4, 20, 22, 51, 47, 414, DateTimeKind.Local).AddTicks(4987), "Test", 99, new DateTime(2023, 4, 20, 22, 51, 47, 414, DateTimeKind.Local).AddTicks(4982), 1, "Test", "Test" },
@@ -527,7 +510,6 @@ namespace final_repo_test.Migrations
                     { 9, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 4, 20, 22, 51, 47, 414, DateTimeKind.Local).AddTicks(5072), "Test", 99, new DateTime(2023, 4, 20, 22, 51, 47, 414, DateTimeKind.Local).AddTicks(5071), 1, "Test", "Test" },
                     { 10, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 4, 20, 22, 51, 47, 414, DateTimeKind.Local).AddTicks(5082), "Test", 99, new DateTime(2023, 4, 20, 22, 51, 47, 414, DateTimeKind.Local).AddTicks(5082), 1, "Test", "Test" }
                 });
->>>>>>>> main:final_repo_test/final_repo_test/Migrations/20230420145147_20230420bnn.cs
 
             migrationBuilder.InsertData(
                 table: "CardOrders",
@@ -543,11 +525,6 @@ namespace final_repo_test.Migrations
                 columns: new[] { "D_ID", "A_ID", "D_event", "D_isSolved", "D_time" },
                 values: new object[,]
                 {
-<<<<<<<< HEAD:final_repo_test/final_repo_test/Migrations/20230420120735_20230420.cs
-                    { 1, 1, "test", true, new DateTime(2023, 4, 20, 20, 7, 34, 841, DateTimeKind.Local).AddTicks(7265) },
-                    { 2, 1, "test", true, new DateTime(2023, 4, 20, 20, 7, 34, 841, DateTimeKind.Local).AddTicks(7278) },
-                    { 3, 1, "test", false, new DateTime(2023, 4, 20, 20, 7, 34, 841, DateTimeKind.Local).AddTicks(7278) }
-========
                     { 1, 8, "test", true, new DateTime(2023, 4, 20, 22, 51, 47, 412, DateTimeKind.Local).AddTicks(3993) },
                     { 2, 10, "test", true, new DateTime(2023, 4, 20, 22, 51, 47, 412, DateTimeKind.Local).AddTicks(4054) },
                     { 3, 10, "test", true, new DateTime(2023, 4, 20, 22, 51, 47, 412, DateTimeKind.Local).AddTicks(4057) },
@@ -567,7 +544,6 @@ namespace final_repo_test.Migrations
                     { 17, 7, "test", false, new DateTime(2023, 4, 20, 22, 51, 47, 412, DateTimeKind.Local).AddTicks(4143) },
                     { 18, 1, "test", false, new DateTime(2023, 4, 20, 22, 51, 47, 412, DateTimeKind.Local).AddTicks(4147) },
                     { 19, 5, "test", false, new DateTime(2023, 4, 20, 22, 51, 47, 412, DateTimeKind.Local).AddTicks(4149) }
->>>>>>>> main:final_repo_test/final_repo_test/Migrations/20230420145147_20230420bnn.cs
                 });
 
             migrationBuilder.InsertData(
@@ -575,15 +551,6 @@ namespace final_repo_test.Migrations
                 columns: new[] { "L_ID", "A_ID", "L_cTime", "L_dcTime" },
                 values: new object[,]
                 {
-<<<<<<<< HEAD:final_repo_test/final_repo_test/Migrations/20230420120735_20230420.cs
-                    { 1, 1, new DateTime(2023, 4, 20, 20, 7, 34, 841, DateTimeKind.Local).AddTicks(8762), new DateTime(2023, 4, 20, 21, 7, 34, 841, DateTimeKind.Local).AddTicks(8763) },
-                    { 2, 1, new DateTime(2023, 4, 19, 18, 7, 34, 841, DateTimeKind.Local).AddTicks(8770), new DateTime(2023, 4, 19, 19, 7, 34, 841, DateTimeKind.Local).AddTicks(8771) },
-                    { 3, 1, new DateTime(2023, 4, 18, 17, 7, 34, 841, DateTimeKind.Local).AddTicks(8771), new DateTime(2023, 4, 18, 18, 7, 34, 841, DateTimeKind.Local).AddTicks(8772) },
-                    { 4, 1, new DateTime(2023, 4, 17, 16, 7, 34, 841, DateTimeKind.Local).AddTicks(8773), new DateTime(2023, 4, 17, 17, 7, 34, 841, DateTimeKind.Local).AddTicks(8774) },
-                    { 5, 1, new DateTime(2023, 4, 16, 15, 7, 34, 841, DateTimeKind.Local).AddTicks(8775), new DateTime(2023, 4, 16, 16, 7, 34, 841, DateTimeKind.Local).AddTicks(8775) },
-                    { 6, 1, new DateTime(2023, 4, 16, 14, 7, 34, 841, DateTimeKind.Local).AddTicks(8776), new DateTime(2023, 4, 16, 15, 7, 34, 841, DateTimeKind.Local).AddTicks(8777) },
-                    { 7, 1, new DateTime(2023, 4, 16, 13, 7, 34, 841, DateTimeKind.Local).AddTicks(8778), new DateTime(2023, 4, 16, 14, 7, 34, 841, DateTimeKind.Local).AddTicks(8778) }
-========
                     { 1, 5, new DateTime(2023, 4, 3, 6, 54, 26, 652, DateTimeKind.Unspecified), new DateTime(2023, 4, 3, 10, 54, 26, 652, DateTimeKind.Unspecified) },
                     { 2, 8, new DateTime(2023, 1, 31, 0, 43, 34, 120, DateTimeKind.Unspecified), new DateTime(2023, 1, 31, 8, 43, 34, 120, DateTimeKind.Unspecified) },
                     { 3, 7, new DateTime(2023, 1, 17, 18, 12, 33, 845, DateTimeKind.Unspecified), new DateTime(2023, 1, 17, 20, 12, 33, 845, DateTimeKind.Unspecified) },
@@ -699,7 +666,6 @@ namespace final_repo_test.Migrations
                     { 99, 2, new DateTime(2023, 1, 12, 21, 11, 36, 684, DateTimeKind.Unspecified), new DateTime(2023, 1, 13, 1, 11, 36, 684, DateTimeKind.Unspecified) },
                     { 100, 8, new DateTime(2023, 3, 3, 14, 32, 19, 803, DateTimeKind.Unspecified), new DateTime(2023, 3, 3, 16, 32, 19, 803, DateTimeKind.Unspecified) },
                     { 101, 8, new DateTime(2023, 3, 11, 22, 53, 28, 991, DateTimeKind.Unspecified), new DateTime(2023, 3, 12, 6, 53, 28, 991, DateTimeKind.Unspecified) }
->>>>>>>> main:final_repo_test/final_repo_test/Migrations/20230420145147_20230420bnn.cs
                 });
 
             migrationBuilder.InsertData(
@@ -707,10 +673,6 @@ namespace final_repo_test.Migrations
                 columns: new[] { "O_ID", "A_ID", "O_Cancle", "O_Date", "O_TotalPrice" },
                 values: new object[,]
                 {
-<<<<<<<< HEAD:final_repo_test/final_repo_test/Migrations/20230420120735_20230420.cs
-                    { 1, 1, false, new DateTime(2023, 4, 20, 20, 7, 34, 842, DateTimeKind.Local).AddTicks(8391), 2396m },
-                    { 2, 1, false, new DateTime(2023, 4, 20, 20, 7, 34, 842, DateTimeKind.Local).AddTicks(8392), 1198m }
-========
                     { 1, 1, false, new DateTime(2023, 4, 20, 22, 51, 47, 414, DateTimeKind.Local).AddTicks(5156), 2396m },
                     { 2, 1, false, new DateTime(2023, 4, 20, 22, 51, 47, 414, DateTimeKind.Local).AddTicks(5157), 1198m },
                     { 3, 8, false, new DateTime(2023, 4, 20, 22, 51, 47, 414, DateTimeKind.Local).AddTicks(5192), 699m },
@@ -731,7 +693,6 @@ namespace final_repo_test.Migrations
                     { 11, 8, false, new DateTime(2023, 4, 20, 22, 51, 47, 414, DateTimeKind.Local).AddTicks(5366), 699m },
                     { 12, 2, false, new DateTime(2023, 4, 20, 22, 51, 47, 414, DateTimeKind.Local).AddTicks(5385), 699m },
                     { 13, 1, false, new DateTime(2023, 4, 20, 22, 51, 47, 414, DateTimeKind.Local).AddTicks(5402), 699m }
->>>>>>>> main:final_repo_test/final_repo_test/Migrations/20230420145147_20230420bnn.cs
                 });
 
             migrationBuilder.InsertData(
