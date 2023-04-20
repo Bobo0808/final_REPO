@@ -12,7 +12,7 @@ using final_repo_test.Data;
 namespace final_repo_test.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230419163633_20230420bnn")]
+    [Migration("20230420055531_20230420bnn")]
     partial class _20230420bnn
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -110,8 +110,11 @@ namespace final_repo_test.Migrations
 
             modelBuilder.Entity("final_repo_test.Models.Card", b =>
                 {
-                    b.Property<int>("CT_ID")
+                    b.Property<int>("CA_ID")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CA_ID"), 1L, 1);
 
                     b.Property<DateTime>("CA_Date")
                         .HasColumnType("datetime2");
@@ -122,12 +125,6 @@ namespace final_repo_test.Migrations
 
                     b.Property<bool>("CA_Discontinuted")
                         .HasColumnType("bit");
-
-                    b.Property<int>("CA_ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CA_ID"), 1L, 1);
 
                     b.Property<string>("CA_Image")
                         .IsRequired()
@@ -140,9 +137,38 @@ namespace final_repo_test.Migrations
                     b.Property<int>("CA_Price")
                         .HasColumnType("int");
 
-                    b.HasKey("CT_ID");
+                    b.Property<int>("CT_ID")
+                        .HasColumnType("int");
+
+                    b.HasKey("CA_ID");
+
+                    b.HasIndex("CT_ID");
 
                     b.ToTable("Card");
+
+                    b.HasData(
+                        new
+                        {
+                            CA_ID = 1,
+                            CA_Date = new DateTime(2023, 4, 20, 13, 55, 31, 222, DateTimeKind.Local).AddTicks(2255),
+                            CA_Describe = "100元換200點",
+                            CA_Discontinuted = false,
+                            CA_Image = "點數.png",
+                            CA_Name = "100元換200點",
+                            CA_Price = 100,
+                            CT_ID = 0
+                        },
+                        new
+                        {
+                            CA_ID = 2,
+                            CA_Date = new DateTime(2023, 4, 20, 13, 55, 31, 222, DateTimeKind.Local).AddTicks(2257),
+                            CA_Describe = "200元換350點",
+                            CA_Discontinuted = false,
+                            CA_Image = "點數.png",
+                            CA_Name = "200元換350點",
+                            CA_Price = 200,
+                            CT_ID = 0
+                        });
                 });
 
             modelBuilder.Entity("final_repo_test.Models.CardOrder", b =>
@@ -165,13 +191,38 @@ namespace final_repo_test.Migrations
                     b.Property<int>("CO_Sum")
                         .HasColumnType("int");
 
+                    b.Property<int>("CT_ID")
+                        .HasColumnType("int");
+
                     b.HasKey("CO_ID");
 
                     b.HasIndex("A_ID");
 
                     b.HasIndex("CA_Price");
 
+                    b.HasIndex("CT_ID");
+
                     b.ToTable("CardOrder");
+
+                    b.HasData(
+                        new
+                        {
+                            CO_ID = 1,
+                            A_ID = 1,
+                            CA_Price = 100,
+                            CO_Quantity = 1,
+                            CO_Sum = 100,
+                            CT_ID = 1
+                        },
+                        new
+                        {
+                            CO_ID = 2,
+                            A_ID = 1,
+                            CA_Price = 200,
+                            CO_Quantity = 2,
+                            CO_Sum = 400,
+                            CT_ID = 2
+                        });
                 });
 
             modelBuilder.Entity("final_repo_test.Models.CardType", b =>
@@ -257,7 +308,7 @@ namespace final_repo_test.Migrations
                             A_ID = 1,
                             D_event = "test",
                             D_isSolved = true,
-                            D_time = new DateTime(2023, 4, 20, 0, 36, 33, 214, DateTimeKind.Local).AddTicks(2286)
+                            D_time = new DateTime(2023, 4, 20, 13, 55, 31, 221, DateTimeKind.Local).AddTicks(1682)
                         },
                         new
                         {
@@ -265,7 +316,7 @@ namespace final_repo_test.Migrations
                             A_ID = 1,
                             D_event = "test",
                             D_isSolved = true,
-                            D_time = new DateTime(2023, 4, 20, 0, 36, 33, 214, DateTimeKind.Local).AddTicks(2298)
+                            D_time = new DateTime(2023, 4, 20, 13, 55, 31, 221, DateTimeKind.Local).AddTicks(1690)
                         },
                         new
                         {
@@ -273,7 +324,7 @@ namespace final_repo_test.Migrations
                             A_ID = 1,
                             D_event = "test",
                             D_isSolved = false,
-                            D_time = new DateTime(2023, 4, 20, 0, 36, 33, 214, DateTimeKind.Local).AddTicks(2299)
+                            D_time = new DateTime(2023, 4, 20, 13, 55, 31, 221, DateTimeKind.Local).AddTicks(1691)
                         });
                 });
 
@@ -360,50 +411,50 @@ namespace final_repo_test.Migrations
                         {
                             L_ID = 1,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 20, 0, 36, 33, 214, DateTimeKind.Local).AddTicks(3826),
-                            L_dcTime = new DateTime(2023, 4, 20, 1, 36, 33, 214, DateTimeKind.Local).AddTicks(3828)
+                            L_cTime = new DateTime(2023, 4, 20, 13, 55, 31, 221, DateTimeKind.Local).AddTicks(2777),
+                            L_dcTime = new DateTime(2023, 4, 20, 14, 55, 31, 221, DateTimeKind.Local).AddTicks(2779)
                         },
                         new
                         {
                             L_ID = 2,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 18, 22, 36, 33, 214, DateTimeKind.Local).AddTicks(3839),
-                            L_dcTime = new DateTime(2023, 4, 18, 23, 36, 33, 214, DateTimeKind.Local).AddTicks(3840)
+                            L_cTime = new DateTime(2023, 4, 19, 11, 55, 31, 221, DateTimeKind.Local).AddTicks(2784),
+                            L_dcTime = new DateTime(2023, 4, 19, 12, 55, 31, 221, DateTimeKind.Local).AddTicks(2784)
                         },
                         new
                         {
                             L_ID = 3,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 17, 21, 36, 33, 214, DateTimeKind.Local).AddTicks(3841),
-                            L_dcTime = new DateTime(2023, 4, 17, 22, 36, 33, 214, DateTimeKind.Local).AddTicks(3843)
+                            L_cTime = new DateTime(2023, 4, 18, 10, 55, 31, 221, DateTimeKind.Local).AddTicks(2785),
+                            L_dcTime = new DateTime(2023, 4, 18, 11, 55, 31, 221, DateTimeKind.Local).AddTicks(2786)
                         },
                         new
                         {
                             L_ID = 4,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 16, 20, 36, 33, 214, DateTimeKind.Local).AddTicks(3844),
-                            L_dcTime = new DateTime(2023, 4, 16, 21, 36, 33, 214, DateTimeKind.Local).AddTicks(3845)
+                            L_cTime = new DateTime(2023, 4, 17, 9, 55, 31, 221, DateTimeKind.Local).AddTicks(2787),
+                            L_dcTime = new DateTime(2023, 4, 17, 10, 55, 31, 221, DateTimeKind.Local).AddTicks(2787)
                         },
                         new
                         {
                             L_ID = 5,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 15, 19, 36, 33, 214, DateTimeKind.Local).AddTicks(3846),
-                            L_dcTime = new DateTime(2023, 4, 15, 20, 36, 33, 214, DateTimeKind.Local).AddTicks(3846)
+                            L_cTime = new DateTime(2023, 4, 16, 8, 55, 31, 221, DateTimeKind.Local).AddTicks(2788),
+                            L_dcTime = new DateTime(2023, 4, 16, 9, 55, 31, 221, DateTimeKind.Local).AddTicks(2788)
                         },
                         new
                         {
                             L_ID = 6,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 15, 18, 36, 33, 214, DateTimeKind.Local).AddTicks(3847),
-                            L_dcTime = new DateTime(2023, 4, 15, 19, 36, 33, 214, DateTimeKind.Local).AddTicks(3848)
+                            L_cTime = new DateTime(2023, 4, 16, 7, 55, 31, 221, DateTimeKind.Local).AddTicks(2789),
+                            L_dcTime = new DateTime(2023, 4, 16, 8, 55, 31, 221, DateTimeKind.Local).AddTicks(2794)
                         },
                         new
                         {
                             L_ID = 7,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 15, 17, 36, 33, 214, DateTimeKind.Local).AddTicks(3849),
-                            L_dcTime = new DateTime(2023, 4, 15, 18, 36, 33, 214, DateTimeKind.Local).AddTicks(3850)
+                            L_cTime = new DateTime(2023, 4, 16, 6, 55, 31, 221, DateTimeKind.Local).AddTicks(2794),
+                            L_dcTime = new DateTime(2023, 4, 16, 7, 55, 31, 221, DateTimeKind.Local).AddTicks(2795)
                         });
                 });
 
@@ -533,6 +584,24 @@ namespace final_repo_test.Migrations
                     b.HasIndex("A_ID");
 
                     b.ToTable("Orders", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            O_ID = 1,
+                            A_ID = 1,
+                            O_Cancle = false,
+                            O_Date = new DateTime(2023, 4, 20, 13, 55, 31, 222, DateTimeKind.Local).AddTicks(2231),
+                            O_TotalPrice = 2396m
+                        },
+                        new
+                        {
+                            O_ID = 2,
+                            A_ID = 1,
+                            O_Cancle = false,
+                            O_Date = new DateTime(2023, 4, 20, 13, 55, 31, 222, DateTimeKind.Local).AddTicks(2233),
+                            O_TotalPrice = 1198m
+                        });
                 });
 
             modelBuilder.Entity("final_repo_test.Models.OrderDetail", b =>
@@ -565,6 +634,44 @@ namespace final_repo_test.Migrations
                     b.HasIndex("P_ID");
 
                     b.ToTable("OrderDetails", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Od_ID = 1,
+                            O_ID = 1,
+                            Od_Quantity = 2,
+                            Od_Sum = 1398m,
+                            Od_UnitPrice = 699m,
+                            P_ID = 1
+                        },
+                        new
+                        {
+                            Od_ID = 2,
+                            O_ID = 1,
+                            Od_Quantity = 2,
+                            Od_Sum = 998m,
+                            Od_UnitPrice = 499m,
+                            P_ID = 2
+                        },
+                        new
+                        {
+                            Od_ID = 3,
+                            O_ID = 2,
+                            Od_Quantity = 1,
+                            Od_Sum = 699m,
+                            Od_UnitPrice = 699m,
+                            P_ID = 1
+                        },
+                        new
+                        {
+                            Od_ID = 4,
+                            O_ID = 2,
+                            Od_Quantity = 1,
+                            Od_Sum = 499m,
+                            Od_UnitPrice = 499m,
+                            P_ID = 2
+                        });
                 });
 
             modelBuilder.Entity("final_repo_test.Models.Partner", b =>
@@ -646,7 +753,7 @@ namespace final_repo_test.Migrations
                         new
                         {
                             P_ID = 1,
-                            P_Date = new DateTime(2023, 4, 20, 0, 36, 33, 215, DateTimeKind.Local).AddTicks(5562),
+                            P_Date = new DateTime(2023, 4, 20, 13, 55, 31, 222, DateTimeKind.Local).AddTicks(2203),
                             P_Describe = "Regular Fit反摺袖襯衫",
                             P_Discontinuted = false,
                             P_Discount = 0,
@@ -659,7 +766,7 @@ namespace final_repo_test.Migrations
                         new
                         {
                             P_ID = 2,
-                            P_Date = new DateTime(2023, 4, 20, 0, 36, 33, 215, DateTimeKind.Local).AddTicks(5566),
+                            P_Date = new DateTime(2023, 4, 20, 13, 55, 31, 222, DateTimeKind.Local).AddTicks(2207),
                             P_Describe = "Regular Fit棉麻短袖襯衫",
                             P_Discontinuted = false,
                             P_Discount = 0,
@@ -814,10 +921,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 4, 20, 0, 36, 33, 215, DateTimeKind.Local).AddTicks(5614),
+                            A_RegisteredAt = new DateTime(2023, 4, 20, 13, 55, 31, 222, DateTimeKind.Local).AddTicks(2222),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 4, 20, 0, 36, 33, 215, DateTimeKind.Local).AddTicks(5612),
+                            Birthday = new DateTime(2023, 4, 20, 13, 55, 31, 222, DateTimeKind.Local).AddTicks(2221),
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
@@ -854,7 +961,7 @@ namespace final_repo_test.Migrations
             modelBuilder.Entity("final_repo_test.Models.Card", b =>
                 {
                     b.HasOne("final_repo_test.Models.CardType", "CardType")
-                        .WithMany("Cards")
+                        .WithMany()
                         .HasForeignKey("CT_ID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -876,9 +983,17 @@ namespace final_repo_test.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("final_repo_test.Models.CardType", "CardType")
+                        .WithMany("CardOrders")
+                        .HasForeignKey("CT_ID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Account");
 
                     b.Navigation("Card");
+
+                    b.Navigation("CardType");
                 });
 
             modelBuilder.Entity("final_repo_test.Models.DebugLog", b =>
@@ -1024,7 +1139,7 @@ namespace final_repo_test.Migrations
 
             modelBuilder.Entity("final_repo_test.Models.CardType", b =>
                 {
-                    b.Navigation("Cards");
+                    b.Navigation("CardOrders");
                 });
 
             modelBuilder.Entity("final_repo_test.Models.CaseTable", b =>

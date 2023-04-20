@@ -127,15 +127,14 @@ namespace final_repo_test.Data
             {
                 b.Property(x => x.CA_ID).ValueGeneratedOnAdd();
                 b.Property(x => x.CA_Name);
-                b.Property(x => x.CT_ID);
                 b.Property(x => x.CA_Price);
                 b.Property(x => x.CA_Image);
                 b.Property(x => x.CA_Describe);
                 b.Property(x => x.CA_Date);
                 b.Property(x => x.CA_Discontinuted);
 
-                b.HasKey(x => x.CT_ID);
-                b.HasOne(x=>x.CardType).WithMany(x=>x.Cards).HasForeignKey(x=>x.CT_ID);
+                b.HasKey(x => x.CA_ID);
+                
             });
 
             modelBuilder.Entity<CardOrder>(b =>
@@ -143,9 +142,11 @@ namespace final_repo_test.Data
                 b.Property(x => x.CO_ID).ValueGeneratedOnAdd();
                 b.Property(x => x.A_ID);
                 b.Property(x => x.CA_Price);
+                b.Property(x => x.CT_ID);
                 b.Property(x => x.CO_Quantity);
 
                 b.HasKey(x => x.CO_ID);
+                b.HasOne(x => x.CardType).WithMany(x => x.CardOrders).HasForeignKey(x => x.CT_ID);
                 b.HasOne(x => x.Account).WithMany(x => x.CardOrders).HasForeignKey(x => x.A_ID);
                 b.HasOne(x => x.Card).WithMany(x => x.CardOrders).HasForeignKey(x => x.CA_Price);
             });
@@ -578,7 +579,101 @@ namespace final_repo_test.Data
                 A_Coin = 999999,
                 P_id = 1,
             });
-           
+            modelBuilder.Entity<Order>().HasData(
+                   new Order()
+                   {
+                       O_ID = 1,
+                       A_ID = 1,
+                       O_Date = DateTime.Now,
+                       O_TotalPrice = 2396,
+                       O_Cancle = false,
+                   },
+                   new Order()
+                   {
+                       O_ID = 2,
+                       A_ID = 1,
+                       O_Date = DateTime.Now,
+                       O_TotalPrice = 1198,
+                       O_Cancle = false,
+                   });
+            modelBuilder.Entity<OrderDetail>().HasData(
+                               new OrderDetail()
+                               {
+                                   Od_ID = 1,
+                                   O_ID = 1,
+                                   P_ID = 1,
+                                   Od_UnitPrice = 699,
+                                   Od_Sum = 1398,
+                                   Od_Quantity = 2,
+                               },
+                               new OrderDetail()
+                               {
+                                   Od_ID = 2,
+                                   O_ID = 1,
+                                   P_ID = 2,
+                                   Od_UnitPrice = 499,
+                                   Od_Sum = 998,
+                                   Od_Quantity = 2,
+                               },
+                               new OrderDetail()
+                               {
+                                   Od_ID = 3,
+                                   O_ID = 2,
+                                   P_ID = 1,
+                                   Od_UnitPrice = 699,
+                                   Od_Sum = 699,
+                                   Od_Quantity = 1,
+                               },
+                               new OrderDetail()
+                               {
+                                   Od_ID = 4,
+                                   O_ID = 2,
+                                   P_ID = 2,
+                                   Od_UnitPrice = 499,
+                                   Od_Sum = 499,
+                                   Od_Quantity = 1,
+                               });
+            modelBuilder.Entity<Card>().HasData(
+                               new Card()
+                               {
+                                   CA_ID = 1,
+                                   CA_Name = "100元換200點",
+                                   CA_Price = 100,
+                                   CA_Image = "點數.png",
+                                   CA_Describe = "100元換200點",
+                                   CA_Date = DateTime.Now,
+                                   CA_Discontinuted = false,
+                               },
+                               new Card()
+                               {
+                                   CA_ID = 2,
+                                   CA_Name = "200元換350點",
+                                   CA_Price = 200,
+                                   CA_Image = "點數.png",
+                                   CA_Describe = "200元換350點",
+                                   CA_Date = DateTime.Now,
+                                   CA_Discontinuted = false,
+                               });
+            modelBuilder.Entity<CardOrder>().HasData(
+                               new CardOrder()
+                               {
+                                   CO_ID = 1,
+                                   A_ID = 1,
+                                   CT_ID = 1,
+                                   CA_Price = 100,
+                                   CO_Sum = 100,
+                                   CO_Quantity = 1,
+                               },
+                               new CardOrder()
+                               {
+                                   CO_ID = 2,
+                                   A_ID = 1,
+                                   CT_ID = 2,
+                                   CA_Price = 200,
+                                   CO_Sum = 400,
+                                   CO_Quantity = 2,
+                               });
+
         }
 
         public DbSet<UserAccount> Accounts { get; set; } = default!;
