@@ -1,0 +1,172 @@
+﻿
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Login Status";
+    Layout = "_Layout";
+    
+}
+@section Styles{
+    <link href="~/css/LoginStatus/site.css" rel="stylesheet" />
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col content-body gx-5">
+            <div class="title">
+                同時在線人數
+            </div>
+        </div>
+        <div class="col selection">
+            <ul class="timeSpan">
+                <li id="day" class="end">
+                    <a asp-area="LoginStatus" asp-controller="LoginStatus_Home" asp-action="Index" asp-route-id="Day">日</a>
+                </li>
+                <li id="week">
+                    <a asp-area="LoginStatus" asp-controller="LoginStatus_Home" asp-action="Index" asp-route-id="Week">週</a>
+                </li>
+                <li id="month" class="start">
+                    <a asp-area="LoginStatus" asp-controller="LoginStatus_Home" asp-action="Index" asp-route-id="Month">月</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+            <div class="head row">
+                <div class="note">
+                    <ul class="note-left">
+                        <li class="notes">
+                            累計人數
+                    <p class="note-text">@Model.UserCount 人</p>
+                        </li>
+                        <li class="notes">
+                            平均上線時數
+                    <p class="note-text">@Model.Average 小時</p>
+                        </li>
+                    </ul>
+                    <ul class="row notes note-right">
+                        上線時段
+                        <li class="chartContainer"><canvas id="headChart" class="border bg-light"></canvas></li>
+                    </ul>
+                </div>
+            </div>
+        
+
+    <div class="row chartContainer">
+        <canvas id="mainChart" class="border bg-light">
+        </canvas>
+    </div>
+
+</div>
+
+@section Script{
+	<script src="~/chart.js/dist/chart.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.1"></script>
+   
+    <script>
+
+        const day = [];
+        const time = [];
+        var tmp = @Html.Raw(Json.Serialize(Model));
+        console.log(tmp);
+        for(var i=0;i<tmp.mainx.length;i++){
+            day.push({ x: tmp.mainx[i], y: tmp.mainy[i] });
+        }
+        for(var i =0;i<tmp.headx.length;i++){
+            time.push({ x: tmp.headx[i], y: tmp.heady[i] });
+        }
+        document.getElementById(tmp.unit).style.backgroundColor = "#819695";
+        const mainData = {
+            datasets: [{
+                label: '上線人數',
+                data: day,
+                backgroundColor: [
+                    'rgba(255, 26, 104, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(0, 0, 0, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 26, 104, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(0, 0, 0, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+        var headY = time.map(e=>moment(e.x,'HH:mm'));
+        var headX = time.map(e=>+e.y);
+        const headData = {
+            labels: headY,
+            datasets: [{
+                data: headX,
+                label:"上線人數",
+                fill:true
+            }]
+        };
+        console.log(tmp.unit);
+        const mainConfig = {
+            type: 'line',
+            data: mainData,
+            options: {
+                scales: {
+                    x: {
+                        type: 'time',
+                        time: {
+                            unit: tmp.unit,
+                            tooltipFormat: 'MMM DD'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        };
+        
+        const headConfig = {
+            type: 'line',
+            data: headData,
+            options: {
+                scales: {
+                    x: {
+                        type: 'time',
+                        time: {
+                            parser: 'HH:mm:ss',
+                            unit: 'hour',
+                            displayFormats: {
+                                hour: 'HH:mm'
+                            },
+                            tooltipFormat: 'HH:mm:ss'
+                        }
+                    }
+                },
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        };
+
+        // render init block
+        const myHeadChart = new Chart(
+            document.getElementById('headChart'),
+            headConfig
+        );
+
+        const myMainChart = new Chart(
+            document.getElementById('mainChart'),
+            mainConfig
+        );
+
+
+    </script>
+}

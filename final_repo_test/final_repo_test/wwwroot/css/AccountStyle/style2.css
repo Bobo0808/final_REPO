@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    overflow:auto;
+    max-height:100%;
+    max-width:100%;
+}
+
+body {
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2 {
+    color: #444;
+}
+
+h3 {
+    color: #999;
+}
+
+.btn {
+    /* 按鈕顏色 */
+    background: #f05462;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.btn:hover {
+    /* 滑鼠移到按鈕上面的顏色*/
+    color: #f00562;
+    background: white;
+    padding: 3px 8px;
+    border: 2px solid #f04562;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 10px;
+    border-bottom: 2px solid #999;
+}
+
+.table {
+    padding: 10px;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+    color:black;
+    
+}
+
+.content .cards {
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.content .cards .card {
+    width: 250px;
+    height: 150px;
+    background-color: white;
+    margin: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.content .content-2 {
+    min-height: 60vh;
+    display: flex;
+    justify-items: flex-start;
+    flex-wrap: wrap;
+    /* 根據Flex可用空間會自動換行 */
+
+}
+
+.content .content-2 .acount {
+    min-height: 50vh;
+    flex: 5;
+    background: white;
+    margin: 0 25px 25px 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.content .content-2 .recent-payment {
+    flex: 2;
+    background: white;
+    margin: 0 25px 25px 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+
+.content .content-2 .recent-payment table td:nth-child(1) img {
+    height: 40px;
+    width: 40px;
+}
+
+
+/*RWD*/
+/*@media screen and (max-width:1050px) {
+    .side-menu li {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width:940px) {
+    .side-menu li span {
+        display: none;
+    }
+
+    .side-menu {
+        align-items: center;
+    }
+
+    .side-menu li img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .side-menu li:hover {
+        background: #f05462;
+        padding: 8px 38px;
+        border: 2px solid white;
+    }
+}
+
+@media screen and (max-width:536px) {
+    .brand-name h1 {
+        font-size: 16px;
+
+    }
+
+    .container .content .cards {
+        justify-content: center;
+    }
+
+    .side-menu li img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .container .content .content-2 .recent-payment table th:nth-child(2),
+    .container .content .content-2 .recent-payment table th:nth-child(2) {
+        display: none;
+    }*/
+}

@@ -1,0 +1,157 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+.selection {
+    margin: 0;
+    display: flex;
+    justify-content: end;
+    align-items: baseline
+}
+
+.row {
+    margin: 1rem;
+}
+
+.container{
+    max-width:100%;
+    max-height:100%;
+    overflow:auto;
+}
+
+.chartContainer {
+    max-height:100%;
+}
+
+#headChart {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#mainChart {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 1rem;
+    
+}
+
+p, li {
+    color: black
+}
+
+.content {
+    background-color: #e7e7e7;
+}
+
+    .content > .row {
+        display: flex;
+    }
+
+
+
+.head {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.timeSpan {
+    margin:0;
+    width:20rem;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+}
+
+    .timeSpan > li {
+
+        text-align: center;
+        width: 100%;
+        list-style-type: none;
+        background-color: white;
+        border: 1px solid #e8e8e8;
+        display: block;
+        cursor: pointer;
+    }
+
+    .timeSpan > .start {
+        border-radius: 1rem 0 0 1rem;
+        border-right: none;
+    }
+
+    .timeSpan > .end {
+        border-radius: 0 1rem 1rem 0;
+        border-left: none;
+    }
+
+.title {
+    font-size: 2rem;
+    width:40%;
+    line-height: 3rem;
+    font-weight: bold;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.note {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+    .note > ul {
+        max-height:100%;
+        padding: 0;
+        list-style-type: none;
+        text-align: center;
+        font-size: 1.6em;
+      
+        
+    }
+
+.note-left {
+    width: 30%;
+}
+
+    .note-left > .notes {
+        padding: 0;
+        background-color: white;
+        border-radius: 1rem;
+        margin:3rem;
+    }
+
+.note-right {
+    justify-content:center;
+    background-color: white;
+    border-radius: 1rem;
+    color: black;
+    width: 45%;
+}
+
+    .note-right > li {
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        list-style-type: none;
+    }
+
+        .note-right > li > canvas {
+            width: auto;
+        }
+
+.note-text {
+    font-size: 3rem;
+    font-weight: bolder;
+    list-style-type: none;
+}
+
+table {
+    margin-top: 1rem;
+    table-layout: fixed;
+    width: 100%;
+}
+
+
+.tdata > tr > th,
+td {
+    border: 1px solid #aaa;
+    padding: 0.5rem;
+}

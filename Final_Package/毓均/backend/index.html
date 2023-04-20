@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/5b593a029f.js" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+    <style>
+        body {
+            /* background-color: #f5f0f0; */
+            /* background: linear-gradient(100deg, #FEB692, #FEBFC8); */
+            background: linear-gradient(100deg, #ffad99, #ffc7cf);
+        }
+
+        /*一加就變白色 不願意被固定的腦殘nav*/
+
+
+
+        /* header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+        } */
+
+        .offcanvas {
+            border-radius: 0 100px 400px 0;
+        }
+
+        .offcanvas-start {
+            width: 13%;
+        }
+
+        .leftBar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            height: 60%;
+            width: 15%;
+            position: fixed;
+            top: 15%;
+            left: 5%;
+            background-color: rgb(255, 255, 255, 0.8);
+            border-radius: 45px;
+            box-shadow: 5px 6px 10px rgba(58, 0, 0, 0.1);
+        }
+
+
+        .AD_title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #4b2121;
+            width: 50%;
+            /* font-weight: bolder; */
+            height: 40%;
+            font-size: 30px;
+            border-bottom: 2px solid rgb(255, 138, 138);
+
+        }
+
+        /* h1 {
+            display: inline;
+        } */
+
+        .btn-group-vertical {
+
+            top: -5%;
+            width: 80%;
+            height: 35%;
+
+        }
+
+        .btn-outline-primary {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-style: none;
+            color: #ea5d64;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .btn-outline-primary:hover {
+
+            background-color: rgba(255, 88, 88, 0.671);
+            font-weight: bolder;
+            font-size: 25px;
+            color: #ffffff;
+            box-shadow: 3px 3px 5px rgba(58, 0, 0, 0.2);
+        }
+
+        .data_Area {
+
+            /* border: 1px solid rgb(255, 92, 92); */
+            width: 70%;
+            height: 72%;
+            position: absolute;
+            top: 8%;
+            left: 28%;
+        }
+
+        .data_Area h2 {
+            color: #ffffff;
+        }
+
+
+        .data_Area .dataRow {
+            /* background-color: #4b2121; */
+            width: 100%;
+            height: 550px;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .data_Area .dataRow .dataRecord {
+            display: flex;
+            background-color: rgb(255, 255, 255, 0.8);
+            width: 85%;
+            height: 80px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 5px 6px 10px rgba(58, 0, 0, 0.1);
+        }
+
+        .dataRecord span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid seagreen; */
+            color: #7c1515;
+        }
+
+        .dataSchema {
+            width: 85%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .dataSchema span {
+            font-size: 15px;
+            color: #ffffff;
+            height: auto;
+            /* border: 1px solid saddlebrown; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+        .dataSchema .ID,
+        .dataRecord .RecordID {
+            width: 150px;
+        }
+
+
+
+        .dataSchema .name,
+        .dataRecord .RecordName {
+            width: 180px;
+        }
+
+        .dataSchema .Cname,
+        .dataRecord .RecordCname {
+            width: 180px;
+        }
+
+        .dataSchema .phone,
+        .dataRecord .RecordPhone {
+            width: 200px;
+        }
+
+        .dataSchema .email,
+        .dataRecord .RecordEmail {
+            width: 250px;
+
+        }
+
+        .RecordIcon {
+            /* border: 1px solid salmon; */
+            width: 70px;
+        }
+
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            height: auto;
+            width: 100%;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid" style="width: 3%; margin-left: 1%;">
+
+                    <a class="navbar-brand" href="#">
+                        <i class="fa-solid fa-bars fa-bounce" data-bs-toggle="offcanvas" href="#offcanvasExample"
+                            role="button" aria-controls="offcanvasExample" style="color: #ea5d64;"></i>
+                    </a>
+                </div>
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">ChickenLife</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">廠商管理</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    歷史廣告管理
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">新刪修查</a></li>
+                                    <li><a class="dropdown-item" href="#">廣告刊登</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">那些有的沒的</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled">小雞人生快樂一生</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">側欄</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div>
+                    加一堆有的沒的按鈕在這邊
+                </div>
+                <div class="dropdown mt-3">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-bs-toggle="dropdown">
+                        下拉4選單
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#">選窩</a></li>
+                        <li><a class="dropdown-item" href="#">別看他選窩</a></li>
+                        <li><a class="dropdown-item" href="#">我啦我啦</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="leftBar">
+
+            <h1 class="AD_title">廣&nbsp;&nbsp;&nbsp;告<br><br>管&nbsp;&nbsp;&nbsp;理</h1>
+
+            <div class="btn-group-vertical" role="group" aria-label="Basic radio toggle button group">
+                <button type="button" class="btn btn-outline-primary" style="border-radius: 20px;"
+                    onmouseover="showIcon(this)" onmouseout="hideIcon(this)">
+                    <i class="fa-regular fa-handshake fa-shake" style="color: #ffffff; display: none;"></i>
+                    合作廠商管理
+                </button>
+                <button type="button" class="btn btn-outline-primary" style="border-radius: 20px;"
+                    onmouseover="showIcon(this)" onmouseout="hideIcon(this)">
+                    <i class="fa-solid fa-rectangle-ad fa-shake" style="color: #ffffff; display: none;"></i>
+                    歷史廣告管理
+                </button>
+                <button type="button" class="btn btn-outline-primary" style="border-radius: 20px;"
+                    onmouseover="showIcon(this)" onmouseout="hideIcon(this)">
+                    <i class="fa-solid fa-pencil fa-shake" style="color: #ffffff; display: none;"></i>
+                    廣告刊登與更新
+                </button>
+            </div>
+
+        </div>
+        <div class="data_Area">
+            <h2>廠&nbsp;商&nbsp;管&nbsp;理</h2>
+            <div class="dataSchema">
+                <span class="ID">廠商ID</span>
+                <span class="name">廠商名稱</span>
+                <span class="Cname">聯絡人姓名</span>
+                <span class="phone">電話</span>
+                <span class="email">E-mail</span>
+
+            </div>
+            <div class="dataRow">
+                <div class="dataRecord">
+                    <span class="RecordID">1</span>
+                    <span class="RecordName">Chanel</span>
+                    <span class="RecordCname">鹹水雞</span>
+                    <span class="RecordPhone">0987542215</span>
+                    <span class="RecordEmail">kaoneoje@gmail.com</span>
+                    <span class="RecordIcon"><i class="fa-solid fa-pen-to-square fa-bounce fa-lg"
+                            style="color: #a21a1a;"></i></span>
+                    <span class="RecordIcon"><i class="fa-solid fa-trash-can fa-bounce fa-lg"
+                            style="color: #a21a1a;"></i></span>
+                </div>
+                <div class="dataRecord">
+                    <span class="RecordID">2</span>
+                    <span class="RecordName">Dior</span>
+                    <span class="RecordCname">薑母鴨</span>
+                    <span class="RecordPhone">0981423257</span>
+                    <span class="RecordEmail">thrjsdfs@gmail.com</span>
+                    <span class="RecordIcon"><i class="fa-solid fa-pen-to-square fa-bounce fa-lg"
+                            style="color: #a21a1a;"></i></span>
+                    <span class="RecordIcon"><i class="fa-solid fa-trash-can fa-bounce fa-lg"
+                            style="color: #a21a1a;"></i></span>
+                </div>
+                <div class="dataRecord">
+                    <span class="RecordID">3</span>
+                    <span class="RecordName">YSL</span>
+                    <span class="RecordCname">香酥烤鴨</span>
+                    <span class="RecordPhone">0951418523</span>
+                    <span class="RecordEmail">sgshrae4w@gmail.com</span>
+                    <span class="RecordIcon"><i class="fa-solid fa-pen-to-square fa-bounce fa-lg"
+                            style="color: #a21a1a;"></i></span>
+                    <span class="RecordIcon"><i class="fa-solid fa-trash-can fa-bounce fa-lg"
+                            style="color: #a21a1a;"></i></span>
+                </div>
+                <div class="dataRecord">
+                    <span class="RecordID">4</span>
+                    <span class="RecordName">Esteelauder</span>
+                    <span class="RecordCname">神奇海螺</span>
+                    <span class="RecordPhone">0998745632</span>
+                    <span class="RecordEmail">afwegehhra@gmail.com</span>
+                    <span class="RecordIcon"><i class="fa-solid fa-pen-to-square fa-bounce fa-lg"
+                            style="color: #a21a1a;"></i></span>
+                    <span class="RecordIcon"><i class="fa-solid fa-trash-can fa-bounce fa-lg"
+                            style="color: #a21a1a;"></i></span>
+                </div>
+                <div class="dataRecord">
+                    <span class="RecordID">5</span>
+                    <span class="RecordName">Clinique</span>
+                    <span class="RecordCname">佛羅里達貓貓</span>
+                    <span class="RecordPhone">0981135492</span>
+                    <span class="RecordEmail">GWE3WE4GH@gmail.com</span>
+                    <span class="RecordIcon"><i class="fa-solid fa-pen-to-square fa-bounce fa-lg"
+                            style="color: #a21a1a;"></i></span>
+                    <span class="RecordIcon"><i class="fa-solid fa-trash-can fa-bounce fa-lg"
+                            style="color: #a21a1a;"></i></span>
+                </div>
+                <div class="dataRecord">
+                    <span class="RecordID">6</span>
+                    <span class="RecordName">Revlon</span>
+                    <span class="RecordCname">吉娃娃之恥</span>
+                    <span class="RecordPhone">0997468513</span>
+                    <span class="RecordEmail">hrqer2252@gmail.com</span>
+                    <span class="RecordIcon"><i class="fa-solid fa-pen-to-square fa-bounce fa-lg"
+                            style="color: #a21a1a;"></i></span>
+                    <span class="RecordIcon"><i class="fa-solid fa-trash-can fa-bounce fa-lg"
+                            style="color: #a21a1a;"></i></span>
+                </div>
+                <div class="dataRecord">
+                    <span class="RecordID">7</span>
+                    <span class="RecordName">Media</span>
+                    <span class="RecordCname">甩頭鴿</span>
+                    <span class="RecordPhone">0931905207</span>
+                    <span class="RecordEmail">qweefqe1q11@gmail.com</span>
+                    <span class="RecordIcon"><i class="fa-solid fa-pen-to-square fa-bounce fa-lg"
+                            style="color: #a21a1a;"></i></span>
+                    <span class="RecordIcon"><i class="fa-solid fa-trash-can fa-bounce fa-lg"
+                            style="color: #a21a1a;"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">
+                <div class="b-example-divider"></div>
+                <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+                </ul>
+                <p class="text-center text-muted">&copy; 2023 ChickenLife, Inc</p>
+            </span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <SCript>
+        function showIcon(button) {
+            const icon = button.querySelector('i');
+            icon.style.display = 'inline-block';
+        }
+
+        function hideIcon(button) {
+            const icon = button.querySelector('i');
+            icon.style.display = 'none';
+        }
+
+    </SCript>
+</body>
+
+</html>

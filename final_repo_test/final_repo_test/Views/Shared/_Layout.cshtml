@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewData["Title"]ChickenLife</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" asp-append-version="true">
+	<link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+	@await RenderSectionAsync("Styles",required:false)
+</head>
+
+<body>
+	<section id="sidebar">
+		<a class="brand" asp-area="LoginStatus" asp-controller="LoginStatus_Home" asp-action="Index" asp-route-id="Day">
+			<i class="fa fa-solid fa-kiwi-bird fa-shake"></i>
+			<span class="text">ChickenLife</span>
+		</a>
+		<ul class="side-menu top">
+			<li class="active side-btn">
+				<a asp-area="LoginStatus" asp-controller="LoginStatus_Home" asp-action="Index" asp-route-id="Day">
+					<i class="fa fa-solid fa-chart-line"></i>
+					<span class="text">儀表板</span>
+				</a>
+			</li>
+			<li class="side-btn">
+			<a asp-area="Login" asp-controller="Login_Home" asp-action="Index">
+					<i class="fa fa-solid fa-user"></i>
+				<span class="text">登入</span>
+			</a>
+			</li>
+			<li class="side-btn">
+				<a asp-area="Account" asp-controller="Account_Home" asp-action="Index">
+					<i class="fa fa-solid fa-users fa-sm"></i>
+					<span class="text">會員狀態</span>
+				</a>
+			</li>
+			<li class="side-btn">
+				<a asp-area="Report" asp-controller="Report_Home" asp-action="Index">
+					<i class="fa fa-solid fa-triangle-exclamation"></i>
+					<span class="text">檢舉狀態</span>
+				</a>
+			</li>
+			<li class="side-btn">
+				<a asp-area="" asp-controller="Home" asp-action="">
+					<i class="fa fa-solid fa-map"></i>
+					<span class="text">地圖編輯</span>
+				</a>
+			</li>
+			<li class="side-btn">
+				<a asp-area="OrderProduct" asp-controller="Products" asp-action="Index">
+					<i class="fa fa-solid fa-store"></i>
+					<span class="text">商品列表</span>
+				</a>
+			</li>
+			<li class="side-btn">
+				<a asp-area="OrderProduct" asp-controller="Orders" asp-action="Index">
+					<i class="fa fa-solid fa-sack-dollar"></i>
+					<span class="text">營收分析</span>
+				</a>
+			</li>
+			<li class="side-btn">
+				<a asp-area="AD" asp-controller="AD_Home" asp-action="Index">
+					<i class="fa fa-solid fa-rectangle-ad"></i>
+					<span class="text">廣告合作</span>
+				</a>
+			</li>
+			<li class="side-btn">
+				<a asp-area="AD" asp-controller="ADUpdate_Home" asp-action="Index">
+					<i class="fa fa-solid fa-circle-arrow-up"></i>
+					<span class="text">廣告上架</span>
+				</a>
+			</li>
+			<li class="side-btn">
+				<a asp-area="DebugLog" asp-controller="DebugLog_Home" asp-action="Index">
+					<i class="fa fa-solid fa-bug-slash"></i>
+					<span class="text">除錯分析</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="#" class="logout">
+					<i class="fa-solid fa-right-from-bracket"></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<section id="content">
+		<nav>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<form action="#">
+				<div class="form-input dark" id="Search">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+				</div>
+			</form>
+			<a href="#" class="profile"><img src="~/img/people.png"></a>
+		</nav>
+
+		<main class="table">
+			@*各自的View程式碼放這裡*@
+
+			@RenderBody()
+		</main>
+
+
+	</section>
+
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/script.js" asp-append-version="true"></script>
+	@await RenderSectionAsync("Script",required:false)
+</body>
+</html>

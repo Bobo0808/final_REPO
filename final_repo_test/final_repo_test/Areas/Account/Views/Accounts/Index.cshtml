@@ -1,0 +1,107 @@
+﻿@model IEnumerable<final_repo_test.Models.UserAccount>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.A_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserPWD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.A_Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Birthday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.A_level)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.A_Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.A_Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.A_add)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.A_RegisteredAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.A_NickName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.A_Coin)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.A_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserPWD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.A_Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Birthday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.P_Describe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.A_level)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.A_Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.A_Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.A_add)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.A_RegisteredAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.A_NickName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.A_Coin)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.A_ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.A_ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.A_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

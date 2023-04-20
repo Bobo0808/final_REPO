@@ -1,0 +1,100 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<final_repo_test.Areas.OrderProduct.ViewModels.ViewOrder>;
+
+@{
+    ViewData["Title"] = "Order";
+    Layout = "_Layout";
+}
+@section Styles{
+
+}
+
+<div class="container box">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-lg-flex align-items-center mb-4 gap-3">
+                    <div class="position-relative">
+                        <input type="text" class="form-control ps-5 radius-30" placeholder="Search Order"> <span class="position-absolute top-50 product-show translate-middle-y">
+                            <i class="bx bx-search"></i>
+                        </span>
+                    </div>
+                    <div class="ms-auto">
+                        <a asp-area="OrderProduct" asp-controller="Orders" asp-action="Create"
+                           class="btn btn-primary btn-primary:hover radius-30 mt-2 mt-lg-0">
+                            <i class="bx bxs-plus-square"></i>Add New Order
+                        </a>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table mb-0 bordandcolor">
+                        <thead class="table-light">
+                            <tr>
+                                <th class="col-1">Order#</th>
+                                <th class="col-1">Name</th>
+                                <th class="col-2">Status</th>
+                                <th class="col-2">Total</th>
+                                <th class="col-3">Date</th>
+                                <th class="col-2">View Details</th>
+                                <th class="col-1">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table">
+                            @foreach (var item in ViewBag.OrderViewModels)
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div>
+                                                <input class="form-check-input me-3" type="checkbox" value=""
+                                                       aria-label="...">
+                                            </div>
+                                            <div class="ms-2">
+                                                <h6 class="mb-0 font-14"># @item.O_ID</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        @item.UserName
+                                        @* @(item.OAIdNavigation.UserName)*@
+                                    </td>
+                                    <td>
+                                        <div id="test" class="badge rounded-pill bg-light-success p-2 text-uppercase px-3">
+                                            <i class='bx bxs-circle me-1'></i>@item.O_Cancle
+                                        </div>
+                                    </td>
+                                    <td>
+                                       @* $@Html.DisplayFor(modelItem => item.OTotalPrice)*@
+                                        $@item.O_TotalPrice
+                                    </td>
+                                    <td>
+                                        @item.O_Date
+                                    </td>
+                                    <td>
+                                        <a asp-action="Details" asp-route-id="@item.O_ID" class="radius-30 px-4">Details</a>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex order-actions">
+                                            <a asp-action="Edit" asp-route-id="@item.O_ID"><i class='bx bxs-edit test'></i></a>
+                                            <a asp-action="Delete" asp-route-id="@item.O_ID" class="ms-3"><i class='bx bxs-trash test'></i></a>
+                                            <a asp-action="Delete" asp-route-id="@item.O_ID" class="ms-3"><i class="fadeIn animated bx bx-x"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Script{
+
+    <script>
+
+
+    </script>
+}

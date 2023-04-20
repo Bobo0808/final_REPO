@@ -1,0 +1,89 @@
+﻿@model final_repo_test.Models.Product
+@section Styles{
+    <link href="~/css/orderproduct/detail.min.css" rel="stylesheet" />
+}
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="container box">
+    <h1>商品資訊</h1>
+
+    <div>
+        <h4>Product</h4>
+        <hr />
+        <dl class="row">
+            <div class="col-md-6">
+                <dt class="col-sm-2">
+
+                </dt>
+                <dd class="col-sm-10">
+                    @*@Html.DisplayFor(model => model.PImage)*@
+                    @*<img style="width:240px;height:320px"
+                    src='@Url.Action("ShowPhoto","Products",new{id=Model.PId})'
+                    title="@Html.DisplayFor(model => model.PImage)" />*@
+                    @*<partial name="_ShowPhotoPartial" />*@
+                </dd>
+                @Html.DisplayNameFor(model => model.P_Image)
+                <partial name="_ShowPhotoPartial" />
+            </div>
+            <div class="col-md-6 bg-secondary radius">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.P_Name)
+                </dt>
+                <dd class="col-sm-10 offset-1">
+                    @Html.DisplayFor(model => model.P_Name)
+                </dd>
+                <dt class="col-sm-2 ">
+                    @Html.DisplayNameFor(model => model.P_ProductType)
+                </dt>
+                <dd class="col-sm-10 offset-1">
+                    @Html.DisplayFor(model => model.P_ProductType)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.P_Price)
+                </dt>
+                <dd class="col-sm-10 offset-1">
+                    @Html.DisplayFor(model => model.P_Price)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.P_Describe)
+                </dt>
+                <dd class="col-sm-10 offset-1">
+                    @Html.DisplayFor(model => model.P_Describe)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.P_Instock)
+                </dt>
+                <dd class="col-sm-10 offset-1">
+                    @Html.DisplayFor(model => model.P_Instock)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.P_Date)
+                </dt>
+                <dd class="col-sm-10 offset-1">
+                    @Html.DisplayFor(model => model.P_Date)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.P_Discount)
+                </dt>
+                <dd class="col-sm-10 offset-1">
+                    @Html.DisplayFor(model => model.P_Discount)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.P_Discontinuted)
+                </dt>
+                <dd class="col-sm-10 offset-1">
+                    @Html.DisplayFor(model => model.P_Discontinuted)
+                </dd>
+
+            </div>
+        </dl>
+    </div>
+    <div>
+        <a class="btn-secondary btn gray" asp-action="Edit" asp-route-id="@Model?.P_ID">Edit</a> |
+        <a class="btn-secondary btn gray" asp-action="Index">Back to List</a>
+    </div>
+</div>
