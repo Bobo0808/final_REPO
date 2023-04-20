@@ -12,17 +12,97 @@ using final_repo_test.Data;
 namespace final_repo_test.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230419180716_m3")]
-    partial class m3
+    [Migration("20230418093830_bnn")]
+    partial class bnn
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.16")
+                .HasAnnotation("ProductVersion", "6.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("final_repo_test.Models.Account", b =>
+                {
+                    b.Property<int>("A_ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("A_ID"), 1L, 1);
+
+                    b.Property<int>("A_Coin")
+                        .HasColumnType("int");
+
+                    b.Property<string>("A_Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("A_Gender")
+                        .HasColumnType("int");
+
+                    b.Property<string>("A_Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("A_NickName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("A_Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("A_RegisteredAt")
+                        .HasColumnType("Date");
+
+                    b.Property<string>("A_add")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("A_level")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Birthday")
+                        .HasColumnType("Date");
+
+                    b.Property<int>("P_id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserPWD")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("A_ID");
+
+                    b.HasIndex("P_id");
+
+                    b.ToTable("Accounts", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            A_ID = 1,
+                            A_Coin = 999999,
+                            A_Email = "Test@gmail.com",
+                            A_Gender = 0,
+                            A_Name = "Test",
+                            A_NickName = "Test",
+                            A_Phone = "0900000000",
+                            A_RegisteredAt = new DateTime(2023, 4, 18, 17, 38, 29, 879, DateTimeKind.Local).AddTicks(7125),
+                            A_add = "Test",
+                            A_level = 99,
+                            Birthday = new DateTime(2023, 4, 18, 17, 38, 29, 879, DateTimeKind.Local).AddTicks(7124),
+                            P_id = 1,
+                            UserName = "Test",
+                            UserPWD = "Test"
+                        });
+                });
 
             modelBuilder.Entity("final_repo_test.Models.Ads", b =>
                 {
@@ -105,7 +185,7 @@ namespace final_repo_test.Migrations
 
                     b.HasKey("OS_ID");
 
-                    b.ToTable("Ads_OrderStatuses");
+                    b.ToTable("Ads_OrderStatus");
                 });
 
             modelBuilder.Entity("final_repo_test.Models.Card", b =>
@@ -221,32 +301,6 @@ namespace final_repo_test.Migrations
                     b.HasKey("Case_ID");
 
                     b.ToTable("CaseTables", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Case_ID = 1,
-                            Case_Name = "兇兇肥婆",
-                            Case_PricePerDay = 50m
-                        },
-                        new
-                        {
-                            Case_ID = 2,
-                            Case_Name = "兇兇大魷魚",
-                            Case_PricePerDay = 20m
-                        },
-                        new
-                        {
-                            Case_ID = 3,
-                            Case_Name = "兇兇肥婆",
-                            Case_PricePerDay = 50m
-                        },
-                        new
-                        {
-                            Case_ID = 4,
-                            Case_Name = "兇兇大魷魚",
-                            Case_PricePerDay = 20m
-                        });
                 });
 
             modelBuilder.Entity("final_repo_test.Models.DebugLog", b =>
@@ -360,50 +414,50 @@ namespace final_repo_test.Migrations
                         {
                             L_ID = 1,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 20, 2, 7, 16, 692, DateTimeKind.Local).AddTicks(259),
-                            L_dcTime = new DateTime(2023, 4, 20, 3, 7, 16, 692, DateTimeKind.Local).AddTicks(266)
+                            L_cTime = new DateTime(2023, 4, 18, 17, 38, 29, 878, DateTimeKind.Local).AddTicks(8238),
+                            L_dcTime = new DateTime(2023, 4, 18, 18, 38, 29, 878, DateTimeKind.Local).AddTicks(8246)
                         },
                         new
                         {
                             L_ID = 2,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 19, 0, 7, 16, 692, DateTimeKind.Local).AddTicks(270),
-                            L_dcTime = new DateTime(2023, 4, 19, 1, 7, 16, 692, DateTimeKind.Local).AddTicks(271)
+                            L_cTime = new DateTime(2023, 4, 17, 15, 38, 29, 878, DateTimeKind.Local).AddTicks(8251),
+                            L_dcTime = new DateTime(2023, 4, 17, 16, 38, 29, 878, DateTimeKind.Local).AddTicks(8252)
                         },
                         new
                         {
                             L_ID = 3,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 17, 23, 7, 16, 692, DateTimeKind.Local).AddTicks(272),
-                            L_dcTime = new DateTime(2023, 4, 18, 0, 7, 16, 692, DateTimeKind.Local).AddTicks(272)
+                            L_cTime = new DateTime(2023, 4, 16, 14, 38, 29, 878, DateTimeKind.Local).AddTicks(8252),
+                            L_dcTime = new DateTime(2023, 4, 16, 15, 38, 29, 878, DateTimeKind.Local).AddTicks(8253)
                         },
                         new
                         {
                             L_ID = 4,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 16, 22, 7, 16, 692, DateTimeKind.Local).AddTicks(273),
-                            L_dcTime = new DateTime(2023, 4, 16, 23, 7, 16, 692, DateTimeKind.Local).AddTicks(274)
+                            L_cTime = new DateTime(2023, 4, 15, 13, 38, 29, 878, DateTimeKind.Local).AddTicks(8254),
+                            L_dcTime = new DateTime(2023, 4, 15, 14, 38, 29, 878, DateTimeKind.Local).AddTicks(8254)
                         },
                         new
                         {
                             L_ID = 5,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 15, 21, 7, 16, 692, DateTimeKind.Local).AddTicks(274),
-                            L_dcTime = new DateTime(2023, 4, 15, 22, 7, 16, 692, DateTimeKind.Local).AddTicks(275)
+                            L_cTime = new DateTime(2023, 4, 14, 12, 38, 29, 878, DateTimeKind.Local).AddTicks(8255),
+                            L_dcTime = new DateTime(2023, 4, 14, 13, 38, 29, 878, DateTimeKind.Local).AddTicks(8255)
                         },
                         new
                         {
                             L_ID = 6,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 15, 20, 7, 16, 692, DateTimeKind.Local).AddTicks(275),
-                            L_dcTime = new DateTime(2023, 4, 15, 21, 7, 16, 692, DateTimeKind.Local).AddTicks(276)
+                            L_cTime = new DateTime(2023, 4, 14, 11, 38, 29, 878, DateTimeKind.Local).AddTicks(8256),
+                            L_dcTime = new DateTime(2023, 4, 14, 12, 38, 29, 878, DateTimeKind.Local).AddTicks(8256)
                         },
                         new
                         {
                             L_ID = 7,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 15, 19, 7, 16, 692, DateTimeKind.Local).AddTicks(276),
-                            L_dcTime = new DateTime(2023, 4, 15, 20, 7, 16, 692, DateTimeKind.Local).AddTicks(277)
+                            L_cTime = new DateTime(2023, 4, 14, 10, 38, 29, 878, DateTimeKind.Local).AddTicks(8257),
+                            L_dcTime = new DateTime(2023, 4, 14, 11, 38, 29, 878, DateTimeKind.Local).AddTicks(8257)
                         });
                 });
 
@@ -646,7 +700,7 @@ namespace final_repo_test.Migrations
                         new
                         {
                             P_ID = 1,
-                            P_Date = new DateTime(2023, 4, 20, 2, 7, 16, 692, DateTimeKind.Local).AddTicks(5254),
+                            P_Date = new DateTime(2023, 4, 18, 17, 38, 29, 879, DateTimeKind.Local).AddTicks(7106),
                             P_Describe = "Regular Fit反摺袖襯衫",
                             P_Discontinuted = false,
                             P_Discount = 0,
@@ -659,7 +713,7 @@ namespace final_repo_test.Migrations
                         new
                         {
                             P_ID = 2,
-                            P_Date = new DateTime(2023, 4, 20, 2, 7, 16, 692, DateTimeKind.Local).AddTicks(5261),
+                            P_Date = new DateTime(2023, 4, 18, 17, 38, 29, 879, DateTimeKind.Local).AddTicks(7110),
                             P_Describe = "Regular Fit棉麻短袖襯衫",
                             P_Discontinuted = false,
                             P_Discount = 0,
@@ -744,84 +798,15 @@ namespace final_repo_test.Migrations
                     b.ToTable("Societies", (string)null);
                 });
 
-            modelBuilder.Entity("final_repo_test.Models.UserAccount", b =>
+            modelBuilder.Entity("final_repo_test.Models.Account", b =>
                 {
-                    b.Property<int>("A_ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.HasOne("final_repo_test.Models.Product", "Product")
+                        .WithMany("Accounts")
+                        .HasForeignKey("P_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("A_ID"), 1L, 1);
-
-                    b.Property<int>("A_Coin")
-                        .HasColumnType("int");
-
-                    b.Property<string>("A_Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("A_Gender")
-                        .HasColumnType("int");
-
-                    b.Property<string>("A_Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("A_NickName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("A_Phone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("A_RegisteredAt")
-                        .HasColumnType("Date");
-
-                    b.Property<string>("A_add")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("A_level")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Birthday")
-                        .HasColumnType("Date");
-
-                    b.Property<int>("P_id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserPWD")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("A_ID");
-
-                    b.HasIndex("P_id");
-
-                    b.ToTable("Accounts", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            A_ID = 1,
-                            A_Coin = 999999,
-                            A_Email = "Test@gmail.com",
-                            A_Gender = 0,
-                            A_Name = "Test",
-                            A_NickName = "Test",
-                            A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 4, 20, 2, 7, 16, 692, DateTimeKind.Local).AddTicks(5274),
-                            A_add = "Test",
-                            A_level = 99,
-                            Birthday = new DateTime(2023, 4, 20, 2, 7, 16, 692, DateTimeKind.Local).AddTicks(5273),
-                            P_id = 1,
-                            UserName = "Test",
-                            UserPWD = "Test"
-                        });
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("final_repo_test.Models.Ads", b =>
@@ -864,7 +849,7 @@ namespace final_repo_test.Migrations
 
             modelBuilder.Entity("final_repo_test.Models.CardOrder", b =>
                 {
-                    b.HasOne("final_repo_test.Models.UserAccount", "Account")
+                    b.HasOne("final_repo_test.Models.Account", "Account")
                         .WithMany("CardOrders")
                         .HasForeignKey("A_ID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -883,7 +868,7 @@ namespace final_repo_test.Migrations
 
             modelBuilder.Entity("final_repo_test.Models.DebugLog", b =>
                 {
-                    b.HasOne("final_repo_test.Models.UserAccount", "Account")
+                    b.HasOne("final_repo_test.Models.Account", "Account")
                         .WithMany("DebugLogs")
                         .HasForeignKey("A_ID")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -894,7 +879,7 @@ namespace final_repo_test.Migrations
 
             modelBuilder.Entity("final_repo_test.Models.LoginStaus", b =>
                 {
-                    b.HasOne("final_repo_test.Models.UserAccount", "Account")
+                    b.HasOne("final_repo_test.Models.Account", "Account")
                         .WithMany("LoginStaus")
                         .HasForeignKey("A_ID")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -935,7 +920,7 @@ namespace final_repo_test.Migrations
 
             modelBuilder.Entity("final_repo_test.Models.Order", b =>
                 {
-                    b.HasOne("final_repo_test.Models.UserAccount", "Account")
+                    b.HasOne("final_repo_test.Models.Account", "Account")
                         .WithMany("Orders")
                         .HasForeignKey("A_ID")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -965,13 +950,13 @@ namespace final_repo_test.Migrations
 
             modelBuilder.Entity("final_repo_test.Models.Report", b =>
                 {
-                    b.HasOne("final_repo_test.Models.UserAccount", "Account")
+                    b.HasOne("final_repo_test.Models.Account", "Account")
                         .WithMany("Reports")
                         .HasForeignKey("A_ID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("final_repo_test.Models.UserAccount", "ReportedAccount")
+                    b.HasOne("final_repo_test.Models.Account", "ReportedAccount")
                         .WithMany("ReportedReports")
                         .HasForeignKey("ReportedA_ID")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -984,13 +969,13 @@ namespace final_repo_test.Migrations
 
             modelBuilder.Entity("final_repo_test.Models.Society", b =>
                 {
-                    b.HasOne("final_repo_test.Models.UserAccount", "Account")
+                    b.HasOne("final_repo_test.Models.Account", "Account")
                         .WithMany("Societies")
                         .HasForeignKey("A_ID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("final_repo_test.Models.UserAccount", "TargetAccount")
+                    b.HasOne("final_repo_test.Models.Account", "TargetAccount")
                         .WithMany("TargetSocieties")
                         .HasForeignKey("TargetA_ID")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -1001,15 +986,23 @@ namespace final_repo_test.Migrations
                     b.Navigation("TargetAccount");
                 });
 
-            modelBuilder.Entity("final_repo_test.Models.UserAccount", b =>
+            modelBuilder.Entity("final_repo_test.Models.Account", b =>
                 {
-                    b.HasOne("final_repo_test.Models.Product", "Product")
-                        .WithMany("Accounts")
-                        .HasForeignKey("P_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("CardOrders");
 
-                    b.Navigation("Product");
+                    b.Navigation("DebugLogs");
+
+                    b.Navigation("LoginStaus");
+
+                    b.Navigation("Orders");
+
+                    b.Navigation("ReportedReports");
+
+                    b.Navigation("Reports");
+
+                    b.Navigation("Societies");
+
+                    b.Navigation("TargetSocieties");
                 });
 
             modelBuilder.Entity("final_repo_test.Models.Ads_OrderStatus", b =>
@@ -1056,25 +1049,6 @@ namespace final_repo_test.Migrations
                     b.Navigation("Accounts");
 
                     b.Navigation("OrderDetails");
-                });
-
-            modelBuilder.Entity("final_repo_test.Models.UserAccount", b =>
-                {
-                    b.Navigation("CardOrders");
-
-                    b.Navigation("DebugLogs");
-
-                    b.Navigation("LoginStaus");
-
-                    b.Navigation("Orders");
-
-                    b.Navigation("ReportedReports");
-
-                    b.Navigation("Reports");
-
-                    b.Navigation("Societies");
-
-                    b.Navigation("TargetSocieties");
                 });
 #pragma warning restore 612, 618
         }

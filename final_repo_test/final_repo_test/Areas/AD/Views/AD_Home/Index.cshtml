@@ -34,10 +34,6 @@
 				<span class="label">備註</span>
 				<input type="text" style="width: 100%">
 			</span>
-			<span class="checkbtn_span" style="width: 100px;">
-				<span class="label"style="color:transparent;">備註</span>
-				<button type="button" class="btncheck btn btn-light">新增</button>
-			</span>
 		</div>
 	</fieldset>
 	<section class=" Dtable_body">
@@ -55,25 +51,242 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach(var partner in Model.PartnersList)
-				{
 				<tr>
-						<td>@partner.P_ID</td>
-						<td class="editableCell">@partner.P_Name</td>
-						<td class="editableCell">@partner.Contact</td>
-						<td class="editableCell">@partner.Email</td>
-						<td class="editableCell">@partner.Phone</td>
-						<td class="editableCell">@partner.P_Note</td>
-						<td><i class="fa-solid fa-pen-to-square"></i></td>
-						<td><i class="fa-solid fa-trash-can" onclick="deletePartner(@partner.P_ID)"></i></td>
-				</tr>	
-				}
+					<td>1</td>
+					<td class="editableCell">Dior</td>
+					<td class="editableCell">lil Chick</td>
+					<td class="editableCell">sdsg15@gmail.com</td>
+					<td class="editableCell">0986214536</td>
+					<td class="editableCell">nothing want to say</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Chanel</td>
+					<td>Fat Chick</td>
+					<td>asdwer462@gmail.com</td>
+					<td>0985413267</td>
+					<td>so fat</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Liked</td>
+					<td>lil Koala</td>
+					<td>fhjsf22@gmail.com</td>
+					<td>0962145298</td>
+					<td>nothing nothing</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Liked</td>
+					<td>lil Koala</td>
+					<td>fhjsf22@gmail.com</td>
+					<td>0962145298</td>
+					<td>nothing nothing</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Liked</td>
+					<td>lil Koala</td>
+					<td>fhjsf22@gmail.com</td>
+					<td>0962145298</td>
+					<td>nothing nothing</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>Liked</td>
+					<td>lil Koala</td>
+					<td>fhjsf22@gmail.com</td>
+					<td>0962145298</td>
+					<td>nothing nothing</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>Liked</td>
+					<td>lil Koala</td>
+					<td>fhjsf22@gmail.com</td>
+					<td>0962145298</td>
+					<td>nothing nothing</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>Liked</td>
+					<td>lil Koala</td>
+					<td>fhjsf22@gmail.com</td>
+					<td>0962145298</td>
+					<td>nothing nothing</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
+				<tr>
+					<td>10</td>
+					<td>Liked</td>
+					<td>lil Koala</td>
+					<td>fhjsf22@gmail.com</td>
+					<td>0962145298</td>
+					<td>nothing nothing</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
+				<tr>
+					<td>11</td>
+					<td>Liked</td>
+					<td>lil Koala</td>
+					<td>fhjsf22@gmail.com</td>
+					<td>0962145298</td>
+					<td>nothing nothing</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
+				<tr>
+					<td>12</td>
+					<td>Liked</td>
+					<td>lil Koala</td>
+					<td>fhjsf22@gmail.com</td>
+					<td>0962145298</td>
+					<td>nothing nothing</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
+				<tr>
+					<td>13</td>
+					<td>Dior</td>
+					<td>lil Chick</td>
+					<td>sdsg15@gmail.com</td>
+					<td>0986214536</td>
+					<td>nothing want to say</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
+				<tr>
+					<td>14</td>
+					<td>Dior</td>
+					<td>lil Chick</td>
+					<td>sdsg15@gmail.com</td>
+					<td>0986214536</td>
+					<td>nothing want to say</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
+				<tr>
+					<td>15</td>
+					<td>Dior</td>
+					<td>lil Chick</td>
+					<td>sdsg15@gmail.com</td>
+					<td>0986214536</td>
+					<td>nothing want to say</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
+				<tr>
+					<td>16</td>
+					<td>Dior</td>
+					<td>lil Chick</td>
+					<td>sdsg15@gmail.com</td>
+					<td>0986214536</td>
+					<td>nothing want to say</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
+				<tr>
+					<td>17</td>
+					<td>Dior</td>
+					<td>lil Chick</td>
+					<td>sdsg15@gmail.com</td>
+					<td>0986214536</td>
+					<td>nothing want to say</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
+
+				<tr>
+					<td>18</td>
+					<td>Dior</td>
+					<td>lil Chick</td>
+					<td>sdsg15@gmail.com</td>
+					<td>0986214536</td>
+					<td>nothing want to say</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
+				<tr>
+					<td>19</td>
+					<td>Dior</td>
+					<td>lil Chick</td>
+					<td>sdsg15@gmail.com</td>
+					<td>0986214536</td>
+					<td>nothing want to say</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
+
+				<tr>
+					<td>20</td>
+					<td>Dior</td>
+					<td>lil Chick</td>
+					<td>sdsg15@gmail.com</td>
+					<td>0986214536</td>
+					<td>nothing want to say</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
+				<tr>
+					<td>21</td>
+					<td>Dior</td>
+					<td>lil Chick</td>
+					<td>sdsg15@gmail.com</td>
+					<td>0986214536</td>
+					<td>nothing want to say</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
+				<tr>
+					<td>22</td>
+					<td>Dior</td>
+					<td>lil Chick</td>
+					<td>sdsg15@gmail.com</td>
+					<td>0986214536</td>
+					<td>nothing want to say</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
+
+				<tr>
+					<td>23</td>
+					<td>Dior</td>
+					<td>lil Chick</td>
+					<td>sdsg15@gmail.com</td>
+					<td>0986214536</td>
+					<td>nothing want to say</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
+
+				<tr>
+					<td>24</td>
+					<td>Dior</td>
+					<td>lil Chick</td>
+					<td>sdsg15@gmail.com</td>
+					<td>0986214536</td>
+					<td>nothing want to say</td>
+					<td><i class="fa-solid fa-pen-to-square"></i></td>
+					<td><i class="fa-solid fa-trash-can"></i></td>
+				</tr>
 			</tbody>
 		</table>
 	</section>
 
 </section>
-
-@section Script{
-    <script src="~/js/ad/script.js"></script>
-}
