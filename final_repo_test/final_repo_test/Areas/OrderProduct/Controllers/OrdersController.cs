@@ -47,46 +47,31 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
         // GET: Orders/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            //    var order = await _context.Orders.FindAsync(id);
-            //    if (order == null)
-            //    {
-            //        return NotFound();
-            //    }
-            //    var orderDetails = await _context.OrderDetails
-            //.Where(od => od.O_ID == id)
-            //.ToListAsync();
 
-            //    ViewBag.CustomerIdList = new SelectList(orderDetails, "Od_ID", "Product_Name");
+            //var resultViewModel = from od in _context.OrderDetails
+            //                      join o in _context.Orders
+            //                      on od.O_ID equals o.O_ID into dt2
+            //                      from o in dt2.DefaultIfEmpty()
+            //                      where o.O_ID == id
+            //                      select new OrderDetailViewModel { selectDetails = od, selectOrder = o };
 
-            //var orderdetailList = _context.OrderDetails.Select(od => new {
-            //    OrderId = od.Od_ID,
-
-            //}).ToList();
-            //ViewData["OAId"] = new SelectList(_context.Accounts, "AId", "AId");
-            //ViewBag.CustomerIdList = new SelectList(orderdetailList, "OrderId");
-            //if (id == null || _context.Orders == null)
-            //{
-            //    return NotFound();
-            //}
-
-            //var order = await _context.Orders
-            //    .Include(o => o.A_ID)
-            //    .FirstOrDefaultAsync(m => m.O_ID == id);
-            //if (order == null)
-            //{
-            //    return NotFound();
-            //}
-
-            //return View(orderDetails);
             var resultViewModel = from od in _context.OrderDetails
                                   join o in _context.Orders
                                   on od.O_ID equals o.O_ID into dt2
                                   from o in dt2.DefaultIfEmpty()
+                                  join p in _context.Products
+                                  on od.P_ID equals p.P_ID into dt3
+                                  from p in dt3.DefaultIfEmpty()
                                   where o.O_ID == id
-                                  select new OrderDetailViewModel { selectDetails = od, selectOrder = o };
+                                  select new OrderDetailViewModel
+                                  {
+                                      selectDetails = od,
+                                      selectOrder = o,
+                                      ProductName = p != null ? p.P_Name : ""
+                                  };
             return View(resultViewModel);
         }
-
+        #region 新增(已廢除
         // GET: Orders/Create
         public IActionResult Create()
         {
@@ -154,7 +139,7 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
             //ViewBag.order=order;
             return View("~/Areas/OrderProduct/Views/Orders/index.cshtml", order);
         }
-
+        #endregion
         // GET: Orders/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -186,8 +171,7 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
+
                 try
                 {
                     _context.Update(order);
@@ -204,10 +188,10 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
-            }
+
             ViewData["A_ID"] = new SelectList(_context.Accounts, "A_ID", "A_ID", order.A_ID);
-            return View("~/Areas/OrderProduct/Views/Orders/index.cshtml", order);
+
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Orders/Delete/5

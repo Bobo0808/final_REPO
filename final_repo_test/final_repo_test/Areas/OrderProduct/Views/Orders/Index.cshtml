@@ -8,7 +8,7 @@
     Layout = "_Layout";
 }
 @section Styles{
-
+    <link href="~/css/orderproduct/orderindex.css" rel="stylesheet" />
 }
 
 <div class="container box">
@@ -34,7 +34,7 @@
                         <tbody id="table">
                             @foreach (var item in ViewBag.OrderViewModels)
                             {
-                                <tr>
+                                <tr class="gray">
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <div>
@@ -51,7 +51,7 @@
                                         @* @(item.OAIdNavigation.UserName)*@
                                     </td>
                                     <td>
-                                        <div id="test" class="badge rounded-pill bg-light-success p-2 text-uppercase px-3">
+                                        <div id="test" class="badge rounded-pill bg-dark p-2 text-uppercase px-3">
                                             <i class='bx bxs-circle me-1'></i>@item.O_Satus
                                         </div>
                                     </td>
@@ -63,13 +63,13 @@
                                         @item.O_Date
                                     </td>
                                     <td>
-                                        <a asp-action="Details" asp-route-id="@item.O_ID" class="radius-30 px-4">Details</a>
+                                        <a asp-action="Details" asp-route-id="@item.O_ID" class="badge rounded-pill bg-dark p-2 text-uppercase px-3">Details</a>
                                     </td>
                                     <td>
                                         <div class="d-flex order-actions">
                                             <a asp-action="Edit" asp-route-id="@item.O_ID"><i class='bx bxs-edit test'></i></a>
                                             <a asp-action="Delete" asp-route-id="@item.O_ID" class="ms-3"><i class='bx bxs-trash test'></i></a>
-                                            <a asp-action="Delete" asp-route-id="@item.O_ID" class="ms-3"><i class="fadeIn animated bx bx-x"></i></a>
+                                            
                                         </div>
                                     </td>
                                 </tr>

@@ -22,25 +22,25 @@
                 @foreach(var item in Model)
                 {
                     <tr>
-                        <td>@item.selectOrder.A_ID</td>
-                        <td>@item.selectOrder.O_Date</td>
-                        <td>@item.selectOrder.O_TotalPrice</td>
-                        <td>@item.selectOrder.O_Cancle</td>
+                        <td class="">@item.selectOrder.A_ID</td>
+                        <td class="">@item.selectOrder.O_Date</td>
+                        <td class="">@item.selectOrder.O_TotalPrice</td>
+                        <td class="">@item.selectOrder.O_Cancle</td>
                     </tr>
                     break;
                 }
             </tbody>
             
         </table>
-        <h4>Order Details</h4>
+        <h4>訂單明細</h4>
         <table class="table radius">
             <thead>
                 <tr>
-                    <th class="col-md-2  class=" text-xxl-center"">明細ID</th>
-                    <th class="col-md-2  class=" text-xxl-center"">產品ID</th>
-                    <th class="col-md-2  class=" text-xxl-center"">產品價錢</th>
-                    <th class="col-md-2  class=" text-xxl-center"">產品小計</th>
-                    <th class="col-md-2  class=" text-xxl-center"">產品數量</th>
+                    @*<th class="col-md-2 text-xxl-center">訂單ID</th>*@
+                    <th class="col-md-2 text-xxl-center">產品項目</th>
+                    <th class="col-md-2  text-xxl-center">產品價錢</th>
+                    <th class="col-md-2  text-xxl-center">產品小計</th>
+                    <th class="col-md-2  text-xxl-center">產品數量</th>
                 </tr>
             </thead>
             <tbody id="order-detail-list">
@@ -48,21 +48,21 @@
                 @foreach (var odetails in Model)
                 {
                     <tr>
-                        <td class="text-xxl-center">
+                        @*<td class="text-xxl-center">
                             @odetails.selectDetails.O_ID
-                        </td>
+                        </td>*@
                         <td class="text-xxl-center">
-                            <span asp-for="@odetails.selectDetails.P_ID" class="form-control price">@odetails.selectDetails.P_ID</span>
+                            <span asp-for="@odetails.ProductName" class="form-control price">@odetails.ProductName</span>
                         </td>
                         <td class="text-xxl-center">
                             <span asp-for="@odetails.selectDetails.Od_UnitPrice" class="form-control price">@odetails.selectDetails.Od_UnitPrice</span>
                             
                         </td>
                         <td class="text-xxl-center">
-                            <span asp-for="@odetails.selectDetails.Od_Sum" class="total-price">@odetails.selectDetails.Od_Sum</span>
+                            <span asp-for="@odetails.selectDetails.Od_Sum" class="form-control">@odetails.selectDetails.Od_Sum</span>
                         </td>
                         <td class="text-xxl-center">
-                            <span asp-for="@odetails.selectDetails.Od_Quantity" class="total-price">@odetails.selectDetails.Od_Quantity</span>
+                            <span asp-for="@odetails.selectDetails.Od_Quantity" class="form-control">@odetails.selectDetails.Od_Quantity</span>
                         </td>
                     </tr>
                 }
