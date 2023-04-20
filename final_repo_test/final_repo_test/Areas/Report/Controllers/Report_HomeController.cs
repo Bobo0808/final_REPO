@@ -2,12 +2,12 @@
 
 namespace final_repo_test.Areas.Report.Controllers
 {
-    [Area("Report") ]
+    [Area(areaName:"Report") ]
     public class Report_HomeController : Controller
     {
         public IActionResult Index()
         {
-            return View();
+            return View("../Views/Report_Home/index.cshtml");
         }
     }
 }

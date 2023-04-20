@@ -240,3 +240,20 @@
     .btn_title span:hover:after {
         width: 100%;
     }
+
+.checkbtn_span{
+   /* border:1px solid red;*/
+    display:flex;
+    flex-direction:column;
+}
+
+.btncheck {
+   /* background-color: aqua !important;*/
+    height:30px !important;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:1px solid #fff;
+    background-color:rgba(255, 255, 255, .3);
+    color:rgba(255, 255, 255);
+}
