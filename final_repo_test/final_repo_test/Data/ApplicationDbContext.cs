@@ -111,15 +111,13 @@ namespace final_repo_test.Data
                 b.Property(x => x.OS_PaymentMultiplier);
                 b.HasKey(x => x.OS_ID);
             });
+         
 
             modelBuilder.Entity<CardType>(b =>
             {
                 b.Property(x => x.CT_ID).ValueGeneratedOnAdd();
                 b.Property(x => x.CT_Name);
-                b.HasData(new CardType() { CT_ID = 1, CT_Name = "綠界" },new CardType()
-                {
-                    CT_ID = 2,CT_Name= "LinePay"
-                });
+
                 b.HasKey(x => x.CT_ID);
             });
 
@@ -134,21 +132,20 @@ namespace final_repo_test.Data
                 b.Property(x => x.CA_Discontinuted);
 
                 b.HasKey(x => x.CA_ID);
-                
             });
 
             modelBuilder.Entity<CardOrder>(b =>
             {
                 b.Property(x => x.CO_ID).ValueGeneratedOnAdd();
                 b.Property(x => x.A_ID);
-                b.Property(x => x.CA_Price);
+                b.Property(x => x.CA_ID);
                 b.Property(x => x.CT_ID);
                 b.Property(x => x.CO_Quantity);
 
                 b.HasKey(x => x.CO_ID);
-                b.HasOne(x => x.CardType).WithMany(x => x.CardOrders).HasForeignKey(x => x.CT_ID);
+                b.HasOne(x => x.CardType).WithMany(x => x.CardOrders).HasForeignKey(x => x.CT_ID) ;
                 b.HasOne(x => x.Account).WithMany(x => x.CardOrders).HasForeignKey(x => x.A_ID);
-                b.HasOne(x => x.Card).WithMany(x => x.CardOrders).HasForeignKey(x => x.CA_Price);
+                b.HasOne(x => x.Card).WithMany(x => x.CardOrders).HasForeignKey(x => x.CA_ID);
             });
 
             modelBuilder.Entity<CaseTable>(b =>
@@ -533,6 +530,79 @@ namespace final_repo_test.Data
                 b.HasOne(x => x.TargetAccount).WithMany(x => x.TargetSocieties).HasForeignKey(x => x.TargetA_ID).HasPrincipalKey(x => x.A_ID).OnDelete(DeleteBehavior.Restrict);
                 b.ToTable("Societies");
             });
+
+            modelBuilder.Entity<UserAccount>().HasData(new UserAccount()
+            {
+                A_ID = 1,
+                A_Name = "Test",
+                UserName = "Test",
+                UserPWD = "Test",
+                A_Gender = Gender.男,
+                Birthday = DateTime.Now,
+                A_level = 99,
+                A_Email = "Test@gmail.com",
+                A_Phone = "0900000000",
+                A_add = "Test",
+                A_RegisteredAt = DateTime.Now,
+                A_NickName = "Test",
+                A_Coin = 999999,
+                P_id = 1,
+            });
+
+            modelBuilder.Entity<CardType>().HasData(
+                                    new CardType()
+                                    {
+                                        CT_ID = 1,
+                                        CT_Name = "綠界"
+                                    },
+                                    new CardType()
+                                    {
+                                        CT_ID = 2,
+                                        CT_Name = "LinePay",
+                                    });
+            modelBuilder.Entity<CardOrder>().HasData(
+                        new CardOrder()
+                        {
+                            CO_ID = 1,
+                            A_ID = 1,
+                            CT_ID = 1,
+                            CA_ID = 1,
+                            CO_Sum = 100,
+                            CO_Quantity = 1,
+                        },
+                        new CardOrder()
+                        {
+                            CO_ID = 2,
+                            A_ID = 1,
+                            CT_ID = 2,
+                            CA_ID = 2,
+                            CO_Sum = 400,
+                            CO_Quantity = 2,
+                        });
+
+            modelBuilder.Entity<Card>().HasData(
+                               new Card()
+                               {
+                                   CA_ID = 1,
+                                   CA_Name = "100元換200點",
+                                   CA_Price = 100,
+                                   CA_Image = "點數.png",
+                                   CA_Describe = "100元換200點",
+                                   CA_Date = DateTime.Now,
+                                   CA_Discontinuted = false,
+                               },
+                               new Card()
+                               {
+                                   CA_ID = 2,
+                                   CA_Name = "200元換350點",
+                                   CA_Price = 200,
+                                   CA_Image = "點數.png",
+                                   CA_Describe = "200元換350點",
+                                   CA_Date = DateTime.Now,
+                                   CA_Discontinuted = false,
+                               });
+           
+
             modelBuilder.Entity<Product>().HasData(
                    new Product()
                    {
@@ -562,23 +632,7 @@ namespace final_repo_test.Data
                        P_Discontinuted = false,
 
                    });
-            modelBuilder.Entity<UserAccount>().HasData(new UserAccount()
-            {
-                A_ID = 1,
-                A_Name = "Test",
-                UserName = "Test",
-                UserPWD = "Test",
-                A_Gender = Gender.男,
-                Birthday = DateTime.Now,
-                A_level = 99,
-                A_Email = "Test@gmail.com",
-                A_Phone = "0900000000",
-                A_add = "Test",
-                A_RegisteredAt = DateTime.Now,
-                A_NickName = "Test",
-                A_Coin = 999999,
-                P_id = 1,
-            });
+          
             modelBuilder.Entity<Order>().HasData(
                    new Order()
                    {
@@ -633,47 +687,9 @@ namespace final_repo_test.Data
                                    Od_Sum = 499,
                                    Od_Quantity = 1,
                                });
-            modelBuilder.Entity<Card>().HasData(
-                               new Card()
-                               {
-                                   CA_ID = 1,
-                                   CA_Name = "100元換200點",
-                                   CA_Price = 100,
-                                   CA_Image = "點數.png",
-                                   CA_Describe = "100元換200點",
-                                   CA_Date = DateTime.Now,
-                                   CA_Discontinuted = false,
-                               },
-                               new Card()
-                               {
-                                   CA_ID = 2,
-                                   CA_Name = "200元換350點",
-                                   CA_Price = 200,
-                                   CA_Image = "點數.png",
-                                   CA_Describe = "200元換350點",
-                                   CA_Date = DateTime.Now,
-                                   CA_Discontinuted = false,
-                               });
-            modelBuilder.Entity<CardOrder>().HasData(
-                               new CardOrder()
-                               {
-                                   CO_ID = 1,
-                                   A_ID = 1,
-                                   CT_ID = 1,
-                                   CA_Price = 100,
-                                   CO_Sum = 100,
-                                   CO_Quantity = 1,
-                               },
-                               new CardOrder()
-                               {
-                                   CO_ID = 2,
-                                   A_ID = 1,
-                                   CT_ID = 2,
-                                   CA_Price = 200,
-                                   CO_Sum = 400,
-                                   CO_Quantity = 2,
-                               });
-
+ 
+          
+         
         }
 
         public DbSet<UserAccount> Accounts { get; set; } = default!;
@@ -691,5 +707,8 @@ namespace final_repo_test.Data
         public DbSet<Product> Products { get; set; } = default!;
         public DbSet<Report> Reports { get; set; } = default!;
         public DbSet<Society> Societies { get; set; } = default!;
+        public DbSet<Card> Cards { get; set; } = default!;
+        public DbSet<CardOrder> CardOrders { get; set; } = default!;
+        public DbSet<CardType> CardTypes { get; set; } = default!;
     }
 }
