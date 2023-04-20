@@ -15,7 +15,8 @@ namespace final_repo_test.Models
         public string D_event { get; set; } = default!;
         public bool D_isSolved { get; set; } = default!;
 
-
+        [MaxLength(100)]
+        public string? D_Comment { get; set; }
 
 
 

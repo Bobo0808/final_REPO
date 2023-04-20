@@ -203,6 +203,8 @@ namespace final_repo_test.Data
 
                 b.Property(x=>x.D_time);
 
+                b.Property(x => x.D_Comment);
+
                 b.HasKey(x=>x.D_ID);
                 b.HasOne(x => x.Account).WithMany(x => x.DebugLogs).HasForeignKey(x => x.A_ID).HasPrincipalKey(x=>x.A_ID).OnDelete(DeleteBehavior.Restrict);
                 Random rnd = new Random();
