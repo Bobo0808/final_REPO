@@ -5,170 +5,142 @@
 
 
 <div class="container-fluid">
-                    <!-- 卡片 -->
-                    <div class="CaseArea">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">方案: 豪華蛋黃區專案</h5>
-                                <p class="card-text">各大地圖熱區廣告24小時投放</p>
-                                <p class="card-text">以日記費 350/日</p>
-                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button type="button" class="btn btn-outline-light">修改</button>
-                                    <button type="button" class="btn btn-outline-light">刪除</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">方案: 貧民窟專案</h5>
-                                <p class="card-text">沒錢的人買的 在偏郊加減播一下</p>
-                                <p class="card-text">以日記費 100/日</p>
-                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button type="button" class="btn btn-outline-light">修改</button>
-                                    <button type="button" class="btn btn-outline-light">刪除</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">方案: 限時特價專案</h5>
-                                <p class="card-text">普通區域投放</p>
-                                <p class="card-text">以日記費 200/日</p>
-                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button type="button" class="btn btn-outline-light">修改</button>
-                                    <button type="button" class="btn btn-outline-light">刪除</button>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-                    </div>
-
-                    <div class="AD_UP">
-
-                        <div class="form_C">
-                            <!-- 修改方案 -->
-                            <div class="form_UpdateCase">
-                                <h5 class="card-title">修改方案</h5>
-
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="name">
-                                    <label for="floatingInput">方案名稱</label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput"
-                                        placeholder="Description">
-                                    <label for="floatingPassword">描述</label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="Price">
-                                    <label for="floatingPassword">單日價格</label>
-                                </div>
-
-                                <div class="d-grid gap-2 d-md-flex">
-                                    <button type="button" class="btn btn-outline-light">確認修改</button>
-                                </div>
-                            </div>
-
-                            <div class="form_CreateCase">
-                                <h5 class="card-title">新增方案</h5>
-
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="name">
-                                    <label for="floatingInput">方案名稱</label>
-                                </div>
-                                <!-- 新增方案 -->
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput"
-                                        placeholder="Description">
-                                    <label for="floatingPassword">描述</label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="Price">
-                                    <label for="floatingPassword">單日價格</label>
-                                </div>
-
-                                <div class="d-grid gap-2 d-md-flex">
-                                    <button type="button" class="btn btn-outline-light">上架</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 上架廣告表單 -->
-                        <form class="form_AD row gx-2">
-                            <h4>廣告上架</h4>
-                            <div class="col-md-3 mx-3">
-                                <label for="inputState" class="form-label">廠商名稱</label>
-                                <select id="inputState" class="form-select">
-                                    <option selected>選擇廠商...</option>
-                                    <option>Chanel</option>
-                                    <option>Dior</option>
-                                    <option>Chickky</option>
-                                </select>
-                            </div>
-
-                            <div class="col-md-3 mx-3">
-                                <label for="inputState" class="form-label">方案</label>
-                                <select id="inputState" class="form-select">
-                                    <option selected>選擇方案...</option>
-                                    <option>豪華蛋黃區專案</option>
-                                    <option>貧民窟專案</option>
-                                    <option>限時特價專案</option>
-                                </select>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-md-3 StartDate mx-3">
-                                <label for="start">開始日期</label>
-
-                                <input type="date" id="start" name="trip-start" value="2023-04-18" min="2023-01-01"
-                                    max="2053-12-31">
-
-                            </div>
-
-                            <div class="col-md-3 EndDate mx-3">
-                                <label for="start">結束日期</label>
-
-                                <input type="date" id="start" name="trip-start" value="2023-04-18" min="2023-01-01"
-                                    max="2053-12-31">
-
-                            </div>
-
-                            <div class="col-md-1 mx-3">
-                                <label for="inputday" class="form-label">天數</label>
-                                <input type="text" class="form-control " id="inputday" disabled>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-md-3 mx-3">
-                                <label for="formFile" class="form-label">圖片上傳</label>
-                                <input class="form-control" type="file" id="formFile">
-                            </div>
-
-                            <div class="col-md-9 mx-3">
-                                <label for="TargetURL" class="form-label">TargetURL</label>
-                                <input type="text" class="form-control" id="TargetURL">
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-md-6 mx-3">
-                                <label for="describe" class="form-label">描述</label>
-                                <input type="text" class="form-control" id="describe">
-                            </div>
-                            <div class="clearfix"></div>
-
-                            <div class="col-md-3 PayDay mx-3">
-                                <label for="Pay">應付款日</label>
-                                <input type="date" id="Pay" name="trip-start" value="2023-04-18" min="2023-01-01"
-                                    max="2053-12-31">
-
-                            </div>
-                            <div class="col-md-6 UpBtn">
-                                <button type="button" class="btn btn-outline-light">上架</button>
-                            </div>
-                        </form>
+    <!-- 卡片 -->
+    <div class="CaseArea">
+        @foreach (var item in Model.CaseTablesList)
+        {
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">方案:</h5>
+                    <p class="card-text">@item.Case_Name</p>
+                    <p class="card-text">以日記費 @item.Case_PricePerDay/日</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a class="btn btn-outline-light" href="@Url.Action("UpdateCase", "ADUpdate_Home", new { id = item.Case_ID })">修改</a>
+                        <button type="button" class="btn btn-outline-light">刪除</button>
                     </div>
                 </div>
+            </div>
+        }
+    </div>
+
+    <div class="AD_UP">
+
+        <div class="form_C">
+            <!-- 修改方案 -->
+            <div class="form_UpdateCase">
+                <h5 class="card-title">修改方案</h5>
+
+                <form method="post">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="caseName" placeholder="name" name="caseName" value="@Model.SelectedCase?.Case_Name">
+                        <label for="caseName">方案名稱</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="casePrice" placeholder="Price" name="casePrice" value="@Model.SelectedCase?.Case_PricePerDay">
+                        <label for="casePrice">單日價格</label>
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex">
+                        <button type="submit" class="btn btn-outline-light">確認修改</button>
+                    </div>
+                </form>
+            </div>
+            
+
+            <div class="form_CreateCase">
+                <h5 class="card-title">新增方案</h5>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="name">
+                    <label for="floatingInput">方案名稱</label>
+                </div>
+                <!-- 新增方案 -->
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput"
+                        placeholder="Description">
+                    <label for="floatingPassword">描述</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Price">
+                    <label for="floatingPassword">單日價格</label>
+                </div>
+
+                <div class="d-grid gap-2 d-md-flex">
+                    <button type="button" class="btn btn-outline-light">上架</button>
+                </div>
+            </div>
+        </div>
+        <!-- 上架廣告表單 -->
+        <form class="form_AD row gx-2">
+            <h4>廣告上架</h4>
+            <div class="col-md-3 mx-3">
+                <label for="inputState" class="form-label">廠商名稱</label>
+                <select id="inputState" class="form-select">
+                    <option selected>選擇廠商...</option>
+                    <option>Chanel</option>
+                    <option>Dior</option>
+                    <option>Chickky</option>
+                </select>
+            </div>
+
+            <div class="col-md-3 mx-3">
+                <label for="inputState" class="form-label">方案</label>
+                <select id="inputState" class="form-select">
+                    <option selected>選擇方案...</option>
+                    <option>豪華蛋黃區專案</option>
+                    <option>貧民窟專案</option>
+                    <option>限時特價專案</option>
+                </select>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-3 StartDate mx-3">
+                <label for="start">開始日期</label>
+
+                <input type="date" id="start" name="trip-start" value="2023-04-18" min="2023-01-01"
+                    max="2053-12-31">
+
+            </div>
+
+            <div class="col-md-3 EndDate mx-3">
+                <label for="start">結束日期</label>
+
+                <input type="date" id="start" name="trip-start" value="2023-04-18" min="2023-01-01"
+                    max="2053-12-31">
+
+            </div>
+
+            <div class="col-md-1 mx-3">
+                <label for="inputday" class="form-label">天數</label>
+                <input type="text" class="form-control " id="inputday" disabled>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-3 mx-3">
+                <label for="formFile" class="form-label">圖片上傳</label>
+                <input class="form-control" type="file" id="formFile">
+            </div>
+
+            <div class="col-md-9 mx-3">
+                <label for="TargetURL" class="form-label">TargetURL</label>
+                <input type="text" class="form-control" id="TargetURL">
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-6 mx-3">
+                <label for="describe" class="form-label">描述</label>
+                <input type="text" class="form-control" id="describe">
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="col-md-3 PayDay mx-3">
+                <label for="Pay">應付款日</label>
+                <input type="date" id="Pay" name="trip-start" value="2023-04-18" min="2023-01-01"
+                    max="2053-12-31">
+
+            </div>
+            <div class="col-md-6 UpBtn">
+                <button type="button" class="btn btn-outline-light">上架</button>
+            </div>
+        </form>
+    </div>
+</div>

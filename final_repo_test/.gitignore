@@ -521,14 +521,6 @@ FodyWeavers.xsd
 *.msm
 *.msp
 
-#VS Package
-*.suo
-*.user
-_ReSharper.*
-bin
-obj
-packages
-
 # JetBrains Rider
 
 ### VisualStudio Patch ###

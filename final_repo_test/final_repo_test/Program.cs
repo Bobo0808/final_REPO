@@ -9,7 +9,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IDebugLogRepository, DebugLogRepository>();
 builder.Services.AddScoped<ILoginStatusRepository, LoginStatusRepository>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {

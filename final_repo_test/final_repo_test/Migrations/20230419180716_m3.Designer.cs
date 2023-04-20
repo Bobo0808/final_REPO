@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using final_repo_test.Data;
 
@@ -11,9 +12,10 @@ using final_repo_test.Data;
 namespace final_repo_test.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230419180716_m3")]
+    partial class m3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -218,32 +220,32 @@ namespace final_repo_test.Migrations
 
                     b.HasKey("Case_ID");
 
-                    b.ToTable("CaseTables");
+                    b.ToTable("CaseTables", (string)null);
 
                     b.HasData(
                         new
                         {
                             Case_ID = 1,
-                            Case_Name = "豪華蛋黃熱區",
-                            Case_PricePerDay = 250m
+                            Case_Name = "兇兇肥婆",
+                            Case_PricePerDay = 50m
                         },
                         new
                         {
                             Case_ID = 2,
-                            Case_Name = "中等曝光區",
-                            Case_PricePerDay = 200m
+                            Case_Name = "兇兇大魷魚",
+                            Case_PricePerDay = 20m
                         },
                         new
                         {
                             Case_ID = 3,
-                            Case_Name = "經濟實惠區",
-                            Case_PricePerDay = 150m
+                            Case_Name = "兇兇肥婆",
+                            Case_PricePerDay = 50m
                         },
                         new
                         {
                             Case_ID = 4,
-                            Case_Name = "限時特惠專區",
-                            Case_PricePerDay = 100m
+                            Case_Name = "兇兇大魷魚",
+                            Case_PricePerDay = 20m
                         });
                 });
 
@@ -358,50 +360,50 @@ namespace final_repo_test.Migrations
                         {
                             L_ID = 1,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 20, 10, 15, 30, 221, DateTimeKind.Local).AddTicks(6766),
-                            L_dcTime = new DateTime(2023, 4, 20, 11, 15, 30, 221, DateTimeKind.Local).AddTicks(6779)
+                            L_cTime = new DateTime(2023, 4, 20, 2, 7, 16, 692, DateTimeKind.Local).AddTicks(259),
+                            L_dcTime = new DateTime(2023, 4, 20, 3, 7, 16, 692, DateTimeKind.Local).AddTicks(266)
                         },
                         new
                         {
                             L_ID = 2,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 19, 8, 15, 30, 221, DateTimeKind.Local).AddTicks(6784),
-                            L_dcTime = new DateTime(2023, 4, 19, 9, 15, 30, 221, DateTimeKind.Local).AddTicks(6785)
+                            L_cTime = new DateTime(2023, 4, 19, 0, 7, 16, 692, DateTimeKind.Local).AddTicks(270),
+                            L_dcTime = new DateTime(2023, 4, 19, 1, 7, 16, 692, DateTimeKind.Local).AddTicks(271)
                         },
                         new
                         {
                             L_ID = 3,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 18, 7, 15, 30, 221, DateTimeKind.Local).AddTicks(6786),
-                            L_dcTime = new DateTime(2023, 4, 18, 8, 15, 30, 221, DateTimeKind.Local).AddTicks(6787)
+                            L_cTime = new DateTime(2023, 4, 17, 23, 7, 16, 692, DateTimeKind.Local).AddTicks(272),
+                            L_dcTime = new DateTime(2023, 4, 18, 0, 7, 16, 692, DateTimeKind.Local).AddTicks(272)
                         },
                         new
                         {
                             L_ID = 4,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 17, 6, 15, 30, 221, DateTimeKind.Local).AddTicks(6788),
-                            L_dcTime = new DateTime(2023, 4, 17, 7, 15, 30, 221, DateTimeKind.Local).AddTicks(6788)
+                            L_cTime = new DateTime(2023, 4, 16, 22, 7, 16, 692, DateTimeKind.Local).AddTicks(273),
+                            L_dcTime = new DateTime(2023, 4, 16, 23, 7, 16, 692, DateTimeKind.Local).AddTicks(274)
                         },
                         new
                         {
                             L_ID = 5,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 16, 5, 15, 30, 221, DateTimeKind.Local).AddTicks(6789),
-                            L_dcTime = new DateTime(2023, 4, 16, 6, 15, 30, 221, DateTimeKind.Local).AddTicks(6789)
+                            L_cTime = new DateTime(2023, 4, 15, 21, 7, 16, 692, DateTimeKind.Local).AddTicks(274),
+                            L_dcTime = new DateTime(2023, 4, 15, 22, 7, 16, 692, DateTimeKind.Local).AddTicks(275)
                         },
                         new
                         {
                             L_ID = 6,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 16, 4, 15, 30, 221, DateTimeKind.Local).AddTicks(6790),
-                            L_dcTime = new DateTime(2023, 4, 16, 5, 15, 30, 221, DateTimeKind.Local).AddTicks(6790)
+                            L_cTime = new DateTime(2023, 4, 15, 20, 7, 16, 692, DateTimeKind.Local).AddTicks(275),
+                            L_dcTime = new DateTime(2023, 4, 15, 21, 7, 16, 692, DateTimeKind.Local).AddTicks(276)
                         },
                         new
                         {
                             L_ID = 7,
                             A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 16, 3, 15, 30, 221, DateTimeKind.Local).AddTicks(6791),
-                            L_dcTime = new DateTime(2023, 4, 16, 4, 15, 30, 221, DateTimeKind.Local).AddTicks(6792)
+                            L_cTime = new DateTime(2023, 4, 15, 19, 7, 16, 692, DateTimeKind.Local).AddTicks(276),
+                            L_dcTime = new DateTime(2023, 4, 15, 20, 7, 16, 692, DateTimeKind.Local).AddTicks(277)
                         });
                 });
 
@@ -596,188 +598,6 @@ namespace final_repo_test.Migrations
                     b.HasKey("P_ID");
 
                     b.ToTable("Partners", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            P_ID = 1,
-                            Contact = "林小明",
-                            Email = "apple@gmail.com",
-                            P_Name = "Apple",
-                            P_Note = "好合作",
-                            Phone = "0912345678"
-                        },
-                        new
-                        {
-                            P_ID = 2,
-                            Contact = "陳大名",
-                            Email = "google@gmail.com",
-                            P_Name = "Google",
-                            P_Note = "溝通良好",
-                            Phone = "0923456789"
-                        },
-                        new
-                        {
-                            P_ID = 3,
-                            Contact = "王小美",
-                            Email = "amazon@gmail.com",
-                            P_Name = "Amazon",
-                            P_Note = "產品品質不錯",
-                            Phone = "0934567890"
-                        },
-                        new
-                        {
-                            P_ID = 4,
-                            Contact = "李志明",
-                            Email = "microsoft@gmail.com",
-                            P_Name = "Microsoft",
-                            P_Note = "合作愉快",
-                            Phone = "0912345678"
-                        },
-                        new
-                        {
-                            P_ID = 5,
-                            Contact = "蔡佳玲",
-                            Email = "facebook@gmail.com",
-                            P_Name = "Facebook",
-                            P_Note = "回覆速度快",
-                            Phone = "0923456789"
-                        },
-                        new
-                        {
-                            P_ID = 6,
-                            Contact = "林小華",
-                            Email = "netflix@gmail.com",
-                            P_Name = "Netflix",
-                            P_Note = "服務很好",
-                            Phone = "0934567890"
-                        },
-                        new
-                        {
-                            P_ID = 7,
-                            Contact = "陳小明",
-                            Email = "tesla@gmail.com",
-                            P_Name = "Tesla",
-                            P_Note = "值得信賴",
-                            Phone = "0912345678"
-                        },
-                        new
-                        {
-                            P_ID = 8,
-                            Contact = "蔡小玲",
-                            Email = "twitter@gmail.com",
-                            P_Name = "Twitter",
-                            P_Note = "溝通良好",
-                            Phone = "0923456789"
-                        },
-                        new
-                        {
-                            P_ID = 9,
-                            Contact = "李小明",
-                            Email = "uber@gmail.com",
-                            P_Name = "Uber",
-                            P_Note = "好合作",
-                            Phone = "0934567890"
-                        },
-                        new
-                        {
-                            P_ID = 10,
-                            Contact = "林小美",
-                            Email = "airbnb@gmail.com",
-                            P_Name = "Airbnb",
-                            P_Note = "服務很好",
-                            Phone = "0912345678"
-                        },
-                        new
-                        {
-                            P_ID = 11,
-                            Contact = "陳大名",
-                            Email = "linkedin@gmail.com",
-                            P_Name = "LinkedIn",
-                            P_Note = "回覆速度快",
-                            Phone = "0923456789"
-                        },
-                        new
-                        {
-                            P_ID = 12,
-                            Contact = "王小華",
-                            Email = "dropbox@gmail.com",
-                            P_Name = "Dropbox",
-                            P_Note = "值得信賴",
-                            Phone = "0934567890"
-                        },
-                        new
-                        {
-                            P_ID = 13,
-                            Contact = "蔡小玲",
-                            Email = "twitter@gmail.com",
-                            P_Name = "Twitter",
-                            P_Note = "溝通良好",
-                            Phone = "0923456789"
-                        },
-                        new
-                        {
-                            P_ID = 14,
-                            Contact = "陳小明",
-                            Email = "salesforce@gmail.com",
-                            P_Name = "Salesforce",
-                            P_Note = "產品品質不錯",
-                            Phone = "0912345678"
-                        },
-                        new
-                        {
-                            P_ID = 15,
-                            Contact = "蔡佳玲",
-                            Email = "adobe@gmail.com",
-                            P_Name = "Adobe",
-                            P_Note = "回覆速度快",
-                            Phone = "0923456789"
-                        },
-                        new
-                        {
-                            P_ID = 16,
-                            Contact = "林小華",
-                            Email = "paypal@gmail.com",
-                            P_Name = "PayPal",
-                            P_Note = "合作愉快",
-                            Phone = "0934567890"
-                        },
-                        new
-                        {
-                            P_ID = 17,
-                            Contact = "陳小明",
-                            Email = "oracle@gmail.com",
-                            P_Name = "Oracle",
-                            P_Note = "回覆速度快",
-                            Phone = "0912345678"
-                        },
-                        new
-                        {
-                            P_ID = 18,
-                            Contact = "蔡小玲",
-                            Email = "ibm@gmail.com",
-                            P_Name = "IBM",
-                            P_Note = "好合作",
-                            Phone = "0923456789"
-                        },
-                        new
-                        {
-                            P_ID = 19,
-                            Contact = "李小明",
-                            Email = "intel@gmail.com",
-                            P_Name = "Intel",
-                            P_Note = "值得信賴",
-                            Phone = "0934567890"
-                        },
-                        new
-                        {
-                            P_ID = 20,
-                            Contact = "林小美",
-                            Email = "hp@gmail.com",
-                            P_Name = "HP",
-                            P_Note = "溝通良好",
-                            Phone = "0912345678"
-                        });
                 });
 
             modelBuilder.Entity("final_repo_test.Models.Product", b =>
@@ -826,7 +646,7 @@ namespace final_repo_test.Migrations
                         new
                         {
                             P_ID = 1,
-                            P_Date = new DateTime(2023, 4, 20, 10, 15, 30, 222, DateTimeKind.Local).AddTicks(5618),
+                            P_Date = new DateTime(2023, 4, 20, 2, 7, 16, 692, DateTimeKind.Local).AddTicks(5254),
                             P_Describe = "Regular Fit反摺袖襯衫",
                             P_Discontinuted = false,
                             P_Discount = 0,
@@ -839,7 +659,7 @@ namespace final_repo_test.Migrations
                         new
                         {
                             P_ID = 2,
-                            P_Date = new DateTime(2023, 4, 20, 10, 15, 30, 222, DateTimeKind.Local).AddTicks(5622),
+                            P_Date = new DateTime(2023, 4, 20, 2, 7, 16, 692, DateTimeKind.Local).AddTicks(5261),
                             P_Describe = "Regular Fit棉麻短袖襯衫",
                             P_Discontinuted = false,
                             P_Discount = 0,
@@ -994,10 +814,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 4, 20, 10, 15, 30, 222, DateTimeKind.Local).AddTicks(5639),
+                            A_RegisteredAt = new DateTime(2023, 4, 20, 2, 7, 16, 692, DateTimeKind.Local).AddTicks(5274),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 4, 20, 10, 15, 30, 222, DateTimeKind.Local).AddTicks(5638),
+                            Birthday = new DateTime(2023, 4, 20, 2, 7, 16, 692, DateTimeKind.Local).AddTicks(5273),
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
