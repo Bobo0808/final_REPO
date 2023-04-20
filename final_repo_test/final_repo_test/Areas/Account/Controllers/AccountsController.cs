@@ -23,8 +23,8 @@ namespace final_repo_test.Areas.Account.Controllers
         // GET: Account/Accounts
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Accounts.Include(a => a.Product);
-            return View(await applicationDbContext.ToListAsync());
+            var applicationDbContext = await _context.Accounts.Include(a => a.Product).ToListAsync();
+            return View(applicationDbContext);
         }
 
         // GET: Account/Accounts/Details/5
