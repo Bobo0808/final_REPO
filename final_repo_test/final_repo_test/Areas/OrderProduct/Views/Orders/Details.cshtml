@@ -1,44 +1,77 @@
-﻿@model final_repo_test.Models.Order;
-
+﻿@*@model final_repo_test.Models.Order;*@
+@model IEnumerable<final_repo_test.Areas.OrderProduct.ViewModels.OrderDetailViewModel>
+@section Styles{
+    <link href="~/css/orderproduct/detail.min.css" rel="stylesheet" />
+}
 @{
     ViewData["Title"] = "Details";
 }
 <div class="container">
     <h1>Details</h1>
+    <div class="container mt-4 box">
+        <table class="table radius mt-2 text-xxl-center">
+            <thead>
+                <tr>
+                    <th class="col-md-2">客戶ID</th>
+                    <th class="col-md-2">訂單日期</th>
+                    <th class="col-md-2">訂單價錢</th>
+                    <th class="col-md-2">訂單取消</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <td>@item.selectOrder.A_ID</td>
+                        <td>@item.selectOrder.O_Date</td>
+                        <td>@item.selectOrder.O_TotalPrice</td>
+                        <td>@item.selectOrder.O_Cancle</td>
+                    </tr>
+                    break;
+                }
+            </tbody>
+            
+        </table>
+        <h4>Order Details</h4>
+        <table class="table radius">
+            <thead>
+                <tr>
+                    <th class="col-md-2  class=" text-xxl-center"">明細ID</th>
+                    <th class="col-md-2  class=" text-xxl-center"">產品ID</th>
+                    <th class="col-md-2  class=" text-xxl-center"">產品價錢</th>
+                    <th class="col-md-2  class=" text-xxl-center"">產品小計</th>
+                    <th class="col-md-2  class=" text-xxl-center"">產品數量</th>
+                </tr>
+            </thead>
+            <tbody id="order-detail-list">
 
-    <div>
-        <h4>Order</h4>
-        <hr />
-        <dl class="row">
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.O_Date)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.O_Date)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.O_TotalPrice)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.O_TotalPrice)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.O_Cancle)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.O_Cancle)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.A_ID)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Account.A_ID)
-            </dd>
+                @foreach (var odetails in Model)
+                {
+                    <tr>
+                        <td class="text-xxl-center">
+                            @odetails.selectDetails.O_ID
+                        </td>
+                        <td class="text-xxl-center">
+                            <span asp-for="@odetails.selectDetails.P_ID" class="form-control price">@odetails.selectDetails.P_ID</span>
+                        </td>
+                        <td class="text-xxl-center">
+                            <span asp-for="@odetails.selectDetails.Od_UnitPrice" class="form-control price">@odetails.selectDetails.Od_UnitPrice</span>
+                            
+                        </td>
+                        <td class="text-xxl-center">
+                            <span asp-for="@odetails.selectDetails.Od_Sum" class="total-price">@odetails.selectDetails.Od_Sum</span>
+                        </td>
+                        <td class="text-xxl-center">
+                            <span asp-for="@odetails.selectDetails.Od_Quantity" class="total-price">@odetails.selectDetails.Od_Quantity</span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            
+        </table>
 
-        </dl>
     </div>
     <div>
-        <a asp-action="Edit" asp-route-id="@Model?.O_ID">Edit</a> |
-        <a asp-action="Index">Back to List</a>
+        <a class="btn-secondary btn gray mt-2" asp-action="Index">Back to List</a>
     </div>
 </div>

@@ -195,7 +195,7 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
             //IFormFile.Length 檔案大小
 
             //檔案儲存路徑
-            string strFilePath = _env.ContentRootPath + @"wwwroot\img\producttest";
+            string strFilePath = _env.ContentRootPath + @"wwwroot\img\producttest\";
 
             //上傳檔案內容長度>0，表示有檔案上傳
             //if(file1.Length > 0)

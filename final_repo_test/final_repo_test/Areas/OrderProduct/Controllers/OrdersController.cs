@@ -27,13 +27,13 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
             {
                 var account = _context.Accounts.FirstOrDefault(a => a.A_ID == order.A_ID);
                 var accountName = account != null ? account.UserName : "";
-
+                var orderstatus = order.O_Cancle == true ? "訂單取消" : "訂單完成";
                 var orderViewModel = new ViewOrder
                 {
                     O_ID = order.O_ID,
                     O_TotalPrice = order.O_TotalPrice,
                     O_Date = order.O_Date,
-                    O_Cancle = order.O_Cancle,
+                    O_Satus = orderstatus,
                     UserName = accountName
                 };
                 orderViewModels.Add(orderViewModel);
@@ -47,26 +47,44 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
         // GET: Orders/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            var orderdetailList = _context.OrderDetails.Select(od => new {
-                OrderId = od.Od_ID,
+            //    var order = await _context.Orders.FindAsync(id);
+            //    if (order == null)
+            //    {
+            //        return NotFound();
+            //    }
+            //    var orderDetails = await _context.OrderDetails
+            //.Where(od => od.O_ID == id)
+            //.ToListAsync();
 
-            }).ToList();
+            //    ViewBag.CustomerIdList = new SelectList(orderDetails, "Od_ID", "Product_Name");
+
+            //var orderdetailList = _context.OrderDetails.Select(od => new {
+            //    OrderId = od.Od_ID,
+
+            //}).ToList();
             //ViewData["OAId"] = new SelectList(_context.Accounts, "AId", "AId");
-            ViewBag.CustomerIdList = new SelectList(orderdetailList, "OrderId");
-            if (id == null || _context.Orders == null)
-            {
-                return NotFound();
-            }
+            //ViewBag.CustomerIdList = new SelectList(orderdetailList, "OrderId");
+            //if (id == null || _context.Orders == null)
+            //{
+            //    return NotFound();
+            //}
 
-            var order = await _context.Orders
-                .Include(o => o.A_ID)
-                .FirstOrDefaultAsync(m => m.O_ID == id);
-            if (order == null)
-            {
-                return NotFound();
-            }
+            //var order = await _context.Orders
+            //    .Include(o => o.A_ID)
+            //    .FirstOrDefaultAsync(m => m.O_ID == id);
+            //if (order == null)
+            //{
+            //    return NotFound();
+            //}
 
-            return View("~/Areas/OrderProduct/Views/Orders/Details.cshtml", order);
+            //return View(orderDetails);
+            var resultViewModel = from od in _context.OrderDetails
+                                  join o in _context.Orders
+                                  on od.O_ID equals o.O_ID into dt2
+                                  from o in dt2.DefaultIfEmpty()
+                                  where o.O_ID == id
+                                  select new OrderDetailViewModel { selectDetails = od, selectOrder = o };
+            return View(resultViewModel);
         }
 
         // GET: Orders/Create
