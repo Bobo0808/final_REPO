@@ -45,7 +45,7 @@ namespace final_repo_test.Repositroy
                     for(int i = -6; i <= 0; i++)
                     {
                         result.Mainx.Add(DateTime.Now.AddDays(i));
-                        result.Mainy.Add((await _context.LoginStaus.Where(s => s.L_cTime.Day == DateTime.Now.AddDays(i).Day).ToListAsync()).Count);
+                        result.Mainy.Add(_context.LoginStaus.Where(s => s.L_cTime.Day == DateTime.Now.AddDays(i).Day).Count());
                     }
                    
                     break;
@@ -57,8 +57,9 @@ namespace final_repo_test.Repositroy
                     int jtemp = -42 + 7;
                     for (int i = -42; i <= 0; i+=7)
                     {
+                        
                         result.Mainx.Add(DateTime.Now.AddDays(i));
-                        result.Mainy.Add((await _context.LoginStaus.Where(s => s.L_cTime >= DateTime.Now.AddDays(i)&& s.L_cTime < DateTime.Now.AddDays(jtemp)).ToListAsync()).Count);
+                        result.Mainy.Add(_context.LoginStaus.Where(s => s.L_cTime >= DateTime.Now.AddDays(i)&& s.L_cTime < DateTime.Now.AddDays(jtemp)).Count());
                         jtemp += 7;
                     }
                     //jtemp = 1;
@@ -83,7 +84,7 @@ namespace final_repo_test.Repositroy
                     for (int i = -6; i <= 0; i ++)
                     {
                         result.Mainx.Add(DateTime.Now.AddMonths(i));
-                        result.Mainy.Add((await _context.LoginStaus.Where(s => s.L_cTime.Month == DateTime.Now.AddMonths(i).Month).ToListAsync()).Count);
+                        result.Mainy.Add(_context.LoginStaus.Where(s => s.L_cTime.Month == DateTime.Now.AddMonths(i).Month).Count());
                     }
                     break;
             }

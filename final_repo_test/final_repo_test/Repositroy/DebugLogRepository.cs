@@ -13,9 +13,14 @@ namespace final_repo_test.Repositroy
             _context = context;
         }
 
-        public Task<IEnumerable<DebugLog>> DeleteIsSolved()
+        public async Task<IEnumerable<DebugLog>> DeleteIsSolved()
         {
-            throw new NotImplementedException();
+            var temp = await _context.DebugLogs.Where(s=>s.D_isSolved==true).ToListAsync();
+            foreach(var d in temp)
+            {
+                _context.DebugLogs.Remove(d);
+            }
+            return temp;
         }
 
         public async Task<DebugLog> Edit(int id)
@@ -37,20 +42,17 @@ namespace final_repo_test.Repositroy
         }
 
 
-        public bool Save(DebugLog DebugLog)
+
+        public bool Save()
         {
             var saved = _context.SaveChanges();
             return saved > 0;
         }
 
-        public bool Save()
-        {
-            throw new NotImplementedException();
-        }
-
         public bool Update(DebugLog DebugLog)
         {
-            return Save(DebugLog);
+            _context.Update(DebugLog);
+            return Save();
         }
 
         async Task<DebugLog> IDebugLogRepository.GetIdAsync(int id)

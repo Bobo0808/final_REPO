@@ -100,6 +100,30 @@ namespace final_repo_test.Data
                 b.HasOne(x => x.CaseTable).WithMany(x => x.Ads).HasForeignKey(x => x.CaseID).HasPrincipalKey(x=>x.Case_ID).OnDelete(DeleteBehavior.Restrict);
                 b.HasOne(x => x.Partner).WithMany(x => x.Ads).HasForeignKey(x => x.PartnerID).HasPrincipalKey(x=>x.P_ID).OnDelete(DeleteBehavior.Restrict);
 
+                //var rnd = new Random(Guid.NewGuid().GetHashCode());
+                //for (int i = 0; i < 30; i++)
+                //{
+                //    var year = rnd.Next(2023, 2024);
+                //    var month = rnd.Next(1, 5);
+                //    var days = rnd.Next(1, DateTime.DaysInMonth(year, month) + 1);
+                //    DateTime temp = new DateTime(year, month, days, rnd.Next(0, 24), rnd.Next(0, 60), rnd.Next(0, 60), rnd.Next(0, 1000));
+                //    b.HasData(new Ads()
+                //    {
+                //        Ad_ID=i++,
+                //        Ad_Clicks = rnd.Next(1000,3000),
+                //        Ad_StartTime = temp,
+                //        Ad_EndTime = temp.AddYears(1),
+                //        Ad_DayCount = temp.AddYears(1).Subtract(temp).Days,
+                //        Ad_TargetURL = "test",
+                //        Ad_ImageURL = "test",
+                //        Ad_Description = "test",
+                //        Ad_TimeOfPayment = temp.AddMonths(-3),
+                //        Ad_PaymentDueDate = temp.AddMonths(-1),
+                //        CaseID = 
+                //    });
+                //}
+               
+
                 b.ToTable("Ads");
             });
             modelBuilder.Entity<Ads_OrderStatus>(b =>
@@ -181,29 +205,32 @@ namespace final_repo_test.Data
 
                 b.HasKey(x=>x.D_ID);
                 b.HasOne(x => x.Account).WithMany(x => x.DebugLogs).HasForeignKey(x => x.A_ID).HasPrincipalKey(x=>x.A_ID).OnDelete(DeleteBehavior.Restrict);
-                b.HasData(new DebugLog
-                {
-                    D_ID = 1,
-                    A_ID = 1,
-                    D_event = "test",
-                    D_time = DateTime.Now,
-                    D_isSolved = true,
-                }, new DebugLog
-                {
-                    D_ID = 2,
-                    A_ID = 1,
-                    D_event = "test",
-                    D_time = DateTime.Now,
-                    D_isSolved = true,
-                }, new DebugLog
-                {
-                    D_ID = 3,
-                    A_ID = 1,
-                    D_event = "test",
-                    D_time = DateTime.Now,
-                    D_isSolved = false,
+                Random rnd = new Random();
+                for (int i = 1; i < 20; i++){
+                    if (i < 10)
+                    {
+                        b.HasData(new DebugLog
+                        {
+                            D_ID = i,
+                            A_ID = rnd.Next(1, 11),
+                            D_event = "test",
+                            D_time = DateTime.Now,
+                            D_isSolved = true,
+                        });
+                    }
+                    else
+                    {
+                        b.HasData(new DebugLog
+                        {
+                            D_ID = i,
+                            A_ID = rnd.Next(1, 11),
+                            D_event = "test",
+                            D_time = DateTime.Now,
+                            D_isSolved = false,
+                        });
+                    }
+                    
                 }
-                );
                 b.ToTable("DebugLogs");
             });
 
@@ -261,55 +288,23 @@ namespace final_repo_test.Data
 
                 b.HasKey(x => x.L_ID) ;
                 b.HasOne(x => x.Account).WithMany(x => x.LoginStaus).HasForeignKey(x => x.A_ID).HasPrincipalKey(x=>x.A_ID).OnDelete(DeleteBehavior.Restrict);
-                b.HasData(new LoginStaus()
+
+                var rnd = new Random(Guid.NewGuid().GetHashCode());
+                for(int j = 0; j <= 100; j++)
                 {
-                    L_ID = 1,
-                    A_ID = 1,
-                    L_cTime = DateTime.Now,
-                    L_dcTime = DateTime.Now.AddHours(1)
-                },
-                         new LoginStaus()
-                         {
-                             L_ID = 2,
-                             A_ID = 1,
-                             L_cTime = DateTime.Now.AddDays(-1).AddHours(-2),
-                             L_dcTime = DateTime.Now.AddDays(-1).AddHours(-1)
-                         },
-                          new LoginStaus()
-                          {
-                              L_ID = 3,
-                              A_ID = 1,
-                              L_cTime = DateTime.Now.AddDays(-2).AddHours(-3),
-                              L_dcTime = DateTime.Now.AddDays(-2).AddHours(-2)
-                          },
-                           new LoginStaus()
-                           {
-                               L_ID = 4,
-                               A_ID = 1,
-                               L_cTime = DateTime.Now.AddDays(-3).AddHours(-4),
-                               L_dcTime = DateTime.Now.AddDays(-3).AddHours(-3)
-                           },
-                            new LoginStaus()
-                            {
-                                L_ID = 5,
-                                A_ID = 1,
-                                L_cTime = DateTime.Now.AddDays(-4).AddHours(-5),
-                                L_dcTime = DateTime.Now.AddDays(-4).AddHours(-4)
-                            },
-                              new LoginStaus()
-                              {
-                                  L_ID = 6,
-                                  A_ID = 1,
-                                  L_cTime = DateTime.Now.AddDays(-4).AddHours(-6),
-                                  L_dcTime = DateTime.Now.AddDays(-4).AddHours(-5)
-                              },
-                                new LoginStaus()
-                                {
-                                    L_ID = 7,
-                                    A_ID = 1,
-                                    L_cTime = DateTime.Now.AddDays(-4).AddHours(-7),
-                                    L_dcTime = DateTime.Now.AddDays(-4).AddHours(-6)
-                                });
+                    var year = rnd.Next(2023, 2024);
+                    var month = rnd.Next(1, 5);
+                    var days = rnd.Next(1, DateTime.DaysInMonth(year, month) + 1);
+                    DateTime temp = new DateTime(year, month, days,rnd.Next(0, 24), rnd.Next(0, 60), rnd.Next(0, 60), rnd.Next(0, 1000));
+                    b.HasData(new LoginStaus()
+                    {
+                        L_ID = j+1,
+                        A_ID = rnd.Next(1, 10),
+                        L_cTime = temp,
+                        L_dcTime = temp.AddHours(rnd.Next(1,11))
+                    });
+                }
+              
 
                 b.ToTable("LoginStaus");
             });
@@ -531,23 +526,26 @@ namespace final_repo_test.Data
                 b.ToTable("Societies");
             });
 
-            modelBuilder.Entity<UserAccount>().HasData(new UserAccount()
+            for(int i = 0; i < 10; i++)
             {
-                A_ID = 1,
-                A_Name = "Test",
-                UserName = "Test",
-                UserPWD = "Test",
-                A_Gender = Gender.男,
-                Birthday = DateTime.Now,
-                A_level = 99,
-                A_Email = "Test@gmail.com",
-                A_Phone = "0900000000",
-                A_add = "Test",
-                A_RegisteredAt = DateTime.Now,
-                A_NickName = "Test",
-                A_Coin = 999999,
-                P_id = 1,
-            });
+                modelBuilder.Entity<UserAccount>().HasData(new UserAccount()
+                {
+                    A_ID = i+1,
+                    A_Name = "Test",
+                    UserName = "Test",
+                    UserPWD = "Test",
+                    A_Gender = Gender.男,
+                    Birthday = DateTime.Now,
+                    A_level = 99,
+                    A_Email = "Test@gmail.com",
+                    A_Phone = "0900000000",
+                    A_add = "Test",
+                    A_RegisteredAt = DateTime.Now,
+                    A_NickName = "Test",
+                    A_Coin = 999999,
+                    P_id = 1,
+                });
+            }
 
             modelBuilder.Entity<CardType>().HasData(
                                     new CardType()
@@ -632,7 +630,6 @@ namespace final_repo_test.Data
                        P_Discontinuted = false,
 
                    });
-          
             modelBuilder.Entity<Order>().HasData(
                    new Order()
                    {
@@ -687,8 +684,31 @@ namespace final_repo_test.Data
                                    Od_Sum = 499,
                                    Od_Quantity = 1,
                                });
- 
-          
+            int j = 5;
+          for(int i = 3; i < 14; i++)
+            {
+                Random rnd = new Random();
+                modelBuilder.Entity<Order>().HasData(
+                    new Order()
+                    {
+                        O_ID = i,
+                        A_ID = rnd.Next(1,10),
+                        O_Date = DateTime.Now,
+                        O_TotalPrice = 699,
+                        O_Cancle = false,
+                    });
+                modelBuilder.Entity<OrderDetail>().HasData(
+                           new OrderDetail()
+                           {
+                               Od_ID = j,
+                               O_ID = i,
+                               P_ID = 1,
+                               Od_UnitPrice = 699,
+                               Od_Sum = 699,
+                               Od_Quantity = 1,
+                           });
+                j++;
+            }
          
         }
 
