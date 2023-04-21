@@ -24,12 +24,12 @@
 					<span class="text">儀表板</span>
 				</a>
 			</li>
-			<li class="side-btn">
-			<a asp-area="Login" asp-controller="Login_Home" asp-action="Index">
+			@*<li class="side-btn">
+				<a asp-area="Login" asp-controller="Login_Home" asp-action="Index">
 					<i class="fa fa-solid fa-user"></i>
-				<span class="text">登入</span>
-			</a>
-			</li>
+					<span class="text">登入</span>
+				</a>
+			</li>*@
 			<li class="side-btn">
 				<a asp-area="Account" asp-controller="Account_Home" asp-action="Index">
 					<i class="fa fa-solid fa-users fa-sm"></i>
@@ -90,8 +90,8 @@
 	</section>
 	<section id="content">
 		<nav>
-			<input type="checkbox" id="switch-mode" hidden>
-			<label for="switch-mode" class="switch-mode"></label>
+			@*<input type="checkbox" id="switch-mode" hidden>*@
+			@*<label for="switch-mode" class="switch-mode"></label>*@
 			<form action="#">
 				<div class="form-input dark" id="Search">
 					<input type="search" placeholder="Search...">

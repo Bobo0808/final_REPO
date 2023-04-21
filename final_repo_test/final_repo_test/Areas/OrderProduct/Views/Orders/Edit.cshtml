@@ -1,5 +1,7 @@
 ﻿@model final_repo_test.Models.Order;
-
+@section Styles{
+    <link href="~/css/orderproduct/edit.min.css" rel="stylesheet" />
+}
 
 
 @{
@@ -12,7 +14,7 @@
     <hr />
     <div class="row">
         <div class="col-md-4">
-            <form asp-action="Edit">
+            <form asp-action="Edit" asp-route-id="O_ID" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" asp-for="O_ID" />
                 <div class="form-group">
@@ -31,20 +33,22 @@
                     <span asp-validation-for="O_TotalPrice" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="O_Cancle" class="control-label"></label>
-                    <input asp-for="O_Cancle" class="form-control" />
+                    <label asp-for="O_Cancle" class="control-label"></label><br>
+                    <input type="checkbox" asp-for="O_Cancle" class="form-check-input" />
                     <span asp-validation-for="O_Cancle" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-primary" />
+                    <input type="submit" value="Save" class="btn btn-secondary" />
                 </div>
+               
             </form>
+            <div class="form-group mt-3">
+
+                <a class="btn btn-secondary" asp-action="Index">Back to List</a>
+            </div>
         </div>
     </div>
 
-    <div>
-        <a asp-action="Index">Back to List</a>
-    </div>
 </div>
 @section Script {
     @{

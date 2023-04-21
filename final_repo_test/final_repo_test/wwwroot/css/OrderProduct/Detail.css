@@ -39,3 +39,8 @@ h1, h3 {
     text-align: center;
     color: #6c757d;
 }
+
+td, th {
+    text-align: center;
+    vertical-align: middle;
+}

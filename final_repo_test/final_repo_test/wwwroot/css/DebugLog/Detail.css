@@ -1,7 +1,23 @@
 ﻿.container {
-    border: 1px solid #aaa;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
 }
 
+    .container::-webkit-scrollbar {
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+
+    .container::-webkit-scrollbar-thumb {
+        border-radius: .5rem;
+        background-color: #4c596d8c;
+        visibility: hidden;
+    }
+
+    .container:hover::-webkit-scrollbar-thumb {
+        visibility: visible;
+    }
 
 
 .title {
@@ -39,5 +55,5 @@ textarea {
 }
 
 .body {
-    background-color: aliceblue;
+    background-color:transparent;
 }
