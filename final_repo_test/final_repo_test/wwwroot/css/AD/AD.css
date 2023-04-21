@@ -44,8 +44,6 @@
     padding-bottom: 0px;
 }
 
-
-
 .CreateNew_form input {
     padding: 5px;
     border-radius: 3px;
@@ -88,7 +86,7 @@
     /* background-color: #091f41;
 	background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%); */
     margin-bottom: 10px;
-    margin-top:10px;
+    margin-top: 10px;
     border-radius: 30px 30px 0px 0px;
 }
 
@@ -241,19 +239,19 @@
         width: 100%;
     }
 
-.checkbtn_span{
-   /* border:1px solid red;*/
-    display:flex;
-    flex-direction:column;
+.checkbtn_span {
+    /* border:1px solid red;*/
+    display: flex;
+    flex-direction: column;
 }
 
 .btncheck {
-   /* background-color: aqua !important;*/
-    height:30px !important;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    border:1px solid #fff;
-    background-color:rgba(255, 255, 255, .3);
-    color:rgba(255, 255, 255);
+    /* background-color: aqua !important;*/
+    height: 30px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, .3);
+    color: rgba(255, 255, 255);
 }
