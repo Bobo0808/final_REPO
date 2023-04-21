@@ -12,8 +12,8 @@ using final_repo_test.Data;
 namespace final_repo_test.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230420172139_20230420bnn")]
-    partial class _20230420bnn
+    [Migration("20230421015009_m1")]
+    partial class m1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -105,7 +105,7 @@ namespace final_repo_test.Migrations
 
                     b.HasKey("OS_ID");
 
-                    b.ToTable("Ads_OrderStatus");
+                    b.ToTable("Ads_OrderStatuses");
                 });
 
             modelBuilder.Entity("final_repo_test.Models.Card", b =>
@@ -145,7 +145,7 @@ namespace final_repo_test.Migrations
                         new
                         {
                             CA_ID = 1,
-                            CA_Date = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(3037),
+                            CA_Date = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1817),
                             CA_Describe = "100元換200點",
                             CA_Discontinuted = false,
                             CA_Image = "點數.png",
@@ -155,7 +155,7 @@ namespace final_repo_test.Migrations
                         new
                         {
                             CA_ID = 2,
-                            CA_Date = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(3039),
+                            CA_Date = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1818),
                             CA_Describe = "200元換350點",
                             CA_Discontinuted = false,
                             CA_Image = "點數.png",
@@ -265,6 +265,32 @@ namespace final_repo_test.Migrations
                     b.HasKey("Case_ID");
 
                     b.ToTable("CaseTables", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Case_ID = 1,
+                            Case_Name = "豪華蛋黃熱區",
+                            Case_PricePerDay = 250m
+                        },
+                        new
+                        {
+                            Case_ID = 2,
+                            Case_Name = "中等曝光區",
+                            Case_PricePerDay = 200m
+                        },
+                        new
+                        {
+                            Case_ID = 3,
+                            Case_Name = "經濟實惠區",
+                            Case_PricePerDay = 150m
+                        },
+                        new
+                        {
+                            Case_ID = 4,
+                            Case_Name = "限時特惠專區",
+                            Case_PricePerDay = 100m
+                        });
                 });
 
             modelBuilder.Entity("final_repo_test.Models.DebugLog", b =>
@@ -302,154 +328,154 @@ namespace final_repo_test.Migrations
                         new
                         {
                             D_ID = 1,
-                            A_ID = 9,
+                            A_ID = 1,
                             D_event = "test",
                             D_isSolved = true,
-                            D_time = new DateTime(2023, 4, 21, 1, 21, 39, 237, DateTimeKind.Local).AddTicks(9369)
+                            D_time = new DateTime(2023, 4, 21, 9, 50, 9, 297, DateTimeKind.Local).AddTicks(1623)
                         },
                         new
                         {
                             D_ID = 2,
-                            A_ID = 6,
+                            A_ID = 2,
                             D_event = "test",
                             D_isSolved = true,
-                            D_time = new DateTime(2023, 4, 21, 1, 21, 39, 237, DateTimeKind.Local).AddTicks(9414)
+                            D_time = new DateTime(2023, 4, 21, 9, 50, 9, 297, DateTimeKind.Local).AddTicks(1663)
                         },
                         new
                         {
                             D_ID = 3,
-                            A_ID = 5,
+                            A_ID = 6,
                             D_event = "test",
                             D_isSolved = true,
-                            D_time = new DateTime(2023, 4, 21, 1, 21, 39, 237, DateTimeKind.Local).AddTicks(9416)
+                            D_time = new DateTime(2023, 4, 21, 9, 50, 9, 297, DateTimeKind.Local).AddTicks(1665)
                         },
                         new
                         {
                             D_ID = 4,
-                            A_ID = 8,
+                            A_ID = 2,
                             D_event = "test",
                             D_isSolved = true,
-                            D_time = new DateTime(2023, 4, 21, 1, 21, 39, 237, DateTimeKind.Local).AddTicks(9418)
+                            D_time = new DateTime(2023, 4, 21, 9, 50, 9, 297, DateTimeKind.Local).AddTicks(1667)
                         },
                         new
                         {
                             D_ID = 5,
-                            A_ID = 10,
+                            A_ID = 8,
                             D_event = "test",
                             D_isSolved = true,
-                            D_time = new DateTime(2023, 4, 21, 1, 21, 39, 237, DateTimeKind.Local).AddTicks(9420)
+                            D_time = new DateTime(2023, 4, 21, 9, 50, 9, 297, DateTimeKind.Local).AddTicks(1668)
                         },
                         new
                         {
                             D_ID = 6,
-                            A_ID = 3,
+                            A_ID = 7,
                             D_event = "test",
                             D_isSolved = true,
-                            D_time = new DateTime(2023, 4, 21, 1, 21, 39, 237, DateTimeKind.Local).AddTicks(9424)
+                            D_time = new DateTime(2023, 4, 21, 9, 50, 9, 297, DateTimeKind.Local).AddTicks(1670)
                         },
                         new
                         {
                             D_ID = 7,
-                            A_ID = 3,
+                            A_ID = 4,
                             D_event = "test",
                             D_isSolved = true,
-                            D_time = new DateTime(2023, 4, 21, 1, 21, 39, 237, DateTimeKind.Local).AddTicks(9426)
+                            D_time = new DateTime(2023, 4, 21, 9, 50, 9, 297, DateTimeKind.Local).AddTicks(1672)
                         },
                         new
                         {
                             D_ID = 8,
-                            A_ID = 9,
+                            A_ID = 8,
                             D_event = "test",
                             D_isSolved = true,
-                            D_time = new DateTime(2023, 4, 21, 1, 21, 39, 237, DateTimeKind.Local).AddTicks(9427)
+                            D_time = new DateTime(2023, 4, 21, 9, 50, 9, 297, DateTimeKind.Local).AddTicks(1673)
                         },
                         new
                         {
                             D_ID = 9,
-                            A_ID = 6,
+                            A_ID = 3,
                             D_event = "test",
                             D_isSolved = true,
-                            D_time = new DateTime(2023, 4, 21, 1, 21, 39, 237, DateTimeKind.Local).AddTicks(9429)
+                            D_time = new DateTime(2023, 4, 21, 9, 50, 9, 297, DateTimeKind.Local).AddTicks(1674)
                         },
                         new
                         {
                             D_ID = 10,
-                            A_ID = 5,
+                            A_ID = 4,
                             D_event = "test",
                             D_isSolved = false,
-                            D_time = new DateTime(2023, 4, 21, 1, 21, 39, 237, DateTimeKind.Local).AddTicks(9433)
+                            D_time = new DateTime(2023, 4, 21, 9, 50, 9, 297, DateTimeKind.Local).AddTicks(1676)
                         },
                         new
                         {
                             D_ID = 11,
-                            A_ID = 1,
+                            A_ID = 3,
                             D_event = "test",
                             D_isSolved = false,
-                            D_time = new DateTime(2023, 4, 21, 1, 21, 39, 237, DateTimeKind.Local).AddTicks(9435)
+                            D_time = new DateTime(2023, 4, 21, 9, 50, 9, 297, DateTimeKind.Local).AddTicks(1678)
                         },
                         new
                         {
                             D_ID = 12,
-                            A_ID = 3,
+                            A_ID = 2,
                             D_event = "test",
                             D_isSolved = false,
-                            D_time = new DateTime(2023, 4, 21, 1, 21, 39, 237, DateTimeKind.Local).AddTicks(9437)
+                            D_time = new DateTime(2023, 4, 21, 9, 50, 9, 297, DateTimeKind.Local).AddTicks(1679)
                         },
                         new
                         {
                             D_ID = 13,
-                            A_ID = 3,
+                            A_ID = 9,
                             D_event = "test",
                             D_isSolved = false,
-                            D_time = new DateTime(2023, 4, 21, 1, 21, 39, 237, DateTimeKind.Local).AddTicks(9439)
+                            D_time = new DateTime(2023, 4, 21, 9, 50, 9, 297, DateTimeKind.Local).AddTicks(1680)
                         },
                         new
                         {
                             D_ID = 14,
-                            A_ID = 7,
+                            A_ID = 2,
                             D_event = "test",
                             D_isSolved = false,
-                            D_time = new DateTime(2023, 4, 21, 1, 21, 39, 237, DateTimeKind.Local).AddTicks(9440)
+                            D_time = new DateTime(2023, 4, 21, 9, 50, 9, 297, DateTimeKind.Local).AddTicks(1681)
                         },
                         new
                         {
                             D_ID = 15,
-                            A_ID = 8,
+                            A_ID = 2,
                             D_event = "test",
                             D_isSolved = false,
-                            D_time = new DateTime(2023, 4, 21, 1, 21, 39, 237, DateTimeKind.Local).AddTicks(9442)
+                            D_time = new DateTime(2023, 4, 21, 9, 50, 9, 297, DateTimeKind.Local).AddTicks(1682)
                         },
                         new
                         {
                             D_ID = 16,
-                            A_ID = 5,
+                            A_ID = 9,
                             D_event = "test",
                             D_isSolved = false,
-                            D_time = new DateTime(2023, 4, 21, 1, 21, 39, 237, DateTimeKind.Local).AddTicks(9444)
+                            D_time = new DateTime(2023, 4, 21, 9, 50, 9, 297, DateTimeKind.Local).AddTicks(1683)
                         },
                         new
                         {
                             D_ID = 17,
-                            A_ID = 8,
+                            A_ID = 9,
                             D_event = "test",
                             D_isSolved = false,
-                            D_time = new DateTime(2023, 4, 21, 1, 21, 39, 237, DateTimeKind.Local).AddTicks(9446)
+                            D_time = new DateTime(2023, 4, 21, 9, 50, 9, 297, DateTimeKind.Local).AddTicks(1684)
                         },
                         new
                         {
                             D_ID = 18,
-                            A_ID = 3,
+                            A_ID = 8,
                             D_event = "test",
                             D_isSolved = false,
-                            D_time = new DateTime(2023, 4, 21, 1, 21, 39, 237, DateTimeKind.Local).AddTicks(9449)
+                            D_time = new DateTime(2023, 4, 21, 9, 50, 9, 297, DateTimeKind.Local).AddTicks(1704)
                         },
                         new
                         {
                             D_ID = 19,
-                            A_ID = 6,
+                            A_ID = 4,
                             D_event = "test",
                             D_isSolved = false,
-                            D_time = new DateTime(2023, 4, 21, 1, 21, 39, 237, DateTimeKind.Local).AddTicks(9451)
+                            D_time = new DateTime(2023, 4, 21, 9, 50, 9, 297, DateTimeKind.Local).AddTicks(1705)
                         });
                 });
 
@@ -535,709 +561,709 @@ namespace final_repo_test.Migrations
                         new
                         {
                             L_ID = 1,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 1, 30, 5, 47, 17, 647, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 30, 10, 47, 17, 647, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 2, 16, 17, 40, 10, 851, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 17, 3, 40, 10, 851, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 2,
-                            A_ID = 2,
-                            L_cTime = new DateTime(2023, 1, 24, 10, 9, 12, 41, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 24, 13, 9, 12, 41, DateTimeKind.Unspecified)
+                            A_ID = 1,
+                            L_cTime = new DateTime(2023, 2, 13, 19, 48, 42, 750, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 14, 4, 48, 42, 750, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 3,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 4, 17, 18, 11, 32, 149, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 17, 23, 11, 32, 149, DateTimeKind.Unspecified)
+                            A_ID = 1,
+                            L_cTime = new DateTime(2023, 1, 3, 4, 30, 2, 190, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 3, 5, 30, 2, 190, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 4,
-                            A_ID = 4,
-                            L_cTime = new DateTime(2023, 1, 8, 7, 33, 37, 582, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 8, 9, 33, 37, 582, DateTimeKind.Unspecified)
+                            A_ID = 2,
+                            L_cTime = new DateTime(2023, 1, 24, 6, 2, 51, 397, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 24, 11, 2, 51, 397, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 5,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 4, 17, 16, 45, 57, 40, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 18, 1, 45, 57, 40, DateTimeKind.Unspecified)
+                            A_ID = 4,
+                            L_cTime = new DateTime(2023, 4, 19, 17, 49, 3, 171, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 20, 1, 49, 3, 171, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 6,
-                            A_ID = 4,
-                            L_cTime = new DateTime(2023, 2, 23, 2, 32, 14, 837, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 23, 9, 32, 14, 837, DateTimeKind.Unspecified)
+                            A_ID = 2,
+                            L_cTime = new DateTime(2023, 1, 6, 18, 47, 33, 689, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 6, 20, 47, 33, 689, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 7,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 1, 26, 10, 5, 12, 886, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 26, 11, 5, 12, 886, DateTimeKind.Unspecified)
+                            A_ID = 7,
+                            L_cTime = new DateTime(2023, 3, 25, 11, 33, 40, 159, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 25, 14, 33, 40, 159, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 8,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 1, 15, 2, 52, 47, 15, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 15, 6, 52, 47, 15, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 2, 11, 13, 24, 35, 230, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 11, 16, 24, 35, 230, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 9,
-                            A_ID = 9,
-                            L_cTime = new DateTime(2023, 4, 3, 14, 44, 44, 714, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 3, 16, 44, 44, 714, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 2, 11, 0, 0, 8, 308, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 11, 9, 0, 8, 308, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 10,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 1, 15, 0, 28, 8, 1, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 15, 3, 28, 8, 1, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 2, 13, 4, 35, 53, 697, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 13, 11, 35, 53, 697, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 11,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 3, 24, 7, 47, 26, 910, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 24, 12, 47, 26, 910, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 4, 8, 22, 35, 8, 806, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 8, 23, 35, 8, 806, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 12,
-                            A_ID = 2,
-                            L_cTime = new DateTime(2023, 1, 19, 0, 4, 29, 917, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 19, 6, 4, 29, 917, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 4, 23, 14, 32, 19, 299, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 23, 22, 32, 19, 299, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 13,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 2, 10, 1, 42, 6, 100, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 10, 2, 42, 6, 100, DateTimeKind.Unspecified)
+                            A_ID = 4,
+                            L_cTime = new DateTime(2023, 1, 19, 15, 11, 46, 834, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 19, 18, 11, 46, 834, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 14,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 1, 18, 7, 7, 13, 495, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 18, 12, 7, 13, 495, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 1, 23, 11, 52, 7, 991, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 23, 18, 52, 7, 991, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 15,
-                            A_ID = 4,
-                            L_cTime = new DateTime(2023, 2, 2, 15, 40, 55, 313, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 3, 1, 40, 55, 313, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 2, 24, 5, 13, 4, 69, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 24, 15, 13, 4, 69, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 16,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 3, 5, 23, 4, 21, 555, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 6, 2, 4, 21, 555, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 1, 27, 2, 53, 5, 182, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 27, 4, 53, 5, 182, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 17,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 2, 25, 16, 13, 30, 373, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 25, 23, 13, 30, 373, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 1, 19, 11, 5, 14, 845, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 19, 20, 5, 14, 845, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 18,
-                            A_ID = 4,
-                            L_cTime = new DateTime(2023, 1, 29, 8, 31, 26, 997, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 29, 16, 31, 26, 997, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 4, 29, 15, 36, 59, 649, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 29, 18, 36, 59, 649, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 19,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 4, 21, 9, 46, 21, 149, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 21, 16, 46, 21, 149, DateTimeKind.Unspecified)
+                            A_ID = 7,
+                            L_cTime = new DateTime(2023, 3, 27, 12, 35, 15, 820, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 27, 14, 35, 15, 820, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 20,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 3, 5, 4, 46, 38, 930, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 5, 8, 46, 38, 930, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 3, 5, 14, 16, 58, 936, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 5, 20, 16, 58, 936, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 21,
-                            A_ID = 4,
-                            L_cTime = new DateTime(2023, 4, 6, 13, 16, 21, 309, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 6, 16, 16, 21, 309, DateTimeKind.Unspecified)
+                            A_ID = 7,
+                            L_cTime = new DateTime(2023, 3, 6, 14, 22, 13, 182, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 6, 15, 22, 13, 182, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 22,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 1, 3, 17, 57, 42, 635, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 4, 0, 57, 42, 635, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 2, 18, 20, 28, 36, 884, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 19, 0, 28, 36, 884, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 23,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 3, 17, 12, 31, 38, 819, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 17, 19, 31, 38, 819, DateTimeKind.Unspecified)
+                            A_ID = 4,
+                            L_cTime = new DateTime(2023, 2, 13, 8, 39, 20, 143, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 13, 12, 39, 20, 143, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 24,
-                            A_ID = 4,
-                            L_cTime = new DateTime(2023, 3, 9, 6, 26, 59, 93, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 9, 11, 26, 59, 93, DateTimeKind.Unspecified)
+                            A_ID = 6,
+                            L_cTime = new DateTime(2023, 4, 19, 23, 41, 36, 462, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 20, 7, 41, 36, 462, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 25,
-                            A_ID = 2,
-                            L_cTime = new DateTime(2023, 4, 18, 7, 5, 19, 56, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 18, 12, 5, 19, 56, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 2, 6, 15, 21, 52, 226, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 6, 19, 21, 52, 226, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 26,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 1, 21, 10, 34, 44, 35, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 21, 20, 34, 44, 35, DateTimeKind.Unspecified)
+                            A_ID = 6,
+                            L_cTime = new DateTime(2023, 3, 7, 13, 43, 58, 668, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 7, 19, 43, 58, 668, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 27,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 1, 12, 12, 43, 49, 655, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 12, 20, 43, 49, 655, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 3, 28, 20, 27, 58, 914, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 29, 6, 27, 58, 914, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 28,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 22, 1, 37, 35, 218, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 22, 2, 37, 35, 218, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 4, 23, 0, 24, 53, 841, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 23, 1, 24, 53, 841, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 29,
-                            A_ID = 2,
-                            L_cTime = new DateTime(2023, 2, 13, 4, 26, 24, 222, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 13, 7, 26, 24, 222, DateTimeKind.Unspecified)
+                            A_ID = 6,
+                            L_cTime = new DateTime(2023, 3, 4, 13, 7, 49, 23, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 4, 22, 7, 49, 23, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 30,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 1, 4, 12, 14, 7, 16, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 4, 15, 14, 7, 16, DateTimeKind.Unspecified)
+                            A_ID = 4,
+                            L_cTime = new DateTime(2023, 1, 1, 15, 19, 5, 67, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 2, 0, 19, 5, 67, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 31,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 1, 8, 18, 40, 15, 557, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 8, 22, 40, 15, 557, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 1, 26, 5, 43, 54, 925, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 26, 14, 43, 54, 925, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 32,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 3, 18, 1, 12, 28, 690, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 18, 2, 12, 28, 690, DateTimeKind.Unspecified)
+                            A_ID = 6,
+                            L_cTime = new DateTime(2023, 2, 5, 7, 42, 52, 937, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 5, 17, 42, 52, 937, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 33,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 3, 21, 22, 18, 31, 557, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 22, 6, 18, 31, 557, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 3, 19, 1, 49, 47, 133, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 19, 4, 49, 47, 133, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 34,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 2, 15, 14, 3, 21, 355, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 15, 15, 3, 21, 355, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 3, 22, 15, 56, 1, 33, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 22, 22, 56, 1, 33, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 35,
                             A_ID = 5,
-                            L_cTime = new DateTime(2023, 1, 20, 4, 38, 24, 32, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 20, 11, 38, 24, 32, DateTimeKind.Unspecified)
+                            L_cTime = new DateTime(2023, 4, 30, 4, 37, 17, 980, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 30, 6, 37, 17, 980, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 36,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 4, 26, 15, 51, 13, 96, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 26, 22, 51, 13, 96, DateTimeKind.Unspecified)
+                            A_ID = 6,
+                            L_cTime = new DateTime(2023, 4, 15, 3, 43, 45, 177, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 15, 12, 43, 45, 177, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 37,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 1, 23, 17, 12, 3, 486, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 23, 23, 12, 3, 486, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 4, 12, 0, 5, 54, 652, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 12, 1, 5, 54, 652, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 38,
-                            A_ID = 9,
-                            L_cTime = new DateTime(2023, 1, 15, 5, 42, 7, 399, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 15, 13, 42, 7, 399, DateTimeKind.Unspecified)
+                            A_ID = 7,
+                            L_cTime = new DateTime(2023, 4, 16, 3, 17, 45, 227, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 16, 10, 17, 45, 227, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 39,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 2, 28, 6, 55, 47, 853, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 28, 13, 55, 47, 853, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 1, 28, 7, 4, 21, 600, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 28, 8, 4, 21, 600, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 40,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 1, 20, 6, 30, 33, 698, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 20, 16, 30, 33, 698, DateTimeKind.Unspecified)
+                            A_ID = 7,
+                            L_cTime = new DateTime(2023, 4, 1, 22, 28, 18, 186, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 2, 0, 28, 18, 186, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 41,
-                            A_ID = 2,
-                            L_cTime = new DateTime(2023, 1, 1, 13, 42, 45, 858, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 1, 18, 42, 45, 858, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 1, 25, 1, 32, 38, 195, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 25, 7, 32, 38, 195, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 42,
-                            A_ID = 7,
-                            L_cTime = new DateTime(2023, 2, 8, 17, 13, 57, 432, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 8, 19, 13, 57, 432, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 3, 15, 17, 54, 59, 69, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 15, 21, 54, 59, 69, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 43,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 2, 8, 22, 52, 21, 403, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 9, 7, 52, 21, 403, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 4, 24, 0, 26, 38, 855, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 24, 3, 26, 38, 855, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 44,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 3, 19, 21, 31, 55, 215, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 20, 6, 31, 55, 215, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 1, 14, 4, 56, 31, 643, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 14, 10, 56, 31, 643, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 45,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 4, 19, 5, 24, 45, 375, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 19, 9, 24, 45, 375, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 4, 22, 6, 6, 15, 807, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 22, 16, 6, 15, 807, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 46,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 1, 26, 16, 51, 48, 392, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 26, 21, 51, 48, 392, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 1, 28, 0, 51, 14, 930, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 28, 9, 51, 14, 930, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 47,
-                            A_ID = 9,
-                            L_cTime = new DateTime(2023, 2, 5, 16, 9, 8, 908, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 5, 22, 9, 8, 908, DateTimeKind.Unspecified)
+                            A_ID = 2,
+                            L_cTime = new DateTime(2023, 2, 21, 3, 12, 39, 438, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 21, 9, 12, 39, 438, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 48,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 2, 27, 8, 31, 11, 112, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 27, 17, 31, 11, 112, DateTimeKind.Unspecified)
+                            A_ID = 2,
+                            L_cTime = new DateTime(2023, 2, 17, 23, 4, 57, 429, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 18, 3, 4, 57, 429, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 49,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 2, 26, 12, 33, 13, 958, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 26, 16, 33, 13, 958, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 3, 27, 12, 12, 30, 732, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 27, 21, 12, 30, 732, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 50,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 1, 23, 19, 30, 29, 441, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 24, 1, 30, 29, 441, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 1, 13, 4, 16, 42, 709, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 13, 11, 16, 42, 709, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 51,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 1, 21, 11, 19, 28, 158, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 21, 15, 19, 28, 158, DateTimeKind.Unspecified)
+                            A_ID = 7,
+                            L_cTime = new DateTime(2023, 4, 20, 0, 49, 59, 673, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 20, 5, 49, 59, 673, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 52,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 1, 21, 15, 33, 11, 956, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 21, 21, 33, 11, 956, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 3, 31, 21, 35, 41, 874, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 1, 3, 35, 41, 874, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 53,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 1, 28, 22, 42, 8, 773, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 29, 5, 42, 8, 773, DateTimeKind.Unspecified)
+                            A_ID = 2,
+                            L_cTime = new DateTime(2023, 4, 2, 5, 24, 55, 840, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 2, 6, 24, 55, 840, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 54,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 1, 25, 10, 54, 57, 592, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 25, 16, 54, 57, 592, DateTimeKind.Unspecified)
+                            A_ID = 6,
+                            L_cTime = new DateTime(2023, 4, 6, 21, 15, 46, 263, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 7, 1, 15, 46, 263, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 55,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 1, 5, 10, 20, 58, 865, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 5, 20, 20, 58, 865, DateTimeKind.Unspecified)
+                            A_ID = 4,
+                            L_cTime = new DateTime(2023, 3, 27, 20, 50, 31, 29, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 28, 3, 50, 31, 29, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 56,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 2, 20, 12, 50, 40, 923, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 20, 17, 50, 40, 923, DateTimeKind.Unspecified)
+                            A_ID = 7,
+                            L_cTime = new DateTime(2023, 2, 14, 16, 18, 1, 155, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 14, 21, 18, 1, 155, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 57,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 3, 12, 12, 42, 26, 782, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 12, 18, 42, 26, 782, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 3, 12, 17, 11, 42, 941, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 13, 1, 11, 42, 941, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 58,
-                            A_ID = 7,
-                            L_cTime = new DateTime(2023, 4, 4, 17, 2, 6, 620, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 5, 1, 2, 6, 620, DateTimeKind.Unspecified)
+                            A_ID = 2,
+                            L_cTime = new DateTime(2023, 2, 10, 4, 39, 59, 310, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 10, 11, 39, 59, 310, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 59,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 1, 25, 21, 5, 11, 156, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 26, 2, 5, 11, 156, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 1, 31, 12, 12, 58, 231, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 31, 20, 12, 58, 231, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 60,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 2, 5, 2, 31, 2, 532, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 5, 10, 31, 2, 532, DateTimeKind.Unspecified)
+                            A_ID = 6,
+                            L_cTime = new DateTime(2023, 2, 18, 3, 44, 30, 299, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 18, 4, 44, 30, 299, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 61,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 3, 12, 16, 39, 3, 413, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 12, 22, 39, 3, 413, DateTimeKind.Unspecified)
+                            A_ID = 7,
+                            L_cTime = new DateTime(2023, 4, 14, 3, 54, 21, 795, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 14, 4, 54, 21, 795, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 62,
                             A_ID = 5,
-                            L_cTime = new DateTime(2023, 4, 11, 13, 54, 3, 905, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 11, 21, 54, 3, 905, DateTimeKind.Unspecified)
+                            L_cTime = new DateTime(2023, 3, 24, 11, 23, 8, 428, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 24, 18, 23, 8, 428, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 63,
-                            A_ID = 7,
-                            L_cTime = new DateTime(2023, 4, 19, 4, 22, 37, 953, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 19, 14, 22, 37, 953, DateTimeKind.Unspecified)
+                            A_ID = 4,
+                            L_cTime = new DateTime(2023, 1, 13, 9, 29, 12, 998, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 13, 19, 29, 12, 998, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 64,
-                            A_ID = 4,
-                            L_cTime = new DateTime(2023, 2, 13, 2, 11, 9, 372, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 13, 4, 11, 9, 372, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 1, 21, 20, 53, 2, 974, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 21, 22, 53, 2, 974, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 65,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 3, 16, 17, 29, 47, 668, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 16, 18, 29, 47, 668, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 3, 6, 14, 43, 27, 944, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 6, 18, 43, 27, 944, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 66,
-                            A_ID = 9,
-                            L_cTime = new DateTime(2023, 2, 12, 2, 12, 2, 306, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 12, 3, 12, 2, 306, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 1, 4, 11, 43, 16, 851, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 4, 16, 43, 16, 851, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 67,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 9, 17, 44, 52, 108, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 10, 2, 44, 52, 108, DateTimeKind.Unspecified)
+                            A_ID = 7,
+                            L_cTime = new DateTime(2023, 3, 16, 5, 9, 33, 368, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 16, 12, 9, 33, 368, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 68,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 4, 24, 5, 11, 28, 940, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 24, 13, 11, 28, 940, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 3, 25, 17, 30, 5, 978, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 26, 3, 30, 5, 978, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 69,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 4, 10, 19, 31, 4, 533, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 10, 23, 31, 4, 533, DateTimeKind.Unspecified)
+                            A_ID = 1,
+                            L_cTime = new DateTime(2023, 4, 13, 22, 27, 36, 902, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 14, 1, 27, 36, 902, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 70,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 2, 8, 9, 47, 16, 68, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 8, 14, 47, 16, 68, DateTimeKind.Unspecified)
+                            A_ID = 4,
+                            L_cTime = new DateTime(2023, 3, 13, 9, 59, 5, 574, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 13, 16, 59, 5, 574, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 71,
                             A_ID = 6,
-                            L_cTime = new DateTime(2023, 3, 1, 14, 38, 28, 966, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 1, 20, 38, 28, 966, DateTimeKind.Unspecified)
+                            L_cTime = new DateTime(2023, 4, 11, 14, 14, 1, 858, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 11, 18, 14, 1, 858, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 72,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 8, 22, 9, 41, 313, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 8, 23, 9, 41, 313, DateTimeKind.Unspecified)
+                            A_ID = 4,
+                            L_cTime = new DateTime(2023, 1, 19, 0, 30, 26, 303, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 19, 9, 30, 26, 303, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 73,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 2, 14, 4, 12, 54, 536, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 14, 12, 12, 54, 536, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 3, 5, 21, 19, 7, 310, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 5, 22, 19, 7, 310, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 74,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 3, 31, 12, 8, 56, 27, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 31, 21, 8, 56, 27, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 4, 16, 16, 8, 9, 386, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 16, 20, 8, 9, 386, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 75,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 3, 8, 19, 51, 55, 527, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 9, 5, 51, 55, 527, DateTimeKind.Unspecified)
+                            A_ID = 4,
+                            L_cTime = new DateTime(2023, 4, 20, 9, 3, 53, 232, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 20, 18, 3, 53, 232, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 76,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 3, 5, 13, 5, 43, 220, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 5, 23, 5, 43, 220, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 4, 3, 23, 5, 36, 198, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 4, 6, 5, 36, 198, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 77,
-                            A_ID = 4,
-                            L_cTime = new DateTime(2023, 3, 14, 2, 4, 3, 769, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 14, 12, 4, 3, 769, DateTimeKind.Unspecified)
+                            A_ID = 6,
+                            L_cTime = new DateTime(2023, 4, 18, 5, 18, 45, 918, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 18, 11, 18, 45, 918, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 78,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 4, 23, 7, 55, 4, 842, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 23, 12, 55, 4, 842, DateTimeKind.Unspecified)
+                            A_ID = 7,
+                            L_cTime = new DateTime(2023, 4, 4, 10, 38, 12, 88, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 4, 16, 38, 12, 88, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 79,
-                            A_ID = 4,
-                            L_cTime = new DateTime(2023, 4, 14, 13, 40, 58, 980, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 14, 14, 40, 58, 980, DateTimeKind.Unspecified)
+                            A_ID = 6,
+                            L_cTime = new DateTime(2023, 3, 20, 6, 38, 57, 313, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 20, 13, 38, 57, 313, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 80,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 1, 18, 5, 18, 51, 987, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 18, 10, 18, 51, 987, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 1, 28, 21, 29, 36, 505, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 29, 2, 29, 36, 505, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 81,
-                            A_ID = 9,
-                            L_cTime = new DateTime(2023, 3, 18, 4, 3, 27, 982, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 18, 9, 3, 27, 982, DateTimeKind.Unspecified)
+                            A_ID = 4,
+                            L_cTime = new DateTime(2023, 2, 15, 21, 29, 24, 297, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 16, 3, 29, 24, 297, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 82,
-                            A_ID = 4,
-                            L_cTime = new DateTime(2023, 4, 20, 1, 42, 31, 300, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 20, 5, 42, 31, 300, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 1, 8, 21, 52, 23, 72, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 9, 6, 52, 23, 72, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 83,
-                            A_ID = 2,
-                            L_cTime = new DateTime(2023, 2, 28, 11, 6, 37, 39, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 28, 15, 6, 37, 39, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 2, 5, 14, 54, 38, 153, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 5, 19, 54, 38, 153, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 84,
-                            A_ID = 4,
-                            L_cTime = new DateTime(2023, 2, 14, 21, 18, 52, 618, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 15, 7, 18, 52, 618, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 4, 11, 11, 56, 48, 712, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 11, 14, 56, 48, 712, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 85,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 3, 28, 23, 33, 43, 521, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 29, 6, 33, 43, 521, DateTimeKind.Unspecified)
+                            A_ID = 6,
+                            L_cTime = new DateTime(2023, 2, 5, 5, 57, 16, 431, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 5, 10, 57, 16, 431, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 86,
                             A_ID = 5,
-                            L_cTime = new DateTime(2023, 2, 9, 1, 56, 54, 517, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 9, 8, 56, 54, 517, DateTimeKind.Unspecified)
+                            L_cTime = new DateTime(2023, 1, 12, 11, 49, 32, 724, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 12, 17, 49, 32, 724, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 87,
                             A_ID = 6,
-                            L_cTime = new DateTime(2023, 4, 16, 22, 8, 51, 91, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 17, 5, 8, 51, 91, DateTimeKind.Unspecified)
+                            L_cTime = new DateTime(2023, 1, 15, 21, 44, 34, 978, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 16, 2, 44, 34, 978, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 88,
-                            A_ID = 4,
-                            L_cTime = new DateTime(2023, 2, 14, 18, 27, 16, 579, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 15, 2, 27, 16, 579, DateTimeKind.Unspecified)
+                            A_ID = 1,
+                            L_cTime = new DateTime(2023, 1, 8, 10, 9, 33, 99, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 8, 16, 9, 33, 99, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 89,
                             A_ID = 7,
-                            L_cTime = new DateTime(2023, 3, 28, 5, 57, 17, 975, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 28, 13, 57, 17, 975, DateTimeKind.Unspecified)
+                            L_cTime = new DateTime(2023, 4, 10, 21, 11, 18, 181, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 11, 5, 11, 18, 181, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 90,
-                            A_ID = 2,
-                            L_cTime = new DateTime(2023, 2, 11, 13, 23, 50, 261, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 11, 19, 23, 50, 261, DateTimeKind.Unspecified)
+                            A_ID = 4,
+                            L_cTime = new DateTime(2023, 1, 4, 19, 46, 27, 260, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 4, 21, 46, 27, 260, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 91,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 4, 16, 1, 52, 57, 100, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 16, 7, 52, 57, 100, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 1, 20, 13, 15, 21, 871, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 20, 18, 15, 21, 871, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 92,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 3, 2, 0, 27, 30, 139, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 2, 10, 27, 30, 139, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 4, 29, 19, 24, 45, 936, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 30, 3, 24, 45, 936, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 93,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 1, 31, 5, 57, 27, 146, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 31, 8, 57, 27, 146, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 2, 28, 4, 42, 57, 794, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 28, 9, 42, 57, 794, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 94,
-                            A_ID = 2,
-                            L_cTime = new DateTime(2023, 2, 25, 15, 30, 19, 768, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 25, 21, 30, 19, 768, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 2, 13, 19, 10, 47, 408, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 14, 5, 10, 47, 408, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 95,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 2, 19, 21, 8, 24, 731, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 19, 22, 8, 24, 731, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 1, 17, 23, 0, 55, 900, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 18, 8, 0, 55, 900, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 96,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 1, 27, 21, 26, 18, 917, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 28, 6, 26, 18, 917, DateTimeKind.Unspecified)
+                            A_ID = 1,
+                            L_cTime = new DateTime(2023, 2, 23, 8, 53, 46, 739, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 23, 17, 53, 46, 739, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 97,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 1, 31, 1, 54, 51, 686, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 31, 3, 54, 51, 686, DateTimeKind.Unspecified)
+                            A_ID = 6,
+                            L_cTime = new DateTime(2023, 3, 13, 15, 47, 20, 939, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 14, 1, 47, 20, 939, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 98,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 3, 3, 17, 15, 17, 993, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 4, 0, 15, 17, 993, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 2, 22, 4, 23, 7, 811, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 22, 13, 23, 7, 811, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 99,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 4, 4, 13, 30, 9, 369, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 4, 23, 30, 9, 369, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 1, 15, 0, 16, 43, 121, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 1, 15, 7, 16, 43, 121, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 100,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 2, 28, 13, 42, 59, 429, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 28, 23, 42, 59, 429, DateTimeKind.Unspecified)
+                            A_ID = 2,
+                            L_cTime = new DateTime(2023, 4, 15, 15, 3, 7, 897, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 15, 22, 3, 7, 897, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 101,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 1, 15, 19, 13, 16, 272, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 1, 15, 22, 13, 16, 272, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 2, 11, 4, 2, 24, 30, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 11, 10, 2, 24, 30, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -1374,7 +1400,7 @@ namespace final_repo_test.Migrations
                             O_ID = 1,
                             A_ID = 1,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(3070),
+                            O_Date = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1838),
                             O_TotalPrice = 2396m
                         },
                         new
@@ -1382,95 +1408,95 @@ namespace final_repo_test.Migrations
                             O_ID = 2,
                             A_ID = 1,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(3072),
+                            O_Date = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1838),
                             O_TotalPrice = 1198m
                         },
                         new
                         {
                             O_ID = 3,
-                            A_ID = 2,
+                            A_ID = 4,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(3112),
+                            O_Date = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1910),
                             O_TotalPrice = 699m
                         },
                         new
                         {
                             O_ID = 4,
-                            A_ID = 4,
+                            A_ID = 6,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(3135),
+                            O_Date = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1922),
                             O_TotalPrice = 699m
                         },
                         new
                         {
                             O_ID = 5,
-                            A_ID = 9,
+                            A_ID = 6,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(3156),
+                            O_Date = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1941),
                             O_TotalPrice = 699m
                         },
                         new
                         {
                             O_ID = 6,
-                            A_ID = 9,
+                            A_ID = 2,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(3189),
+                            O_Date = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1951),
                             O_TotalPrice = 699m
                         },
                         new
                         {
                             O_ID = 7,
-                            A_ID = 3,
+                            A_ID = 8,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(3209),
+                            O_Date = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1960),
                             O_TotalPrice = 699m
                         },
                         new
                         {
                             O_ID = 8,
-                            A_ID = 1,
+                            A_ID = 7,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(3302),
+                            O_Date = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1968),
                             O_TotalPrice = 699m
                         },
                         new
                         {
                             O_ID = 9,
-                            A_ID = 6,
+                            A_ID = 9,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(3323),
+                            O_Date = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1983),
                             O_TotalPrice = 699m
                         },
                         new
                         {
                             O_ID = 10,
-                            A_ID = 3,
+                            A_ID = 6,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(3347),
+                            O_Date = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1992),
                             O_TotalPrice = 699m
                         },
                         new
                         {
                             O_ID = 11,
-                            A_ID = 1,
+                            A_ID = 8,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(3367),
+                            O_Date = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(2000),
                             O_TotalPrice = 699m
                         },
                         new
                         {
                             O_ID = 12,
-                            A_ID = 6,
+                            A_ID = 7,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(3387),
+                            O_Date = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(2009),
                             O_TotalPrice = 699m
                         },
                         new
                         {
                             O_ID = 13,
-                            A_ID = 9,
+                            A_ID = 3,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(3407),
+                            O_Date = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(2024),
                             O_TotalPrice = 699m
                         });
                 });
@@ -1675,6 +1701,188 @@ namespace final_repo_test.Migrations
                     b.HasKey("P_ID");
 
                     b.ToTable("Partners", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            P_ID = 1,
+                            Contact = "林小明",
+                            Email = "apple@gmail.com",
+                            P_Name = "Apple",
+                            P_Note = "好合作",
+                            Phone = "0912345678"
+                        },
+                        new
+                        {
+                            P_ID = 2,
+                            Contact = "陳大名",
+                            Email = "google@gmail.com",
+                            P_Name = "Google",
+                            P_Note = "溝通良好",
+                            Phone = "0923456789"
+                        },
+                        new
+                        {
+                            P_ID = 3,
+                            Contact = "王小美",
+                            Email = "amazon@gmail.com",
+                            P_Name = "Amazon",
+                            P_Note = "產品品質不錯",
+                            Phone = "0934567890"
+                        },
+                        new
+                        {
+                            P_ID = 4,
+                            Contact = "李志明",
+                            Email = "microsoft@gmail.com",
+                            P_Name = "Microsoft",
+                            P_Note = "合作愉快",
+                            Phone = "0912345678"
+                        },
+                        new
+                        {
+                            P_ID = 5,
+                            Contact = "蔡佳玲",
+                            Email = "facebook@gmail.com",
+                            P_Name = "Facebook",
+                            P_Note = "回覆速度快",
+                            Phone = "0923456789"
+                        },
+                        new
+                        {
+                            P_ID = 6,
+                            Contact = "林小華",
+                            Email = "netflix@gmail.com",
+                            P_Name = "Netflix",
+                            P_Note = "服務很好",
+                            Phone = "0934567890"
+                        },
+                        new
+                        {
+                            P_ID = 7,
+                            Contact = "陳小明",
+                            Email = "tesla@gmail.com",
+                            P_Name = "Tesla",
+                            P_Note = "值得信賴",
+                            Phone = "0912345678"
+                        },
+                        new
+                        {
+                            P_ID = 8,
+                            Contact = "蔡小玲",
+                            Email = "twitter@gmail.com",
+                            P_Name = "Twitter",
+                            P_Note = "溝通良好",
+                            Phone = "0923456789"
+                        },
+                        new
+                        {
+                            P_ID = 9,
+                            Contact = "李小明",
+                            Email = "uber@gmail.com",
+                            P_Name = "Uber",
+                            P_Note = "好合作",
+                            Phone = "0934567890"
+                        },
+                        new
+                        {
+                            P_ID = 10,
+                            Contact = "林小美",
+                            Email = "airbnb@gmail.com",
+                            P_Name = "Airbnb",
+                            P_Note = "服務很好",
+                            Phone = "0912345678"
+                        },
+                        new
+                        {
+                            P_ID = 11,
+                            Contact = "陳大名",
+                            Email = "linkedin@gmail.com",
+                            P_Name = "LinkedIn",
+                            P_Note = "回覆速度快",
+                            Phone = "0923456789"
+                        },
+                        new
+                        {
+                            P_ID = 12,
+                            Contact = "王小華",
+                            Email = "dropbox@gmail.com",
+                            P_Name = "Dropbox",
+                            P_Note = "值得信賴",
+                            Phone = "0934567890"
+                        },
+                        new
+                        {
+                            P_ID = 13,
+                            Contact = "蔡小玲",
+                            Email = "twitter@gmail.com",
+                            P_Name = "Twitter",
+                            P_Note = "溝通良好",
+                            Phone = "0923456789"
+                        },
+                        new
+                        {
+                            P_ID = 14,
+                            Contact = "陳小明",
+                            Email = "salesforce@gmail.com",
+                            P_Name = "Salesforce",
+                            P_Note = "產品品質不錯",
+                            Phone = "0912345678"
+                        },
+                        new
+                        {
+                            P_ID = 15,
+                            Contact = "蔡佳玲",
+                            Email = "adobe@gmail.com",
+                            P_Name = "Adobe",
+                            P_Note = "回覆速度快",
+                            Phone = "0923456789"
+                        },
+                        new
+                        {
+                            P_ID = 16,
+                            Contact = "林小華",
+                            Email = "paypal@gmail.com",
+                            P_Name = "PayPal",
+                            P_Note = "合作愉快",
+                            Phone = "0934567890"
+                        },
+                        new
+                        {
+                            P_ID = 17,
+                            Contact = "陳小明",
+                            Email = "oracle@gmail.com",
+                            P_Name = "Oracle",
+                            P_Note = "回覆速度快",
+                            Phone = "0912345678"
+                        },
+                        new
+                        {
+                            P_ID = 18,
+                            Contact = "蔡小玲",
+                            Email = "ibm@gmail.com",
+                            P_Name = "IBM",
+                            P_Note = "好合作",
+                            Phone = "0923456789"
+                        },
+                        new
+                        {
+                            P_ID = 19,
+                            Contact = "李小明",
+                            Email = "intel@gmail.com",
+                            P_Name = "Intel",
+                            P_Note = "值得信賴",
+                            Phone = "0934567890"
+                        },
+                        new
+                        {
+                            P_ID = 20,
+                            Contact = "林小美",
+                            Email = "hp@gmail.com",
+                            P_Name = "HP",
+                            P_Note = "溝通良好",
+                            Phone = "0912345678"
+                        });
                 });
 
             modelBuilder.Entity("final_repo_test.Models.Product", b =>
@@ -1723,7 +1931,7 @@ namespace final_repo_test.Migrations
                         new
                         {
                             P_ID = 1,
-                            P_Date = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(3054),
+                            P_Date = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1827),
                             P_Describe = "Regular Fit反摺袖襯衫",
                             P_Discontinuted = false,
                             P_Discount = 0,
@@ -1736,7 +1944,7 @@ namespace final_repo_test.Migrations
                         new
                         {
                             P_ID = 2,
-                            P_Date = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(3056),
+                            P_Date = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1828),
                             P_Describe = "Regular Fit棉麻短袖襯衫",
                             P_Discontinuted = false,
                             P_Discount = 0,
@@ -1891,10 +2099,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(2823),
+                            A_RegisteredAt = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1733),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(2818),
+                            Birthday = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1729),
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
@@ -1908,10 +2116,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(2843),
+                            A_RegisteredAt = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1746),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(2842),
+                            Birthday = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1745),
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
@@ -1925,10 +2133,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(2854),
+                            A_RegisteredAt = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1751),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(2854),
+                            Birthday = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1751),
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
@@ -1942,10 +2150,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(2866),
+                            A_RegisteredAt = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1757),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(2865),
+                            Birthday = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1757),
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
@@ -1959,10 +2167,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(2877),
+                            A_RegisteredAt = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1762),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(2876),
+                            Birthday = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1762),
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
@@ -1976,10 +2184,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(2946),
+                            A_RegisteredAt = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1769),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(2945),
+                            Birthday = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1768),
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
@@ -1993,10 +2201,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(2958),
+                            A_RegisteredAt = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1774),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(2957),
+                            Birthday = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1773),
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
@@ -2010,10 +2218,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(2969),
+                            A_RegisteredAt = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1779),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(2968),
+                            Birthday = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1779),
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
@@ -2027,10 +2235,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(2980),
+                            A_RegisteredAt = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1784),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(2979),
+                            Birthday = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1784),
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
@@ -2044,10 +2252,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(2993),
+                            A_RegisteredAt = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1790),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 4, 21, 1, 21, 39, 239, DateTimeKind.Local).AddTicks(2992),
+                            Birthday = new DateTime(2023, 4, 21, 9, 50, 9, 298, DateTimeKind.Local).AddTicks(1789),
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
