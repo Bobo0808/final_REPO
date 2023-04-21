@@ -5,7 +5,7 @@
             type: "POST",
             success: function (result) {
                 if (result.success) {
-                    refreshTable();
+                    refreshTable(); 
                 } else {
                     alert("刪除失敗");
                 }
@@ -38,6 +38,7 @@ $(document).ready(function () {
                     $('input[name="Note"]').val('');
                     refreshTable();
 
+                   
                     var toast = $('<div class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true"><div class="d-flex"><div class="toast-body"><i class="fa-solid fa-circle-check" style="color: #ffffff;"></i>&nbsp;新增廠商成功！</div><button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button></div></div>');
                     $('.toast-container').append(toast);
 
@@ -81,6 +82,7 @@ function refreshTable() {
                 refreshTable();
             }
             $("#partnerTable").animate({ scrollTop: $("#partnerTable")[0].scrollHeight }, "slow");
+
         },
         error: function (result) {
             console.log(result.responseText);
