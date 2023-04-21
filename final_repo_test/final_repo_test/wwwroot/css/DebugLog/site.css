@@ -5,6 +5,23 @@
     margin:0;
 }
 
+
+
+    .container::-webkit-scrollbar {
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+
+    .container::-webkit-scrollbar-thumb {
+        border-radius: .5rem;
+        background-color: #4c596d8c;
+        visibility: hidden;
+    }
+
+    .container:hover::-webkit-scrollbar-thumb {
+        visibility: visible;
+    }
+
 .accordion-button {
     font-size: 1.5rem;
 }
