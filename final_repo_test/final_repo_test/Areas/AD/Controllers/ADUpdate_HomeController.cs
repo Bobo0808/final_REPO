@@ -59,12 +59,13 @@ namespace final_repo_test.Areas.AD.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult GetCase(int id)
+        public async Task<IActionResult> GetCase(int id)
         {
             var model = new ADUpdateViewModel
             {
-                CaseTablesList = _dbContext.CaseTables.ToList(),
-                SelectedCase = _dbContext.CaseTables.FirstOrDefault(x => x.Case_ID == id)
+                CaseTablesList = await _dbContext.CaseTables.ToListAsync(),
+                SelectedCase = _dbContext.CaseTables.FirstOrDefault(x => x.Case_ID == id),
+                PartnersList = await _dbContext.Partners.ToListAsync(),
             };
 
             return View("Index", model);
