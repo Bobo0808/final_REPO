@@ -1,0 +1,68 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@section Styles{
+
+    <link href="~/css/mapedit/index.css" rel="stylesheet" />
+}
+@{
+    ViewData["Title"] = "MapEdit";
+}
+<div class="container test">
+    <div class="card row box">
+
+        <div class="card_body ">
+            <aside>
+                <label>Tiles</label>
+                <div class="tileset-container">
+                    <img id="tileset-source" crossorigin />
+                    <div class="tileset-container_selection"></div>
+                </div>
+                <div class="mt-4">
+                    <button class="button-as-link" onclick="clearCanvas()">Clear Canvas</button>
+                    <button class="primary-button" onclick="exportImage()">Save Map</button>
+                </div>
+
+            </aside>
+            <div class="card_right-column">
+                <div class="canvasshow">
+                    <!-- The main canvas -->
+                    <canvas width="960" height="960"></canvas>
+                </div>
+                <p class="instructions">
+                    <strong>Click</strong> to paint.
+                    <strong>Shift+Click</strong> to remove.
+                </p>
+                <div>
+                    <label for="sizeRange">Size</label>
+                    <input type="range" id="sizeRange" min="10" max="100" value="50" />
+                </div>
+
+                <!-- UI for layers -->
+                <div>
+                    <label>Editing Layer:</label>
+                    <ul class="layers">
+                        <li><button onclick="setLayer(2)" class="layer btn btn-secondary text me-2" tile-layer="2">Top Layer</button></li>
+                        <li><button onclick="setLayer(1)" class="layer btn btn-secondary text me-2" tile-layer="1">Middle Layer</button></li>
+                        <li><button onclick="setLayer(0)" class="layer btn btn-secondary text me-2" tile-layer="0">Bottom Layer</button></li>
+                    </ul>
+                    <ul class="layers">
+                        <li><input type="checkbox" id="blockCheck" onchange="BlockChange()">Block</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Script {
+
+    <script src="~/js/mapedit/index.js"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+
+    </script>
+
+}
