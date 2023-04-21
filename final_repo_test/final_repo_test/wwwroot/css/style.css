@@ -34,15 +34,15 @@ html {
     overflow-x: hidden;
 }
 
-body.dark {
+body {
     /* background-image: linear-gradient(to right, #434343 0%, black 100%); */
     background-image: linear-gradient(to right, #e6e8ed 0%, #304352 100%);
 }
 
-body {
-    background-color: #fbfeff;
-    height: 100%;
-}
+    body.light {
+        background-color: #fbfeff;
+        height: 100%;
+    }
 
 #sidebar {
     position: fixed;
@@ -51,8 +51,9 @@ body {
     left: 0;
     width: 280px;
     height: auto;
-    background-color: rgb(89, 219, 195);
-    background-image: linear-gradient(180deg, rgba(116, 235, 213, 0.5) 0%, rgba(77, 100, 201, 0.5) 100%);
+    background-color: transparent;
+    background-image: linear-gradient(to right, #1e3e53e7 0%, #061c2bd7 100%);
+    backdrop-filter: blur(4px);
     z-index: 2000;
     font-family: var(--lato);
     transition: .3s ease;
@@ -61,10 +62,9 @@ body {
     border-radius: 0 20px 20px 0;
 }
 
-    #sidebar.dark {
-        background-color: transparent;
-        background-image: linear-gradient(to right, #1e3e53e7 0%, #061c2bd7 100%);
-        backdrop-filter: blur(4px);
+    #sidebar.light {
+        background-color: rgb(89, 219, 195);
+        background-image: linear-gradient(180deg, rgba(116, 235, 213, 0.5) 0%, rgba(77, 100, 201, 0.5) 100%);
     }
 
     #sidebar::--webkit-scrollbar {
@@ -115,16 +115,16 @@ body {
         padding: 4px;
     }
 
-        #sidebar .side-menu li.active {
-            background-color: #fbfeff;
+        /*#sidebar .side-menu li.active {
+            background-color: #BEBCB9;
             position: relative;
+        }*/
+
+        #sidebar .side-menu li.active.light {
+            background-color: #fbfeff;
         }
 
-            #sidebar .side-menu li.active.dark {
-                background-color: #BEBCB9;
-            }
-
-            #sidebar .side-menu li.active::before {
+            /* #sidebar .side-menu li.active::before {
                 content: '';
                 position: absolute;
                 width: 40px;
@@ -132,15 +132,15 @@ body {
                 border-radius: 50%;
                 top: -40px;
                 right: 0;
-                box-shadow: 20px 20px 0 #fbfeff;
-                z-index: -1;
-            }
-
-            #sidebar .side-menu li.active.dark::before {
                 box-shadow: 20px 20px 0 #BEBCB9;
+                z-index: -1;
+            }*/
+
+            #sidebar .side-menu li.active.light::before {
+                box-shadow: 20px 20px 0 #fbfeff;
             }
 
-            #sidebar .side-menu li.active::after {
+        /*#sidebar .side-menu li.active::after {
                 content: '';
                 position: absolute;
                 width: 40px;
@@ -148,13 +148,14 @@ body {
                 border-radius: 50%;
                 bottom: -40px;
                 right: 0;
-                box-shadow: 20px -20px 0 #fbfeff;
-                z-index: -1;
-            }
 
-            #sidebar .side-menu li.active.dark::after {
                 box-shadow: 20px -20px 0 #BEBCB9;
-            }
+                z-index: -1;
+            }*/
+
+        /* #sidebar .side-menu li.active.light::after {
+                box-shadow: 20px -20px 0 #fbfeff;
+            }*/
 
         #sidebar .side-menu li a {
             width: 100%;
@@ -169,16 +170,16 @@ body {
             transition: .3s ease;
         }
 
-    #sidebar .side-menu.top li.active a {
+/* #sidebar .side-menu.top li.active a {
         color: rgb(40, 88, 116);
         font-size: 21px;
-    }
+    }*/
 
-    #sidebar .side-menu.top li.dark.active a {
+/*#sidebar .side-menu.top li.dark.active a {
         color: #393D42;
         font-size: 21px;
         font-weight: bold;
-    }
+    }*/
 
 #sidebar.hide .side-menu li a {
     width: calc(48px - (4px * 2));

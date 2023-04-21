@@ -25,10 +25,10 @@
 				</a>
 			</li>
 			<li class="side-btn">
-			<a asp-area="Login" asp-controller="Login_Home" asp-action="Index">
+				<a asp-area="Login" asp-controller="Login_Home" asp-action="Index">
 					<i class="fa fa-solid fa-user"></i>
-				<span class="text">登入</span>
-			</a>
+					<span class="text">登入</span>
+				</a>
 			</li>
 			<li class="side-btn">
 				<a asp-area="Account" asp-controller="Account_Home" asp-action="Index">
@@ -37,7 +37,7 @@
 				</a>
 			</li>
 			<li class="side-btn">
-				<a asp-area="Report" asp-controller="Report_Home" asp-action="Index">
+				<a asp-area="" asp-controller="Home" asp-action="">
 					<i class="fa fa-solid fa-triangle-exclamation"></i>
 					<span class="text">檢舉狀態</span>
 				</a>
@@ -90,8 +90,8 @@
 	</section>
 	<section id="content">
 		<nav>
-			<input type="checkbox" id="switch-mode" hidden>
-			<label for="switch-mode" class="switch-mode"></label>
+			@*<input type="checkbox" id="switch-mode" hidden>*@
+			@*<label for="switch-mode" class="switch-mode"></label>*@
 			<form action="#">
 				<div class="form-input dark" id="Search">
 					<input type="search" placeholder="Search...">
