@@ -30,6 +30,7 @@ public class WebSocketController : Controller
 
             var Loadtemp = JsonSerializer.Serialize(mapDTO);
             var Load = Encoding.UTF8.GetBytes(Loadtemp);
+            //讀取地圖
             await webSocket.SendAsync(new ArraySegment<byte>(Load), WebSocketMessageType.Text, true, CancellationToken.None);
 
 
@@ -78,7 +79,7 @@ public class WebSocketController : Controller
             {
                 //如果收到了完整的消息，則解析JSON對象
                 var message = Encoding.UTF8.GetString(receiveBuffer.ToArray());
-                Console.WriteLine(message);
+                // Console.WriteLine(message);
                 var jsontemp = JObject.Parse(message);
                 var type = jsontemp.Value<string>("type");
                 //處理JSON對象
