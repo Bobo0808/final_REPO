@@ -47,13 +47,17 @@
                         累計上線次數
                         <li class="chartContainer"><canvas id="headChart" class="border bg-light"></canvas></li>
                     </ul>
-
-            <ul class="row notes note-right">
-                上線人數
-                <li class="chartContainer"><canvas id="mainChart" class="border bg-light"></canvas></li>
-            </ul>
-
+                    <ul class="row notes note-right">
+                        上線人數
+                        <li class="chartContainer"><canvas id="mainChart" class="border bg-light"></canvas></li>
+                    </ul>
                 </div>
+            </div>
+            <div class="row">
+                 <ul class="row notes note-right">
+                        累計上線次數
+                        <li class="chartContainer"><canvas id="adChart" class="border bg-light"></canvas></li>
+                 </ul>
             </div>
         
 
@@ -73,9 +77,9 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.1"></script>
    
     <script>
-
         const day = [];
         const time = [];
+        const ad = [];
         var tmp = @Html.Raw(Json.Serialize(Model));
         console.log(tmp);
         for(var i=0;i<tmp.mainx.length;i++){
@@ -84,6 +88,11 @@
         for(var i =0;i<tmp.headx.length;i++){
             time.push({ x: tmp.headx[i], y: tmp.heady[i] });
         }
+
+        for (var i = 0; i < tmp.adx.length; i++) {
+            ad.push({ x: tmp.adx[i], y: tmp.ady[i] });
+        }
+
         document.getElementById(tmp.unit).style.backgroundColor = "#819695";
         const mainData = {
             datasets: [{
@@ -141,6 +150,14 @@
                 maintainAspectRatio: false
             }
         };
+
+        const adData = {
+            datasets: [{
+                data: ad,
+                label: "廣告點擊次數",
+                fill: true
+            }]
+        };
         
         const headConfig = {
             type: 'line',
@@ -164,6 +181,28 @@
             }
         };
 
+        const adConfig = {
+            type: 'bar',
+            data: adData,
+            options: {
+                scales: {
+                    x: {
+                        //type: 'time',
+                        //time: {
+                        //    parser: 'HH:mm:ss',
+                        //    unit: 'hour',
+                        //    displayFormats: {
+                        //        hour: 'HH:mm'
+                        //    },
+                        //    tooltipFormat: 'HH:mm:ss'
+                        //}
+                    }
+                },
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        };
+
         // render init block
         const myHeadChart = new Chart(
             document.getElementById('headChart'),
@@ -175,6 +214,10 @@
             mainConfig
         );
 
+        const myADChart = new Chart(
+            document.getElementById('adChart'),
+            adConfig
+        );
 
     </script>
 }
