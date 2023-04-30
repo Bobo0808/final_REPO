@@ -9,5 +9,8 @@
         public List<int> Heady { get; set; } = new List<int>();
         public int Average { get; set; } = default!;
         public int UserCount { get; set; } = default!;
+
+        public List<int> ADx { get; set; } = default!;
+        public List<int> ADy { get; set; } = default!;
     }
 }
