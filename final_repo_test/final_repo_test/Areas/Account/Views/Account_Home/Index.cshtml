@@ -1,10 +1,11 @@
-﻿@{
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
     ViewData["Title"] = "Account";
     Layout = "_Layout";
     
 }
 @section Styles{
-    <link href="~/css/accountstyle/style2.css" rel="stylesheet" />
+    <link href="~/css/Accountstyle/style2.css" rel="stylesheet" />
 }
 
 
@@ -17,8 +18,8 @@
             <div class="content-2">
                 <div class="acount">
                     <div class="title">
-                        <h2>會員資料表</h2>
-                        <a href="#" class="btn"><i class="fa fa-solid fa-plus"></i>新增</a>
+                        <h2>會員資料表</h2> 
+                        <a asp-area="Account" asp-controller="Account_Home" asp-action="Add" asp-route-id="" class="btn"><i class="fa fa-solid fa-plus"></i>新增</a>
                     </div>
                     <table>
                         <tr>

@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace final_repo_test.ViewModels.Account
 {
-    public class Edit
+    public class AddVM
     {
         public int A_ID { get; set; } = default!;
         public string A_Name { get; set; } = default!;
