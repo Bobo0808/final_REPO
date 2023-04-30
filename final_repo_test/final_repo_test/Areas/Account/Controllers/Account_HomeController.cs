@@ -2,6 +2,7 @@
 using final_repo_test.Models;
 using final_repo_test.ViewModels.Account;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography.X509Certificates;
 
 namespace final_repo_test.Areas.Account.Controllers
@@ -11,16 +12,19 @@ namespace final_repo_test.Areas.Account.Controllers
     {
         //下面三行要用DBcontext要創的
         private readonly ApplicationDbContext applicationDbContext;
-        
+
         public Account_HomeController(ApplicationDbContext applicationDbContext)
         {
             this.applicationDbContext = applicationDbContext;
         }
         //這邊以上
-        public IActionResult Index()
+        [HttpGet]
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var accounts = await applicationDbContext.Accounts.ToListAsync();
+            return View(accounts);
         }
+      
         [HttpGet]
         public IActionResult Add() 
         {
