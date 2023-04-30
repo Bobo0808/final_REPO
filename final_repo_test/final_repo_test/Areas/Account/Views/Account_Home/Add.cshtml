@@ -1,74 +1,81 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model final_repo_test.ViewModels.Account.AddVM
+@{
+    ViewData["Title"] = "Add Account";
+    Layout = "_Layout";
 
-<head>
-    <meta charset="UTF-8">
-
-    <link rel="stylesheet" href="Account\CSS\RStyle.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+}
+@section Styles{
+    <link href="~/css/AccountStyle/addstyle.css" rel="stylesheet" />
+    
+}
 
 <body>
     <div class="container">
-        <div class="title">Edit Account</div>
+        <div class="title">新增會員</div>
         <div class="content">
-            <form action="#">
+            <form method="post" action="Add">
                 <div class="user-details">
-                    <div class="input-box">
+                   @* <div class="input-box">
                         <span class="details">ID</span>
-                        <input type="text" placeholder="1" required>
-                    </div>
+                        <input type="text" placeholder="1" required asp-for="A_ID">
+                    </div>*@
                     <div class="input-box">
                         <span class="details">權限</span>
-                        <input type="text" placeholder="Normal" required>
+                        <input type="text" placeholder="Normal" required asp-for="A_level">
                     </div>
                     <div class="input-box">
                         <span class="details">全名</span>
-                        <input type="text" placeholder="Enter your name" required>
+                        <input type="text" placeholder="Enter your name" required asp-for="A_Name">
                     </div>
                     <div class="input-box">
                         <span class="details">暱稱</span>
-                        <input type="text" placeholder="Enter your NickName" required>
+                        <input type="text" placeholder="Enter your NickName" required asp-for="A_NickName">
                     </div>
                     <div class="input-box">
                         <span class="details">使用者名稱</span>
-                        <input type="text" placeholder="Enter your username" required>
+                        <input type="text" placeholder="Enter your username" required asp-for="UserName">
                     </div>
                     <div class="input-box">
                         <span class="details">Email</span>
-                        <input type="text" placeholder="Enter your email" required>
+                        <input type="text" placeholder="Enter your email" required asp-for="A_Email">
                     </div>
                     <div class="input-box">
                         <span class="details">密碼</span>
-                        <input type="text" placeholder="Enter your password" required>
+                        <input type="text" placeholder="Enter your password" required asp-for="UserPWD">
                     </div>
                     <div class="input-box">
                         <span class="details">電話號碼</span>
-                        <input type="text" placeholder="Enter your number" required>
+                        <input type="text" placeholder="Enter your number" required asp-for="A_Phone">
                     </div>
                     <div class="input-box">
                         <span class="birthday">生日</span>
-                        <input type="date" id="birthday" name="birthday" value="1990-01-01">
+                        <input type="date" id="birthday" name="birthday" value="1990-01-01" asp-for="Birthday">
                     </div>
                     <div class="input-box">
                         <span class="details">地址</span>
-                        <input type="text" placeholder="Enter your address" required>
+                        <input type="text" placeholder="Enter your address" required asp-for="A_add">
                     </div>
                     <div class="input-box">
                         <span class="details">Coin</span>
-                        <input type="text" placeholder="Coin" required>
+                        <input type="text" placeholder="Coin" required asp-for="A_Coin">
                     </div>
                     <div class="input-box">
                         <span class="Registered">註冊日期</span>
-                        <input type="date" id="Registered" name="Registered" value="2023-04-27">
+                        <input type="date" id="Registered" name="Registered" value="2023-04-27" asp-for="A_RegisteredAt">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">裝備</span>
+                        <input type="text" placeholder="給他一件裝備" required asp-for="P_id">
                     </div>
 
 
                 </div>
                 <div class="gender-details">
-                    <input type="radio" name="gender" id="dot-1">
-                    <input type="radio" name="gender" id="dot-2">
-                    <input type="radio" name="gender" id="dot-3">
+                    
+                    <input type="radio" name="Gender" id="dot-1" asp-for="A_Gender" value="male">
+                    <input type="radio" name="Gender" id="dot-2" asp-for="A_Gender" value="female">
+                    <input type="radio" name="Gender" id="dot-3" asp-for="A_Gender" value="no">
                     <span class="gender-title">性別</span>
                     <div class="category">
                         <label for="dot-1">
@@ -88,10 +95,9 @@
                 <div class="button">
                     <input type="submit" value="儲存">
                 </div>
+                <a asp-area="Account" asp-controller="Account_Home" asp-action="Index" asp-route-id="" class="btn"><i class=" fa fa-sharp fa-solid fa-arrow-left"></i>回上一頁</a>
             </form>
         </div>
     </div>
 
 </body>
-
-</html>
