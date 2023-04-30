@@ -12,6 +12,7 @@ window.onload = function () {
     //建立一個web socket 連線
     vWebSocket = new WebSocket(server + '/ws');
     document.getElementById("dialog-send-btn").addEventListener("click", sendMsg);
+    document.getElementById('joinBtn').addEventListener("click", sendQueueRequest);
     //如果連線成功
     vWebSocket.onopen = function (e) {
         console.log('connection start ...');
@@ -214,4 +215,12 @@ function isSolid(x, y) {
         y >= mapData.MaxY ||
         y < mapData.MinY
     )
+}
+
+function sendQueueRequest() {
+    let data = {
+        "type": "Queue",
+        "data": txtMsg
+    };
+    vWebSocket.send(JSON.stringify(data));
 }

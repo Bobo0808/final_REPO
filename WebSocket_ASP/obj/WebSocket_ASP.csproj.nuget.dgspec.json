@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\user\\desktop\\專題\\WebSocket_ASP\\WebSocket_ASP\\WebSocket_ASP.csproj": {}
+    "E:\\user\\desktop\\專題\\Final_REPO\\WebSocket_ASP\\WebSocket_ASP.csproj": {}
   },
   "projects": {
-    "E:\\user\\desktop\\專題\\WebSocket_ASP\\WebSocket_ASP\\WebSocket_ASP.csproj": {
+    "E:\\user\\desktop\\專題\\Final_REPO\\WebSocket_ASP\\WebSocket_ASP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\user\\desktop\\專題\\WebSocket_ASP\\WebSocket_ASP\\WebSocket_ASP.csproj",
+        "projectUniqueName": "E:\\user\\desktop\\專題\\Final_REPO\\WebSocket_ASP\\WebSocket_ASP.csproj",
         "projectName": "WebSocket_ASP",
-        "projectPath": "E:\\user\\desktop\\專題\\WebSocket_ASP\\WebSocket_ASP\\WebSocket_ASP.csproj",
+        "projectPath": "E:\\user\\desktop\\專題\\Final_REPO\\WebSocket_ASP\\WebSocket_ASP.csproj",
         "packagesPath": "C:\\Users\\asd88\\.nuget\\packages\\",
-        "outputPath": "E:\\user\\desktop\\專題\\WebSocket_ASP\\WebSocket_ASP\\obj\\",
+        "outputPath": "E:\\user\\desktop\\專題\\Final_REPO\\WebSocket_ASP\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -27,7 +27,8 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.nuget.org/api/v2/": {}
         },
         "frameworks": {
           "net6.0": {
@@ -77,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
