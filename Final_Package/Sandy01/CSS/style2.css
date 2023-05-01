@@ -1,0 +1,83 @@
+/* 整個頁面的背景色 */
+body {
+    background-color: #f5f5f5;
+}
+
+/* 容器的樣式 */
+.container {
+    overflow: auto;
+    max-height: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+
+
+}
+
+/* 標題的樣式 */
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.title h2 {
+    font-size: 28px;
+    margin: 0;
+}
+
+/* 按鈕的樣式 */
+.btn {
+    display: inline-block;
+    background-color: #BBFFFF;
+    color: black;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background-color: #FF7256;
+}
+
+/* 表格的樣式 */
+table {
+    border-collapse: collapse;
+    width: 140%;
+}
+
+table th,
+table td {
+    padding: 8px;
+    text-align: center;
+    color: black;
+    border-bottom: 1px solid #8B8989;
+}
+
+table th {
+    background-color: #CDC9C9;
+    color: black;
+    font-weight: normal;
+}
+
+/* 頁面2的樣式 */
+.content-2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.acount {
+    width: 70%;
+}
+
+.recent-payment {
+    width: 30%;
+}
+
+/* 單行列表樣式 */
+tr:hover {
+    background-color: #CDC9C9;
+}
