@@ -1,0 +1,101 @@
+﻿@model IEnumerable<final_repo_test.Models.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.E_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_Pwd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_Birthday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_HireDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_Permission)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_Work)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.E_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.E_Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.E_UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.E_Pwd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.E_Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.E_Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.E_Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.E_Birthday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.E_HireDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.E_Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.E_Permission)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.E_Work)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.E_ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.E_ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.E_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

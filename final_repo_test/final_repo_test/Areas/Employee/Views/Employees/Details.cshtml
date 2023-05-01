@@ -1,0 +1,103 @@
+﻿@model final_repo_test.Models.Employee
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_Layout";
+}
+
+<h1>員工詳細資料</h1>
+
+<div>
+    @*<h4>Employee</h4>*@
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.E_Name)*@
+            姓名
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.E_Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.E_Gender)*@
+            性別
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.E_Gender)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.E_UserName)*@
+            使用者名稱
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.E_UserName)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.E_Pwd)*@
+            密碼
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.E_Pwd)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.E_Email)*@
+            信箱
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.E_Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.E_Title)*@
+            職位
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.E_Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.E_Phone)*@
+            聯絡方式
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.E_Phone)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.E_Birthday)*@
+            出生年月日
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.E_Birthday)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.E_HireDate)*@
+            就職日
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.E_HireDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.E_Address)*@
+            地址
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.E_Address)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.E_Permission)*@
+            權限
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.E_Permission)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.E_Work)*@
+            在職
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.E_Work)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.E_ID">編輯</a> |
+    <a asp-action="Index">返回列表</a>
+</div>

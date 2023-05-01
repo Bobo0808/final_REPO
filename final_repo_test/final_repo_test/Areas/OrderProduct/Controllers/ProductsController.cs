@@ -13,6 +13,7 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
     [Area(areaName: "OrderProduct")]
     public class ProductsController : Controller
     {
+        
         public readonly ApplicationDbContext _context;
         private readonly IWebHostEnvironment _env;
         public ProductsController(ApplicationDbContext context, IWebHostEnvironment env)
