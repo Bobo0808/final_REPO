@@ -1,10 +1,12 @@
-﻿@{
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<final_repo_test.Models.UserAccount>
+@{
     ViewData["Title"] = "Account";
     Layout = "_Layout";
     
 }
 @section Styles{
-    <link href="~/css/accountstyle/style2.css" rel="stylesheet" />
+    <link href="~/css/Accountstyle/style2.css" rel="stylesheet" />
 }
 
 
@@ -12,165 +14,41 @@
 
 
 <body>
-    <section class="table_header">
-    </section>
-    <section class="tables">
-        <fieldset class="CreateNew_form">
-            <legend>新增會員</legend>
-            <div class="CreateForm_title">
-                <span style="width: 100px;">
-                    <span class="label">會員名稱</span>
-                    <input type="text" required="required" style="width: 100%">
-                </span>
-                <span style="width: 100px;">
-                    <span class="label">暱稱</span>
-                    <input type="text" required="required" style="width: 100%">
-                </span>
-                <span style="width: 150px;">
-                    <span class="label">性別</span>
-                    <select required="required" style="width: 100%">
-                        <option value="">請選擇</option>
-                        <option value="male">男</option>
-                        <option value="female">女</option>
-                        <option value="Not">不便告知</option>
-                    </select>
-                </span>
-
-                <span style="width: 150px;">
-                    <span class="label">e-mail</span>
-                    <input type="text" required="required" style="width: 100%">
-                </span>
-                <span style="width: 150px;">
-                    <span class="label">電話</span>
-                    <input type="text" required="required" style="width: 100%">
-                </span>
-                <span style="width: 200px;">
-                    <span class="label">生日</span>
-                    <input type="date" style="width: 100%">
-                    
-                </span>
-                
-                
-
+    <div class="container">
+        <div class="content">
+            <div class="content-2">
+                <div class="acount">
+                    <div class="title">
+                        <h2>會員資料表</h2> 
+                        <a asp-area="Account" asp-controller="Account_Home" asp-action="Add" asp-route-id="" class="btn"><i class="fa fa-solid fa-plus"></i> 新增</a>
+                    </div>
+                    <table>
+                        
+                        <tr>
+                            <th>ID</th>
+                            <th>名字</th>
+                            <th>使用者名稱</th>
+                            <th>性別</th>
+                            <th>生日</th>
+                            <th>權限</th>
+                            <th>option</th>
+                        </tr>
+                        @foreach (var account in Model)
+                        {
+                        <tr>
+                            <td>@account.A_ID</td>
+                            <td>@account.A_Name</td>
+                            <td>@account.A_NickName</td>
+                            <td>@account.A_Gender</td>
+                            <td>@account.Birthday.ToString("yyyy-MM-dd")</td>
+                            <td>@account.A_level</td>
+                            <td><a href="@Url.Action("Edit", "Account_Home", new { A_Id = account.A_ID })" class="btn"><i class="fa fa-solid fa-eye"></i> View</a></td>
+                        </tr>
+                        }
+                    </table>
+                </div>
             </div>
-        </fieldset>
-        <section class=" Dtable_body">
-            <table class="Detail_table">
-                <thead>
-                    <tr>
-                        <th>會員ID</th>
-                        <th>會員名稱</th>
-                        <th>暱稱</th>
-                        <th>性別</th>
-                        <th>e-mail</th>
-                        <th>地址</th>
-                        <th>電話</th>
-                        <th>生日</th>
-                        <th>修改</th>
-                        <th>刪除</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td class="editableCell">Dior</td>
-                        <td class="editableCell">lil Chick</td>
-                        <td class="editableCell">男</td>
-                        <td class="editableCell">sdsg15@gmail.com</td>
-                        <td class="editableCell">高雄市鳳山區</td>
-                        <td class="editableCell">0986214536</td>
-                        <td class="editableCell">1999/08/08</td>
-                        <td><i class="fa-solid fa-pen-to-square"></i></td>
-                        <td><i class="fa-solid fa-trash-can"></i></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td class="editableCell">Dior</td>
-                        <td class="editableCell">lil Chick</td>
-                        <td class="editableCell">男</td>
-                        <td class="editableCell">sdsg15@gmail.com</td>
-                        <td class="editableCell">高雄市鳳山區</td>
-                        <td class="editableCell">0986214536</td>
-                        <td class="editableCell">1999/08/08</td>
-                        <td><i class="fa-solid fa-pen-to-square"></i></td>
-                        <td><i class="fa-solid fa-trash-can"></i></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td class="editableCell">Dior</td>
-                        <td class="editableCell">lil Chick</td>
-                        <td class="editableCell">男</td>
-                        <td class="editableCell">sdsg15@gmail.com</td>
-                        <td class="editableCell">高雄市鳳山區</td>
-                        <td class="editableCell">0986214536</td>
-                        <td class="editableCell">1999/08/08</td>
-                        <td><i class="fa-solid fa-pen-to-square"></i></td>
-                        <td><i class="fa-solid fa-trash-can"></i></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td class="editableCell">Dior</td>
-                        <td class="editableCell">lil Chick</td>
-                        <td class="editableCell">男</td>
-                        <td class="editableCell">sdsg15@gmail.com</td>
-                        <td class="editableCell">高雄市鳳山區</td>
-                        <td class="editableCell">0986214536</td>
-                        <td class="editableCell">1999/08/08</td>
-                        <td><i class="fa-solid fa-pen-to-square"></i></td>
-                        <td><i class="fa-solid fa-trash-can"></i></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td class="editableCell">Dior</td>
-                        <td class="editableCell">lil Chick</td>
-                        <td class="editableCell">男</td>
-                        <td class="editableCell">sdsg15@gmail.com</td>
-                        <td class="editableCell">高雄市鳳山區</td>
-                        <td class="editableCell">0986214536</td>
-                        <td class="editableCell">1999/08/08</td>
-                        <td><i class="fa-solid fa-pen-to-square"></i></td>
-                        <td><i class="fa-solid fa-trash-can"></i></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td class="editableCell">Dior</td>
-                        <td class="editableCell">lil Chick</td>
-                        <td class="editableCell">男</td>
-                        <td class="editableCell">sdsg15@gmail.com</td>
-                        <td class="editableCell">高雄市鳳山區</td>
-                        <td class="editableCell">0986214536</td>
-                        <td class="editableCell">1999/08/08</td>
-                        <td><i class="fa-solid fa-pen-to-square"></i></td>
-                        <td><i class="fa-solid fa-trash-can"></i></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td class="editableCell">Dior</td>
-                        <td class="editableCell">lil Chick</td>
-                        <td class="editableCell">男</td>
-                        <td class="editableCell">sdsg15@gmail.com</td>
-                        <td class="editableCell">高雄市鳳山區</td>
-                        <td class="editableCell">0986214536</td>
-                        <td class="editableCell">1999/08/08</td>
-                        <td><i class="fa-solid fa-pen-to-square"></i></td>
-                        <td><i class="fa-solid fa-trash-can"></i></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td class="editableCell">Dior</td>
-                        <td class="editableCell">lil Chick</td>
-                        <td class="editableCell">男</td>
-                        <td class="editableCell">sdsg15@gmail.com</td>
-                        <td class="editableCell">高雄市鳳山區</td>
-                        <td class="editableCell">0986214536</td>
-                        <td class="editableCell">1999/08/08</td>
-                        <td><i class="fa-solid fa-pen-to-square"></i></td>
-                        <td><i class="fa-solid fa-trash-can"></i></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+        </div>
 
-    </section>
-
+    </div>
 </body>

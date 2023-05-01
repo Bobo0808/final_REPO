@@ -15,12 +15,21 @@
     <div class="game-container">
     </div>
     <div class="player-info">
+
         <div>
             <label for="player-name">Your Name</label>
             <input id="player-name" maxlength="10" type="text" />
         </div>
         <div>
             <button id="player-color">Change Color</button>
+        </div>
+        <div>
+            <button id="JoinBtn">JoinQueue</button>
+        </div>
+        <div>
+            <video width="200" height="200" autoplay id="myVideo" muted playsinline></video>
+
+            <video width="500" height="500" autoplay id="remoteVideo" playsinline></video>
         </div>
     </div>
 
@@ -48,6 +57,7 @@
     <script src="./WebSocket.js"></script>
     <script src="./KeyPressListener.js"></script>
     <script src="./dialogue.js"></script>
+    <script src="./WebRTC.js"></script>
 </body>
 
 </html>

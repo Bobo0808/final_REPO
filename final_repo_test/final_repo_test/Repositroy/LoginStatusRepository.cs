@@ -21,6 +21,38 @@ namespace final_repo_test.Repositroy
             GetDayViewModel result = new GetDayViewModel();
             result.Unit = Chart.ToLower();
             int itemp = 1;
+            //處理AD資料
+            for (int i = 0; i < 5; i++)
+            {
+                int adId = (await _context.Ads.Where(s => s.Ad_EndTime > DateTime.Now && s.Ad_StartTime < DateTime.Now).OrderByDescending(s => s.Ad_Clicks).Select(s => s.Ad_ID).Skip(i).Take(1).FirstOrDefaultAsync());
+                int adClicks = (await _context.Ads.Where(s => s.Ad_EndTime > DateTime.Now && s.Ad_StartTime < DateTime.Now).OrderByDescending(s => s.Ad_Clicks).Select(s => s.Ad_Clicks).Skip(i).Take(1).FirstOrDefaultAsync());
+
+                try
+                {
+                    result.ADx.Add(adId);
+                    
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    adId = 0;
+                    result.ADx.Add(adId);
+                }
+                try
+                {
+                    result.ADy.Add(adClicks);
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    adClicks = 0;
+                    result.ADy.Add(adClicks);
+                }
+                
+                
+            }
+
             for (int i = 0; i < result.Headx.Count; i++)
             {
                 if (itemp < result.Headx.Count)
@@ -38,6 +70,7 @@ namespace final_repo_test.Repositroy
                 case "Day":
                     DateTime tempDay = DateTime.Now.AddDays(-6);
                     var list = await _context.LoginStaus.Where(s => s.L_cTime > tempDay).ToListAsync();
+                    
 
 
                     result.Average = (int)Math.Round(list.Sum(x => (x.L_dcTime.Subtract(x.L_cTime).TotalHours)) / list.Count);

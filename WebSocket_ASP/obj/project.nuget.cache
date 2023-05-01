@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pSdEk1DyYXq4j3apTA5SO4/q9zcAg32bmIbjvrT/pk0vBan0LSoGSDpuPMSVpkzAMMhkOZI4MTdSbJawCBVD1w==",
+  "dgSpecHash": "92GB02/ywZIAOvHyT6FmY6WZjyYozNzJDcRs7MRfSVXQuwIHVcJ/SXlXxlBRIi23hEp/VBzues+CDBXGrdYo6g==",
   "success": true,
-  "projectFilePath": "E:\\user\\desktop\\專題\\WebSocket_ASP\\WebSocket_ASP\\WebSocket_ASP.csproj",
+  "projectFilePath": "E:\\user\\desktop\\專題\\Final_REPO\\WebSocket_ASP\\WebSocket_ASP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\asd88\\.nuget\\packages\\microsoft.aspnet.signalr.core\\2.4.3\\microsoft.aspnet.signalr.core.2.4.3.nupkg.sha512",
     "C:\\Users\\asd88\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
