@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Account";
+    Layout = "_Layout";
+
+}
+@model List<final_repo_test.Models.Employee>
+
+<h1>Employees</h1>
+<table class="table">
+    <thead>
+        <tr>
+        <th>ID</th>
+        <th>姓名</th>
+        <th>性別</th>
+        <th>使用者名稱</th>
+        <th>信箱</th>
+        <th>職位</th>
+        <th>電話</th>
+            <th>生日</th>
+            <th>就職日</th>
+            <th>地址</th>
+            <th>權限</th>
+            <th>工作</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@employee.E_ID</td>
+                <td>@employee.E_Name</td>
+                <td>@employee.E_Gender</td>
+                <td>@employee.E_UserName</td>
+                @*<td>@employee.E_Pwd</td>*@
+                <td>@employee.E_Email</td>
+                <td>@employee.E_Title</td>
+                <td>@employee.E_Phone</td>
+                <td>@employee.E_Birthday.ToString("dd-MM-yyyy")</td>
+                <td>@employee.E_HireDate.ToString("dd-MM-yyyy")</td>
+                <td>@employee.E_Address</td>
+                <td>@employee.E_Permission</td>
+                <td>@employee.E_Work</td>
+                @*<td>@employee.DateOfBirth.ToString("dd-MM-yyyy")</td>*@
+                @*<td><a href="Employees/View/@employee.Id">View</a></td>*@
+            </tr>
+        }
+ </tbody>
+</table>

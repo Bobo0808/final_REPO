@@ -1,0 +1,122 @@
+﻿@model final_repo_test.Models.Employee
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    //ViewData["Title"] = "Edit";
+    Layout = "_Layout";
+}
+
+<h1>編輯員工資料</h1>
+
+@*<h4>Employee</h4>*@
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="E_ID" />
+
+            <div class="form-group">
+                @*<label asp-for="E_Name" class="control-label"></label>*@
+                @*<label>姓名</label>*@
+                姓名
+                <input asp-for="E_Name" class="form-control" />
+                <span asp-validation-for="E_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @*<label asp-for="E_Gender" class="control-label"></label>*@
+                @*<label>性別</label>*@
+                性別
+                <select asp-for="E_Gender" class="form-control">
+                    <option value="M">男</option>
+                    <option value="F">女</option>
+                </select>
+                <span asp-validation-for="E_Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @*<label asp-for="E_UserName" class="control-label"></label>*@
+                @*<label>使用名稱</label>*@
+                使用者名稱
+                <input asp-for="E_UserName" class="form-control" />
+                <span asp-validation-for="E_UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @*<label asp-for="E_Pwd" class="control-label"></label>*@
+                @*<label>密碼</label>*@
+                密碼
+                <input asp-for="E_Pwd" class="form-control" />
+                <span asp-validation-for="E_Pwd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @*<label asp-for="E_Email" class="control-label"></label>*@
+                @*<label>信箱</label>*@
+                信箱
+                <input asp-for="E_Email" class="form-control" />
+                <span asp-validation-for="E_Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @*<label asp-for="E_Title" class="control-label"></label>*@
+                @*<label>職位</label>*@
+                職位
+                <select asp-for="E_Title" class="form-control">
+                    <option value="Title1">職位1</option>
+                    <option value="Title2">職位2</option>
+                </select>
+                <span asp-validation-for="E_Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @*<label asp-for="E_Phone" class="control-label"></label>*@
+                @*<label>聯絡方式</label>*@
+                聯絡方式
+                <input asp-for="E_Phone" class="form-control" />
+                <span asp-validation-for="E_Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @*<label asp-for="E_Birthday" class="control-label"></label>*@
+                @*<label>出生年月日</label>*@
+                出生年月日
+                <input asp-for="E_Birthday" class="form-control" />
+                <span asp-validation-for="E_Birthday" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @*<label asp-for="E_HireDate" class="control-label"></label>*@
+                @*<label>就職日</label>*@
+                就職日
+                <input asp-for="E_HireDate" class="form-control" />
+                <span asp-validation-for="E_HireDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @*<label asp-for="E_Address" class="control-label"></label>*@
+                @*<label>地址</label>*@
+                地址
+                <input asp-for="E_Address" class="form-control" />
+                <span asp-validation-for="E_Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @*<label asp-for="E_Permission" class="control-label"></label>*@
+                @*<label>權限</label>*@
+                權限
+                <input asp-for="E_Permission" class="form-control" />
+                <span asp-validation-for="E_Permission" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="E_Work" /> 
+                    @*@Html.DisplayNameFor(model => model.E_Work)Work*@
+                    在職
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="儲存" class="btn btn-primary" />
+                <a asp-action="Index">返回列表</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@*<div>
+    <a asp-action="Index">返回列表</a>
+</div>*@
+
+@*@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}*@

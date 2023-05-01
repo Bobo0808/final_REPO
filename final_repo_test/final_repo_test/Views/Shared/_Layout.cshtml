@@ -33,7 +33,14 @@
 			<li class="side-btn">
 				<a asp-area="Account" asp-controller="Account_Home" asp-action="Index">
 					<i class="fa fa-solid fa-users fa-sm"></i>
-					<span class="text">會員狀態</span>
+					<span class="text">會員管理</span>
+				</a>
+			</li>
+
+			<li class="side-btn">
+				<a asp-area="Employee" asp-controller="Employees" asp-action="Index">
+					<i class="fa fa-solid fa-users fa-sm"></i>
+					<span class="text">員工管理</span>
 				</a>
 			</li>
 			<li class="side-btn">
@@ -114,5 +121,6 @@
 	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="~/js/script.js" asp-append-version="true"></script>
 	@await RenderSectionAsync("Script",required:false)
+
 </body>
 </html>

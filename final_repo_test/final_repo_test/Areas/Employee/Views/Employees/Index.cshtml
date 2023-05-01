@@ -1,0 +1,129 @@
+﻿@model IEnumerable<final_repo_test.Models.Employee>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@*@{
+    ViewData["Title"] = "Index";
+}*@
+
+@{
+    ViewData["Title"] = "Employee";
+    Layout = "_Layout";
+}
+
+
+
+<h1>員工管理</h1>
+
+<p>
+    <a asp-area="Employee" asp-controller="Employees" asp-action="Create">新增員工</a>
+</p>
+@*<a href=""></a>*@
+@*<table class="table">*@
+   @* <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.E_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_Pwd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_Birthday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_HireDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_Permission)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_Work)
+            </th>
+            <th></th>
+        </tr>
+    </thead>*@
+    <table class="table">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                @*<th>姓別</th>*@
+                @*<th>使用者名稱</th>*@
+                <th>密碼</th>
+                @*<th>信箱</th>*@
+                <th>職位</th>
+                <th>聯絡方式</th>
+                @*<th>生日</th>*@
+                <th>就職日</th>
+                @*<th>地址</th>*@
+                <th>權限</th>
+                <th>在職</th>
+                <th></th>
+            </tr>
+        </thead>
+        @*<tbody>*@
+    @*<tbody>*@
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.E_Name)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.E_Gender)
+            </td>*@
+            @*<td>
+                @Html.DisplayFor(modelItem => item.E_UserName)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.E_Pwd)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.E_Email)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.E_Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.E_Phone)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.E_Birthday)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.E_HireDate)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.E_Address)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.E_Permission)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.E_Work)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.E_ID">編輯</a> |
+                <a asp-action="Details" asp-route-id="@item.E_ID">詳細資料</a> |
+                <a asp-action="Delete" asp-route-id="@item.E_ID">刪除</a>
+            </td>
+        </tr>
+}
+    @*</tbody>*@
+</table>

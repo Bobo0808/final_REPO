@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Employee\Data\" />
+    <Folder Include="Areas\Employee\Models\" />
     <Folder Include="Areas\Login\Data\" />
     <Folder Include="Areas\Login\Models\" />
     <Folder Include="Areas\MapEdit\Controllers\" />
