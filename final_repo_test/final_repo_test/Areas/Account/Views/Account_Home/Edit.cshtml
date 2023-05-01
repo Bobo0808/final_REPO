@@ -1,28 +1,26 @@
 ﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@model final_repo_test.ViewModels.Account.AddVM
+@model final_repo_test.ViewModels.Account.Edit
 @{
-    ViewData["Title"] = "Add Account";
+    ViewData["Title"] = "Edit Account";
     Layout = "_Layout";
 
 }
 @section Styles{
-    <link href="~/css/AccountStyle/addstyle.css" rel="stylesheet" />
-    
+    <link href="~/css/AccountStyle/editstyle.css" rel="stylesheet" />
 }
-
 <body>
     <div class="container">
-        <div class="title">新增會員</div>
+        <div class="title">編輯會員</div>
         <div class="content">
-            <form method="post" action="Add">
+            <form method="post" action="Edit">
                 <div class="user-details">
-                   @* <div class="input-box">
-                        <span class="details">ID</span>
-                        <input type="text" placeholder="1" required asp-for="A_ID">
-                    </div>*@
+                     <div class="input-box">
+                    <span class="details">ID</span>
+                    <input type="text" placeholder="ID" required asp-for="A_ID" readonly>
+                    </div>
                     <div class="input-box">
                         <span class="details">權限</span>
-                        <input type="text" placeholder="Normal" required asp-for="A_level">
+                        <input type="text" placeholder="Enter Level" required asp-for="A_level">
                     </div>
                     <div class="input-box">
                         <span class="details">全名</span>
@@ -95,9 +93,9 @@
                 <div class="button">
                     <input type="submit" value="儲存">
                 </div>
+                <button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Account_Home">刪除</button>
                 <a asp-area="Account" asp-controller="Account_Home" asp-action="Index" asp-route-id="" class="btn"><i class=" fa fa-sharp fa-solid fa-arrow-left"></i>回上一頁</a>
             </form>
         </div>
     </div>
-
 </body>
