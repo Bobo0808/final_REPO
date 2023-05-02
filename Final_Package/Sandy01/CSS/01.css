@@ -13,7 +13,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #4070f4;
+    /* background: #4070f4; */
 }
 
 .container {
@@ -49,7 +49,7 @@ body {
 .container form {
     position: relative;
     margin-top: 16px;
-    min-height: 490px;
+    min-height: 550px;
     background-color: #fff;
     overflow: hidden;
 }
@@ -81,7 +81,7 @@ form.secActive .form.first {
 .container form .title {
     display: block;
     margin-bottom: 8px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     margin: 6px 0;
     color: #333;
@@ -102,7 +102,7 @@ form .fields .input-field {
 }
 
 .input-field label {
-    font-size: 12px;
+    font-size: 20px;
     font-weight: 500;
     color: #2e2e2e;
 }
@@ -110,7 +110,7 @@ form .fields .input-field {
 .input-field input,
 select {
     outline: none;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400;
     color: #333;
     border-radius: 5px;
@@ -153,12 +153,12 @@ select {
 }
 
 .container form .btnText {
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 400;
 }
 
 form button:hover {
-    background-color: #265df2;
+    background-color: #FF6A6A;
 }
 
 form button i,
