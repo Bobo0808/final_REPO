@@ -1,5 +1,7 @@
 ﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @model final_repo_test.ViewModels.Account.AddVM
+@using final_repo_test.Data.Enum
+
 @{
     ViewData["Title"] = "Add Account";
     Layout = "_Layout";
@@ -73,9 +75,11 @@
                 </div>
                 <div class="gender-details">
                     @*Gender這個功能還有點問題*@
-                    <input type="radio" name="Gender" id="dot-1" asp-for="A_Gender" value="male">
-                    <input type="radio" name="Gender" id="dot-2" asp-for="A_Gender" value="female">
-                    <input type="radio" name="Gender" id="dot-3" asp-for="A_Gender" value="no">
+                    <div class="gender-details">
+                        <input type="radio" asp-for="A_Gender" id="dot-1" value="@((int)Gender.男)" checked="@((Model?.A_Gender == Gender.男) ? "checked" : null)">男
+                        <input type="radio" asp-for="A_Gender" id="dot-2" value="@((int)Gender.女)" checked="@((Model?.A_Gender == Gender.女) ? "checked" : null)">女
+                        <input type="radio" asp-for="A_Gender" id="dot-3" value="@((int)Gender.其他)" checked="@((Model?.A_Gender == Gender.其他) ? "checked" : null)">其他
+
                     <span class="gender-title">性別</span>
                     <div class="category">
                         <label for="dot-1">
