@@ -25,8 +25,9 @@
                 @*<label>性別</label>*@
                 性別
                 <select asp-for="E_Gender" class="form-control">
-                    <option value="M">男</option>
-                    <option value="F">女</option>
+                    <option value="男">男</option>
+                    <option value="女">女</option>
+                    <option value="其他">其他</option>
                 </select>
                 <span asp-validation-for="E_Gender" class="text-danger"></span>
             </div>
@@ -56,8 +57,8 @@
                 @*<label>職位</label>*@
                 職位
                 <select asp-for="E_Title" class="form-control">
-                    <option value="Title1">職位1</option>
-                    <option value="Title2">職位2</option>
+                    <option value="員工">員工</option>
+                    <option value="主管">主管</option>
                 </select>
                 <span asp-validation-for="E_Title" class="text-danger"></span>
             </div>
