@@ -61,6 +61,7 @@
                     <div class="input-box">
                         <span class="details">Coin</span>
                         <input type="text" placeholder="Coin" required asp-for="A_Coin">
+                       
                     </div>
                     <div class="input-box">
                         <span class="Registered">註冊日期</span>
@@ -69,16 +70,18 @@
                     <div class="input-box">
                         <span class="details">裝備</span>
                         <input type="text" placeholder="給他一件裝備" required asp-for="P_id">
+                        @*<select asp-for="P_id" placeholder="給他一件裝備" required>
+                            <option value="1">反摺袖襯衫</option>
+                            <option value="2">短袖襯衫</option>
+                        </select>*@
                     </div>
-
-
                 </div>
                 <div class="gender-details">
                     @*Gender這個功能還有點問題*@
                     <div class="gender-details">
-                        <input type="radio" asp-for="A_Gender" id="dot-1" value="@((int)Gender.男)" checked="@((Model?.A_Gender == Gender.男) ? "checked" : null)">男
-                        <input type="radio" asp-for="A_Gender" id="dot-2" value="@((int)Gender.女)" checked="@((Model?.A_Gender == Gender.女) ? "checked" : null)">女
-                        <input type="radio" asp-for="A_Gender" id="dot-3" value="@((int)Gender.其他)" checked="@((Model?.A_Gender == Gender.其他) ? "checked" : null)">其他
+                        <input type="radio" asp-for="A_Gender" id="dot-1" value="@((int)Gender.男)" checked="@((Model?.A_Gender == Gender.男) ? "checked" : null)">
+                        <input type="radio" asp-for="A_Gender" id="dot-2" value="@((int)Gender.女)" checked="@((Model?.A_Gender == Gender.女) ? "checked" : null)">
+                        <input type="radio" asp-for="A_Gender" id="dot-3" value="@((int)Gender.其他)" checked="@((Model?.A_Gender == Gender.其他) ? "checked" : null)">
 
                     <span class="gender-title">性別</span>
                     <div class="category">
