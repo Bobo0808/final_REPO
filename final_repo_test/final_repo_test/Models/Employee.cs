@@ -16,8 +16,9 @@ namespace final_repo_test.Models
 
         public enum Gender
         {
-            M,
-            F
+            男,
+            女,
+            其他
         }
         [Required(ErrorMessage = "Gender is required")]
         [EnumDataType(typeof(Gender), ErrorMessage = "Invalid Gender value")]
@@ -29,8 +30,8 @@ namespace final_repo_test.Models
         //public Title E_Title { get; set; } = default!;
         public enum Title
         {
-            Title1,
-            Title2
+            員工,
+            主管
         }
         [Required(ErrorMessage = "Title is required")]
         [EnumDataType(typeof(Title), ErrorMessage = "Invalid Title value")]
