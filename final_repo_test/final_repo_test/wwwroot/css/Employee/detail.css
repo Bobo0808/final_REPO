@@ -1,0 +1,67 @@
+/* 小於等於768px的螢幕 */
+@media (max-width: 768px) {
+    dt {
+        font-size: 24px;
+        margin: 2%;
+    }
+
+    h1 {
+        font-size: 36px;
+        margin: 2%;
+    }
+
+    a {
+        font-size: 36px;
+        margin: 5%;
+    }
+    .btn-lg {
+        font-weight: bold;
+    }
+}
+
+/* 大於768px小於等於1024px的螢幕 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    dt {
+        font-size: 28px;
+        margin: 3%;
+    }
+
+    h1 {
+        font-size: 48px;
+        margin: 2%;
+    }
+
+    a {
+        font-size: 48px;
+        margin: 5%;
+    }
+    .btn-lg {
+        font-weight: bold;
+    }
+}
+
+/* 大於1024px的螢幕 */
+@media (min-width: 1025px) {
+    dt {
+        font-size: 29px;
+        color: black;
+        margin: 5%;
+    }
+
+    h1 {
+        margin: 2%;
+    }
+
+    a {
+        font-size: 60px;
+        color: #c10909;
+        margin: 5%;
+    }
+
+    .container {
+        overflow: auto;
+    }
+    .btn-lg {
+        font-weight: bold;
+    }
+}
