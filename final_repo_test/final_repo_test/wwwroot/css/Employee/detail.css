@@ -12,10 +12,15 @@
 
     a {
         font-size: 36px;
-        margin: 5%;
+    }
+    .delete {
+        margin: 1%;
     }
     .btn-lg {
         font-weight: bold;
+    }
+    .create {
+        margin:5%;
     }
 }
 
@@ -33,10 +38,15 @@
 
     a {
         font-size: 48px;
-        margin: 5%;
+    }
+    .delete {
+        margin: 1%;
     }
     .btn-lg {
         font-weight: bold;
+    }
+    .create {
+        margin: 5%;
     }
 }
 
@@ -51,11 +61,12 @@
     h1 {
         margin: 2%;
     }
-
+    .delete {
+        margin: 1%;
+    }
     a {
         font-size: 60px;
         color: #c10909;
-        margin: 5%;
     }
 
     .container {
@@ -63,5 +74,8 @@
     }
     .btn-lg {
         font-weight: bold;
+    }
+    .create {
+        margin: 5%;
     }
 }

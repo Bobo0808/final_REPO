@@ -31,7 +31,7 @@
                     職位：@Html.DisplayFor(model => model.E_Title)
                 </dt>
                 <dt>
-                    <a class="btn btn-outline-danger btn-lg" role="button" asp-action="Index">返回列表</a>
+                    <a class="btn btn-outline-primary btn-lg" role="button" asp-action="Index">返回列表</a>
                 </dt>
             </dl>
         </div>
@@ -42,7 +42,7 @@
                     聯絡方式：@Html.DisplayFor(model => model.E_Phone)
                 </dt>
                 <dt>
-                    出生年月日：@Html.DisplayFor(model => model.E_Birthday)
+                    生日：@Html.DisplayFor(model => model.E_Birthday)
                 </dt>
                 <dt>
                     就職日：@Html.DisplayFor(model => model.E_HireDate)
@@ -57,7 +57,7 @@
                     在職：@Html.DisplayFor(model => model.E_Work)
                 </dt>
                 <dt>
-                    <a class="btn btn-outline-danger btn-lg" role="button" asp-action="Edit" asp-route-id="@Model?.E_ID">編輯</a>
+                    <a class="btn btn-outline-warning btn-lg" role="button" asp-action="Edit" asp-route-id="@Model?.E_ID">編輯</a>
                 </dt>
             </dl>
         </div>
