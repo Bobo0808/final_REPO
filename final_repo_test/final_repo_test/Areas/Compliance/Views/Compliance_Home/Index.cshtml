@@ -1,0 +1,67 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Compliance";
+    Layout = "_Layout";
+}
+@section Styles{
+    <link href="~/css/employee/e_index.css" rel="stylesheet" />
+}
+<h1 class="char">履約率統計圖</h1>
+<div class="contents" id="container" style="width: 850px; height: 600px;"></div>
+
+
+@section Script{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.2/echarts.common.min.js"
+        integrity="sha512-Zo4VYLfEAz0Vxyiohkl7bCDIWl2uQ8yZc/StiJ8RFEK6ms5eXtvOOErLhnGHxuTO1+r3jGBWAzU4wu1AK2aTRg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
+    <script>
+        var expertise = [], count = [];
+        function getusers() {
+            $.ajax({
+                type: "POST",
+                async: false,
+                url: '@Url.Action("Index", "Compliance_Home")',
+                dataType: "json",
+                success: function (result) {
+                    if (result) {
+                        for (var i = 0; i < result.length; i++) {
+                            expertise.push(result[i].expertise);
+                            count.push(result[i].count);
+                        }
+                    }
+                },
+                error: function (errmsg) {
+                    alert("Ajax獲取伺服器資料出錯了！" + errmsg);
+                }
+            });
+            return expertise, count;
+        }
+        getusers();
+        var mychart = echarts.init(document.getElementById("container"));
+        var option = {
+            tooltip: {
+                show: true
+            },
+            legend: {
+                data: ['count']
+            },
+            xAxis: [{
+                data: expertise,
+                axisLabel: {
+                    interval: 0
+                }
+            }],
+            yAxis: [{
+                type: 'value'
+            }],
+            series: [{
+                "name": "count",
+                "type": "bar",
+                "data": count
+            }]
+        };
+        mychart.setOption(option);
+    </script>
+}
