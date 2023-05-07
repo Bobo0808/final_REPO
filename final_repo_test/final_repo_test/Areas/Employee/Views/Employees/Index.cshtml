@@ -38,31 +38,33 @@
                             @Html.DisplayFor(modelItem => item.E_Name)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.E_Gender)
+                            
+                                @Html.DisplayFor(modelItem => item.E_UserName)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.E_UserName)
+                                @Html.DisplayFor(modelItem => item.E_Gender)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.E_Title)
+                                @Html.DisplayFor(modelItem => item.E_Permission)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.E_Phone)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.E_Permission)
+                            
+                                @Html.DisplayFor(modelItem => item.E_Title)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.E_Work)
                         </td>
                         <td>
-                             <a asp-action="Edit" asp-route-id="@item.E_ID" class="fa-regular fa-pen-to-square"></a>
+                             <a asp-action="Edit" asp-route-id="@item.E_ID" class="fa-regular fa-pen-to-square" style="color:bisque"></a>
                         </td>
                         <td>
-                                <a asp-action="Details" asp-route-id="@item.E_ID"><i class="fa fa-solid fa-eye"></i></a>
+                                <a asp-action="Details" asp-route-id="@item.E_ID"><i class="fa fa-solid fa-eye" style="color:chartreuse"></i></a>
                         </td>
                         <td>
-                             <a asp-action="Delete" asp-route-id="@item.E_ID" class="fa-solid fa-trash-can"></a>
+                                <a asp-action="Delete" asp-route-id="@item.E_ID" class="fa-solid fa-trash-can" style="color:red"></a>
                         </td>
                     </tr>
                     }
