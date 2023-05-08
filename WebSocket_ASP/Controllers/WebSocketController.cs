@@ -1,22 +1,20 @@
-﻿using System.Runtime.Serialization.Formatters.Binary;
-using System.IO.MemoryMappedFiles;
-using System.ComponentModel;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Net.WebSockets;
 using WebSocketSharp.Server;
 using System.Text;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
 public class WebSocketController : Controller
 {
     public static MapData maps = new MapData();
+    public static M_Queue queueMale = new M_Queue();
+    public static F_Queue queueFemale = new F_Queue();
     string[] playerColors = { "blue", "red", "orange", "yellow", "green", "purple" };
 
 
 
-    WebSocketServer wssv = new WebSocketServer("ws://127.0.0.1:7890");
+    // WebSocketServer wssv = new WebSocketServer("ws://127.0.0.1:7890");
     [Route("/ws")]
     public async Task Get()
     {
@@ -39,6 +37,14 @@ public class WebSocketController : Controller
             maps.MapDirectory["測試服"].client[webSocket].type = "Connect";
             maps.MapDirectory["測試服"].client[webSocket].id = generateID(); //隨機生產ID 之後從ms sql取
             maps.MapDirectory["測試服"].client[webSocket].name = "Test";
+            if (maps.MapDirectory["測試服"].client.Count % 2 == 0)
+            {
+                maps.MapDirectory["測試服"].client[webSocket].gender = 1;
+            }
+            else if (maps.MapDirectory["測試服"].client.Count % 2 == 1)
+            {
+                maps.MapDirectory["測試服"].client[webSocket].gender = 2;
+            }
             maps.MapDirectory["測試服"].client[webSocket].direction = "right";
             maps.MapDirectory["測試服"].client[webSocket].color = randomFromArray(playerColors);
             maps.MapDirectory["測試服"].client[webSocket].x = 1;
@@ -79,7 +85,7 @@ public class WebSocketController : Controller
             {
                 //如果收到了完整的消息，則解析JSON對象
                 var message = Encoding.UTF8.GetString(receiveBuffer.ToArray());
-                // Console.WriteLine(message);
+                Console.WriteLine(message);
                 var jsontemp = JObject.Parse(message);
                 var type = jsontemp.Value<string>("type");
                 //處理JSON對象
@@ -88,20 +94,26 @@ public class WebSocketController : Controller
                 {
                     case "Chat":
                         var data = jsontemp.GetValue("data");
-                        ChatContent Chattemp = new ChatContent { type = "Chat", client = maps.MapDirectory["測試服"].client[webSocket], content = data.Value<string>() };
+                        ChatContent Chattemp = new ChatContent
+                        {
+                            type = "Chat",
+                            client = maps.MapDirectory["測試服"].client[webSocket],
+                            content = data.Value<string>()
+                        };
                         var chatJson = JsonSerializer.Serialize(Chattemp);
                         buffer = Encoding.UTF8.GetBytes(chatJson);
                         maps.MapDirectory["測試服"].ChatContent.Add(Chattemp);
                         Console.WriteLine("Chat");
+                        await SendMessageToAllClient(webSocket, buffer);
                         break;
                     case "Movement":
-                        var data2 = JsonSerializer.Deserialize<MovementDTO?>(message);
-                        if (data2 == null)
+                        var dataMovement = JsonSerializer.Deserialize<MovementDTO?>(message);
+                        if (dataMovement == null)
                         {
                             break;
                         }
                         MovementDTO temp = new MovementDTO();
-                        temp = data2;
+                        temp = dataMovement;
                         maps.MapDirectory["測試服"].client[webSocket].direction = temp.data.direction;
                         maps.MapDirectory["測試服"].client[webSocket].x = temp.data.x;
                         maps.MapDirectory["測試服"].client[webSocket].y = temp.data.y;
@@ -110,6 +122,66 @@ public class WebSocketController : Controller
                         var movementJson = JsonSerializer.Serialize(temp.data);
                         Console.WriteLine("movement: " + movementJson);
                         buffer = Encoding.UTF8.GetBytes(movementJson);
+                        await SendMessageToAllClient(webSocket, buffer);
+                        break;
+                    case "Queue":
+                        Console.WriteLine(queueFemale.Queue.Count);
+                        Console.WriteLine(queueMale.Queue.Count);
+                        var dataQueue = jsontemp.GetValue("data");
+                        string datatemp = dataQueue.ToString();
+                        // Console.WriteLine(datatemp);
+                        if (maps.MapDirectory["測試服"].client[webSocket].gender == 1)
+                        {
+                            queueMale.Queue.Enqueue(new KeyValuePair<WebSocket, string>(webSocket, datatemp));
+                            if (queueFemale.Queue.Count != 0)
+                            {
+                                var femaletemp = queueFemale.Queue.Dequeue();
+                                var maletemp = queueMale.Queue.Dequeue();
+                                MatchDTO matchtemp = new MatchDTO();
+                                matchtemp.type = "Match";
+                                matchtemp.F_SDT = femaletemp.Value;
+                                matchtemp.F_data = maps.MapDirectory["測試服"].client[femaletemp.Key];
+                                matchtemp.M_SDT = maletemp.Value;
+                                matchtemp.M_data = maps.MapDirectory["測試服"].client[maletemp.Key];
+                                var matchJson = JsonSerializer.Serialize(matchtemp);
+                                buffer = Encoding.UTF8.GetBytes(matchJson);
+                                await SendMessageToMatchClient(maletemp.Key, femaletemp.Key, buffer);
+                            }
+                            else
+                            {
+                                WaitDTO waittemp = new WaitDTO();
+                                waittemp.type = "Wait";
+                                var waitJson = JsonSerializer.Serialize(waittemp);
+                                buffer = Encoding.UTF8.GetBytes(waitJson);
+                                await SendMessageToOneClient(webSocket, buffer);
+                            }
+                        }
+                        else if (maps.MapDirectory["測試服"].client[webSocket].gender == 2)
+                        {
+                            queueFemale.Queue.Enqueue(new KeyValuePair<WebSocket, string>(webSocket, datatemp));
+                            if (queueMale.Queue.Count != 0)
+                            {
+                                var femaletemp = queueFemale.Queue.Dequeue();
+                                var maletemp = queueMale.Queue.Dequeue();
+                                MatchDTO matchtemp = new MatchDTO();
+                                matchtemp.type = "Match";
+                                matchtemp.F_SDT = femaletemp.Value;
+                                matchtemp.F_data = maps.MapDirectory["測試服"].client[femaletemp.Key];
+                                matchtemp.M_SDT = maletemp.Value;
+                                matchtemp.M_data = maps.MapDirectory["測試服"].client[maletemp.Key];
+                                var matchJson = JsonSerializer.Serialize(matchtemp);
+                                buffer = Encoding.UTF8.GetBytes(matchJson);
+                                await SendMessageToMatchClient(maletemp.Key, femaletemp.Key, buffer);
+                            }
+                            else
+                            {
+                                WaitDTO waittemp = new WaitDTO();
+                                waittemp.type = "Wait";
+                                var waitJson = JsonSerializer.Serialize(waittemp);
+                                buffer = Encoding.UTF8.GetBytes(waitJson);
+                                await SendMessageToOneClient(webSocket, buffer);
+                            }
+                        }
                         break;
                 }
                 //清空緩存區
@@ -119,15 +191,7 @@ public class WebSocketController : Controller
 
 
 
-            foreach (KeyValuePair<WebSocket, PlayerRef> con in maps.MapDirectory["測試服"].client)
-            {
-                if (con.Key.State != System.Net.WebSockets.WebSocketState.Open)
-                {
-                    continue;
-                }
-                await con.Key.SendAsync(
-               new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
-            }
+
 
 
             //繼續等待接收訊息
@@ -151,6 +215,8 @@ public class WebSocketController : Controller
            new ArraySegment<byte>(dc), WebSocketMessageType.Text, true, CancellationToken.None);
         }
 
+
+
         Console.WriteLine(maps.MapDirectory["測試服"].client[webSocket].id + " has discoonected");
         maps.MapDirectory["測試服"].client.Remove(webSocket);
         await webSocket.CloseAsync(
@@ -158,6 +224,38 @@ public class WebSocketController : Controller
             receiveResult.CloseStatusDescription, CancellationToken.None);
 
 
+    }
+    public static async Task SendMessageToAllClient(WebSocket webSocket, byte[] buffer)
+    {
+        foreach (KeyValuePair<WebSocket, PlayerRef> con in maps.MapDirectory["測試服"].client)
+        {
+            if (con.Key.State != System.Net.WebSockets.WebSocketState.Open)
+            {
+                continue;
+            }
+            await con.Key.SendAsync(
+           new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
+        }
+    }
+
+    public static async Task SendMessageToMatchClient(WebSocket webSocketMale, WebSocket webSocketFemale, byte[] buffer)
+    {
+        if (webSocketMale.State == System.Net.WebSockets.WebSocketState.Open && webSocketFemale.State == System.Net.WebSockets.WebSocketState.Open)
+        {
+            await webSocketMale.SendAsync(
+      new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
+            await webSocketFemale.SendAsync(
+            new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
+        }
+    }
+
+    public static async Task SendMessageToOneClient(WebSocket webSocket, byte[] buffer)
+    {
+        if (webSocket.State == System.Net.WebSockets.WebSocketState.Open)
+        {
+            await webSocket.SendAsync(
+      new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
+        }
     }
     public string generateID()
     {
@@ -170,5 +268,7 @@ public class WebSocketController : Controller
         int temp = rdm.Next(0, arr.Length);
         return arr[temp];
     }
+
+
 }
 

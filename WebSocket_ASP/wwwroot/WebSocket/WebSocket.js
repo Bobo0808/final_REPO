@@ -6,6 +6,26 @@ let players = {};
 let IDempty = true;
 let messageBuffer = '';
 let mapData = {};
+let isQueue = false;
+
+
+const signaler = new SignalingChannel();
+const peer = new RTCPeerConnection(server); // Webrtc配對用
+let makingOffer = false;
+let peerChanel;
+
+pc.onnegotiationneeded = async () => {
+    try {
+        makingOffer = true;
+        await pc.setLocalDescription();
+        signaler.send({ description: pc.localDescription });
+    } catch (err) {
+        console.error(err);
+    } finally {
+        makingOffer = false;
+    }
+};
+
 
 const gameContainer = document.querySelector(".game-container");
 window.onload = function () {
@@ -63,8 +83,18 @@ window.onload = function () {
                 break
             case "Movement":
                 //訊息屬性是Movement
-
                 setDirection(result)
+                break
+            case "Match":
+                alert("配對成功")
+                isQueue = false;
+                alert(result);
+                MatchPlayer(result);
+                break
+            case "Wait":
+                console.log("等待配對")
+                isQueue = true;
+                alert("wait")
                 break
         }
 
@@ -76,6 +106,7 @@ window.onload = function () {
 
     //關閉連線時
     vWebSocket.onclose = function (e) {
+        IDempty = true;
         console.log("connection closed");
     };
 }
@@ -98,6 +129,7 @@ function sendDirection() {
             "type": "Movement",
             "id": playerRef.id,
             "name": playerRef.name,
+            "gender": playerRef.gender,
             "direction": playerRef.direction,
             "color": playerRef.color,
             "x": playerRef.x,
@@ -142,6 +174,7 @@ function AddPlayer(data) {
         playerRef = {
             id: data.id,
             name: data.name,
+            gender: data.gender,
             direction: data.direction,
             color: data.color,
             x: data.x,
@@ -160,6 +193,7 @@ function AddPlayer(data) {
     players[data.id] = {
         id: data.id,
         name: data.name,
+        gender: data.gender,
         direction: data.direction,
         color: data.color,
         x: data.x,
@@ -217,10 +251,49 @@ function isSolid(x, y) {
     )
 }
 
-function sendQueueRequest() {
-    let data = {
-        "type": "Queue",
-        "data": txtMsg
-    };
-    vWebSocket.send(JSON.stringify(data));
+async function sendQueueRequest() {
+    if (!isQueue) {
+        if (playerRef.gender == 2) {
+            peerChanel = peer.createDataChannel("myChanel");
+            let localSDP;
+            const offer = await peer.createOffer();
+            await peer.setLocalDescription(offer)
+            localSDP = peer.localDescription
+            let data = {
+                "type": "Queue",
+                "data": localSDP
+            };
+            console.log(JSON.stringify(data))
+            vWebSocket.send(JSON.stringify(data));
+
+        }
+        else if (playerRef.gender == 1) {
+            let localSDP;
+            const answer = await peer.createAnswer();
+            await peer.setLocalDescription(answer)
+            localSDP = peer.localDescription
+            let data = {
+                "type": "Queue",
+                "data": localSDP
+            };
+            console.log(JSON.stringify(data))
+            vWebSocket.send(JSON.stringify(data));
+        }
+    }
+    else {
+        alert("你已經在配對中")
+    }
+}
+
+function MatchPlayer(data) {
+    const offer = JSON.stringify(JSON.parse(data.M_SDT));
+    if (playerRef.gender == 2) {
+        peer.setRemoteDescription(offer);
+        alert("match successful")
+    }
+    else if (playerRef.gender == 1) {
+        peer.setRemoteDescription(offer);
+        peer.peerChanel = offer.peerChanel;
+        alert("match successful")
+    }
 }

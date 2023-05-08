@@ -15,7 +15,7 @@ var webSocketOptions = new WebSocketOptions
 app.UseWebSockets(webSocketOptions);
 // </snippet_UseWebSockets>
 
-app.UseDefaultFiles();
+// app.UseDefaultFiles();
 app.UseStaticFiles(new StaticFileOptions
 {
     FileProvider = new PhysicalFileProvider(
