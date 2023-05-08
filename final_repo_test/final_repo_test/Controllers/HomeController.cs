@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace final_repo_test.Controllers
 {
-    
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

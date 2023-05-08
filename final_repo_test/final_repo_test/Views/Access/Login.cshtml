@@ -3,12 +3,12 @@
 
 @{
     ViewData["Title"] = "Login";
-    Layout = "Null";
+    Layout = null;
 
 }
 
 
-    <link href="~/css/login/login.css" rel="stylesheet" />
+    <link href="~/css/Login/Login.css" rel="stylesheet" />
 
 
 
@@ -27,21 +27,26 @@
                     <h2>Login</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input type="email" placeholder="輸入Email" required asp-for="E_Email">
+                        <input type="email"  required asp-for="E_Email">
                         <label for="">Email or UserName</label>
+                        @if (ViewData["ValidateMessage"] != null)
+                        {
+                            <label>@ViewData["ValidateMessage"]</label>
+                        }
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" placeholder="輸入密碼" required asp-for="E_Pwd">
+                        <input type="password"  required asp-for="E_Pwd">
                         <label for="">Password</label>
                     </div>
                     <div class="forget">
                         <label for=""><input type="checkbox"asp-for="KeepLoggedIn"> Keep me Logged In <a href="#">Forget Password</a></label>
                     </div>
-                    <button>Log in</button>
+                    <button type="submit">Log in</button>
                     <div class="register">
                         <p>Don't have a account <a href="#">Register</a></p>
                     </div>
+                  
                 </form>
             </div>
         </div>

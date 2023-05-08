@@ -12,6 +12,9 @@ namespace final_repo_test.Controllers
         
         public IActionResult Login()
         {
+            //ClaimsPrincipal claimUser = HttpContext.User;
+            //if (claimUser.Identity.IsAuthenticated)
+            //    return RedirectToAction("Index", "Home");
             return View();
         }
         [HttpPost]
@@ -24,11 +27,11 @@ namespace final_repo_test.Controllers
 
                 AuthenticationProperties properties = new AuthenticationProperties() {
 
-                    AllowRefresh = true,
+                    AllowRefresh = false,
                     IsPersistent = loginViewModel.KeepLoggedIn
                 };
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,new ClaimsPrincipal(claimsIdentity),properties);
-                return RedirectToAction("Index", "Account_Home", new { area = "Account_Home" });
+                return RedirectToAction("Index", "Account_Home", new { area = "Account" });
             }
             ViewData["ValidateMessage"] = "user not found";
             return View();
