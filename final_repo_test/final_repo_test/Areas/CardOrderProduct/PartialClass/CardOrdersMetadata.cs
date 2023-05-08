@@ -3,20 +3,20 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace final_repo_test.Models
 {
-    public partial class CardOrder
+    public class CardOrdersMetadata
     {
-        [Key]
+        [Display(Name = "訂單編號")]
         public int CO_ID { get; set; } = default!;
-        [ForeignKey("Account")]
+        [Display(Name = "會員名字")]
         public int A_ID { get; set; } = default!;
-        public UserAccount Account { get; set; } = default!;
-        [ForeignKey("Card")]
+        [Display(Name = "產品名字")]
         public int CA_ID { get; set; } = default!;
-        public Card Card { get; set; } = default!;
-        [ForeignKey("CardType")]
+        [Display(Name = "付款選擇")]
         public int CT_ID { get; set; } = default!;
-        public CardType CardType { get; set; } = default!;
-        public int CO_Sum { get; set; } = default!;
+        [Display(Name = "訂單數量")]
         public int CO_Quantity { get; set; } = default!;
+        [Display(Name = "訂單價格")]
+        public int CO_Sum { get; set; } = default!;
+        
     }
 }

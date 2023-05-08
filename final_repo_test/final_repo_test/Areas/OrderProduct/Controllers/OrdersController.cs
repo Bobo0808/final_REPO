@@ -34,6 +34,7 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
                     O_TotalPrice = order.O_TotalPrice,
                     O_Date = order.O_Date,
                     O_Satus = orderstatus,
+                    O_Cancle = order.O_Cancle,
                     UserName = accountName
                 };
                 orderViewModels.Add(orderViewModel);
@@ -164,12 +165,12 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("O_Id,A_ID,O_Date,O_TotalPrice,O_Cancele")] Order order)
+        public async Task<IActionResult> Edit(int id, [Bind("O_ID,A_ID,O_Date,O_TotalPrice,O_Cancle")] Order order)
         {
-            if (id != order.O_ID)
-            {
-                return NotFound();
-            }
+            //if (id != order.O_ID)
+            //{
+            //    return NotFound();
+            //}
 
 
                 try

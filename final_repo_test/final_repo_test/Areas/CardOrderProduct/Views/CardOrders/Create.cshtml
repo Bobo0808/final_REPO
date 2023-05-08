@@ -1,0 +1,51 @@
+﻿@model final_repo_test.Models.CardOrder
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>CardOrder</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="A_ID" class="control-label"></label>
+                <select asp-for="A_ID" class ="form-control" asp-items="ViewBag.A_ID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CA_ID" class="control-label"></label>
+                <select asp-for="CA_ID" class ="form-control" asp-items="ViewBag.CA_ID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CT_ID" class="control-label"></label>
+                <select asp-for="CT_ID" class ="form-control" asp-items="ViewBag.CT_ID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CO_Quantity" class="control-label"></label>
+                <input asp-for="CO_Quantity" class="form-control" />
+                <span asp-validation-for="CO_Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CO_Sum" class="control-label"></label>
+                <input asp-for="CO_Sum" class="form-control" />
+                <span asp-validation-for="CO_Sum" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group my-1">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Script {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
