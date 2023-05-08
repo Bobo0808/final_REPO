@@ -53,9 +53,9 @@
                     </ul>
                 </div>
             </div>
-            <div class="row">
+            <div class="row bottom">
                  <ul class="row notes note-right">
-                        累計上線次數
+                        廣告點擊次數
                         <li class="chartContainer"><canvas id="adChart" class="border bg-light"></canvas></li>
                  </ul>
             </div>
@@ -89,8 +89,8 @@
             time.push({ x: tmp.headx[i], y: tmp.heady[i] });
         }
 
-        for (var i = 0; i < tmp.adx.length; i++) {
-            ad.push({ x: tmp.adx[i], y: tmp.ady[i] });
+        for (var i = 0; i < tmp.aDx.length; i++) {
+            ad.push({ x: tmp.aDx[i], y: tmp.aDy[i] });
         }
 
         document.getElementById(tmp.unit).style.backgroundColor = "#819695";
@@ -150,12 +150,28 @@
                 maintainAspectRatio: false
             }
         };
-
+        
+        var adLabel = ad.map(e=>+e.x);
         const adData = {
+            labels: adLabel,
             datasets: [{
                 data: ad,
                 label: "廣告點擊次數",
-                fill: true
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 205, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(54, 162, 235, 0.2)'
+                ],
+                borderColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 159, 64)',
+                    'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(54, 162, 235)'
+                ],
+                borderWidth: 1,
             }]
         };
         

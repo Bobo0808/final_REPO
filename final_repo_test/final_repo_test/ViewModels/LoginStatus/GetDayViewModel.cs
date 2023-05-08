@@ -10,7 +10,7 @@
         public int Average { get; set; } = default!;
         public int UserCount { get; set; } = default!;
 
-        public List<int> ADx { get; set; } = default!;
-        public List<int> ADy { get; set; } = default!;
+        public List<int> ADx { get; set; } = new List<int>();
+        public List<int> ADy { get; set; } = new List<int>();
     }
 }

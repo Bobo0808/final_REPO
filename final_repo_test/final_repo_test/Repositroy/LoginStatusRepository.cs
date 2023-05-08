@@ -22,36 +22,15 @@ namespace final_repo_test.Repositroy
             result.Unit = Chart.ToLower();
             int itemp = 1;
             //處理AD資料
-            for (int i = 0; i < 5; i++)
+            //var coolName = await _context.Ads.Where(s => s.Ad_EndTime > DateTime.Now && s.Ad_StartTime < DateTime.Now).OrderByDescending(s => s.Ad_Clicks).Select(s => new { MyID = s.Ad_ID, MyClicks = s.Ad_Clicks }).ToListAsync();
+            var coolName = await _context.Ads.OrderByDescending(s => s.Ad_Clicks).Select(s => new { MyID= s.Ad_ID, MyClicks= s.Ad_Clicks}).Take(5).ToListAsync();
+            for (int i = 0; i < coolName.Count; i++)
             {
-                int adId = (await _context.Ads.Where(s => s.Ad_EndTime > DateTime.Now && s.Ad_StartTime < DateTime.Now).OrderByDescending(s => s.Ad_Clicks).Select(s => s.Ad_ID).Skip(i).Take(1).FirstOrDefaultAsync());
-                int adClicks = (await _context.Ads.Where(s => s.Ad_EndTime > DateTime.Now && s.Ad_StartTime < DateTime.Now).OrderByDescending(s => s.Ad_Clicks).Select(s => s.Ad_Clicks).Skip(i).Take(1).FirstOrDefaultAsync());
-
-                try
-                {
-                    result.ADx.Add(adId);
-                    
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex);
-                    adId = 0;
-                    result.ADx.Add(adId);
-                }
-                try
-                {
-                    result.ADy.Add(adClicks);
-
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex);
-                    adClicks = 0;
-                    result.ADy.Add(adClicks);
-                }
-                
-                
+                result.ADx.Add(coolName[i].MyID);
+                result.ADy.Add(coolName[i].MyClicks);
             }
+
+
 
             for (int i = 0; i < result.Headx.Count; i++)
             {
@@ -70,8 +49,6 @@ namespace final_repo_test.Repositroy
                 case "Day":
                     DateTime tempDay = DateTime.Now.AddDays(-6);
                     var list = await _context.LoginStaus.Where(s => s.L_cTime > tempDay).ToListAsync();
-                    
-
 
                     result.Average = (int)Math.Round(list.Sum(x => (x.L_dcTime.Subtract(x.L_cTime).TotalHours)) / list.Count);
                     result.UserCount = list.GroupBy(x => x.A_ID).Count();
@@ -95,19 +72,7 @@ namespace final_repo_test.Repositroy
                         result.Mainy.Add(_context.LoginStaus.Where(s => s.L_cTime >= DateTime.Now.AddDays(i)&& s.L_cTime < DateTime.Now.AddDays(jtemp)).Count());
                         jtemp += 7;
                     }
-                    //jtemp = 1;
-                    //for (int i = 0; i < result.Headx.Count; i++)
-                    //{
-                    //    if (jtemp < result.Headx.Count)
-                    //    {
-                    //        result.Heady.Add((await _context.LoginStaus.Where(s => s.L_cTime.TimeOfDay >= result.Headx[i] && s.L_cTime.TimeOfDay <= result.Headx[jtemp]).ToListAsync()).Count);
-                    //    }
-                    //    else
-                    //    {
-                    //        result.Heady.Add((await _context.LoginStaus.Where(s => s.L_cTime.TimeOfDay >= result.Headx[i]).ToListAsync()).Count);
-                    //    }
-                    //    jtemp++;
-                    //}
+
                     break;
                 case "Month":
                     DateTime tempMonth = DateTime.Now.AddMonths(-7);
