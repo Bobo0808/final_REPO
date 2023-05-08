@@ -170,3 +170,10 @@ td {
     border: 1px solid #aaa;
     padding: 0.5rem;
 }
+
+.bottom {
+    max-height: 100%;
+    justify-content:space-evenly;
+    background-color: white;
+    border-radius: 1rem;
+}

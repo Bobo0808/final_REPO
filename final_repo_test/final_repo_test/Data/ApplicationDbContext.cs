@@ -291,7 +291,7 @@ namespace final_repo_test.Data
 				for (int j = 0; j <= 100; j++)
 				{
 					var year = rnd.Next(2023, 2024);
-					var month = rnd.Next(1, 5);
+					var month = rnd.Next(2, 6);
 					var days = rnd.Next(1, DateTime.DaysInMonth(year, month) + 1);
 					DateTime temp = new DateTime(year, month, days, rnd.Next(0, 24), rnd.Next(0, 60), rnd.Next(0, 60), rnd.Next(0, 1000));
 					b.HasData(new LoginStaus()
