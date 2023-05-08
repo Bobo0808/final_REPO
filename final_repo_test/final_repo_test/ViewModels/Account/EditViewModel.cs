@@ -11,7 +11,9 @@ namespace final_repo_test.ViewModels.Account
         public string A_Name { get; set; } = default!;
         public string UserName { get; set; } = default!;
         public string UserPWD { get; set; } = default!;
-        public Gender A_Gender { get; set; } = default!;
+        public Gender A_Gender { get; set; }
+        public int P_id { get; set; } = default!;
+        public Product Product { get; set; } = default!;
         public DateTime Birthday { get; set; } = default!;
         public int A_level { get; set; } = default!;
         public string A_Email { get; set; } = default!;

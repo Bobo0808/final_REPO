@@ -9,22 +9,22 @@ let mapData = {};
 let isQueue = false;
 
 
-const signaler = new SignalingChannel();
-const peer = new RTCPeerConnection(server); // Webrtc配對用
+
+// const peer = new RTCPeerConnection(server); // Webrtc配對用
 let makingOffer = false;
 let peerChanel;
 
-pc.onnegotiationneeded = async () => {
-    try {
-        makingOffer = true;
-        await pc.setLocalDescription();
-        signaler.send({ description: pc.localDescription });
-    } catch (err) {
-        console.error(err);
-    } finally {
-        makingOffer = false;
-    }
-};
+// pc.onnegotiationneeded = async () => {
+//     try {
+//         makingOffer = true;
+//         await pc.setLocalDescription();
+//         signaler.send({ description: pc.localDescription });
+//     } catch (err) {
+//         console.error(err);
+//     } finally {
+//         makingOffer = false;
+//     }
+// };
 
 
 const gameContainer = document.querySelector(".game-container");

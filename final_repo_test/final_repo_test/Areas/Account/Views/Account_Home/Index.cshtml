@@ -1,10 +1,12 @@
-﻿@{
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<final_repo_test.Models.UserAccount>
+@{
     ViewData["Title"] = "Account";
     Layout = "_Layout";
     
 }
 @section Styles{
-    <link href="~/css/accountstyle/style2.css" rel="stylesheet" />
+    <link href="~/css/Accountstyle/style2.css" rel="stylesheet" />
 }
 
 
@@ -17,150 +19,34 @@
             <div class="content-2">
                 <div class="acount">
                     <div class="title">
-                        <h2>會員資料表</h2>
-                        <a href="#" class="btn"><i class="fa fa-solid fa-plus"></i>新增</a>
+                        <h2>會員資料表</h2> 
+                        <a asp-area="Account" asp-controller="Account_Home" asp-action="Add" asp-route-id="" class="btn"><i class="fa fa-solid fa-plus"></i> 新增</a>
                     </div>
                     <table>
+                        
                         <tr>
+                            <th>ID</th>
                             <th>名字</th>
                             <th>使用者名稱</th>
                             <th>性別</th>
-                            <th>餘額</th>
+                            <th>生日</th>
                             <th>權限</th>
                             <th>option</th>
                         </tr>
+                        @foreach (var account in Model)
+                        {
                         <tr>
-                            <td>Bobo</td>
-                            <td>嘎崩脆</td>
-                            <td>男</td>
-                            <td>$120</td>
-                            <td>Normal</td>
-                            <td><a href="#" class="btn"><i class="fa fa-solid fa-eye"></i>View</a></td>
+                            <td>@account.A_ID</td>
+                            <td>@account.A_Name</td>
+                            <td>@account.A_NickName</td>
+                            <td>@account.A_Gender</td>
+                            <td>@account.Birthday.ToString("yyyy-MM-dd")</td>
+                            <td>@account.A_level</td>
+                            <td><a href="@Url.Action("Edit", "Account_Home", new { A_Id = account.A_ID })" class="btn"><i class="fa fa-solid fa-eye"></i> View</a></td>
                         </tr>
-                        <tr>
-                            <td>Bobo</td>
-                            <td>嘎崩脆</td>
-                            <td>男</td>
-                            <td>$120</td>
-                            <td>Normal</td>
-                            <td><a href="#" class="btn"><i class="fa fa-solid fa-eye"></i>View</a></td>
-                        </tr>
-                        <tr>
-                            <td>Bobo</td>
-                            <td>嘎崩脆</td>
-                            <td>男</td>
-                            <td>$120</td>
-                            <td>Normal</td>
-                            <td><a href="#" class="btn"><i class="fa fa-solid fa-eye"></i>View</a></td>
-                        </tr>
-                        <tr>
-                            <td>Bobo</td>
-                            <td>嘎崩脆</td>
-                            <td>男</td>
-                            <td>$120</td>
-                            <td>Normal</td>
-                            <td><a href="#" class="btn"><i class="fa fa-solid fa-eye"></i>View</a></td>
-                        </tr>
-                        <tr>
-                            <td>Bobo</td>
-                            <td>嘎崩脆</td>
-                            <td>男</td>
-                            <td>$120</td>
-                            <td>Normal</td>
-                            <td><a href="#" class="btn"><i class="fa fa-solid fa-eye"></i>View</a></td>
-                        </tr>
-                        <tr>
-                            <td>Bobo</td>
-                            <td>嘎崩脆</td>
-                            <td>男</td>
-                            <td>$120</td>
-                            <td>Normal</td>
-                            <td><a href="#" class="btn"><i class="fa fa-solid fa-eye"></i>View</a></td>
-                        </tr>
-                        <tr>
-                            <td>Bobo</td>
-                            <td>嘎崩脆</td>
-                            <td>男</td>
-                            <td>$120</td>
-                            <td>Normal</td>
-                            <td><a href="#" class="btn"><i class="fa fa-solid fa-eye"></i>View</a></td>
-                        </tr>
-                        <tr>
-                            <td>Bobo</td>
-                            <td>嘎崩脆</td>
-                            <td>男</td>
-                            <td>$120</td>
-                            <td>Normal</td>
-                            <td><a href="#" class="btn"><i class="fa fa-solid fa-eye"></i>View</a></td>
-                        </tr>
-                        <tr>
-                            <td>Bobo</td>
-                            <td>嘎崩脆</td>
-                            <td>男</td>
-                            <td>$120</td>
-                            <td>Normal</td>
-                            <td><a href="#" class="btn"><i class="fa fa-solid fa-eye"></i>View</a></td>
-                        </tr>
-                        <tr>
-                            <td>Bobo</td>
-                            <td>嘎崩脆</td>
-                            <td>男</td>
-                            <td>$120</td>
-                            <td>Normal</td>
-                            <td><a href="#" class="btn"><i class="fa fa-solid fa-eye"></i>View</a></td>
-                        </tr>
-                        <tr>
-                            <td>Bobo</td>
-                            <td>嘎崩脆</td>
-                            <td>男</td>
-                            <td>$120</td>
-                            <td>Normal</td>
-                            <td><a href="#" class="btn"><i class="fa fa-solid fa-eye"></i>View</a></td>
-                        </tr>
-                        <tr>
-                            <td>Bobo</td>
-                            <td>嘎崩脆</td>
-                            <td>男</td>
-                            <td>$120</td>
-                            <td>Normal</td>
-                            <td><a href="#" class="btn"><i class="fa fa-solid fa-eye"></i>View</a></td>
-                        </tr>
-
+                        }
                     </table>
                 </div>
-                @*<div class="recent-payment">
-                    <table>
-                        <div class="title">
-                            <h2>最近消費</h2>
-                            <a href="#" class="btn">View All</a>
-                        </div>
-                        <tr>
-                            <th>Profile</th>
-                            <th>Name</th>
-                            <th>option</th>
-                        </tr>
-                        <tr>
-
-                            <td>Bobo</td>
-
-                        </tr>
-                        <tr>
-
-                            <td>Bobo</td>
-
-                        </tr>
-                        <tr>
-
-                            <td>Bobo</td>
-
-                        </tr>
-                        <tr>
-
-                            <td>Bobo</td>
-
-                        </tr>
-                    </table>
-                </div>*@
             </div>
         </div>
 

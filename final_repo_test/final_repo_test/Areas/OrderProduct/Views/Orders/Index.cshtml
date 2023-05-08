@@ -51,7 +51,11 @@
                                         @* @(item.OAIdNavigation.UserName)*@
                                     </td>
                                     <td>
-                                        <div id="test" class="badge rounded-pill bg-dark p-2 text-uppercase px-3">
+                                        <div id="test" class="badge rounded-pill p-2 text-uppercase px-3 @if (item.O_Cancle){
+                                    <text>bg-danger</text>
+}else{
+                                    <text>bg-success</text>
+}">
                                             <i class='bx bxs-circle me-1'></i>@item.O_Satus
                                         </div>
                                     </td>

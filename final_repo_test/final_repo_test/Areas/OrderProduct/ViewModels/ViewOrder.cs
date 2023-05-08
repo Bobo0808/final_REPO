@@ -10,6 +10,7 @@ namespace final_repo_test.Areas.OrderProduct.ViewModels
         public DateTime? O_Date { get; set; }
         public int? O_TotalPrice { get; set; }
         public string O_Satus { get; set; }
+        public bool O_Cancle { get; set; }
 
         public string? UserName { get; set; }
 

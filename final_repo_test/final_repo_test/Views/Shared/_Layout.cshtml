@@ -24,6 +24,12 @@
 					<span class="text">儀表板</span>
 				</a>
 			</li>
+			<li class="active side-btn">
+				<a asp-area="Compliance" asp-controller="Compliance_Home" asp-action="Index">
+					<i class="fa fa-solid fa-chart-line"></i>
+					<span class="text">履約圖表</span>
+				</a>
+			</li>
 			@*<li class="side-btn">
 				<a asp-area="Login" asp-controller="Login_Home" asp-action="Index">
 					<i class="fa fa-solid fa-user"></i>
@@ -33,19 +39,20 @@
 			<li class="side-btn">
 				<a asp-area="Account" asp-controller="Account_Home" asp-action="Index">
 					<i class="fa fa-solid fa-users fa-sm"></i>
-					<span class="text">會員狀態</span>
+					<span class="text">會員管理</span>
+				</a>
+			</li>
+
+			<li class="side-btn">
+				<a asp-area="Employee" asp-controller="Employees" asp-action="Index">
+					<i class="fa fa-solid fa-users fa-sm"></i>
+					<span class="text">員工管理</span>
 				</a>
 			</li>
 			<li class="side-btn">
 				<a asp-area="Report" asp-controller="Report_Home" asp-action="Index">
 					<i class="fa fa-solid fa-triangle-exclamation"></i>
 					<span class="text">檢舉狀態</span>
-				</a>
-			</li>
-			<li class="side-btn">
-				<a asp-area="MapEdit" asp-controller="MapEdit" asp-action="Index">
-					<i class="fa fa-solid fa-map"></i>
-					<span class="text">地圖編輯</span>
 				</a>
 			</li>
 			<li class="side-btn">
@@ -56,6 +63,12 @@
 			</li>
 			<li class="side-btn">
 				<a asp-area="OrderProduct" asp-controller="Orders" asp-action="Index">
+					<i class="fa fa-solid fa-store"></i>
+					<span class="text">訂單資訊</span>
+				</a>
+			</li>
+			<li class="side-btn">
+				<a asp-area="CardOrderProduct" asp-controller="CardOrders" asp-action="Index">
 					<i class="fa fa-solid fa-sack-dollar"></i>
 					<span class="text">營收分析</span>
 				</a>
@@ -114,5 +127,6 @@
 	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="~/js/script.js" asp-append-version="true"></script>
 	@await RenderSectionAsync("Script",required:false)
+
 </body>
 </html>

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace final_repo_test.Models
 {
-    public class CardOrder
+    public partial class CardOrder
     {
         [Key]
         public int CO_ID { get; set; } = default!;
