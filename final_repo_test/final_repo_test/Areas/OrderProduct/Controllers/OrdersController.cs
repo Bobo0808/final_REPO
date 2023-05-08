@@ -34,6 +34,7 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
                     O_TotalPrice = order.O_TotalPrice,
                     O_Date = order.O_Date,
                     O_Satus = orderstatus,
+                    O_Cancle = order.O_Cancle,
                     UserName = accountName
                 };
                 orderViewModels.Add(orderViewModel);
