@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System.Data;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using final_repo_test.Data.Enum;
+using System.Security.Cryptography;
 
 namespace final_repo_test.Data
 {
@@ -885,6 +886,55 @@ namespace final_repo_test.Data
 					P_Note = "溝通良好",
 				}
 				);
+
+			modelBuilder.Entity<Ads_OrderStatus>().HasData(
+				new Ads_OrderStatus()
+				{
+                    OS_ID=1,
+                    OS_Name="完全履約",
+                    OS_FullfillmentRate=1,
+                    OS_PaymentMultiplier=1,
+                }
+
+                );
+
+
+            for (int i = 1; i < 30; i++)
+			{
+				Random PRnd = new Random();
+                Random CRnd = new Random();
+                Random SRnd = new Random();
+                Random ERnd = new Random();
+				Random ClickRnd=new Random();
+
+				DateTime StartDate = new DateTime(2022, 1, 1);
+				int StartDaysToAdd=SRnd.Next(365);
+				int EndDaysToAdd=ERnd.Next(7,25);
+				
+				DateTime StartTime =StartDate.AddDays(StartDaysToAdd);
+				DateTime EndTime=StartTime.AddDays(EndDaysToAdd);
+				int DayCount=(int)(EndTime-StartTime).TotalDays;
+
+                modelBuilder.Entity<Ads>().HasData(
+				new Ads()
+				{
+					Ad_ID = i,
+					PartnerID=PRnd.Next(1,21),
+					CaseID=CRnd.Next(1,5),
+					Ad_StartTime=StartTime,
+					Ad_EndTime=EndTime,
+					Ad_DayCount=DayCount,
+					Ad_ImageURL=$"AD_{i}.jpg",
+					Ad_TargetURL=$"http://exmple/.com{i}",
+					Ad_Clicks=ClickRnd.Next(30,240),
+					Ad_Description="",
+					Ad_PaymentDueDate=StartTime.AddDays(-2),
+                    Ad_TimeOfPayment= StartTime.AddDays(-2),
+                    Ad_ActiveStatus=1,
+                    OS_ID=1,
+                    AD_FinalPaymentAmount=15000,
+                });
+			};
 
 			int j = 5;
 			for (int i = 3; i < 14; i++)
