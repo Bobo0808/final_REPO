@@ -1,0 +1,57 @@
+﻿@model final_repo_test.ViewModels.Login.LoginViewModel;
+
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "Null";
+
+}
+
+
+    <link href="~/css/login/login.css" rel="stylesheet" />
+
+
+
+
+
+@*<head>
+    <link rel="stylesheet" href="CSS\LoginStyle.css">
+    <title>Login</title>
+</head>*@
+
+<body>
+    <div class="container">
+        <div class="form-box">
+            <div class="form-value">
+                <form  asp-controller="Access" asp-action="Login" method="post">
+                    <h2>Login</h2>
+                    <div class="inputbox">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="email" placeholder="輸入Email" required asp-for="E_Email">
+                        <label for="">Email or UserName</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" placeholder="輸入密碼" required asp-for="E_Pwd">
+                        <label for="">Password</label>
+                    </div>
+                    <div class="forget">
+                        <label for=""><input type="checkbox"asp-for="KeepLoggedIn"> Keep me Logged In <a href="#">Forget Password</a></label>
+                    </div>
+                    <button>Log in</button>
+                    <div class="register">
+                        <p>Don't have a account <a href="#">Register</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+
