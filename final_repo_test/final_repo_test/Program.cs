@@ -3,11 +3,18 @@ using final_repo_test.Interfaces;
 using final_repo_test.Repositroy;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authentication.Cookies;
+
 
 //Debugger.Launch();
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+//使用Cookie來做身分驗證服務CookieAuthenticationDefaults是一個預設值，代表使用Cookie方案進行身分驗證。
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(option => {
+    option.LoginPath = "/Access/Login";
+    option.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+});
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IDebugLogRepository, DebugLogRepository>();
 builder.Services.AddScoped<ILoginStatusRepository, LoginStatusRepository>();
@@ -35,6 +42,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
+app.UseAuthentication();
+
 app.UseAuthorization();
 
 
@@ -46,7 +55,7 @@ app.MapControllerRoute(
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Access}/{action=Login}/{id?}");
 
 
 
