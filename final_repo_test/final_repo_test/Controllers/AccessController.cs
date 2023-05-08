@@ -28,8 +28,9 @@ namespace final_repo_test.Controllers
                     IsPersistent = loginViewModel.KeepLoggedIn
                 };
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,new ClaimsPrincipal(claimsIdentity),properties);
-                return RedirectToAction("Index", "Home", new { area = "Account_Home" });
+                return RedirectToAction("Index", "Account_Home", new { area = "Account_Home" });
             }
+            ViewData["ValidateMessage"] = "user not found";
             return View();
         }
     }
