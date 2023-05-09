@@ -8,77 +8,74 @@
     <link href="~/css/employee/detail.css" rel="stylesheet" />
 }
 
-
-
-
+<h1 style="color:black">新增員工資料</h1>
 <div class="container">
-   <h1>新增員工資料</h1>
-   <form asp-action="Create">
-    <div class="row row-cols-2">
-        
-        <div class="col">
-            <dl>
-                <dt>
-                    姓名：<input asp-for="E_Name" />
-                </dt>
-                <dt>
+    <form asp-action="Create">
+        <div class="row row-cols-2">
+
+            <div class="col">
+                <dl>
+                    <dt>
+                        姓名：<input asp-for="E_Name" />
+                    </dt>
+                    <dt>
                         性別：
                         <select asp-for="E_Gender">
                             <option value="男">男</option>
                             <option value="女">女</option>
                             <option value="其他">其他</option>
                         </select>
-                </dt>
-                <dt>
-                        使用者名稱：<input asp-for="E_UserName"/>
-                </dt>
-                <dt>
+                    </dt>
+                    <dt>
+                        使用者名稱：<input asp-for="E_UserName" />
+                    </dt>
+                    <dt>
                         密碼：<input asp-for="E_Pwd" />
-                </dt>
-                <dt>
+                    </dt>
+                    <dt>
                         信箱：<input asp-for="E_Email" />
-                </dt>
-                <dt>
+                    </dt>
+                    <dt>
                         職位：
                         <select asp-for="E_Title">
                             <option value="員工">員工</option>
                             <option value="主管">主管</option>
                         </select>
-                </dt>
-                <dt>
+                    </dt>
+                    <dt>
                         <a class="btn btn-outline-primary btn-lg" role="button" asp-action="Index">返回列表</a>
-                </dt>
-            </dl>
-        </div>
+                    </dt>
+                </dl>
+            </div>
 
-        <div class="col">
-            <dl>
-                <dt>
+            <div class="col">
+                <dl>
+                    <dt>
                         聯絡方式：<input asp-for="E_Phone" />
-                </dt>
-                <dt>
-                        生日：<input asp-for="E_Birthday" />
-                </dt>
-                <dt>
-                        就職日：<input asp-for="E_HireDate" />
-                </dt>
-                <dt>
+                    </dt>
+                    <dt>
+                        生日：<input type="date" asp-for="E_Birthday" />
+                    </dt>
+                    <dt>
+                        就職日：<input type="date" asp-for="E_HireDate" />
+                    </dt>
+                    <dt>
                         地址：<input asp-for="E_Address" />
-                </dt>
-                <dt>
+                    </dt>
+                    <dt>
                         權限：<input asp-for="E_Permission" />
-                </dt>
-                <dt>
+                    </dt>
+                    <dt>
                         <label class="form-check-label">
                             在職：<input class="form-check-input" asp-for="E_Work" />
                         </label>
-                </dt>
-                <dt>
+                    </dt>
+                    <dt>
                         <input type="submit" value="新增" class="btn btn-outline-success btn-lg" />
-                </dt>
-            </dl>
+                    </dt>
+                </dl>
+            </div>
+
         </div>
-        
-    </div>
     </form>
 </div>

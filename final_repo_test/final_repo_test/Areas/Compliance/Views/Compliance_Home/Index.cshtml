@@ -4,10 +4,15 @@
     Layout = "_Layout";
 }
 @section Styles{
-    <link href="~/css/employee/e_index.css" rel="stylesheet" />
+    @*<link href="~/css/employee/E_Index.css" rel="stylesheet" />*@
+    <link href="~/css/compliance/e_index.css" rel="stylesheet" />
 }
-<h1 class="char">廣告統計圖</h1>
-<div class="contents" id="container" style="width: 850px; height: 600px;"></div>
+<h1 style="color:black">廣告統計圖</h1>
+
+<div class="contents">
+    <div id="container" style="width: 850px; height: 600px;"></div>
+</div>
+
 
 @section Script{
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.2/echarts.common.min.js"
@@ -33,31 +38,75 @@
                         //console.log(count);
                         //產生報表
                         var mychart = echarts.init(document.getElementById("container"));
+                        //var option = {
+                        //    tooltip: {
+                        //        show: true
+                        //    },
+                        //    legend: {
+                        //        data: ['count']
+                        //    },
+                        //    xAxis: [{
+                        //        data: expertise,
+                        //       // data: ["一", "二", "三"],
+                        //        axisLabel: {
+                        //            interval: 0
+                        //        }
+                        //    }],
+                        //    yAxis: [{
+                        //        type: 'value'
+                        //    }],
+                        //    series: [{
+                        //        "name": "count",
+                        //        "type": "line",
+                        //       "data": count
+                        //        //data: [120, 200, 150],
+
+                        //    }]
+                        //};
+
                         var option = {
+                            title: {
+                                text: '2022年廣告訂單趨勢分析',
+                                textStyle: {
+                                    textAlign: 'center',
+                                    left: '70%'
+                                }
+                            },
                             tooltip: {
-                                show: true
+                                trigger: 'axis'
                             },
                             legend: {
                                 data: ['count']
                             },
-                            xAxis: [{
-                                data: expertise,
-                               // data: ["一", "二", "三"],
-                                axisLabel: {
-                                    interval: 0
+                            grid: {
+                                left: '3%',
+                                right: '4%',
+                                bottom: '3%',
+                                containLabel: true
+                            },
+                            toolbox: {
+                                feature: {
+                                    saveAsImage: {}
                                 }
-                            }],
-                            yAxis: [{
+                            },
+                            xAxis: {
+                                type: 'category',
+                                boundaryGap: false,
+                                data: expertise,
+                            },
+                            yAxis: {
                                 type: 'value'
-                            }],
-                            series: [{
-                                "name": "count",
-                                "type": "line",
-                               "data": count
-                                //data: [120, 200, 150],
-
-                            }]
+                            },
+                            series: [
+                                {
+                                    name: "數量",
+                                    type: 'line',
+                                    stack: 'Total',
+                                    data: count
+                                },
+                            ]
                         };
+
                         mychart.setOption(option);
 
                     }

@@ -7,8 +7,8 @@
 @section Styles{
     <link href="~/css/employee/detail.css" rel="stylesheet" />
 }
+<h1 style="color:black">刪除員工資料</h1>
 <div class="container">
-    <h1>刪除員工資料</h1>
     <div class="row row-cols-2">
         <div class="col">
             <dl>
@@ -43,6 +43,7 @@
                 </dt>
                 <dt>
                     生日：@Html.DisplayFor(model => model.E_Birthday)
+                    @*生日：@Html.DisplayFor(model => model.E_Birthday.Date.ToString("yyyy-MM-dd"))*@
                 </dt>
                 <dt>
                     就職日：@Html.DisplayFor(model => model.E_HireDate)

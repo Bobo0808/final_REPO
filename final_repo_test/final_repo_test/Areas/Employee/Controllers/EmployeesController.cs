@@ -49,7 +49,8 @@ namespace final_repo_test.Areas.Employee.Controllers
         // GET: Employee/Employees/Create
         public IActionResult Create()
         {
-            return View("~/Areas/Employee/Views/Employees/Create.cshtml");
+            //return View("~/Areas/Employee/Views/Employees/Create.cshtml");
+            return View();
         }
 
         // POST: Employee/Employees/Create
