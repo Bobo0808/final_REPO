@@ -1,0 +1,71 @@
+﻿@model IEnumerable<final_repo_test.Models.Report>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>檢舉列表</h1>
+
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>
+*@<table class="table">
+    <thead>
+        <tr>
+            <th>
+                檢舉人
+            </th>
+            <th>
+                被檢舉人
+            </th>
+            <th>
+                檢舉時間
+            </th>
+            <th>
+                類型
+            </th>
+@*            <th>
+                @Html.DisplayNameFor(model => model.R_Reason)
+            </th>
+*@            <th>
+                目前狀態
+            </th>
+@*            <th>
+                @Html.DisplayNameFor(model => model.R_Reply)
+            </th>
+*@            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Account.A_Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReportedAccount.A_Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.R_Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.R_ReportType)
+            </td>
+@*            <td>
+                @Html.DisplayFor(modelItem => item.R_Reason)
+            </td>
+*@            <td>
+                @Html.DisplayFor(modelItem => item.R_ReportStatus)
+            </td>
+@*            <td>
+                @Html.DisplayFor(modelItem => item.R_Reply)
+            </td>
+*@            <td>
+                <a asp-action="Edit" asp-route-id="@item.R_ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.R_ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.R_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
