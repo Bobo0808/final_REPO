@@ -106,6 +106,14 @@ namespace final_repo_test.Areas.AD.Controllers
 
             return RedirectToAction("Index");
         }
+
+        //新增廣告
+        public IActionResult AddAD()
+        {
+            return RedirectToAction("Index");
+        }
+
+
     }
 
     //public IActionResult Delete()
