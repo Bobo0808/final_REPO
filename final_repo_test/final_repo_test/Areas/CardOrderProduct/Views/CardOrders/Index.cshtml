@@ -22,6 +22,9 @@
                         <thead class="table-light">
                             <tr>
                                 <th>
+                                    @Html.DisplayNameFor(model => model.CO_ID)
+                                </th>
+                                <th>
                                     @Html.DisplayNameFor(model => model.A_ID)
                                 </th>
                                 <th>
@@ -43,6 +46,9 @@
                         <tbody>
                         @foreach (var item in Model) {
                             <tr class="gray">
+                                <td>
+                                    #@Html.DisplayFor(modelItem => item.CO_ID)
+                                </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Account.A_Name)
                                 </td>

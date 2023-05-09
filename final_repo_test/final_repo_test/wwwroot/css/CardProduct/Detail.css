@@ -1,0 +1,46 @@
+﻿.box {
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    border-radius: 15px;
+    margin-left: 2%;
+    width: 95%;
+    height: 98%;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+}
+
+.test {
+    float: right;
+    /* 文字在右邊 */
+    padding-left: 10px;
+}
+
+img {
+    max-width: 450px;
+    max-height: 450px;
+    object-fit: cover;
+    object-position: center;
+    margin: 5px;
+}
+
+.overflow {
+    overflow: auto;
+}
+
+.radius {
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+.gray, h4 {
+    color: #6c757d;
+}
+
+h1, h3 {
+    text-align: center;
+    color: #6c757d;
+}
+
+td, th {
+    text-align: center;
+    vertical-align: middle;
+}

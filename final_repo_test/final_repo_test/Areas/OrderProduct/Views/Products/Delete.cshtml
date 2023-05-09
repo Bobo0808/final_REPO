@@ -78,7 +78,7 @@
 
         <form asp-action="Delete">
             <input type="hidden" asp-for="P_ID" />
-            <button type="submit" value="Delete" class="btn btn-danger"><i class="fa-solid fa-trash"></i> 刪除</button>
+            <button type="submit" value="Delete" class="btn btn-danger" onclick="return(confirm('確認刪除此商品?'))"><i class="fa-solid fa-trash"></i> 刪除</button>
             @*<input type="submit" value="Delete" class="btn btn-danger" />*@ |
             <a class="btn btn-secondary" asp-action="Index">Back to List</a>
         </form>
