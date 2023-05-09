@@ -229,7 +229,7 @@
           DOMContentLoadedCallbacks.forEach(callback => callback());
         });
       }
-
+       
       DOMContentLoadedCallbacks.push(callback);
     } else {
       callback();

@@ -4,6 +4,7 @@ using final_repo_test.Repositroy;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using ClassLibrary.Data;
 
 
 //Debugger.Launch();
@@ -22,7 +23,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-
+builder.Services.AddDbContext<ChickenDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
 
 var app = builder.Build();
 if (args.Length == 1 && args[0].ToLower() == "seeddata")

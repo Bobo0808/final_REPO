@@ -1,20 +1,21 @@
-﻿using final_repo_test.Models;
+﻿using ClassLibrary.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using System.Data;
-using Microsoft.EntityFrameworkCore.Metadata.Conventions;
-using final_repo_test.Data.Enum;
-using System.Security.Cryptography;
+using ClassLibrary.Enum;
 
-namespace final_repo_test.Data
+namespace ClassLibrary.Data
 {
-	public class ApplicationDbContext : DbContext
+    public class ChickenDbContext : DbContext
 	{
-		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
-		{
+		public ChickenDbContext(DbContextOptions<ChickenDbContext> options) : base(options)
+        {
 		}
 
-		protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+			optionsBuilder.UseSqlServer(@"Data Source=.;Initial Catalog=ChickenLife;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			base.OnModelCreating(modelBuilder);
 			modelBuilder.Entity<UserAccount>(b =>
@@ -129,8 +130,8 @@ namespace final_repo_test.Data
 				b.Property(x => x.OS_ID).ValueGeneratedOnAdd();
 				b.Property(x => x.OS_Name);
 
-				b.Property(x => x.OS_FullfillmentRate).HasColumnType("decimal(5,2)");
-				b.Property(x => x.OS_PaymentMultiplier).HasColumnType("decimal(5,2)");
+				b.Property(x => x.OS_FullfillmentRate);
+				b.Property(x => x.OS_PaymentMultiplier);
 				b.HasKey(x => x.OS_ID);
 			});
 
