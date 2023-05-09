@@ -1,16 +1,15 @@
-﻿using final_repo_test.Data;
+﻿using ClassLibrary.Data;
 using final_repo_test.Interfaces;
 using final_repo_test.ViewModels.LoginStatus;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace final_repo_test.Repositroy
 {
     public class LoginStatusRepository : ILoginStatusRepository
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ChickenDbContext _context;
 
-        public LoginStatusRepository(ApplicationDbContext context)
+        public LoginStatusRepository(ChickenDbContext context)
         {
             _context = context;
         }
@@ -37,6 +36,7 @@ namespace final_repo_test.Repositroy
                 result.Productx.Add(producttemp[i].MyID);
                 result.Producty.Add(producttemp[i].MyPrice);
             }
+
 
             for (int i = 0; i < result.Headx.Count; i++)
             {
