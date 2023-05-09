@@ -23,14 +23,20 @@ namespace final_repo_test.Repositroy
             int itemp = 1;
             //處理AD資料
             //var coolName = await _context.Ads.Where(s => s.Ad_EndTime > DateTime.Now && s.Ad_StartTime < DateTime.Now).OrderByDescending(s => s.Ad_Clicks).Select(s => new { MyID = s.Ad_ID, MyClicks = s.Ad_Clicks }).ToListAsync();
-            var coolName = await _context.Ads.OrderByDescending(s => s.Ad_Clicks).Select(s => new { MyID= s.Ad_ID, MyClicks= s.Ad_Clicks}).Take(5).ToListAsync();
-            for (int i = 0; i < coolName.Count; i++)
+            var adtemp = await _context.Ads.OrderByDescending(s => s.Ad_Clicks).Select(s => new { MyID = s.Partner, MyClicks = s.Ad_Clicks }).Take(5).ToListAsync();
+            for (int i = 0; i < adtemp.Count; i++)
             {
-                result.ADx.Add(coolName[i].MyID);
-                result.ADy.Add(coolName[i].MyClicks);
+                result.ADx.Add(adtemp[i].MyID.P_Name);
+                result.ADy.Add(adtemp[i].MyClicks);
             }
 
-
+            //var producttemp = await _context.OrderDetails.GroupBy(s => s.Product.P_Name, s =>s.Od_Sum).Select(x=> new{MyID=x.Key,MyPrice=x.Sum()}).ToListAsync();
+            var producttemp = await _context.OrderDetails.Where(s=>s.Order.O_Cancle==false&&s.Order.O_Date.Month==DateTime.Now.Month).GroupBy(s => s.Product.P_Name, s => s.Od_Sum).Select(x => new { MyID = x.Key, MyPrice = x.Sum() }).ToListAsync();
+            for (int i = 0; i < producttemp.Count; i++)
+            {
+                result.Productx.Add(producttemp[i].MyID);
+                result.Producty.Add(producttemp[i].MyPrice);
+            }
 
             for (int i = 0; i < result.Headx.Count; i++)
             {
