@@ -12,6 +12,8 @@ using JsonSerializer = System.Text.Json.JsonSerializer;
 public class WebSocketController : Controller
 {
     public static MapData maps = new MapData();
+    public static Queue_F queue_F = new Queue_F();
+    public static Queue_M queue_M = new Queue_M();
     string[] playerColors = { "blue", "red", "orange", "yellow", "green", "purple" };
 
 
@@ -63,7 +65,7 @@ public class WebSocketController : Controller
         }
     }
 
-    private static async Task Echo(System.Net.WebSockets.WebSocket webSocket)
+    private static async Task Echo(WebSocket webSocket)
     {
         var buffer = new byte[1024 * 4];
         //等待接收訊息
@@ -92,6 +94,7 @@ public class WebSocketController : Controller
                         buffer = Encoding.UTF8.GetBytes(chatJson);
                         maps.MapDirectory["測試服"].ChatContent.Add(Chattemp);
                         Console.WriteLine("Chat");
+                        SendToAll(buffer);
                         break;
                     case "Movement":
                         var data2 = JsonSerializer.Deserialize<MovementDTO?>(message);
@@ -109,6 +112,10 @@ public class WebSocketController : Controller
                         var movementJson = JsonSerializer.Serialize(temp.data);
                         Console.WriteLine("movement: " + movementJson);
                         buffer = Encoding.UTF8.GetBytes(movementJson);
+                        SendToAll(buffer);
+                        break;
+                    case "Queue":
+                        SendToPeer(buffer);
                         break;
                 }
                 //清空緩存區
@@ -118,15 +125,7 @@ public class WebSocketController : Controller
 
 
 
-            foreach (KeyValuePair<WebSocket, PlayerRef> con in maps.MapDirectory["測試服"].client)
-            {
-                if (con.Key.State != System.Net.WebSockets.WebSocketState.Open)
-                {
-                    continue;
-                }
-                await con.Key.SendAsync(
-               new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
-            }
+
 
 
             //繼續等待接收訊息
@@ -168,6 +167,24 @@ public class WebSocketController : Controller
         Random rdm = new Random();
         int temp = rdm.Next(0, arr.Length);
         return arr[temp];
+    }
+
+    public static async void SendToAll(byte[] buffer)
+    {
+        foreach (KeyValuePair<WebSocket, PlayerRef> con in maps.MapDirectory["測試服"].client)
+        {
+            if (con.Key.State != System.Net.WebSockets.WebSocketState.Open)
+            {
+                continue;
+            }
+            await con.Key.SendAsync(
+           new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
+        }
+    }
+
+    public static async void SendToPeer(byte[] buffer)
+    {
+
     }
 }
 
