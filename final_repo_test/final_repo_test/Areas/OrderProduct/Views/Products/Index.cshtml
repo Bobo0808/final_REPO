@@ -1,94 +1,108 @@
 ﻿@model IEnumerable<final_repo_test.Models.Product>;
 
 @section Styles{
-    <link href="~/css/orderproduct/productindex.min.css" rel="stylesheet" />
+    <link href="~/css/orderproduct/productindex.css" rel="stylesheet" />
 }
 @{
     ViewData["Title"] = "Product";
 }
-<div class="overflow-auto m-auto container">
-    <h1>商品</h1>
-
-    <p>
-        <a class="btn btn-secondary" asp-area="OrderProduct" asp-controller="Products" asp-action="Create">Create New</a>
-    </p>
-    <table class="table table-hover ">
-        <thead>
-            <tr>
-                <th>編輯</th>
-                <th>
-                    @Html.DisplayNameFor(model => model.P_Image)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.P_Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.P_ProductType)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.P_Price)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.P_Describe)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.P_Instock)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.P_Date)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.P_Discount)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.P_Discontinuted)
-                </th>
-
-
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        <a asp-area="OrderProduct" asp-controller="Products" asp-action="Edit" asp-route-id="@item.P_ID">Edit</a> |<br>
-                        <a asp-area="OrderProduct" asp-controller="Products" asp-action="Details" asp-route-id="@item.P_ID">Details</a> |<br>
-                        <a asp-area="OrderProduct" asp-controller="Products" asp-action="Delete" asp-route-id="@item.P_ID">Delete</a>|
-                    </td>
-                    <td>
-                        @*@Html.DisplayFor(modelItem => item.PImage)*@
-                        <partial name="_ShowPhotoPartial" model="@item" />
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.P_Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.P_ProductType)
-                    </td>
-                    <td class="tdcenter">
-                        @Html.DisplayFor(modelItem => item.P_Price)
-                    </td>
-
-                    <td>
-                        @Html.DisplayFor(modelItem => item.P_Describe)
-                    </td>
-                    <td class="tdcenter">
-                        @Html.DisplayFor(modelItem => item.P_Instock)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.P_Date)
-                    </td>
-                    <td class="tdcenter">
-                        @Html.DisplayFor(modelItem => item.P_Discount)
-                    </td>
-                    <td class="tdcenter">
-                        @Html.DisplayFor(modelItem => item.P_Discontinuted)
-                    </td>
+<div class="container box">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-lg-flex align-items-center mb-2 gap-3">
+                    <a class="btn btn-secondary" asp-area="OrderProduct" asp-controller="Products" asp-action="Create">Create New</a>
+                </div>
+                <table class="table table-hover  mb-0 bordandcolor">
+                    <thead class="table-light">
+                        <tr class="gray tdcenter">
+                            <th class="tdcenter">編輯</th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.P_Image)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.P_Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.P_ProductType)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.P_Price)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.P_Describe)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.P_Instock)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.P_Date)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.P_Discount)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.P_Discontinuted)
+                            </th>
 
 
-                </tr>
-            }
-        </tbody>
-    </table>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr class="tdcenter">
+                                <td>
+                                    <a asp-area="OrderProduct" asp-controller="Products" asp-action="Edit" asp-route-id="@item.P_ID"><i class='bx bxs-edit test'></i></a>
+                                    <a asp-area="OrderProduct" asp-controller="Products" asp-action="Details" asp-route-id="@item.P_ID" class="ms-1"><i class="fa-solid fa-file"></i></a>
+                                    <a asp-area="OrderProduct" asp-controller="Products" asp-action="Delete" asp-route-id="@item.P_ID" class="ms-1"><i class='bx bxs-trash test'></i></a>
+                                </td>
+                                <td>
+                                    @*@Html.DisplayFor(modelItem => item.PImage)*@
+                                    <partial name="_ShowPhotoPartial" model="@item" />
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.P_Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.P_ProductType)
+                                </td>
+                                <td class="tdcenter">
+                                    @Html.DisplayFor(modelItem => item.P_Price)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.P_Describe)
+                                </td>
+                                <td class="tdcenter">
+                                    @Html.DisplayFor(modelItem => item.P_Instock)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.P_Date)
+                                </td>
+                                <td class="tdcenter">
+                                    @Html.DisplayFor(modelItem => item.P_Discount)
+                                </td>
+                                <td class="tdcenter">
+                                    <div id="test" class="break badge rounded-pill p-2 text-uppercase px-3 @if (item.P_Discontinuted){
+                                <text>bg-danger</text>
+}else{
+                                <text>bg-success</text>
+}">
+                                        @(item.P_Discontinuted ? "已下架" : "上架中")
+                            </div>
+                                    @*@Html.DisplayFor(modelItem => item.P_Discontinuted)*@
+                                </td>
+
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-1">
+                @Html.Raw(ViewBag.PageList)
+            </div>
+        </div>
+    </div>
 </div>

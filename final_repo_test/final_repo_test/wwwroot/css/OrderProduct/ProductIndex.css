@@ -19,3 +19,33 @@ input[type="checkbox"] {
 .tdcenter {
     text-align: center;
 }
+.gray {
+    /*color: #6c757d;*/
+    background-color: #f2f2f2;
+}
+
+.box {
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    border-radius: 15px;
+    margin-left: 2%;
+    width: 95%;
+    /* height: 98%;*/
+    max-height: 98%;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+}
+
+.break {
+    /*word-wrap: break-word;
+    word-break: break-all;
+    display: inline-block;*/
+    white-space: normal;
+}
+
+@media (max-width: 576px) {
+    table tr td {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
