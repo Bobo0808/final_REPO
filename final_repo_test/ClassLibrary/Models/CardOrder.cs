@@ -17,6 +17,8 @@ namespace ClassLibrary.Models
         public int CT_ID { get; set; } = default!;
         public CardType CardType { get; set; } = default!;
         public int CO_Sum { get; set; } = default!;
+        public DateTime CO_Date { get; set; } = default!;
+        public bool CO_Cancel { get; set; } = default!;
         public int CO_Quantity { get; set; } = default!;
     }
 }

@@ -91,6 +91,9 @@ p, li {
         display: block;
         cursor: pointer;
     }
+        .timeSpan > li > a {
+            color: #273B49;
+        }
 
     .timeSpan > .start {
         border-radius: 1rem 0 0 1rem;
