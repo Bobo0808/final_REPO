@@ -37,6 +37,12 @@ namespace final_repo_test.Repositroy
                 result.Producty.Add(producttemp[i].MyPrice);
             }
 
+            var salestemp = await _context.CardOrders.Where(s => s.CO_Cancel == false && s.CO_Date >= DateTime.Now.AddMonths(-6)).GroupBy(s => new { s.CO_Date.Month ,s.CO_Date.Year}, s => s.CO_Sum).Select(x => new { MyMonth = x.Key.Month,MyYear=x.Key.Year, MySales = x.Sum() }).ToListAsync();
+            for (int i = 0; i < salestemp.Count; i++)
+            {
+                result.Salesx.Add($"{salestemp[i].MyYear}年{ salestemp[i].MyMonth}月");
+                result.Salesy.Add(salestemp[i].MySales);
+            }
 
             for (int i = 0; i < result.Headx.Count; i++)
             {
