@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace final_repo_test.Migrations
 {
-    public partial class _20230510 : Migration
+    public partial class sandy : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -490,8 +490,8 @@ namespace final_repo_test.Migrations
                 columns: new[] { "CA_ID", "CA_Date", "CA_Describe", "CA_Discontinuted", "CA_Image", "CA_Name", "CA_Price" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9813), "100元換200點", false, "點數.png", "100元換200點", 100 },
-                    { 2, new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9814), "200元換350點", false, "點數.png", "200元換350點", 200 }
+                    { 1, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7134), "100元換200點", false, "點數.png", "100元換200點", 100 },
+                    { 2, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7136), "200元換350點", false, "點數.png", "200元換350點", 200 }
                 });
 
             migrationBuilder.InsertData(
@@ -537,8 +537,8 @@ namespace final_repo_test.Migrations
                 columns: new[] { "P_ID", "P_Date", "P_Describe", "P_Discontinuted", "P_Discount", "P_Image", "P_Instock", "P_Name", "P_Price", "P_ProductType" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9825), "Regular Fit反摺袖襯衫", false, 0, "1.jpg", 99, "反摺袖襯衫", 699, 1 },
-                    { 2, new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9826), "Regular Fit棉麻短袖襯衫", false, 0, "2.jpg", 99, "短袖襯衫", 499, 0 }
+                    { 1, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7145), "Regular Fit反摺袖襯衫", false, 0, "1.jpg", 99, "反摺袖襯衫", 699, 1 },
+                    { 2, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7147), "Regular Fit棉麻短袖襯衫", false, 0, "2.jpg", 99, "短袖襯衫", 499, 0 }
                 });
 
             migrationBuilder.InsertData(
@@ -546,16 +546,16 @@ namespace final_repo_test.Migrations
                 columns: new[] { "A_ID", "A_Coin", "A_Email", "A_Gender", "A_Name", "A_NickName", "A_Phone", "A_RegisteredAt", "A_add", "A_level", "Birthday", "P_id", "UserName", "UserPWD" },
                 values: new object[,]
                 {
-                    { 1, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9698), "Test", 99, new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9695), 1, "Test", "Test" },
-                    { 2, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9710), "Test", 99, new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9709), 1, "Test", "Test" },
-                    { 3, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9716), "Test", 99, new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9716), 1, "Test", "Test" },
-                    { 4, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9721), "Test", 99, new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9721), 1, "Test", "Test" },
-                    { 5, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9726), "Test", 99, new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9726), 1, "Test", "Test" },
-                    { 6, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9733), "Test", 99, new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9732), 1, "Test", "Test" },
-                    { 7, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9737), "Test", 99, new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9737), 1, "Test", "Test" },
-                    { 8, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9742), "Test", 99, new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9742), 1, "Test", "Test" },
-                    { 9, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9747), "Test", 99, new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9747), 1, "Test", "Test" },
-                    { 10, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9774), "Test", 99, new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9773), 1, "Test", "Test" }
+                    { 1, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7017), "Test", 99, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7013), 1, "Test", "Test" },
+                    { 2, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7029), "Test", 99, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7028), 1, "Test", "Test" },
+                    { 3, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7035), "Test", 99, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7035), 1, "Test", "Test" },
+                    { 4, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7040), "Test", 99, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7040), 1, "Test", "Test" },
+                    { 5, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7045), "Test", 99, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7045), 1, "Test", "Test" },
+                    { 6, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7074), "Test", 99, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7073), 1, "Test", "Test" },
+                    { 7, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7080), "Test", 99, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7079), 1, "Test", "Test" },
+                    { 8, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7092), "Test", 99, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7091), 1, "Test", "Test" },
+                    { 9, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7096), "Test", 99, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7095), 1, "Test", "Test" },
+                    { 10, 999999, "Test@gmail.com", 0, "Test", "Test", "0900000000", new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7101), "Test", 99, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7101), 1, "Test", "Test" }
                 });
 
             migrationBuilder.InsertData(
@@ -563,35 +563,35 @@ namespace final_repo_test.Migrations
                 columns: new[] { "Ad_ID", "AD_FinalPaymentAmount", "Ad_ActiveStatus", "Ad_Clicks", "Ad_DayCount", "Ad_Description", "Ad_EndTime", "Ad_ImageURL", "Ad_PaymentDueDate", "Ad_StartTime", "Ad_TargetURL", "Ad_TimeOfPayment", "CaseID", "OS_ID", "PartnerID" },
                 values: new object[,]
                 {
-                    { 1, 15000, 1, 67, 15, "", new DateTime(2022, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_1.jpg", new DateTime(2022, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 9, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com1", new DateTime(2022, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1, 1 },
-                    { 2, 15000, 1, 154, 18, "", new DateTime(2022, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_2.jpg", new DateTime(2022, 2, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com2", new DateTime(2022, 2, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1, 10 },
-                    { 3, 15000, 1, 198, 19, "", new DateTime(2022, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_3.jpg", new DateTime(2022, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 11, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com3", new DateTime(2022, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, 1, 13 },
-                    { 4, 15000, 1, 108, 8, "", new DateTime(2022, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_4.jpg", new DateTime(2022, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com4", new DateTime(2022, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, 1, 6 },
-                    { 5, 15000, 1, 74, 21, "", new DateTime(2022, 4, 26, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_5.jpg", new DateTime(2022, 4, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com5", new DateTime(2022, 4, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, 1, 7 },
-                    { 6, 15000, 1, 106, 13, "", new DateTime(2022, 5, 17, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_6.jpg", new DateTime(2022, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com6", new DateTime(2022, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 1, 9 },
-                    { 7, 15000, 1, 72, 21, "", new DateTime(2022, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_7.jpg", new DateTime(2022, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 3, 26, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com7", new DateTime(2022, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, 3 },
-                    { 8, 15000, 1, 128, 7, "", new DateTime(2022, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_8.jpg", new DateTime(2022, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 6, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com8", new DateTime(2022, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, 1, 10 },
-                    { 9, 15000, 1, 177, 19, "", new DateTime(2022, 5, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_9.jpg", new DateTime(2022, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 4, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com9", new DateTime(2022, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, 2 },
-                    { 10, 15000, 1, 114, 16, "", new DateTime(2022, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_10.jpg", new DateTime(2022, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com10", new DateTime(2022, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1, 10 },
-                    { 11, 15000, 1, 76, 14, "", new DateTime(2022, 8, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_11.jpg", new DateTime(2022, 7, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 7, 26, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com11", new DateTime(2022, 7, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, 1, 3 },
-                    { 12, 15000, 1, 127, 20, "", new DateTime(2022, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_12.jpg", new DateTime(2022, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com12", new DateTime(2022, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1, 14 },
-                    { 13, 15000, 1, 140, 19, "", new DateTime(2022, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_13.jpg", new DateTime(2022, 2, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com13", new DateTime(2022, 2, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, 1, 17 },
-                    { 14, 15000, 1, 117, 13, "", new DateTime(2022, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_14.jpg", new DateTime(2022, 8, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com14", new DateTime(2022, 8, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 1, 8 },
-                    { 15, 15000, 1, 51, 23, "", new DateTime(2022, 7, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_15.jpg", new DateTime(2022, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com15", new DateTime(2022, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, 4 },
-                    { 16, 15000, 1, 209, 15, "", new DateTime(2022, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_16.jpg", new DateTime(2022, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com16", new DateTime(2022, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, 3 },
-                    { 17, 15000, 1, 89, 24, "", new DateTime(2022, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_17.jpg", new DateTime(2022, 7, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 7, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com17", new DateTime(2022, 7, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1, 20 },
-                    { 18, 15000, 1, 189, 10, "", new DateTime(2022, 8, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_18.jpg", new DateTime(2022, 7, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com18", new DateTime(2022, 7, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 1, 20 },
-                    { 19, 15000, 1, 102, 11, "", new DateTime(2022, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_19.jpg", new DateTime(2022, 5, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com19", new DateTime(2022, 5, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1, 16 },
-                    { 20, 15000, 1, 78, 21, "", new DateTime(2022, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_20.jpg", new DateTime(2022, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com20", new DateTime(2022, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1, 2 },
-                    { 21, 15000, 1, 124, 23, "", new DateTime(2022, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_21.jpg", new DateTime(2021, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com21", new DateTime(2021, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, 20 },
-                    { 22, 15000, 1, 126, 23, "", new DateTime(2022, 10, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_22.jpg", new DateTime(2022, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com22", new DateTime(2022, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, 10 },
-                    { 23, 15000, 1, 156, 16, "", new DateTime(2022, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_23.jpg", new DateTime(2022, 7, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 7, 17, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com23", new DateTime(2022, 7, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, 16 },
-                    { 24, 15000, 1, 212, 22, "", new DateTime(2022, 2, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_24.jpg", new DateTime(2022, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 1, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com24", new DateTime(2022, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1, 2 },
-                    { 25, 15000, 1, 170, 13, "", new DateTime(2022, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_25.jpg", new DateTime(2022, 7, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com25", new DateTime(2022, 7, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1, 6 },
-                    { 26, 15000, 1, 227, 12, "", new DateTime(2022, 2, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_26.jpg", new DateTime(2022, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com26", new DateTime(2022, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1, 11 },
-                    { 27, 15000, 1, 210, 14, "", new DateTime(2022, 11, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_27.jpg", new DateTime(2022, 10, 31, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com27", new DateTime(2022, 10, 31, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, 1, 16 },
-                    { 28, 15000, 1, 111, 22, "", new DateTime(2023, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_28.jpg", new DateTime(2022, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com28", new DateTime(2022, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, 20 },
-                    { 29, 15000, 1, 39, 7, "", new DateTime(2022, 10, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_29.jpg", new DateTime(2022, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com29", new DateTime(2022, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, 11 }
+                    { 1, 15000, 1, 102, 19, "", new DateTime(2022, 9, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_1.jpg", new DateTime(2022, 9, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com1", new DateTime(2022, 9, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, 1, 7 },
+                    { 2, 15000, 1, 71, 13, "", new DateTime(2022, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_2.jpg", new DateTime(2022, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com2", new DateTime(2022, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1, 14 },
+                    { 3, 15000, 1, 84, 22, "", new DateTime(2022, 10, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_3.jpg", new DateTime(2022, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com3", new DateTime(2022, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, 6 },
+                    { 4, 15000, 1, 61, 12, "", new DateTime(2022, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_4.jpg", new DateTime(2022, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com4", new DateTime(2022, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, 13 },
+                    { 5, 15000, 1, 67, 24, "", new DateTime(2022, 9, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_5.jpg", new DateTime(2022, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 8, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com5", new DateTime(2022, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, 1, 4 },
+                    { 6, 15000, 1, 216, 16, "", new DateTime(2022, 12, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_6.jpg", new DateTime(2022, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 12, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com6", new DateTime(2022, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1, 12 },
+                    { 7, 15000, 1, 130, 17, "", new DateTime(2022, 6, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_7.jpg", new DateTime(2022, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com7", new DateTime(2022, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, 1, 6 },
+                    { 8, 15000, 1, 184, 20, "", new DateTime(2022, 9, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_8.jpg", new DateTime(2022, 8, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 8, 31, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com8", new DateTime(2022, 8, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, 18 },
+                    { 9, 15000, 1, 140, 24, "", new DateTime(2022, 8, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_9.jpg", new DateTime(2022, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 7, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com9", new DateTime(2022, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, 16 },
+                    { 10, 15000, 1, 144, 11, "", new DateTime(2023, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_10.jpg", new DateTime(2022, 12, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com10", new DateTime(2022, 12, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, 3 },
+                    { 11, 15000, 1, 193, 15, "", new DateTime(2022, 4, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_11.jpg", new DateTime(2022, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com11", new DateTime(2022, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, 2 },
+                    { 12, 15000, 1, 41, 24, "", new DateTime(2022, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_12.jpg", new DateTime(2022, 11, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com12", new DateTime(2022, 11, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, 14 },
+                    { 13, 15000, 1, 98, 12, "", new DateTime(2022, 7, 17, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_13.jpg", new DateTime(2022, 7, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com13", new DateTime(2022, 7, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 1, 8 },
+                    { 14, 15000, 1, 83, 7, "", new DateTime(2023, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_14.jpg", new DateTime(2022, 12, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com14", new DateTime(2022, 12, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1, 16 },
+                    { 15, 15000, 1, 117, 7, "", new DateTime(2022, 12, 26, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_15.jpg", new DateTime(2022, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com15", new DateTime(2022, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, 1, 4 },
+                    { 16, 15000, 1, 52, 23, "", new DateTime(2022, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_16.jpg", new DateTime(2022, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com16", new DateTime(2022, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, 12 },
+                    { 17, 15000, 1, 54, 19, "", new DateTime(2022, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_17.jpg", new DateTime(2022, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com17", new DateTime(2022, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, 1, 4 },
+                    { 18, 15000, 1, 148, 14, "", new DateTime(2022, 11, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_18.jpg", new DateTime(2022, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 10, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com18", new DateTime(2022, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, 4 },
+                    { 19, 15000, 1, 109, 10, "", new DateTime(2022, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_19.jpg", new DateTime(2022, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 9, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com19", new DateTime(2022, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 1, 15 },
+                    { 20, 15000, 1, 99, 16, "", new DateTime(2022, 12, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_20.jpg", new DateTime(2022, 12, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 12, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com20", new DateTime(2022, 12, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, 1, 2 },
+                    { 21, 15000, 1, 180, 12, "", new DateTime(2022, 3, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_21.jpg", new DateTime(2022, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com21", new DateTime(2022, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 1, 11 },
+                    { 22, 15000, 1, 41, 10, "", new DateTime(2023, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_22.jpg", new DateTime(2022, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 12, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com22", new DateTime(2022, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, 1, 11 },
+                    { 23, 15000, 1, 147, 9, "", new DateTime(2022, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_23.jpg", new DateTime(2022, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com23", new DateTime(2022, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 1, 19 },
+                    { 24, 15000, 1, 47, 17, "", new DateTime(2022, 10, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_24.jpg", new DateTime(2022, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com24", new DateTime(2022, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, 17 },
+                    { 25, 15000, 1, 236, 20, "", new DateTime(2022, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_25.jpg", new DateTime(2022, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com25", new DateTime(2022, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 1, 9 },
+                    { 26, 15000, 1, 90, 13, "", new DateTime(2022, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_26.jpg", new DateTime(2022, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 11, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com26", new DateTime(2022, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1, 7 },
+                    { 27, 15000, 1, 142, 23, "", new DateTime(2022, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_27.jpg", new DateTime(2022, 11, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com27", new DateTime(2022, 11, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1, 14 },
+                    { 28, 15000, 1, 131, 14, "", new DateTime(2022, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_28.jpg", new DateTime(2022, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 7, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com28", new DateTime(2022, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, 16 },
+                    { 29, 15000, 1, 121, 24, "", new DateTime(2022, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), "AD_29.jpg", new DateTime(2022, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), "http://exmple/.com29", new DateTime(2022, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, 1, 12 }
                 });
 
             migrationBuilder.InsertData(
@@ -599,8 +599,8 @@ namespace final_repo_test.Migrations
                 columns: new[] { "CO_ID", "A_ID", "CA_ID", "CO_Cancel", "CO_Date", "CO_Quantity", "CO_Sum", "CT_ID" },
                 values: new object[,]
                 {
-                    { 1, 1, 1, false, new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9794), 1, 100, 1 },
-                    { 2, 1, 2, false, new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9796), 2, 400, 2 }
+                    { 1, 1, 1, false, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7120), 1, 100, 1 },
+                    { 2, 1, 2, false, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7121), 2, 400, 2 }
                 });
 
             migrationBuilder.InsertData(
@@ -608,25 +608,25 @@ namespace final_repo_test.Migrations
                 columns: new[] { "D_ID", "A_ID", "D_Comment", "D_event", "D_isSolved", "D_time" },
                 values: new object[,]
                 {
-                    { 1, 1, null, "test", true, new DateTime(2023, 5, 10, 10, 31, 45, 394, DateTimeKind.Local).AddTicks(9375) },
-                    { 2, 8, null, "test", true, new DateTime(2023, 5, 10, 10, 31, 45, 394, DateTimeKind.Local).AddTicks(9422) },
-                    { 3, 3, null, "test", true, new DateTime(2023, 5, 10, 10, 31, 45, 394, DateTimeKind.Local).AddTicks(9424) },
-                    { 4, 9, null, "test", true, new DateTime(2023, 5, 10, 10, 31, 45, 394, DateTimeKind.Local).AddTicks(9425) },
-                    { 5, 5, null, "test", true, new DateTime(2023, 5, 10, 10, 31, 45, 394, DateTimeKind.Local).AddTicks(9426) },
-                    { 6, 1, null, "test", true, new DateTime(2023, 5, 10, 10, 31, 45, 394, DateTimeKind.Local).AddTicks(9429) },
-                    { 7, 9, null, "test", true, new DateTime(2023, 5, 10, 10, 31, 45, 394, DateTimeKind.Local).AddTicks(9430) },
-                    { 8, 6, null, "test", true, new DateTime(2023, 5, 10, 10, 31, 45, 394, DateTimeKind.Local).AddTicks(9432) },
-                    { 9, 4, null, "test", true, new DateTime(2023, 5, 10, 10, 31, 45, 394, DateTimeKind.Local).AddTicks(9432) },
-                    { 10, 4, null, "test", false, new DateTime(2023, 5, 10, 10, 31, 45, 394, DateTimeKind.Local).AddTicks(9435) },
-                    { 11, 3, null, "test", false, new DateTime(2023, 5, 10, 10, 31, 45, 394, DateTimeKind.Local).AddTicks(9436) },
-                    { 12, 9, null, "test", false, new DateTime(2023, 5, 10, 10, 31, 45, 394, DateTimeKind.Local).AddTicks(9437) },
-                    { 13, 5, null, "test", false, new DateTime(2023, 5, 10, 10, 31, 45, 394, DateTimeKind.Local).AddTicks(9438) },
-                    { 14, 10, null, "test", false, new DateTime(2023, 5, 10, 10, 31, 45, 394, DateTimeKind.Local).AddTicks(9439) },
-                    { 15, 7, null, "test", false, new DateTime(2023, 5, 10, 10, 31, 45, 394, DateTimeKind.Local).AddTicks(9440) },
-                    { 16, 5, null, "test", false, new DateTime(2023, 5, 10, 10, 31, 45, 394, DateTimeKind.Local).AddTicks(9441) },
-                    { 17, 7, null, "test", false, new DateTime(2023, 5, 10, 10, 31, 45, 394, DateTimeKind.Local).AddTicks(9443) },
-                    { 18, 6, null, "test", false, new DateTime(2023, 5, 10, 10, 31, 45, 394, DateTimeKind.Local).AddTicks(9444) },
-                    { 19, 2, null, "test", false, new DateTime(2023, 5, 10, 10, 31, 45, 394, DateTimeKind.Local).AddTicks(9445) }
+                    { 1, 2, null, "test", true, new DateTime(2023, 5, 10, 14, 31, 8, 997, DateTimeKind.Local).AddTicks(6319) },
+                    { 2, 5, null, "test", true, new DateTime(2023, 5, 10, 14, 31, 8, 997, DateTimeKind.Local).AddTicks(6368) },
+                    { 3, 5, null, "test", true, new DateTime(2023, 5, 10, 14, 31, 8, 997, DateTimeKind.Local).AddTicks(6370) },
+                    { 4, 9, null, "test", true, new DateTime(2023, 5, 10, 14, 31, 8, 997, DateTimeKind.Local).AddTicks(6371) },
+                    { 5, 7, null, "test", true, new DateTime(2023, 5, 10, 14, 31, 8, 997, DateTimeKind.Local).AddTicks(6373) },
+                    { 6, 10, null, "test", true, new DateTime(2023, 5, 10, 14, 31, 8, 997, DateTimeKind.Local).AddTicks(6375) },
+                    { 7, 2, null, "test", true, new DateTime(2023, 5, 10, 14, 31, 8, 997, DateTimeKind.Local).AddTicks(6376) },
+                    { 8, 8, null, "test", true, new DateTime(2023, 5, 10, 14, 31, 8, 997, DateTimeKind.Local).AddTicks(6378) },
+                    { 9, 8, null, "test", true, new DateTime(2023, 5, 10, 14, 31, 8, 997, DateTimeKind.Local).AddTicks(6379) },
+                    { 10, 2, null, "test", false, new DateTime(2023, 5, 10, 14, 31, 8, 997, DateTimeKind.Local).AddTicks(6381) },
+                    { 11, 9, null, "test", false, new DateTime(2023, 5, 10, 14, 31, 8, 997, DateTimeKind.Local).AddTicks(6382) },
+                    { 12, 7, null, "test", false, new DateTime(2023, 5, 10, 14, 31, 8, 997, DateTimeKind.Local).AddTicks(6384) },
+                    { 13, 9, null, "test", false, new DateTime(2023, 5, 10, 14, 31, 8, 997, DateTimeKind.Local).AddTicks(6385) },
+                    { 14, 7, null, "test", false, new DateTime(2023, 5, 10, 14, 31, 8, 997, DateTimeKind.Local).AddTicks(6386) },
+                    { 15, 2, null, "test", false, new DateTime(2023, 5, 10, 14, 31, 8, 997, DateTimeKind.Local).AddTicks(6387) },
+                    { 16, 10, null, "test", false, new DateTime(2023, 5, 10, 14, 31, 8, 997, DateTimeKind.Local).AddTicks(6388) },
+                    { 17, 9, null, "test", false, new DateTime(2023, 5, 10, 14, 31, 8, 997, DateTimeKind.Local).AddTicks(6389) },
+                    { 18, 3, null, "test", false, new DateTime(2023, 5, 10, 14, 31, 8, 997, DateTimeKind.Local).AddTicks(6391) },
+                    { 19, 4, null, "test", false, new DateTime(2023, 5, 10, 14, 31, 8, 997, DateTimeKind.Local).AddTicks(6392) }
                 });
 
             migrationBuilder.InsertData(
@@ -634,27 +634,27 @@ namespace final_repo_test.Migrations
                 columns: new[] { "L_ID", "A_ID", "L_cTime", "L_dcTime" },
                 values: new object[,]
                 {
-                    { 1, 5, new DateTime(2023, 3, 29, 21, 58, 18, 144, DateTimeKind.Unspecified), new DateTime(2023, 3, 30, 2, 58, 18, 144, DateTimeKind.Unspecified) },
-                    { 2, 5, new DateTime(2023, 3, 3, 16, 19, 53, 821, DateTimeKind.Unspecified), new DateTime(2023, 3, 4, 0, 19, 53, 821, DateTimeKind.Unspecified) },
-                    { 3, 8, new DateTime(2023, 4, 16, 11, 0, 54, 92, DateTimeKind.Unspecified), new DateTime(2023, 4, 16, 16, 0, 54, 92, DateTimeKind.Unspecified) },
-                    { 4, 2, new DateTime(2023, 4, 2, 15, 58, 56, 476, DateTimeKind.Unspecified), new DateTime(2023, 4, 2, 18, 58, 56, 476, DateTimeKind.Unspecified) },
-                    { 5, 2, new DateTime(2023, 5, 28, 23, 57, 54, 17, DateTimeKind.Unspecified), new DateTime(2023, 5, 29, 5, 57, 54, 17, DateTimeKind.Unspecified) },
-                    { 6, 6, new DateTime(2023, 3, 13, 19, 38, 15, 789, DateTimeKind.Unspecified), new DateTime(2023, 3, 13, 22, 38, 15, 789, DateTimeKind.Unspecified) },
-                    { 7, 1, new DateTime(2023, 5, 11, 0, 47, 9, 862, DateTimeKind.Unspecified), new DateTime(2023, 5, 11, 9, 47, 9, 862, DateTimeKind.Unspecified) },
-                    { 8, 6, new DateTime(2023, 2, 10, 3, 12, 10, 608, DateTimeKind.Unspecified), new DateTime(2023, 2, 10, 9, 12, 10, 608, DateTimeKind.Unspecified) },
-                    { 9, 3, new DateTime(2023, 4, 21, 14, 27, 47, 309, DateTimeKind.Unspecified), new DateTime(2023, 4, 21, 20, 27, 47, 309, DateTimeKind.Unspecified) },
-                    { 10, 2, new DateTime(2023, 3, 30, 19, 51, 20, 662, DateTimeKind.Unspecified), new DateTime(2023, 3, 30, 22, 51, 20, 662, DateTimeKind.Unspecified) },
-                    { 11, 6, new DateTime(2023, 2, 4, 17, 5, 56, 62, DateTimeKind.Unspecified), new DateTime(2023, 2, 4, 18, 5, 56, 62, DateTimeKind.Unspecified) },
-                    { 12, 9, new DateTime(2023, 4, 2, 5, 12, 1, 730, DateTimeKind.Unspecified), new DateTime(2023, 4, 2, 15, 12, 1, 730, DateTimeKind.Unspecified) },
-                    { 13, 8, new DateTime(2023, 4, 13, 13, 41, 32, 590, DateTimeKind.Unspecified), new DateTime(2023, 4, 13, 21, 41, 32, 590, DateTimeKind.Unspecified) },
-                    { 14, 6, new DateTime(2023, 4, 10, 23, 28, 1, 907, DateTimeKind.Unspecified), new DateTime(2023, 4, 11, 4, 28, 1, 907, DateTimeKind.Unspecified) },
-                    { 15, 1, new DateTime(2023, 2, 16, 17, 33, 50, 762, DateTimeKind.Unspecified), new DateTime(2023, 2, 16, 23, 33, 50, 762, DateTimeKind.Unspecified) },
-                    { 16, 1, new DateTime(2023, 5, 3, 22, 3, 53, 359, DateTimeKind.Unspecified), new DateTime(2023, 5, 4, 3, 3, 53, 359, DateTimeKind.Unspecified) },
-                    { 17, 2, new DateTime(2023, 3, 16, 13, 9, 16, 211, DateTimeKind.Unspecified), new DateTime(2023, 3, 16, 14, 9, 16, 211, DateTimeKind.Unspecified) },
-                    { 18, 3, new DateTime(2023, 3, 7, 0, 19, 32, 573, DateTimeKind.Unspecified), new DateTime(2023, 3, 7, 9, 19, 32, 573, DateTimeKind.Unspecified) },
-                    { 19, 1, new DateTime(2023, 5, 5, 13, 46, 39, 969, DateTimeKind.Unspecified), new DateTime(2023, 5, 5, 14, 46, 39, 969, DateTimeKind.Unspecified) },
-                    { 20, 1, new DateTime(2023, 5, 17, 10, 37, 25, 541, DateTimeKind.Unspecified), new DateTime(2023, 5, 17, 13, 37, 25, 541, DateTimeKind.Unspecified) },
-                    { 21, 1, new DateTime(2023, 5, 29, 6, 31, 22, 820, DateTimeKind.Unspecified), new DateTime(2023, 5, 29, 14, 31, 22, 820, DateTimeKind.Unspecified) }
+                    { 1, 9, new DateTime(2023, 4, 17, 12, 52, 51, 337, DateTimeKind.Unspecified), new DateTime(2023, 4, 17, 21, 52, 51, 337, DateTimeKind.Unspecified) },
+                    { 2, 6, new DateTime(2023, 4, 21, 6, 24, 2, 635, DateTimeKind.Unspecified), new DateTime(2023, 4, 21, 11, 24, 2, 635, DateTimeKind.Unspecified) },
+                    { 3, 2, new DateTime(2023, 2, 5, 13, 24, 14, 569, DateTimeKind.Unspecified), new DateTime(2023, 2, 5, 14, 24, 14, 569, DateTimeKind.Unspecified) },
+                    { 4, 5, new DateTime(2023, 5, 11, 21, 22, 26, 488, DateTimeKind.Unspecified), new DateTime(2023, 5, 12, 6, 22, 26, 488, DateTimeKind.Unspecified) },
+                    { 5, 2, new DateTime(2023, 4, 21, 0, 40, 55, 567, DateTimeKind.Unspecified), new DateTime(2023, 4, 21, 10, 40, 55, 567, DateTimeKind.Unspecified) },
+                    { 6, 2, new DateTime(2023, 2, 6, 8, 12, 10, 873, DateTimeKind.Unspecified), new DateTime(2023, 2, 6, 12, 12, 10, 873, DateTimeKind.Unspecified) },
+                    { 7, 7, new DateTime(2023, 5, 8, 7, 58, 41, 848, DateTimeKind.Unspecified), new DateTime(2023, 5, 8, 8, 58, 41, 848, DateTimeKind.Unspecified) },
+                    { 8, 5, new DateTime(2023, 2, 11, 5, 47, 56, 234, DateTimeKind.Unspecified), new DateTime(2023, 2, 11, 6, 47, 56, 234, DateTimeKind.Unspecified) },
+                    { 9, 9, new DateTime(2023, 2, 13, 5, 59, 15, 281, DateTimeKind.Unspecified), new DateTime(2023, 2, 13, 15, 59, 15, 281, DateTimeKind.Unspecified) },
+                    { 10, 1, new DateTime(2023, 2, 21, 4, 2, 9, 51, DateTimeKind.Unspecified), new DateTime(2023, 2, 21, 11, 2, 9, 51, DateTimeKind.Unspecified) },
+                    { 11, 1, new DateTime(2023, 5, 19, 0, 9, 55, 897, DateTimeKind.Unspecified), new DateTime(2023, 5, 19, 10, 9, 55, 897, DateTimeKind.Unspecified) },
+                    { 12, 2, new DateTime(2023, 3, 15, 5, 6, 42, 170, DateTimeKind.Unspecified), new DateTime(2023, 3, 15, 7, 6, 42, 170, DateTimeKind.Unspecified) },
+                    { 13, 1, new DateTime(2023, 2, 24, 23, 0, 3, 741, DateTimeKind.Unspecified), new DateTime(2023, 2, 25, 5, 0, 3, 741, DateTimeKind.Unspecified) },
+                    { 14, 6, new DateTime(2023, 3, 4, 5, 11, 43, 308, DateTimeKind.Unspecified), new DateTime(2023, 3, 4, 12, 11, 43, 308, DateTimeKind.Unspecified) },
+                    { 15, 7, new DateTime(2023, 4, 27, 12, 20, 57, 270, DateTimeKind.Unspecified), new DateTime(2023, 4, 27, 17, 20, 57, 270, DateTimeKind.Unspecified) },
+                    { 16, 1, new DateTime(2023, 4, 4, 0, 0, 53, 985, DateTimeKind.Unspecified), new DateTime(2023, 4, 4, 10, 0, 53, 985, DateTimeKind.Unspecified) },
+                    { 17, 6, new DateTime(2023, 4, 25, 12, 15, 8, 417, DateTimeKind.Unspecified), new DateTime(2023, 4, 25, 19, 15, 8, 417, DateTimeKind.Unspecified) },
+                    { 18, 7, new DateTime(2023, 3, 8, 17, 56, 27, 29, DateTimeKind.Unspecified), new DateTime(2023, 3, 8, 22, 56, 27, 29, DateTimeKind.Unspecified) },
+                    { 19, 3, new DateTime(2023, 3, 26, 20, 41, 20, 585, DateTimeKind.Unspecified), new DateTime(2023, 3, 27, 1, 41, 20, 585, DateTimeKind.Unspecified) },
+                    { 20, 5, new DateTime(2023, 3, 11, 5, 13, 5, 818, DateTimeKind.Unspecified), new DateTime(2023, 3, 11, 6, 13, 5, 818, DateTimeKind.Unspecified) },
+                    { 21, 4, new DateTime(2023, 5, 15, 18, 5, 44, 271, DateTimeKind.Unspecified), new DateTime(2023, 5, 15, 21, 5, 44, 271, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -662,48 +662,48 @@ namespace final_repo_test.Migrations
                 columns: new[] { "L_ID", "A_ID", "L_cTime", "L_dcTime" },
                 values: new object[,]
                 {
-                    { 22, 9, new DateTime(2023, 3, 15, 13, 22, 44, 993, DateTimeKind.Unspecified), new DateTime(2023, 3, 15, 15, 22, 44, 993, DateTimeKind.Unspecified) },
-                    { 23, 6, new DateTime(2023, 3, 20, 20, 36, 4, 236, DateTimeKind.Unspecified), new DateTime(2023, 3, 20, 23, 36, 4, 236, DateTimeKind.Unspecified) },
-                    { 24, 6, new DateTime(2023, 3, 20, 18, 29, 16, 287, DateTimeKind.Unspecified), new DateTime(2023, 3, 20, 23, 29, 16, 287, DateTimeKind.Unspecified) },
-                    { 25, 6, new DateTime(2023, 2, 11, 18, 45, 43, 885, DateTimeKind.Unspecified), new DateTime(2023, 2, 12, 1, 45, 43, 885, DateTimeKind.Unspecified) },
-                    { 26, 2, new DateTime(2023, 2, 16, 18, 26, 41, 255, DateTimeKind.Unspecified), new DateTime(2023, 2, 17, 2, 26, 41, 255, DateTimeKind.Unspecified) },
-                    { 27, 3, new DateTime(2023, 2, 7, 20, 2, 56, 135, DateTimeKind.Unspecified), new DateTime(2023, 2, 8, 4, 2, 56, 135, DateTimeKind.Unspecified) },
-                    { 28, 1, new DateTime(2023, 4, 30, 4, 15, 45, 261, DateTimeKind.Unspecified), new DateTime(2023, 4, 30, 12, 15, 45, 261, DateTimeKind.Unspecified) },
-                    { 29, 7, new DateTime(2023, 4, 16, 21, 56, 59, 447, DateTimeKind.Unspecified), new DateTime(2023, 4, 17, 2, 56, 59, 447, DateTimeKind.Unspecified) },
-                    { 30, 6, new DateTime(2023, 4, 26, 22, 31, 17, 475, DateTimeKind.Unspecified), new DateTime(2023, 4, 27, 3, 31, 17, 475, DateTimeKind.Unspecified) },
-                    { 31, 7, new DateTime(2023, 2, 3, 9, 37, 25, 948, DateTimeKind.Unspecified), new DateTime(2023, 2, 3, 10, 37, 25, 948, DateTimeKind.Unspecified) },
-                    { 32, 4, new DateTime(2023, 3, 26, 19, 31, 25, 902, DateTimeKind.Unspecified), new DateTime(2023, 3, 27, 2, 31, 25, 902, DateTimeKind.Unspecified) },
-                    { 33, 5, new DateTime(2023, 4, 6, 5, 23, 22, 452, DateTimeKind.Unspecified), new DateTime(2023, 4, 6, 12, 23, 22, 452, DateTimeKind.Unspecified) },
-                    { 34, 1, new DateTime(2023, 2, 2, 16, 43, 36, 251, DateTimeKind.Unspecified), new DateTime(2023, 2, 3, 1, 43, 36, 251, DateTimeKind.Unspecified) },
-                    { 35, 8, new DateTime(2023, 3, 30, 2, 56, 11, 972, DateTimeKind.Unspecified), new DateTime(2023, 3, 30, 6, 56, 11, 972, DateTimeKind.Unspecified) },
-                    { 36, 2, new DateTime(2023, 5, 6, 9, 2, 5, 689, DateTimeKind.Unspecified), new DateTime(2023, 5, 6, 19, 2, 5, 689, DateTimeKind.Unspecified) },
-                    { 37, 1, new DateTime(2023, 2, 21, 17, 57, 9, 792, DateTimeKind.Unspecified), new DateTime(2023, 2, 21, 23, 57, 9, 792, DateTimeKind.Unspecified) },
-                    { 38, 2, new DateTime(2023, 5, 20, 5, 34, 31, 564, DateTimeKind.Unspecified), new DateTime(2023, 5, 20, 6, 34, 31, 564, DateTimeKind.Unspecified) },
-                    { 39, 8, new DateTime(2023, 2, 23, 23, 15, 35, 71, DateTimeKind.Unspecified), new DateTime(2023, 2, 24, 6, 15, 35, 71, DateTimeKind.Unspecified) },
-                    { 40, 9, new DateTime(2023, 4, 4, 23, 59, 31, 702, DateTimeKind.Unspecified), new DateTime(2023, 4, 5, 9, 59, 31, 702, DateTimeKind.Unspecified) },
-                    { 41, 1, new DateTime(2023, 5, 14, 19, 18, 56, 597, DateTimeKind.Unspecified), new DateTime(2023, 5, 15, 4, 18, 56, 597, DateTimeKind.Unspecified) },
-                    { 42, 1, new DateTime(2023, 3, 9, 15, 50, 50, 47, DateTimeKind.Unspecified), new DateTime(2023, 3, 9, 16, 50, 50, 47, DateTimeKind.Unspecified) },
-                    { 43, 4, new DateTime(2023, 3, 25, 3, 38, 10, 537, DateTimeKind.Unspecified), new DateTime(2023, 3, 25, 8, 38, 10, 537, DateTimeKind.Unspecified) },
-                    { 44, 5, new DateTime(2023, 5, 31, 2, 31, 38, 559, DateTimeKind.Unspecified), new DateTime(2023, 5, 31, 5, 31, 38, 559, DateTimeKind.Unspecified) },
-                    { 45, 4, new DateTime(2023, 5, 28, 20, 23, 14, 757, DateTimeKind.Unspecified), new DateTime(2023, 5, 29, 0, 23, 14, 757, DateTimeKind.Unspecified) },
-                    { 46, 6, new DateTime(2023, 5, 22, 6, 55, 56, 511, DateTimeKind.Unspecified), new DateTime(2023, 5, 22, 12, 55, 56, 511, DateTimeKind.Unspecified) },
-                    { 47, 2, new DateTime(2023, 5, 11, 6, 15, 57, 466, DateTimeKind.Unspecified), new DateTime(2023, 5, 11, 7, 15, 57, 466, DateTimeKind.Unspecified) },
-                    { 48, 5, new DateTime(2023, 4, 28, 15, 5, 23, 645, DateTimeKind.Unspecified), new DateTime(2023, 4, 28, 17, 5, 23, 645, DateTimeKind.Unspecified) },
-                    { 49, 2, new DateTime(2023, 2, 27, 12, 23, 14, 817, DateTimeKind.Unspecified), new DateTime(2023, 2, 27, 18, 23, 14, 817, DateTimeKind.Unspecified) },
-                    { 50, 4, new DateTime(2023, 2, 2, 0, 36, 55, 69, DateTimeKind.Unspecified), new DateTime(2023, 2, 2, 5, 36, 55, 69, DateTimeKind.Unspecified) },
-                    { 51, 9, new DateTime(2023, 3, 19, 22, 23, 14, 238, DateTimeKind.Unspecified), new DateTime(2023, 3, 20, 7, 23, 14, 238, DateTimeKind.Unspecified) },
-                    { 52, 4, new DateTime(2023, 4, 22, 7, 38, 28, 763, DateTimeKind.Unspecified), new DateTime(2023, 4, 22, 11, 38, 28, 763, DateTimeKind.Unspecified) },
-                    { 53, 7, new DateTime(2023, 4, 18, 2, 27, 3, 430, DateTimeKind.Unspecified), new DateTime(2023, 4, 18, 12, 27, 3, 430, DateTimeKind.Unspecified) },
-                    { 54, 8, new DateTime(2023, 5, 30, 23, 33, 42, 917, DateTimeKind.Unspecified), new DateTime(2023, 5, 31, 1, 33, 42, 917, DateTimeKind.Unspecified) },
-                    { 55, 4, new DateTime(2023, 2, 24, 17, 17, 29, 381, DateTimeKind.Unspecified), new DateTime(2023, 2, 24, 22, 17, 29, 381, DateTimeKind.Unspecified) },
-                    { 56, 5, new DateTime(2023, 3, 17, 14, 15, 13, 580, DateTimeKind.Unspecified), new DateTime(2023, 3, 17, 22, 15, 13, 580, DateTimeKind.Unspecified) },
-                    { 57, 3, new DateTime(2023, 4, 27, 12, 29, 42, 289, DateTimeKind.Unspecified), new DateTime(2023, 4, 27, 13, 29, 42, 289, DateTimeKind.Unspecified) },
-                    { 58, 2, new DateTime(2023, 3, 5, 23, 22, 50, 348, DateTimeKind.Unspecified), new DateTime(2023, 3, 6, 1, 22, 50, 348, DateTimeKind.Unspecified) },
-                    { 59, 6, new DateTime(2023, 5, 12, 1, 44, 4, 578, DateTimeKind.Unspecified), new DateTime(2023, 5, 12, 4, 44, 4, 578, DateTimeKind.Unspecified) },
-                    { 60, 1, new DateTime(2023, 3, 18, 17, 24, 6, 988, DateTimeKind.Unspecified), new DateTime(2023, 3, 18, 18, 24, 6, 988, DateTimeKind.Unspecified) },
-                    { 61, 5, new DateTime(2023, 2, 21, 3, 25, 59, 428, DateTimeKind.Unspecified), new DateTime(2023, 2, 21, 13, 25, 59, 428, DateTimeKind.Unspecified) },
-                    { 62, 1, new DateTime(2023, 5, 4, 16, 14, 5, 58, DateTimeKind.Unspecified), new DateTime(2023, 5, 4, 22, 14, 5, 58, DateTimeKind.Unspecified) },
-                    { 63, 8, new DateTime(2023, 5, 31, 19, 56, 52, 505, DateTimeKind.Unspecified), new DateTime(2023, 6, 1, 5, 56, 52, 505, DateTimeKind.Unspecified) }
+                    { 22, 7, new DateTime(2023, 5, 20, 16, 0, 14, 450, DateTimeKind.Unspecified), new DateTime(2023, 5, 20, 23, 0, 14, 450, DateTimeKind.Unspecified) },
+                    { 23, 1, new DateTime(2023, 5, 29, 11, 56, 0, 692, DateTimeKind.Unspecified), new DateTime(2023, 5, 29, 15, 56, 0, 692, DateTimeKind.Unspecified) },
+                    { 24, 2, new DateTime(2023, 4, 6, 3, 54, 25, 398, DateTimeKind.Unspecified), new DateTime(2023, 4, 6, 12, 54, 25, 398, DateTimeKind.Unspecified) },
+                    { 25, 4, new DateTime(2023, 4, 11, 2, 36, 18, 43, DateTimeKind.Unspecified), new DateTime(2023, 4, 11, 7, 36, 18, 43, DateTimeKind.Unspecified) },
+                    { 26, 7, new DateTime(2023, 4, 8, 2, 46, 30, 419, DateTimeKind.Unspecified), new DateTime(2023, 4, 8, 8, 46, 30, 419, DateTimeKind.Unspecified) },
+                    { 27, 9, new DateTime(2023, 3, 30, 10, 4, 3, 391, DateTimeKind.Unspecified), new DateTime(2023, 3, 30, 18, 4, 3, 391, DateTimeKind.Unspecified) },
+                    { 28, 5, new DateTime(2023, 2, 24, 5, 16, 50, 367, DateTimeKind.Unspecified), new DateTime(2023, 2, 24, 8, 16, 50, 367, DateTimeKind.Unspecified) },
+                    { 29, 9, new DateTime(2023, 5, 11, 14, 26, 35, 513, DateTimeKind.Unspecified), new DateTime(2023, 5, 11, 18, 26, 35, 513, DateTimeKind.Unspecified) },
+                    { 30, 3, new DateTime(2023, 2, 26, 15, 43, 10, 851, DateTimeKind.Unspecified), new DateTime(2023, 2, 26, 23, 43, 10, 851, DateTimeKind.Unspecified) },
+                    { 31, 9, new DateTime(2023, 4, 13, 6, 41, 39, 601, DateTimeKind.Unspecified), new DateTime(2023, 4, 13, 9, 41, 39, 601, DateTimeKind.Unspecified) },
+                    { 32, 1, new DateTime(2023, 4, 14, 9, 44, 17, 291, DateTimeKind.Unspecified), new DateTime(2023, 4, 14, 17, 44, 17, 291, DateTimeKind.Unspecified) },
+                    { 33, 3, new DateTime(2023, 4, 29, 8, 56, 10, 732, DateTimeKind.Unspecified), new DateTime(2023, 4, 29, 16, 56, 10, 732, DateTimeKind.Unspecified) },
+                    { 34, 4, new DateTime(2023, 3, 12, 16, 21, 1, 53, DateTimeKind.Unspecified), new DateTime(2023, 3, 13, 2, 21, 1, 53, DateTimeKind.Unspecified) },
+                    { 35, 8, new DateTime(2023, 2, 8, 15, 59, 30, 357, DateTimeKind.Unspecified), new DateTime(2023, 2, 8, 19, 59, 30, 357, DateTimeKind.Unspecified) },
+                    { 36, 6, new DateTime(2023, 4, 15, 14, 22, 38, 404, DateTimeKind.Unspecified), new DateTime(2023, 4, 15, 21, 22, 38, 404, DateTimeKind.Unspecified) },
+                    { 37, 8, new DateTime(2023, 4, 18, 6, 32, 24, 939, DateTimeKind.Unspecified), new DateTime(2023, 4, 18, 11, 32, 24, 939, DateTimeKind.Unspecified) },
+                    { 38, 5, new DateTime(2023, 5, 7, 9, 21, 18, 345, DateTimeKind.Unspecified), new DateTime(2023, 5, 7, 10, 21, 18, 345, DateTimeKind.Unspecified) },
+                    { 39, 8, new DateTime(2023, 4, 17, 10, 59, 4, 868, DateTimeKind.Unspecified), new DateTime(2023, 4, 17, 17, 59, 4, 868, DateTimeKind.Unspecified) },
+                    { 40, 2, new DateTime(2023, 2, 3, 17, 16, 45, 324, DateTimeKind.Unspecified), new DateTime(2023, 2, 4, 2, 16, 45, 324, DateTimeKind.Unspecified) },
+                    { 41, 5, new DateTime(2023, 4, 16, 21, 43, 12, 55, DateTimeKind.Unspecified), new DateTime(2023, 4, 17, 6, 43, 12, 55, DateTimeKind.Unspecified) },
+                    { 42, 9, new DateTime(2023, 3, 10, 3, 15, 51, 601, DateTimeKind.Unspecified), new DateTime(2023, 3, 10, 4, 15, 51, 601, DateTimeKind.Unspecified) },
+                    { 43, 7, new DateTime(2023, 3, 19, 12, 23, 42, 784, DateTimeKind.Unspecified), new DateTime(2023, 3, 19, 18, 23, 42, 784, DateTimeKind.Unspecified) },
+                    { 44, 9, new DateTime(2023, 2, 20, 11, 5, 8, 455, DateTimeKind.Unspecified), new DateTime(2023, 2, 20, 21, 5, 8, 455, DateTimeKind.Unspecified) },
+                    { 45, 8, new DateTime(2023, 4, 26, 8, 22, 29, 197, DateTimeKind.Unspecified), new DateTime(2023, 4, 26, 12, 22, 29, 197, DateTimeKind.Unspecified) },
+                    { 46, 2, new DateTime(2023, 2, 27, 5, 8, 20, 750, DateTimeKind.Unspecified), new DateTime(2023, 2, 27, 14, 8, 20, 750, DateTimeKind.Unspecified) },
+                    { 47, 7, new DateTime(2023, 5, 5, 19, 5, 1, 611, DateTimeKind.Unspecified), new DateTime(2023, 5, 5, 23, 5, 1, 611, DateTimeKind.Unspecified) },
+                    { 48, 1, new DateTime(2023, 4, 12, 4, 42, 16, 878, DateTimeKind.Unspecified), new DateTime(2023, 4, 12, 8, 42, 16, 878, DateTimeKind.Unspecified) },
+                    { 49, 5, new DateTime(2023, 5, 1, 2, 18, 36, 348, DateTimeKind.Unspecified), new DateTime(2023, 5, 1, 9, 18, 36, 348, DateTimeKind.Unspecified) },
+                    { 50, 2, new DateTime(2023, 2, 1, 8, 42, 54, 334, DateTimeKind.Unspecified), new DateTime(2023, 2, 1, 10, 42, 54, 334, DateTimeKind.Unspecified) },
+                    { 51, 1, new DateTime(2023, 4, 16, 19, 44, 41, 144, DateTimeKind.Unspecified), new DateTime(2023, 4, 16, 21, 44, 41, 144, DateTimeKind.Unspecified) },
+                    { 52, 6, new DateTime(2023, 2, 11, 15, 21, 3, 20, DateTimeKind.Unspecified), new DateTime(2023, 2, 11, 20, 21, 3, 20, DateTimeKind.Unspecified) },
+                    { 53, 9, new DateTime(2023, 2, 16, 12, 27, 36, 423, DateTimeKind.Unspecified), new DateTime(2023, 2, 16, 18, 27, 36, 423, DateTimeKind.Unspecified) },
+                    { 54, 1, new DateTime(2023, 5, 29, 11, 50, 30, 143, DateTimeKind.Unspecified), new DateTime(2023, 5, 29, 15, 50, 30, 143, DateTimeKind.Unspecified) },
+                    { 55, 4, new DateTime(2023, 3, 2, 8, 57, 17, 446, DateTimeKind.Unspecified), new DateTime(2023, 3, 2, 12, 57, 17, 446, DateTimeKind.Unspecified) },
+                    { 56, 5, new DateTime(2023, 5, 25, 22, 20, 6, 497, DateTimeKind.Unspecified), new DateTime(2023, 5, 25, 23, 20, 6, 497, DateTimeKind.Unspecified) },
+                    { 57, 8, new DateTime(2023, 3, 9, 21, 24, 47, 144, DateTimeKind.Unspecified), new DateTime(2023, 3, 10, 0, 24, 47, 144, DateTimeKind.Unspecified) },
+                    { 58, 2, new DateTime(2023, 3, 10, 20, 30, 18, 703, DateTimeKind.Unspecified), new DateTime(2023, 3, 10, 23, 30, 18, 703, DateTimeKind.Unspecified) },
+                    { 59, 2, new DateTime(2023, 3, 7, 6, 5, 4, 256, DateTimeKind.Unspecified), new DateTime(2023, 3, 7, 16, 5, 4, 256, DateTimeKind.Unspecified) },
+                    { 60, 5, new DateTime(2023, 3, 15, 19, 59, 17, 464, DateTimeKind.Unspecified), new DateTime(2023, 3, 16, 3, 59, 17, 464, DateTimeKind.Unspecified) },
+                    { 61, 2, new DateTime(2023, 5, 29, 5, 11, 9, 57, DateTimeKind.Unspecified), new DateTime(2023, 5, 29, 15, 11, 9, 57, DateTimeKind.Unspecified) },
+                    { 62, 2, new DateTime(2023, 3, 15, 11, 14, 8, 824, DateTimeKind.Unspecified), new DateTime(2023, 3, 15, 13, 14, 8, 824, DateTimeKind.Unspecified) },
+                    { 63, 4, new DateTime(2023, 3, 7, 4, 38, 13, 821, DateTimeKind.Unspecified), new DateTime(2023, 3, 7, 8, 38, 13, 821, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -711,44 +711,44 @@ namespace final_repo_test.Migrations
                 columns: new[] { "L_ID", "A_ID", "L_cTime", "L_dcTime" },
                 values: new object[,]
                 {
-                    { 64, 1, new DateTime(2023, 2, 1, 0, 0, 22, 768, DateTimeKind.Unspecified), new DateTime(2023, 2, 1, 2, 0, 22, 768, DateTimeKind.Unspecified) },
-                    { 65, 3, new DateTime(2023, 3, 15, 8, 38, 15, 123, DateTimeKind.Unspecified), new DateTime(2023, 3, 15, 16, 38, 15, 123, DateTimeKind.Unspecified) },
-                    { 66, 6, new DateTime(2023, 4, 4, 11, 40, 19, 560, DateTimeKind.Unspecified), new DateTime(2023, 4, 4, 13, 40, 19, 560, DateTimeKind.Unspecified) },
-                    { 67, 9, new DateTime(2023, 3, 4, 20, 38, 32, 57, DateTimeKind.Unspecified), new DateTime(2023, 3, 5, 0, 38, 32, 57, DateTimeKind.Unspecified) },
-                    { 68, 6, new DateTime(2023, 3, 26, 17, 56, 9, 992, DateTimeKind.Unspecified), new DateTime(2023, 3, 27, 1, 56, 9, 992, DateTimeKind.Unspecified) },
-                    { 69, 4, new DateTime(2023, 2, 6, 17, 40, 42, 89, DateTimeKind.Unspecified), new DateTime(2023, 2, 6, 19, 40, 42, 89, DateTimeKind.Unspecified) },
-                    { 70, 7, new DateTime(2023, 2, 15, 16, 28, 23, 200, DateTimeKind.Unspecified), new DateTime(2023, 2, 15, 23, 28, 23, 200, DateTimeKind.Unspecified) },
-                    { 71, 2, new DateTime(2023, 4, 21, 22, 17, 43, 956, DateTimeKind.Unspecified), new DateTime(2023, 4, 22, 8, 17, 43, 956, DateTimeKind.Unspecified) },
-                    { 72, 5, new DateTime(2023, 3, 24, 23, 28, 2, 566, DateTimeKind.Unspecified), new DateTime(2023, 3, 25, 5, 28, 2, 566, DateTimeKind.Unspecified) },
-                    { 73, 3, new DateTime(2023, 3, 25, 9, 45, 13, 374, DateTimeKind.Unspecified), new DateTime(2023, 3, 25, 18, 45, 13, 374, DateTimeKind.Unspecified) },
-                    { 74, 1, new DateTime(2023, 2, 24, 10, 32, 15, 513, DateTimeKind.Unspecified), new DateTime(2023, 2, 24, 11, 32, 15, 513, DateTimeKind.Unspecified) },
-                    { 75, 2, new DateTime(2023, 2, 21, 11, 46, 28, 780, DateTimeKind.Unspecified), new DateTime(2023, 2, 21, 12, 46, 28, 780, DateTimeKind.Unspecified) },
-                    { 76, 3, new DateTime(2023, 5, 18, 11, 8, 59, 793, DateTimeKind.Unspecified), new DateTime(2023, 5, 18, 15, 8, 59, 793, DateTimeKind.Unspecified) },
-                    { 77, 2, new DateTime(2023, 4, 26, 11, 33, 4, 822, DateTimeKind.Unspecified), new DateTime(2023, 4, 26, 21, 33, 4, 822, DateTimeKind.Unspecified) },
-                    { 78, 5, new DateTime(2023, 4, 25, 12, 26, 28, 21, DateTimeKind.Unspecified), new DateTime(2023, 4, 25, 16, 26, 28, 21, DateTimeKind.Unspecified) },
-                    { 79, 9, new DateTime(2023, 3, 18, 7, 37, 38, 166, DateTimeKind.Unspecified), new DateTime(2023, 3, 18, 11, 37, 38, 166, DateTimeKind.Unspecified) },
-                    { 80, 6, new DateTime(2023, 3, 3, 20, 37, 18, 916, DateTimeKind.Unspecified), new DateTime(2023, 3, 4, 1, 37, 18, 916, DateTimeKind.Unspecified) },
-                    { 81, 7, new DateTime(2023, 4, 18, 15, 39, 36, 487, DateTimeKind.Unspecified), new DateTime(2023, 4, 18, 21, 39, 36, 487, DateTimeKind.Unspecified) },
-                    { 82, 9, new DateTime(2023, 5, 14, 1, 26, 38, 626, DateTimeKind.Unspecified), new DateTime(2023, 5, 14, 9, 26, 38, 626, DateTimeKind.Unspecified) },
-                    { 83, 5, new DateTime(2023, 4, 29, 4, 17, 35, 713, DateTimeKind.Unspecified), new DateTime(2023, 4, 29, 13, 17, 35, 713, DateTimeKind.Unspecified) },
-                    { 84, 8, new DateTime(2023, 2, 27, 11, 35, 47, 37, DateTimeKind.Unspecified), new DateTime(2023, 2, 27, 20, 35, 47, 37, DateTimeKind.Unspecified) },
-                    { 85, 9, new DateTime(2023, 2, 24, 23, 48, 56, 91, DateTimeKind.Unspecified), new DateTime(2023, 2, 25, 0, 48, 56, 91, DateTimeKind.Unspecified) },
-                    { 86, 2, new DateTime(2023, 3, 28, 10, 13, 42, 584, DateTimeKind.Unspecified), new DateTime(2023, 3, 28, 11, 13, 42, 584, DateTimeKind.Unspecified) },
-                    { 87, 6, new DateTime(2023, 2, 9, 23, 56, 10, 791, DateTimeKind.Unspecified), new DateTime(2023, 2, 10, 4, 56, 10, 791, DateTimeKind.Unspecified) },
-                    { 88, 8, new DateTime(2023, 5, 10, 15, 2, 36, 734, DateTimeKind.Unspecified), new DateTime(2023, 5, 10, 22, 2, 36, 734, DateTimeKind.Unspecified) },
-                    { 89, 8, new DateTime(2023, 5, 24, 0, 5, 22, 513, DateTimeKind.Unspecified), new DateTime(2023, 5, 24, 3, 5, 22, 513, DateTimeKind.Unspecified) },
-                    { 90, 5, new DateTime(2023, 3, 1, 5, 54, 26, 698, DateTimeKind.Unspecified), new DateTime(2023, 3, 1, 14, 54, 26, 698, DateTimeKind.Unspecified) },
-                    { 91, 5, new DateTime(2023, 5, 10, 15, 10, 14, 511, DateTimeKind.Unspecified), new DateTime(2023, 5, 10, 17, 10, 14, 511, DateTimeKind.Unspecified) },
-                    { 92, 7, new DateTime(2023, 3, 7, 6, 42, 22, 28, DateTimeKind.Unspecified), new DateTime(2023, 3, 7, 10, 42, 22, 28, DateTimeKind.Unspecified) },
-                    { 93, 8, new DateTime(2023, 3, 29, 22, 28, 9, 958, DateTimeKind.Unspecified), new DateTime(2023, 3, 30, 0, 28, 9, 958, DateTimeKind.Unspecified) },
-                    { 94, 2, new DateTime(2023, 3, 27, 20, 55, 29, 788, DateTimeKind.Unspecified), new DateTime(2023, 3, 27, 21, 55, 29, 788, DateTimeKind.Unspecified) },
-                    { 95, 7, new DateTime(2023, 2, 18, 12, 29, 37, 229, DateTimeKind.Unspecified), new DateTime(2023, 2, 18, 17, 29, 37, 229, DateTimeKind.Unspecified) },
-                    { 96, 4, new DateTime(2023, 4, 23, 15, 11, 12, 68, DateTimeKind.Unspecified), new DateTime(2023, 4, 23, 16, 11, 12, 68, DateTimeKind.Unspecified) },
-                    { 97, 1, new DateTime(2023, 4, 11, 3, 42, 18, 118, DateTimeKind.Unspecified), new DateTime(2023, 4, 11, 4, 42, 18, 118, DateTimeKind.Unspecified) },
-                    { 98, 6, new DateTime(2023, 5, 12, 17, 30, 33, 340, DateTimeKind.Unspecified), new DateTime(2023, 5, 12, 22, 30, 33, 340, DateTimeKind.Unspecified) },
-                    { 99, 9, new DateTime(2023, 5, 31, 6, 41, 44, 679, DateTimeKind.Unspecified), new DateTime(2023, 5, 31, 9, 41, 44, 679, DateTimeKind.Unspecified) },
-                    { 100, 8, new DateTime(2023, 5, 7, 15, 47, 35, 412, DateTimeKind.Unspecified), new DateTime(2023, 5, 7, 20, 47, 35, 412, DateTimeKind.Unspecified) },
-                    { 101, 9, new DateTime(2023, 2, 15, 7, 23, 23, 551, DateTimeKind.Unspecified), new DateTime(2023, 2, 15, 15, 23, 23, 551, DateTimeKind.Unspecified) }
+                    { 64, 6, new DateTime(2023, 3, 15, 0, 23, 58, 586, DateTimeKind.Unspecified), new DateTime(2023, 3, 15, 3, 23, 58, 586, DateTimeKind.Unspecified) },
+                    { 65, 2, new DateTime(2023, 2, 7, 0, 11, 53, 143, DateTimeKind.Unspecified), new DateTime(2023, 2, 7, 9, 11, 53, 143, DateTimeKind.Unspecified) },
+                    { 66, 6, new DateTime(2023, 3, 6, 7, 58, 52, 171, DateTimeKind.Unspecified), new DateTime(2023, 3, 6, 10, 58, 52, 171, DateTimeKind.Unspecified) },
+                    { 67, 3, new DateTime(2023, 5, 10, 16, 25, 48, 784, DateTimeKind.Unspecified), new DateTime(2023, 5, 11, 0, 25, 48, 784, DateTimeKind.Unspecified) },
+                    { 68, 5, new DateTime(2023, 2, 28, 12, 53, 37, 877, DateTimeKind.Unspecified), new DateTime(2023, 2, 28, 13, 53, 37, 877, DateTimeKind.Unspecified) },
+                    { 69, 3, new DateTime(2023, 5, 5, 7, 3, 26, 411, DateTimeKind.Unspecified), new DateTime(2023, 5, 5, 9, 3, 26, 411, DateTimeKind.Unspecified) },
+                    { 70, 1, new DateTime(2023, 3, 15, 14, 50, 46, 765, DateTimeKind.Unspecified), new DateTime(2023, 3, 15, 22, 50, 46, 765, DateTimeKind.Unspecified) },
+                    { 71, 7, new DateTime(2023, 4, 21, 10, 15, 54, 114, DateTimeKind.Unspecified), new DateTime(2023, 4, 21, 12, 15, 54, 114, DateTimeKind.Unspecified) },
+                    { 72, 3, new DateTime(2023, 5, 13, 13, 25, 31, 860, DateTimeKind.Unspecified), new DateTime(2023, 5, 13, 22, 25, 31, 860, DateTimeKind.Unspecified) },
+                    { 73, 6, new DateTime(2023, 2, 24, 20, 16, 5, 703, DateTimeKind.Unspecified), new DateTime(2023, 2, 25, 5, 16, 5, 703, DateTimeKind.Unspecified) },
+                    { 74, 9, new DateTime(2023, 5, 7, 4, 44, 48, 908, DateTimeKind.Unspecified), new DateTime(2023, 5, 7, 12, 44, 48, 908, DateTimeKind.Unspecified) },
+                    { 75, 6, new DateTime(2023, 3, 18, 5, 12, 21, 310, DateTimeKind.Unspecified), new DateTime(2023, 3, 18, 9, 12, 21, 310, DateTimeKind.Unspecified) },
+                    { 76, 7, new DateTime(2023, 4, 2, 22, 44, 31, 958, DateTimeKind.Unspecified), new DateTime(2023, 4, 3, 7, 44, 31, 958, DateTimeKind.Unspecified) },
+                    { 77, 8, new DateTime(2023, 2, 12, 14, 44, 40, 89, DateTimeKind.Unspecified), new DateTime(2023, 2, 12, 23, 44, 40, 89, DateTimeKind.Unspecified) },
+                    { 78, 5, new DateTime(2023, 4, 8, 14, 38, 31, 762, DateTimeKind.Unspecified), new DateTime(2023, 4, 8, 23, 38, 31, 762, DateTimeKind.Unspecified) },
+                    { 79, 9, new DateTime(2023, 5, 30, 11, 32, 41, 746, DateTimeKind.Unspecified), new DateTime(2023, 5, 30, 21, 32, 41, 746, DateTimeKind.Unspecified) },
+                    { 80, 1, new DateTime(2023, 3, 4, 16, 14, 1, 919, DateTimeKind.Unspecified), new DateTime(2023, 3, 5, 0, 14, 1, 919, DateTimeKind.Unspecified) },
+                    { 81, 4, new DateTime(2023, 4, 21, 21, 8, 25, 539, DateTimeKind.Unspecified), new DateTime(2023, 4, 22, 7, 8, 25, 539, DateTimeKind.Unspecified) },
+                    { 82, 7, new DateTime(2023, 2, 1, 12, 9, 11, 656, DateTimeKind.Unspecified), new DateTime(2023, 2, 1, 21, 9, 11, 656, DateTimeKind.Unspecified) },
+                    { 83, 3, new DateTime(2023, 3, 18, 17, 51, 44, 752, DateTimeKind.Unspecified), new DateTime(2023, 3, 18, 22, 51, 44, 752, DateTimeKind.Unspecified) },
+                    { 84, 4, new DateTime(2023, 2, 11, 5, 39, 36, 743, DateTimeKind.Unspecified), new DateTime(2023, 2, 11, 14, 39, 36, 743, DateTimeKind.Unspecified) },
+                    { 85, 6, new DateTime(2023, 3, 21, 13, 56, 8, 750, DateTimeKind.Unspecified), new DateTime(2023, 3, 21, 22, 56, 8, 750, DateTimeKind.Unspecified) },
+                    { 86, 9, new DateTime(2023, 3, 8, 22, 2, 33, 144, DateTimeKind.Unspecified), new DateTime(2023, 3, 9, 5, 2, 33, 144, DateTimeKind.Unspecified) },
+                    { 87, 8, new DateTime(2023, 4, 26, 22, 7, 50, 17, DateTimeKind.Unspecified), new DateTime(2023, 4, 27, 0, 7, 50, 17, DateTimeKind.Unspecified) },
+                    { 88, 5, new DateTime(2023, 5, 15, 9, 45, 45, 361, DateTimeKind.Unspecified), new DateTime(2023, 5, 15, 13, 45, 45, 361, DateTimeKind.Unspecified) },
+                    { 89, 8, new DateTime(2023, 3, 15, 10, 57, 12, 864, DateTimeKind.Unspecified), new DateTime(2023, 3, 15, 11, 57, 12, 864, DateTimeKind.Unspecified) },
+                    { 90, 5, new DateTime(2023, 5, 6, 20, 3, 40, 965, DateTimeKind.Unspecified), new DateTime(2023, 5, 7, 4, 3, 40, 965, DateTimeKind.Unspecified) },
+                    { 91, 2, new DateTime(2023, 2, 8, 19, 31, 6, 959, DateTimeKind.Unspecified), new DateTime(2023, 2, 9, 3, 31, 6, 959, DateTimeKind.Unspecified) },
+                    { 92, 9, new DateTime(2023, 3, 16, 11, 34, 33, 248, DateTimeKind.Unspecified), new DateTime(2023, 3, 16, 18, 34, 33, 248, DateTimeKind.Unspecified) },
+                    { 93, 8, new DateTime(2023, 5, 22, 15, 5, 16, 823, DateTimeKind.Unspecified), new DateTime(2023, 5, 22, 16, 5, 16, 823, DateTimeKind.Unspecified) },
+                    { 94, 4, new DateTime(2023, 4, 25, 18, 26, 13, 6, DateTimeKind.Unspecified), new DateTime(2023, 4, 25, 21, 26, 13, 6, DateTimeKind.Unspecified) },
+                    { 95, 5, new DateTime(2023, 3, 27, 8, 28, 45, 470, DateTimeKind.Unspecified), new DateTime(2023, 3, 27, 12, 28, 45, 470, DateTimeKind.Unspecified) },
+                    { 96, 8, new DateTime(2023, 4, 7, 15, 35, 8, 67, DateTimeKind.Unspecified), new DateTime(2023, 4, 7, 23, 35, 8, 67, DateTimeKind.Unspecified) },
+                    { 97, 9, new DateTime(2023, 3, 5, 23, 0, 40, 40, DateTimeKind.Unspecified), new DateTime(2023, 3, 6, 4, 0, 40, 40, DateTimeKind.Unspecified) },
+                    { 98, 2, new DateTime(2023, 4, 2, 6, 28, 10, 305, DateTimeKind.Unspecified), new DateTime(2023, 4, 2, 12, 28, 10, 305, DateTimeKind.Unspecified) },
+                    { 99, 3, new DateTime(2023, 5, 9, 22, 10, 38, 919, DateTimeKind.Unspecified), new DateTime(2023, 5, 10, 0, 10, 38, 919, DateTimeKind.Unspecified) },
+                    { 100, 9, new DateTime(2023, 3, 5, 16, 43, 39, 446, DateTimeKind.Unspecified), new DateTime(2023, 3, 5, 17, 43, 39, 446, DateTimeKind.Unspecified) },
+                    { 101, 6, new DateTime(2023, 2, 11, 4, 18, 30, 293, DateTimeKind.Unspecified), new DateTime(2023, 2, 11, 13, 18, 30, 293, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -756,10 +756,10 @@ namespace final_repo_test.Migrations
                 columns: new[] { "O_ID", "A_ID", "O_Cancle", "O_Date", "O_TotalPrice" },
                 values: new object[,]
                 {
-                    { 1, 1, false, new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9835), 2396m },
-                    { 2, 1, false, new DateTime(2023, 5, 10, 10, 31, 45, 395, DateTimeKind.Local).AddTicks(9836), 1198m },
-                    { 3, 3, false, new DateTime(2023, 5, 10, 10, 31, 45, 396, DateTimeKind.Local).AddTicks(577), 699m },
-                    { 4, 4, false, new DateTime(2023, 5, 10, 10, 31, 45, 396, DateTimeKind.Local).AddTicks(596), 699m }
+                    { 1, 1, false, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7154), 2396m },
+                    { 2, 1, false, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7155), 1198m },
+                    { 3, 2, false, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7892), 699m },
+                    { 4, 4, false, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7912), 699m }
                 });
 
             migrationBuilder.InsertData(
@@ -767,15 +767,15 @@ namespace final_repo_test.Migrations
                 columns: new[] { "O_ID", "A_ID", "O_Cancle", "O_Date", "O_TotalPrice" },
                 values: new object[,]
                 {
-                    { 5, 7, false, new DateTime(2023, 5, 10, 10, 31, 45, 396, DateTimeKind.Local).AddTicks(605), 699m },
-                    { 6, 3, false, new DateTime(2023, 5, 10, 10, 31, 45, 396, DateTimeKind.Local).AddTicks(613), 699m },
-                    { 7, 2, false, new DateTime(2023, 5, 10, 10, 31, 45, 396, DateTimeKind.Local).AddTicks(622), 699m },
-                    { 8, 5, false, new DateTime(2023, 5, 10, 10, 31, 45, 396, DateTimeKind.Local).AddTicks(674), 699m },
-                    { 9, 9, false, new DateTime(2023, 5, 10, 10, 31, 45, 396, DateTimeKind.Local).AddTicks(683), 699m },
-                    { 10, 9, false, new DateTime(2023, 5, 10, 10, 31, 45, 396, DateTimeKind.Local).AddTicks(692), 699m },
-                    { 11, 7, false, new DateTime(2023, 5, 10, 10, 31, 45, 396, DateTimeKind.Local).AddTicks(701), 699m },
-                    { 12, 6, false, new DateTime(2023, 5, 10, 10, 31, 45, 396, DateTimeKind.Local).AddTicks(715), 699m },
-                    { 13, 7, false, new DateTime(2023, 5, 10, 10, 31, 45, 396, DateTimeKind.Local).AddTicks(723), 699m }
+                    { 5, 2, false, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7943), 699m },
+                    { 6, 4, false, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7953), 699m },
+                    { 7, 7, false, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7962), 699m },
+                    { 8, 2, false, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7979), 699m },
+                    { 9, 1, false, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(7987), 699m },
+                    { 10, 4, false, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(8003), 699m },
+                    { 11, 4, false, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(8011), 699m },
+                    { 12, 2, false, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(8026), 699m },
+                    { 13, 4, false, new DateTime(2023, 5, 10, 14, 31, 8, 998, DateTimeKind.Local).AddTicks(8035), 699m }
                 });
 
             migrationBuilder.InsertData(
