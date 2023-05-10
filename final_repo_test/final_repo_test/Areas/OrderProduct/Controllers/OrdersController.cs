@@ -309,7 +309,8 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
             }
 
             var order = await _context.Orders
-                .Include(o => o.A_ID)
+                .Include(o => o.Account)
+                .Include(o => o.OrderDetails)
                 .FirstOrDefaultAsync(m => m.O_ID == id);
             if (order == null)
             {
