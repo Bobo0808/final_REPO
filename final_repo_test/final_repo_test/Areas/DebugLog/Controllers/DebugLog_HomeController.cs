@@ -1,5 +1,5 @@
 ﻿using final_repo_test.Interfaces;
-using final_repo_test.Models;
+using ClassLibrary.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace final_repo_test.Areas.DebugLogs.Controllers

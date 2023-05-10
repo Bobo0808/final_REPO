@@ -129,8 +129,8 @@ namespace final_repo_test.Data
 				b.Property(x => x.OS_ID).ValueGeneratedOnAdd();
 				b.Property(x => x.OS_Name);
 
-				b.Property(x => x.OS_FullfillmentRate);
-				b.Property(x => x.OS_PaymentMultiplier);
+				b.Property(x => x.OS_FullfillmentRate).HasColumnType("decimal(5,2)");
+				b.Property(x => x.OS_PaymentMultiplier).HasColumnType("decimal(5,2)");
 				b.HasKey(x => x.OS_ID);
 			});
 
@@ -161,7 +161,10 @@ namespace final_repo_test.Data
 				b.Property(x => x.A_ID);
 				b.Property(x => x.CA_ID);
 				b.Property(x => x.CT_ID);
-				b.Property(x => x.CO_Quantity);
+                b.Property(x => x.CO_Sum);
+                b.Property(x => x.CO_Date);
+                b.Property(x => x.CO_Cancel);
+                b.Property(x => x.CO_Quantity);
 
 				b.HasKey(x => x.CO_ID);
 				b.HasOne(x => x.CardType).WithMany(x => x.CardOrders).HasForeignKey(x => x.CT_ID);
@@ -563,7 +566,9 @@ namespace final_repo_test.Data
 							CT_ID = 1,
 							CA_ID = 1,
 							CO_Sum = 100,
-							CO_Quantity = 1,
+                            CO_Date = DateTime.Now,
+                            CO_Cancel = false,
+                            CO_Quantity = 1,
 						},
 						new CardOrder()
 						{
@@ -572,7 +577,9 @@ namespace final_repo_test.Data
 							CT_ID = 2,
 							CA_ID = 2,
 							CO_Sum = 400,
-							CO_Quantity = 2,
+                            CO_Date = DateTime.Now,
+                            CO_Cancel = false,
+                            CO_Quantity = 2,
 						});
 
 			modelBuilder.Entity<Card>().HasData(

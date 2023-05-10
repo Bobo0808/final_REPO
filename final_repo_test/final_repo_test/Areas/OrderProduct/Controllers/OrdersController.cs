@@ -17,7 +17,7 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
+        public IActionResult Index(int id = 1)
         {
             var orders = _context.Orders.ToList();
             //var finalContext = _context.Orders.Include(o => o.);
@@ -41,10 +41,115 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
             }
             ViewBag.OrderViewModels = orderViewModels;
             //return View(orderViewModels);
-            return View("~/Areas/OrderProduct/Views/Orders/index.cshtml");
+            //return View("~/Areas/OrderProduct/Views/Orders/index.cshtml");
             //return View();
-        }
 
+            var applicationDbContext = _context.Orders.Include(c => c.Account).Include(c => c.OrderDetails);
+            //ViewBag.Status = sbPageList.ToString();
+
+            // PageSize變數: 每頁幾筆
+            int PageSize = 5;
+
+            // RecordCount變數，符合條件的總共有幾筆記錄？
+            int RecordCount = _context.Orders.Count();
+
+            // NowPageCount 目前正在觀賞這一頁紀錄，目前正在?
+            int NowPageCount = 0;
+            if (id > 0)
+            {
+                NowPageCount = (int)((id - 1) * PageSize);
+            }
+            // orderby順排序 descending反排序
+            // skip從哪裡開始(忽略前面幾筆紀錄)
+            var ListAll = (from Order in _context.Orders
+                           orderby Order.O_ID
+                           select Order)
+                         .Skip(NowPageCount)
+                         .Take(PageSize);
+            //*** 查詢結果 ListAll 是一個 IQueryable ***
+            ////if (ListAll == null) // 查無資料時，無法正確運作。因為 IQueryable<T>會傳回一個「空集合」而不是「空（null）。所以這段if辨別不了」
+            if (ListAll.Any() == false)  // 可運作
+            ////if (ListAll.GetEnumerator().MoveNext() == false)   // 可運作
+            {   // 找不到任何記錄。 .NET Core改用 NotFound();
+                return NotFound();
+            }
+            else
+            {
+                #region
+                // Pages變數，「總共需要幾頁」才能把所有紀錄展示完畢？
+                int Pages;
+                if ((RecordCount % PageSize) > 0)
+                {   //-- %，除法，傳回餘數
+                    Pages = ((RecordCount / PageSize) + 1);   //-- ( / )除法。傳回整數。  如果無法整除，有餘數，則需要多出一頁來呈現。 
+                }
+                else
+                {
+                    Pages = (RecordCount / PageSize);   //-- ( /)除法。傳回整數
+                }
+
+
+
+                System.Text.StringBuilder sbPageList = new System.Text.StringBuilder();
+                if (Pages > 0)
+                {   //有傳來「頁數(p)」，而且頁數正確（大於零），出現<上一頁>、<下一頁>這些功能
+                    sbPageList.Append("<div align='center'>");
+
+                    //** 可以把檔名刪除，只留下 ?P=  即可！一樣會運作，但IE 11會出現 JavaScript錯誤。**
+                    //** 抓到目前網頁的「檔名」。 System.IO.Path.GetFileName(Request.PhysicalPath) **
+                    if (id > 1)
+                    {   //======== 分頁功能（上一頁 / 下一頁）=========start===                
+                        sbPageList.Append("<a href='?id=" + (id - 1) + "'>[<<<上一頁]</a>");
+                    }
+                    sbPageList.Append("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href='https://localhost:7041/OrderProduct/Orders'>[首頁]</a></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+                    if (id < Pages)
+                    {
+                        sbPageList.Append("<a href='?id=" + (id + 1) + "'>[下一頁>>>]</a>");
+                    }  //======== 分頁功能（上一頁 / 下一頁）=========end====
+
+
+                    //==========================================================
+                    //========= MIS2000 Lab.自製的「每十頁」一間隔，分頁功能=========start====
+                    sbPageList.Append("<hr width='97%' size=1>");
+
+                    int block_page = 0;
+                    block_page = id / 10;   //--只取除法的整數成果（商），若有餘數也不去管它。
+
+                    if (block_page > 0)
+                    {
+                        sbPageList.Append("<a href='?id=" + (((block_page - 1) * 10) + 9) + "'> [前十頁<<]  </a>&nbsp;&nbsp;");
+                    }
+
+                    for (int K = 0; K <= 10; K++)
+                    {
+                        if ((block_page * 10 + K) <= Pages)
+                        {   //--- Pages 資料的總頁數。共需「幾頁」來呈現所有資料？
+                            if (((block_page * 10) + K) == id)
+                            {   //--- id 就是「目前在第幾頁」
+                                sbPageList.Append("[<b>" + id + "</b>]" + "&nbsp;&nbsp;&nbsp;");
+                            }
+                            else
+                            {
+                                if (((block_page * 10) + K) != 0)
+                                {
+                                    sbPageList.Append("<a href='?id=" + (block_page * 10 + K) + "'>" + (block_page * 10 + K) + "</a>");
+                                    sbPageList.Append("&nbsp;&nbsp;&nbsp;");
+                                }
+                            }
+                        }
+                    }  //for迴圈 end
+
+                    if ((block_page < (Pages / 10)) & (Pages >= (((block_page + 1) * 10) + 1)))
+                    {
+                        sbPageList.Append("&nbsp;&nbsp;<a href='?id=" + ((block_page + 1) * 10 + 1) + "'>  [>>後十頁]  </a>");
+                    }
+                    sbPageList.Append("</div>");
+                }
+                #endregion
+
+                ViewBag.PageList = sbPageList.ToString();
+                return View(ListAll.ToList());
+            }
+        }
         // GET: Orders/Details/5
         public async Task<IActionResult> Details(int? id)
         {

@@ -17,6 +17,10 @@ namespace final_repo_test.Models
         public int CO_Quantity { get; set; } = default!;
         [Display(Name = "訂單價格")]
         public int CO_Sum { get; set; } = default!;
-        
+        [Display(Name = "取消訂單")]
+        public bool CO_Cancel { get; set; } = default!;
+        [Display(Name = "訂單日期")]
+        public int CO_Date { get; set; } = default!;
+
     }
 }
