@@ -8,11 +8,16 @@ let messageBuffer = '';
 let mapData = {};
 let isQueue = false;
 
-
-
 // const peer = new RTCPeerConnection(server); // Webrtc配對用
+const ice = {
+    "iceServers": [
+        { "url": "stun:stun.l.google.com:19302" },
+    ]
+};
 let makingOffer = false;
-let peerChanel;
+let peerChanel = new RTCPeerConnection(ice);
+
+
 
 // pc.onnegotiationneeded = async () => {
 //     try {
@@ -253,31 +258,19 @@ function isSolid(x, y) {
 
 async function sendQueueRequest() {
     if (!isQueue) {
-        if (playerRef.gender == 2) {
-            peerChanel = peer.createDataChannel("myChanel");
-            let localSDP;
-            const offer = await peer.createOffer();
-            await peer.setLocalDescription(offer)
-            localSDP = peer.localDescription
+        try {
+            makingOffer = true;
+            await peerChanel.setLocalDescription();
             let data = {
                 "type": "Queue",
-                "data": localSDP
+                "data": peerChanel.localDescription
             };
-            console.log(JSON.stringify(data))
-            vWebSocket.send(JSON.stringify(data));
-
-        }
-        else if (playerRef.gender == 1) {
-            let localSDP;
-            const answer = await peer.createAnswer();
-            await peer.setLocalDescription(answer)
-            localSDP = peer.localDescription
-            let data = {
-                "type": "Queue",
-                "data": localSDP
-            };
-            console.log(JSON.stringify(data))
-            vWebSocket.send(JSON.stringify(data));
+            console.log(peerChanel.localDescription);
+            vWebSocket.send(data);
+        } catch (err) {
+            console.error(err);
+        } finally {
+            makingOffer = false;
         }
     }
     else {
@@ -297,3 +290,11 @@ function MatchPlayer(data) {
         alert("match successful")
     }
 }
+
+peerChanel.onicecandidate = ({ candidate }) => {
+    let data = {
+        "type": "ice",
+        "data": candidate
+    }
+    vWebSocket.send({ data })
+};
