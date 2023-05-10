@@ -27,16 +27,12 @@
                     <h2>Login</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input type="email"  required asp-for="E_Email">
-                        <label for="">Email or UserName</label>
-                        @if (ViewData["ValidateMessage"] != null)
-                        {
-                            <label>@ViewData["ValidateMessage"]</label>
-                        }
+                        <input type="email" value="user@gmail.com"  required asp-for="E_Email">
+                        <label for="">Email</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password"  required asp-for="E_Pwd">
+                        <input type="password" value="1234" required asp-for="E_Pwd">
                         <label for="">Password</label>
                     </div>
                     <div class="forget">
@@ -46,7 +42,10 @@
                     <div class="register">
                         <p>Don't have a account <a href="#">Register</a></p>
                     </div>
-                  
+                    @if (ViewData["ValidateMessage"] != null)
+                    {
+                        <label>@ViewData["ValidateMessage"]</label>
+                    }
                 </form>
             </div>
         </div>

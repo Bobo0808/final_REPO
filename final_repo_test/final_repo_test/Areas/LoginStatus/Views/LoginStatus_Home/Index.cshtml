@@ -71,10 +71,6 @@
         
 
 
-   @* <div class="row chartContainer">
-        <canvas id="mainChart" class="border bg-light">
-        </canvas>
-    </div>*@
 
 
 </div>
@@ -90,6 +86,7 @@
         const time = [];
         const ad = [];
         const product = [];
+        const sales = []
         var tmp = @Html.Raw(Json.Serialize(Model));
         console.log(tmp);
         for(var i=0;i<tmp.mainx.length;i++){
@@ -107,7 +104,12 @@
             product.push({ x: tmp.productx[i], y: tmp.producty[i] });
         }
 
+        for (var i = 0; i < tmp.salesx.length; i++) {
+            sales.push({ x: tmp.salesx[i], y: tmp.salesy[i] });
+        }
+
         document.getElementById(tmp.unit).style.backgroundColor = "#819695";
+        document.getElementById(tmp.unit).style.borderColor = "#819695";
         const mainData = {
             datasets: [{
                 label: '上線人數',
@@ -130,7 +132,8 @@
                     'rgba(255, 159, 64, 1)',
                     'rgba(0, 0, 0, 1)'
                 ],
-                borderWidth: 1
+                borderWidth: 1,
+                        tension: 0.3
             }]
         };
         var headY = time.map(e=>moment(e.x,'HH:mm'));
@@ -140,7 +143,10 @@
             datasets: [{
                 data: headX,
                 label:"累計上線次數",
-                fill:true
+                fill:false,
+                backgroundColor: 'rgb(86, 227, 227)',
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.3
             }]
         };
         const mainConfig = {
@@ -152,7 +158,7 @@
                         type: 'time',
                         time: {
                             unit: tmp.unit,
-                            tooltipFormat: 'MMM DD'
+                            tooltipFormat: 'MMM YYYY'
                         }
                     },
                     y: {
@@ -194,9 +200,38 @@
         const productData = {
             labels: productLabel,
             datasets: [{
+                label: '消費點數',
                 data: productDatasets,
             }]
         };
+
+        var salesLabel = sales.map(e => e.x);
+        var salesDatasets = sales.map(e => e.y);
+        const salesData = {
+            labels: salesLabel,
+            datasets: [{
+                label: '營業額',
+                data: salesDatasets,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 205, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                ],
+                borderColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 159, 64)',
+                    'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(54, 162, 235)',
+                    'rgb(153, 102, 255)',
+                ],
+                borderWidth: 1
+            }]
+        };
+
 
         const headConfig = {
             type: 'line',
@@ -251,6 +286,15 @@
             }
         };
 
+        const salesConfig = {
+            type: 'bar',
+            data: salesData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        };
+
         // render init block
         const myHeadChart = new Chart(
             document.getElementById('headChart'),
@@ -270,6 +314,11 @@
         const myPoductChart = new Chart(
             document.getElementById('productChart'),
             productConfig
+        );
+
+        const mySalesChart = new Chart(
+            document.getElementById('salesChart'),
+            salesConfig
         );
 
     </script>

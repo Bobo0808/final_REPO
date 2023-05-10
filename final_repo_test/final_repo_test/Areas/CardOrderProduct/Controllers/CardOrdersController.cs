@@ -68,7 +68,7 @@ namespace final_repo_test.Areas.CardOrderProduct.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CO_ID,A_ID,CA_ID,CT_ID,CO_Sum,CO_Quantity")] CardOrder cardOrder)
+        public async Task<IActionResult> Create([Bind("CO_ID,A_ID,CA_ID,CT_ID,CO_Cancel,CO_Date,CO_Sum,CO_Quantity")] CardOrder cardOrder)
         {
             //if (ModelState.IsValid)
             // {
@@ -106,15 +106,15 @@ namespace final_repo_test.Areas.CardOrderProduct.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CO_ID,A_ID,CA_ID,CT_ID,CO_Sum,CO_Quantity")] CardOrder cardOrder)
+        public async Task<IActionResult> Edit(int id, [Bind("CO_ID,A_ID,CA_ID,CT_ID,CO_Cancel,CO_Date,CO_Sum,CO_Quantity")] CardOrder cardOrder)
         {
             if (id != cardOrder.CO_ID)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
                 try
                 {
                     _context.Update(cardOrder);
@@ -132,11 +132,11 @@ namespace final_repo_test.Areas.CardOrderProduct.Controllers
                     }
                 }
                 return RedirectToAction(nameof(Index));
-            }
+            //}
             ViewData["A_ID"] = new SelectList(_context.Accounts, "A_ID", "A_Name", cardOrder.A_ID);
             ViewData["CA_ID"] = new SelectList(_context.Cards, "CA_ID", "CA_Name", cardOrder.CA_ID);
             ViewData["CT_ID"] = new SelectList(_context.CardTypes, "CT_ID", "CT_Name", cardOrder.CT_ID);
-            return View(cardOrder);
+            //return View(cardOrder);
         }
 
         // GET: CardOrderProduct/CardOrders/Delete/5

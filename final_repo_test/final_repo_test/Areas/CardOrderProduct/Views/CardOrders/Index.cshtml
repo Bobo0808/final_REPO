@@ -34,6 +34,12 @@
                                     @Html.DisplayNameFor(model => model.CT_ID)
                                 </th>
                                 <th>
+                                    @Html.DisplayNameFor(model => model.CO_Cancel)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CO_Date)
+                                </th>
+                                <th>
                                     @Html.DisplayNameFor(model => model.CO_Quantity)
                                 </th>
                                 <th>
@@ -58,6 +64,19 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.CardType.CT_Name)
                                 </td>
+                                    <td>
+                                        <div id="test" class="badge rounded-pill p-2 text-uppercase px-3 @if (item.CO_Cancel){
+                                    <text>bg-danger</text>
+}else{
+                                    <text>bg-success</text>
+}">
+                                            <i class='bx bxs-circle me-1'></i>@(item.CO_Cancel ? "訂單取消" : "訂單完成")
+                                        </div>
+                                        @*@Html.DisplayFor(modelItem => item.CO_Cancel)*@
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CO_Date)
+                                    </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.CO_Quantity)
                                 </td>
@@ -77,6 +96,7 @@
                         </tbody>
                     </table>
                 </div>
+                @Html.Raw(ViewBag.PageList)
             </div>
         </div>
     </div>
