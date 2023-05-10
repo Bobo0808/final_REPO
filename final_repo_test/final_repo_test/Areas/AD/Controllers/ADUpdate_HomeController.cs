@@ -5,6 +5,10 @@ using final_repo_test.ViewModels.AD.ADUpdate;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Xml.Linq;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace final_repo_test.Areas.AD.Controllers
 {
@@ -12,10 +16,12 @@ namespace final_repo_test.Areas.AD.Controllers
     public class ADUpdate_HomeController : Controller
     {
         private readonly ApplicationDbContext _dbContext;
+        private readonly IWebHostEnvironment _env;
 
-        public ADUpdate_HomeController(ApplicationDbContext dbContext)
+        public ADUpdate_HomeController(ApplicationDbContext dbContext, IWebHostEnvironment env)
         {
             _dbContext = dbContext;
+            _env = env;
         }
 
         public IActionResult Index()
@@ -32,7 +38,6 @@ namespace final_repo_test.Areas.AD.Controllers
             return View(viewModel);
         }
 
-        [HttpPost]
         //public IActionResult UpdateCase(CaseTable CaseTablesList)
         //{
         //    if(ModelState.IsValid)
@@ -44,6 +49,7 @@ namespace final_repo_test.Areas.AD.Controllers
         //    return View(CaseTablesList);
         //}
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult UpdateCase(int id, string caseName, int casePrice)
         {
             var caseTable = _dbContext.CaseTables.FirstOrDefault(x => x.Case_ID == id);
@@ -59,6 +65,9 @@ namespace final_repo_test.Areas.AD.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Route("AD/Case/{id}")]
         public async Task<IActionResult> GetCase(int id)
         {
             var model = new ADUpdateViewModel
@@ -66,17 +75,24 @@ namespace final_repo_test.Areas.AD.Controllers
                 CaseTablesList = await _dbContext.CaseTables.ToListAsync(),
                 SelectedCase = _dbContext.CaseTables.FirstOrDefault(x => x.Case_ID == id),
                 PartnersList = await _dbContext.Partners.ToListAsync(),
+                AdsList = await _dbContext.Ads.ToListAsync(),
+                OrderStatusesList = await _dbContext.Ads_OrderStatuses.ToListAsync(),
+                ADAreaList = await _dbContext.Map_ADAreas.ToListAsync(),
             };
 
             return View("Index", model);
         }
 
-        public IActionResult DeleteCase(int id)
+        public async Task<IActionResult> DeleteCase(int id)
         {
             var model = new ADUpdateViewModel
             {
-                CaseTablesList = _dbContext.CaseTables.ToList(),
-                SelectedCase = _dbContext.CaseTables.FirstOrDefault(x => x.Case_ID == id)
+                CaseTablesList = await _dbContext.CaseTables.ToListAsync(),
+                SelectedCase = _dbContext.CaseTables.FirstOrDefault(x => x.Case_ID == id),
+                PartnersList = await _dbContext.Partners.ToListAsync(),
+                AdsList = await _dbContext.Ads.ToListAsync(),
+                OrderStatusesList = await _dbContext.Ads_OrderStatuses.ToListAsync(),
+                ADAreaList = await _dbContext.Map_ADAreas.ToListAsync(),
             };
             var CaseTable = _dbContext.CaseTables.Find(id);
             if (CaseTable == null)
@@ -88,12 +104,10 @@ namespace final_repo_test.Areas.AD.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult AddCase(string caseName, int? casePrice)
         {
-            if (string.IsNullOrEmpty(caseName) || casePrice == null)
-            {
-            }
-
             var caseTable = new CaseTable()
             {
                 Case_Name = caseName,
@@ -105,6 +119,49 @@ namespace final_repo_test.Areas.AD.Controllers
             _dbContext.SaveChanges();
 
             return RedirectToAction("Index");
+        }
+
+        //[HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AddAD(string P_Name, string Case_Name, DateTime Ad_StartTime, DateTime Ad_EndTime, IFormFile ADImg, string Ad_TargetURL, string Ad_Description, DateTime Ad_PaymentDueDate)
+        {
+            var Partner = _dbContext.Partners.FirstOrDefault(x => x.P_Name == P_Name);
+            var CaseName = _dbContext.CaseTables.FirstOrDefault(x => x.Case_Name == Case_Name);
+
+            var ads = new Ads()
+            {
+                PartnerID = Partner.P_ID,
+                CaseID = CaseName.Case_ID,
+                Ad_StartTime = Ad_StartTime,
+                Ad_EndTime = Ad_EndTime,
+                Ad_TargetURL = Ad_TargetURL,
+                Ad_Description = Ad_Description,
+                Ad_PaymentDueDate = Ad_PaymentDueDate,
+                OS_ID = 1,
+            };
+            if (ADImg != null)
+            {
+                string ADImgName = UploadFile(ADImg);
+                ads.Ad_ImageURL = ADImgName;
+            }
+            else
+            {
+                ads.Ad_ImageURL = "no_img.png";
+            }
+            _dbContext.Ads.Add(ads);
+            _dbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public string UploadFile(IFormFile ADImg)
+        {
+            string ImgFilePath = _env.ContentRootPath + @"wwwroot\img\AD\";
+            var ImgFileName = ADImg.FileName;
+            using (var Stream = System.IO.File.Create(ImgFilePath + ImgFileName))
+            {
+                ADImg.CopyTo(Stream);
+            }
+            return ImgFileName;
         }
     }
 
