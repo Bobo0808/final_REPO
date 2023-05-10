@@ -1,14 +1,14 @@
-﻿using final_repo_test.Data;
+﻿using ClassLibrary.Data;
 using final_repo_test.Interfaces;
-using final_repo_test.Models;
+using ClassLibrary.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace final_repo_test.Repositroy
 {
     public class DebugLogRepository:IDebugLogRepository
     {
-        private readonly ApplicationDbContext _context;
-        public DebugLogRepository(ApplicationDbContext context)
+        private readonly ChickenDbContext _context;
+        public DebugLogRepository(ChickenDbContext context)
         {
             _context = context;
         }
@@ -20,20 +20,21 @@ namespace final_repo_test.Repositroy
             {
                 _context.DebugLogs.Remove(d);
             }
-            return temp;
+            return (IEnumerable<DebugLog>)temp;
         }
 
         public async Task<DebugLog> Edit(int id)
         {
-            if (_context.DebugLogs.First(s => s.D_ID == id).D_isSolved==true)
+            var temp = _context.DebugLogs.First(s => s.D_ID == id);
+            if (temp.D_isSolved==true)
             {
-                _context.DebugLogs.First(s => s.D_ID == id).D_isSolved = false;
+                temp.D_isSolved = false;
             }
             else
             {
-                _context.DebugLogs.First(s => s.D_ID == id).D_isSolved= true;
+                temp.D_isSolved= true;
             }
-            return await _context.DebugLogs.FirstAsync(s => s.D_ID == id);
+            return temp;
         }
 
         public async Task<IEnumerable<DebugLog>> GetAll()

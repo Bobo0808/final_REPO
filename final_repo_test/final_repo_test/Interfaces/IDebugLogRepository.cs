@@ -1,4 +1,4 @@
-﻿using final_repo_test.Models;
+﻿using ClassLibrary.Models;
 
 namespace final_repo_test.Interfaces
 {

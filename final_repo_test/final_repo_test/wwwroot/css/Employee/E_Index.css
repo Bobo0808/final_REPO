@@ -6,12 +6,18 @@ body {
 /* 容器的樣式 */
 .container {
     overflow: auto;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: 60%;
+    max-width: 60%;
     margin: 0 auto;
     padding: 20px;
+    background-color: white;
+    display: inline;
+}
 
-
+.btn {
+    float: right;
+    margin-left: 10px;
+    margin:1%;
 }
 
 /* 標題的樣式 */
@@ -20,7 +26,7 @@ body {
     justify-content: space-between;
     align-items: center;
     color: black;
-    margin-bottom: 20px;
+    /*margin-bottom: %;*/
 }
 
 .title h2 {
@@ -81,3 +87,51 @@ table th {
 tr:hover {
     background-color: #CDC9C9;
 }
+
+.E_Work {
+color:aquamarine;
+}
+
+.my-table td span {
+    color: red;
+}
+
+/*.li {
+    color: black;
+    background-color: white;
+    float: left;
+    margin-right: 20px;
+    margin-top: 20px;*/  /*將li向下移動20個像素 */
+    /*margin:1px;
+    padding:1px;
+}
+
+ul.li {
+    width: 200px;
+    height: 100px;
+}
+
+ul {
+    margin-top: 20px;  將ul向下移動20個像素 
+}
+
+.li {
+    display: inline;
+}
+
+
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.left-content {
+    margin-right: 20px;*/ /* 左边内容距离右边内容的距离 */
+/*}
+
+.li {
+    display: inline-block;*/ /* 将 <li> 元素设置为内联块级元素 */
+    /*margin: 0;*/ /* 去掉默认的外边距 */
+    /*padding: 0;*/ /* 去掉默认的内边距 */
+/*}*/

@@ -9,14 +9,17 @@
 @*    <link href="~/css/AccountStyle/addstyle.css" rel="stylesheet" />*@
 }
 
+<div class="title">
+    <h2>員工資料表</h2>
+</div>
+
+<a asp-area="Employee" asp-controller="Employees" asp-action="Create" class="btn"><i class="fa fa-solid fa-plus"></i>新增</a>
+
 <div class="container">
-    <div class="content">
+    @*<div class="content">*@
         <div class="content-2">
-            <div class="acount">
-                <div class="title">
-                    <h2>員工資料表</h2>
-                </div>
-                <a asp-area="Employee" asp-controller="Employees" asp-action="Create" class="btn"><i class="fa fa-solid fa-plus"></i>新增</a>
+            @*<div class="acount">*@
+                
                 <table>
                     <tr>
                         <th>姓名</th>
@@ -53,23 +56,33 @@
                             
                                 @Html.DisplayFor(modelItem => item.E_Title)
                         </td>
+
+                        @*<td>
+                        @Html.DisplayFor(modelItem => item.E_Work)
+                        </td>*@
+
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.E_Work)*@
+                        @*@Html.CheckBoxFor(modelItem => item.E_Work, new { style = "transform: scale(2);" })*@
+                        @*@Html.CheckBoxFor(modelItem => item.E_Work, new { @disabled = "disabled" })*@
+                        @*@Html.CheckBoxFor(modelItem => item.E_Work, new { disabled = true, style = "transform: scale(2);" })*@
+                        @Html.CheckBoxFor(modelItem => item.E_Work, new { disabled = true, style = "transform: scale(1.5); background-color: red;" })
+                    </td>
+
                         <td>
-                            @Html.DisplayFor(modelItem => item.E_Work)
+                             <a asp-action="Edit" asp-route-id="@item.E_ID" class="fa-regular fa-pen-to-square" style="color:goldenrod"></a>
                         </td>
                         <td>
-                             <a asp-action="Edit" asp-route-id="@item.E_ID" class="fa-regular fa-pen-to-square" style="color:bisque"></a>
+                                <a asp-action="Details" asp-route-id="@item.E_ID"><i class="fa fa-solid fa-eye" style="color:darkgreen"></i></a>
                         </td>
                         <td>
-                                <a asp-action="Details" asp-route-id="@item.E_ID"><i class="fa fa-solid fa-eye" style="color:chartreuse"></i></a>
-                        </td>
-                        <td>
-                                <a asp-action="Delete" asp-route-id="@item.E_ID" class="fa-solid fa-trash-can" style="color:red"></a>
+                                <a asp-action="Delete" asp-route-id="@item.E_ID" class="fa-solid fa-trash-can" style="color:brown"></a>
                         </td>
                     </tr>
                     }
 
                 </table>
-            </div>
+            @*</div>*@
         </div>
-    </div>
+    @*</div>*@
 </div>

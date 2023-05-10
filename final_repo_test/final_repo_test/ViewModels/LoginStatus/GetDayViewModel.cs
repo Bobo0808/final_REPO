@@ -10,7 +10,12 @@
         public int Average { get; set; } = default!;
         public int UserCount { get; set; } = default!;
 
-        public List<int> ADx { get; set; } = new List<int>();
+        public List<string> ADx { get; set; } = new List<string>();
         public List<int> ADy { get; set; } = new List<int>();
+
+        public List<string> Productx { get; set; } = new List<string>();
+        public List<int> Producty { get; set; } = new List<int>();
+        public List<DateTime> Salesx { get; set; } = new List<DateTime>();
+        public List<int> Salesy { get; set; } = new List<int>();
     }
 }
