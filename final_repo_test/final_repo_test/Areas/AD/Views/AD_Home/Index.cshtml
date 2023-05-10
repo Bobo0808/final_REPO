@@ -7,10 +7,21 @@
 }
 
 <section class="table_header">
-	<button class="btn_title custom-btn btn-par"><span>廠商管理</span></button>
-
-	<button class="btn_title custom-btn btn-AD"><span>廣告管理</span></button>
-
+	<button class="btn_title custom-btn btn-par" style="border:1px solid white ;background-image: linear-gradient(to right top, #040b2e, #1a264d, #32416e, #4b5e91, #647db5, #677db6, #6b7db6, #6e7db7, #5c5f94, #484271, #352851, #210f32);">
+		<span>
+			<a asp-area="AD" asp-controller="AD_Home" asp-action="Index" style="color:white">
+				廠商管理
+			</a>
+		</span>
+	</button>
+	
+	<button class="btn_title custom-btn btn-AD">
+		<span>
+			<a asp-area="AD" asp-controller="ADDetail_Home" asp-action="Index" style="color:white">
+				廣告管理
+			</a>
+		</span>
+	</button>
 
 </section>
 <section class="tables">
