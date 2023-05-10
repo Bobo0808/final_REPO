@@ -1,35 +1,41 @@
-/* 整個頁面的背景色 */
-body {
+/* 整個頁面的背景色  員工 */
+/*body {
     background-color: #f5f5f5;
-}
+}*/
 
 /* 容器的樣式 */
-.container {
+/*.container {
     overflow: auto;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: 60%;
+    max-width: 60%;
     margin: 0 auto;
     padding: 20px;
-
-
+    background-color: white;
+    display: inline;
 }
 
+.btn {
+    float: right;
+    margin-left: 10px;
+    margin:1%;
+}*/
+
 /* 標題的樣式 */
-.title {
+/*.title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: black;
-    margin-bottom: 20px;
-}
+    color: black;*/
+    /*margin-bottom: %;*/
+/*}
 
 .title h2 {
     font-size: 28px;
     margin: 0;
-}
+}*/
 
 /* 按鈕的樣式 */
-.btn {
+/*.btn {
     display: inline-block;
     background-color: #BBFFFF;
     color: black;
@@ -41,10 +47,10 @@ body {
 
 .btn:hover {
     background-color: #FF7256;
-}
+}*/
 
 /* 表格的樣式 */
-table {
+/*table {
     border-collapse: collapse;
     width: 140%;
 }
@@ -61,7 +67,146 @@ table th {
     background-color: #CDC9C9;
     color: black;
     font-weight: normal;
+}*/
+
+/* 頁面2的樣式 */
+/*.content-2 {
+    display: flex;
+    justify-content: space-between;
 }
+
+.acount {
+    width: 70%;
+}
+
+.recent-payment {
+    width: 30%;
+}*/
+
+/* 單行列表樣式 */
+/*tr:hover {
+    background-color: #CDC9C9;
+}
+
+.E_Work {
+color:aquamarine;
+}
+
+.my-table td span {
+    color: red;
+}*/
+
+/*.li {
+    color: black;
+    background-color: white;
+    float: left;
+    margin-right: 20px;
+    margin-top: 20px;*/  /*將li向下移動20個像素 */
+    /*margin:1px;
+    padding:1px;
+}
+
+ul.li {
+    width: 200px;
+    height: 100px;
+}
+
+ul {
+    margin-top: 20px;  將ul向下移動20個像素 
+}
+
+.li {
+    display: inline;
+}
+
+
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.left-content {
+    margin-right: 20px;*/ /* 左边内容距离右边内容的距离 */
+/*}
+
+.li {
+    display: inline-block;*/ /* 将 <li> 元素设置为内联块级元素 */
+    /*margin: 0;*/ /* 去掉默认的外边距 */
+    /*padding: 0;*/ /* 去掉默认的内边距 */
+/*}*/
+
+
+
+
+/* 整個頁面的背景色 */
+body {
+    background-color: #f5f5f5;
+}
+
+/* 容器的樣式 */
+.container {
+    overflow: auto;
+    max-height: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    /*display: inline;*/
+}
+
+/* 標題的樣式 */
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    margin-bottom: 8px;
+}
+
+    .title h1 {
+        font-size: 38px;
+        margin: 0;
+    }
+
+/* 按鈕的樣式 */
+.btn {
+    display: inline-block;
+    background-color: #BBFFFF;
+    color: black;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.btn {
+    float: right;
+    margin-left: 10px;
+    margin: 0.5%;
+}
+    .btn:hover {
+        background-color: #FF7256;
+    }
+
+/* 表格的樣式 */
+table {
+    border-collapse: collapse;
+    width: 140%;
+}
+
+    table th,
+    table td {
+        padding: 8px;
+        text-align: center;
+        color: black;
+        border-bottom: 1px solid #8B8989;
+    }
+
+    table th {
+        background-color: #CDC9C9;
+        color: black;
+        font-weight: normal;
+    }
 
 /* 頁面2的樣式 */
 .content-2 {

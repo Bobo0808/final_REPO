@@ -4,10 +4,34 @@
     Layout = "_Layout";
 }
 @section Styles{
-    <link href="~/css/employee/e_index.css" rel="stylesheet" />
+    @*<link href="~/css/employee/E_Index.css" rel="stylesheet" />*@
+    <link href="~/css/compliance/E_Index.css" rel="stylesheet" />
 }
-<h1 class="char">廣告統計圖</h1>
-<div class="contents" id="container" style="width: 850px; height: 600px;"></div>
+<h1 class="title" style="color:black">廣告統計圖</h1>
+@*<ul class="li">
+    <li type="disc" class="li">第一季：01月-03月</li>
+    <li type="disc" class="li">第二季：04月-06月</li>
+    <li type="disc" class="li">第三季：07月-09月</li>
+    <li type="disc" class="li">第四季：10月-12月</li>
+</ul>*@
+
+<div class="wrapper">
+    <div class="left-content">
+        <ul class="season" style="margin:0">
+            <li  class="li" style="color:black">第一季：01月-03月</li>
+            <li  class="li" style="color:black">第二季：04月-06月</li>
+            <li  class="li" style="color:black">第三季：07月-09月</li>
+            <li  class="li" style="color:black">第四季：10月-12月</li>
+        </ul>
+    </div>
+    <div class="right-content">
+        <!-- 这里放右边的内容 -->
+        <div>
+            <div class="contents" id="container" style="width: 1200px; height: 600px;"></div>
+        </div>
+    </div>
+</div>
+
 
 @section Script{
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.2/echarts.common.min.js"
@@ -33,31 +57,84 @@
                         //console.log(count);
                         //產生報表
                         var mychart = echarts.init(document.getElementById("container"));
+                        //var option = {
+                        //    tooltip: {
+                        //        show: true
+                        //    },
+                        //    legend: {
+                        //        data: ['count']
+                        //    },
+                        //    xAxis: [{
+                        //        data: expertise,
+                        //       // data: ["一", "二", "三"],
+                        //        axisLabel: {
+                        //            interval: 0
+                        //        }
+                        //    }],
+                        //    yAxis: [{
+                        //        type: 'value'
+                        //    }],
+                        //    series: [{
+                        //        "name": "count",
+                        //        "type": "line",
+                        //       "data": count
+                        //        //data: [120, 200, 150],
+
+                        //    }]
+                        //};
+
                         var option = {
+                            title: {
+                                text: '2022年廣告訂單趨勢分析',
+                                textStyle: {
+                                    fontSize: 24, // 設置字體大小為 24
+                                    textAlign: 'center',
+                                }
+                            },
                             tooltip: {
-                                show: true
+                                trigger: 'axis'
                             },
                             legend: {
                                 data: ['count']
                             },
-                            xAxis: [{
-                                data: expertise,
-                               // data: ["一", "二", "三"],
-                                axisLabel: {
-                                    interval: 0
+                            grid: {
+                                left: '3%',
+                                right: '4%',
+                                bottom: '3%',
+                                containLabel: true
+                            },
+                            toolbox: {
+                                feature: {
+                                    saveAsImage: {}
                                 }
-                            }],
-                            yAxis: [{
-                                type: 'value'
-                            }],
-                            series: [{
-                                "name": "count",
-                                "type": "line",
-                               "data": count
-                                //data: [120, 200, 150],
-
-                            }]
+                            },
+                            xAxis: {
+                                type: 'category',
+                                boundaryGap: false,
+                                data: expertise,
+                                axisLabel: {
+                                    fontSize: 18 // 設置 x 軸字體大小為 16
+                                }
+                            },
+                            yAxis: {
+                                type: 'value',
+                                axisLabel: {
+                                    fontSize: 18 // 設置 y 軸字體大小為 16
+                                }
+                            },
+                            series: [
+                                {
+                                    name: "數量",
+                                    type: 'line',
+                                    stack: 'Total',
+                                    data: count,
+                                    itemStyle: {
+                                        color: 'red' // 設置折線圖顏色為紅色
+                                    }
+                                },
+                            ]
                         };
+
                         mychart.setOption(option);
 
                     }

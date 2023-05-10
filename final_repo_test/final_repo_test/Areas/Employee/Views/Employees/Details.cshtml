@@ -7,8 +7,8 @@
 @section Styles{
     <link href="~/css/employee/detail.css" rel="stylesheet" />
 }
+<h1 style="color:black">員工詳細資料</h1>
 <div class="container">
-    <h1>員工詳細資料</h1>
     <div class="row row-cols-2">
         <div class="col">
             <dl>
@@ -31,7 +31,7 @@
                     職位：@Html.DisplayFor(model => model.E_Title)
                 </dt>
                 <dt>
-                    <a class="btn btn-outline-primary btn-lg" role="button" asp-action="Index">返回列表</a>
+                    <a class="btn btn-primary btn-lg" role="button" asp-action="Index">返回列表</a>
                 </dt>
             </dl>
         </div>
@@ -54,10 +54,14 @@
                     權限：@Html.DisplayFor(model => model.E_Permission)
                 </dt>
                 <dt>
-                    在職：@Html.DisplayFor(model => model.E_Work)
+                    在職：
+                    @*@Html.DisplayFor(model => model.E_Work)*@
+                    @Html.CheckBoxFor(model => model.E_Work, new { style = "transform: scale(2);" })
                 </dt>
+
+
                 <dt>
-                    <a class="btn btn-outline-warning btn-lg" role="button" asp-action="Edit" asp-route-id="@Model?.E_ID">編輯</a>
+                    <a class="btn btn-warning btn-lg" role="button" asp-action="Edit" asp-route-id="@Model?.E_ID">編輯</a>
                 </dt>
             </dl>
         </div>
