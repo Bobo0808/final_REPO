@@ -1,4 +1,6 @@
-﻿.contents {
+﻿/*圖表*/
+
+.contents {
     overflow: auto;
     position: relative;
     max-height: 100%;
@@ -19,6 +21,15 @@
 
 }
 
+.title {
+    border-bottom: 1px solid #808080;
+    display: inline-block;
+    padding-right: 30px;
+    padding-left: 10px;
+    padding-bottom:5px;
+    padding-top:1rem;
+}
+
 #container {
     width: 850px;
     height: 600px;
@@ -28,15 +39,32 @@
 .wrapper {
     display: flex;
     justify-content: center;
+    margin-top: 3rem;
+   margin-right:10rem;
 }
 
+.right-content {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    background-color: white;
+    background-color: white;
+}
 .left-content {
-    margin-right: 20px; /* 左边内容距离右边内容的距离 */
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
 
 }
+    .left-content > season {
+        background-color: none;
+        list-style:circle inside;
+    }
+
 
 .li {
-    display: inline-block; /* 将 <li> 元素设置为内联块级元素 */
-    margin: 0; /* 去掉默认的外边距 */
-    padding: 0; /* 去掉默认的内边距 */
+    list-style: circle;
+    margin-top:1rem;
 }
