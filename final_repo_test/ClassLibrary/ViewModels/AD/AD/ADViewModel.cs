@@ -1,6 +1,6 @@
-﻿using final_repo_test.Models;
+﻿using ClassLibrary.Models;
 
-namespace final_repo_test.ViewModels.AD.AD
+namespace ClassLibrary.ViewModels.AD.AD
 {
 	public class ADViewModel
 	{

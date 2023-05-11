@@ -8,6 +8,7 @@ public class PlayerRef
     public string name { get; set; } = default!;
     public string direction { get; set; } = default!;
     public string color { get; set; } = default!;
+    public int gender { get; set; } = default!;
     public int x { get; set; }
     public int y { get; set; }
 

@@ -1,7 +1,7 @@
-﻿using final_repo_test.Models;
+﻿using ClassLibrary.Models;
 using System.ComponentModel.DataAnnotations;
 
-namespace final_repo_test.Areas.OrderProduct.ViewModels
+namespace ClassLibrary.ViewModels.OrderProduct
 {
     public class ViewOrder
     {

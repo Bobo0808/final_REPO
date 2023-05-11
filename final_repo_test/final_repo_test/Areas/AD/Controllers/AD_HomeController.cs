@@ -1,18 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using final_repo_test.Data;
-using final_repo_test.Models;
-using final_repo_test.ViewModels.AD.AD;
+using ClassLibrary.Models;
+using ClassLibrary.ViewModels.AD.AD;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using ClassLibrary.Data;
 
 namespace final_repo_test.Areas.AD.Controllers
 {
 	[Area(areaName: "AD")]
 	public class AD_HomeController : Controller
 	{
-		private readonly ApplicationDbContext _dbContext;
+		private readonly ChickenDbContext _dbContext;
 
-		public AD_HomeController(ApplicationDbContext dbContext)
+		public AD_HomeController(ChickenDbContext dbContext)
 		{
 			_dbContext = dbContext;
 		}

@@ -1,6 +1,6 @@
-﻿using final_repo_test.Data;
+﻿using ClassLibrary.Data;
 using Microsoft.AspNetCore.Mvc;
-using final_repo_test.Models;
+using ClassLibrary.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,9 +14,9 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
     public class ProductsController : Controller
     {
         
-        public readonly ApplicationDbContext _context;
+        public readonly ChickenDbContext _context;
         private readonly IWebHostEnvironment _env;
-        public ProductsController(ApplicationDbContext context, IWebHostEnvironment env)
+        public ProductsController(ChickenDbContext context, IWebHostEnvironment env)
         {
             _context = context;
             _env = env;

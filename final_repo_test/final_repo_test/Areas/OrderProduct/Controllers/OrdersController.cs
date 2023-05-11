@@ -1,6 +1,6 @@
-﻿using final_repo_test.Areas.OrderProduct.ViewModels;
-using final_repo_test.Data;
-using final_repo_test.Models;
+﻿using ClassLibrary.ViewModels.OrderProduct;
+using ClassLibrary.Data;
+using ClassLibrary.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,8 +12,8 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
     [Area(areaName: "OrderProduct")]
     public class OrdersController : Controller
     {
-        public readonly ApplicationDbContext _context;
-        public OrdersController(ApplicationDbContext context)
+        public readonly ChickenDbContext _context;
+        public OrdersController(ChickenDbContext context)
         {
             _context = context;
         }

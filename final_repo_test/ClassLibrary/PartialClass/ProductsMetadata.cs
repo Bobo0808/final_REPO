@@ -1,8 +1,8 @@
-﻿using final_repo_test.Data.Enum;
+﻿using ClassLibrary.Enum;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
 
-namespace final_repo_test.Models
+namespace ClassLibrary.Models
 {
     public class ProductsMetadata
     {

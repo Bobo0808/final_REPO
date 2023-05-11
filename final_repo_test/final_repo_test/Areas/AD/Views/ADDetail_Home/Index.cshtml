@@ -1,5 +1,102 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{
+
+@section Styles{
+	<link href="~/css/ad/ad.css" rel="stylesheet" />
+}
+
+<section class="table_header">
+	<button class="btn_title custom-btn btn-par">
+		<span>
+			<a asp-area="AD" asp-controller="AD_Home" asp-action="Index" style="color:white">
+				廠商管理
+			</a>
+		</span>
+	</button>
+
+	<button class="btn_title custom-btn btn-AD" style="border:1px solid white ;background-image: linear-gradient(to right top, #040b2e, #1a264d, #32416e, #4b5e91, #647db5, #677db6, #6b7db6, #6e7db7, #5c5f94, #484271, #352851, #210f32);">
+		<span>
+			<a asp-area="AD" asp-controller="ADDetail_Home" asp-action="Index" style="color:white">
+				廣告管理
+			</a>
+		</span>
+	</button>
+
+</section>
+<section class="tables">
+	<fieldset class="CreateNew_form">
+		<legend>修改廣告紀錄</legend>
+		<div class="CreateForm_title">
+			<span style="width: 100px;">
+				<span class="label">廠商名稱</span>
+				<input type="text" required="required" style="width: 100%" name="PartnerName" id="partnerName">
+			</span>
+			<span style="width: 100px;">
+				<span class="label">聯絡人</span>
+				<input type="text" required="required" style="width: 100%" name="Contact" id="contact">
+			</span>
+			<span style="width: 150px;">
+				<span class="label">e-mail</span>
+				<input type="text" required="required" style="width: 100%" name="Email" id="email">
+			</span>
+			<span style="width: 150px;">
+				<span class="label">電話</span>
+				<input type="text" required="required" style="width: 100%" name="Phone" id="phone">
+			</span>
+			<span style="width: 500px;">
+				<span class="label">備註</span>
+				<input type="text" style="width: 100%" name="Note" id="note">
+			</span>
+			<span class="checkbtn_span" style="width: 100px;">
+				<span class="label" style="color:transparent;">確認</span>
+				<button type="button" class="addPartnerBtn btncheck btn btn-light">新增</button>
+			</span>
+		</div>
+	</fieldset>
+
+	<section class="Dtable_body" id="partnerTable">
+		<table class="Detail_table">
+			<thead>
+				<tr>
+					<th>單號ID</th>
+					<th>廠商名稱</th>
+					<th>方案名稱</th>
+					<th>開始投放</th>
+					<th>結束投放</th>
+					<th>共計天數</th>
+					<th>點擊數</th>
+					<th>應付款日</th>
+					<th>實付款日</th>
+					<th>狀態</th>
+					<th>履約率</th>
+					<th>實收款項</th>
+					<th>描述</th>
+					<th>圖片</th>
+					<th>TargetURL</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var partner in Model.PartnersList)
+				{
+					<tr>
+						<td>@partner.P_ID</td>
+						<td class="editableCell">@partner.P_Name</td>
+						<td class="editableCell">@partner.Contact</td>
+						<td class="editableCell">@partner.Email</td>
+						<td class="editableCell">@partner.Phone</td>
+						<td class="editableCell">@partner.P_Note</td>
+						<td><i class="fa-solid fa-pen-to-square"></i></td>
+						<td><i class="fa-solid fa-trash-can" onclick="deletePartner(@partner.P_ID)"></i></td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</section>
+</section>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 11"></div>
+
+@section Script{
+	<script src="~/js/ad/script.js"></script>
 }
