@@ -42,11 +42,21 @@
                     聯絡方式：@Html.DisplayFor(model => model.E_Phone)
                 </dt>
                 <dt>
-                    生日：@Html.DisplayFor(model => model.E_Birthday)
+                    @*生日：@Html.DisplayFor(model => model.E_Birthday)*@
                     @*生日：@Html.DisplayFor(model => model.E_Birthday.Date.ToString("yyyy-MM-dd"))*@
+                    @{
+                        DateTime birthday = Convert.ToDateTime(Model.E_Birthday);
+                        string formattedBirthday = birthday.ToString("yyyy-MM-dd");
+                    }
+                    生日：@formattedBirthday
                 </dt>
                 <dt>
-                    就職日：@Html.DisplayFor(model => model.E_HireDate)
+                    @*就職日：@Html.DisplayFor(model => model.E_HireDate)*@
+                    @{
+                        DateTime HireDate = Convert.ToDateTime(Model.E_HireDate);
+                        string formattedHireDate = HireDate.ToString("yyyy-MM-dd");
+                    }
+                    就職：@formattedHireDate
                 </dt>
                 <dt>
                     地址：@Html.DisplayFor(model => model.E_Address)
@@ -57,7 +67,7 @@
                 <dt>
                     在職：
                     @*@Html.DisplayFor(model => model.E_Work)*@
-                    @Html.CheckBoxFor(model => model.E_Work, new { style = "transform: scale(2);" })
+                    @Html.CheckBoxFor(model => model.E_Work, new {disabled = true, style = "transform: scale(2);" })
                 </dt>
                 <dt>
                     <a class="btn">
