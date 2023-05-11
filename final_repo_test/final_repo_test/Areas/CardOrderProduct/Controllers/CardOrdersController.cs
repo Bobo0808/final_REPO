@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using final_repo_test.Data;
-using final_repo_test.Models;
+using ClassLibrary.Data;
+using ClassLibrary.Models;
 
 namespace final_repo_test.Areas.CardOrderProduct.Controllers
 {
@@ -14,9 +14,9 @@ namespace final_repo_test.Areas.CardOrderProduct.Controllers
     [Area(areaName: "CardOrderProduct")]
     public class CardOrdersController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ChickenDbContext _context;
 
-        public CardOrdersController(ApplicationDbContext context)
+        public CardOrdersController(ChickenDbContext context)
         {
             _context = context;
         }
