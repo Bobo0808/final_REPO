@@ -1,3 +1,5 @@
+
+
 var server = 'wss://localhost:7184'; //如果開啟了https則這裡是wss
 var vWebSocket = null;
 let playerDom = {}; //所有角色的資訊
@@ -8,28 +10,19 @@ let messageBuffer = '';
 let mapData = {};
 let isQueue = false;
 
+
 // const peer = new RTCPeerConnection(server); // Webrtc配對用
 const ice = {
     "iceServers": [
         { "url": "stun:stun.l.google.com:19302" },
     ]
 };
+const constraints = { audio: true, video: true };
+const myVideo = document.getElementById("myVideo");
+const remoteVideo = document.getElementById("remoteVideo");
+let ignoreOffer = false;
 let makingOffer = false;
 let peerChanel = new RTCPeerConnection(ice);
-
-
-
-// pc.onnegotiationneeded = async () => {
-//     try {
-//         makingOffer = true;
-//         await pc.setLocalDescription();
-//         signaler.send({ description: pc.localDescription });
-//     } catch (err) {
-//         console.error(err);
-//     } finally {
-//         makingOffer = false;
-//     }
-// };
 
 
 const gameContainer = document.querySelector(".game-container");
@@ -91,15 +84,15 @@ window.onload = function () {
                 setDirection(result)
                 break
             case "Match":
-                alert("配對成功")
+                // alert("配對成功")
                 isQueue = false;
-                alert(result);
+                console.log(result);
                 MatchPlayer(result);
+                // MatchPlayer(result);
                 break
             case "Wait":
                 console.log("等待配對")
                 isQueue = true;
-                alert("wait")
                 break
         }
 
@@ -205,6 +198,7 @@ function AddPlayer(data) {
         y: data.y
     }
     playerDom[data.id] = characterElement;
+    console.log(playerRef);
 
     characterElement.querySelector(".Character_name").innerText = data.name;
     characterElement.setAttribute("data-color", data.color);
@@ -259,42 +253,125 @@ function isSolid(x, y) {
 async function sendQueueRequest() {
     if (!isQueue) {
         try {
-            makingOffer = true;
-            await peerChanel.setLocalDescription();
-            let data = {
-                "type": "Queue",
-                "data": peerChanel.localDescription
-            };
-            console.log(peerChanel.localDescription);
-            vWebSocket.send(data);
+            const stream = await navigator.mediaDevices.getUserMedia(constraints);
+
+            for (const track of stream.getTracks()) {
+                peerChanel.addTrack(track, stream);
+            }
+            myVideo.srcObject = stream;
         } catch (err) {
             console.error(err);
-        } finally {
-            makingOffer = false;
         }
+        isQueue = true;
     }
     else {
         alert("你已經在配對中")
     }
 }
 
-function MatchPlayer(data) {
-    const offer = JSON.stringify(JSON.parse(data.M_SDT));
-    if (playerRef.gender == 2) {
-        peer.setRemoteDescription(offer);
-        alert("match successful")
-    }
-    else if (playerRef.gender == 1) {
-        peer.setRemoteDescription(offer);
-        peer.peerChanel = offer.peerChanel;
-        alert("match successful")
+peerChanel.ontrack = ({ track, streams }) => {
+    track.onunmute = () => {
+        if (remoteVideo.srcObject) {
+            return;
+        }
+        remoteVideo.srcObject = streams[0];
     }
 }
 
+peerChanel.onnegotiationneeded = async () => {
+    try {
+        makingOffer = true;
+        await peerChanel.setLocalDescription();
+    } catch (err) {
+        console.error(err);
+    } finally {
+        makingOffer = false;
+    }
+};
+
 peerChanel.onicecandidate = ({ candidate }) => {
     let data = {
-        "type": "ice",
-        "data": candidate
+        "type": "Queue",
+        "data": {
+            "description": peerChanel.localDescription,
+            "candidate": candidate
+        }
     }
-    vWebSocket.send({ data })
+    console.log(data);
+    console.log(peerChanel.connectionState);
+    vWebSocket.send(JSON.stringify(data))
 };
+
+async function MatchPlayer(data) {
+    if (playerRef.gender == 2) {
+        const femaleOffer = JSON.parse(data.data[1])
+        try {
+            if (femaleOffer.description) {
+                const offerCollision = (femaleOffer.description.type == "offer") &&
+                    (makingOffer || peerChanel.signalingState != "stable");
+
+                ignoreOffer = offerCollision;
+                if (ignoreOffer) {
+                    return;
+                }
+
+                await peerChanel.setRemoteDescription(femaleOffer.description);
+                if (femaleOffer.description.type == "offer") {
+                    await peerChanel.setLocalDescription();
+                    // vWebSocket.send({ description: peerChanel.localDescription })
+                }
+            }
+            else if (femaleOffer.candidate) {
+                try {
+                    await peerChanel.addIceCandidate(femaleOffer.candidate);
+                } catch (err) {
+                    if (!ignoreOffer) {
+                        throw err;
+                    }
+                }
+            }
+        } catch (err) {
+            console.error(err);
+        }
+    }
+    else if (playerRef.gender == 1) {
+        const maleOffer = JSON.parse(data.data[0])
+        try {
+            if (maleOffer.description) {
+                const offerCollision = (maleOffer.description.type == "offer") &&
+                    (makingOffer || peerChanel.signalingState != "stable");
+
+                ignoreOffer = offerCollision;
+                if (ignoreOffer) {
+                    return;
+                }
+
+                await peerChanel.setRemoteDescription(maleOffer.description);
+                if (maleOffer.description.type == "offer") {
+                    await peerChanel.setLocalDescription();
+                    // vWebSocket.send({ description: peerChanel.localDescription })
+                }
+            }
+            else if (maleOffer.candidate) {
+                try {
+                    await peerChanel.addIceCandidate(maleOffer.candidate);
+                } catch (err) {
+                    if (!ignoreOffer) {
+                        throw err;
+                    }
+                }
+            }
+        } catch (err) {
+            console.error(err);
+        }
+    }
+    console.log("hi");
+    console.log(peerChanel.connectionState);
+}
+
+peerChanel.ondatachannel = e => {
+    const rc = e.channel;
+    rc.onmessage = e => {
+        console.log("hi");
+    }
+}
