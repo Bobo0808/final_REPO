@@ -1,7 +1,7 @@
-﻿using final_repo_test.Models;
+﻿using ClassLibrary.Models;
 using Microsoft.AspNetCore.Http;
 
-namespace final_repo_test.Areas.OrderProduct.ViewModels
+namespace ClassLibrary.ViewModels.CardOrderProduct
 {
     public class CardDetailViewModel
     {

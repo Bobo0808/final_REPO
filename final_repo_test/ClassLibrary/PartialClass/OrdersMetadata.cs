@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace final_repo_test.Models
+namespace ClassLibrary.Models
 {
     public class OrdersMetadata
     {
