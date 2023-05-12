@@ -1,5 +1,5 @@
-﻿using final_repo_test.Data.Enum;
-using final_repo_test.Models;
+﻿using ClassLibrary.Enum;
+using ClassLibrary.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations.Schema;
 

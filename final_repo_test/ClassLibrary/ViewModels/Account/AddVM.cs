@@ -3,7 +3,7 @@ using ClassLibrary.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace final_repo_test.ViewModels.Account
+namespace ClassLibrary.ViewModels.Account
 {
     public class AddVM
     {
