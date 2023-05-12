@@ -1,11 +1,8 @@
-﻿using final_repo_test.Data;
-using final_repo_test.Data.Enum;
-using final_repo_test.Models;
-using final_repo_test.ViewModels.Account;
+﻿using ClassLibrary.Data;
+using ClassLibrary.Models;
+using ClassLibrary.ViewModels.Account;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography.X509Certificates;
-using System.Xml.Linq;
 
 namespace final_repo_test.Areas.Account.Controllers
 {
@@ -13,9 +10,9 @@ namespace final_repo_test.Areas.Account.Controllers
     public class Account_HomeController : Controller
     {
         //下面三行要用DBcontext要創的
-        private readonly ApplicationDbContext applicationDbContext;
+        private readonly ChickenDbContext applicationDbContext;
 
-        public Account_HomeController(ApplicationDbContext applicationDbContext)
+        public Account_HomeController(ChickenDbContext applicationDbContext)
         {
             this.applicationDbContext = applicationDbContext;
         }
