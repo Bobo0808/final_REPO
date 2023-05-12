@@ -17,7 +17,9 @@ const ice = {
         { "url": "stun:stun.l.google.com:19302" },
     ]
 };
-const constraints = { audio: true, video: true };
+const constraints = { audio: false, video: false };
+let localStream;
+let remoteSteam;
 const myVideo = document.getElementById("myVideo");
 const remoteVideo = document.getElementById("remoteVideo");
 let ignoreOffer = false;
@@ -252,20 +254,24 @@ function isSolid(x, y) {
 
 async function sendQueueRequest() {
     if (!isQueue) {
-        try {
-            const stream = await navigator.mediaDevices.getUserMedia(constraints);
 
-            for (const track of stream.getTracks()) {
-                peerChanel.addTrack(track, stream);
-            }
-            myVideo.srcObject = stream;
-        } catch (err) {
-            console.error(err);
-        }
         isQueue = true;
     }
     else {
         alert("你已經在配對中")
+    }
+}
+
+async function start() {
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia(constraints);
+
+        for (const track of stream.getTracks()) {
+            peerChanel.addTrack(track, stream);
+        }
+        myVideo.srcObject = stream;
+    } catch (err) {
+        console.error(err);
     }
 }
 
@@ -375,3 +381,59 @@ peerChanel.ondatachannel = e => {
         console.log("hi");
     }
 }
+
+const btnCamera = document.getElementById('btnCamera');
+
+const btnMic = document.getElementById('btnMic');
+
+btnCamera.addEventListener('click', async () => {
+    if (constraints.video == false) {
+        try {
+            constraints.video = true;
+            localStream = await navigator.mediaDevices.getUserMedia(constraints)
+            myVideo.srcObject = localStream;
+            btnCamera.innerText = "CameraOff"
+        }
+        catch (error) {
+            console.log(error)
+        }
+    }
+    else {
+        try {
+            constraints.video = false;
+            localStream = await navigator.mediaDevices.getUserMedia(constraints)
+            myVideo.srcObject = localStream;
+            btnCamera.innerText = "CameraOn"
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+})
+
+btnMic.addEventListener('click', async () => {
+
+    if (constraints.audio == false) {
+        try {
+            console.log("ww");
+            constraints.audio = true;
+            localStream = await navigator.mediaDevices.getUserMedia(constraints)
+            myVideo.srcObject = localStream;
+            btnMic.innerText = "MicOff"
+        }
+        catch (error) {
+            console.log(error)
+        }
+    }
+    else {
+        try {
+            constraints.audio = false;
+            localStream = await navigator.mediaDevices.getUserMedia(constraints)
+            myVideo.srcObject = localStream;
+            btnMic.innerText = "MicOn"
+        }
+        catch (error) {
+            console.log(error)
+        }
+    }
+})
