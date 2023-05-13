@@ -22,6 +22,11 @@
     .create {
         margin:5%;
     }
+    .container {
+        overflow: auto;
+        max-height: 100%;
+        max-width: 100%;
+    }
 }
 
 /* 大於768px小於等於1024px的螢幕 */
@@ -48,6 +53,11 @@
     .create {
         margin: 5%;
     }
+    .container {
+        overflow: auto;
+        max-height: 100%;
+        max-width: 100%;
+    }
 }
 
 /* 大於1024px的螢幕 */
@@ -66,15 +76,23 @@
         margin: 1%;
     }
     a {
-        font-size: 60px;
-        color: #c10909;
+        /*font-size: 60px;
+        color: #c10909;*/
+        font-size: 28px;
+        color: #232324;
     }
 
     .container {
         overflow: auto;
-        background-color:white;
-        margin-left:auto;
-        margin-right:auto;
+
+        max-height: 110%;
+        max-width: 100%;
+        background-color: white;
+        margin-left: auto;
+        margin-right: auto;
+
+        height:90%;
+
         /*overflow: auto;
         position: relative;
         max-height: 100%;

@@ -1,4 +1,5 @@
-﻿@model final_repo_test.Models.Employee
+﻿@model ClassLibrary.Models.Employee
+@using ClassLibrary.Enum
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     //ViewData["Title"] = "Create";
@@ -17,6 +18,8 @@
                 <dl>
                     <dt>
                         姓     名：<input asp-for="E_Name" />
+                        <br/>
+                        <span asp-validation-for="E_Name" class="text-danger"></span>
                     </dt>
                     <dt>
                         性     別：
@@ -25,15 +28,23 @@
                             <option value="女">女</option>
                             <option value="其他">其他</option>
                         </select>
+                        <br />
+                        <span asp-validation-for="E_Gender" class="text-danger"></span>
                     </dt>
                     <dt>
                         別 名：<input asp-for="E_UserName" />
+                        <br />
+                        <span asp-validation-for="E_UserName" class="text-danger"></span>
                     </dt>
                     <dt>
                         密     碼：<input asp-for="E_Pwd" />
+                        <br />
+                        <span asp-validation-for="E_Pwd" class="text-danger"></span>
                     </dt>
                     <dt>
                         信     箱：<input asp-for="E_Email" />
+                        <br />
+                        <span asp-validation-for="E_Email" class="text-danger"></span>
                     </dt>
                     <dt>
                         職     位：
@@ -41,8 +52,11 @@
                             <option value="員工">員工</option>
                             <option value="主管">主管</option>
                         </select>
+                        <br />
+                        <span asp-validation-for="E_Title" class="text-danger"></span>
                     </dt>
                     <dt>
+                        <input type="submit" value="新增" class="btn btn-success btn-lg" />
                         <a class="btn btn-primary btn-lg" role="button" asp-action="Index">返回列表</a>
                     </dt>
                 </dl>
@@ -52,27 +66,39 @@
                 <dl>
                     <dt>
                         手 機：<input asp-for="E_Phone" />
+                        <br />
+                        <span asp-validation-for="E_Phone" class="text-danger"></span>
                     </dt>
                     <dt>
                         生   日：<input type="date" asp-for="E_Birthday" />
+                        <br />
+                        <span asp-validation-for="E_Birthday" class="text-danger"></span>
                     </dt>
                     <dt>
                         就 職：<input type="date" asp-for="E_HireDate" />
+                        <br />
+                        <span asp-validation-for="E_HireDate" class="text-danger"></span>
                     </dt>
                     <dt>
                         地   址：<input asp-for="E_Address" />
+                        <br />
+                        <span asp-validation-for="E_Address" class="text-danger"></span>
                     </dt>
                     <dt>
                         權   限：<input asp-for="E_Permission" />
+                        <br />
+                        <span asp-validation-for="E_Permission" class="text-danger"></span>
                     </dt>
                     <dt>
                         <label class="form-check-label">
                             在   職：<input class="form-check-input" asp-for="E_Work" />
+                            <br/>
+                            <span asp-validation-for="E_Work" class="text-danger"></span>
                         </label>
                     </dt>
-                    <dt>
+                    @*<dt>
                         <input type="submit" value="新增" class="btn btn-success btn-lg" />
-                    </dt>
+                    </dt>*@
                 </dl>
             </div>
 
