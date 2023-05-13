@@ -4,31 +4,30 @@
 * {
     margin: 0;
     padding: 0;
-    /* box-sizing: border-box; */
     font-family: 'Poppins', sans-serif;
 }
 
 body {
-     min-height: 100vh; 
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-     /*background: #4070f4; */
 }
 
 .container {
     overflow: auto;
     position: relative;
+    /*height: 85%;*//*//§ï³o­Ó*/
     max-height: 100%;
-    /* max-width: 900px; */
-    max-width: 100%;
-    width: 120%;
+    max-width:100%;
+
+    /*width: 100%;*/
     border-radius: 6px;
-    margin: 50px 15px;
-    padding: 30px;
+    margin: 20px 15px;
+    padding: 5px;
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}    
+}
 
 
     .container header {
@@ -47,26 +46,34 @@ body {
             width: 27px;
             border-radius: 8px;
             /* background-color: #4070f4; */
+            /*overflow: auto;*/
+            position: relative;
         }
 
     .container form {
         position: relative;
         margin-top: 16px;
-        min-height: 550px;
+        min-height: 600px;
         background-color: #fff;
         overflow: hidden;
+        /*overflow: auto;*/
+        position: relative;
     }
 
         .container form .form {
             position: absolute;
             background-color: #fff;
             transition: 0.3s ease;
+            /*overflow: auto;*/
+            position: relative;
         }
 
             .container form .form.second {
                 opacity: 0;
                 pointer-events: none;
                 transform: translateX(100%);
+                /*overflow: auto;*/
+                position: relative;
             }
 
 form.secActive .form.second {
@@ -142,7 +149,7 @@ select {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 45px;
+    height: 40px;
     max-width: 200px;
     width: 100%;
     border: none;
@@ -166,7 +173,7 @@ form button:hover {
 
 form button i,
 form .backBtn i {
-    margin: 0 6px;
+    margin: 0 3px;
 }
 
 form .backBtn i {
@@ -183,9 +190,76 @@ form .buttons {
         margin-right: 14px;
     }
 
-/* @media (max-width: 750px) {
+form {
+    height: 100%;
+    overflow: auto;
+    position: relative;
+}
+.form first {
+    margin-top: -20px;
+    overflow: auto;
+    position: relative;
+}
+@media only screen and (max-width: 768px) {
+    .container {
+        height: auto;
+        margin: 10px 5px;
+        padding: 20px 5px;
+    }
+
+        .container form {
+            min-height: auto;
+        }
+
+        .container header::before {
+            width: 20px;
+        }
+
+        .container form .fields {
+            flex-direction: column;
+        }
+
+    form .fields .input-field {
+        width: 100%;
+    }
+
+    form .buttons {
+        flex-direction: column;
+    }
+
+        form .buttons button,
+        .backBtn {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+}
+
+@media only screen and (max-width: 550px) {
+    .input-field label {
+        font-size: 16px;
+        overflow:auto;
+    }
+
+    .input-field input,
+    select {
+        font-size: 14px;
+        height: 36px;
+        overflow: auto;
+    }
+
+    .container form .title {
+        font-size: 14px;
+        overflow: auto;
+    }
+
+    .container header {
+        font-size: 16px;
+        overflow: auto;
+    }
+}
+ /*@media (max-width: 750px) {
     .container form {
-        overflow-y: scroll;
+        overflow: auto;
     }
 
     .container form::-webkit-scrollbar {

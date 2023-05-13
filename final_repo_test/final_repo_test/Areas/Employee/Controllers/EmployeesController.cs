@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
+
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+
 using Microsoft.EntityFrameworkCore;
-using final_repo_test.Data;
-using final_repo_test.Models;
+
+using ClassLibrary.Models;
+using ClassLibrary.Data;
 
 namespace final_repo_test.Areas.Employee.Controllers
 {
     [Area("Employee")]
     public class EmployeesController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ChickenDbContext _context;
 
-        public EmployeesController(ApplicationDbContext context)
+        public EmployeesController(ChickenDbContext context)
         {
             _context = context;
         }
@@ -58,7 +57,7 @@ namespace final_repo_test.Areas.Employee.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("E_ID,E_Name,E_Gender,E_UserName,E_Pwd,E_Email,E_Title,E_Phone,E_Birthday,E_HireDate,E_Address,E_Permission,E_Work")] Models.Employee employee)
+        public async Task<IActionResult> Create([Bind("E_ID,E_Name,E_Gender,E_UserName,E_Pwd,E_Email,E_Title,E_Phone,E_Birthday,E_HireDate,E_Address,E_Permission,E_Work")] ClassLibrary.Models.Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +89,7 @@ namespace final_repo_test.Areas.Employee.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("E_ID,E_Name,E_Gender,E_UserName,E_Pwd,E_Email,E_Title,E_Phone,E_Birthday,E_HireDate,E_Address,E_Permission,E_Work")] Models.Employee employee)
+        public async Task<IActionResult> Edit(int id, [Bind("E_ID,E_Name,E_Gender,E_UserName,E_Pwd,E_Email,E_Title,E_Phone,E_Birthday,E_HireDate,E_Address,E_Permission,E_Work")] ClassLibrary.Models.Employee employee)
         {
             if (id != employee.E_ID)
             {
