@@ -13,6 +13,7 @@
 <body>
 
     <div class="game-container">
+
     </div>
     <div class="player-info">
 
@@ -26,6 +27,19 @@
         <div>
             <button id="joinBtn">JoinQueue</button>
         </div>
+        <div>
+            <div>
+                <button id="btnLeave">Leave Room</button>
+            </div>
+            <div>
+                <button id="btnCamera">CameraOn</button>
+            </div>
+            <div>
+                <button id="btnMic">MicOn</button>
+            </div>
+
+        </div>
+
         <div>
             <video width="200" height="200" autoplay id="myVideo" muted playsinline></video>
 
@@ -55,6 +69,7 @@
 
 
     <script src="./WebSocket.js"></script>
+    <script src="./WebRTC.js"></script>
     <script src="./KeyPressListener.js"></script>
     <script src="./dialogue.js"></script>
     <!-- <script src="./WebRTC.js"></script> -->

@@ -3,6 +3,7 @@ public class MapDirectories
 {
     //地圖詳細資料
     public string Src { get; set; } = default!;
+    public string id { get; set; } = default!;
     public int MinX { get; set; }
     public int MinY { get; set; }
     public int MaxX { get; set; }
