@@ -1,4 +1,5 @@
-﻿@model final_repo_test.Models.Employee
+﻿@model ClassLibrary.Models.Employee
+@using ClassLibrary.Enum
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "Details";
@@ -25,7 +26,8 @@
                     密碼：@Html.DisplayFor(model => model.E_Pwd)
                 </dt>
                 <dt>
-                    信箱：@Html.DisplayFor(model => model.E_Email)
+                    @*信箱：@Html.DisplayFor(model => model.E_Email)*@
+                    信箱：<span style="color: black; font-size: 10px;">@Html.DisplayFor(model => model.E_Email)</span>
                 </dt>
                 <dt>
                     職位：@Html.DisplayFor(model => model.E_Title)
