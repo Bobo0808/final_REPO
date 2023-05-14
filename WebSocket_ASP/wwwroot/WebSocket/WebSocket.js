@@ -10,22 +10,16 @@ let messageBuffer = '';
 let mapData = {};
 let isQueue = false;
 
-
-// const peer = new RTCPeerConnection(server); // Webrtc配對用
-const ice = {
-    "iceServers": [
-        { "url": "stun:stun.l.google.com:19302" },
-    ]
-};
-const constraints = { audio: false, video: false };
-let localStream;
-let remoteSteam;
+let polite;
 const myVideo = document.getElementById("myVideo");
 const remoteVideo = document.getElementById("remoteVideo");
-let ignoreOffer = false;
-let makingOffer = false;
-let peerChanel = new RTCPeerConnection(ice);
+const btnCamera = document.getElementById('btnCamera');
+const btnMic = document.getElementById('btnMic');
+const btnLeave = document.getElementById('btnLeave');
 
+btnCamera.addEventListener('click', muteCam);
+btnMic.addEventListener('click', muteMic);
+btnLeave.addEventListener('click', leaveRoom);
 
 const gameContainer = document.querySelector(".game-container");
 window.onload = function () {
@@ -52,9 +46,18 @@ window.onload = function () {
 
         switch (result.type) {
             case "Load":
+                myVideo.style.visibility = 'hidden';
+                remoteVideo.style.visibility = 'hidden';
+                btnCamera.style.visibility = 'hidden';
+                btnMic.style.visibility = 'hidden';
+                btnLeave.style.visibility = 'hidden';
+                while (gameContainer.firstChild) {
+                    gameContainer.removeChild(gameContainer.lastChild);
+                }
                 for (let i = 0; i < result.client.length; i++) {
                     AddPlayer(result.client[i]);
                 }
+                console.log(result);
                 LoadMap(result);
                 break;
             case "Chat":
@@ -70,6 +73,7 @@ window.onload = function () {
                 content.innerText = content.innerText + '\r\n' + message;
                 break;
             case "Connect":
+                console.log(result);
                 //訊息屬性是Connect
                 if (IDempty) {
                     playerRef.id = result.id;
@@ -79,22 +83,51 @@ window.onload = function () {
                 console.log(result.id + " has logged in")
                 break;
             case "Disconnect":
+                remoteVideo.style.visibility = 'hidden';
+                console.log(result);
                 dcPlayer(result.PlayerRef)
                 break
             case "Movement":
                 //訊息屬性是Movement
+                console.log(result);
                 setDirection(result)
                 break
             case "Match":
                 // alert("配對成功")
                 isQueue = false;
-                console.log(result);
-                MatchPlayer(result);
-                // MatchPlayer(result);
+                while (gameContainer.firstChild) {
+                    gameContainer.removeChild(gameContainer.lastChild);
+                }
+                alert("操你媽");
+                myVideo.style.visibility = 'visible';
+                remoteVideo.style.visibility = 'visible';
+                btnCamera.style.visibility = 'visible';
+                btnMic.style.visibility = 'visible';
+                btnLeave.style.visibility = 'visible';
+
+
+                LoadMap(result);
+                for (let i = 0; i < result.client.length; i++) {
+                    AddPlayer(result.client[i]);
+                }
+                if (playerRef.gender == 1) {
+                    polite = false;
+                }
+                else if (playerRef.gender == 2) {
+                    polite = true;
+                }
+                mediaOn();
+
                 break
             case "Wait":
                 console.log("等待配對")
                 isQueue = true;
+                break
+            case "Peer":
+                // console.log(result.candidate);
+                result.description = JSON.parse(result.description);
+                result.candidate = JSON.parse(result.candidate);
+                MatchPlayer(result);
                 break
         }
 
@@ -116,6 +149,7 @@ function sendMsg() {
     if (txtMsg) {
         let data = {
             "type": "Chat",
+            "id": mapData.id,
             "data": txtMsg
         };
         vWebSocket.send(JSON.stringify(data));
@@ -125,6 +159,7 @@ function sendMsg() {
 function sendDirection() {
     let player = {
         "type": "Movement",
+        "mapid": mapData.id,
         "data": {
             "type": "Movement",
             "id": playerRef.id,
@@ -168,7 +203,7 @@ function handleArrowPress(xChange = 0, yChange = 0) {
 
 function AddPlayer(data) {
     const characterElement = document.createElement("div")
-    characterElement.setAttribute('id', `${data.id}`)
+    characterElement.setAttribute('id', data.id)
     characterElement.classList.add("Character", "grid-cell");
     if (data.id === playerRef.id) {
         playerRef = {
@@ -200,7 +235,6 @@ function AddPlayer(data) {
         y: data.y
     }
     playerDom[data.id] = characterElement;
-    console.log(playerRef);
 
     characterElement.querySelector(".Character_name").innerText = data.name;
     characterElement.setAttribute("data-color", data.color);
@@ -212,6 +246,7 @@ function AddPlayer(data) {
 }
 function LoadMap(result) {
     mapData = {
+        id: result.id,
         src: result.src,
         MinX: result.MinX,
         MaxX: result.MaxX,
@@ -254,7 +289,11 @@ function isSolid(x, y) {
 
 async function sendQueueRequest() {
     if (!isQueue) {
-
+        let data = {
+            "type": "Queue",
+            "mapid": mapData.id,
+        }
+        vWebSocket.send(JSON.stringify(data))
         isQueue = true;
     }
     else {
@@ -262,9 +301,63 @@ async function sendQueueRequest() {
     }
 }
 
-async function start() {
+
+
+
+//===========================================================================================
+// const peer = new RTCPeerConnection(server); // Webrtc配對用
+const ice = {
+    "iceServers": [
+        { "url": "stun:stun.l.google.com:19302" },
+    ]
+};
+const constraints = {
+    audio: {
+        autoGainControl: false,
+        channelCount: 2,
+        echoCancellation: false,
+        googAutoGainControl: false,
+        latency: 0,
+        noiseSuppression: false,
+        sampleRate: 48000,
+        sampleSize: 16,
+        volume: 1.0
+    }, video: true
+};
+
+let localStream;
+let remoteSteam;
+let makingOffer = false;
+let peerChanel = new RTCPeerConnection(ice);
+let stream;
+let MicOn = true;
+let CamOn = true;
+
+function muteMic() {
+    stream.getAudioTracks()[0].enabled = !(stream.getAudioTracks()[0].enabled);
+    MicOn = false;
+
+}
+
+function muteCam() {
+    stream.getVideoTracks()[0].enabled = !(stream.getVideoTracks()[0].enabled);
+    CamOn = false;
+
+}
+
+function leaveRoom() {
+    peerChanel.close();
+    stream.getTracks().forEach(track => track.stop());
+    let data = {
+        "type": "Leave",
+        "mapid": mapData.id,
+    }
+    vWebSocket.send(JSON.stringify(data))
+}
+
+async function mediaOn() {
     try {
-        const stream = await navigator.mediaDevices.getUserMedia(constraints);
+        stream = await navigator.mediaDevices.getUserMedia(constraints);
 
         for (const track of stream.getTracks()) {
             peerChanel.addTrack(track, stream);
@@ -288,6 +381,13 @@ peerChanel.onnegotiationneeded = async () => {
     try {
         makingOffer = true;
         await peerChanel.setLocalDescription();
+        let data = {
+            "type": "Description",
+            "mapid": mapData.id,
+            "description": peerChanel.localDescription,
+            "candidate": "",
+        }
+        vWebSocket.send(JSON.stringify(data))
     } catch (err) {
         console.error(err);
     } finally {
@@ -297,143 +397,56 @@ peerChanel.onnegotiationneeded = async () => {
 
 peerChanel.onicecandidate = ({ candidate }) => {
     let data = {
-        "type": "Queue",
-        "data": {
-            "description": peerChanel.localDescription,
-            "candidate": candidate
-        }
+        "type": "Description",
+        "mapid": mapData.id,
+        "description": "",
+        "candidate": candidate
     }
-    console.log(data);
-    console.log(peerChanel.connectionState);
     vWebSocket.send(JSON.stringify(data))
 };
 
+
+let ignoreOffer = false;
 async function MatchPlayer(data) {
-    if (playerRef.gender == 2) {
-        const femaleOffer = JSON.parse(data.data[1])
-        try {
-            if (femaleOffer.description) {
-                const offerCollision = (femaleOffer.description.type == "offer") &&
-                    (makingOffer || peerChanel.signalingState != "stable");
+    try {
+        if (data.description) {
+            const offerCollision = (data.description.type == "offer") &&
+                (makingOffer || peerChanel.signalingState != "stable");
 
-                ignoreOffer = offerCollision;
-                if (ignoreOffer) {
-                    return;
+            ignoreOffer = !polite && offerCollision;
+            if (ignoreOffer) {
+                return;
+            }
+
+            await peerChanel.setRemoteDescription(data.description);
+            if (data.description.type == "offer") {
+                await peerChanel.setLocalDescription();
+                let datatemp = {
+                    "type": "Description",
+                    "mapid": mapData.id,
+                    "description": peerChanel.localDescription,
+                    "candidate": ""
                 }
-
-                await peerChanel.setRemoteDescription(femaleOffer.description);
-                if (femaleOffer.description.type == "offer") {
-                    await peerChanel.setLocalDescription();
-                    // vWebSocket.send({ description: peerChanel.localDescription })
+                vWebSocket.send(JSON.stringify(datatemp))
+            }
+        } else if (data.candidate) {
+            try {
+                await peerChanel.addIceCandidate(data.candidate);
+            } catch (err) {
+                if (!ignoreOffer) {
+                    throw err;
                 }
             }
-            else if (femaleOffer.candidate) {
-                try {
-                    await peerChanel.addIceCandidate(femaleOffer.candidate);
-                } catch (err) {
-                    if (!ignoreOffer) {
-                        throw err;
-                    }
-                }
-            }
-        } catch (err) {
-            console.error(err);
         }
-    }
-    else if (playerRef.gender == 1) {
-        const maleOffer = JSON.parse(data.data[0])
-        try {
-            if (maleOffer.description) {
-                const offerCollision = (maleOffer.description.type == "offer") &&
-                    (makingOffer || peerChanel.signalingState != "stable");
-
-                ignoreOffer = offerCollision;
-                if (ignoreOffer) {
-                    return;
-                }
-
-                await peerChanel.setRemoteDescription(maleOffer.description);
-                if (maleOffer.description.type == "offer") {
-                    await peerChanel.setLocalDescription();
-                    // vWebSocket.send({ description: peerChanel.localDescription })
-                }
-            }
-            else if (maleOffer.candidate) {
-                try {
-                    await peerChanel.addIceCandidate(maleOffer.candidate);
-                } catch (err) {
-                    if (!ignoreOffer) {
-                        throw err;
-                    }
-                }
-            }
-        } catch (err) {
-            console.error(err);
-        }
-    }
-    console.log("hi");
-    console.log(peerChanel.connectionState);
-}
-
-peerChanel.ondatachannel = e => {
-    const rc = e.channel;
-    rc.onmessage = e => {
-        console.log("hi");
+    } catch (err) {
+        console.error(err);
     }
 }
 
-const btnCamera = document.getElementById('btnCamera');
 
-const btnMic = document.getElementById('btnMic');
-
-btnCamera.addEventListener('click', async () => {
-    if (constraints.video == false) {
-        try {
-            constraints.video = true;
-            localStream = await navigator.mediaDevices.getUserMedia(constraints)
-            myVideo.srcObject = localStream;
-            btnCamera.innerText = "CameraOff"
-        }
-        catch (error) {
-            console.log(error)
-        }
-    }
-    else {
-        try {
-            constraints.video = false;
-            localStream = await navigator.mediaDevices.getUserMedia(constraints)
-            myVideo.srcObject = localStream;
-            btnCamera.innerText = "CameraOn"
-        }
-        catch (error) {
-            console.log(error);
-        }
-    }
-})
-
-btnMic.addEventListener('click', async () => {
-
-    if (constraints.audio == false) {
-        try {
-            console.log("ww");
-            constraints.audio = true;
-            localStream = await navigator.mediaDevices.getUserMedia(constraints)
-            myVideo.srcObject = localStream;
-            btnMic.innerText = "MicOff"
-        }
-        catch (error) {
-            console.log(error)
-        }
-    }
-    else {
-        try {
-            constraints.audio = false;
-            localStream = await navigator.mediaDevices.getUserMedia(constraints)
-            myVideo.srcObject = localStream;
-            btnMic.innerText = "MicOn"
-        }
-        catch (error) {
-            console.log(error)
-        }
-    }
-})
+// peerChanel.ondatachannel = e => {
+//     const rc = e.channel;
+//     rc.onmessage = e => {
+//         console.log("hi");
+//     }
+// }

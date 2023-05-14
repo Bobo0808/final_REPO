@@ -1,4 +1,3 @@
-using System.Net.WebSockets;
 public class ChatContent
 {
     public string type { get; set; } = default!;
