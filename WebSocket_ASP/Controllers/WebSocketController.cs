@@ -1,11 +1,10 @@
-﻿using System.Runtime.Serialization.Formatters.Binary;
-using System.IO.MemoryMappedFiles;
+﻿using System;
+using System.Net.Sockets;
 using System.ComponentModel;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.WebSockets;
 using WebSocketSharp.Server;
 using System.Text;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
@@ -15,7 +14,9 @@ public class WebSocketController : Controller
     public static Queue_F queue_F = new Queue_F();
     public static Queue_M queue_M = new Queue_M();
     public static bool isMale = true;
+    public static string publicMap = "測試服";
     string[] playerColors = { "blue", "red", "orange", "yellow", "green", "purple" };
+
 
 
 
@@ -29,7 +30,7 @@ public class WebSocketController : Controller
         {
             PlayerRef player = new PlayerRef();//生成新玩家
             using var webSocket = await HttpContext.WebSockets.AcceptWebSocketAsync();
-            MapDirectoriesDTO mapDTO = new MapDirectoriesDTO() { type = "Load", Src = maps.MapDirectory["測試服"].Src, MinX = maps.MapDirectory["測試服"].MinX, MinY = maps.MapDirectory["測試服"].MinY, MaxX = maps.MapDirectory["測試服"].MaxX, MaxY = maps.MapDirectory["測試服"].MaxY, BlockedSpaces = maps.MapDirectory["測試服"].BlockedSpaces, client = maps.MapDirectory["測試服"].client.Values.ToList() };
+            MapDirectoriesDTO mapDTO = new MapDirectoriesDTO() { type = "Load", id = publicMap, Src = maps.MapDirectory[publicMap].Src, MinX = maps.MapDirectory[publicMap].MinX, MinY = maps.MapDirectory[publicMap].MinY, MaxX = maps.MapDirectory[publicMap].MaxX, MaxY = maps.MapDirectory[publicMap].MaxY, BlockedSpaces = maps.MapDirectory[publicMap].BlockedSpaces, client = maps.MapDirectory[publicMap].client.Values.ToList() };
 
             var Loadtemp = JsonSerializer.Serialize(mapDTO);
             var Load = Encoding.UTF8.GetBytes(Loadtemp);
@@ -37,30 +38,30 @@ public class WebSocketController : Controller
 
 
 
-            maps.MapDirectory["測試服"].client.Add(webSocket, player);
-            maps.MapDirectory["測試服"].client[webSocket].type = "Connect";
-            maps.MapDirectory["測試服"].client[webSocket].id = generateID(); //隨機生產ID 之後從ms sql取
+            maps.MapDirectory[publicMap].client.Add(webSocket, player);
+            maps.MapDirectory[publicMap].client[webSocket].type = "Connect";
+            maps.MapDirectory[publicMap].client[webSocket].id = generateID(); //隨機生產ID 之後從ms sql取
             if (isMale == true)
             {
-                maps.MapDirectory["測試服"].client[webSocket].gender = 1;
+                maps.MapDirectory[publicMap].client[webSocket].gender = 1;
                 isMale = false;
             }
             else if (isMale == false)
             {
-                maps.MapDirectory["測試服"].client[webSocket].gender = 2;
+                maps.MapDirectory[publicMap].client[webSocket].gender = 2;
                 isMale = true;
             }
-            maps.MapDirectory["測試服"].client[webSocket].name = "Test";
-            maps.MapDirectory["測試服"].client[webSocket].direction = "right";
-            maps.MapDirectory["測試服"].client[webSocket].color = randomFromArray(playerColors);
-            maps.MapDirectory["測試服"].client[webSocket].x = 1;
-            maps.MapDirectory["測試服"].client[webSocket].y = 4;
+            maps.MapDirectory[publicMap].client[webSocket].name = "Test";
+            maps.MapDirectory[publicMap].client[webSocket].direction = "right";
+            maps.MapDirectory[publicMap].client[webSocket].color = randomFromArray(playerColors);
+            maps.MapDirectory[publicMap].client[webSocket].x = 1;
+            maps.MapDirectory[publicMap].client[webSocket].y = 4;
 
             //Connect並傳送人物初始數據
-            Console.WriteLine(maps.MapDirectory["測試服"].client[webSocket].name + " Has Connected");
-            var json = JsonSerializer.Serialize(maps.MapDirectory["測試服"].client[webSocket]);
+            Console.WriteLine(maps.MapDirectory[publicMap].client[webSocket].name + " Has Connected");
+            var json = JsonSerializer.Serialize(maps.MapDirectory[publicMap].client[webSocket]);
             var buffer = Encoding.UTF8.GetBytes(json);
-            foreach (KeyValuePair<WebSocket, PlayerRef> con in maps.MapDirectory["測試服"].client)
+            foreach (KeyValuePair<WebSocket, PlayerRef> con in maps.MapDirectory[publicMap].client)
             {
                 if (con.Key.State != System.Net.WebSockets.WebSocketState.Open)
                 {
@@ -68,7 +69,15 @@ public class WebSocketController : Controller
                 }
                 await con.Key.SendAsync(new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
             }
-            await Echo(webSocket);
+            try
+            {
+                await Echo(webSocket);
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err);
+            }
+
         }
         else
         {
@@ -78,6 +87,7 @@ public class WebSocketController : Controller
 
     private static async Task Echo(WebSocket webSocket)
     {
+        string id = "";
         var buffer = new byte[1024 * 4];
         //等待接收訊息
         var receiveBuffer = new List<byte>();
@@ -91,7 +101,7 @@ public class WebSocketController : Controller
             {
                 //如果收到了完整的消息，則解析JSON對象
                 var message = Encoding.UTF8.GetString(receiveBuffer.ToArray());
-                Console.WriteLine(message);
+                // Console.WriteLine(message);
                 var jsontemp = JObject.Parse(message);
                 var type = jsontemp.Value<string>("type");
                 //處理JSON對象
@@ -100,12 +110,12 @@ public class WebSocketController : Controller
                 {
                     case "Chat":
                         var data = jsontemp.GetValue("data");
-                        ChatContent Chattemp = new ChatContent { type = "Chat", client = maps.MapDirectory["測試服"].client[webSocket], content = data.Value<string>() };
+                        id = jsontemp.Value<string>("id");
+                        ChatContent Chattemp = new ChatContent { type = "Chat", client = maps.MapDirectory[id].client[webSocket], content = data.Value<string>() };
                         var chatJson = JsonSerializer.Serialize(Chattemp);
                         buffer = Encoding.UTF8.GetBytes(chatJson);
-                        maps.MapDirectory["測試服"].ChatContent.Add(Chattemp);
-                        Console.WriteLine("Chat");
-                        SendToAll(buffer);
+                        maps.MapDirectory[id].ChatContent.Add(Chattemp);
+                        SendToAll(buffer, id);
                         break;
                     case "Movement":
                         var dataMovement = JsonSerializer.Deserialize<MovementDTO?>(message);
@@ -113,35 +123,49 @@ public class WebSocketController : Controller
                         {
                             break;
                         }
+                        id = jsontemp.Value<string>("mapid");
                         MovementDTO temp = new MovementDTO();
                         temp = dataMovement;
-                        maps.MapDirectory["測試服"].client[webSocket].direction = temp.data.direction;
-                        maps.MapDirectory["測試服"].client[webSocket].x = temp.data.x;
-                        maps.MapDirectory["測試服"].client[webSocket].y = temp.data.y;
-                        temp.data.id = maps.MapDirectory["測試服"].client[webSocket].id;
+                        maps.MapDirectory[id].client[webSocket].direction = temp.data.direction;
+                        maps.MapDirectory[id].client[webSocket].x = temp.data.x;
+                        maps.MapDirectory[id].client[webSocket].y = temp.data.y;
+                        temp.data.id = maps.MapDirectory[id].client[webSocket].id;
                         temp.data.type = "Movement";
                         var movementJson = JsonSerializer.Serialize(temp.data);
-                        Console.WriteLine("movement: " + movementJson);
                         buffer = Encoding.UTF8.GetBytes(movementJson);
-                        SendToAll(buffer);
+                        SendToAll(buffer, id);
                         break;
                     case "Queue":
-                        var dataQueue = jsontemp.GetValue("data").ToString();
-                        if (maps.MapDirectory["測試服"].client[webSocket].gender == 1)
+                        id = jsontemp.Value<string>("mapid");
+                        if (maps.MapDirectory[publicMap].client[webSocket].gender == 1)
                         {
-                            queue_M.Queue.Enqueue(new KeyValuePair<WebSocket, string>(webSocket, dataQueue));
-                            Console.WriteLine("Male");
+                            queue_M.Queue.Enqueue(new KeyValuePair<WebSocket, PlayerRef>(webSocket, maps.MapDirectory[publicMap].client[webSocket]));
                             if (queue_F.Queue.Count > 0 && queue_M.Queue.Peek().Key.State == System.Net.WebSockets.WebSocketState.Open && queue_F.Queue.Peek().Key.State == System.Net.WebSockets.WebSocketState.Open)
                             {
-                                pairDTO pairtemp = new pairDTO();
-                                KeyValuePair<WebSocket, string> maletemp = queue_M.Queue.Dequeue();
-                                KeyValuePair<WebSocket, string> femaletemp = queue_F.Queue.Dequeue();
-                                pairtemp.type = "Match";
-                                pairtemp.data.Add(maletemp.Value);
-                                pairtemp.data.Add(femaletemp.Value);
+                                string PrivateMapid = "小房間";
+                                //把配對方跟小房間丟給client
+                                KeyValuePair<WebSocket, PlayerRef> maletemp = queue_M.Queue.Dequeue();
+                                KeyValuePair<WebSocket, PlayerRef> femaletemp = queue_F.Queue.Dequeue();
+                                maps.MapDirectory[PrivateMapid].client.Add(maletemp.Key, maletemp.Value);
+                                maps.MapDirectory[PrivateMapid].client.Add(femaletemp.Key, femaletemp.Value);
+                                MapDirectoriesDTO pairtemp = new MapDirectoriesDTO() { type = "Match", id = PrivateMapid, Src = maps.MapDirectory[publicMap].Src, MinX = maps.MapDirectory[publicMap].MinX, MinY = maps.MapDirectory[publicMap].MinY, MaxX = maps.MapDirectory[publicMap].MaxX, MaxY = maps.MapDirectory[publicMap].MaxY, BlockedSpaces = maps.MapDirectory[publicMap].BlockedSpaces, client = new List<PlayerRef>() { maletemp.Value, femaletemp.Value } };
                                 var matchJson = JsonSerializer.Serialize(pairtemp);
                                 buffer = Encoding.UTF8.GetBytes(matchJson);
                                 SendToPeer(buffer, maletemp.Key, femaletemp.Key);
+
+                                //把配對到的人從地圖移除
+                                maps.MapDirectory[publicMap].client.Remove(maletemp.Key);
+                                maps.MapDirectory[publicMap].client.Remove(femaletemp.Key);
+                                for (int i = 0; i < pairtemp.client.Count; i++)
+                                {
+                                    DiscconnectDTO dcdto = new DiscconnectDTO();
+                                    dcdto.type = "Disconnect";
+                                    dcdto.PlayerRef = pairtemp.client[i];
+                                    var dcdtotemp = JsonSerializer.Serialize(dcdto);
+                                    buffer = Encoding.UTF8.GetBytes(dcdtotemp);
+                                    SendToAll(buffer, publicMap);
+                                }
+
                             }
                             else if (queue_F.Queue.Count > 0 && queue_F.Queue.Peek().Key.State != System.Net.WebSockets.WebSocketState.Open)
                             {
@@ -161,21 +185,33 @@ public class WebSocketController : Controller
                                 SendToOne(buffer, webSocket);
                             }
                         }
-                        else if (maps.MapDirectory["測試服"].client[webSocket].gender == 2)
+                        else if (maps.MapDirectory[publicMap].client[webSocket].gender == 2)
                         {
-                            queue_F.Queue.Enqueue(new KeyValuePair<WebSocket, string>(webSocket, dataQueue));
-                            Console.WriteLine("FeMale");
+                            queue_F.Queue.Enqueue(new KeyValuePair<WebSocket, PlayerRef>(webSocket, maps.MapDirectory[publicMap].client[webSocket]));
                             if (queue_M.Queue.Count > 0)
                             {
-                                pairDTO pairtemp = new pairDTO();
-                                KeyValuePair<WebSocket, string> maletemp = queue_M.Queue.Dequeue();
-                                KeyValuePair<WebSocket, string> femaletemp = queue_F.Queue.Dequeue();
-                                pairtemp.type = "Match";
-                                pairtemp.data.Add(maletemp.Value);
-                                pairtemp.data.Add(femaletemp.Value);
+                                string PrivateMapid = "小房間";
+                                KeyValuePair<WebSocket, PlayerRef> maletemp = queue_M.Queue.Dequeue();
+                                KeyValuePair<WebSocket, PlayerRef> femaletemp = queue_F.Queue.Dequeue();
+                                maps.MapDirectory[PrivateMapid].client.Add(maletemp.Key, maletemp.Value);
+                                maps.MapDirectory[PrivateMapid].client.Add(femaletemp.Key, femaletemp.Value);
+                                MapDirectoriesDTO pairtemp = new MapDirectoriesDTO() { type = "Match", id = PrivateMapid, Src = maps.MapDirectory[publicMap].Src, MinX = maps.MapDirectory[publicMap].MinX, MinY = maps.MapDirectory[publicMap].MinY, MaxX = maps.MapDirectory[publicMap].MaxX, MaxY = maps.MapDirectory[publicMap].MaxY, BlockedSpaces = maps.MapDirectory[publicMap].BlockedSpaces, client = new List<PlayerRef>() { maletemp.Value, femaletemp.Value } };
                                 var matchJson = JsonSerializer.Serialize(pairtemp);
                                 buffer = Encoding.UTF8.GetBytes(matchJson);
                                 SendToPeer(buffer, maletemp.Key, femaletemp.Key);
+
+
+                                maps.MapDirectory[publicMap].client.Remove(maletemp.Key);
+                                maps.MapDirectory[publicMap].client.Remove(femaletemp.Key);
+                                for (int i = 0; i < pairtemp.client.Count; i++)
+                                {
+                                    DiscconnectDTO dcdto = new DiscconnectDTO();
+                                    dcdto.type = "Disconnect";
+                                    dcdto.PlayerRef = pairtemp.client[i];
+                                    var dcdtotemp = JsonSerializer.Serialize(dcdto);
+                                    buffer = Encoding.UTF8.GetBytes(dcdtotemp);
+                                    SendToAll(buffer, publicMap);
+                                }
                             }
                             else if (queue_M.Queue.Count > 0 && queue_M.Queue.Peek().Key.State != System.Net.WebSockets.WebSocketState.Open)
                             {
@@ -196,6 +232,62 @@ public class WebSocketController : Controller
                             }
                         }
                         break;
+                    case "Description":
+                        id = jsontemp.Value<string>("mapid");
+                        string descriptiontemp;
+                        string candidatetemp;
+                        PeerDTO peertemp = new PeerDTO();
+                        peertemp.type = "Peer";
+                        if (jsontemp["description"].HasValues)
+                        {
+                            descriptiontemp = jsontemp["description"].ToString();
+                            peertemp.description = descriptiontemp;
+                        }
+                        else if (jsontemp["candidate"].HasValues)
+                        {
+                            candidatetemp = jsontemp["candidate"].ToString();
+                            peertemp.candidate = candidatetemp;
+                        }
+
+                        var peerJson = JsonSerializer.Serialize(peertemp);
+                        buffer = Encoding.UTF8.GetBytes(peerJson);
+                        foreach (var socket in maps.MapDirectory[id].client)
+                        {
+                            if (socket.Key != webSocket)
+                            {
+                                SendToOne(buffer, socket.Key);
+                            }
+                        }
+
+                        break;
+                    case "Leave":
+                        id = jsontemp.Value<string>("mapid");
+
+                        MapDirectoriesDTO mapDTO = new MapDirectoriesDTO() { type = "Load", id = publicMap, Src = maps.MapDirectory[publicMap].Src, MinX = maps.MapDirectory[publicMap].MinX, MinY = maps.MapDirectory[publicMap].MinY, MaxX = maps.MapDirectory[publicMap].MaxX, MaxY = maps.MapDirectory[publicMap].MaxY, BlockedSpaces = maps.MapDirectory[publicMap].BlockedSpaces, client = maps.MapDirectory[publicMap].client.Values.ToList() };
+                        var Loadtemp = JsonSerializer.Serialize(mapDTO);
+                        var Load = Encoding.UTF8.GetBytes(Loadtemp);
+                        await webSocket.SendAsync(new ArraySegment<byte>(Load), WebSocketMessageType.Text, true, CancellationToken.None);
+
+
+                        maps.MapDirectory[publicMap].client.Add(webSocket, maps.MapDirectory[id].client[webSocket]);
+                        maps.MapDirectory[id].client.Remove(webSocket);
+                        // if (maps.MapDirectory[id].client.Count < 1)
+                        // {
+                        //     maps.MapDirectory.Remove(id);
+                        // }
+                        maps.MapDirectory[publicMap].client[webSocket].type = "Connect";
+                        var leavetemp = JsonSerializer.Serialize(maps.MapDirectory[publicMap].client[webSocket]);
+                        buffer = Encoding.UTF8.GetBytes(leavetemp);
+                        SendToAll(buffer, publicMap);
+
+
+                        DiscconnectDTO leavedto = new DiscconnectDTO();
+                        leavedto.type = "Disconnect";
+                        leavedto.PlayerRef = maps.MapDirectory[publicMap].client[webSocket];
+                        leavetemp = JsonSerializer.Serialize(leavedto);
+                        buffer = Encoding.UTF8.GetBytes(leavetemp);
+                        SendToAll(buffer, id);
+                        break;
                 }
                 //清空緩存區
                 receiveBuffer.Clear();
@@ -213,30 +305,33 @@ public class WebSocketController : Controller
 
         }
         //關閉連線
+
         DiscconnectDTO Disconnect = new DiscconnectDTO();
         Disconnect.type = "Disconnect";
-        Disconnect.PlayerRef = maps.MapDirectory["測試服"].client[webSocket];
+        Disconnect.PlayerRef = maps.MapDirectory[id].client[webSocket];
         var dctemp = JsonSerializer.Serialize(Disconnect);
         var dc = Encoding.UTF8.GetBytes(dctemp);
-        foreach (KeyValuePair<WebSocket, PlayerRef> con in maps.MapDirectory["測試服"].client)
+        foreach (string map in maps.MapDirectory.Keys)
         {
-            if (con.Key.State != System.Net.WebSockets.WebSocketState.Open)
+            foreach (var con in maps.MapDirectory[map].client)
             {
-                continue;
+                if (con.Key.State != System.Net.WebSockets.WebSocketState.Open)
+                {
+                    Console.WriteLine(con.Value.id + " has discoonected");
+                    maps.MapDirectory[map].client.Remove(con.Key);
+                    continue;
+                }
+                await con.Key.SendAsync(
+               new ArraySegment<byte>(dc), WebSocketMessageType.Text, true, CancellationToken.None);
             }
-            await con.Key.SendAsync(
-           new ArraySegment<byte>(dc), WebSocketMessageType.Text, true, CancellationToken.None);
         }
-
-        Console.WriteLine(maps.MapDirectory["測試服"].client[webSocket].id + " has discoonected");
-        maps.MapDirectory["測試服"].client.Remove(webSocket);
         await webSocket.CloseAsync(
             receiveResult.CloseStatus.Value,
             receiveResult.CloseStatusDescription, CancellationToken.None);
 
 
     }
-    public string generateID()
+    public static string generateID()
     {
         return Guid.NewGuid().ToString("N");
     }
@@ -248,9 +343,9 @@ public class WebSocketController : Controller
         return arr[temp];
     }
 
-    public static async void SendToAll(byte[] buffer)
+    public static async void SendToAll(byte[] buffer, string id)
     {
-        foreach (KeyValuePair<WebSocket, PlayerRef> con in maps.MapDirectory["測試服"].client)
+        foreach (KeyValuePair<WebSocket, PlayerRef> con in maps.MapDirectory[id].client)
         {
             if (con.Key.State != System.Net.WebSockets.WebSocketState.Open)
             {
