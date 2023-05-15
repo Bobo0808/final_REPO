@@ -17,7 +17,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(option => {
     option.LoginPath = "/Access/Login";
     option.LogoutPath = "/Access/Login";
-    option.AccessDeniedPath = "/Access/Login";
+    //option.AccessDeniedPath = "/Access/Login";
     option.ExpireTimeSpan = TimeSpan.FromMinutes(20);
 });
 builder.Services.AddControllersWithViews();
