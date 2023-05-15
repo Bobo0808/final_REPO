@@ -292,54 +292,54 @@ namespace ClassLibrary
                 E_Permission = 0,
                 E_Work = true,
             });
-            //for (int i = 1; i < 10; i++)//從這裡開始
-            //{
-            //    Random SRnd = new Random();
-            //    Random ERnd = new Random();
+            for (int i = 2; i < 10; i++)//從這裡開始
+            {
+                Random SRnd = new Random();
+                Random ERnd = new Random();
 
-            //    DateTime StartDate = new DateTime(2022, 1, 1);
-            //    int StartDaysToAdd = SRnd.Next(365);
-            //    int EndDaysToAdd = ERnd.Next(7, 25);
-            //    DateTime StartTime = StartDate.AddDays(StartDaysToAdd);
-            //    DateTime EndTime = StartTime.AddDays(EndDaysToAdd);
+                DateTime StartDate = new DateTime(2022, 1, 1);
+                int StartDaysToAdd = SRnd.Next(365);
+                int EndDaysToAdd = ERnd.Next(7, 25);
+                DateTime StartTime = StartDate.AddDays(StartDaysToAdd);
+                DateTime EndTime = StartTime.AddDays(EndDaysToAdd);
 
-            //    Random random = new Random();
-            //    Random r_Work = new Random();
-            //    //string[] Work = { "在職", "離職" };
-            //    //string random_Work = Work[r_Work.Next(0, 2)];
+                Random random = new Random();
+                Random r_Work = new Random();
+                //string[] Work = { "在職", "離職" };
+                //string random_Work = Work[r_Work.Next(0, 2)];
 
-            //    //int randomGender1 = random.Next(0, 2);
-            //    //int random_Title1 = random.Next(0, 3);
+                //int randomGender1 = random.Next(0, 2);
+                //int random_Title1 = random.Next(0, 3);
 
-            //    string characters = "abcdefghijklmnopqrstuvwxyz0123456789";
-            //    int length = random.Next(6, 12); // Random length between 6 and 11
-            //    string email = "";
-            //    string pwd = "";
-            //    for (int jj = 0; jj < length; jj++)
-            //    {
-            //        int index = random.Next(0, characters.Length);
-            //        email += characters[index];
-            //        pwd += characters[index];
-            //    }
-            //    email += "@gmail.com";
+                string characters = "abcdefghijklmnopqrstuvwxyz0123456789";
+                int length = random.Next(6, 12); // Random length between 6 and 11
+                string email = "";
+                string pwd = "";
+                for (int jj = 0; jj < length; jj++)
+                {
+                    int index = random.Next(0, characters.Length);
+                    email += characters[index];
+                    pwd += characters[index];
+                }
+                email += "@gmail.com";
 
-            //    modelBuilder.Entity<Employee>().HasData(new Employee()
-            //    {
-            //        E_ID = i,
-            //        E_Name = i.ToString(),
-            //        E_Gender = (Employee.Gender)random.Next(0, 2),
-            //        E_UserName = i.ToString(),
-            //        E_Pwd = pwd,
-            //        E_Email = email,
-            //        E_Title = (Employee.Title)random.Next(0, 2),
-            //        E_Phone = $"09{SRnd.Next(10000000, 20000000)}",
-            //        E_Birthday = StartTime,
-            //        E_HireDate = EndTime,
-            //        E_Address = "高雄市前金區",
-            //        E_Permission = SRnd.Next(1, 3),
-            //        E_Work = true,
-            //    });
-            //};//從這裡結束
+                modelBuilder.Entity<Employee>().HasData(new Employee()
+                {
+                    E_ID = i,
+                    E_Name = i.ToString(),
+                    E_Gender = (Employee.Gender)random.Next(0, 2),
+                    E_UserName = i.ToString(),
+                    E_Pwd = pwd,
+                    E_Email = email,
+                    E_Title = (Employee.Title)random.Next(0, 2),
+                    E_Phone = $"09{SRnd.Next(10000000, 20000000)}",
+                    E_Birthday = StartTime,
+                    E_HireDate = EndTime,
+                    E_Address = "高雄市前金區",
+                    E_Permission = SRnd.Next(1, 3),
+                    E_Work = true,
+                });
+            };//從這裡結束
 
             modelBuilder.Entity<LoginStaus>(b =>
             {

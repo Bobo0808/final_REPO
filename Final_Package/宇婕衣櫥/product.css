@@ -1,0 +1,149 @@
+/* 小於等於768px的螢幕 */
+@media (max-width: 768px) {
+    dt {
+        font-size: 24px;
+        margin: 2%;
+    }
+
+    h1 {
+        font-size: 36px;
+        margin: 2%;
+    }
+
+    a {
+        font-size: 36px;
+    }
+
+    .delete {
+        margin: 1%;
+    }
+
+    .btn-lg {
+        font-weight: bold;
+    }
+
+    .create {
+        margin: 5%;
+    }
+
+    .container {
+        overflow: auto;
+        max-height: 100%;
+        max-width: 80%;
+        background-color: rgb(203, 87, 87);
+    }
+
+    img {
+        height: 3%;
+        width: 3%;
+    }
+}
+
+/* 大於768px小於等於1024px的螢幕 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    dt {
+        font-size: 28px;
+        margin: 3%;
+    }
+
+    h1 {
+        font-size: 48px;
+        margin: 2%;
+    }
+
+    a {
+        font-size: 48px;
+    }
+
+    .delete {
+        margin: 1%;
+    }
+
+    .btn-lg {
+        font-weight: bold;
+    }
+
+    .create {
+        margin: 5%;
+    }
+
+    .container {
+        overflow: auto;
+        max-height: 100%;
+        max-width: 80%;
+        background-color: rgb(203, 87, 87);
+    }
+
+    img {
+        height: 3%;
+        width: 3%;
+    }
+}
+
+/* 大於1024px的螢幕 */
+@media (min-width: 1025px) {
+    dt {
+        font-size: 29px;
+        color: black;
+        margin: 5%;
+    }
+
+    h1 {
+        margin: 2%;
+        color: black;
+    }
+
+    .delete {
+        margin: 1%;
+    }
+
+    a {
+        /*font-size: 60px;
+        color: #c10909;*/
+        font-size: 28px;
+        color: #232324;
+    }
+
+    .container {
+        overflow: auto;
+
+        max-height: 110%;
+        max-width: 80%;
+        background-color: rgb(203, 87, 87);
+        margin-left: auto;
+        margin-right: auto;
+
+        height: 90%;
+
+        /*overflow: auto;
+        position: relative;
+        max-height: 100%;
+        max-width: 100%;
+        width: 53%;
+        border-radius: 6px;*/
+        /*margin: 50px 15px;*/
+        /*margin: 100px 100px;
+        padding: 30px;
+        background-color: #fff;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;*/
+        /* height: 100vh;*/
+        /*margin-left: auto;
+        margin-right: auto;*/
+    }
+
+    .btn-lg {
+        font-weight: bold;
+    }
+
+    .create {
+        margin: 5%;
+    }
+
+    img {
+        height: 3%;
+        width: 3%;
+    }
+}
