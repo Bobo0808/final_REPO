@@ -1,7 +1,7 @@
-﻿using ClassLibrary.Data;
-using final_repo_test.Interfaces;
+﻿using final_repo_test.Interfaces;
 using ClassLibrary.Models;
 using Microsoft.EntityFrameworkCore;
+using ClassLibrary;
 
 namespace final_repo_test.Repositroy
 {

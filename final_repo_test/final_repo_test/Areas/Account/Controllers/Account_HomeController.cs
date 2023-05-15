@@ -1,4 +1,4 @@
-﻿using ClassLibrary.Data;
+﻿using ClassLibrary;
 using ClassLibrary.Models;
 using ClassLibrary.ViewModels.Account;
 using Microsoft.AspNetCore.Mvc;

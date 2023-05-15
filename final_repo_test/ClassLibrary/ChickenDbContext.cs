@@ -2,17 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using ClassLibrary.Enum;
 
-namespace ClassLibrary.Data
+namespace ClassLibrary
 {
     public class ChickenDbContext : DbContext
-	{
-		public ChickenDbContext(DbContextOptions<ChickenDbContext> options) : base(options)
+    {
+        public ChickenDbContext(DbContextOptions<ChickenDbContext> options) : base(options)
         {
-		}
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-			optionsBuilder.UseSqlServer(@"Data Source=.;Initial Catalog=ChickenLife;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+            optionsBuilder.UseSqlServer(@"Data Source=.;Initial Catalog=ChickenLife;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

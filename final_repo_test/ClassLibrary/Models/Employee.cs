@@ -57,7 +57,10 @@ namespace ClassLibrary.Models
         public int E_Permission { get; set; } = default!;
         public bool E_Work { get; set; } = default!;
 
-
+        public bool Locked { get; set; } = false;
+        [Required]
+        [StringLength(50)]
+        public string Role { get; set; } = "user";
 
         //public string E_Gender { get; set; }
         //public Gender E_Gender { get; set; } = default!;
