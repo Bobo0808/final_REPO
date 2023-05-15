@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using final_repo_test.Data;
-using final_repo_test.Models;
-using final_repo_test.ViewModels.AD.ADUpdate;
+using ClassLibrary.Data;
+using ClassLibrary.Models;
+using ClassLibrary.ViewModels.AD.ADUpdate;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -15,10 +15,10 @@ namespace final_repo_test.Areas.AD.Controllers
     [Area(areaName: "AD")]
     public class ADUpdate_HomeController : Controller
     {
-        private readonly ApplicationDbContext _dbContext;
+        private readonly ChickenDbContext _dbContext;
         private readonly IWebHostEnvironment _env;
 
-        public ADUpdate_HomeController(ApplicationDbContext dbContext, IWebHostEnvironment env)
+        public ADUpdate_HomeController(ChickenDbContext dbContext, IWebHostEnvironment env)
         {
             _dbContext = dbContext;
             _env = env;
@@ -65,8 +65,7 @@ namespace final_repo_test.Areas.AD.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpGet]
         [Route("AD/Case/{id}")]
         public async Task<IActionResult> GetCase(int id)
         {
