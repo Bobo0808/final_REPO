@@ -1,4 +1,4 @@
-﻿using ClassLibrary.Data;
+﻿using ClassLibrary;
 using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using System;
 using System.Collections.Generic;

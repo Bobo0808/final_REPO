@@ -5,8 +5,9 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using ClassLibrary.ViewModels.Login;
 using Microsoft.AspNetCore.Authorization;
 using ClassLibrary.Models;
-using ClassLibrary.Data;
 using NETCore.Encrypt.Extensions;
+using ClassLibrary;
+using System.ComponentModel.DataAnnotations;
 
 namespace final_repo_test.Controllers
 {
@@ -89,21 +90,21 @@ namespace final_repo_test.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult Register(RegisterViewModel model)
+        public IActionResult Register(RegisterViewModel Rmodel)
         {
             if (ModelState.IsValid)
             {
-                if (_context.Employees.Any(x => x.E_UserName.ToLower() == model.E_UserName.ToLower()))
+                if (_context.Employees.Any(x => x.E_UserName.ToLower() == Rmodel.E_UserName.ToLower()))
                 {
-                    ModelState.AddModelError(nameof(model.E_UserName), "Username is already exists.");
-                    View(model);
+                    ModelState.AddModelError(nameof(Rmodel.E_UserName), "Username is already exists.");
+                    View(Rmodel);
                 }
 
-                string hashedPassword = DoMD5HashedString(model.E_Pwd);
+                string hashedPassword = DoMD5HashedString(Rmodel.E_Pwd);
 
                 Employee user = new()
                 {
-                    E_UserName = model.E_UserName,
+                    E_UserName = Rmodel.E_UserName,
                     E_Pwd = hashedPassword
                 };
 
@@ -120,8 +121,61 @@ namespace final_repo_test.Controllers
                 }
             }
 
-            return View(model);
+            return View(Rmodel);
         }
+        //public IActionResult Profile()
+        //{
+        //    ProfileInfoLoader();
+
+        //    return View();
+        //}
+
+        //private void ProfileInfoLoader()
+        //{
+        //    int userid = Convert.ToInt32(User.FindFirstValue(ClaimTypes.NameIdentifier));
+        //    Employee user = _context.Employees.SingleOrDefault(x =>x.E_ID  == Convert.ToInt32(userid));
+
+        //    ViewData["FullName"] = user.E_Name;
+        //}
+
+        //[HttpPost]
+        //public IActionResult ProfileChangeFullName([Required][StringLength(50)] string? fullname)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        Guid userid = new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
+        //        Employee user = _context.Employees.SingleOrDefault(x => x.E_ID == userid);
+
+        //        user.E_Name = fullname;
+        //        _context.SaveChanges();
+
+        //        return RedirectToAction(nameof(Profile));
+        //    }
+
+        //    ProfileInfoLoader();
+        //    return View("Profile");
+        //}
+
+        //[HttpPost]
+        //public IActionResult ProfileChangePassword([Required][MinLength(6)][MaxLength(16)] string? password)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        Guid userid = new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
+        //        Employee user = _context.Employees.SingleOrDefault(x => x.E_ID == userid);
+
+        //        string hashedPassword = DoMD5HashedString(password);
+
+        //        user.Password = hashedPassword;
+        //        _context.SaveChanges();
+
+        //        ViewData["result"] = "PasswordChanged";
+        //    }
+
+        //    ProfileInfoLoader();
+        //    return View("Profile");
+        //}
+
     }
 }
  

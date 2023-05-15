@@ -3,11 +3,11 @@ using ClassLibrary.Models;
 using ClassLibrary.ViewModels.AD.AD;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using ClassLibrary.Data;
+using ClassLibrary;
 
 namespace final_repo_test.Areas.AD.Controllers
 {
-	[Area(areaName: "AD")]
+    [Area(areaName: "AD")]
 	public class AD_HomeController : Controller
 	{
 		private readonly ChickenDbContext _dbContext;

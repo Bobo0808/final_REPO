@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 using ClassLibrary.Models;
-using ClassLibrary.Data;
+using ClassLibrary;
 
 namespace final_repo_test.Areas.Employee.Controllers
 {
