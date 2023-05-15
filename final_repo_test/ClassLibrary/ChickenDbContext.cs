@@ -276,6 +276,22 @@ namespace ClassLibrary
 
                 b.ToTable("Employees");
             });
+            modelBuilder.Entity<Employee>().HasData(new Employee()
+            {
+                E_ID = 1,
+                E_Name = "bobo",
+                E_Gender = 0,
+                E_UserName = "bobo",
+                E_Pwd = "1234",
+                E_Email = "user@gmail.com",
+                E_Title = 0,
+                E_Phone = "0963915584",
+                E_Birthday = new DateTime(1999, 08, 08),
+                E_HireDate = new DateTime(2023, 05, 15),
+                E_Address = "高雄市前金區",
+                E_Permission = 0,
+                E_Work = true,
+            });
             //for (int i = 1; i < 10; i++)//從這裡開始
             //{
             //    Random SRnd = new Random();
