@@ -46,7 +46,7 @@ namespace final_repo_test.Controllers
                     IsPersistent = LoginVM.KeepLoggedIn
                 };
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(Claimsidentity), properties);
-                return RedirectToAction("Index", "Account_Home", new { area = "Account" });
+                return RedirectToAction("Index", "LoginStatus_Home", new { area = "LoginStatus" });
             }
 
             ViewData["ValodateMessage"] = "他媽的給我成功喔";

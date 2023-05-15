@@ -1,6 +1,5 @@
-﻿using final_repo_test.Data;
-using final_repo_test.Interfaces;
-using final_repo_test.ViewModels.LoginStatus;
+﻿using final_repo_test.Interfaces;
+using ClassLibrary.ViewModels.LoginStatus;
 using Microsoft.AspNetCore.Mvc;
 
 namespace final_repo_test.Areas.LoginStatus.Controllers
@@ -15,7 +14,7 @@ namespace final_repo_test.Areas.LoginStatus.Controllers
         {
             _loginStatusRepository = loginStatusRepository;
         }
-        public async Task<IActionResult> Index(string id)
+        public async Task<IActionResult> Index(string id = "Day")
         {
             Console.WriteLine(id);
             GetDayViewModel data = await _loginStatusRepository.GetDay(id);

@@ -1,6 +1,6 @@
 ﻿using ClassLibrary;
 using final_repo_test.Interfaces;
-using final_repo_test.ViewModels.LoginStatus;
+using ClassLibrary.ViewModels.LoginStatus;
 using Microsoft.EntityFrameworkCore;
 
 namespace final_repo_test.Repositroy

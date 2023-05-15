@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using ClassLibrary;
+using Microsoft.Extensions.Options;
 
 
 //Debugger.Launch();
@@ -18,7 +19,9 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     option.LoginPath = "/Access/Login";
     option.LogoutPath = "/Access/Login";
     //option.AccessDeniedPath = "/Access/Login";
-    option.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+    option.Cookie.HttpOnly = true;
+    option.SlidingExpiration = true;
+    option.ExpireTimeSpan = TimeSpan.FromMinutes(1);
 });
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IDebugLogRepository, DebugLogRepository>();
