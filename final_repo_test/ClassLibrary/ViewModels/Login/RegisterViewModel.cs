@@ -10,7 +10,7 @@ namespace ClassLibrary.ViewModels.Login
         //[Display(Name ="Kullanıcı Adı", Prompt ="johndoe")]
         [Required(ErrorMessage = "Username is required.")]
         [StringLength(30, ErrorMessage = "Username can be max 30 characters.")]
-        public string E_UserName { get; set; }
+        public string E_Email { get; set; }
 
         //[DataType(DataType.Password)]
         [Required(ErrorMessage = "Password is required.")]
