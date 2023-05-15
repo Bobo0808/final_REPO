@@ -94,6 +94,8 @@ class Boundary {
         //地圖放大200%
         this.width = 64
         this.height = 64
+        
+        
     }
 
     draw() {
