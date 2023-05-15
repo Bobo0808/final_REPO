@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ClassLibrary.Data;
 using ClassLibrary.Models;
+using ClassLibrary;
 
 namespace final_repo_test.Areas.CardOrderProduct.Controllers
 {

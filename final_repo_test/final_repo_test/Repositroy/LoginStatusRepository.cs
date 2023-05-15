@@ -1,4 +1,4 @@
-﻿using ClassLibrary.Data;
+﻿using ClassLibrary;
 using final_repo_test.Interfaces;
 using final_repo_test.ViewModels.LoginStatus;
 using Microsoft.EntityFrameworkCore;

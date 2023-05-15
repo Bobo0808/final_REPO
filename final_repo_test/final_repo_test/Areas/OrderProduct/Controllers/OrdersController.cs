@@ -1,11 +1,10 @@
 ﻿using ClassLibrary.ViewModels.OrderProduct;
-using ClassLibrary.Data;
 using ClassLibrary.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
-
+using ClassLibrary;
 
 namespace final_repo_test.Areas.OrderProduct.Controllers
 {
