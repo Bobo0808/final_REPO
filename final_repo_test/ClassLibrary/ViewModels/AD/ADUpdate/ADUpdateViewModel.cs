@@ -1,7 +1,7 @@
 ﻿using ClassLibrary.Models;
 using System.Collections.Generic;
 
-namespace final_repo_test.ViewModels.AD.ADUpdate
+namespace ClassLibrary.ViewModels.AD.ADUpdate
 {
 	public class ADUpdateViewModel
 	{
