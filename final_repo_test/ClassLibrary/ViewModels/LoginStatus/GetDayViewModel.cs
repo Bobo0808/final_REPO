@@ -1,4 +1,4 @@
-﻿namespace final_repo_test.ViewModels.LoginStatus
+﻿namespace ClassLibrary.ViewModels.LoginStatus
 {
     public class GetDayViewModel
     {
@@ -15,7 +15,7 @@
 
         public List<string> Productx { get; set; } = new List<string>();
         public List<int> Producty { get; set; } = new List<int>();
-        public List<DateTime> Salesx { get; set; } = new List<DateTime>();
+        public List<string> Salesx { get; set; } = new List<string>();
         public List<int> Salesy { get; set; } = new List<int>();
     }
 }

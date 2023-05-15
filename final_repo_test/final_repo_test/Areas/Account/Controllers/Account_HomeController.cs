@@ -1,6 +1,7 @@
 ﻿using ClassLibrary;
 using ClassLibrary.Models;
 using ClassLibrary.ViewModels.Account;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +19,7 @@ namespace final_repo_test.Areas.Account.Controllers
         }
         //這邊以上
         [HttpGet]
+        
         public async Task<IActionResult> Index()
         {
             var accounts = await applicationDbContext.Accounts.ToListAsync();
