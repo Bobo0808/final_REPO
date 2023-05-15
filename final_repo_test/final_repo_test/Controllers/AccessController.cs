@@ -53,6 +53,44 @@ namespace final_repo_test.Controllers
             return View();
 
         }
+        [HttpPost]
+        public async Task<IActionResult> Register(Employee employee)
+        {
+            if (ModelState.IsValid)
+                {
+                    // 檢查Email是否已被使用
+                    bool isEmailTaken = await _context.Employees.AnyAsync(x => x.E_Email == employee.E_Email);
+                    if (!isEmailTaken)
+                    {
+                    // Email是唯一的，可以繼續註冊
+                    // 執行註冊邏輯，例如將員工資料存儲到資料庫中
+                    _context.Employees.Add(employee);
+                    await _context.SaveChangesAsync();
+
+
+                    // 返回成功的結果
+                    return Ok("註冊成功");
+                    }
+                    else
+                    {
+                        // Email已存在，返回錯誤訊息
+                        ModelState.AddModelError("E_Email", "該Email已被使用");
+                    }
+                }
+
+                // 返回驗證錯誤的結果
+                return BadRequest(ModelState);
+            
+
+        }
+
+
+
+
+
+
+
+
     }
 
 }

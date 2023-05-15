@@ -19,35 +19,32 @@
     <title>Login</title>
 </head>*@
 
-<body>
-    <div class="container">
-        <div class="form-box">
-            <div class="form-value">
-                <form  asp-controller="Access" asp-action="Login" method="post">
-                    <h2>Login</h2>
-                    <div class="inputbox">
-                        <ion-icon name="mail-outline"></ion-icon>
-                        <input type="text" value="user@gmail.com"  required asp-for="E_Email">
-                        <label for="">UserName</label>
-                    </div>
-                    <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" value="1234" required asp-for="E_Pwd">
-                        <label for="">Password</label>
-                    </div>
-                    <div class="forget">
-                        <label for=""><input type="checkbox"> Keep me Logged In <a href="#">Forget Password</a></label>
-                    </div>
-                    <button type="submit">Log in</button>
-                    <div class="register">
-                        <p>Don't have a account <a asp-action="Register">Register</a></p>
-                    </div>
-                </form>
-            </div>
+<div class="container">
+    <div class="form-box">
+        <div class="form-value">
+            <form asp-controller="Access" asp-action="Login" method="post">
+                <h2>後台管理系統</h2>
+                <div class="inputbox">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="text" value="user@gmail.com" required asp-for="E_Email">
+                    <label for="">Email</label>
+                </div>
+                <div class="inputbox">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" value="1234" required asp-for="E_Pwd">
+                    <label for="">Password</label>
+                </div>
+                <div class="forget">
+                    <label for=""><input type="checkbox"> Keep me Logged In <a href="#">Forget Password</a></label>
+                </div>
+                <button type="submit">Log in</button>
+                <div class="register">
+                    <p>Don't have a account <a asp-action="Register">Register</a></p>
+                </div>
+            </form>
         </div>
     </div>
-
-</body>
+</div>
 
 
 
