@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ClassLibrary.Data;
+using ClassLibrary;
 using ClassLibrary.Models;
 using ClassLibrary.ViewModels.AD.ADUpdate;
 using System.Linq;
