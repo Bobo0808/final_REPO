@@ -88,522 +88,522 @@ namespace final_repo_test.Migrations
                             Ad_ID = 1,
                             AD_FinalPaymentAmount = 15000,
                             Ad_ActiveStatus = 1,
-                            Ad_Clicks = 133,
-                            Ad_DayCount = 17,
+                            Ad_Clicks = 104,
+                            Ad_DayCount = 7,
                             Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_EndTime = new DateTime(2022, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Ad_ImageURL = "AD_1.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 11, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_PaymentDueDate = new DateTime(2022, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 11, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Ad_TargetURL = "http://exmple/.com1",
-                            Ad_TimeOfPayment = new DateTime(2022, 11, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TimeOfPayment = new DateTime(2022, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CaseID = 2,
                             OS_ID = 1,
-                            PartnerID = 9
+                            PartnerID = 13
                         },
                         new
                         {
                             Ad_ID = 2,
                             AD_FinalPaymentAmount = 15000,
                             Ad_ActiveStatus = 1,
-                            Ad_Clicks = 85,
-                            Ad_DayCount = 12,
+                            Ad_Clicks = 67,
+                            Ad_DayCount = 10,
                             Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 5, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_EndTime = new DateTime(2022, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Ad_ImageURL = "AD_2.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 4, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_PaymentDueDate = new DateTime(2022, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 7, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Ad_TargetURL = "http://exmple/.com2",
-                            Ad_TimeOfPayment = new DateTime(2022, 4, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TimeOfPayment = new DateTime(2022, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CaseID = 3,
                             OS_ID = 1,
-                            PartnerID = 2
+                            PartnerID = 20
                         },
                         new
                         {
                             Ad_ID = 3,
                             AD_FinalPaymentAmount = 15000,
                             Ad_ActiveStatus = 1,
-                            Ad_Clicks = 116,
+                            Ad_Clicks = 46,
                             Ad_DayCount = 15,
                             Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_EndTime = new DateTime(2022, 8, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Ad_ImageURL = "AD_3.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_PaymentDueDate = new DateTime(2022, 7, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Ad_TargetURL = "http://exmple/.com3",
-                            Ad_TimeOfPayment = new DateTime(2022, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TimeOfPayment = new DateTime(2022, 7, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CaseID = 4,
                             OS_ID = 1,
-                            PartnerID = 1
+                            PartnerID = 11
                         },
                         new
                         {
                             Ad_ID = 4,
                             AD_FinalPaymentAmount = 15000,
                             Ad_ActiveStatus = 1,
-                            Ad_Clicks = 218,
-                            Ad_DayCount = 18,
+                            Ad_Clicks = 122,
+                            Ad_DayCount = 11,
                             Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_EndTime = new DateTime(2022, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Ad_ImageURL = "AD_4.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 2, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_PaymentDueDate = new DateTime(2022, 7, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Ad_TargetURL = "http://exmple/.com4",
-                            Ad_TimeOfPayment = new DateTime(2022, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CaseID = 3,
+                            Ad_TimeOfPayment = new DateTime(2022, 7, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CaseID = 1,
                             OS_ID = 1,
-                            PartnerID = 6
+                            PartnerID = 4
                         },
                         new
                         {
                             Ad_ID = 5,
                             AD_FinalPaymentAmount = 15000,
                             Ad_ActiveStatus = 1,
-                            Ad_Clicks = 56,
-                            Ad_DayCount = 8,
+                            Ad_Clicks = 107,
+                            Ad_DayCount = 22,
                             Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_EndTime = new DateTime(2022, 8, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Ad_ImageURL = "AD_5.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 1, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_PaymentDueDate = new DateTime(2022, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 8, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Ad_TargetURL = "http://exmple/.com5",
-                            Ad_TimeOfPayment = new DateTime(2022, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TimeOfPayment = new DateTime(2022, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CaseID = 4,
                             OS_ID = 1,
-                            PartnerID = 16
+                            PartnerID = 13
                         },
                         new
                         {
                             Ad_ID = 6,
                             AD_FinalPaymentAmount = 15000,
                             Ad_ActiveStatus = 1,
-                            Ad_Clicks = 169,
-                            Ad_DayCount = 19,
-                            Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 5, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_ImageURL = "AD_6.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_TargetURL = "http://exmple/.com6",
-                            Ad_TimeOfPayment = new DateTime(2022, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CaseID = 3,
-                            OS_ID = 1,
-                            PartnerID = 19
-                        },
-                        new
-                        {
-                            Ad_ID = 7,
-                            AD_FinalPaymentAmount = 15000,
-                            Ad_ActiveStatus = 1,
-                            Ad_Clicks = 33,
-                            Ad_DayCount = 7,
-                            Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_ImageURL = "AD_7.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_TargetURL = "http://exmple/.com7",
-                            Ad_TimeOfPayment = new DateTime(2022, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CaseID = 4,
-                            OS_ID = 1,
-                            PartnerID = 20
-                        },
-                        new
-                        {
-                            Ad_ID = 8,
-                            AD_FinalPaymentAmount = 15000,
-                            Ad_ActiveStatus = 1,
-                            Ad_Clicks = 85,
-                            Ad_DayCount = 21,
-                            Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_ImageURL = "AD_8.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 9, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_TargetURL = "http://exmple/.com8",
-                            Ad_TimeOfPayment = new DateTime(2022, 9, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CaseID = 2,
-                            OS_ID = 1,
-                            PartnerID = 1
-                        },
-                        new
-                        {
-                            Ad_ID = 9,
-                            AD_FinalPaymentAmount = 15000,
-                            Ad_ActiveStatus = 1,
-                            Ad_Clicks = 169,
-                            Ad_DayCount = 11,
-                            Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_ImageURL = "AD_9.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 6, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_TargetURL = "http://exmple/.com9",
-                            Ad_TimeOfPayment = new DateTime(2022, 6, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CaseID = 3,
-                            OS_ID = 1,
-                            PartnerID = 3
-                        },
-                        new
-                        {
-                            Ad_ID = 10,
-                            AD_FinalPaymentAmount = 15000,
-                            Ad_ActiveStatus = 1,
-                            Ad_Clicks = 116,
+                            Ad_Clicks = 96,
                             Ad_DayCount = 24,
                             Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_ImageURL = "AD_10.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 11, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_TargetURL = "http://exmple/.com10",
-                            Ad_TimeOfPayment = new DateTime(2022, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CaseID = 3,
-                            OS_ID = 1,
-                            PartnerID = 6
-                        },
-                        new
-                        {
-                            Ad_ID = 11,
-                            AD_FinalPaymentAmount = 15000,
-                            Ad_ActiveStatus = 1,
-                            Ad_Clicks = 200,
-                            Ad_DayCount = 9,
-                            Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_ImageURL = "AD_11.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 7, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_TargetURL = "http://exmple/.com11",
-                            Ad_TimeOfPayment = new DateTime(2022, 7, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CaseID = 1,
-                            OS_ID = 1,
-                            PartnerID = 13
-                        },
-                        new
-                        {
-                            Ad_ID = 12,
-                            AD_FinalPaymentAmount = 15000,
-                            Ad_ActiveStatus = 1,
-                            Ad_Clicks = 30,
-                            Ad_DayCount = 16,
-                            Ad_Description = "",
-                            Ad_EndTime = new DateTime(2023, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_ImageURL = "AD_12.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 12, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_TargetURL = "http://exmple/.com12",
-                            Ad_TimeOfPayment = new DateTime(2022, 12, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CaseID = 4,
-                            OS_ID = 1,
-                            PartnerID = 8
-                        },
-                        new
-                        {
-                            Ad_ID = 13,
-                            AD_FinalPaymentAmount = 15000,
-                            Ad_ActiveStatus = 1,
-                            Ad_Clicks = 193,
-                            Ad_DayCount = 19,
-                            Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 7, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_ImageURL = "AD_13.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_TargetURL = "http://exmple/.com13",
-                            Ad_TimeOfPayment = new DateTime(2022, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CaseID = 4,
-                            OS_ID = 1,
-                            PartnerID = 16
-                        },
-                        new
-                        {
-                            Ad_ID = 14,
-                            AD_FinalPaymentAmount = 15000,
-                            Ad_ActiveStatus = 1,
-                            Ad_Clicks = 80,
-                            Ad_DayCount = 12,
-                            Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_ImageURL = "AD_14.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_TargetURL = "http://exmple/.com14",
-                            Ad_TimeOfPayment = new DateTime(2022, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CaseID = 3,
-                            OS_ID = 1,
-                            PartnerID = 6
-                        },
-                        new
-                        {
-                            Ad_ID = 15,
-                            AD_FinalPaymentAmount = 15000,
-                            Ad_ActiveStatus = 1,
-                            Ad_Clicks = 120,
-                            Ad_DayCount = 16,
-                            Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_ImageURL = "AD_15.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_TargetURL = "http://exmple/.com15",
-                            Ad_TimeOfPayment = new DateTime(2022, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_EndTime = new DateTime(2022, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_ImageURL = "AD_6.jpg",
+                            Ad_PaymentDueDate = new DateTime(2022, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TargetURL = "http://exmple/.com6",
+                            Ad_TimeOfPayment = new DateTime(2022, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CaseID = 2,
                             OS_ID = 1,
                             PartnerID = 18
                         },
                         new
                         {
-                            Ad_ID = 16,
+                            Ad_ID = 7,
                             AD_FinalPaymentAmount = 15000,
                             Ad_ActiveStatus = 1,
-                            Ad_Clicks = 81,
-                            Ad_DayCount = 18,
+                            Ad_Clicks = 36,
+                            Ad_DayCount = 17,
                             Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 5, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_ImageURL = "AD_16.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_TargetURL = "http://exmple/.com16",
-                            Ad_TimeOfPayment = new DateTime(2022, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CaseID = 3,
-                            OS_ID = 1,
-                            PartnerID = 3
-                        },
-                        new
-                        {
-                            Ad_ID = 17,
-                            AD_FinalPaymentAmount = 15000,
-                            Ad_ActiveStatus = 1,
-                            Ad_Clicks = 67,
-                            Ad_DayCount = 23,
-                            Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_ImageURL = "AD_17.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 6, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_TargetURL = "http://exmple/.com17",
-                            Ad_TimeOfPayment = new DateTime(2022, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CaseID = 3,
-                            OS_ID = 1,
-                            PartnerID = 20
-                        },
-                        new
-                        {
-                            Ad_ID = 18,
-                            AD_FinalPaymentAmount = 15000,
-                            Ad_ActiveStatus = 1,
-                            Ad_Clicks = 65,
-                            Ad_DayCount = 11,
-                            Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_ImageURL = "AD_18.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 7, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_TargetURL = "http://exmple/.com18",
-                            Ad_TimeOfPayment = new DateTime(2022, 7, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CaseID = 4,
-                            OS_ID = 1,
-                            PartnerID = 4
-                        },
-                        new
-                        {
-                            Ad_ID = 19,
-                            AD_FinalPaymentAmount = 15000,
-                            Ad_ActiveStatus = 1,
-                            Ad_Clicks = 137,
-                            Ad_DayCount = 14,
-                            Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_ImageURL = "AD_19.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_TargetURL = "http://exmple/.com19",
-                            Ad_TimeOfPayment = new DateTime(2022, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_EndTime = new DateTime(2022, 5, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_ImageURL = "AD_7.jpg",
+                            Ad_PaymentDueDate = new DateTime(2022, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TargetURL = "http://exmple/.com7",
+                            Ad_TimeOfPayment = new DateTime(2022, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CaseID = 1,
                             OS_ID = 1,
-                            PartnerID = 19
+                            PartnerID = 16
                         },
                         new
                         {
-                            Ad_ID = 20,
+                            Ad_ID = 8,
                             AD_FinalPaymentAmount = 15000,
                             Ad_ActiveStatus = 1,
-                            Ad_Clicks = 97,
+                            Ad_Clicks = 155,
                             Ad_DayCount = 11,
                             Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_ImageURL = "AD_20.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 10, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_TargetURL = "http://exmple/.com20",
-                            Ad_TimeOfPayment = new DateTime(2022, 10, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_EndTime = new DateTime(2022, 4, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_ImageURL = "AD_8.jpg",
+                            Ad_PaymentDueDate = new DateTime(2022, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TargetURL = "http://exmple/.com8",
+                            Ad_TimeOfPayment = new DateTime(2022, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CaseID = 2,
+                            OS_ID = 1,
+                            PartnerID = 17
+                        },
+                        new
+                        {
+                            Ad_ID = 9,
+                            AD_FinalPaymentAmount = 15000,
+                            Ad_ActiveStatus = 1,
+                            Ad_Clicks = 177,
+                            Ad_DayCount = 13,
+                            Ad_Description = "",
+                            Ad_EndTime = new DateTime(2022, 6, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_ImageURL = "AD_9.jpg",
+                            Ad_PaymentDueDate = new DateTime(2022, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TargetURL = "http://exmple/.com9",
+                            Ad_TimeOfPayment = new DateTime(2022, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CaseID = 1,
                             OS_ID = 1,
                             PartnerID = 15
                         },
                         new
                         {
-                            Ad_ID = 21,
+                            Ad_ID = 10,
                             AD_FinalPaymentAmount = 15000,
                             Ad_ActiveStatus = 1,
-                            Ad_Clicks = 173,
-                            Ad_DayCount = 22,
+                            Ad_Clicks = 77,
+                            Ad_DayCount = 7,
                             Ad_Description = "",
-                            Ad_EndTime = new DateTime(2023, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_ImageURL = "AD_21.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_TargetURL = "http://exmple/.com21",
-                            Ad_TimeOfPayment = new DateTime(2022, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_EndTime = new DateTime(2022, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_ImageURL = "AD_10.jpg",
+                            Ad_PaymentDueDate = new DateTime(2022, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 11, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TargetURL = "http://exmple/.com10",
+                            Ad_TimeOfPayment = new DateTime(2022, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CaseID = 2,
-                            OS_ID = 1,
-                            PartnerID = 6
-                        },
-                        new
-                        {
-                            Ad_ID = 22,
-                            AD_FinalPaymentAmount = 15000,
-                            Ad_ActiveStatus = 1,
-                            Ad_Clicks = 35,
-                            Ad_DayCount = 11,
-                            Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_ImageURL = "AD_22.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 10, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 10, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_TargetURL = "http://exmple/.com22",
-                            Ad_TimeOfPayment = new DateTime(2022, 10, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CaseID = 2,
-                            OS_ID = 1,
-                            PartnerID = 1
-                        },
-                        new
-                        {
-                            Ad_ID = 23,
-                            AD_FinalPaymentAmount = 15000,
-                            Ad_ActiveStatus = 1,
-                            Ad_Clicks = 131,
-                            Ad_DayCount = 8,
-                            Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_ImageURL = "AD_23.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 3, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_TargetURL = "http://exmple/.com23",
-                            Ad_TimeOfPayment = new DateTime(2022, 3, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CaseID = 3,
-                            OS_ID = 1,
-                            PartnerID = 9
-                        },
-                        new
-                        {
-                            Ad_ID = 24,
-                            AD_FinalPaymentAmount = 15000,
-                            Ad_ActiveStatus = 1,
-                            Ad_Clicks = 163,
-                            Ad_DayCount = 20,
-                            Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 5, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_ImageURL = "AD_24.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_TargetURL = "http://exmple/.com24",
-                            Ad_TimeOfPayment = new DateTime(2022, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CaseID = 1,
                             OS_ID = 1,
                             PartnerID = 7
                         },
                         new
                         {
-                            Ad_ID = 25,
+                            Ad_ID = 11,
                             AD_FinalPaymentAmount = 15000,
                             Ad_ActiveStatus = 1,
-                            Ad_Clicks = 60,
-                            Ad_DayCount = 17,
+                            Ad_Clicks = 138,
+                            Ad_DayCount = 9,
                             Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 2, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_ImageURL = "AD_25.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 1, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_TargetURL = "http://exmple/.com25",
-                            Ad_TimeOfPayment = new DateTime(2022, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_EndTime = new DateTime(2022, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_ImageURL = "AD_11.jpg",
+                            Ad_PaymentDueDate = new DateTime(2022, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 11, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TargetURL = "http://exmple/.com11",
+                            Ad_TimeOfPayment = new DateTime(2022, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CaseID = 2,
                             OS_ID = 1,
                             PartnerID = 3
                         },
                         new
                         {
+                            Ad_ID = 12,
+                            AD_FinalPaymentAmount = 15000,
+                            Ad_ActiveStatus = 1,
+                            Ad_Clicks = 189,
+                            Ad_DayCount = 18,
+                            Ad_Description = "",
+                            Ad_EndTime = new DateTime(2022, 5, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_ImageURL = "AD_12.jpg",
+                            Ad_PaymentDueDate = new DateTime(2022, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TargetURL = "http://exmple/.com12",
+                            Ad_TimeOfPayment = new DateTime(2022, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CaseID = 4,
+                            OS_ID = 1,
+                            PartnerID = 20
+                        },
+                        new
+                        {
+                            Ad_ID = 13,
+                            AD_FinalPaymentAmount = 15000,
+                            Ad_ActiveStatus = 1,
+                            Ad_Clicks = 149,
+                            Ad_DayCount = 9,
+                            Ad_Description = "",
+                            Ad_EndTime = new DateTime(2022, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_ImageURL = "AD_13.jpg",
+                            Ad_PaymentDueDate = new DateTime(2022, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 11, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TargetURL = "http://exmple/.com13",
+                            Ad_TimeOfPayment = new DateTime(2022, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CaseID = 1,
+                            OS_ID = 1,
+                            PartnerID = 14
+                        },
+                        new
+                        {
+                            Ad_ID = 14,
+                            AD_FinalPaymentAmount = 15000,
+                            Ad_ActiveStatus = 1,
+                            Ad_Clicks = 102,
+                            Ad_DayCount = 7,
+                            Ad_Description = "",
+                            Ad_EndTime = new DateTime(2022, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_ImageURL = "AD_14.jpg",
+                            Ad_PaymentDueDate = new DateTime(2022, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TargetURL = "http://exmple/.com14",
+                            Ad_TimeOfPayment = new DateTime(2022, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CaseID = 1,
+                            OS_ID = 1,
+                            PartnerID = 16
+                        },
+                        new
+                        {
+                            Ad_ID = 15,
+                            AD_FinalPaymentAmount = 15000,
+                            Ad_ActiveStatus = 1,
+                            Ad_Clicks = 122,
+                            Ad_DayCount = 10,
+                            Ad_Description = "",
+                            Ad_EndTime = new DateTime(2022, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_ImageURL = "AD_15.jpg",
+                            Ad_PaymentDueDate = new DateTime(2022, 4, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TargetURL = "http://exmple/.com15",
+                            Ad_TimeOfPayment = new DateTime(2022, 4, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CaseID = 3,
+                            OS_ID = 1,
+                            PartnerID = 10
+                        },
+                        new
+                        {
+                            Ad_ID = 16,
+                            AD_FinalPaymentAmount = 15000,
+                            Ad_ActiveStatus = 1,
+                            Ad_Clicks = 112,
+                            Ad_DayCount = 9,
+                            Ad_Description = "",
+                            Ad_EndTime = new DateTime(2022, 5, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_ImageURL = "AD_16.jpg",
+                            Ad_PaymentDueDate = new DateTime(2022, 5, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TargetURL = "http://exmple/.com16",
+                            Ad_TimeOfPayment = new DateTime(2022, 5, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CaseID = 3,
+                            OS_ID = 1,
+                            PartnerID = 10
+                        },
+                        new
+                        {
+                            Ad_ID = 17,
+                            AD_FinalPaymentAmount = 15000,
+                            Ad_ActiveStatus = 1,
+                            Ad_Clicks = 220,
+                            Ad_DayCount = 19,
+                            Ad_Description = "",
+                            Ad_EndTime = new DateTime(2022, 4, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_ImageURL = "AD_17.jpg",
+                            Ad_PaymentDueDate = new DateTime(2022, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TargetURL = "http://exmple/.com17",
+                            Ad_TimeOfPayment = new DateTime(2022, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CaseID = 1,
+                            OS_ID = 1,
+                            PartnerID = 6
+                        },
+                        new
+                        {
+                            Ad_ID = 18,
+                            AD_FinalPaymentAmount = 15000,
+                            Ad_ActiveStatus = 1,
+                            Ad_Clicks = 69,
+                            Ad_DayCount = 22,
+                            Ad_Description = "",
+                            Ad_EndTime = new DateTime(2022, 5, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_ImageURL = "AD_18.jpg",
+                            Ad_PaymentDueDate = new DateTime(2022, 5, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TargetURL = "http://exmple/.com18",
+                            Ad_TimeOfPayment = new DateTime(2022, 5, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CaseID = 4,
+                            OS_ID = 1,
+                            PartnerID = 7
+                        },
+                        new
+                        {
+                            Ad_ID = 19,
+                            AD_FinalPaymentAmount = 15000,
+                            Ad_ActiveStatus = 1,
+                            Ad_Clicks = 56,
+                            Ad_DayCount = 19,
+                            Ad_Description = "",
+                            Ad_EndTime = new DateTime(2022, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_ImageURL = "AD_19.jpg",
+                            Ad_PaymentDueDate = new DateTime(2022, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 7, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TargetURL = "http://exmple/.com19",
+                            Ad_TimeOfPayment = new DateTime(2022, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CaseID = 2,
+                            OS_ID = 1,
+                            PartnerID = 18
+                        },
+                        new
+                        {
+                            Ad_ID = 20,
+                            AD_FinalPaymentAmount = 15000,
+                            Ad_ActiveStatus = 1,
+                            Ad_Clicks = 133,
+                            Ad_DayCount = 11,
+                            Ad_Description = "",
+                            Ad_EndTime = new DateTime(2022, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_ImageURL = "AD_20.jpg",
+                            Ad_PaymentDueDate = new DateTime(2022, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 5, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TargetURL = "http://exmple/.com20",
+                            Ad_TimeOfPayment = new DateTime(2022, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CaseID = 1,
+                            OS_ID = 1,
+                            PartnerID = 19
+                        },
+                        new
+                        {
+                            Ad_ID = 21,
+                            AD_FinalPaymentAmount = 15000,
+                            Ad_ActiveStatus = 1,
+                            Ad_Clicks = 183,
+                            Ad_DayCount = 20,
+                            Ad_Description = "",
+                            Ad_EndTime = new DateTime(2022, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_ImageURL = "AD_21.jpg",
+                            Ad_PaymentDueDate = new DateTime(2022, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TargetURL = "http://exmple/.com21",
+                            Ad_TimeOfPayment = new DateTime(2022, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CaseID = 3,
+                            OS_ID = 1,
+                            PartnerID = 3
+                        },
+                        new
+                        {
+                            Ad_ID = 22,
+                            AD_FinalPaymentAmount = 15000,
+                            Ad_ActiveStatus = 1,
+                            Ad_Clicks = 196,
+                            Ad_DayCount = 24,
+                            Ad_Description = "",
+                            Ad_EndTime = new DateTime(2022, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_ImageURL = "AD_22.jpg",
+                            Ad_PaymentDueDate = new DateTime(2022, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 7, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TargetURL = "http://exmple/.com22",
+                            Ad_TimeOfPayment = new DateTime(2022, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CaseID = 2,
+                            OS_ID = 1,
+                            PartnerID = 4
+                        },
+                        new
+                        {
+                            Ad_ID = 23,
+                            AD_FinalPaymentAmount = 15000,
+                            Ad_ActiveStatus = 1,
+                            Ad_Clicks = 231,
+                            Ad_DayCount = 13,
+                            Ad_Description = "",
+                            Ad_EndTime = new DateTime(2022, 6, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_ImageURL = "AD_23.jpg",
+                            Ad_PaymentDueDate = new DateTime(2022, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TargetURL = "http://exmple/.com23",
+                            Ad_TimeOfPayment = new DateTime(2022, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CaseID = 4,
+                            OS_ID = 1,
+                            PartnerID = 18
+                        },
+                        new
+                        {
+                            Ad_ID = 24,
+                            AD_FinalPaymentAmount = 15000,
+                            Ad_ActiveStatus = 1,
+                            Ad_Clicks = 139,
+                            Ad_DayCount = 13,
+                            Ad_Description = "",
+                            Ad_EndTime = new DateTime(2022, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_ImageURL = "AD_24.jpg",
+                            Ad_PaymentDueDate = new DateTime(2022, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TargetURL = "http://exmple/.com24",
+                            Ad_TimeOfPayment = new DateTime(2022, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CaseID = 3,
+                            OS_ID = 1,
+                            PartnerID = 1
+                        },
+                        new
+                        {
+                            Ad_ID = 25,
+                            AD_FinalPaymentAmount = 15000,
+                            Ad_ActiveStatus = 1,
+                            Ad_Clicks = 141,
+                            Ad_DayCount = 23,
+                            Ad_Description = "",
+                            Ad_EndTime = new DateTime(2022, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_ImageURL = "AD_25.jpg",
+                            Ad_PaymentDueDate = new DateTime(2022, 8, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 8, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TargetURL = "http://exmple/.com25",
+                            Ad_TimeOfPayment = new DateTime(2022, 8, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CaseID = 4,
+                            OS_ID = 1,
+                            PartnerID = 19
+                        },
+                        new
+                        {
                             Ad_ID = 26,
                             AD_FinalPaymentAmount = 15000,
                             Ad_ActiveStatus = 1,
-                            Ad_Clicks = 51,
-                            Ad_DayCount = 19,
+                            Ad_Clicks = 40,
+                            Ad_DayCount = 24,
                             Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_EndTime = new DateTime(2022, 12, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Ad_ImageURL = "AD_26.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_PaymentDueDate = new DateTime(2022, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Ad_TargetURL = "http://exmple/.com26",
-                            Ad_TimeOfPayment = new DateTime(2022, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CaseID = 1,
+                            Ad_TimeOfPayment = new DateTime(2022, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CaseID = 4,
                             OS_ID = 1,
-                            PartnerID = 10
+                            PartnerID = 20
                         },
                         new
                         {
                             Ad_ID = 27,
                             AD_FinalPaymentAmount = 15000,
                             Ad_ActiveStatus = 1,
-                            Ad_Clicks = 46,
-                            Ad_DayCount = 16,
+                            Ad_Clicks = 113,
+                            Ad_DayCount = 17,
                             Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_EndTime = new DateTime(2022, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Ad_ImageURL = "AD_27.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 5, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_PaymentDueDate = new DateTime(2022, 8, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 8, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Ad_TargetURL = "http://exmple/.com27",
-                            Ad_TimeOfPayment = new DateTime(2022, 5, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CaseID = 2,
+                            Ad_TimeOfPayment = new DateTime(2022, 8, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CaseID = 4,
                             OS_ID = 1,
-                            PartnerID = 12
+                            PartnerID = 9
                         },
                         new
                         {
                             Ad_ID = 28,
                             AD_FinalPaymentAmount = 15000,
                             Ad_ActiveStatus = 1,
-                            Ad_Clicks = 153,
-                            Ad_DayCount = 14,
+                            Ad_Clicks = 131,
+                            Ad_DayCount = 18,
                             Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 5, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_EndTime = new DateTime(2022, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Ad_ImageURL = "AD_28.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 5, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_PaymentDueDate = new DateTime(2022, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Ad_TargetURL = "http://exmple/.com28",
-                            Ad_TimeOfPayment = new DateTime(2022, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CaseID = 1,
+                            Ad_TimeOfPayment = new DateTime(2022, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CaseID = 2,
                             OS_ID = 1,
-                            PartnerID = 7
+                            PartnerID = 16
                         },
                         new
                         {
                             Ad_ID = 29,
                             AD_FinalPaymentAmount = 15000,
                             Ad_ActiveStatus = 1,
-                            Ad_Clicks = 136,
+                            Ad_Clicks = 142,
                             Ad_DayCount = 15,
                             Ad_Description = "",
-                            Ad_EndTime = new DateTime(2022, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_EndTime = new DateTime(2022, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Ad_ImageURL = "AD_29.jpg",
-                            Ad_PaymentDueDate = new DateTime(2022, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Ad_StartTime = new DateTime(2022, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_PaymentDueDate = new DateTime(2022, 8, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_StartTime = new DateTime(2022, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Ad_TargetURL = "http://exmple/.com29",
-                            Ad_TimeOfPayment = new DateTime(2022, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Ad_TimeOfPayment = new DateTime(2022, 8, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CaseID = 2,
                             OS_ID = 1,
-                            PartnerID = 2
+                            PartnerID = 8
                         });
                 });
 
@@ -676,7 +676,7 @@ namespace final_repo_test.Migrations
                         new
                         {
                             CA_ID = 1,
-                            CA_Date = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3556),
+                            CA_Date = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7543),
                             CA_Describe = "100元換200點",
                             CA_Discontinuted = false,
                             CA_Image = "點數.png",
@@ -686,7 +686,7 @@ namespace final_repo_test.Migrations
                         new
                         {
                             CA_ID = 2,
-                            CA_Date = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3558),
+                            CA_Date = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7545),
                             CA_Describe = "200元換350點",
                             CA_Discontinuted = false,
                             CA_Image = "點數.png",
@@ -741,7 +741,7 @@ namespace final_repo_test.Migrations
                             A_ID = 1,
                             CA_ID = 1,
                             CO_Cancel = false,
-                            CO_Date = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3546),
+                            CO_Date = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7533),
                             CO_Quantity = 1,
                             CO_Sum = 100,
                             CT_ID = 1
@@ -752,7 +752,7 @@ namespace final_repo_test.Migrations
                             A_ID = 1,
                             CA_ID = 2,
                             CO_Cancel = false,
-                            CO_Date = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3548),
+                            CO_Date = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7535),
                             CO_Quantity = 2,
                             CO_Sum = 400,
                             CT_ID = 2
@@ -872,10 +872,10 @@ namespace final_repo_test.Migrations
                         new
                         {
                             D_ID = 1,
-                            A_ID = 9,
+                            A_ID = 6,
                             D_event = "test",
                             D_isSolved = true,
-                            D_time = new DateTime(2023, 5, 15, 10, 59, 5, 274, DateTimeKind.Local).AddTicks(3429)
+                            D_time = new DateTime(2023, 5, 15, 16, 17, 0, 44, DateTimeKind.Local).AddTicks(6818)
                         },
                         new
                         {
@@ -883,143 +883,143 @@ namespace final_repo_test.Migrations
                             A_ID = 2,
                             D_event = "test",
                             D_isSolved = true,
-                            D_time = new DateTime(2023, 5, 15, 10, 59, 5, 274, DateTimeKind.Local).AddTicks(3479)
+                            D_time = new DateTime(2023, 5, 15, 16, 17, 0, 44, DateTimeKind.Local).AddTicks(6863)
                         },
                         new
                         {
                             D_ID = 3,
-                            A_ID = 10,
+                            A_ID = 9,
                             D_event = "test",
                             D_isSolved = true,
-                            D_time = new DateTime(2023, 5, 15, 10, 59, 5, 274, DateTimeKind.Local).AddTicks(3480)
+                            D_time = new DateTime(2023, 5, 15, 16, 17, 0, 44, DateTimeKind.Local).AddTicks(6865)
                         },
                         new
                         {
                             D_ID = 4,
-                            A_ID = 3,
+                            A_ID = 1,
                             D_event = "test",
                             D_isSolved = true,
-                            D_time = new DateTime(2023, 5, 15, 10, 59, 5, 274, DateTimeKind.Local).AddTicks(3481)
+                            D_time = new DateTime(2023, 5, 15, 16, 17, 0, 44, DateTimeKind.Local).AddTicks(6867)
                         },
                         new
                         {
                             D_ID = 5,
-                            A_ID = 2,
+                            A_ID = 3,
                             D_event = "test",
                             D_isSolved = true,
-                            D_time = new DateTime(2023, 5, 15, 10, 59, 5, 274, DateTimeKind.Local).AddTicks(3482)
+                            D_time = new DateTime(2023, 5, 15, 16, 17, 0, 44, DateTimeKind.Local).AddTicks(6868)
                         },
                         new
                         {
                             D_ID = 6,
-                            A_ID = 7,
+                            A_ID = 9,
                             D_event = "test",
                             D_isSolved = true,
-                            D_time = new DateTime(2023, 5, 15, 10, 59, 5, 274, DateTimeKind.Local).AddTicks(3485)
+                            D_time = new DateTime(2023, 5, 15, 16, 17, 0, 44, DateTimeKind.Local).AddTicks(6870)
                         },
                         new
                         {
                             D_ID = 7,
-                            A_ID = 3,
+                            A_ID = 4,
                             D_event = "test",
                             D_isSolved = true,
-                            D_time = new DateTime(2023, 5, 15, 10, 59, 5, 274, DateTimeKind.Local).AddTicks(3486)
+                            D_time = new DateTime(2023, 5, 15, 16, 17, 0, 44, DateTimeKind.Local).AddTicks(6872)
                         },
                         new
                         {
                             D_ID = 8,
-                            A_ID = 4,
+                            A_ID = 7,
                             D_event = "test",
                             D_isSolved = true,
-                            D_time = new DateTime(2023, 5, 15, 10, 59, 5, 274, DateTimeKind.Local).AddTicks(3487)
+                            D_time = new DateTime(2023, 5, 15, 16, 17, 0, 44, DateTimeKind.Local).AddTicks(6873)
                         },
                         new
                         {
                             D_ID = 9,
-                            A_ID = 7,
+                            A_ID = 5,
                             D_event = "test",
                             D_isSolved = true,
-                            D_time = new DateTime(2023, 5, 15, 10, 59, 5, 274, DateTimeKind.Local).AddTicks(3508)
+                            D_time = new DateTime(2023, 5, 15, 16, 17, 0, 44, DateTimeKind.Local).AddTicks(6874)
                         },
                         new
                         {
                             D_ID = 10,
-                            A_ID = 5,
+                            A_ID = 10,
                             D_event = "test",
                             D_isSolved = false,
-                            D_time = new DateTime(2023, 5, 15, 10, 59, 5, 274, DateTimeKind.Local).AddTicks(3510)
+                            D_time = new DateTime(2023, 5, 15, 16, 17, 0, 44, DateTimeKind.Local).AddTicks(6876)
                         },
                         new
                         {
                             D_ID = 11,
-                            A_ID = 7,
+                            A_ID = 4,
                             D_event = "test",
                             D_isSolved = false,
-                            D_time = new DateTime(2023, 5, 15, 10, 59, 5, 274, DateTimeKind.Local).AddTicks(3511)
+                            D_time = new DateTime(2023, 5, 15, 16, 17, 0, 44, DateTimeKind.Local).AddTicks(6877)
                         },
                         new
                         {
                             D_ID = 12,
-                            A_ID = 3,
+                            A_ID = 6,
                             D_event = "test",
                             D_isSolved = false,
-                            D_time = new DateTime(2023, 5, 15, 10, 59, 5, 274, DateTimeKind.Local).AddTicks(3512)
+                            D_time = new DateTime(2023, 5, 15, 16, 17, 0, 44, DateTimeKind.Local).AddTicks(6879)
                         },
                         new
                         {
                             D_ID = 13,
-                            A_ID = 10,
+                            A_ID = 8,
                             D_event = "test",
                             D_isSolved = false,
-                            D_time = new DateTime(2023, 5, 15, 10, 59, 5, 274, DateTimeKind.Local).AddTicks(3513)
+                            D_time = new DateTime(2023, 5, 15, 16, 17, 0, 44, DateTimeKind.Local).AddTicks(6880)
                         },
                         new
                         {
                             D_ID = 14,
-                            A_ID = 6,
+                            A_ID = 9,
                             D_event = "test",
                             D_isSolved = false,
-                            D_time = new DateTime(2023, 5, 15, 10, 59, 5, 274, DateTimeKind.Local).AddTicks(3515)
+                            D_time = new DateTime(2023, 5, 15, 16, 17, 0, 44, DateTimeKind.Local).AddTicks(6881)
                         },
                         new
                         {
                             D_ID = 15,
-                            A_ID = 4,
+                            A_ID = 6,
                             D_event = "test",
                             D_isSolved = false,
-                            D_time = new DateTime(2023, 5, 15, 10, 59, 5, 274, DateTimeKind.Local).AddTicks(3516)
+                            D_time = new DateTime(2023, 5, 15, 16, 17, 0, 44, DateTimeKind.Local).AddTicks(6882)
                         },
                         new
                         {
                             D_ID = 16,
-                            A_ID = 10,
+                            A_ID = 3,
                             D_event = "test",
                             D_isSolved = false,
-                            D_time = new DateTime(2023, 5, 15, 10, 59, 5, 274, DateTimeKind.Local).AddTicks(3516)
+                            D_time = new DateTime(2023, 5, 15, 16, 17, 0, 44, DateTimeKind.Local).AddTicks(6883)
                         },
                         new
                         {
                             D_ID = 17,
-                            A_ID = 9,
+                            A_ID = 5,
                             D_event = "test",
                             D_isSolved = false,
-                            D_time = new DateTime(2023, 5, 15, 10, 59, 5, 274, DateTimeKind.Local).AddTicks(3518)
+                            D_time = new DateTime(2023, 5, 15, 16, 17, 0, 44, DateTimeKind.Local).AddTicks(6884)
                         },
                         new
                         {
                             D_ID = 18,
-                            A_ID = 10,
+                            A_ID = 6,
                             D_event = "test",
                             D_isSolved = false,
-                            D_time = new DateTime(2023, 5, 15, 10, 59, 5, 274, DateTimeKind.Local).AddTicks(3519)
+                            D_time = new DateTime(2023, 5, 15, 16, 17, 0, 44, DateTimeKind.Local).AddTicks(6886)
                         },
                         new
                         {
                             D_ID = 19,
-                            A_ID = 8,
+                            A_ID = 7,
                             D_event = "test",
                             D_isSolved = false,
-                            D_time = new DateTime(2023, 5, 15, 10, 59, 5, 274, DateTimeKind.Local).AddTicks(3520)
+                            D_time = new DateTime(2023, 5, 15, 16, 17, 0, 44, DateTimeKind.Local).AddTicks(6887)
                         });
                 });
 
@@ -1084,6 +1084,26 @@ namespace final_repo_test.Migrations
                     b.HasKey("E_ID");
 
                     b.ToTable("Employees", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            E_ID = 1,
+                            E_Address = "高雄市前金區",
+                            E_Birthday = new DateTime(1999, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            E_Email = "user@gmail.com",
+                            E_Gender = 0,
+                            E_HireDate = new DateTime(2023, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            E_Name = "bobo",
+                            E_Permission = 0,
+                            E_Phone = "0963915584",
+                            E_Pwd = "1234",
+                            E_Title = 0,
+                            E_UserName = "bobo",
+                            E_Work = true,
+                            Locked = false,
+                            Role = "user"
+                        });
                 });
 
             modelBuilder.Entity("ClassLibrary.Models.LoginStaus", b =>
@@ -1113,709 +1133,709 @@ namespace final_repo_test.Migrations
                         new
                         {
                             L_ID = 1,
-                            A_ID = 7,
-                            L_cTime = new DateTime(2023, 3, 26, 7, 27, 38, 725, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 26, 9, 27, 38, 725, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 3, 31, 12, 47, 23, 814, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 31, 19, 47, 23, 814, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 2,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 3, 10, 16, 59, 5, 530, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 10, 17, 59, 5, 530, DateTimeKind.Unspecified)
+                            A_ID = 2,
+                            L_cTime = new DateTime(2023, 5, 25, 19, 32, 5, 808, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 26, 2, 32, 5, 808, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 3,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 2, 18, 16, 21, 42, 172, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 19, 2, 21, 42, 172, DateTimeKind.Unspecified)
+                            A_ID = 4,
+                            L_cTime = new DateTime(2023, 2, 12, 1, 23, 14, 200, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 12, 8, 23, 14, 200, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 4,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 5, 4, 11, 16, 29, 917, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 4, 20, 16, 29, 917, DateTimeKind.Unspecified)
+                            A_ID = 6,
+                            L_cTime = new DateTime(2023, 2, 24, 14, 33, 28, 903, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 24, 20, 33, 28, 903, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 5,
-                            A_ID = 9,
-                            L_cTime = new DateTime(2023, 3, 30, 2, 32, 53, 148, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 30, 4, 32, 53, 148, DateTimeKind.Unspecified)
+                            A_ID = 4,
+                            L_cTime = new DateTime(2023, 3, 31, 7, 53, 21, 669, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 31, 8, 53, 21, 669, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 6,
-                            A_ID = 4,
-                            L_cTime = new DateTime(2023, 4, 7, 3, 22, 2, 515, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 7, 11, 22, 2, 515, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 2, 3, 0, 58, 46, 202, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 3, 8, 58, 46, 202, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 7,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 2, 3, 2, 8, 54, 670, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 3, 12, 8, 54, 670, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 2, 2, 18, 18, 24, 765, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 2, 22, 18, 24, 765, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 8,
-                            A_ID = 2,
-                            L_cTime = new DateTime(2023, 5, 5, 19, 46, 9, 251, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 6, 5, 46, 9, 251, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 5, 7, 7, 55, 56, 560, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 7, 15, 55, 56, 560, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 9,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 3, 20, 17, 32, 27, 593, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 20, 18, 32, 27, 593, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 5, 6, 1, 24, 59, 221, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 6, 4, 24, 59, 221, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 10,
-                            A_ID = 7,
-                            L_cTime = new DateTime(2023, 2, 12, 1, 58, 54, 734, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 12, 8, 58, 54, 734, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 3, 8, 1, 23, 15, 735, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 8, 6, 23, 15, 735, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 11,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 2, 5, 0, 25, 58, 903, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 5, 2, 25, 58, 903, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 2, 5, 13, 33, 34, 43, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 5, 18, 33, 34, 43, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 12,
-                            A_ID = 4,
-                            L_cTime = new DateTime(2023, 4, 24, 1, 54, 12, 62, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 24, 3, 54, 12, 62, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 5, 8, 3, 27, 0, 77, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 8, 7, 27, 0, 77, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 13,
-                            A_ID = 9,
-                            L_cTime = new DateTime(2023, 3, 19, 15, 30, 29, 911, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 19, 21, 30, 29, 911, DateTimeKind.Unspecified)
+                            A_ID = 2,
+                            L_cTime = new DateTime(2023, 4, 23, 1, 31, 18, 185, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 23, 10, 31, 18, 185, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 14,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 5, 25, 5, 4, 2, 463, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 25, 15, 4, 2, 463, DateTimeKind.Unspecified)
+                            A_ID = 1,
+                            L_cTime = new DateTime(2023, 5, 16, 23, 34, 38, 522, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 17, 8, 34, 38, 522, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 15,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 2, 25, 15, 49, 26, 342, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 26, 1, 49, 26, 342, DateTimeKind.Unspecified)
+                            A_ID = 4,
+                            L_cTime = new DateTime(2023, 2, 11, 14, 1, 36, 518, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 11, 15, 1, 36, 518, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 16,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 4, 3, 4, 59, 31, 797, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 3, 7, 59, 31, 797, DateTimeKind.Unspecified)
+                            A_ID = 2,
+                            L_cTime = new DateTime(2023, 3, 1, 5, 57, 54, 876, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 1, 13, 57, 54, 876, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 17,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 2, 21, 15, 6, 30, 427, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 21, 17, 6, 30, 427, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 3, 18, 20, 22, 20, 723, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 19, 6, 22, 20, 723, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 18,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 4, 20, 17, 35, 24, 282, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 20, 21, 35, 24, 282, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 5, 11, 14, 36, 22, 153, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 11, 18, 36, 22, 153, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 19,
-                            A_ID = 7,
-                            L_cTime = new DateTime(2023, 3, 20, 4, 17, 53, 552, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 20, 7, 17, 53, 552, DateTimeKind.Unspecified)
+                            A_ID = 2,
+                            L_cTime = new DateTime(2023, 5, 17, 3, 33, 6, 223, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 17, 11, 33, 6, 223, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 20,
-                            A_ID = 4,
-                            L_cTime = new DateTime(2023, 3, 31, 6, 27, 28, 770, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 31, 10, 27, 28, 770, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 5, 27, 14, 5, 24, 892, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 27, 21, 5, 24, 892, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 21,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 2, 27, 8, 13, 31, 329, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 27, 18, 13, 31, 329, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 4, 24, 0, 52, 3, 637, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 24, 6, 52, 3, 637, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 22,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 3, 4, 16, 54, 45, 132, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 4, 18, 54, 45, 132, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 3, 26, 15, 4, 25, 570, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 26, 17, 4, 25, 570, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 23,
-                            A_ID = 9,
-                            L_cTime = new DateTime(2023, 5, 26, 20, 6, 25, 280, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 27, 5, 6, 25, 280, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 4, 26, 10, 38, 11, 547, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 26, 12, 38, 11, 547, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 24,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 2, 8, 4, 57, 12, 21, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 8, 5, 57, 12, 21, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 3, 24, 21, 42, 44, 674, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 25, 6, 42, 44, 674, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 25,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 5, 8, 2, 50, 16, 989, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 8, 4, 50, 16, 989, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 2, 4, 11, 30, 0, 510, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 4, 19, 30, 0, 510, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 26,
-                            A_ID = 2,
-                            L_cTime = new DateTime(2023, 5, 16, 5, 8, 54, 341, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 16, 10, 8, 54, 341, DateTimeKind.Unspecified)
+                            A_ID = 7,
+                            L_cTime = new DateTime(2023, 2, 22, 10, 1, 13, 243, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 22, 14, 1, 13, 243, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 27,
-                            A_ID = 2,
-                            L_cTime = new DateTime(2023, 3, 2, 12, 4, 15, 630, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 2, 22, 4, 15, 630, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 5, 2, 14, 27, 59, 925, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 2, 16, 27, 59, 925, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 28,
-                            A_ID = 7,
-                            L_cTime = new DateTime(2023, 2, 16, 21, 39, 48, 682, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 17, 4, 39, 48, 682, DateTimeKind.Unspecified)
+                            A_ID = 1,
+                            L_cTime = new DateTime(2023, 5, 22, 1, 57, 12, 559, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 22, 10, 57, 12, 559, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 29,
-                            A_ID = 2,
-                            L_cTime = new DateTime(2023, 4, 3, 13, 51, 51, 238, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 3, 15, 51, 51, 238, DateTimeKind.Unspecified)
+                            A_ID = 6,
+                            L_cTime = new DateTime(2023, 4, 1, 20, 56, 10, 395, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 2, 3, 56, 10, 395, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 30,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 5, 28, 8, 49, 50, 746, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 28, 16, 49, 50, 746, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 4, 10, 12, 40, 1, 407, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 10, 13, 40, 1, 407, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 31,
-                            A_ID = 4,
-                            L_cTime = new DateTime(2023, 5, 26, 0, 28, 37, 281, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 26, 2, 28, 37, 281, DateTimeKind.Unspecified)
+                            A_ID = 6,
+                            L_cTime = new DateTime(2023, 5, 17, 2, 32, 59, 807, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 17, 9, 32, 59, 807, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 32,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 2, 3, 16, 33, 28, 234, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 3, 22, 33, 28, 234, DateTimeKind.Unspecified)
+                            A_ID = 2,
+                            L_cTime = new DateTime(2023, 5, 8, 13, 52, 1, 380, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 8, 23, 52, 1, 380, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 33,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 2, 14, 4, 16, 55, 56, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 14, 8, 16, 55, 56, DateTimeKind.Unspecified)
+                            A_ID = 6,
+                            L_cTime = new DateTime(2023, 2, 25, 20, 12, 53, 317, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 26, 5, 12, 53, 317, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 34,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 3, 10, 16, 8, 12, 70, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 11, 0, 8, 12, 70, DateTimeKind.Unspecified)
+                            A_ID = 7,
+                            L_cTime = new DateTime(2023, 3, 6, 15, 39, 8, 195, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 6, 16, 39, 8, 195, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 35,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 5, 3, 10, 16, 29, 744, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 3, 20, 16, 29, 744, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 5, 7, 0, 1, 17, 546, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 7, 7, 1, 17, 546, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 36,
-                            A_ID = 4,
-                            L_cTime = new DateTime(2023, 4, 10, 10, 7, 21, 273, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 10, 15, 7, 21, 273, DateTimeKind.Unspecified)
+                            A_ID = 1,
+                            L_cTime = new DateTime(2023, 5, 25, 7, 8, 29, 98, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 25, 15, 8, 29, 98, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 37,
-                            A_ID = 2,
-                            L_cTime = new DateTime(2023, 5, 22, 21, 56, 13, 286, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 22, 22, 56, 13, 286, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 5, 24, 15, 48, 58, 129, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 24, 19, 48, 58, 129, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 38,
-                            A_ID = 4,
-                            L_cTime = new DateTime(2023, 5, 4, 21, 37, 53, 743, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 5, 4, 37, 53, 743, DateTimeKind.Unspecified)
+                            A_ID = 1,
+                            L_cTime = new DateTime(2023, 3, 8, 2, 21, 8, 960, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 8, 5, 21, 8, 960, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 39,
                             A_ID = 9,
-                            L_cTime = new DateTime(2023, 5, 24, 23, 27, 40, 998, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 25, 5, 27, 40, 998, DateTimeKind.Unspecified)
+                            L_cTime = new DateTime(2023, 3, 31, 14, 19, 54, 246, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 31, 22, 19, 54, 246, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 40,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 4, 4, 22, 25, 47, 768, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 5, 7, 25, 47, 768, DateTimeKind.Unspecified)
+                            A_ID = 1,
+                            L_cTime = new DateTime(2023, 4, 6, 16, 33, 35, 344, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 7, 0, 33, 35, 344, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 41,
-                            A_ID = 9,
-                            L_cTime = new DateTime(2023, 5, 29, 20, 9, 4, 409, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 30, 3, 9, 4, 409, DateTimeKind.Unspecified)
+                            A_ID = 1,
+                            L_cTime = new DateTime(2023, 4, 5, 5, 53, 5, 951, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 5, 14, 53, 5, 951, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 42,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 2, 3, 10, 41, 45, 754, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 3, 14, 41, 45, 754, DateTimeKind.Unspecified)
+                            A_ID = 4,
+                            L_cTime = new DateTime(2023, 3, 14, 15, 20, 3, 244, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 14, 23, 20, 3, 244, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 43,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 3, 12, 23, 53, 58, 694, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 13, 5, 53, 58, 694, DateTimeKind.Unspecified)
+                            A_ID = 1,
+                            L_cTime = new DateTime(2023, 4, 19, 20, 23, 54, 181, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 20, 0, 23, 54, 181, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 44,
-                            A_ID = 7,
-                            L_cTime = new DateTime(2023, 5, 17, 7, 7, 48, 37, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 17, 12, 7, 48, 37, DateTimeKind.Unspecified)
+                            A_ID = 6,
+                            L_cTime = new DateTime(2023, 5, 27, 15, 46, 17, 347, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 27, 20, 46, 17, 347, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 45,
-                            A_ID = 2,
-                            L_cTime = new DateTime(2023, 4, 25, 16, 34, 31, 34, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 26, 0, 34, 31, 34, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 4, 13, 21, 39, 13, 30, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 14, 3, 39, 13, 30, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 46,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 29, 9, 11, 38, 403, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 29, 15, 11, 38, 403, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 3, 7, 2, 26, 12, 820, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 7, 8, 26, 12, 820, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 47,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 2, 2, 22, 9, 53, 532, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 2, 23, 9, 53, 532, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 3, 9, 5, 2, 49, 702, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 9, 9, 2, 49, 702, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 48,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 3, 6, 23, 59, 333, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 3, 8, 23, 59, 333, DateTimeKind.Unspecified)
+                            A_ID = 2,
+                            L_cTime = new DateTime(2023, 4, 17, 2, 18, 41, 656, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 17, 11, 18, 41, 656, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 49,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 2, 20, 20, 57, 42, 212, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 21, 3, 57, 42, 212, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 5, 27, 9, 49, 32, 312, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 27, 16, 49, 32, 312, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 50,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 4, 21, 21, 54, 3, 245, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 22, 4, 54, 3, 245, DateTimeKind.Unspecified)
+                            A_ID = 2,
+                            L_cTime = new DateTime(2023, 2, 10, 15, 50, 14, 749, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 10, 18, 50, 14, 749, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 51,
-                            A_ID = 9,
-                            L_cTime = new DateTime(2023, 4, 15, 21, 8, 7, 445, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 16, 4, 8, 7, 445, DateTimeKind.Unspecified)
+                            A_ID = 1,
+                            L_cTime = new DateTime(2023, 5, 15, 14, 11, 50, 899, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 15, 16, 11, 50, 899, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 52,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 2, 6, 23, 2, 7, 479, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 7, 0, 2, 7, 479, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 2, 3, 12, 28, 18, 353, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 3, 19, 28, 18, 353, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 53,
-                            A_ID = 9,
-                            L_cTime = new DateTime(2023, 4, 3, 8, 43, 54, 208, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 3, 17, 43, 54, 208, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 5, 20, 17, 55, 13, 157, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 21, 1, 55, 13, 157, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 54,
-                            A_ID = 9,
-                            L_cTime = new DateTime(2023, 2, 17, 0, 2, 50, 341, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 17, 4, 2, 50, 341, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 3, 28, 7, 22, 7, 479, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 28, 10, 22, 7, 479, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 55,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 4, 27, 13, 23, 3, 44, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 27, 14, 23, 3, 44, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 5, 23, 0, 29, 48, 440, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 23, 6, 29, 48, 440, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 56,
-                            A_ID = 4,
-                            L_cTime = new DateTime(2023, 4, 16, 13, 24, 5, 21, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 16, 22, 24, 5, 21, DateTimeKind.Unspecified)
+                            A_ID = 1,
+                            L_cTime = new DateTime(2023, 4, 17, 0, 18, 22, 613, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 17, 4, 18, 22, 613, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 57,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 5, 1, 13, 42, 10, 252, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 1, 20, 42, 10, 252, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 3, 30, 5, 26, 40, 60, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 30, 12, 26, 40, 60, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 58,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 4, 4, 8, 37, 3, 774, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 4, 10, 37, 3, 774, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 5, 28, 23, 2, 57, 48, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 29, 7, 2, 57, 48, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 59,
-                            A_ID = 7,
-                            L_cTime = new DateTime(2023, 3, 8, 0, 18, 12, 833, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 8, 4, 18, 12, 833, DateTimeKind.Unspecified)
+                            A_ID = 6,
+                            L_cTime = new DateTime(2023, 4, 9, 19, 16, 39, 663, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 10, 4, 16, 39, 663, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 60,
-                            A_ID = 7,
-                            L_cTime = new DateTime(2023, 5, 27, 12, 59, 40, 950, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 27, 22, 59, 40, 950, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 5, 2, 12, 41, 18, 743, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 2, 13, 41, 18, 743, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 61,
-                            A_ID = 9,
-                            L_cTime = new DateTime(2023, 2, 28, 17, 17, 21, 386, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 1, 2, 17, 21, 386, DateTimeKind.Unspecified)
+                            A_ID = 2,
+                            L_cTime = new DateTime(2023, 2, 10, 1, 57, 35, 120, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 10, 7, 57, 35, 120, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 62,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 2, 28, 11, 46, 36, 941, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 28, 12, 46, 36, 941, DateTimeKind.Unspecified)
+                            A_ID = 7,
+                            L_cTime = new DateTime(2023, 4, 19, 14, 58, 20, 661, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 19, 18, 58, 20, 661, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 63,
-                            A_ID = 9,
-                            L_cTime = new DateTime(2023, 4, 21, 18, 43, 59, 839, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 21, 20, 43, 59, 839, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 5, 5, 7, 34, 50, 820, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 5, 17, 34, 50, 820, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 64,
-                            A_ID = 4,
-                            L_cTime = new DateTime(2023, 4, 21, 10, 23, 51, 76, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 21, 17, 23, 51, 76, DateTimeKind.Unspecified)
+                            A_ID = 7,
+                            L_cTime = new DateTime(2023, 4, 2, 13, 13, 8, 852, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 2, 22, 13, 8, 852, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 65,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 3, 1, 21, 38, 19, 386, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 2, 3, 38, 19, 386, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 5, 23, 16, 42, 3, 153, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 24, 2, 42, 3, 153, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 66,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 5, 3, 5, 34, 6, 627, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 3, 8, 34, 6, 627, DateTimeKind.Unspecified)
+                            A_ID = 6,
+                            L_cTime = new DateTime(2023, 4, 1, 16, 51, 58, 907, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 1, 18, 51, 58, 907, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 67,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 4, 13, 23, 52, 23, 170, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 14, 4, 52, 23, 170, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 5, 18, 11, 13, 7, 689, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 18, 17, 13, 7, 689, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 68,
-                            A_ID = 7,
-                            L_cTime = new DateTime(2023, 3, 24, 2, 23, 20, 940, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 24, 7, 23, 20, 940, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 2, 11, 11, 44, 13, 505, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 11, 20, 44, 13, 505, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 69,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 4, 27, 8, 24, 50, 409, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 27, 9, 24, 50, 409, DateTimeKind.Unspecified)
+                            A_ID = 6,
+                            L_cTime = new DateTime(2023, 3, 2, 1, 8, 36, 861, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 2, 3, 8, 36, 861, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 70,
-                            A_ID = 7,
-                            L_cTime = new DateTime(2023, 4, 30, 14, 49, 5, 621, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 30, 23, 49, 5, 621, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 5, 27, 2, 39, 34, 15, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 27, 10, 39, 34, 15, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 71,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 2, 16, 15, 43, 5, 896, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 16, 19, 43, 5, 896, DateTimeKind.Unspecified)
+                            A_ID = 7,
+                            L_cTime = new DateTime(2023, 5, 20, 13, 0, 13, 538, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 20, 22, 0, 13, 538, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 72,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 2, 14, 17, 17, 48, 646, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 14, 23, 17, 48, 646, DateTimeKind.Unspecified)
+                            A_ID = 2,
+                            L_cTime = new DateTime(2023, 4, 27, 19, 11, 35, 116, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 27, 22, 11, 35, 116, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 73,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 5, 5, 13, 34, 23, 371, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 5, 23, 34, 23, 371, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 5, 27, 23, 36, 37, 942, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 28, 5, 36, 37, 942, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 74,
-                            A_ID = 7,
-                            L_cTime = new DateTime(2023, 4, 21, 15, 30, 36, 457, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 21, 21, 30, 36, 457, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 3, 15, 19, 28, 51, 450, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 15, 23, 28, 51, 450, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 75,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 3, 1, 19, 27, 8, 462, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 1, 22, 27, 8, 462, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 2, 11, 20, 32, 26, 769, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 12, 5, 32, 26, 769, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 76,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 3, 10, 3, 56, 12, 517, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 10, 12, 56, 12, 517, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 2, 21, 6, 58, 26, 319, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 21, 7, 58, 26, 319, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 77,
-                            A_ID = 4,
-                            L_cTime = new DateTime(2023, 4, 19, 3, 15, 40, 124, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 19, 11, 15, 40, 124, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 3, 10, 23, 38, 12, 687, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 11, 3, 38, 12, 687, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 78,
-                            A_ID = 7,
-                            L_cTime = new DateTime(2023, 2, 21, 21, 16, 37, 243, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 22, 0, 16, 37, 243, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 5, 8, 0, 20, 57, 229, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 8, 2, 20, 57, 229, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 79,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 4, 15, 0, 5, 59, 158, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 15, 7, 5, 59, 158, DateTimeKind.Unspecified)
+                            A_ID = 6,
+                            L_cTime = new DateTime(2023, 2, 10, 9, 11, 21, 757, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 10, 16, 11, 21, 757, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 80,
-                            A_ID = 7,
-                            L_cTime = new DateTime(2023, 3, 19, 10, 8, 13, 787, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 19, 20, 8, 13, 787, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 3, 13, 0, 29, 31, 833, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 13, 10, 29, 31, 833, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 81,
-                            A_ID = 7,
-                            L_cTime = new DateTime(2023, 5, 4, 8, 41, 1, 438, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 4, 13, 41, 1, 438, DateTimeKind.Unspecified)
+                            A_ID = 4,
+                            L_cTime = new DateTime(2023, 2, 14, 4, 8, 40, 93, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 14, 9, 8, 40, 93, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 82,
-                            A_ID = 9,
-                            L_cTime = new DateTime(2023, 4, 3, 16, 54, 12, 973, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 4, 0, 54, 12, 973, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 3, 24, 19, 2, 5, 332, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 25, 3, 2, 5, 332, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 83,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 4, 19, 15, 59, 25, 976, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 19, 17, 59, 25, 976, DateTimeKind.Unspecified)
+                            A_ID = 9,
+                            L_cTime = new DateTime(2023, 4, 4, 22, 14, 59, 518, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 5, 3, 14, 59, 518, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 84,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 3, 1, 12, 5, 33, 660, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 1, 22, 5, 33, 660, DateTimeKind.Unspecified)
+                            A_ID = 2,
+                            L_cTime = new DateTime(2023, 3, 10, 17, 11, 49, 11, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 11, 0, 11, 49, 11, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 85,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 2, 24, 11, 33, 20, 567, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 24, 13, 33, 20, 567, DateTimeKind.Unspecified)
+                            A_ID = 2,
+                            L_cTime = new DateTime(2023, 4, 3, 15, 18, 47, 884, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 3, 19, 18, 47, 884, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 86,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 5, 13, 9, 29, 11, 453, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 13, 19, 29, 11, 453, DateTimeKind.Unspecified)
+                            A_ID = 2,
+                            L_cTime = new DateTime(2023, 5, 12, 7, 42, 2, 803, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 12, 17, 42, 2, 803, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 87,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 3, 24, 16, 22, 12, 905, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 24, 21, 22, 12, 905, DateTimeKind.Unspecified)
+                            A_ID = 2,
+                            L_cTime = new DateTime(2023, 2, 28, 11, 39, 15, 210, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 28, 12, 39, 15, 210, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 88,
-                            A_ID = 8,
-                            L_cTime = new DateTime(2023, 5, 18, 13, 1, 36, 236, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 18, 21, 1, 36, 236, DateTimeKind.Unspecified)
+                            A_ID = 7,
+                            L_cTime = new DateTime(2023, 5, 3, 22, 46, 51, 436, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 4, 6, 46, 51, 436, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 89,
-                            A_ID = 4,
-                            L_cTime = new DateTime(2023, 5, 6, 6, 3, 20, 223, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 6, 12, 3, 20, 223, DateTimeKind.Unspecified)
+                            A_ID = 6,
+                            L_cTime = new DateTime(2023, 2, 7, 7, 3, 5, 624, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 7, 16, 3, 5, 624, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 90,
-                            A_ID = 3,
-                            L_cTime = new DateTime(2023, 4, 24, 19, 3, 38, 552, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 25, 5, 3, 38, 552, DateTimeKind.Unspecified)
+                            A_ID = 2,
+                            L_cTime = new DateTime(2023, 4, 19, 6, 55, 3, 825, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 19, 7, 55, 3, 825, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 91,
-                            A_ID = 2,
-                            L_cTime = new DateTime(2023, 3, 27, 14, 33, 14, 852, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 27, 21, 33, 14, 852, DateTimeKind.Unspecified)
+                            A_ID = 7,
+                            L_cTime = new DateTime(2023, 2, 2, 19, 26, 10, 709, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 2, 22, 26, 10, 709, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 92,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 2, 27, 18, 9, 38, 433, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 28, 0, 9, 38, 433, DateTimeKind.Unspecified)
+                            A_ID = 2,
+                            L_cTime = new DateTime(2023, 2, 7, 12, 52, 59, 283, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 2, 7, 14, 52, 59, 283, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 93,
                             A_ID = 2,
-                            L_cTime = new DateTime(2023, 2, 7, 10, 28, 59, 708, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 7, 17, 28, 59, 708, DateTimeKind.Unspecified)
+                            L_cTime = new DateTime(2023, 4, 2, 21, 51, 4, 356, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 3, 2, 51, 4, 356, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 94,
-                            A_ID = 1,
-                            L_cTime = new DateTime(2023, 4, 28, 21, 59, 42, 629, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 29, 2, 59, 42, 629, DateTimeKind.Unspecified)
+                            A_ID = 8,
+                            L_cTime = new DateTime(2023, 5, 30, 0, 6, 35, 792, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 30, 6, 6, 35, 792, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 95,
-                            A_ID = 6,
-                            L_cTime = new DateTime(2023, 3, 10, 22, 25, 54, 666, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 3, 11, 2, 25, 54, 666, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 5, 19, 1, 36, 20, 831, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 19, 7, 36, 20, 831, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 96,
-                            A_ID = 7,
-                            L_cTime = new DateTime(2023, 5, 18, 3, 23, 32, 67, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 18, 6, 23, 32, 67, DateTimeKind.Unspecified)
+                            A_ID = 1,
+                            L_cTime = new DateTime(2023, 4, 24, 15, 58, 46, 940, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 24, 22, 58, 46, 940, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 97,
-                            A_ID = 2,
-                            L_cTime = new DateTime(2023, 5, 31, 20, 54, 22, 624, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 6, 1, 2, 54, 22, 624, DateTimeKind.Unspecified)
+                            A_ID = 3,
+                            L_cTime = new DateTime(2023, 5, 10, 23, 28, 19, 682, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 11, 7, 28, 19, 682, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 98,
-                            A_ID = 5,
-                            L_cTime = new DateTime(2023, 4, 2, 5, 9, 7, 230, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 2, 8, 9, 7, 230, DateTimeKind.Unspecified)
+                            A_ID = 6,
+                            L_cTime = new DateTime(2023, 3, 28, 14, 42, 5, 447, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 3, 28, 18, 42, 5, 447, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 99,
-                            A_ID = 2,
-                            L_cTime = new DateTime(2023, 5, 20, 8, 45, 53, 663, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 5, 20, 11, 45, 53, 663, DateTimeKind.Unspecified)
+                            A_ID = 7,
+                            L_cTime = new DateTime(2023, 4, 27, 16, 3, 31, 510, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 27, 22, 3, 31, 510, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 100,
-                            A_ID = 9,
-                            L_cTime = new DateTime(2023, 4, 6, 9, 50, 16, 444, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 4, 6, 12, 50, 16, 444, DateTimeKind.Unspecified)
+                            A_ID = 7,
+                            L_cTime = new DateTime(2023, 5, 30, 4, 4, 3, 919, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 5, 30, 5, 4, 3, 919, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             L_ID = 101,
-                            A_ID = 9,
-                            L_cTime = new DateTime(2023, 2, 12, 22, 18, 17, 327, DateTimeKind.Unspecified),
-                            L_dcTime = new DateTime(2023, 2, 13, 7, 18, 17, 327, DateTimeKind.Unspecified)
+                            A_ID = 5,
+                            L_cTime = new DateTime(2023, 4, 11, 6, 22, 21, 551, DateTimeKind.Unspecified),
+                            L_dcTime = new DateTime(2023, 4, 11, 7, 22, 21, 551, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -1952,7 +1972,7 @@ namespace final_repo_test.Migrations
                             O_ID = 1,
                             A_ID = 1,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3575),
+                            O_Date = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7564),
                             O_TotalPrice = 2396m
                         },
                         new
@@ -1960,15 +1980,15 @@ namespace final_repo_test.Migrations
                             O_ID = 2,
                             A_ID = 1,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3576),
+                            O_Date = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7565),
                             O_TotalPrice = 1198m
                         },
                         new
                         {
                             O_ID = 3,
-                            A_ID = 2,
+                            A_ID = 4,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(4271),
+                            O_Date = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(8234),
                             O_TotalPrice = 699m
                         },
                         new
@@ -1976,7 +1996,7 @@ namespace final_repo_test.Migrations
                             O_ID = 4,
                             A_ID = 1,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(4282),
+                            O_Date = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(8247),
                             O_TotalPrice = 699m
                         },
                         new
@@ -1984,71 +2004,71 @@ namespace final_repo_test.Migrations
                             O_ID = 5,
                             A_ID = 1,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(4297),
+                            O_Date = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(8293),
                             O_TotalPrice = 699m
                         },
                         new
                         {
                             O_ID = 6,
-                            A_ID = 5,
+                            A_ID = 3,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(4306),
+                            O_Date = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(8303),
                             O_TotalPrice = 699m
                         },
                         new
                         {
                             O_ID = 7,
-                            A_ID = 8,
+                            A_ID = 1,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(4315),
+                            O_Date = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(8311),
                             O_TotalPrice = 699m
                         },
                         new
                         {
                             O_ID = 8,
-                            A_ID = 4,
+                            A_ID = 6,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(4324),
+                            O_Date = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(8320),
                             O_TotalPrice = 699m
                         },
                         new
                         {
                             O_ID = 9,
-                            A_ID = 5,
+                            A_ID = 9,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(4339),
+                            O_Date = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(8334),
                             O_TotalPrice = 699m
                         },
                         new
                         {
                             O_ID = 10,
-                            A_ID = 8,
+                            A_ID = 6,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(4348),
+                            O_Date = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(8343),
                             O_TotalPrice = 699m
                         },
                         new
                         {
                             O_ID = 11,
-                            A_ID = 4,
+                            A_ID = 8,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(4355),
+                            O_Date = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(8351),
                             O_TotalPrice = 699m
                         },
                         new
                         {
                             O_ID = 12,
-                            A_ID = 5,
+                            A_ID = 2,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(4392),
+                            O_Date = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(8358),
                             O_TotalPrice = 699m
                         },
                         new
                         {
                             O_ID = 13,
-                            A_ID = 8,
+                            A_ID = 1,
                             O_Cancle = false,
-                            O_Date = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(4407),
+                            O_Date = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(8373),
                             O_TotalPrice = 699m
                         });
                 });
@@ -2483,7 +2503,7 @@ namespace final_repo_test.Migrations
                         new
                         {
                             P_ID = 1,
-                            P_Date = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3566),
+                            P_Date = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7553),
                             P_Describe = "Regular Fit反摺袖襯衫",
                             P_Discontinuted = false,
                             P_Discount = 0,
@@ -2496,7 +2516,7 @@ namespace final_repo_test.Migrations
                         new
                         {
                             P_ID = 2,
-                            P_Date = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3568),
+                            P_Date = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7554),
                             P_Describe = "Regular Fit棉麻短袖襯衫",
                             P_Discontinuted = false,
                             P_Discount = 0,
@@ -2651,10 +2671,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3474),
+                            A_RegisteredAt = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7442),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3470),
+                            Birthday = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7438),
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
@@ -2668,10 +2688,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3486),
+                            A_RegisteredAt = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7455),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3485),
+                            Birthday = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7454),
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
@@ -2685,10 +2705,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3492),
+                            A_RegisteredAt = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7461),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3491),
+                            Birthday = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7460),
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
@@ -2702,10 +2722,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3497),
+                            A_RegisteredAt = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7466),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3497),
+                            Birthday = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7466),
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
@@ -2719,10 +2739,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3502),
+                            A_RegisteredAt = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7471),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3502),
+                            Birthday = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7470),
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
@@ -2736,10 +2756,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3508),
+                            A_RegisteredAt = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7498),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3508),
+                            Birthday = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7497),
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
@@ -2753,10 +2773,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3513),
+                            A_RegisteredAt = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7503),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3513),
+                            Birthday = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7502),
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
@@ -2770,10 +2790,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3518),
+                            A_RegisteredAt = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7508),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3517),
+                            Birthday = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7507),
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
@@ -2787,10 +2807,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3522),
+                            A_RegisteredAt = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7512),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3522),
+                            Birthday = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7512),
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
@@ -2804,10 +2824,10 @@ namespace final_repo_test.Migrations
                             A_Name = "Test",
                             A_NickName = "Test",
                             A_Phone = "0900000000",
-                            A_RegisteredAt = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3527),
+                            A_RegisteredAt = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7517),
                             A_add = "Test",
                             A_level = 99,
-                            Birthday = new DateTime(2023, 5, 15, 10, 59, 5, 275, DateTimeKind.Local).AddTicks(3527),
+                            Birthday = new DateTime(2023, 5, 15, 16, 17, 0, 45, DateTimeKind.Local).AddTicks(7517),
                             P_id = 1,
                             UserName = "Test",
                             UserPWD = "Test"
