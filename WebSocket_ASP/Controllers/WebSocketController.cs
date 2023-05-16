@@ -1,9 +1,5 @@
-﻿using System;
-using System.Net.Sockets;
-using System.ComponentModel;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Net.WebSockets;
-using WebSocketSharp.Server;
 using System.Text;
 using Newtonsoft.Json.Linq;
 using JsonSerializer = System.Text.Json.JsonSerializer;
@@ -20,7 +16,7 @@ public class WebSocketController : Controller
 
 
 
-    WebSocketServer wssv = new WebSocketServer("ws://127.0.0.1:7890");
+    // WebSocketServer wssv = new WebSocketServer("ws://127.0.0.1:7890");
     [Route("/ws")]
     public async Task Get()
     {

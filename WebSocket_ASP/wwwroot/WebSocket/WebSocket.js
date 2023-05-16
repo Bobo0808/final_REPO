@@ -1,6 +1,6 @@
 
 
-var server = 'wss://localhost:7184'; //如果開啟了https則這裡是wss
+var server = 'wss://localhost:7093'; //如果開啟了https則這裡是wss
 var vWebSocket = null;
 let playerDom = {}; //所有角色的資訊
 let playerRef = {};//自己角色的資訊
@@ -9,7 +9,7 @@ let IDempty = true;
 let messageBuffer = '';
 let mapData = {};
 let isQueue = false;
-
+console.log(server);
 let polite;
 const myVideo = document.getElementById("myVideo");
 const remoteVideo = document.getElementById("remoteVideo");
@@ -24,7 +24,7 @@ btnLeave.addEventListener('click', leaveRoom);
 const gameContainer = document.querySelector(".game-container");
 window.onload = function () {
     //建立一個web socket 連線
-    vWebSocket = new WebSocket(server + '/ws');
+    vWebSocket = new WebSocket(server + '/WebSocket');
     document.getElementById("dialog-send-btn").addEventListener("click", sendMsg);
     document.getElementById('joinBtn').addEventListener("click", sendQueueRequest);
     //如果連線成功
