@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "final_repo_test", "final_re
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{2268A171-C557-4AC3-AB29-72842AB066B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChickenLife", "ChickenLife\ChickenLife.csproj", "{DD7F84F3-424C-4907-906D-1EC316EE9326}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2268A171-C557-4AC3-AB29-72842AB066B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2268A171-C557-4AC3-AB29-72842AB066B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2268A171-C557-4AC3-AB29-72842AB066B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD7F84F3-424C-4907-906D-1EC316EE9326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD7F84F3-424C-4907-906D-1EC316EE9326}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD7F84F3-424C-4907-906D-1EC316EE9326}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD7F84F3-424C-4907-906D-1EC316EE9326}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
