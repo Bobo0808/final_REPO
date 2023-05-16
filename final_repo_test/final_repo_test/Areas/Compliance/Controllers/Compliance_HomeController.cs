@@ -1,4 +1,4 @@
-﻿using final_repo_test.Data;
+﻿using ClassLibrary;
 using Microsoft.AspNetCore.Mvc;
 
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using final_repo_test.Models;
+using ClassLibrary.Models;
 using Microsoft.Data.SqlClient;
 using System.Globalization;
 using Microsoft.AspNetCore.Antiforgery;
@@ -17,9 +17,9 @@ namespace final_repo_test.Areas.Compliance.Controllers
     [Area("Compliance")]
     public class Compliance_HomeController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ChickenDbContext _context;
 
-        public Compliance_HomeController(ApplicationDbContext context)
+        public Compliance_HomeController(ChickenDbContext context)
         {
             _context = context;
         }

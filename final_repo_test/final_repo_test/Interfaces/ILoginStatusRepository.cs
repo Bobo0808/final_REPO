@@ -1,4 +1,4 @@
-﻿using final_repo_test.ViewModels.LoginStatus;
+﻿using ClassLibrary.ViewModels.LoginStatus;
 
 namespace final_repo_test.Interfaces
 {
