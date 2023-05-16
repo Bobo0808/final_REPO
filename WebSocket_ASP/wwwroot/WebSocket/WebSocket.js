@@ -346,13 +346,19 @@ function muteCam() {
 }
 
 function leaveRoom() {
-    peerChanel.close();
-    stream.getTracks().forEach(track => track.stop());
-    let data = {
-        "type": "Leave",
-        "mapid": mapData.id,
+    try {
+        peerChanel.close();
+        stream.getTracks().forEach(track => track.stop());
     }
-    vWebSocket.send(JSON.stringify(data))
+    finally {
+
+        let data = {
+            "type": "Leave",
+            "mapid": mapData.id,
+        }
+        vWebSocket.send(JSON.stringify(data))
+    }
+
 }
 
 async function mediaOn() {
