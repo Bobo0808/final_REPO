@@ -8,8 +8,11 @@
 
   <ItemGroup>
     <Compile Remove="Enum\LoginStatus\**" />
+    <Compile Remove="Migrations\**" />
     <EmbeddedResource Remove="Enum\LoginStatus\**" />
+    <EmbeddedResource Remove="Migrations\**" />
     <None Remove="Enum\LoginStatus\**" />
+    <None Remove="Migrations\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,10 +26,6 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
     <PackageReference Include="NETCore.Encrypt" Version="2.1.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>
