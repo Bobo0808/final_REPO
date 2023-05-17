@@ -8,8 +8,8 @@ using ClassLibrary;
 
 namespace ChickenLife.Controllers
 {
-   
-   
+
+    [ApiExplorerSettings(IgnoreApi = true)]
     [Route("api/[controller]")]
     [ApiController]
     public class WebSocketController : Controller
