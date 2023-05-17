@@ -7,9 +7,7 @@ namespace ClassLibrary.ViewModels.Login
     public class RegisterViewModel
     {
 
-        //[Display(Name ="Kullanıcı Adı", Prompt ="johndoe")]
-        [Required(ErrorMessage = "Username is required.")]
-        [StringLength(30, ErrorMessage = "Username can be max 30 characters.")]
+        
         public string E_Email { get; set; }
 
         //[DataType(DataType.Password)]
