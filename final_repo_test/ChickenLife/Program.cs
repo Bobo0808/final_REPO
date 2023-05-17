@@ -8,6 +8,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+// 定義CORS Policy
+string MyAllowSpecificOrigins = "AllowAny";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(
+            name: MyAllowSpecificOrigins,
+            policy => policy.WithOrigins("*")
+                            .WithHeaders("*")
+                            .WithMethods("*"));   // localhost:7029不接斜線(全接就打*)
+});
+
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ChickenDbContext>(options =>
 {
@@ -27,10 +38,13 @@ app.UseWebSockets(webSocketOptions);
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    //app.UseSwagger();
-    //app.UseSwaggerUI();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
-
+// 套用CORS策略(這邊是影響所有的controllers)
+// app.UseCors(MyAllowSpecificOrigins);
+// 套用但須各個controllers去指定策略
+app.UseCors();
 
 app.UseHttpsRedirection();
 
