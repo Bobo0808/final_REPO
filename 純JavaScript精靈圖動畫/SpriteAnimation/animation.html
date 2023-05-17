@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #SpriteAni {
+            /* 圖片每一禎的寬高 */
+            width: 48px;
+            height: 68px;
+            background: url('/img/playerLeft.png') 0px 0px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- 要用P標籤 -->
+        <p id="SpriteAni">
+    </div>
+
+
+
+    <script>
+
+        function SpriteAniStart() {
+            var time;
+            var position = 48;//每一禎的寬
+            const interval = 100;
+            time = setInterval(() => {
+                document.getElementById("SpriteAni").style.backgroundPosition = `-${position}px 0px`;
+                if (position < 192) {//192是整張圖片總寬度
+                    position = position + 48;
+                }
+                else {
+                    position = 48;
+                }
+            }, interval)
+        }
+        window.onload = SpriteAniStart;//視窗載入的時候啟用function
+    </script>
+
+</body>
+
+</html>
