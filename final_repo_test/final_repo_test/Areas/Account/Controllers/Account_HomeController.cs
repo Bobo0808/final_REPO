@@ -2,8 +2,10 @@
 using ClassLibrary.Models;
 using ClassLibrary.ViewModels.Account;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Text;
 
 namespace final_repo_test.Areas.Account.Controllers
 {
@@ -103,6 +105,7 @@ namespace final_repo_test.Areas.Account.Controllers
                 account.A_Name = edit.A_Name;
                 account.UserName = edit.UserName;
                 account.UserPWD = edit.UserPWD;
+                //account.PasswordHash = edit.UserPWD;
                 account.A_Gender = edit.A_Gender;
                 account.Birthday = edit.Birthday;
                 account.A_level = edit.A_level;

@@ -22,9 +22,25 @@ namespace ClassLibrary.Models
         public string A_Phone { get; set; } = default!;
         public string A_add { get; set; } = default!;
         [Column(TypeName = "Date")]
-        public DateTime A_RegisteredAt { get; set; } = default!;
+        public DateTime A_RegisteredAt { get; set; } =DateTime.Now;
         public string A_NickName { get; set; } = default!;
         public int A_Coin { get; set; } = default!;
+
+
+        public string? VerifycationToken { get; set; }
+
+        public DateTime? VerifiedAt { get; set; }
+
+        public string? PasswordRestToken { get; set; }
+
+        public DateTime? ResetTokenExpries { get; set; }
+
+        public byte[] PasswordHash { get; set; } = new byte[32];
+
+        public byte[] PasswordSalt { get; set; } = new byte[32];
+
+
+
 
         public ICollection<CardOrder>? CardOrders { get; set; }
         public ICollection<Order>? Orders { get; set; }

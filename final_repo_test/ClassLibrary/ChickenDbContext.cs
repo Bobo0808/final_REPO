@@ -12,7 +12,7 @@ namespace ClassLibrary
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-KC7TQVP\SQLEXPRESS;Initial Catalog=ChickenLife;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+            optionsBuilder.UseSqlServer(@"Data Source=.;Initial Catalog=ChickenLife;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
