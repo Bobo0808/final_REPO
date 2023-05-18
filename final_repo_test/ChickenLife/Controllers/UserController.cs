@@ -1,4 +1,5 @@
 ﻿using ChickenLife.Models.Account;
+using ChickenLife.Models.OrderProduct;
 using ClassLibrary;
 using ClassLibrary.Models;
 using Microsoft.AspNetCore.Http;
@@ -152,6 +153,49 @@ namespace ChickenLife.Controllers
         private string CreateRandomToken()
         {
             return Convert.ToHexString(RandomNumberGenerator.GetBytes(64));
+        }
+
+
+
+
+        // 變更點數
+        // 需增加參數POST:改為api/Accounts/Update/{id}
+        [HttpPost("Update/{id}")]
+        public async Task<string> PutEmployees(int id, MemberDTO user)
+        {
+            if (id != user.A_ID)
+            {
+                // return BadRequest();
+                return "讀取紀錄發生錯誤!";
+            }
+            UserAccount acc = await _context.Accounts.FindAsync(id);
+            acc.A_Coin = user.A_Coin;
+
+            _context.Entry(acc).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!AccountsExists(id))
+                {
+                    // return NotFound();
+                    return "修改員工紀錄發生錯誤!";
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            // return NoContent();  // 只會回傳成功或失敗
+            return "修改紀錄成功";
+        }
+        private bool AccountsExists(int id)
+        {
+            return (_context.Accounts?.Any(e => e.A_ID == id)).GetValueOrDefault();
         }
     }
 }
