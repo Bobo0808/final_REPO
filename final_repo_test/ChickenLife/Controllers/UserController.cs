@@ -39,7 +39,17 @@ namespace ChickenLife.Controllers
             _context.Accounts.Add(user);
             await _context.SaveChangesAsync();
 
-            return Ok("使用者成功創建!");
+
+            var userOutput = new UserOutput
+            {
+                VerifycationToken = user.VerifycationToken
+            };
+
+            return Ok(new { Message = $"使用者成功創建!以下是您的註冊驗證碼:{userOutput.VerifycationToken}" });
+
+
+
+            //return Ok("使用者成功創建!");
         }
 
         [HttpPost("login")]
@@ -60,18 +70,77 @@ namespace ChickenLife.Controllers
                 return BadRequest("未驗證");
             }
 
-            var userData = await _context.Accounts.FirstOrDefaultAsync(u => u.A_ID == user.A_ID);
+            //var userData = await _context.Accounts.FirstOrDefaultAsync(u => u.A_ID == user.A_ID);
 
-            if (userData == null)
-            {
-                return NotFound("找不到用户数据");
-            }
+            //if (userData == null)
+            //{
+            //    return NotFound("找不到用戶");
+            //}
+            var UserOutput = await GetUserData(user.A_ID);
 
-            
-            return Ok(userData);
-            //return Ok($"歡迎回來,{user.A_Email}!:)");
-
+            return Ok(new { Message = "登入成功", User = UserOutput });
         }
+            private async Task<UserOutput> GetUserData(int userId)
+            {
+                // 獲取數據
+                // 查詢數據庫調用服務來獲取數據
+
+                var user = await _context.Accounts.FirstOrDefaultAsync(u => u.A_ID == userId);
+
+                if (user == null)
+                {
+                return null ;
+                }
+
+                // 创建一个包含所需数据的对象
+                var userOutput = new UserOutput
+                {
+                    A_Email = user.A_Email,
+                    A_ID = user.A_ID,
+                    A_Name = user.A_Name,
+                    UserName = user.A_Name,
+                    A_Gender = user.A_Gender,
+                    Birthday = user.Birthday,
+                    P_id = user.P_id,
+                    //Product=user.Product,
+                    A_Phone = user.A_Phone,
+                    A_add = user.A_add,
+                    A_NickName = user.A_NickName,
+                    A_Coin = user.A_Coin,
+                    //    ResetTokenExpries=user.ResetTokenExpries,
+                    //    VerifycationToken=user.VerifycationToken,
+                };
+
+                return userOutput;
+
+
+                //var UserOutput = new UserOutput
+                //{
+                //    //前面資料是ViewModel 後面原資料表
+                //    A_Email=user.A_Email,
+                //    A_ID=user.A_ID,
+                //    A_Name=user.A_Name,
+                //    UserName=user.A_Name,
+                //    A_Gender=user.A_Gender,
+                //    Birthday=user.Birthday,
+                //    P_id=user.P_id,
+                //    //Product=user.Product,
+                //    A_Phone=user.A_Phone,
+                //    A_add=user.A_add,
+                //    A_NickName=user.A_NickName,
+                //    A_Coin=user.A_Coin,
+                //    ResetTokenExpries=user.ResetTokenExpries,
+                //    VerifycationToken=user.VerifycationToken,
+
+
+                //};
+
+                //return Ok(UserOutput);
+
+                //return Ok(userData);
+                //return Ok($"歡迎回來,{user.A_Email}!:)");
+
+            }
         [HttpPost("verify")]
         public async Task<IActionResult> Verify(string token)
         {
