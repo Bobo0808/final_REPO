@@ -1,12 +1,14 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import { ref } from 'vue'
+import {fuck} from './main.js'
 
+fuck();
 let i = ref(0);
 </script>
 
 <template>
-  <div><button type="button" @click="playerRef.value.id++">Uid is {{ playerRef.value.id }}</button></div>
+  <div><button class="btn btn-primary" type="button" @click="playerRef.value.id++">Uid is {{ playerRef.value.id }}</button></div>
   <div><button type="button" @click="i++">Name is {{ playerRef.value.name[i] }}</button></div>
   <div v-if="playerRef.value.gender == 1">Gender is male</div>
   <div v-else>Gender is female</div>

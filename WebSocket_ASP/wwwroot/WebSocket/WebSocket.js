@@ -27,6 +27,8 @@ window.onload = function () {
     vWebSocket = new WebSocket(server + '/WebSocket');
     document.getElementById("dialog-send-btn").addEventListener("click", sendMsg);
     document.getElementById('joinBtn').addEventListener("click", sendQueueRequest);
+    
+    
     //如果連線成功
     vWebSocket.onopen = function (e) {
         console.log('connection start ...');
