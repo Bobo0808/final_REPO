@@ -3,8 +3,8 @@ using System.Net.WebSockets;
 using System.Text;
 using Newtonsoft.Json.Linq;
 using JsonSerializer = System.Text.Json.JsonSerializer;
-using Microsoft.EntityFrameworkCore;
 using ClassLibrary;
+using System.Numerics;
 
 namespace ChickenLife.Controllers
 {
@@ -24,7 +24,7 @@ namespace ChickenLife.Controllers
         public static Queue_M queue_M = new Queue_M();
         public static bool isMale = true;
         public static string publicMap = "測試服";
-        string[] playerColors = { "blue", "red", "orange", "yellow", "green", "purple" };
+        public static string[] playerColors = { "blue", "red", "orange", "yellow", "green", "purple" };
 
 
 
@@ -37,48 +37,12 @@ namespace ChickenLife.Controllers
             //是否為webSocket請求 如果是則加入等待
             if (HttpContext.WebSockets.IsWebSocketRequest)
             {
-                Console.WriteLine(_context.Products.Count());
-                PlayerRef player = new PlayerRef();//生成新玩家
                 using var webSocket = await HttpContext.WebSockets.AcceptWebSocketAsync();
                 MapDirectoriesDTO mapDTO = new MapDirectoriesDTO() { type = "Load", id = publicMap, Src = maps.MapDirectory[publicMap].Src, MinX = maps.MapDirectory[publicMap].MinX, MinY = maps.MapDirectory[publicMap].MinY, MaxX = maps.MapDirectory[publicMap].MaxX, MaxY = maps.MapDirectory[publicMap].MaxY, BlockedSpaces = maps.MapDirectory[publicMap].BlockedSpaces, client = maps.MapDirectory[publicMap].client.Values.ToList() };
 
                 var Loadtemp = JsonSerializer.Serialize(mapDTO);
                 var Load = Encoding.UTF8.GetBytes(Loadtemp);
                 await webSocket.SendAsync(new ArraySegment<byte>(Load), WebSocketMessageType.Text, true, CancellationToken.None);
-
-
-
-                maps.MapDirectory[publicMap].client.Add(webSocket, player);
-                maps.MapDirectory[publicMap].client[webSocket].type = "Connect";
-                maps.MapDirectory[publicMap].client[webSocket].id = generateID(); //隨機生產ID 之後從ms sql取
-                if (isMale == true)
-                {
-                    maps.MapDirectory[publicMap].client[webSocket].gender = 1;
-                    isMale = false;
-                }
-                else if (isMale == false)
-                {
-                    maps.MapDirectory[publicMap].client[webSocket].gender = 2;
-                    isMale = true;
-                }
-                maps.MapDirectory[publicMap].client[webSocket].name = "Test";
-                maps.MapDirectory[publicMap].client[webSocket].direction = "right";
-                maps.MapDirectory[publicMap].client[webSocket].color = randomFromArray(playerColors);
-                maps.MapDirectory[publicMap].client[webSocket].x = 1;
-                maps.MapDirectory[publicMap].client[webSocket].y = 4;
-
-                //Connect並傳送人物初始數據
-                Console.WriteLine(maps.MapDirectory[publicMap].client[webSocket].name + " Has Connected");
-                var json = JsonSerializer.Serialize(maps.MapDirectory[publicMap].client[webSocket]);
-                var buffer = Encoding.UTF8.GetBytes(json);
-                foreach (KeyValuePair<WebSocket, PlayerRef> con in maps.MapDirectory[publicMap].client)
-                {
-                    if (con.Key.State != System.Net.WebSockets.WebSocketState.Open)
-                    {
-                        continue;
-                    }
-                    await con.Key.SendAsync(new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
-                }
                 try
                 {
                     await Echo(webSocket);
@@ -118,6 +82,40 @@ namespace ChickenLife.Controllers
                     //...
                     switch (type)
                     {
+                        case "Connect":
+                            PlayerRef player = new PlayerRef();//生成新玩家
+                            maps.MapDirectory[publicMap].client.Add(webSocket, player);
+                            maps.MapDirectory[publicMap].client[webSocket].type = "Connect";
+                            maps.MapDirectory[publicMap].client[webSocket].id = generateID(); //隨機生產ID 之後從ms sql取
+                            if (isMale == true)
+                            {
+                                maps.MapDirectory[publicMap].client[webSocket].gender = 1;
+                                isMale = false;
+                            }
+                            else if (isMale == false)
+                            {
+                                maps.MapDirectory[publicMap].client[webSocket].gender = 2;
+                                isMale = true;
+                            }
+                            maps.MapDirectory[publicMap].client[webSocket].name = "Test";
+                            maps.MapDirectory[publicMap].client[webSocket].direction = "right";
+                            maps.MapDirectory[publicMap].client[webSocket].color = randomFromArray(playerColors);
+                            maps.MapDirectory[publicMap].client[webSocket].x = 1;
+                            maps.MapDirectory[publicMap].client[webSocket].y = 4;
+
+                            //Connect並傳送人物初始數據
+                            Console.WriteLine(maps.MapDirectory[publicMap].client[webSocket].name + " Has Connected");
+                            var connectJson = JsonSerializer.Serialize(maps.MapDirectory[publicMap].client[webSocket]);
+                            buffer = Encoding.UTF8.GetBytes(connectJson);
+                            foreach (KeyValuePair<WebSocket, PlayerRef> con in maps.MapDirectory[publicMap].client)
+                            {
+                                if (con.Key.State != WebSocketState.Open)
+                                {
+                                    continue;
+                                }
+                                await con.Key.SendAsync(new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
+                            }
+                            break;
                         case "Chat":
                             var data = jsontemp.GetValue("data");
                             id = jsontemp.Value<string>("id");
@@ -150,7 +148,7 @@ namespace ChickenLife.Controllers
                             if (maps.MapDirectory[publicMap].client[webSocket].gender == 1)
                             {
                                 queue_M.Queue.Enqueue(new KeyValuePair<WebSocket, PlayerRef>(webSocket, maps.MapDirectory[publicMap].client[webSocket]));
-                                if (queue_F.Queue.Count > 0 && queue_M.Queue.Peek().Key.State == System.Net.WebSockets.WebSocketState.Open && queue_F.Queue.Peek().Key.State == System.Net.WebSockets.WebSocketState.Open)
+                                if (queue_F.Queue.Count > 0 && queue_M.Queue.Peek().Key.State == WebSocketState.Open && queue_F.Queue.Peek().Key.State == WebSocketState.Open)
                                 {
                                     string PrivateMapid = "小房間";
                                     //把配對方跟小房間丟給client
@@ -346,7 +344,7 @@ namespace ChickenLife.Controllers
             return Guid.NewGuid().ToString("N");
         }
 
-        public string randomFromArray(string[] arr)
+        public static string randomFromArray(string[] arr)
         {
             Random rdm = new Random();
             int temp = rdm.Next(0, arr.Length);
