@@ -41,6 +41,7 @@ namespace ChickenLife.Controllers
 
             return Ok("使用者成功創建!");
         }
+
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserLoginRequest request)
         {
@@ -58,7 +59,17 @@ namespace ChickenLife.Controllers
             {
                 return BadRequest("未驗證");
             }
-            return Ok($"歡迎回來,{user.A_Email}!:)");
+
+            var userData = await _context.Accounts.FirstOrDefaultAsync(u => u.A_ID == user.A_ID);
+
+            if (userData == null)
+            {
+                return NotFound("找不到用户数据");
+            }
+
+            
+            return Ok(userData);
+            //return Ok($"歡迎回來,{user.A_Email}!:)");
 
         }
         [HttpPost("verify")]
