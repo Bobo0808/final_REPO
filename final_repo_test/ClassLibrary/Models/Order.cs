@@ -14,7 +14,7 @@ namespace ClassLibrary.Models
         public int O_TotalPrice { get; set; } = default!;
         public bool O_Cancle { get; set; } = default!;
 
-        public ICollection<OrderDetail>? OrderDetails { get; set; }
+        public ICollection<OrderDetail> OrderDetails { get; set; } = default!;
         
 
 

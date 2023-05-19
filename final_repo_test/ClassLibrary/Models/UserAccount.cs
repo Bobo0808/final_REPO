@@ -43,7 +43,7 @@ namespace ClassLibrary.Models
 
 
         public ICollection<CardOrder>? CardOrders { get; set; }
-        public ICollection<Order>? Orders { get; set; }
+        public ICollection<Order> Orders { get; set; } = default!;
         //[InverseProperty(nameof(Report.Account))]
         public ICollection<Report>? Reports { get; set; }
         //[InverseProperty(nameof(Report.ReportedAccount))]

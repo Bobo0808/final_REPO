@@ -2,10 +2,12 @@
 using ChickenLife.Models.OrderProduct;
 using ClassLibrary;
 using ClassLibrary.Models;
+using ClassLibrary.ViewModels.WardrobeViewModel;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ChickenLife.Controllers
 {
@@ -277,5 +279,127 @@ namespace ChickenLife.Controllers
         {
             return (_context.Accounts?.Any(e => e.A_ID == id)).GetValueOrDefault();
         }
+
+
+
+        //[HttpGet("details/{id}")]//宇婕測試
+        //public async Task<ActionResult<WardrobeViewModel>> GetDetails(int? id)
+        //{
+        //    //if (id != user.A_ID)
+        //    //{
+        //    //    return BadRequest("Invalid ID");
+        //    //}
+
+        //    var result = await _context.Accounts.Where(x => x.A_ID == id).Include(a => a.Orders).ThenInclude(o => o.OrderDetails).ThenInclude(od => od.Product).Select(x => new { 
+        //        userid = x.A_ID, orderid = x.Orders.Select(o => o.O_ID).ToList(), 
+        //        productid = x.Orders.Select(o => o.OrderDetails.Select(od => od.P_ID)).ToList(), 
+        //        productname = x.Orders.Select(o => o.OrderDetails.Select(od => od.Product).Select(p => p.P_Name)).ToList(), 
+        //        productimage = x.Orders.Select(o => o.OrderDetails.Select(od => od.Product).Select(p => p.P_Image)).ToList() 
+        //    }).ToListAsync();
+        //    WardrobeViewModel wardrobetemp = new WardrobeViewModel() {
+        //        UserID = result.First().userid,
+        //        OrderID = result.First().orderid,
+        //        ProductID = result.First().productid,
+        //        ProductName = result.First().productname,
+        //        ProductImage = result.First().productimage,
+
+        //    };
+        //    if (wardrobetemp == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return Ok(wardrobetemp);
+        //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //[HttpGet]
+        //public async Task<IActionResult> Details(int? id)
+        //{
+        //    var wardrobeViewModels = await _context.OrderDetails
+        //                            .Include(od => od.Order)
+        //                            .Include(od => od.Product)
+        //                            .Select(od => new WardrobeViewModel
+        //                            {
+        //                                UserID = od.Order.A_ID,
+        //                                OrderID = od.O_ID,
+        //                                ProductID = od.P_ID,
+        //                                ProductName = od.Product.P_Name,
+        //                                ProductImage = od.Product.P_Image
+        //                            })
+        //.ToListAsync();
+
+        //    if (wardrobeViewModels == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Ok("成功");
+        //    //return View("~/Areas/OrderProduct/Views/Products/Details.cshtml", wardrobeViewModels);
+        //}
+
+
+        //[HttpGet("{userId}/products")]
+        //public async Task<ActionResult<List<WardrobeViewModel>>> GetUserProducts(int userId)
+        //{
+        //    var userProducts = await GetUserProducts(userId);
+
+        //    if (userProducts == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return userProducts;
+        //}
+
+        //private async Task<List<WardrobeViewModel>> GetUserProducts(int userId)
+        //{
+        //    var userProducts = await _context.OrderDetails
+        //        .Include(od => od.Order)
+        //            .ThenInclude(o => o.Account)
+        //        .Include(od => od.Product)
+        //        .Where(od => od.Order.A_ID == userId)
+        //        .Select(od => new WardrobeViewModel
+        //        {
+        //            UserID = od.Order.A_ID,
+        //            OrderID = od.Order.O_ID,
+        //            ProductID = od.Product.P_ID,
+        //            ProductName = od.Product.P_Name,
+        //            ProductImage = od.Product.P_Image
+        //        })
+        //        .ToListAsync();
+
+        //    return userProducts;
+        //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

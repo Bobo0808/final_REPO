@@ -21,4 +21,8 @@
     <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\PrductUserGet\" />
+  </ItemGroup>
+
 </Project>
