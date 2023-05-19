@@ -2,7 +2,7 @@
 
 namespace ClassLibrary.Models
 {
-    public class Card
+    public partial class Card
     {
         [Key]
         public int CA_ID { get; set; }
