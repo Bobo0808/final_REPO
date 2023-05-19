@@ -87,7 +87,7 @@ namespace ChickenLife.Controllers
                             maps.MapDirectory[publicMap].client.Add(webSocket, player);
                             maps.MapDirectory[publicMap].client[webSocket].type = "Connect";
                             maps.MapDirectory[publicMap].client[webSocket].id = generateID(); //隨機生產ID 之後從ms sql取
-                            if (isMale == true)
+                            if (isMale == true) //性別
                             {
                                 maps.MapDirectory[publicMap].client[webSocket].gender = 1;
                                 isMale = false;
@@ -97,11 +97,11 @@ namespace ChickenLife.Controllers
                                 maps.MapDirectory[publicMap].client[webSocket].gender = 2;
                                 isMale = true;
                             }
-                            maps.MapDirectory[publicMap].client[webSocket].name = "Test";
-                            maps.MapDirectory[publicMap].client[webSocket].direction = "right";
-                            maps.MapDirectory[publicMap].client[webSocket].color = randomFromArray(playerColors);
-                            maps.MapDirectory[publicMap].client[webSocket].x = 1;
-                            maps.MapDirectory[publicMap].client[webSocket].y = 4;
+                            maps.MapDirectory[publicMap].client[webSocket].name = "Test"; //姓名
+                            maps.MapDirectory[publicMap].client[webSocket].direction = "right"; //角色方向
+                            maps.MapDirectory[publicMap].client[webSocket].color = randomFromArray(playerColors); //角色顏色or外觀
+                            maps.MapDirectory[publicMap].client[webSocket].x = 1; //x
+                            maps.MapDirectory[publicMap].client[webSocket].y = 4; //y
 
                             //Connect並傳送人物初始數據
                             Console.WriteLine(maps.MapDirectory[publicMap].client[webSocket].name + " Has Connected");
@@ -313,7 +313,10 @@ namespace ChickenLife.Controllers
 
             }
             //關閉連線
-
+            if (id == null)
+            {
+                id = publicMap;
+            }
             DiscconnectDTO Disconnect = new DiscconnectDTO();
             Disconnect.type = "Disconnect";
             Disconnect.PlayerRef = maps.MapDirectory[id].client[webSocket];
@@ -355,7 +358,7 @@ namespace ChickenLife.Controllers
         {
             foreach (KeyValuePair<WebSocket, PlayerRef> con in maps.MapDirectory[id].client)
             {
-                if (con.Key.State != System.Net.WebSockets.WebSocketState.Open)
+                if (con.Key.State != WebSocketState.Open)
                 {
                     continue;
                 }
@@ -366,14 +369,25 @@ namespace ChickenLife.Controllers
 
         public static async void SendToPeer(byte[] buffer, WebSocket maleSocket, WebSocket femaleSocket)
         {
-            await maleSocket.SendAsync(
-               new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
-            await femaleSocket.SendAsync(
-            new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
+            if (maleSocket.State == WebSocketState.Open)
+            {
+                await maleSocket.SendAsync(
+              new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
+            }
+           if(femaleSocket.State==WebSocketState.Open)
+            {
+                await femaleSocket.SendAsync(
+        new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
+            }
+            return;
         }
 
         public static async void SendToOne(byte[] buffer, WebSocket webSocket)
         {
+            if(webSocket.State != WebSocketState.Open)
+            {
+                return;
+            }
             await webSocket.SendAsync(
                new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
         }
