@@ -1,0 +1,71 @@
+﻿@model ClassLibrary.Models.Card
+@section Styles{
+    <link href="~/css/orderproduct/detail.min.css" rel="stylesheet" />
+}
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="container box">
+    <h1>商品資訊</h1>
+
+    <div>
+        <h4>Product</h4>
+        <hr />
+        <dl class="row">
+            <div class="col-md-6">
+                <dt class="col-sm-2">
+
+                </dt>
+                <dd class="col-sm-10">
+                    @*@Html.DisplayFor(model => model.PImage)*@
+                    @*<img style="width:240px;height:320px"
+                    src='@Url.Action("ShowPhoto","Products",new{id=Model.PId})'
+                    title="@Html.DisplayFor(model => model.PImage)" />*@
+                    @*<partial name="_ShowPhotoPartial" />*@
+                </dd>
+                @Html.DisplayNameFor(model => model.CA_Image)
+                <partial name="_ShowCardPhotoPartial" />
+            </div>
+            <div class="col-md-6 bg-secondary radius">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.CA_Name)
+                </dt>
+                <dd class="col-sm-10 offset-1">
+                    @Html.DisplayFor(model => model.CA_Name)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.CA_Price)
+                </dt>
+                <dd class="col-sm-10 offset-1">
+                    @Html.DisplayFor(model => model.CA_Price)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.CA_Describe)
+                </dt>
+                <dd class="col-sm-10 offset-1">
+                    @Html.DisplayFor(model => model.CA_Describe)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.CA_Date)
+                </dt>
+                <dd class="col-sm-10 offset-1">
+                    @Html.DisplayFor(model => model.CA_Date)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.CA_Discontinuted)
+                </dt>
+                <dd class="col-sm-10 offset-1">
+                    @Html.DisplayFor(model => model.CA_Discontinuted)
+                </dd>
+
+            </div>
+        </dl>
+    </div>
+    <div>
+        <a class="btn-secondary btn gray" asp-action="Edit" asp-route-id="@Model?.CA_ID">Edit</a> |
+        <a class="btn-secondary btn gray" asp-action="Index">Back to List</a>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+﻿@model ClassLibrary.Models.Card;
+
+@if (Model.CA_Image != null)
+{
+    <img class="img-fluid" src="@Url.Content($"~/img/producttest/{Model.CA_Image}")"
+         title="@Html.DisplayFor(model=>model.CA_Name)" />
+}
+else
+{
+    <img class="img-fluid" src="@Url.Content("~/img/producttest/No_Image_Available.jpg")"
+         title="尚無圖片" />
+
+}

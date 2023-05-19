@@ -1,0 +1,78 @@
+﻿@model ClassLibrary.Models.Card
+@section Styles{
+    <link href="~/css/orderproduct/edit.min.css" rel="stylesheet" />
+}
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="container box">
+
+
+    <h1 class="m-0">商品編輯</h1>
+
+    <h4 class="m-0">Product</h4>
+    <hr />
+    <div class="row">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CA_ID" />
+            <div class="col-md-7 col-sm-3 test">
+                <div class="form-group">
+                    <label asp-for="CA_Image" class="control-label"></label>
+                    <partial name="_ShowCardPhotoPartial" />
+                    <input type="file" name="file1" id="file1" accept="image/*" />
+                    @*<input asp-for="PImage" class="form-control" />
+                    <span asp-validation-for="PImage" class="text-danger"></span>*@
+                </div>
+            </div>
+            <div class="col-md-5 col-sm-3  bg-secondary radius">
+                <div class="form-group mx-2">
+                    <label asp-for="CA_Name" class="control-label"></label>
+                    <input asp-for="CA_Name" class="form-control" />
+                    <span asp-validation-for="CA_Name" class="text-danger"></span>
+                </div>
+                <div class="form-group mx-2">
+                    <label asp-for="CA_Price" class="control-label"></label>
+                    <input asp-for="CA_Price" class="form-control" />
+                    <span asp-validation-for="CA_Price" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mx-2">
+                    <label asp-for="CA_Describe" class="control-label"></label>
+                    <input asp-for="CA_Describe" class="form-control" />
+                    <span asp-validation-for="CA_Describe" class="text-danger"></span>
+                </div>
+                <div class="form-group mx-2">
+                    <label asp-for="CA_Date" class="control-label"></label>
+                    <input asp-for="CA_Date" class="form-control" />
+                    <span asp-validation-for="CA_Date" class="text-danger"></span>
+                </div>
+                <div class="form-group mx-2 mb-3">
+                    <label asp-for="CA_Discontinuted" class="control-label"></label><br>
+                    <input type="checkbox" asp-for="CA_Discontinuted" class="form-check-input" />
+                    <span asp-validation-for="CA_Discontinuted" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="form-group my-1">
+                <input type="submit" value="Save" class="btn btn-secondary" />
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <a class="btn btn-secondary" asp-action="Index">Back to List</a>
+    </div>
+</div>
+@section Script {
+    <script src="~/js/orderproduct/create.min.js"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        $("#file1").change(function () {
+            readUrl(this, $('#file1').prev());
+        })
+    </script>
+}
