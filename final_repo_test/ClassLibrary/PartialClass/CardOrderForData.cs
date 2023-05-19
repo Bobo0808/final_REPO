@@ -8,4 +8,8 @@ namespace ClassLibrary.Models
     {
     }
 
+    [ModelMetadataType(typeof(CardMetadata))]
+    public partial class Card
+    {
+    }
 }

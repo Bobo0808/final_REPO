@@ -1,29 +1,25 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ClassLibrary;
 using ClassLibrary.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using ClassLibrary;
 
-namespace final_repo_test.Areas.OrderProduct.Controllers
+namespace final_repo_test.Areas.CardOrderProduct.Controllers
 {
-    [Area(areaName: "OrderProduct")]
-    public class ProductsController : Controller
+    [Area(areaName: "CardOrderProduct")]
+    public class CardController : Controller
     {
-        
         public readonly ChickenDbContext _context;
         private readonly IWebHostEnvironment _env;
-        public ProductsController(ChickenDbContext context, IWebHostEnvironment env)
+
+        public CardController(ChickenDbContext context, IWebHostEnvironment env)
         {
             _context = context;
             _env = env;
         }
+
         public async Task<IActionResult> Index(int id = 1)
         {
-            var products = await _context.Products.ToListAsync();
+            var products = await _context.Cards.ToListAsync();
             if (products == null)
             {
                 return Problem("Entity set 'FinalContext.Products' is null.");
@@ -34,7 +30,7 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
             int PageSize = 3;
 
             // RecordCount變數，符合條件的總共有幾筆記錄？
-            int RecordCount = _context.Products.Count();
+            int RecordCount = _context.Cards.Count();
 
             // NowPageCount 目前正在觀賞這一頁紀錄，目前正在?
             int NowPageCount = 0;
@@ -44,8 +40,8 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
             }
             // orderby順排序 descending反排序
             // skip從哪裡開始(忽略前面幾筆紀錄)
-            var ListAll = (from product in _context.Products
-                           orderby product.P_ID
+            var ListAll = (from product in _context.Cards
+                           orderby product.CA_ID
                            select product)
                          .Skip(NowPageCount)
                          .Take(PageSize);
@@ -133,27 +129,29 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
                 return View(ListAll.ToList());
             }
         }
-        // GET: Products/Details/5
+
+        // GET: CardOrderProduct/Card/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Products == null)
+            if (id == null || _context.Cards == null)
             {
                 return NotFound();
             }
 
-            var product = await _context.Products
-                .FirstOrDefaultAsync(m => m.P_ID == id);
+            var product = await _context.Cards
+                .FirstOrDefaultAsync(m => m.CA_ID == id);
             if (product == null)
             {
                 return NotFound();
             }
 
-            return View("~/Areas/OrderProduct/Views/Products/Details.cshtml", product);
+            return View(product);
         }
-        // GET: Products/Create
+        // GET: CardOrderProduct/Card/Create
         public IActionResult Create()
         {
-            return View("~/Areas/OrderProduct/Views/Products/Create.cshtml");
+            //return View("~/Areas/OrderProduct/Views/Products/Create.cshtml");
+            return View();
         }
 
         // POST: Products/Create
@@ -161,18 +159,18 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("P_ID,P_Name,P_ProductType,P_Price,P_Image,P_Describe,P_Instock,P_Date,P_Discount,P_Discontinuted")] Product product, IFormFile file1)
+        public async Task<IActionResult> Create([Bind("CA_ID,CA_Name,CA_Price,CA_Image,CA_Describe,CA_Date,CA_Discontinuted")] Card product, IFormFile file1)
         {
             //if (ModelState.IsValid)
             //{
             if (file1 != null)
             {
                 string PictureName = UploadFile(file1);
-                product.P_Image = PictureName;
+                product.CA_Image = PictureName;
             }
             else
             {
-                product.P_Image = "No_Image_Available.jpg";
+                product.CA_Image = "No_Image_Available.jpg";
             }
             //SetPicture(product);
             _context.Add(product);
@@ -184,17 +182,18 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
         // GET: Products/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Products == null)
+            if (id == null || _context.Cards == null)
             {
                 return NotFound();
             }
 
-            var product = await _context.Products.FindAsync(id);
+            var product = await _context.Cards.FindAsync(id);
             if (product == null)
             {
                 return NotFound();
             }
-            return View("~/Areas/OrderProduct/Views/Products/Edit.cshtml", product);
+            //return View("~/Areas/OrderProduct/Views/Products/Edit.cshtml", product);
+            return View(product);
         }
 
         // POST: Products/Edit/5
@@ -203,9 +202,9 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [RequestFormLimits(MultipartBodyLengthLimit = 2048000)]
-        public async Task<IActionResult> Edit(int id, [Bind("P_ID,P_Name,P_ProductType,P_Price,P_Image,P_Describe,P_Instock,P_Date,P_Discount,P_Discontinuted")] Product product, IFormFile file1)
+        public async Task<IActionResult> Edit(int id, [Bind("CA_ID,CA_Name,CA_Price,CA_Image,CA_Describe,CA_Date,CA_Discontinuted")] Card product, IFormFile file1)
         {
-            if (id != product.P_ID)
+            if (id != product.CA_ID)
             {
                 return NotFound();
             }
@@ -215,13 +214,13 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
                 if (file1 != null)
                 {
                     string PictureName = UploadFile(file1);
-                    product.P_Image = PictureName;
+                    product.CA_Image = PictureName;
                     _context.Update(product);
                 }
                 else
                 {
-                    var imagename = await _context.Products.Where(m => m.P_ID == id).Select(p => p.P_Image).FirstOrDefaultAsync();
-                    product.P_Image = imagename;
+                    var imagename = await _context.Cards.Where(m => m.CA_ID == id).Select(p => p.CA_Image).FirstOrDefaultAsync();
+                    product.CA_Image = imagename;
                     _context.Update(product);
                 }
 
@@ -231,7 +230,7 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ProductExists(product.P_ID))
+                if (!ProductExists(product.CA_ID))
                 {
                     return NotFound();
                 }
@@ -248,19 +247,19 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
         // GET: Products/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Products == null)
+            if (id == null || _context.Cards == null)
             {
                 return NotFound();
             }
 
-            var product = await _context.Products
-                .FirstOrDefaultAsync(m => m.P_ID == id);
+            var product = await _context.Cards
+                .FirstOrDefaultAsync(m => m.CA_ID == id);
             if (product == null)
             {
                 return NotFound();
             }
 
-            return View("~/Areas/OrderProduct/Views/Products/Delete.cshtml", product);
+            return View(product);
         }
 
         // POST: Products/Delete/5
@@ -268,14 +267,14 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Products == null)
+            if (_context.Cards == null)
             {
                 return Problem("Entity set 'FinalContext.Products'  is null.");
             }
-            var product = await _context.Products.FindAsync(id);
+            var product = await _context.Cards.FindAsync(id);
             if (product != null)
             {
-                _context.Products.Remove(product);
+                _context.Cards.Remove(product);
             }
 
             await _context.SaveChangesAsync();
@@ -286,7 +285,7 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
 
         private bool ProductExists(int id)
         {
-            return (_context.Products?.Any(e => e.P_ID == id)).GetValueOrDefault();
+            return (_context.Cards?.Any(e => e.CA_ID == id)).GetValueOrDefault();
         }
         public string UploadFile(IFormFile file1)
         {
@@ -303,8 +302,7 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
             //if(file1.Length > 0)
             //{
             //宣告隱含變數(取得檔案名
-            //var varFileName = file1.FileName;
-            var varFileName = GenerateRandomFileName(file1.FileName);
+            var varFileName = file1.FileName;
 
             //開啟或述寫上傳檔案
             using (var varStream = System.IO.File.Create(strFilePath + varFileName))
@@ -315,18 +313,6 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
             //}
 
             return varFileName;
-        }
-
-
-
-        private string GenerateRandomFileName(string originalFileName)
-        {
-            // 使用亂數產生新的檔案名稱，保留原始檔案的副檔名
-            string fileExtension = Path.GetExtension(originalFileName);
-
-            string randomFileName = Guid.NewGuid().ToString("N") + fileExtension;
-
-            return randomFileName;
         }
 
     }

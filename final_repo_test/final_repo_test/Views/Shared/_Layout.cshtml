@@ -13,6 +13,7 @@
 
 <body>
 	<section id="sidebar">
+		
 		<a class="brand" asp-area="LoginStatus" asp-controller="LoginStatus_Home" asp-action="Index" asp-route-id="Day">
 			<i class="fa fa-solid fa-kiwi-bird fa-shake"></i>
 			<span class="text">ChickenLife</span>
@@ -50,27 +51,27 @@
 				</a>
 			</li>
 			<li class="side-btn">
-				<a asp-area="Report" asp-controller="Report" asp-action="Index">
-					<i class="fa fa-solid fa-triangle-exclamation"></i>
-					<span class="text">檢舉狀態</span>
-				</a>
-			</li>
-			<li class="side-btn">
 				<a asp-area="OrderProduct" asp-controller="Products" asp-action="Index">
 					<i class="fa fa-solid fa-store"></i>
-					<span class="text">商品列表</span>
+					<span class="text">點數商品</span>
 				</a>
 			</li>
 			<li class="side-btn">
 				<a asp-area="OrderProduct" asp-controller="Orders" asp-action="Index">
 					<i class="fa fa-solid fa-store"></i>
-					<span class="text">訂單資訊</span>
+					<span class="text">點數訂單</span>
+				</a>
+			</li>
+			<li class="side-btn">
+				<a asp-area="CardOrderProduct" asp-controller="Card" asp-action="Index">
+					<i class="fa fa-solid fa-sack-dollar"></i>
+					<span class="text">金流商品</span>
 				</a>
 			</li>
 			<li class="side-btn">
 				<a asp-area="CardOrderProduct" asp-controller="CardOrders" asp-action="Index">
 					<i class="fa fa-solid fa-sack-dollar"></i>
-					<span class="text">營收分析</span>
+					<span class="text">金流訂單</span>
 				</a>
 			</li>
 			<li class="side-btn">
