@@ -1,0 +1,7 @@
+cd C:\Users\iSpan\Desktop\final_REPO\final_repo_test\final_repo_test
+
+rm .\Migrations
+
+dotnet ef migrations add m1 --context ChickenDbContext
+
+dotnet ef database update --context ChickenDbContext
