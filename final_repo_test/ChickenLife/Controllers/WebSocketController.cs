@@ -150,7 +150,18 @@ namespace ChickenLife.Controllers
                                 queue_M.Queue.Enqueue(new KeyValuePair<WebSocket, PlayerRef>(webSocket, maps.MapDirectory[publicMap].client[webSocket]));
                                 if (queue_F.Queue.Count > 0 && queue_M.Queue.Peek().Key.State == WebSocketState.Open && queue_F.Queue.Peek().Key.State == WebSocketState.Open)
                                 {
-                                    string PrivateMapid = "小房間";
+                                    string PrivateMapid = webSocket.ToString();
+                                    maps.MapDirectory.Add(PrivateMapid, new MapDirectories()
+                                    {
+                                        id = "小房間",
+                                        Src = "./images/map.png",
+                                        MinX = 1,
+                                        MinY = 4,
+                                        MaxX = 14,
+                                        MaxY = 12,
+                                        BlockedSpaces = new List<BlockedSpaces>() { new BlockedSpaces { x = 7, y = 4 }, new BlockedSpaces { x = 1, y = 11 }, new BlockedSpaces { x = 12, y = 10 }, new BlockedSpaces { x = 4, y = 7 }, new BlockedSpaces { x = 5, y = 7 }, new BlockedSpaces { x = 6, y = 7 }, new BlockedSpaces { x = 8, y = 6 }, new BlockedSpaces { x = 9, y = 6 }, new BlockedSpaces { x = 10, y = 6 }, new BlockedSpaces { x = 7, y = 9 }, new BlockedSpaces { x = 10, y = 6 }, new BlockedSpaces { x = 7, y = 9 }, new BlockedSpaces { x = 8, y = 9 }, new BlockedSpaces { x = 9, y = 9 } },
+                                    }
+                                    );
                                     //把配對方跟小房間丟給client
                                     KeyValuePair<WebSocket, PlayerRef> maletemp = queue_M.Queue.Dequeue();
                                     KeyValuePair<WebSocket, PlayerRef> femaletemp = queue_F.Queue.Dequeue();
@@ -198,9 +209,20 @@ namespace ChickenLife.Controllers
                                 queue_F.Queue.Enqueue(new KeyValuePair<WebSocket, PlayerRef>(webSocket, maps.MapDirectory[publicMap].client[webSocket]));
                                 if (queue_M.Queue.Count > 0)
                                 {
-                                    string PrivateMapid = "小房間";
                                     KeyValuePair<WebSocket, PlayerRef> maletemp = queue_M.Queue.Dequeue();
                                     KeyValuePair<WebSocket, PlayerRef> femaletemp = queue_F.Queue.Dequeue();
+                                    string PrivateMapid = webSocket.ToString();
+                                    maps.MapDirectory.Add(PrivateMapid,new MapDirectories()  
+                                    {
+                                                 id = "小房間",
+                                                 Src = "./images/map.png",
+                                                 MinX = 1,
+                                                 MinY = 4,
+                                                 MaxX = 14,
+                                                 MaxY = 12,
+                                                 BlockedSpaces = new List<BlockedSpaces>(){new BlockedSpaces{x=7,y=4},new BlockedSpaces{x=1,y=11},new BlockedSpaces{x=12,y=10},new BlockedSpaces{x=4,y=7},new BlockedSpaces{x=5,y=7},new BlockedSpaces{x=6,y=7},new BlockedSpaces{x=8,y=6},new BlockedSpaces{x=9,y=6},new BlockedSpaces{x=10,y=6},new BlockedSpaces{x=7,y=9},new BlockedSpaces{x=10,y=6},new BlockedSpaces{x=7,y=9},new BlockedSpaces{x=8,y=9},new BlockedSpaces{x=9,y=9}},
+                                            }
+                                    );
                                     maps.MapDirectory[PrivateMapid].client.Add(maletemp.Key, maletemp.Value);
                                     maps.MapDirectory[PrivateMapid].client.Add(femaletemp.Key, femaletemp.Value);
                                     MapDirectoriesDTO pairtemp = new MapDirectoriesDTO() { type = "Match", id = PrivateMapid, Src = maps.MapDirectory[publicMap].Src, MinX = maps.MapDirectory[publicMap].MinX, MinY = maps.MapDirectory[publicMap].MinY, MaxX = maps.MapDirectory[publicMap].MaxX, MaxY = maps.MapDirectory[publicMap].MaxY, BlockedSpaces = maps.MapDirectory[publicMap].BlockedSpaces, client = new List<PlayerRef>() { maletemp.Value, femaletemp.Value } };
@@ -279,10 +301,7 @@ namespace ChickenLife.Controllers
 
                             maps.MapDirectory[publicMap].client.Add(webSocket, maps.MapDirectory[id].client[webSocket]);
                             maps.MapDirectory[id].client.Remove(webSocket);
-                            // if (maps.MapDirectory[id].client.Count < 1)
-                            // {
-                            //     maps.MapDirectory.Remove(id);
-                            // }
+                            
                             maps.MapDirectory[publicMap].client[webSocket].type = "Connect";
                             var leavetemp = JsonSerializer.Serialize(maps.MapDirectory[publicMap].client[webSocket]);
                             buffer = Encoding.UTF8.GetBytes(leavetemp);
@@ -295,6 +314,10 @@ namespace ChickenLife.Controllers
                             leavetemp = JsonSerializer.Serialize(leavedto);
                             buffer = Encoding.UTF8.GetBytes(leavetemp);
                             SendToAll(buffer, id);
+                            if (maps.MapDirectory[id].client.Count < 1)
+                            {
+                                maps.MapDirectory.Remove(id);
+                            }
                             break;
                     }
                     //清空緩存區
