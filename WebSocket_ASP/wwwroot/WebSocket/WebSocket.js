@@ -49,7 +49,6 @@ window.onload = function () {
 
         let result = JSON.parse(messageBuffer);
         messageBuffer = '';
-
         switch (result.type) {
             case "Load":
                 myVideo.style.visibility = 'hidden';

@@ -147,8 +147,8 @@ namespace ChickenLife.Controllers
                             id = jsontemp.Value<string>("mapid");
                             if (maps.MapDirectory[publicMap].client[webSocket].gender == 1)
                             {
-                                queue_M.Queue.Enqueue(new KeyValuePair<WebSocket, PlayerRef>(webSocket, maps.MapDirectory[publicMap].client[webSocket]));
-                                if (queue_F.Queue.Count > 0 && queue_M.Queue.Peek().Key.State == WebSocketState.Open && queue_F.Queue.Peek().Key.State == WebSocketState.Open)
+                                queue_M.Queue.Add(new KeyValuePair<WebSocket, PlayerRef>(webSocket, maps.MapDirectory[publicMap].client[webSocket]));
+                                if (queue_F.Queue.Count > 0 && queue_M.Queue.First().Key.State == WebSocketState.Open && queue_F.Queue.First().Key.State == WebSocketState.Open)
                                 {
                                     string PrivateMapid = webSocket.ToString();
                                     maps.MapDirectory.Add(PrivateMapid, new MapDirectories()
@@ -163,8 +163,10 @@ namespace ChickenLife.Controllers
                                     }
                                     );
                                     //把配對方跟小房間丟給client
-                                    KeyValuePair<WebSocket, PlayerRef> maletemp = queue_M.Queue.Dequeue();
-                                    KeyValuePair<WebSocket, PlayerRef> femaletemp = queue_F.Queue.Dequeue();
+                                    KeyValuePair<WebSocket, PlayerRef> maletemp = queue_M.Queue.First();
+                                    KeyValuePair<WebSocket, PlayerRef> femaletemp = queue_F.Queue.First();
+                                    queue_M.Queue.RemoveAt(0);
+                                    queue_F.Queue.RemoveAt(0);
                                     maps.MapDirectory[PrivateMapid].client.Add(maletemp.Key, maletemp.Value);
                                     maps.MapDirectory[PrivateMapid].client.Add(femaletemp.Key, femaletemp.Value);
                                     MapDirectoriesDTO pairtemp = new MapDirectoriesDTO() { type = "Match", id = PrivateMapid, Src = maps.MapDirectory[publicMap].Src, MinX = maps.MapDirectory[publicMap].MinX, MinY = maps.MapDirectory[publicMap].MinY, MaxX = maps.MapDirectory[publicMap].MaxX, MaxY = maps.MapDirectory[publicMap].MaxY, BlockedSpaces = maps.MapDirectory[publicMap].BlockedSpaces, client = new List<PlayerRef>() { maletemp.Value, femaletemp.Value } };
@@ -186,9 +188,9 @@ namespace ChickenLife.Controllers
                                     }
 
                                 }
-                                else if (queue_F.Queue.Count > 0 && queue_F.Queue.Peek().Key.State != System.Net.WebSockets.WebSocketState.Open)
+                                else if (queue_F.Queue.Count > 0 && queue_F.Queue.First().Key.State != System.Net.WebSockets.WebSocketState.Open)
                                 {
-                                    queue_F.Queue.Dequeue();
+                                    queue_F.Queue.RemoveAt(0);
                                     WaitDTO waittemp = new WaitDTO();
                                     waittemp.type = "Wait";
                                     var waitJson = JsonSerializer.Serialize(waittemp);
@@ -206,25 +208,29 @@ namespace ChickenLife.Controllers
                             }
                             else if (maps.MapDirectory[publicMap].client[webSocket].gender == 2)
                             {
-                                queue_F.Queue.Enqueue(new KeyValuePair<WebSocket, PlayerRef>(webSocket, maps.MapDirectory[publicMap].client[webSocket]));
+                                queue_F.Queue.Add(new KeyValuePair<WebSocket, PlayerRef>(webSocket, maps.MapDirectory[publicMap].client[webSocket]));
                                 if (queue_M.Queue.Count > 0)
                                 {
-                                    KeyValuePair<WebSocket, PlayerRef> maletemp = queue_M.Queue.Dequeue();
-                                    KeyValuePair<WebSocket, PlayerRef> femaletemp = queue_F.Queue.Dequeue();
+                                    KeyValuePair<WebSocket, PlayerRef> maletemp = queue_M.Queue.First();
+                                    KeyValuePair<WebSocket, PlayerRef> femaletemp = queue_F.Queue.First();
+                                    queue_M.Queue.RemoveAt(0);
+                                    queue_F.Queue.RemoveAt(0);
                                     string PrivateMapid = webSocket.ToString();
-                                    maps.MapDirectory.Add(PrivateMapid,new MapDirectories()  
+                                    maps.MapDirectory.Add(PrivateMapid, new MapDirectories()
                                     {
-                                                 id = "小房間",
-                                                 Src = "./images/map.png",
-                                                 MinX = 1,
-                                                 MinY = 4,
-                                                 MaxX = 14,
-                                                 MaxY = 12,
-                                                 BlockedSpaces = new List<BlockedSpaces>(){new BlockedSpaces{x=7,y=4},new BlockedSpaces{x=1,y=11},new BlockedSpaces{x=12,y=10},new BlockedSpaces{x=4,y=7},new BlockedSpaces{x=5,y=7},new BlockedSpaces{x=6,y=7},new BlockedSpaces{x=8,y=6},new BlockedSpaces{x=9,y=6},new BlockedSpaces{x=10,y=6},new BlockedSpaces{x=7,y=9},new BlockedSpaces{x=10,y=6},new BlockedSpaces{x=7,y=9},new BlockedSpaces{x=8,y=9},new BlockedSpaces{x=9,y=9}},
-                                            }
+                                        id = "小房間",
+                                        Src = "./images/map.png",
+                                        MinX = 1,
+                                        MinY = 4,
+                                        MaxX = 14,
+                                        MaxY = 12,
+                                        BlockedSpaces = new List<BlockedSpaces>() { new BlockedSpaces { x = 7, y = 4 }, new BlockedSpaces { x = 1, y = 11 }, new BlockedSpaces { x = 12, y = 10 }, new BlockedSpaces { x = 4, y = 7 }, new BlockedSpaces { x = 5, y = 7 }, new BlockedSpaces { x = 6, y = 7 }, new BlockedSpaces { x = 8, y = 6 }, new BlockedSpaces { x = 9, y = 6 }, new BlockedSpaces { x = 10, y = 6 }, new BlockedSpaces { x = 7, y = 9 }, new BlockedSpaces { x = 10, y = 6 }, new BlockedSpaces { x = 7, y = 9 }, new BlockedSpaces { x = 8, y = 9 }, new BlockedSpaces { x = 9, y = 9 } },
+                                    }
                                     );
                                     maps.MapDirectory[PrivateMapid].client.Add(maletemp.Key, maletemp.Value);
                                     maps.MapDirectory[PrivateMapid].client.Add(femaletemp.Key, femaletemp.Value);
+
+
                                     MapDirectoriesDTO pairtemp = new MapDirectoriesDTO() { type = "Match", id = PrivateMapid, Src = maps.MapDirectory[publicMap].Src, MinX = maps.MapDirectory[publicMap].MinX, MinY = maps.MapDirectory[publicMap].MinY, MaxX = maps.MapDirectory[publicMap].MaxX, MaxY = maps.MapDirectory[publicMap].MaxY, BlockedSpaces = maps.MapDirectory[publicMap].BlockedSpaces, client = new List<PlayerRef>() { maletemp.Value, femaletemp.Value } };
                                     var matchJson = JsonSerializer.Serialize(pairtemp);
                                     buffer = Encoding.UTF8.GetBytes(matchJson);
@@ -243,9 +249,9 @@ namespace ChickenLife.Controllers
                                         SendToAll(buffer, publicMap);
                                     }
                                 }
-                                else if (queue_M.Queue.Count > 0 && queue_M.Queue.Peek().Key.State != System.Net.WebSockets.WebSocketState.Open)
+                                else if (queue_M.Queue.Count > 0 && queue_M.Queue.First().Key.State != System.Net.WebSockets.WebSocketState.Open)
                                 {
-                                    queue_M.Queue.Dequeue();
+                                    queue_M.Queue.RemoveAt(0);
                                     WaitDTO waittemp = new WaitDTO();
                                     waittemp.type = "Wait";
                                     var waitJson = JsonSerializer.Serialize(waittemp);
@@ -301,7 +307,7 @@ namespace ChickenLife.Controllers
 
                             maps.MapDirectory[publicMap].client.Add(webSocket, maps.MapDirectory[id].client[webSocket]);
                             maps.MapDirectory[id].client.Remove(webSocket);
-                            
+
                             maps.MapDirectory[publicMap].client[webSocket].type = "Connect";
                             var leavetemp = JsonSerializer.Serialize(maps.MapDirectory[publicMap].client[webSocket]);
                             buffer = Encoding.UTF8.GetBytes(leavetemp);
@@ -336,27 +342,30 @@ namespace ChickenLife.Controllers
 
             }
             //關閉連線
-            if (id == null)
-            {
-                id = publicMap;
-            }
-            DiscconnectDTO Disconnect = new DiscconnectDTO();
-            Disconnect.type = "Disconnect";
-            Disconnect.PlayerRef = maps.MapDirectory[id].client[webSocket];
-            var dctemp = JsonSerializer.Serialize(Disconnect);
-            var dc = Encoding.UTF8.GetBytes(dctemp);
+           
             foreach (string map in maps.MapDirectory.Keys)
             {
                 foreach (var con in maps.MapDirectory[map].client)
                 {
                     if (con.Key.State != System.Net.WebSockets.WebSocketState.Open)
                     {
+                        DiscconnectDTO Disconnect = new DiscconnectDTO();
+                        Disconnect.type = "Disconnect";
                         Console.WriteLine(con.Value.id + " has discoonected");
+                        if (con.Value.gender == 1)
+                        {
+                            queue_M.Queue.Remove(con);
+                        }
+                        else
+                        {
+                            queue_F.Queue.Remove(con);
+                        }
                         maps.MapDirectory[map].client.Remove(con.Key);
-                        continue;
+                        Disconnect.PlayerRef = con.Value;
+                        var dctemp = JsonSerializer.Serialize(Disconnect);
+                        var dc = Encoding.UTF8.GetBytes(dctemp);
+                        SendToAll(dc, map);
                     }
-                    await con.Key.SendAsync(
-                   new ArraySegment<byte>(dc), WebSocketMessageType.Text, true, CancellationToken.None);
                 }
             }
             await webSocket.CloseAsync(
