@@ -319,15 +319,10 @@ const ice = {
 };
 const constraints = {
     audio: {
+        channels: 2,
         autoGainControl: false,
-        channelCount: 2,
         echoCancellation: false,
-        googAutoGainControl: false,
-        latency: 0,
-        noiseSuppression: false,
-        sampleRate: 48000,
-        sampleSize: 16,
-        volume: 1.0
+        noiseSuppression: false
     }, video: true
 };
 
@@ -370,7 +365,6 @@ function leaveRoom() {
 async function mediaOn() {
     try {
         stream = await navigator.mediaDevices.getUserMedia(constraints);
-
         for (const track of stream.getTracks()) {
             peerChanel.addTrack(track, stream);
         }
