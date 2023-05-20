@@ -49,7 +49,6 @@ window.onload = function () {
 
         let result = JSON.parse(messageBuffer);
         messageBuffer = '';
-
         switch (result.type) {
             case "Load":
                 myVideo.style.visibility = 'hidden';
@@ -312,12 +311,12 @@ async function sendQueueRequest() {
 
 //===========================================================================================
 // const peer = new RTCPeerConnection(server); // Webrtc配對用
-const ice = {
+let ice = {
     "iceServers": [
         { "url": "stun:stun.l.google.com:19302" },
     ]
 };
-const constraints = {
+let constraints = {
     audio: {
         channels: 2,
         autoGainControl: false,
@@ -348,8 +347,8 @@ function muteCam() {
 
 function leaveRoom() {
     try {
-        peerChanel.close();
         stream.getTracks().forEach(track => track.stop());
+        remoteVideo.srcObject = null;
     }
     finally {
 
@@ -364,6 +363,7 @@ function leaveRoom() {
 
 async function mediaOn() {
     try {
+
         stream = await navigator.mediaDevices.getUserMedia(constraints);
         for (const track of stream.getTracks()) {
             peerChanel.addTrack(track, stream);
