@@ -9,7 +9,7 @@ public class PlayerRef
     public string direction { get; set; } = default!;
     public string color { get; set; } = default!;
     public int gender { get; set; } = default!;
-    public int x { get; set; }
-    public int y { get; set; }
+    public float x { get; set; }
+    public float y { get; set; }
 
 }
