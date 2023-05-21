@@ -13,6 +13,8 @@ namespace ChickenLife.Models.OrderProduct.DTO
         public int O_TotalPrice { get; set; } = default!;
         public bool O_Cancle { get; set; } = default!;
 
+        public string ProductName { get; set; } = default!;
+
         //public ICollection<OrderDetail>? OrderDetails { get; set; }
     }
 }

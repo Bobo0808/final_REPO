@@ -48,10 +48,10 @@ namespace webAPIforTest.Controllers
         [HttpGet("{id}")]
         public async Task<CardOrderDTO> GetCardOrders(int id)
         {
-          //if (_context.CardOrders == null)
-          //{
-          //    return NotFound();
-          //}
+            //if (_context.CardOrders == null)
+            //{
+            //    return NotFound();
+            //}
             var cardOrders = await _context.CardOrders.FindAsync(id);
 
             //if (cardOrders == null)
@@ -81,9 +81,9 @@ namespace webAPIforTest.Controllers
             // return null;
             return _context.CardOrders
                 .Where(co => co.CO_ID == cardorderDTO.CO_ID ||
-                              co.A_ID==cardorderDTO.A_ID ||
-                              co.CA_ID==cardorderDTO.CA_ID ||
-                              co.CT_ID == cardorderDTO.CT_ID )
+                              co.A_ID == cardorderDTO.A_ID ||
+                              co.CA_ID == cardorderDTO.CA_ID ||
+                              co.CT_ID == cardorderDTO.CT_ID)
                 .Select(co => new CardOrderDTO
                 {
                     CO_ID = co.CO_ID,
@@ -103,10 +103,27 @@ namespace webAPIforTest.Controllers
         [HttpPost("Show")]
         public async Task<IEnumerable<CardOrderDTO>> ShowAccountCardOrder([FromBody] CardOrderDTO cardorderDTO)
         {
+            var productname = _context.Products.Find(cardorderDTO.CA_ID);
             // return null;
+            //return _context.CardOrders
+            //    .Where(co => co.A_ID == cardorderDTO.A_ID)
+            //    .Select(co => new CardOrderDTO
+            //    {
+            //        CO_ID = co.CO_ID,
+            //        A_ID = co.A_ID,
+            //        CA_ID = co.CA_ID,
+            //        CT_ID = co.CT_ID,
+            //        CO_Sum = co.CO_Sum,
+            //        CO_Date = co.CO_Date,
+            //        CO_Cancel = co.CO_Cancel,
+            //        CO_Quantity = co.CO_Quantity,
+            //    });
             return _context.CardOrders
                 .Where(co => co.A_ID == cardorderDTO.A_ID)
-                .Select(co => new CardOrderDTO
+                .Join(_context.Cards,
+                co => co.CA_ID,
+                cp => cp.CA_ID,
+                (co, cp) => new CardOrderDTO
                 {
                     CO_ID = co.CO_ID,
                     A_ID = co.A_ID,
@@ -116,13 +133,14 @@ namespace webAPIforTest.Controllers
                     CO_Date = co.CO_Date,
                     CO_Cancel = co.CO_Cancel,
                     CO_Quantity = co.CO_Quantity,
+                    CA_Name = cp.CA_Name,
                 });
         }
 
         //只修改訂單取消
         // PUT: api/CardOrders/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        [HttpPut("Cancel/{id}")]
         public async Task<string> PutCardOrders(int id, CardOrderDTO cardOrders)
         {
             if (id != cardOrders.CO_ID)
@@ -161,8 +179,8 @@ namespace webAPIforTest.Controllers
         [HttpPost]
         public async Task<string> PostCardOrders(CardOrderDTO cardOrders)
         {
-          if (_context.CardOrders == null)
-          {
+            if (_context.CardOrders == null)
+            {
                 //return Problem("Entity set 'ChickenLifeContext.CardOrders'  is null.");
                 return "尚無金流訂單紀錄";
             };
