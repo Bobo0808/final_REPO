@@ -31,7 +31,7 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
 
             // return View("~/Areas/OrderProduct/Views/Products/Index.cshtml", products);
             //return View();
-            int PageSize = 3;
+            int PageSize = 4;
 
             // RecordCount變數，符合條件的總共有幾筆記錄？
             int RecordCount = _context.Products.Count();

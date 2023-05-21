@@ -47,7 +47,7 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
             //ViewBag.Status = sbPageList.ToString();
 
             // PageSize變數: 每頁幾筆
-            int PageSize = 5;
+            int PageSize = 10;
 
             // RecordCount變數，符合條件的總共有幾筆記錄？
             int RecordCount = _context.Orders.Count();

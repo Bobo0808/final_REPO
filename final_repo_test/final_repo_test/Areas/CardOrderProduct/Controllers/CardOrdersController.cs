@@ -30,7 +30,7 @@ namespace final_repo_test.Areas.CardOrderProduct.Controllers
         {
             var applicationDbContext = _context.CardOrders.Include(c => c.Account).Include(c => c.Card).Include(c => c.CardType);
             // PageSize變數: 每頁幾筆
-            int PageSize = 5;
+            int PageSize = 9;
 
             // RecordCount變數，符合條件的總共有幾筆記錄？
             int RecordCount = _context.CardOrders.Count();

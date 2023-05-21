@@ -3,8 +3,8 @@
     border-radius: 15px;
     margin-left: 2%;
     width: 95%;
-   /* height: 98%;*/
-    max-height: 80%;
+    height: 95%;
+    /*max-height: 80%;*/
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     overflow: auto;
 }
