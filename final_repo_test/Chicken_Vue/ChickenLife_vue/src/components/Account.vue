@@ -9,9 +9,10 @@ const changeView = (index) => {
 export default {
   name: "App",
 };
+import { postAxios } from "../main.js";
 </script>
 <template>
-  <div class="app">
+  <div class="ALL">
     <header>
       <h2 class="logo">ChickenLife</h2>
       <nav class="navigation">
@@ -94,7 +95,7 @@ export default {
 
 
 <style scoped>
-.app {
+.ALL {
   display: flex;
   justify-content: center;
   align-items: center;
