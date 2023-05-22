@@ -21,15 +21,14 @@ export const fuck = () => {
 export const getAxios = (route, data) => {
   axios.get(baseAddress + route).then(response => {
     data.value = response.data;
-
   });
   return data
 }
-export const postAxiosObj = (route, data,playerRef) => {
+export const postAxiosObj = (route, data,res) => {
   axios.post(baseAddress + route,data.value).then(response => {
-    playerRef.value = response.data;
+    res.value = response.data;
   });
-  return playerRef
+  return res
 }
 
 export const postAxiosString = (route, data,res) => {
@@ -39,12 +38,20 @@ export const postAxiosString = (route, data,res) => {
   return res
 }
 
-export const putAxios = (route, data) => {
-  axios.put(baseAddress + route).then(response => {
-    data.value = response.data;
+export const putAxiosObj = (route, data,res) => {
+  axios.put(baseAddress + route,data.value).then(response => {
+    res.value = response.data;
   });
-  return data;
+  return res;
 }
+
+export const putAxiosString = (route, data,res) => {
+  axios.put(baseAddress + route,data.value).then(response => {
+    res.value = response;
+  });
+  return res;
+}
+
 
 
 const script1 = document.createElement('script');
