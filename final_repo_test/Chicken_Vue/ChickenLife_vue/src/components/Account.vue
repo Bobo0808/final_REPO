@@ -1,18 +1,19 @@
 <script setup>
 import { ref } from "vue";
-import { postAxios } from "../main.js";
+import { postAxiosObj } from "../main.js";
 
-const test=ref({
+const Account =ref({
   "email": "wang32625171@gmail.com",
-  "password": "wasd32625171",
+  "password": "123456",
 });
 const user=ref({});
 
 const CheckAccount=()=>{
-  postAxios ("/api/User/login",test,user);
+  postAxiosObj ("/api/User/login",Account,user);
 console.log(user)
-console.log(test)
+console.log(Account)
 }
+
 
 
 const view = ref(1);
@@ -30,6 +31,7 @@ export default {
 <template>
   <div class="ALL">
     <header>
+      {{Account}}
       <h2 class="logo">ChickenLife</h2>
       <nav class="navigation">
         <a href="#">Home</a>
@@ -46,15 +48,15 @@ export default {
       </span>
       <div class="form-box login" v-if="view === 1">
         <h2>Login</h2>
-        <form action="#">
+        <form action="#" @submit.prevent="login">
           <div class="input-box">
             <span class="icon"><ion-icon name="mail"></ion-icon></span>
-            <input type="email" required />
+            <input type="email" v-model="Account.email" required />
             <label for=""> Email</label>
           </div>
           <div class="input-box">
             <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input type="password" required />
+            <input type="password" v-model="Account.password" required />
             <label for=""> Password</label>
           </div>
           <div class="remember-forget">
