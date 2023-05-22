@@ -25,11 +25,18 @@ export const getAxios = (route, data) => {
   });
   return data
 }
-export const postAxios = (route, data) => {
-  axios.post(baseAddress + route).then(response => {
-    data.value = response.data;
+export const postAxiosObj = (route, data,playerRef) => {
+  axios.post(baseAddress + route,data.value).then(response => {
+    playerRef.value = response.data;
   });
-  return data
+  return playerRef
+}
+
+export const postAxiosString = (route, data,res) => {
+  axios.post(baseAddress + route,data.value).then(response => {
+    res.value = response;
+  });
+  return res
 }
 
 export const putAxios = (route, data) => {
