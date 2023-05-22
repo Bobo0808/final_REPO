@@ -3,8 +3,8 @@ import { ref } from "vue";
 import { postAxiosObj } from "../main.js";
 
 const Account =ref({
-  "email": "wang32625171@gmail.com",
-  "password": "123456",
+  "email": "",
+  "password": "",
 });
 const user=ref({});
 
@@ -51,7 +51,7 @@ export default {
         <form action="#" @submit.prevent="login">
           <div class="input-box">
             <span class="icon"><ion-icon name="mail"></ion-icon></span>
-            <input type="email" v-model="Account.email" required />
+            <input type="text" v-model="Account.email" required />
             <label for=""> Email</label>
           </div>
           <div class="input-box">
