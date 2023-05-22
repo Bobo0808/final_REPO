@@ -1,0 +1,94 @@
+<!DocType html>
+<html lang="zh-cn">
+
+<head>
+    <title>RealTime Demo</title>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css" type="text/css">
+    <link rel="stylesheet" href="./dialogue.css" type="text/css">
+    <link rel="stylesheet" href="/wwwroot/css/index.css">
+    <link rel="stylesheet" href="/wwwroot/css/phaser_gamemode.css">
+</head>
+
+<body>
+
+    <div class="game-container">
+
+    </div>
+    <div class="player-info">
+
+        <div>
+            <label for="player-name">Your Name</label>
+            <input id="player-name" maxlength="10" type="text" />
+        </div>
+        <div>
+            <button id="player-color">Change Color</button>
+        </div>
+        <div>
+            <button id="joinBtn">JoinQueue</button>
+        </div>
+        <div>
+            <div>
+                <button id="btnLeave">Leave Room</button>
+            </div>
+            <div>
+                <button id="btnCamera">CameraOn</button>
+            </div>
+            <div>
+                <button id="btnMic">MicOn</button>
+            </div>
+
+        </div>
+
+        <div>
+            <video width="200" height="200" autoplay id="myVideo" muted playsinline></video>
+
+            <video width="500" height="500" autoplay id="remoteVideo" playsinline></video>
+        </div>
+    </div>
+
+
+    <div id="dialog-box">
+        <div class="dialog-header">
+            <span class="dialog-title">對話視窗</span>
+            <span class="dialog-close-btn">x</span>
+        </div>
+        <div class="dialog">
+            <div id="dialog" class="dialog-body"></div>
+            <div id="dialog-time" class="dialog-time"></div>
+        </div>
+        <div class="dialog-footer">
+            <input type="text" id="dialog-input" placeholder="請輸入訊息">
+            <button id="dialog-send-btn">發送</button>
+        </div>
+    </div>
+
+    <br />
+
+    <button id="waypoint">1</button>
+    <button id="moneypoint">2</button>
+    <button id="elecpoint">3</button>
+    <button id="sportspoint">4</button>
+    <button id="lifepoint">5</button>
+    <div class="phaser_area">
+        <div class="phaser_gamearea" id="gameArea"></div>
+    </div>
+
+
+
+
+
+
+    <!-- <script src="./WebSocket.js" type="module"></script> -->
+    <!-- <script src="./KeyPressListener.js"></script> -->
+    <script src="./dialogue.js"></script>
+
+    <script src="/wwwroot/lib/phaser.js"></script>
+    <script src="/wwwroot/lib/phaser-arcade-physics.js"></script>
+    <script src="/wwwroot/js/back.js" type="module"></script>
+    <!-- <script src="/wwwroot/js/phaser_scence_3C.JS"></script> -->
+</body>
+
+</html>

@@ -14,6 +14,8 @@ app.config.globalProperties.playerRef = ref({
   gender: 1
 });
 
+
+
 export const fuck = () => {
   alert('hello world');
   return app.config.globalProperties;
@@ -65,6 +67,7 @@ script2.setAttribute('nomodule', '');
 document.head.appendChild(script1);
 document.head.appendChild(script2);
 
+export default app.config.globalProperties.playerRef;
 
 app.component("Account", Account)
 app.provide
