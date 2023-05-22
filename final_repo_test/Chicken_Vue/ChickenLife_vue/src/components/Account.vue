@@ -1,15 +1,31 @@
 <script setup>
 import { ref } from "vue";
+import { postAxios } from "../main.js";
+
+const test=ref({
+  "email": "wang32625171@gmail.com",
+  "password": "wasd32625171",
+});
+const user=ref({});
+
+const CheckAccount=()=>{
+  postAxios ("/api/User/login",test,user);
+console.log(user)
+console.log(test)
+}
+
+
 const view = ref(1);
 const changeView = (index) => {
   view.value = index;
 };
+
 </script>
 <script>
 export default {
   name: "App",
 };
-import { postAxios } from "../main.js";
+
 </script>
 <template>
   <div class="ALL">
@@ -45,7 +61,7 @@ import { postAxios } from "../main.js";
             <label><input type="checkbox" />記住我</label>
             <a href="#">忘記密碼?</a>
           </div>
-          <button type="submit" class="btn">Login</button>
+          <button type="submit" class="btn" @click="CheckAccount">Login</button>
           <div class="login-register">
             <p>
               還沒有帳號?<a

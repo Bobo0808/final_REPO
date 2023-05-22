@@ -25,11 +25,13 @@ export const getAxios = (route, data) => {
   });
   return data
 }
-export const postAxios = (route, data) => {
-  axios.post(baseAddress + route).then(response => {
-    data.value = response.data;
+export const postAxios = (route, data,user) => {
+  axios.post(baseAddress + route,data.value).then(response => {
+    user.value = response.data;
+    console.log("data.value=>",data.value)
+    console.log("response.data=>",response.data)
   });
-  return data
+  return user
 }
 
 export const putAxios = (route, data) => {
