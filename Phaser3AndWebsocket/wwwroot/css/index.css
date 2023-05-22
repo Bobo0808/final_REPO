@@ -1,0 +1,76 @@
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+:root {
+    --header-height: 56px;
+}
+
+/* * {
+    margin: 0px !important;
+    padding: 0px !important;
+} */
+
+html,
+body {
+    height: 100%;
+    background-color: #212529;
+}
+
+header {
+    display: flex !important;
+    justify-content: space-around !important;
+    align-items: center;
+    margin: 0px !important;
+    padding: 11px !important;
+    background-color: #212529;
+    color: rgb(255, 255, 255);
+}
+
+
+
+.nav-link,
+.dropdown-toggle {
+    margin-left: 50px;
+    color: aliceblue;
+}
+
+
+
+.container {
+    margin: 0px;
+    padding: 0px;
+}
+
+.div-sidebar {
+    display: flex;
+    flex-wrap: nowrap;
+    height: calc(100vh - var(--header-height) - 10px) !important;
+    max-height: calc(100vh - var(--header-height) - 10px) !important;
+    overflow-x: auto;
+    overflow-y: auto;
+
+}
+
+.phaser_area {
+    border: 5px solid #212529;
+    border-radius: 15px;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.phaser_gamearea {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
