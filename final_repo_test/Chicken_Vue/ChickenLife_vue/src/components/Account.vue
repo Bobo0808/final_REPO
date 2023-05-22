@@ -1,19 +1,37 @@
 <script setup>
 import { ref } from "vue";
+import { postAxiosObj } from "../main.js";
+
+const Account =ref({
+  "email": "",
+  "password": "",
+});
+const user=ref({});
+
+const CheckAccount=()=>{
+  postAxiosObj ("/api/User/login",Account,user);
+console.log(user)
+console.log(Account)
+}
+
+
+
 const view = ref(1);
 const changeView = (index) => {
   view.value = index;
 };
+
 </script>
 <script>
 export default {
   name: "App",
 };
-import { postAxios } from "../main.js";
+
 </script>
 <template>
   <div class="ALL">
     <header>
+      {{Account}}
       <h2 class="logo">ChickenLife</h2>
       <nav class="navigation">
         <a href="#">Home</a>
@@ -30,22 +48,22 @@ import { postAxios } from "../main.js";
       </span>
       <div class="form-box login" v-if="view === 1">
         <h2>Login</h2>
-        <form action="#">
+        <form action="#" @submit.prevent="login">
           <div class="input-box">
             <span class="icon"><ion-icon name="mail"></ion-icon></span>
-            <input type="email" required />
+            <input type="text" v-model="Account.email" required />
             <label for=""> Email</label>
           </div>
           <div class="input-box">
             <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input type="password" required />
+            <input type="password" v-model="Account.password" required />
             <label for=""> Password</label>
           </div>
           <div class="remember-forget">
             <label><input type="checkbox" />記住我</label>
             <a href="#">忘記密碼?</a>
           </div>
-          <button type="submit" class="btn">Login</button>
+          <button type="submit" class="btn" @click="CheckAccount">Login</button>
           <div class="login-register">
             <p>
               還沒有帳號?<a
