@@ -10,6 +10,7 @@ namespace ChickenLife.Models.OrderProduct
         //public UserAccount Account { get; set; } = default!;
         public int CA_ID { get; set; } = default!;
         //public Card Card { get; set; } = default!;
+        public string CA_Name { get; set; } = default!;
         public int CT_ID { get; set; } = default!;
         //public CardType CardType { get; set; } = default!;
         public int CO_Sum { get; set; } = default!;

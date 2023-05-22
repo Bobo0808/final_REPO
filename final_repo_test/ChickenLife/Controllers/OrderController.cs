@@ -77,7 +77,7 @@ namespace webAPIforTest.Controllers
             return _context.Orders
                 .Where(o => o.O_ID == orderDTO.O_ID ||
                               o.A_ID == orderDTO.A_ID ||
-                              o.O_Cancle==orderDTO.O_Cancle)
+                              o.O_Cancle == orderDTO.O_Cancle)
                 .Select(o => new OrderDTO
                 {
                     O_ID = o.O_ID,
@@ -95,6 +95,16 @@ namespace webAPIforTest.Controllers
         public async Task<IEnumerable<OrderDTO>> ShowAccountOrder([FromBody] OrderDTO orderDTO)
         {
             // return null;
+            //return _context.Orders
+            //    .Where(o => o.A_ID == orderDTO.A_ID)
+            //    .Select(o => new OrderDTO
+            //    {
+            //        O_ID = o.O_ID,
+            //        A_ID = o.A_ID,
+            //        O_Date = o.O_Date,
+            //        O_TotalPrice = Convert.ToInt32(o.O_TotalPrice),
+            //        O_Cancle = o.O_Cancle,
+            //    });
             return _context.Orders
                 .Where(o => o.A_ID == orderDTO.A_ID)
                 .Select(o => new OrderDTO
@@ -104,13 +114,20 @@ namespace webAPIforTest.Controllers
                     O_Date = o.O_Date,
                     O_TotalPrice = Convert.ToInt32(o.O_TotalPrice),
                     O_Cancle = o.O_Cancle,
+                    ProductName = _context.OrderDetails
+                                .Where(d => d.O_ID == o.O_ID)
+                                .Join(_context.Products,
+                                    d => d.P_ID,
+                                    p => p.P_ID,
+                                    (d, p) => p.P_Name)
+                                .FirstOrDefault()
                 });
         }
 
         //只修改訂單取消
         // PUT: api/Orders/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        [HttpPut("Cancel/{id}")]
         public async Task<string> PutOrders(int id, OrderDTO orders)
         {
             if (id != orders.O_ID)
@@ -121,7 +138,7 @@ namespace webAPIforTest.Controllers
             Order o = await _context.Orders.FindAsync(id);
             o.O_Cancle = orders.O_Cancle;
 
-            _context.Entry(orders).State = EntityState.Modified;
+            _context.Entry(o).State = EntityState.Modified;
 
             try
             {
@@ -155,7 +172,7 @@ namespace webAPIforTest.Controllers
                 return "尚無訂單紀錄";
             }
 
-            Order o= new Order
+            Order o = new Order
             {
                 O_ID = orders.O_ID,
                 A_ID = orders.A_ID,
