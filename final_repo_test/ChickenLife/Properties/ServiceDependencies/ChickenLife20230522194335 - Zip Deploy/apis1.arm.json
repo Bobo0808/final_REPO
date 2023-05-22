@@ -1,0 +1,132 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "resourceGroupName": {
+      "type": "string",
+      "defaultValue": "ChickenLife_group",
+      "metadata": {
+        "_parameterType": "resourceGroup",
+        "description": "資源的資源群組名稱。建議您將資源放在相同的資源群組下，以改進追蹤。"
+      }
+    },
+    "resourceGroupLocation": {
+      "type": "string",
+      "defaultValue": "japaneast",
+      "metadata": {
+        "_parameterType": "location",
+        "description": "資源群組的位置。資源群組的位置可能與資源不同。"
+      }
+    },
+    "resourceLocation": {
+      "type": "string",
+      "defaultValue": "[parameters('resourceGroupLocation')]",
+      "metadata": {
+        "_parameterType": "location",
+        "description": "資源的位置。根據預設會使用資源群組的位置，除非該位置不支援資源提供者。"
+      }
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Resources/resourceGroups",
+      "name": "[parameters('resourceGroupName')]",
+      "location": "[parameters('resourceGroupLocation')]",
+      "apiVersion": "2019-10-01"
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "name": "[concat(parameters('resourceGroupName'), 'Deployment', uniqueString(concat('ChickenLife', subscription().subscriptionId)))]",
+      "resourceGroup": "[parameters('resourceGroupName')]",
+      "apiVersion": "2019-10-01",
+      "dependsOn": [
+        "[parameters('resourceGroupName')]"
+      ],
+      "properties": {
+        "mode": "Incremental",
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "resources": [
+            {
+              "name": "ChickenLifeapi",
+              "type": "Microsoft.ApiManagement/service",
+              "location": "[parameters('resourceLocation')]",
+              "properties": {
+                "publisherEmail": "boxiang0808@gmail.com",
+                "publisherName": "boxiang0808@gmail.com",
+                "notificationSenderEmail": "apimgmt-noreply@mail.windowsazure.com",
+                "hostnameConfigurations": [
+                  {
+                    "type": "Proxy",
+                    "hostName": "chickenlifeapi.azure-api.net",
+                    "encodedCertificate": null,
+                    "keyVaultId": null,
+                    "certificatePassword": null,
+                    "negotiateClientCertificate": false,
+                    "certificate": null,
+                    "defaultSslBinding": true
+                  }
+                ],
+                "publicIPAddresses": null,
+                "privateIPAddresses": null,
+                "additionalLocations": null,
+                "virtualNetworkConfiguration": null,
+                "customProperties": {
+                  "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Protocols.Tls10": "False",
+                  "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Protocols.Tls11": "False",
+                  "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Backend.Protocols.Tls10": "False",
+                  "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Backend.Protocols.Tls11": "False",
+                  "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Backend.Protocols.Ssl30": "False",
+                  "Microsoft.WindowsAzure.ApiManagement.Gateway.Protocols.Server.Http2": "False"
+                },
+                "virtualNetworkType": "None",
+                "certificates": null,
+                "disableGateway": false,
+                "apiVersionConstraint": {
+                  "minApiVersion": null
+                }
+              },
+              "sku": {
+                "name": "Consumption",
+                "capacity": 0
+              },
+              "apiVersion": "2019-12-01"
+            },
+            {
+              "type": "Microsoft.ApiManagement/service/apis",
+              "name": "ChickenLifeapi/ChickenLife",
+              "properties": {
+                "displayName": "ChickenLife, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "apiRevision": "1",
+                "description": null,
+                "subscriptionRequired": true,
+                "serviceUrl": "https://chickenlife20230522150949.azurewebsites.net",
+                "path": "",
+                "protocols": [
+                  "https"
+                ],
+                "authenticationSettings": {
+                  "oAuth2": null,
+                  "openid": null
+                },
+                "subscriptionKeyParameterNames": {
+                  "header": "Ocp-Apim-Subscription-Key",
+                  "query": "subscription-key"
+                },
+                "isCurrent": true
+              },
+              "apiVersion": "2019-12-01",
+              "dependsOn": [
+                "ChickenLifeapi"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "_dependencyType": "apis.azure"
+  }
+}
