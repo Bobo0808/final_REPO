@@ -194,5 +194,23 @@ namespace webAPIforTest.Controllers
         {
             return (_context.Orders?.Any(e => e.O_ID == id)).GetValueOrDefault();
         }
+
+
+        // GET: api/Orders
+        [HttpGet("GET/{id}")]
+        public int GetOrderID(int id)
+        {
+            //return await _context.Products.ToListAsync();
+            var lastOrder = _context.Orders.Where(order => order.A_ID == id).OrderByDescending(order => order.O_ID).FirstOrDefault();
+
+            if (lastOrder != null)
+            {
+                return lastOrder.O_ID;
+            }
+
+            // 如果找不到符合條件的訂單，可以回傳一個適當的預設值，例如 -1 表示找不到
+            return -1;
+        }
+
     }
 }
