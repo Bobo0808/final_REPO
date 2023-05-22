@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.88.1">
+  <title>ChickenLife</title>
+  <!-- bootstrap5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- index的css引用 -->
+  <link rel="stylesheet" href="/wwwroot/WebSocket/styles.css">
+  <link rel="stylesheet" href="/wwwroot/css/index.css">
+  <link rel="stylesheet" href="/wwwroot/css/phaser_gamemode.css">
+  <link rel="stylesheet" href="/wwwroot/WebSocket/dialogue.css">
+
+</head>
+
+<body>
+
+  <header class="border-bottom">
+    <div class="container">
+      <div class="div-nav d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <i class="fa-solid fa-kiwi-bird fa-shake fa-xl"></i>
+
+        <ul class=" nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="#" class="nav-link px-2 link-secondary">首頁</a></li>
+          <li><a href="#" class="nav-link px-2 link-dark">商城</a></li>
+          <li><a href="#" class="nav-link px-2 link-dark">衣櫥</a></li>
+        </ul>
+
+        <div class="ms-auto dropdown text-end">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="../img/625157.jpg" width="32" height="32" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="#">帳戶設定</a></li>
+            <li><a class="dropdown-item" href="#">個人檔案</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">登出</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="div-sidebar">
+
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32">
+          <use xlink:href="#bootstrap" />
+        </svg>
+        <span class="fs-4">Sidebar</span>
+      </a>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item" id="waypoint">
+          <a href="#" class="nav-link active" aria-current="page">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="#home" />
+            </svg>
+            出生點
+          </a>
+        </li>
+        <li id="moneypoint">
+          <a href="#" class="nav-link text-white">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="#speedometer2" />
+            </svg>
+            金融板
+          </a>
+        </li>
+        <li id="elecpoint">
+          <a href="#" class="nav-link text-white">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="#table" />
+            </svg>
+            電子板
+          </a>
+        </li>
+        <li id="sportspoint">
+          <a href="#" class="nav-link text-white">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="#grid" />
+            </svg>
+            體育板
+          </a>
+        </li>
+        <li id="lifepoint">
+          <a href="#" class="nav-link text-white">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="#people-circle" />
+            </svg>
+            生活板
+          </a>
+        </li>
+        <label for="player-name">Your Name</label>
+        <input id="player-name" maxlength="10" type="text" />
+        <button id="player-color">Change Color</button>
+        <button id="joinBtn">JoinQueue</button>
+        <button id="btnLeave">Leave Room</button>
+        <button id="btnCamera">CameraOn</button>
+        <button id="btnMic">MicOn</button>
+      </ul>
+      <hr>
+      <div class="dropdown">
+        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+          <strong>mdo</strong>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+          <li><a class="dropdown-item" href="#">New project...</a></li>
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" href="#">Sign out</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="phaser_area">
+      <div style="z-index: 999;">
+        <video width="200" height="200" autoplay id="myVideo" muted playsinline style="z-index: 999;"></video>
+
+        <video width="500" height="500" autoplay id="remoteVideo" playsinline style="z-index: 999;"></video>
+      </div>
+      <div class="game-container"></div>
+      <div class="phaser_gamearea " id="gameArea"></div>
+    </div>
+  </div>
+
+  <div id="dialog-box">
+    <div class="dialog-header">
+      <span class="dialog-title">對話視窗</span>
+      <span class="dialog-close-btn">x</span>
+    </div>
+    <div class="dialog">
+      <div id="dialog" class="dialog-body"></div>
+      <div id="dialog-time" class="dialog-time"></div>
+    </div>
+    <div class="dialog-footer">
+      <input type="text" id="dialog-input" placeholder="請輸入訊息">
+      <button id="dialog-send-btn">發送</button>
+    </div>
+  </div>
+
+  <!-- bootstrap5的js引用 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+  <!-- Phaser3引用 -->
+  <!-- <script src="/lib/phaser.min.js"></script> -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.js"></script> -->
+  <script src="/wwwroot/lib/phaser.js"></script>
+  <script src="/wwwroot/lib/phaser-arcade-physics.js"></script>
+  <!-- phaser初始場景的js -->
+  <!-- <script src="/js/phaser_gamemdoe.js" type="module"></script> -->
+  <!-- phaser3C場景的js -->
+  <!-- <script src="/js/phaser_scence_3C.JS" type="module"></script> -->
+
+  <!-- <script src="/wwwroot/js/testAgain.js"></script> -->
+  <script src="/wwwroot/js/back.js" type="module"></script>
+  <!-- <script src="/tiled/scaleTiled.png"></script> -->
+  <script src="/wwwroot/WebSocket/dialogue.js"> </script>
+</body>
+
+
+<!-- //吊橋
+// this.player = this.physics.add.sprite(6144, 9376, 'stand');
+
+//雪地
+// this.player = this.physics.add.sprite(6592, 14592, 'stand');
+
+
+//商店街
+// this.player = this.physics.add.sprite(6080, 3296, 'stand');
+
+//群島
+// this.player = this.physics.add.sprite(12736, 3296, 'stand');
+
+//出生點
+this.player = this.physics.add.sprite(13152, 9216, 'stand'); -->
