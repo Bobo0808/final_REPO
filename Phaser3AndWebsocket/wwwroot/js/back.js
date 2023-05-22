@@ -375,30 +375,30 @@ class gameStart extends Phaser.Scene {
         this.sendDirection();
     }
     preload() {
-        this.load.image("tiles", "/wwwroot/tiled/mapani.png");
+        this.load.image("tiles", "../tiled/mapani.png");
         console.log(mapData.id);
         if (mapData.id === 'PubMap') {
-            this.load.tilemapTiledJSON('map', '/wwwroot/tiled/HELPME.json');
+            this.load.tilemapTiledJSON('map', '../tiled/HELPME.json');
         }
         else {
             console.log('MapJsonStillWrong');
-            this.load.tilemapTiledJSON('map', '/wwwroot/tiled/HELPME.json');
+            this.load.tilemapTiledJSON('map', '../tiled/HELPME.json');
         }
 
         // this.load.spritesheet('water', '/tiled/water.png', {
         //     frameWidth: 32, frameHeight: 32
         // });
 
-        this.load.spritesheet('stand', '/wwwroot/img/phaser/Sprite_stand.png', {
+        this.load.spritesheet('stand', '../img/phaser/Sprite_stand.png', {
             frameWidth: 128, frameHeight: 128
         });
-        this.load.spritesheet('walk', '/wwwroot/img/phaser/Sprite_walk.png', {
+        this.load.spritesheet('walk', '../img/phaser/Sprite_walk.png', {
             frameWidth: 128, frameHeight: 128
         });
-        this.load.spritesheet('Npc01Stand', '/wwwroot/img/phaser/NPC01_stand.png', {
+        this.load.spritesheet('Npc01Stand', '../img/phaser/NPC01_stand.png', {
             frameWidth: 128, frameHeight: 128
         });
-        this.load.spritesheet('Npc01Walk', '/wwwroot/img/phaser/NPC01_walk.png', {
+        this.load.spritesheet('Npc01Walk', '../img/phaser/NPC01_walk.png', {
             frameWidth: 128, frameHeight: 128
         });
 
