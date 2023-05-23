@@ -2,19 +2,17 @@
 import { ref } from "vue";
 import { postAxiosObj } from "../main.js";
 
-const Account =ref({
+const ULogin =ref({
   "email": "",
   "password": "",
 });
 const user=ref({});
 
 const CheckAccount=()=>{
-  postAxiosObj ("/api/User/login",Account,user);
+  postAxiosObj ("/api/User/login",ULogin,user);
 console.log(user)
-console.log(Account)
+console.log(ULogin)
 }
-
-
 
 const view = ref(1);
 const changeView = (index) => {
@@ -22,16 +20,17 @@ const changeView = (index) => {
 };
 
 </script>
+
 <script>
 export default {
   name: "App",
 };
-
 </script>
+
 <template>
   <div class="ALL">
     <header>
-      {{Account}}
+      <!-- {{ULogin}} -->
       <h2 class="logo">ChickenLife</h2>
       <nav class="navigation">
         <a href="#">Home</a>
@@ -51,12 +50,12 @@ export default {
         <form action="#" @submit.prevent="login">
           <div class="input-box">
             <span class="icon"><ion-icon name="mail"></ion-icon></span>
-            <input type="text" v-model="Account.email" required />
+            <input type="text" v-model="ULogin.email" required />
             <label for=""> Email</label>
           </div>
           <div class="input-box">
             <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input type="password" v-model="Account.password" required />
+            <input type="password" v-model="ULogin.password" required />
             <label for=""> Password</label>
           </div>
           <div class="remember-forget">
@@ -79,20 +78,25 @@ export default {
       <div class="form-box register" v-if="view === 2">
         <h2>Registerion</h2>
         <form action="#">
-          <div class="input-box">
+          <!-- <div class="input-box">
             <span class="icon"><ion-icon name="person"></ion-icon></span>
-            <input type="text" required />
+            <input type="text"  required />
             <label for=""> Username</label>
-          </div>
+          </div> -->
           <div class="input-box">
             <span class="icon"><ion-icon name="mail"></ion-icon></span>
-            <input type="email" required />
+            <input type="text" required />
             <label for=""> Email</label>
           </div>
           <div class="input-box">
             <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
             <input type="password" required />
             <label for=""> Password</label>
+          </div>
+            <div class="input-box">
+            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+            <input type="password"  required />
+            <label for="">ConfirmPassword</label>
           </div>
           <div class="remember-forget">
             <label><input type="checkbox" />我同意此項條款</label>
