@@ -167,6 +167,7 @@ namespace ChickenLife.Controllers
                                     KeyValuePair<WebSocket, PlayerRef> femaletemp = queue_F.Queue.First();
                                     queue_M.Queue.RemoveAt(0);
                                     queue_F.Queue.RemoveAt(0);
+
                                     PlayerRef malevalue = new PlayerRef()
                                     {
                                         type = maletemp.Value.type,
@@ -178,6 +179,7 @@ namespace ChickenLife.Controllers
                                         x = 8795,
                                         y = 10810,
                                     };
+
                                     PlayerRef femalevalue = new PlayerRef()
                                     {
                                         type = femaletemp.Value.type,
@@ -192,7 +194,18 @@ namespace ChickenLife.Controllers
 
 									maps.MapDirectory[PrivateMapid].client.Add(maletemp.Key, malevalue);
                                     maps.MapDirectory[PrivateMapid].client.Add(femaletemp.Key, femalevalue);
-                                    MapDirectoriesDTO pairtemp = new MapDirectoriesDTO() { type = "Match", id = PrivateMapid, Src = maps.MapDirectory[publicMap].Src, MinX = maps.MapDirectory[publicMap].MinX, MinY = maps.MapDirectory[publicMap].MinY, MaxX = maps.MapDirectory[publicMap].MaxX, MaxY = maps.MapDirectory[publicMap].MaxY, BlockedSpaces = maps.MapDirectory[publicMap].BlockedSpaces, client = new List<PlayerRef>() { malevalue, femalevalue } };
+                                    MapDirectoriesDTO pairtemp = new MapDirectoriesDTO()
+                                    {
+                                        type = "Match",
+                                        id = PrivateMapid,
+                                        Src = maps.MapDirectory[publicMap].Src,
+                                        MinX = maps.MapDirectory[publicMap].MinX,
+                                        MinY = maps.MapDirectory[publicMap].MinY,
+                                        MaxX = maps.MapDirectory[publicMap].MaxX,
+                                        MaxY = maps.MapDirectory[publicMap].MaxY,
+                                        BlockedSpaces = maps.MapDirectory[publicMap].BlockedSpaces,
+                                        client = new List<PlayerRef>() { malevalue, femalevalue }
+                                    };
                                     var matchJson = JsonSerializer.Serialize(pairtemp);
                                     buffer = Encoding.UTF8.GetBytes(matchJson);
                                     SendToPeer(buffer, maletemp.Key, femaletemp.Key);
@@ -272,8 +285,10 @@ namespace ChickenLife.Controllers
                                         BlockedSpaces = new List<BlockedSpaces>() { new BlockedSpaces { x = 7, y = 4 }, new BlockedSpaces { x = 1, y = 11 }, new BlockedSpaces { x = 12, y = 10 }, new BlockedSpaces { x = 4, y = 7 }, new BlockedSpaces { x = 5, y = 7 }, new BlockedSpaces { x = 6, y = 7 }, new BlockedSpaces { x = 8, y = 6 }, new BlockedSpaces { x = 9, y = 6 }, new BlockedSpaces { x = 10, y = 6 }, new BlockedSpaces { x = 7, y = 9 }, new BlockedSpaces { x = 10, y = 6 }, new BlockedSpaces { x = 7, y = 9 }, new BlockedSpaces { x = 8, y = 9 }, new BlockedSpaces { x = 9, y = 9 } },
                                     }
                                     );
+
                                     maps.MapDirectory[PrivateMapid].client.Add(maletemp.Key, malevalue);
                                     maps.MapDirectory[PrivateMapid].client.Add(femaletemp.Key, femalevalue);
+
 
 
                                     MapDirectoriesDTO pairtemp = new MapDirectoriesDTO() { type = "Match", id = PrivateMapid, Src = maps.MapDirectory[publicMap].Src, MinX = maps.MapDirectory[publicMap].MinX, MinY = maps.MapDirectory[publicMap].MinY, MaxX = maps.MapDirectory[publicMap].MaxX, MaxY = maps.MapDirectory[publicMap].MaxY, BlockedSpaces = maps.MapDirectory[publicMap].BlockedSpaces, client = new List<PlayerRef>() { malevalue, femalevalue } };
