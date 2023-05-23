@@ -19,6 +19,8 @@ export let playerRefs = ref({
   name: ['shit', 'fuck', 'bitch', 'suck', 'cock'],
   gender: 1,
   isPlay: false,
+  coins: 1200,
+  clothes: [],
 });
 
 export const fuck = () => {
@@ -52,6 +54,15 @@ export const putAxiosObj = (route, data, res) => {
     res.value = response.data;
   });
   return res;
+}
+
+export const postAxiosObjNodata = (route, data, res) => {
+  axios.post(baseAddress + route, data).then(response => {
+    res.value = response.data;
+    console.log("res=>", res)
+    console.log("response.data=>", response.data)
+  });
+  return res
 }
 
 export const putAxiosString = (route, data, res) => {

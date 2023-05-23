@@ -3,7 +3,7 @@
 import { onMounted, ref, watch, toRaw } from 'vue';
 import { getAxios, postAxiosString } from '../../main';
 import CardAndOrder from '../Order/CardAndOrder.vue';
-
+import { playerRefs } from "../../main.js";
 
 // const baseAddress = "https://localhost:7097";
 const baseAddress = "https://localhost:7093";
@@ -56,7 +56,9 @@ onMounted(() => {
     CheckPoints();
     // SpriteForP();
 });
-
+watch(() => {
+    playerRefs.value.coins
+});
 const OpenorClose = () => {
     if (props.modelValue === true) {
         getCardDTOes();
@@ -64,10 +66,10 @@ const OpenorClose = () => {
 };
 const imageUrl = (url) => {
     // console.log(url);
-    const imgPath = `/src/assets/img/producttest/${url}`;
-    const imgUrl = new URL(imgPath, import.meta.url).href;
+    // const imgPath = `/src/assets/img/producttest/${url}`;
+    // const imgUrl = new URL(imgPath, import.meta.url).href;
     // console.log(imgUrl);
-    return imgUrl;
+    return url;
 };
 
 // 選取所有的 .sprite 元素
@@ -131,28 +133,29 @@ const closeDialog = () => {
     selectedCardProduct.value = null;
 };
 const confirmPurchase = (ID, Price, Name) => {
-    if (props.memberpoints >= Price) {
-        // 點數足夠，執行購買邏輯
-        console.log('購買商品:', Price);
+    // if (playerRefs.coins >= Price) {
+    // 點數足夠，執行購買邏輯
+    console.log('購買商品:', Price);
 
-        CheckPoints();
+    CheckPoints();
 
-        CardAdd(ID, Price);
-        // 加點數
-        //const str = "100元換200點";
-        // console.log("Name.substring(5, 8)=>", Name.substring(5, 8));
-        const parts = parseInt(Name.substring(5, 8));
-        // console.log("parts=>", parts);
-        CardPoints.value += parts;
-        //memberPoints.value -= selectedCardProduct.value.cA_Price;
-        emit('updatepoint', CardPoints);
+    CardAdd(ID, Price);
+    // 加點數
+    //const str = "100元換200點";
+    // console.log("Name.substring(5, 8)=>", Name.substring(5, 8));
+    const parts = parseInt(Name.substring(5, 8));
+    // console.log("parts=>", parts);
+    // CardPoints.value += parts;
+    playerRefs.value.coins += parts;
+    //memberPoints.value -= selectedCardProduct.value.cA_Price;
+    emit('updatepoint', CardPoints);
 
-        // 購買完成後關閉彈出視窗
-        closeDialog();
-    } else {
-        // 點數不足，顯示提示框
-        showInsufficientPoints.value = true;
-    }
+    // 購買完成後關閉彈出視窗
+    closeDialog();
+    // } else {
+    // 點數不足，顯示提示框
+    // showInsufficientPoints.value = true;
+    // }
 };
 
 const closeInsufficientPointsDialog = () => {

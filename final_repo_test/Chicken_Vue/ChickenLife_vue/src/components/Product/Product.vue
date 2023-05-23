@@ -1,7 +1,8 @@
 <script setup>
 
 import { onMounted, ref, watch, inject, toRaw } from 'vue';
-import { getAxios, postAxiosString } from '../../main';
+import { getAxios, postAxiosString, postAxiosObjNodata } from '../../main';
+import { playerRefs } from "../../main.js";
 // const baseAddress = "https://localhost:7097";
 const baseAddress = "https://localhost:7093";
 const employeeDTOes = ref([]);
@@ -63,7 +64,9 @@ onMounted(() => {
     SpriteForP();
 
 });
-
+watch(() => {
+    playerRefs.value.coins
+});
 const OpenorClose = () => {
     if (props.modelValue === true) {
         getEmployeeDTOes();
@@ -80,10 +83,10 @@ const OpenorClose = () => {
 // };
 const imageUrl = (url) => {
     // console.log(url);
-    const imgPath = `/src/assets/img/producttest/${url}`;
-    const imgUrl = new URL(imgPath, import.meta.url).href;
+    // const imgPath = `/src/assets/img/producttest/${url}`;
+    // const imgUrl = new URL(imgPath, import.meta.url).href;
     // console.log(imgUrl);
-    return imgUrl;
+    return url;
 };
 
 // 選取所有的 .sprite 元素
@@ -147,7 +150,9 @@ const closeDialog = () => {
     selectedProduct.value = null;
 };
 const confirmPurchase = (ID, Price) => {
-    if (props.memberpoints >= Price) {
+    console.log("playerRefs.coins=>", playerRefs.coins)
+    console.log("Price=>", Price)
+    if (playerRefs.value.coins >= Price) {
         // 點數足夠，執行購買邏輯
         //console.log('購買商品:', selectedProduct.value);
         // console.log('Price', Price);
@@ -156,7 +161,9 @@ const confirmPurchase = (ID, Price) => {
         OrderAdd(ID, Price);
         //OrderDetailAdd(ID, Price);
         // 扣除點數
-        ProductPoints.value -= Price;
+        // ProductPoints.value -= Price;
+        playerRefs.value.coins -= Price;
+        console.log("playerRefs.value.coins=>", playerRefs.value.coins)
         // console.log('ProductPoints=>', ProductPoints.value);
         emit('updatepoint', ProductPoints);
         // memberPoints.value -= selectedProduct.value.price;
@@ -200,7 +207,7 @@ const OrderAdd = (ID, Price) => {
                 requestdetail.Od_UnitPrice = Price;
                 requestdetail.Od_Sum = Price;
                 requestdetail.Od_Quantity = 1;
-                console.log("OrderDetail=>", requestdetail);
+                // console.log("OrderDetail=>", requestdetail);
                 axios.post(`${baseAddress}/api/OrderDetails`, requestdetail).then(test => {
                     alert(test.data);
                 });
@@ -209,48 +216,86 @@ const OrderAdd = (ID, Price) => {
 
 };
 
+const TypeChange = (num) => {
+    employeeDTOes.value = [];
+    if (num == -1) {
+        getAxios("/api/Products", employeeDTOes);
+    } else {
+        var request = {};
+        request.P_ID = 0;
+        request.P_Name = "";
+        request.P_Price = 0;
+        request.P_ProductType = num;
+        request.P_Image = "";
+        request.P_Describe = "";
+        request.P_Date = new Date();
+        request.P_Instock = 0;
+        request.P_Discount = 0;
+        request.P_Discontinuted = false;
+        postAxiosObjNodata("/api/Products/FilterProductType", request, employeeDTOes);
+    }
+    console.log("employeeDTOes=>", employeeDTOes);
+    console.log("employeeDTOes.value=>", employeeDTOes.value);
+}
+
 </script>
 <template lang="">
 <div class="page-wrapper">
-    <div class="page-content">
-        
-        <div class="row test row-cols-1 row-cols-sm-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6 product-grid">
-            <div v-for="item in employeeDTOes" :key="item.p_ID">
-                <div class="col">
-                    <div class="position-relative border rounded popover-body bg-info">
-                        <!-- :src="imageUrl(item.p_Image)"  -->
-                        <div class="imgbord center ">
-                            <p class="sprite ms-sm-4 ms-0" :style="`background-image: url(${imageUrl(item.p_Image)}); background-position: ${position}px 0;`" />
-                            <!-- <p class="sprite" :style="`background-image: url(${imageUrl(item.p_Image)})`" /> -->
-                            <!-- <img class="card-img-top  img-fluid" :src="imageUrl(item.p_Image)" /> -->
-                        </div>
-                        <div class="position-absolute top-0 end-0 m-2">
-                            <span class="text-dark fw-bold">折扣 {{
-                                item.p_Discount }}</span>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="card-title cursor-pointer mt-3">{{ item.p_Name }}</h6>
-                            <div class="clearfix ">
-                                                <p class="mb-0 fw-bold">
-                                    <!-- <span
-                                    class="me-2 text-decoration-line-through text-secondary">原價{{ item.p_Price
-                                    }}</span> -->
-                                    <span>點數價格: {{ DiscountMoney(item.p_Price, item.p_Discount)
-                                    }}</span>
-                                </p>
+    <div class="page-content row">
+        <div class="col-md-1 col-12">
+            <div class="btn-group-vertical " role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                <label @click="TypeChange(-1)" class="btn btn-outline-primary" for="btnradio1">全部</label>
+
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                <label @click="TypeChange(2)" class="btn btn-outline-primary" for="btnradio2">動物</label>
+
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                <label @click="TypeChange(0)" class="btn btn-outline-primary" for="btnradio3">東方</label>
+
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+                <label @click="TypeChange(3)" class="btn btn-outline-primary" for="btnradio4">其他</label>
+            </div>
+        </div>
+        <div class="col-11">
+            <div class="row test row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 product-grid">
+
+                <div v-for="item in employeeDTOes" :key="item.p_ID">
+                    <div class="col">
+                        <div class="position-relative border rounded popover-body bg-info">
+                            <!-- :src="imageUrl(item.p_Image)"  -->
+                            <div class="imgbord center ">
+                                <p class="sprite ms-sm-4 ms-0" :style="`background-image: url(${imageUrl(item.p_Image)}); background-position: ${position}px 0;`" />
+                                <!-- <p class="sprite" :style="`background-image: url(${imageUrl(item.p_Image)})`" /> -->
+                                <!-- <img class="card-img-top  img-fluid" :src="imageUrl(item.p_Image)" /> -->
                             </div>
-                            <div class="d-flex align-items-center mt-3 fs-6">
-                                <!-- <button :id="item.id" type="button" class="btn btn-primary"
-                                    @click="showBuyDetail(item.p_ID)">購買</button> -->
-                                    <button :id="item.p_ID" type="button" class="btn btn-primary"
-                                    @click="openDialog">購買</button>
+                            <div class="position-absolute top-0 end-0 m-2">
+                                <span class="text-dark fw-bold">折扣 {{
+                                    item.p_Discount }}</span>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title cursor-pointer mt-3">{{ item.p_Name }}</h6>
+                                <div class="clearfix ">
+                                                    <p class="mb-0 fw-bold">
+                                        <!-- <span
+                                        class="me-2 text-decoration-line-through text-secondary">原價{{ item.p_Price
+                                        }}</span> -->
+                                        <span>點數價格: {{ DiscountMoney(item.p_Price, item.p_Discount)
+                                        }}</span>
+                                    </p>
+                                </div>
+                                <div class="d-flex align-items-center mt-3 fs-6">
+                                    <!-- <button :id="item.id" type="button" class="btn btn-primary"
+                                        @click="showBuyDetail(item.p_ID)">購買</button> -->
+                                        <button :id="item.p_ID" type="button" class="btn btn-primary"
+                                        @click="openDialog">購買</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-      
     </div>
 </div>
 <div>

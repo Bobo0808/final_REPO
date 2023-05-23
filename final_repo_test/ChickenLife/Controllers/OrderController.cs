@@ -92,9 +92,9 @@ namespace webAPIforTest.Controllers
         public async Task<IEnumerable<OrderDTO>> FilterAccountOrder([FromBody] OrderDTO orderDTO)
         {
             return _context.Orders
-                .Where(o => o.A_ID == orderDTO.A_ID ||
-                            o.O_Date.Month == orderDTO.O_Date.Month ||
-                            o.O_Cancle == false)
+                .Where(o => (o.A_ID == orderDTO.A_ID) &&
+                            (o.O_Date.Month == orderDTO.O_Date.Month ||
+                            o.O_Cancle == false))
                 .Select(o => new OrderDTO
                 {
                     O_ID = o.O_ID,
