@@ -1,6 +1,6 @@
 
 
-var server = 'wss://chickenlife20230522194335.azurewebsites.net/'; //如果開啟了https則這裡是wss
+var server = 'wss://localhost:7093'; //如果開啟了https則這裡是wss
 var vWebSocket = null;
 let playerDom = {}; //所有角色的資訊
 let playerRef = {};//自己角色的資訊
