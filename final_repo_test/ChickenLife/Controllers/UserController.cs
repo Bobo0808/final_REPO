@@ -35,6 +35,7 @@ namespace ChickenLife.Controllers
                 out byte[] passwordSalt);
             var user = new UserAccount
             {
+                //UserName=request.UserName,
                 A_Email = request.Email,
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt,
@@ -112,7 +113,7 @@ namespace ChickenLife.Controllers
                     A_NickName = user.A_NickName,
                     A_Coin = user.A_Coin,
                     //    ResetTokenExpries=user.ResetTokenExpries,
-                    //    VerifycationToken=user.VerifycationToken,
+                    VerifycationToken = user.VerifycationToken,
                 };
 
                 return userOutput;
