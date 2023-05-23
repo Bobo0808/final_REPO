@@ -1,7 +1,7 @@
 
 const w = window.innerWidth;
 const h = window.innerHeight;
-var server = 'wss://localhost:7093'; //如果開啟了https則這裡是wss
+var server = 'wss://chickenlife20230522194335.azurewebsites.net/'; //如果開啟了https則這裡是wss
 var vWebSocket = null;
 var cursors;
 var AniLayer;
