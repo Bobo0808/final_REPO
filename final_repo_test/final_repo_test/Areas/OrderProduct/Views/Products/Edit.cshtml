@@ -33,7 +33,8 @@
                 </div>
                 <div class="form-group mx-2">
                     <label asp-for="P_ProductType" class="control-label"></label>
-                    <input asp-for="P_ProductType" class="form-control" />
+                    @*<input asp-for="P_ProductType" class="form-control" />*@
+                    <select asp-for="P_ProductType" class="form-control" asp-items="ViewBag.P_ProductType"></select>
                     <span asp-validation-for="P_ProductType" class="text-danger"></span>
                 </div>
                 <div class="form-group mx-2">

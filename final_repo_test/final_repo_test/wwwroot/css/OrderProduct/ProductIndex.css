@@ -7,9 +7,12 @@
 }
 
 td {
-    white-space: normal;
+    /*white-space: normal;*/
     word-wrap: break-word;
     width: 5%;
+    overflow: hidden; /* 超出部分隱藏 */
+    text-overflow: ellipsis; /* 超出部分以省略號表示 */
+    white-space: nowrap; /* 禁止文字換行 */
 }
 
 input[type="checkbox"] {

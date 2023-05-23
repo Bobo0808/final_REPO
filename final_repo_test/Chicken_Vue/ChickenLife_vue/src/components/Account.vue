@@ -2,16 +2,16 @@
 import { ref } from "vue";
 import { postAxiosObj } from "../main.js";
 
-const Account =ref({
+const Account = ref({
   "email": "wang32625171@gmail.com",
   "password": "123456",
 });
-const user=ref({});
+const user = ref({});
 
-const CheckAccount=()=>{
-  postAxiosObj ("/api/User/login",Account,user);
-console.log(user)
-console.log(Account)
+const CheckAccount = () => {
+  postAxiosObj("/api/User/login", Account, user);
+  console.log(user)
+  console.log(Account)
 }
 
 
@@ -34,7 +34,7 @@ export default {
 <template>
   <div class="ALL">
     <header>
-      {{Account}}
+      {{ Account }}
       <h2 class="logo">ChickenLife</h2>
       <nav class="navigation">
         <a href="#">Home</a>
@@ -69,12 +69,7 @@ export default {
           <button type="submit" class="btn" @click="CheckAccount">Login</button>
           <div class="login-register">
             <p>
-              還沒有帳號?<a
-                @click="changeView(2)"
-                href="#"
-                class="register-link"
-                >註冊</a
-              >
+              還沒有帳號?<a @click="changeView(2)" href="#" class="register-link">註冊</a>
             </p>
           </div>
         </form>
@@ -103,9 +98,7 @@ export default {
           <button type="submit" class="btn">Register</button>
           <div class="login-register">
             <p>
-              已經有帳號了?<a @click="changeView(1)" href="#" class="login-link"
-                >登入</a
-              >
+              已經有帳號了?<a @click="changeView(1)" href="#" class="login-link">登入</a>
             </p>
           </div>
         </form>
@@ -125,6 +118,7 @@ export default {
   background-size: cover;
   background-position: center;
 }
+
 header {
   position: fixed;
   top: 0;
@@ -137,10 +131,12 @@ header {
   align-items: center;
   z-index: 99;
 }
+
 .logo {
   font-size: 2em;
   color: #fff;
 }
+
 .navigation a {
   position: relative;
   font-size: 1.1em;
@@ -149,6 +145,7 @@ header {
   font-weight: 500;
   margin-left: 40px;
 }
+
 .navigation a::after {
   content: "";
   position: absolute;
@@ -162,9 +159,11 @@ header {
   transform: scaleX(0);
   transition: transform 0.5s;
 }
+
 .navigation a:hover::after {
   transform: scaleX(1);
 }
+
 .navigation .btnLogin-popup {
   width: 130px;
   height: 50px;
@@ -179,10 +178,12 @@ header {
   margin-left: 40px;
   transition: 0.5s;
 }
+
 .navigation .btnLogin-popup:hover {
   background: #fff;
   color: #162938;
 }
+
 .wrapper {
   position: relative;
   width: 400px;
@@ -197,6 +198,7 @@ header {
   align-items: center;
   overflow: hidden;
 }
+
 .wrapper .form-box {
   width: 100%;
   padding: 40px;
@@ -229,6 +231,7 @@ header {
   color: #162938;
   text-align: center;
 }
+
 .input-box {
   position: relative;
   width: 100%;
@@ -236,6 +239,7 @@ header {
   border-bottom: 2px solid #162938;
   margin: 30px 0;
 }
+
 .input-box label {
   position: absolute;
   top: 50%;
@@ -247,10 +251,12 @@ header {
   pointer-events: none;
   transition: 0.5s;
 }
-.input-box input:focus ~ label,
-.input-box input:valid ~ label {
+
+.input-box input:focus~label,
+.input-box input:valid~label {
   top: -5px;
 }
+
 .input-box input {
   width: 100%;
   height: 100%;
@@ -262,6 +268,7 @@ header {
   font-weight: 600;
   padding: 0 35px 0 5px;
 }
+
 .input-box .icon {
   position: absolute;
   right: 8px;
@@ -288,9 +295,11 @@ header {
   color: #162938;
   text-decoration: none;
 }
+
 .remember-forget a:hover {
   text-decoration: underline;
 }
+
 .btn {
   width: 100%;
   height: 45px;
@@ -303,6 +312,7 @@ header {
   color: #fff;
   font-weight: 500;
 }
+
 .login-register {
   font-size: 0.9em;
   color: #162938;
@@ -310,11 +320,13 @@ header {
   font-weight: 500;
   margin: 25px 0 10px;
 }
+
 .login-register p a {
   color: #162938;
   text-decoration: none;
   font-weight: 600;
 }
+
 .login-register p a:hover {
   text-decoration: underline;
 }
