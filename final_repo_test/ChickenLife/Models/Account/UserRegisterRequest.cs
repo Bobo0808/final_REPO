@@ -4,6 +4,9 @@ namespace ChickenLife.Models.Account
 {
     public class UserRegisterRequest
     {
+        //[Required]
+        //public string UserName { get; set; }
+
         [Required, EmailAddress]
         public string Email { get; set; } = string.Empty;
         [Required, MinLength(6, ErrorMessage = "請輸入至少六位，老兄!")]

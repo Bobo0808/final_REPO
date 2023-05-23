@@ -3,8 +3,8 @@ import { ref } from "vue";
 import { postAxiosObj } from "../main.js";
 
 const Account =ref({
-  "email": "",
-  "password": "",
+  "email": "wang32625171@gmail.com",
+  "password": "123456",
 });
 const user=ref({});
 
@@ -13,6 +13,9 @@ const CheckAccount=()=>{
 console.log(user)
 console.log(Account)
 }
+
+
+
 
 
 

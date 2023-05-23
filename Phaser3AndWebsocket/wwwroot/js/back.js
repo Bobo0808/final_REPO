@@ -1,12 +1,13 @@
 
 const w = window.innerWidth;
 const h = window.innerHeight;
-var server = 'wss://localhost:7093'; //如果開啟了https則這裡是wss
+// var server = 'wss://chickenlife20230522194335.azurewebsites.net/';
+var server = 'wss://localhost:7093';
 var vWebSocket = null;
 var cursors;
 var AniLayer;
-let playerDom = {}; //所有角色的資訊
-let playerRef = {};//自己角色的資訊
+let playerDom = {};
+let playerRef = {};
 let players = {};
 let wantdelplayers = [];
 let IDempty = true;
@@ -240,12 +241,6 @@ function cleanAllPlayers() {
     for (let i = 0; i < wantdelplayers.length; i++) {
         wantdelplayers[i].destroy();
     }
-    // for (const playerId in players) {
-    //     if (playerId !== playerRef.id) {
-    //         players[playerId].destroy();
-    //         delete players[playerId];
-    //     }
-    // }
     players = [];
 }
 
@@ -268,7 +263,7 @@ class gameStart extends Phaser.Scene {
                 y: data.y
             }
 
-            this.player = this.physics.add.sprite(9728, 6912, 'stand');
+            this.player = this.physics.add.sprite(data.x, data.y, 'stand');
             this.player.anims.play('stand_anim', true);
             this.player.setScale(0.5);
             this.player.setSize(128, 128);
@@ -276,8 +271,6 @@ class gameStart extends Phaser.Scene {
             this.cameras.main.startFollow(this.player);
 
             this.physics.world.addCollider(this.player, layer_collision);
-
-            // characterElement.classList.add("you");
         }
         players[data.id] = {
             id: data.id,
@@ -288,9 +281,6 @@ class gameStart extends Phaser.Scene {
             x: data.x,
             y: data.y
         }
-        // wantdelplayers.push(players[data.id]);
-        console.log("platers[data.id]=");
-        console.log(players[data.id]);
         if (data.id != playerRef.id) {
             players[data.id] = this.physics.add.sprite(9728, 6912, 'stand');
             players[data.id].anims.play('stand_anim', true);
@@ -320,7 +310,7 @@ class gameStart extends Phaser.Scene {
                 "y": playerRef.y
             }
         }
-        // console.log(player)
+
         let jtemp = JSON.stringify(player)
         vWebSocket.send(jtemp);
     }
@@ -344,10 +334,6 @@ class gameStart extends Phaser.Scene {
                 players[result.id].anims.play('stand_anim', true);
             }
         }
-        // if (result.id == playerRef.id) {
-        //     playerRef.x = result.x;
-        //     playerRef.y = result.y;
-        // }
     }
 
     handleArrowPress(xChange = 0, yChange = 0) {
@@ -375,30 +361,25 @@ class gameStart extends Phaser.Scene {
         this.sendDirection();
     }
     preload() {
-        this.load.image("tiles", "/wwwroot/tiled/mapani.png");
+        this.load.image("tiles", "../tiled/mapani.png");
         console.log(mapData.id);
         if (mapData.id === 'PubMap') {
-            this.load.tilemapTiledJSON('map', '/wwwroot/tiled/HELPME.json');
+            this.load.tilemapTiledJSON('map', '../tiled/HELPME.json');
         }
         else {
             console.log('MapJsonStillWrong');
-            this.load.tilemapTiledJSON('map', '/wwwroot/tiled/HELPME.json');
+            this.load.tilemapTiledJSON('map', '../tiled/HELPME.json');
         }
-
-        // this.load.spritesheet('water', '/tiled/water.png', {
-        //     frameWidth: 32, frameHeight: 32
-        // });
-
-        this.load.spritesheet('stand', '/wwwroot/img/phaser/Sprite_stand.png', {
+        this.load.spritesheet('stand', '../img/phaser/Sprite_stand.png', {
             frameWidth: 128, frameHeight: 128
         });
-        this.load.spritesheet('walk', '/wwwroot/img/phaser/Sprite_walk.png', {
+        this.load.spritesheet('walk', '../img/phaser/Sprite_walk.png', {
             frameWidth: 128, frameHeight: 128
         });
-        this.load.spritesheet('Npc01Stand', '/wwwroot/img/phaser/NPC01_stand.png', {
+        this.load.spritesheet('Npc01Stand', '../img/phaser/NPC01_stand.png', {
             frameWidth: 128, frameHeight: 128
         });
-        this.load.spritesheet('Npc01Walk', '/wwwroot/img/phaser/NPC01_walk.png', {
+        this.load.spritesheet('Npc01Walk', '../img/phaser/NPC01_walk.png', {
             frameWidth: 128, frameHeight: 128
         });
 
@@ -428,22 +409,11 @@ class gameStart extends Phaser.Scene {
                 frameRate: 10,
                 repeat: -1
             });
-            // this.anims.create({
-            //     key: 'bgWater',
-            //     frames: this.anims.generateFrameNumbers('water', { start: 0, end: 15 }),
-            //     frameRate: 10,
-            //     repeat: -1
-            // })
-
         }.bind(this));
     }
     create() {
         const map = this.make.tilemap({ key: "map", tileWidth: 32, tileHeight: 32 });
         const tileset = map.addTilesetImage("mapani", "tiles", 32, 32, 0, 0);
-        // const layer = map.createLayer("bg", tileset, 0, 0);
-        // AniLayer = map.createLayer("ani", tileset);
-        // const waterObj = this.add.sprite(1584, 1584, 'Water');
-        // waterObj.play('bgWater');
         const layer_sea = map.createLayer("sea", tileset, 0, 0);
         const layer_island = map.createLayer("island", tileset, 0, 0);
         const layer_03 = map.createLayer("03", tileset, 0, 0);
@@ -480,19 +450,9 @@ class gameStart extends Phaser.Scene {
             };
             vWebSocket.send(JSON.stringify(data));
         })
-        // this.AddPlayer({
-        //     id: playerRef.id,
-        //     name: playerRef.name,
-        //     gender: playerRef.gender,
-        //     direction: playerRef.direction,
-        //     color: playerRef.color,
-        //     x: playerRef.x,
-        //     y: playerRef.y
-        // });
         //接收到訊息時
         vWebSocket.addEventListener('message', (e) => {
             messageBuffer = e.data;
-            // console.log("messageBuffer=e.data=" + messageBuffer);
             // 如果接收到的訊息還不完整，則繼續等待
             if (!isCompleteMessage(messageBuffer)) {
                 return;
@@ -508,14 +468,6 @@ class gameStart extends Phaser.Scene {
                     btnCamera.style.visibility = 'hidden';
                     btnMic.style.visibility = 'hidden';
                     btnLeave.style.visibility = 'hidden';
-                    //** */
-                    // if (players.length > 0) {
-                    //     for (var player in players) {
-
-                    //         console.log(player);
-                    //     }
-                    //     players = [];
-                    // }
                     if (this.player) {
                         this.player.destroy();
                     }
@@ -557,12 +509,10 @@ class gameStart extends Phaser.Scene {
                     break;
                 case "Disconnect":
                     remoteVideo.style.visibility = 'hidden';
-                    console.log(result);
                     dcPlayer(result.PlayerRef)
                     break
                 case "Movement":
                     //訊息屬性是Movement
-                    // console.log(result);
                     this.setDirection(result);
 
 
@@ -599,18 +549,12 @@ class gameStart extends Phaser.Scene {
                     isQueue = true;
                     break
                 case "Peer":
-                    // console.log(result.candidate);
                     result.description = JSON.parse(result.description);
                     result.candidate = JSON.parse(result.candidate);
                     MatchPlayer(result);
                     break
             }
         })
-
-        // new KeyPressListener("ArrowUp", () => handleArrowPress(0, -1))
-        // new KeyPressListener("ArrowDown", () => handleArrowPress(0, 1))
-        // new KeyPressListener("ArrowLeft", () => handleArrowPress(-1, 0))
-        // new KeyPressListener("ArrowRight", () => handleArrowPress(1, 0))
 
         //關閉連線時
         vWebSocket.addEventListener("close", (e) => {
@@ -658,28 +602,14 @@ class gameStart extends Phaser.Scene {
         //創建粉紅熊熊NPC
         this.Npc01 = this.physics.add.sprite(9728, 6912, 'Npc01Stand');
         this.Npc01.anims.play('Npc01Stand_anim', true);
-        // this.Npc01.setCollideWorldBounds(true);
         this.Npc01.setScale(0.5);
         this.Npc01.setSize(128, 128);
 
 
         cursors = this.input.keyboard.createCursorKeys();
-
-
-
-        // Houselayer.setCollisionByProperty({ collides: true });
-
-        // Houselayer.setCollisionBetween(705, 871);
-
-        // this.physics.world.addCollider(this.player, Houselayer);
-        // this.physics.world.addCollider(this.Npc01, Houselayer);
-        // this.physics.world.addCollider(this.Npc01, this.player);
-
-
     }
     update() {
         if (this.player != null) {
-            // console.log(this.player.x - 32, this.player.y - 32)
             this.player.setVelocityY(0);
             this.player.setVelocityX(0);
             this.Npc01.setVelocityY(0);
@@ -690,28 +620,7 @@ class gameStart extends Phaser.Scene {
             var keyA = this.input.keyboard.addKey('A');
             var keyD = this.input.keyboard.addKey('D');
 
-
-
-            // function handleArrowPress(xChange = 0, yChange = 0) {
-            //     const newX = playerRef.x + xChange;
-            //     const newY = playerRef.y + yChange;
-            //     if (!isSolid(newX, newY)) {
-            //         playerRef.x = newX;
-            //         playerRef.y = newY;
-            //         if (xChange === 1) {
-            //             playerRef.direction = "right";
-            //         }
-            //         if (xChange === -1) {
-            //             playerRef.direction = "left";
-            //         }
-            //         sendDirection();
-            //     }
-            // }
-
-
             if (cursors.up.isDown) {
-                // this.player.y -= 4;
-
                 this.handleArrowPress(0, -1);
                 if (this.player.anims.currentAnim !== this.anims.get('walk_anim')) {
                     this.player.anims.play('walk_anim');
@@ -719,7 +628,6 @@ class gameStart extends Phaser.Scene {
                 this.cameras.main.scrollY -= 4;
             }
             else if (cursors.down.isDown) {
-                // this.player.y += 4;
                 this.handleArrowPress(0, 1);
                 if (this.player.anims.currentAnim !== this.anims.get('walk_anim')) {
                     this.player.anims.play('walk_anim');
@@ -727,7 +635,6 @@ class gameStart extends Phaser.Scene {
                 this.cameras.main.scrollY += 4;
             }
             else if (cursors.left.isDown) {
-                // this.player.x -= 4;
                 this.handleArrowPress(-1, 0);
                 if (this.player.anims.currentAnim !== this.anims.get('walk_anim')) {
                     this.player.anims.play('walk_anim');
@@ -736,7 +643,6 @@ class gameStart extends Phaser.Scene {
                 this.player.flipX = true;
             }
             else if (cursors.right.isDown) {
-                // this.player.x += 4;
                 this.handleArrowPress(1, 0);
                 if (this.player.anims.currentAnim !== this.anims.get('walk_anim')) {
                     this.player.anims.play('walk_anim');
@@ -752,14 +658,12 @@ class gameStart extends Phaser.Scene {
 
 
             if (keyW.isDown) {
-                // this.Npc01.y -= 4;
                 this.Npc01.setVelocityY(-800);
                 if (this.Npc01.anims.currentAnim !== this.anims.get('Npc01Walk_anim')) {
                     this.Npc01.anims.play('Npc01Walk_anim');
                 }
             }
             else if (keyS.isDown) {
-                // this.Npc01.y += 4;
                 this.Npc01.setVelocityY(+400);
 
                 if (this.Npc01.anims.currentAnim !== this.anims.get('Npc01Walk_anim')) {
@@ -767,7 +671,6 @@ class gameStart extends Phaser.Scene {
                 }
             }
             else if (keyA.isDown) {
-                // this.Npc01.x -= 4;
                 this.Npc01.setVelocityX(-400);
 
                 if (this.Npc01.anims.currentAnim !== this.anims.get('Npc01Walk_anim')) {
@@ -776,7 +679,6 @@ class gameStart extends Phaser.Scene {
                 this.Npc01.flipX = true;
             }
             else if (keyD.isDown) {
-                // this.Npc01.x += 4;
                 this.Npc01.setVelocityX(+400);
 
                 if (this.Npc01.anims.currentAnim !== this.anims.get('Npc01Walk_anim')) {
@@ -787,10 +689,7 @@ class gameStart extends Phaser.Scene {
             else {
                 this.Npc01.anims.play('Npc01Stand_anim', true);
             }
-            // console.log(" this.player.x: ");
-            // console.log(this.player.x);
-            // console.log("this.player.y: ");
-            // console.log(this.player.y);
+
         }
 
 
@@ -801,23 +700,6 @@ class gameStart extends Phaser.Scene {
         this.debug.cameraInfo(this.cameras.main, 32, 32);
     }
 }
-
-//吊橋
-// this.player = this.physics.add.sprite(4576, 6816, 'stand');
-
-//雪地
-// this.player = this.physics.add.sprite(5248, 11520, 'stand');
-
-
-//商店街
-// this.player = this.physics.add.sprite(4576, 2496, 'stand');
-
-//群島
-// this.player = this.physics.add.sprite(9568, 2400, 'stand');
-
-//出生點
-// this.player = this.physics.add.sprite(9728,6912,'stand');
-
 function teleport(target) {
     var points = {
         start: { x: 9728, y: 6912 },

@@ -75,7 +75,7 @@ namespace ChickenLife.Controllers
                 {
                     //如果收到了完整的消息，則解析JSON對象
                     var message = Encoding.UTF8.GetString(receiveBuffer.ToArray());
-                    // Console.WriteLine(message);
+                    //Console.WriteLine(message);
                     var jsontemp = JObject.Parse(message);
                     var type = jsontemp.Value<string>("type");
                     //處理JSON對象
@@ -100,8 +100,8 @@ namespace ChickenLife.Controllers
                             maps.MapDirectory[publicMap].client[webSocket].name = "Test"; //姓名
                             maps.MapDirectory[publicMap].client[webSocket].direction = "right"; //角色方向
                             maps.MapDirectory[publicMap].client[webSocket].color = randomFromArray(playerColors); //角色顏色or外觀
-                            maps.MapDirectory[publicMap].client[webSocket].x = 1; //x
-                            maps.MapDirectory[publicMap].client[webSocket].y = 4; //y
+                            maps.MapDirectory[publicMap].client[webSocket].x = 9728; //x
+                            maps.MapDirectory[publicMap].client[webSocket].y = 6912; //y
 
                             //Connect並傳送人物初始數據
                             Console.WriteLine(maps.MapDirectory[publicMap].client[webSocket].name + " Has Connected");
@@ -132,14 +132,14 @@ namespace ChickenLife.Controllers
                                 break;
                             }
                             id = jsontemp.Value<string>("mapid");
-                            MovementDTO temp = new MovementDTO();
-                            temp = dataMovement;
-                            maps.MapDirectory[id].client[webSocket].direction = temp.data.direction;
-                            maps.MapDirectory[id].client[webSocket].x = temp.data.x;
-                            maps.MapDirectory[id].client[webSocket].y = temp.data.y;
-                            temp.data.id = maps.MapDirectory[id].client[webSocket].id;
-                            temp.data.type = "Movement";
-                            var movementJson = JsonSerializer.Serialize(temp.data);
+                            MovementDTO _temp = new MovementDTO();
+                            _temp = dataMovement;
+                            maps.MapDirectory[id].client[webSocket].direction = _temp.data.direction;
+                            maps.MapDirectory[id].client[webSocket].x = _temp.data.x;
+                            maps.MapDirectory[id].client[webSocket].y = _temp.data.y;
+							_temp.data.id = maps.MapDirectory[id].client[webSocket].id;
+							_temp.data.type = "Movement";
+                            var movementJson = JsonSerializer.Serialize(_temp.data);
                             buffer = Encoding.UTF8.GetBytes(movementJson);
                             SendToAll(buffer, id);
                             break;
@@ -167,7 +167,8 @@ namespace ChickenLife.Controllers
                                     KeyValuePair<WebSocket, PlayerRef> femaletemp = queue_F.Queue.First();
                                     queue_M.Queue.RemoveAt(0);
                                     queue_F.Queue.RemoveAt(0);
-                                    maps.MapDirectory[PrivateMapid].client.Add(maletemp.Key, new PlayerRef()
+
+                                    PlayerRef malevalue = new PlayerRef()
                                     {
                                         type = maletemp.Value.type,
                                         id = maletemp.Value.id,
@@ -177,8 +178,9 @@ namespace ChickenLife.Controllers
                                         gender = maletemp.Value.gender,
                                         x = 8795,
                                         y = 10810,
-                                    });
-                                    maps.MapDirectory[PrivateMapid].client.Add(femaletemp.Key, new PlayerRef()
+                                    };
+
+                                    PlayerRef femalevalue = new PlayerRef()
                                     {
                                         type = femaletemp.Value.type,
                                         id = femaletemp.Value.id,
@@ -187,9 +189,23 @@ namespace ChickenLife.Controllers
                                         color = femaletemp.Value.color,
                                         gender = femaletemp.Value.gender,
                                         x = 8735,
-                                        y = 10810,
-                                    });
-                                    MapDirectoriesDTO pairtemp = new MapDirectoriesDTO() { type = "Match", id = PrivateMapid, Src = maps.MapDirectory[publicMap].Src, MinX = maps.MapDirectory[publicMap].MinX, MinY = maps.MapDirectory[publicMap].MinY, MaxX = maps.MapDirectory[publicMap].MaxX, MaxY = maps.MapDirectory[publicMap].MaxY, BlockedSpaces = maps.MapDirectory[publicMap].BlockedSpaces, client = new List<PlayerRef>() { maletemp.Value, femaletemp.Value } };
+                                        y = 10810
+                                    };
+
+									maps.MapDirectory[PrivateMapid].client.Add(maletemp.Key, malevalue);
+                                    maps.MapDirectory[PrivateMapid].client.Add(femaletemp.Key, femalevalue);
+                                    MapDirectoriesDTO pairtemp = new MapDirectoriesDTO()
+                                    {
+                                        type = "Match",
+                                        id = PrivateMapid,
+                                        Src = maps.MapDirectory[publicMap].Src,
+                                        MinX = maps.MapDirectory[publicMap].MinX,
+                                        MinY = maps.MapDirectory[publicMap].MinY,
+                                        MaxX = maps.MapDirectory[publicMap].MaxX,
+                                        MaxY = maps.MapDirectory[publicMap].MaxY,
+                                        BlockedSpaces = maps.MapDirectory[publicMap].BlockedSpaces,
+                                        client = new List<PlayerRef>() { malevalue, femalevalue }
+                                    };
                                     var matchJson = JsonSerializer.Serialize(pairtemp);
                                     buffer = Encoding.UTF8.GetBytes(matchJson);
                                     SendToPeer(buffer, maletemp.Key, femaletemp.Key);
@@ -235,7 +251,29 @@ namespace ChickenLife.Controllers
                                     KeyValuePair<WebSocket, PlayerRef> femaletemp = queue_F.Queue.First();
                                     queue_M.Queue.RemoveAt(0);
                                     queue_F.Queue.RemoveAt(0);
-                                    string PrivateMapid = webSocket.ToString();
+									PlayerRef malevalue = new PlayerRef()
+									{
+										type = maletemp.Value.type,
+										id = maletemp.Value.id,
+										name = maletemp.Value.name,
+										direction = maletemp.Value.direction,
+										color = maletemp.Value.color,
+										gender = maletemp.Value.gender,
+										x = 8795,
+										y = 10810,
+									};
+									PlayerRef femalevalue = new PlayerRef()
+									{
+										type = femaletemp.Value.type,
+										id = femaletemp.Value.id,
+										name = femaletemp.Value.name,
+										direction = femaletemp.Value.direction,
+										color = femaletemp.Value.color,
+										gender = femaletemp.Value.gender,
+										x = 8735,
+										y = 10810
+									};
+									string PrivateMapid = webSocket.ToString();
                                     maps.MapDirectory.Add(PrivateMapid, new MapDirectories()
                                     {
                                         id = "小房間",
@@ -247,31 +285,13 @@ namespace ChickenLife.Controllers
                                         BlockedSpaces = new List<BlockedSpaces>() { new BlockedSpaces { x = 7, y = 4 }, new BlockedSpaces { x = 1, y = 11 }, new BlockedSpaces { x = 12, y = 10 }, new BlockedSpaces { x = 4, y = 7 }, new BlockedSpaces { x = 5, y = 7 }, new BlockedSpaces { x = 6, y = 7 }, new BlockedSpaces { x = 8, y = 6 }, new BlockedSpaces { x = 9, y = 6 }, new BlockedSpaces { x = 10, y = 6 }, new BlockedSpaces { x = 7, y = 9 }, new BlockedSpaces { x = 10, y = 6 }, new BlockedSpaces { x = 7, y = 9 }, new BlockedSpaces { x = 8, y = 9 }, new BlockedSpaces { x = 9, y = 9 } },
                                     }
                                     );
-                                    maps.MapDirectory[PrivateMapid].client.Add(maletemp.Key, new PlayerRef()
-                                    {
-                                        type = maletemp.Value.type,
-                                        id = maletemp.Value.id,
-                                        name = maletemp.Value.name,
-                                        direction = maletemp.Value.direction,
-                                        color = maletemp.Value.color,
-                                        gender = maletemp.Value.gender,
-                                        x = 8795,
-                                        y = 10810,
-                                    });
-                                    maps.MapDirectory[PrivateMapid].client.Add(femaletemp.Key, new PlayerRef()
-                                    {
-                                        type = femaletemp.Value.type,
-                                        id = femaletemp.Value.id,
-                                        name = femaletemp.Value.name,
-                                        direction = femaletemp.Value.direction,
-                                        color = femaletemp.Value.color,
-                                        gender = femaletemp.Value.gender,
-                                        x = 8735,
-                                        y = 10810,
-                                    });
+
+                                    maps.MapDirectory[PrivateMapid].client.Add(maletemp.Key, malevalue);
+                                    maps.MapDirectory[PrivateMapid].client.Add(femaletemp.Key, femalevalue);
 
 
-                                    MapDirectoriesDTO pairtemp = new MapDirectoriesDTO() { type = "Match", id = PrivateMapid, Src = maps.MapDirectory[publicMap].Src, MinX = maps.MapDirectory[publicMap].MinX, MinY = maps.MapDirectory[publicMap].MinY, MaxX = maps.MapDirectory[publicMap].MaxX, MaxY = maps.MapDirectory[publicMap].MaxY, BlockedSpaces = maps.MapDirectory[publicMap].BlockedSpaces, client = new List<PlayerRef>() { maletemp.Value, femaletemp.Value } };
+
+                                    MapDirectoriesDTO pairtemp = new MapDirectoriesDTO() { type = "Match", id = PrivateMapid, Src = maps.MapDirectory[publicMap].Src, MinX = maps.MapDirectory[publicMap].MinX, MinY = maps.MapDirectory[publicMap].MinY, MaxX = maps.MapDirectory[publicMap].MaxX, MaxY = maps.MapDirectory[publicMap].MaxY, BlockedSpaces = maps.MapDirectory[publicMap].BlockedSpaces, client = new List<PlayerRef>() { malevalue, femalevalue } };
                                     var matchJson = JsonSerializer.Serialize(pairtemp);
                                     buffer = Encoding.UTF8.GetBytes(matchJson);
                                     SendToPeer(buffer, maletemp.Key, femaletemp.Key);
@@ -344,8 +364,17 @@ namespace ChickenLife.Controllers
                             var Load = Encoding.UTF8.GetBytes(Loadtemp);
                             await webSocket.SendAsync(new ArraySegment<byte>(Load), WebSocketMessageType.Text, true, CancellationToken.None);
 
-
-                            maps.MapDirectory[publicMap].client.Add(webSocket, maps.MapDirectory[id].client[webSocket]);
+                            PlayerRef leaveplayer = new PlayerRef() {
+                                type = maps.MapDirectory[id].client[webSocket].type,
+								id = maps.MapDirectory[id].client[webSocket].id,
+                                name = maps.MapDirectory[id].client[webSocket].name,
+                                direction = maps.MapDirectory[id].client[webSocket].direction,
+                                color = maps.MapDirectory[id].client[webSocket].color,
+								gender = maps.MapDirectory[id].client[webSocket].gender,
+								x = 9728,
+                                y = 6912
+							};
+                            maps.MapDirectory[publicMap].client.Add(webSocket, leaveplayer);
                             maps.MapDirectory[id].client.Remove(webSocket);
 
                             maps.MapDirectory[publicMap].client[webSocket].type = "Connect";

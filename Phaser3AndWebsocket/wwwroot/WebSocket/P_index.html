@@ -16,15 +16,13 @@
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- index的css引用 -->
-  <link rel="stylesheet" href="/wwwroot/WebSocket/styles.css">
-  <link rel="stylesheet" href="/wwwroot/css/index.css">
-  <link rel="stylesheet" href="/wwwroot/css/phaser_gamemode.css">
-  <link rel="stylesheet" href="/wwwroot/WebSocket/dialogue.css">
-
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/phaser_gamemode.css">
+  <link rel="stylesheet" href="dialogue.css">
 </head>
 
 <body>
-
   <header class="border-bottom">
     <div class="container">
       <div class="div-nav d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -156,40 +154,9 @@
       <button id="dialog-send-btn">發送</button>
     </div>
   </div>
-
-  <!-- bootstrap5的js引用 -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-    crossorigin="anonymous"></script>
-  <!-- Phaser3引用 -->
-  <!-- <script src="/lib/phaser.min.js"></script> -->
-  <!-- <script src="//cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.js"></script> -->
-  <script src="/wwwroot/lib/phaser.js"></script>
-  <script src="/wwwroot/lib/phaser-arcade-physics.js"></script>
-  <!-- phaser初始場景的js -->
-  <!-- <script src="/js/phaser_gamemdoe.js" type="module"></script> -->
-  <!-- phaser3C場景的js -->
-  <!-- <script src="/js/phaser_scence_3C.JS" type="module"></script> -->
-
-  <!-- <script src="/wwwroot/js/testAgain.js"></script> -->
-  <script src="/wwwroot/js/back.js" type="module"></script>
-  <!-- <script src="/tiled/scaleTiled.png"></script> -->
-  <script src="/wwwroot/WebSocket/dialogue.js"> </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../lib/phaser.js"></script>
+  <script src="../lib/phaser-arcade-physics.js"></script>
+  <script src="../js/back.js" type="module"></script>
+  <script src="dialogue.js"> </script>
 </body>
-
-
-<!-- //吊橋
-// this.player = this.physics.add.sprite(6144, 9376, 'stand');
-
-//雪地
-// this.player = this.physics.add.sprite(6592, 14592, 'stand');
-
-
-//商店街
-// this.player = this.physics.add.sprite(6080, 3296, 'stand');
-
-//群島
-// this.player = this.physics.add.sprite(12736, 3296, 'stand');
-
-//出生點
-this.player = this.physics.add.sprite(13152, 9216, 'stand'); -->
