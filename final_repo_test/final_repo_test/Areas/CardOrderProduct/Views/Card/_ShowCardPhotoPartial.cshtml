@@ -2,12 +2,14 @@
 
 @if (Model.CA_Image != null)
 {
-    <img class="img-fluid" src="@Url.Content($"~/img/producttest/{Model.CA_Image}")"
+    <img class="img-fluid" src="@Url.Content(Model.CA_Image)"
          title="@Html.DisplayFor(model=>model.CA_Name)" />
+    @*<img class="img-fluid" src="@Url.Content($"~/img/producttest/{Model.CA_Image}")"
+         title="@Html.DisplayFor(model=>model.CA_Name)" />*@
 }
 else
 {
-    <img class="img-fluid" src="@Url.Content("~/img/producttest/No_Image_Available.jpg")"
+    <img class="img-fluid" src="@Url.Content("https://res.cloudinary.com/dolqf5dmn/image/upload/v1684857337/No_Image_Available_upbegy.jpg")"
          title="尚無圖片" />
 
 }

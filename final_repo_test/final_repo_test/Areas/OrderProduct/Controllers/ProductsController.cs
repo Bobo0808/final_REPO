@@ -246,6 +246,14 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
             {
                 return NotFound();
             }
+
+            var productTypes = Enum.GetValues(typeof(ProductType))
+                                    .Cast<ProductType>()
+                                    .Select(t => new { Value = (int)t, Text = t.ToString() })
+                                    .ToList();
+
+            ViewBag.P_ProductType = new SelectList(productTypes, "Value", "Text");
+
             return View("~/Areas/OrderProduct/Views/Products/Edit.cshtml", product);
         }
 

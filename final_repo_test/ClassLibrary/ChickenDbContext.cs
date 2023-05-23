@@ -651,10 +651,10 @@ namespace ClassLibrary
                                new Card()
                                {
                                    CA_ID = 1,
-                                   CA_Name = "100元換200點",
+                                   CA_Name = "100元換150點",
                                    CA_Price = 100,
-                                   CA_Image = "點數.png",
-                                   CA_Describe = "100元換200點",
+                                   CA_Image = "https://res.cloudinary.com/dolqf5dmn/image/upload/v1684856122/%E9%BB%9E%E6%95%B8_lihgyo.png",
+                                   CA_Describe = "100元換150點",
                                    CA_Date = DateTime.Now,
                                    CA_Discontinuted = false,
                                },
@@ -663,7 +663,7 @@ namespace ClassLibrary
                                    CA_ID = 2,
                                    CA_Name = "200元換350點",
                                    CA_Price = 200,
-                                   CA_Image = "點數.png",
+                                   CA_Image = "https://res.cloudinary.com/dolqf5dmn/image/upload/v1684856122/%E9%BB%9E%E6%95%B8_lihgyo.png",
                                    CA_Describe = "200元換350點",
                                    CA_Date = DateTime.Now,
                                    CA_Discontinuted = false,
@@ -671,20 +671,20 @@ namespace ClassLibrary
                                new Card()
                                {
                                    CA_ID = 3,
-                                   CA_Name = "400元換600點",
-                                   CA_Price = 200,
-                                   CA_Image = "點數.png",
-                                   CA_Describe = "200元換350點",
+                                   CA_Name = "400元換650點",
+                                   CA_Price = 400,
+                                   CA_Image = "https://res.cloudinary.com/dolqf5dmn/image/upload/v1684856122/%E9%BB%9E%E6%95%B8_lihgyo.png",
+                                   CA_Describe = "400元換650點",
                                    CA_Date = DateTime.Now,
                                    CA_Discontinuted = false,
                                },
                                new Card()
                                {
                                    CA_ID = 4,
-                                   CA_Name = "500元換750點",
-                                   CA_Price = 200,
-                                   CA_Image = "點數.png",
-                                   CA_Describe = "200元換350點",
+                                   CA_Name = "500元換800點",
+                                   CA_Price = 500,
+                                   CA_Image = "https://res.cloudinary.com/dolqf5dmn/image/upload/v1684856122/%E9%BB%9E%E6%95%B8_lihgyo.png",
+                                   CA_Describe = "500元換800點",
                                    CA_Date = DateTime.Now,
                                    CA_Discontinuted = false,
                                });
@@ -1175,7 +1175,7 @@ namespace ClassLibrary
             };
 
             int j = 5;
-            for (int i = 3; i < 14; i++)
+            for (int i = 5; i < 14; i++)
             {
                 Random rnd = new Random();
                 modelBuilder.Entity<Order>().HasData(
@@ -1184,7 +1184,7 @@ namespace ClassLibrary
                         O_ID = i,
                         A_ID = rnd.Next(1, 10),
                         O_Date = DateTime.Now,
-                        O_TotalPrice = 699,
+                        O_TotalPrice = 700,
                         O_Cancle = false,
                     });
                 modelBuilder.Entity<OrderDetail>().HasData(
