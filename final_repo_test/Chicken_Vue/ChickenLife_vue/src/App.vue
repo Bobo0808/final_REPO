@@ -6,8 +6,8 @@ import Modal from './components/Shop/Modal.vue'
 import { fuck, playerRefs } from "./main.js";
 import profilePic from './img/625157.jpg';
 // import './js/dialogue';
-
-
+import Account from "./components/Account.vue"
+const currentBody = ref(Account);
 
 const isSussess = ref(false);
 onMounted(() => {
@@ -32,17 +32,14 @@ const getAccountDTOes = () => {
 // 顯示遊戲介面
 const Change = () => {
     if (playerRefs.value.isPlay == false) {
+        currentBody.value = Phaser
         playerRefs.value.isPlay = true;
     } else {
         playerRefs.value.isPlay = false;
+        currentBody.value = Account;
     }
-    // playerRefs.value.isPlay = true;
-    // console.log("playerRefs.value.isPlay=>", playerRefs.value.isPlay)
 }
 const isss = playerRefs.value.isPlay;
-// console.log("isss=>", isss)
-
-//dialogue.js
 const showDialog = ref(true);
 
 const showDialogBool = () => {
@@ -188,8 +185,11 @@ const handleKeyPress = (event) => {
                     <video width="500" height="500" autoplay id="remoteVideo" playsinline style="z-index: 999;"></video>
                 </div>
                 <div class="game-container"></div>
-                <Phaser />
-                <!-- <div class="phaser_gamearea " id="gameArea"></div> -->
+
+
+                <div class="phaser_gamearea " id="gameArea">
+                    <component :is="currentBody"></component>
+                </div>
             </div>
         </div>
         <div id="dialog-box" :style="{ display: showDialog ? 'flex' : 'none' }">
