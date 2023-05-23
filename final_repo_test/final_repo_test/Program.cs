@@ -6,6 +6,8 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using ClassLibrary;
 using Microsoft.Extensions.Options;
+using final_repo_test.Helpers;
+using final_repo_test.Services;
 
 
 //Debugger.Launch();
@@ -34,6 +36,11 @@ builder.Services.AddDbContext<ChickenDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),x=>x.MigrationsAssembly("final_repo_test"));
 });
+
+
+// 添加 Cloudinary 相關的服務
+builder.Services.AddScoped<IPhotoService, PhotoService>();
+builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("CloudinarySettings"));
 
 var app = builder.Build();
 if (args.Length == 1 && args[0].ToLower() == "seeddata")
