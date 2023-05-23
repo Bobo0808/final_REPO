@@ -16,6 +16,12 @@ let mapData = {};
 let isQueue = false;
 let polite;
 var layer_collision = "";
+var musicStart;
+var musicSnow;
+var musicStore;
+var musicBridge;
+var musicIsland;
+var musicLilRoom;
 const gameContainer = document.querySelector(".game-container");
 const myVideo = document.getElementById("myVideo");
 const remoteVideo = document.getElementById("remoteVideo");
@@ -269,8 +275,9 @@ class gameStart extends Phaser.Scene {
             this.player.setSize(128, 128);
             this.player.setDepth(1);
             this.cameras.main.startFollow(this.player);
+            this.checkMusicOverlap();
 
-            this.physics.world.addCollider(this.player, layer_collision);
+            // this.physics.world.addCollider(this.player, layer_collision);
         }
         players[data.id] = {
             id: data.id,
@@ -360,16 +367,48 @@ class gameStart extends Phaser.Scene {
 
         this.sendDirection();
     }
+    checkMusicOverlap() {
+
+        this.physics.overlap(this.player, this.musicObjects, (player, musicObject) => {
+            console.log("musicObjects");
+            console.log(this.musicObjects);
+            const musicKey = getMusicKey(musicObject);
+            if (musicKey !== currentMusicKey) {
+                stopCurrentMusic();
+                currentMusicKey = musicKey;
+            }
+            switch (musicKey) {
+                case 'musicStart':
+                    musicStart.play();
+                    break;
+                case 'musicSnow':
+                    musicSnow.play();
+                    break;
+                case 'musicStore':
+                    musicStore.play();
+                    break;
+                case 'musicBridge':
+                    musicBridge.play();
+                    break;
+                case 'musicIsland':
+                    musicIsland.play();
+                    break;
+                case 'musicLilRoom':
+                    musicLilRoom.play();
+                    break;
+            }
+        }, null, this);
+
+    }
     preload() {
         this.load.image("tiles", "../tiled/mapani.png");
-        console.log(mapData.id);
-        if (mapData.id === 'PubMap') {
-            this.load.tilemapTiledJSON('map', '../tiled/HELPME.json');
-        }
-        else {
-            console.log('MapJsonStillWrong');
-            this.load.tilemapTiledJSON('map', '../tiled/HELPME.json');
-        }
+        this.load.tilemapTiledJSON('map', '../tiled/HELPME.json');
+        this.load.audio('musicStart', '../music/Nurtured_in_Contemplation.mp3');
+        this.load.audio('musicSnow', '../music/wind.mp3');
+        this.load.audio('musicStore', '../music/froestSunWater.mp3');
+        this.load.audio('musicBridge', '../music/water.mp3');
+        this.load.audio('musicIsland', '../music/lollipop.mp3');
+        this.load.audio('musicLilRoom', '../music/mirror.mp3');
         this.load.spritesheet('stand', '../img/phaser/Sprite_stand.png', {
             frameWidth: 128, frameHeight: 128
         });
@@ -420,6 +459,17 @@ class gameStart extends Phaser.Scene {
         const layer_04 = map.createLayer("04", tileset, 0, 0);
         const layer_Detph1 = map.createLayer("Detph1", tileset, 0, 0);
         const layer_Detph2 = map.createLayer("Detph2", tileset, 0, 0);
+        const ObjectLayer_music = map.getObjectLayer("music");
+        const musicObjects = ObjectLayer_music.objects;
+        musicStart = this.sound.add('musicStart');
+        musicSnow = this.sound.add('musicSnow');
+        musicStore = this.sound.add('musicStore');
+        musicBridge = this.sound.add('musicBridge');
+        musicIsland = this.sound.add('musicIsland');
+        musicLilRoom = this.sound.add('musicLilRoom');
+        // musicStart.play();
+
+
         layer_collision = map.createLayer("collision", tileset, 0, 0);
         layer_sea.setScale(1.5);
         layer_island.setScale(1.5);
@@ -557,7 +607,7 @@ class gameStart extends Phaser.Scene {
         })
 
         //關閉連線時
-        vWebSocket.addEventListener("close", (e) => {
+        vWebSocket.addEventListener("close", (_e) => {
             IDempty = true;
             console.log("connection closed");
         });
@@ -581,6 +631,59 @@ class gameStart extends Phaser.Scene {
         var teleportlife = document.getElementById('lifepoint');
         teleportlife.addEventListener('click', function () { teleport.call(this, 'life'); }.bind(this));
 
+
+        function getMusicKey(musicObject) {
+            console.log("musicObject");
+            console.log(musicObject);
+            if (musicObject.properties.music_start) {
+                currentMusicKey = 'music_start';
+                return 'music_start';
+            } else if (musicObject.properties.music_snow) {
+                currentMusicKey = 'music_snow';
+                return 'music_snow';
+            }
+            else if (musicObject.properties.music_store) {
+                currentMusicKey = 'music_store';
+                return 'music_store';
+            }
+            else if (musicObject.properties.music_bridge) {
+                currentMusicKey = 'music_bridge';
+                return 'music_bridge';
+            }
+            else if (musicObject.properties.music_island) {
+                currentMusicKey = 'music_island';
+                return 'music_island';
+            }
+            else if (musicObject.properties.music_lilroom) {
+                currentMusicKey = 'music_lilroom';
+                return 'music_lilroom';
+            }
+            return '';
+        }
+        function stopCurrentMusic() {
+
+            switch (currentMusicKey) {
+                case 'music_start':
+                    musicStart.stop();
+                    break;
+                case 'music_snow':
+                    musicSnow.stop();
+                    break;
+                case 'music_store':
+                    musicStore.stop();
+                    break;
+                case 'music_bridge':
+                    musicBridge.stop();
+                    break;
+                case 'music_island':
+                    musicIsland.stop();
+                    break;
+                case 'music_lilroom':
+                    musicLilRoom.stop();
+                    break;
+
+            }
+        }
 
         //吊橋
         // this.player = this.physics.add.sprite(4576, 6816, 'stand');
