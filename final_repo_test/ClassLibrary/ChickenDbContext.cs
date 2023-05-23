@@ -674,7 +674,7 @@ namespace ClassLibrary
                    {
                        P_ID = 1,
                        P_Name = "反摺袖襯衫",
-                       P_ProductType = ProductType.休閒風格,
+                       P_ProductType = ProductType.東方,
                        P_Price = 699,
                        P_Image = "1.jpg",
                        P_Describe = "Regular Fit反摺袖襯衫",
@@ -687,7 +687,7 @@ namespace ClassLibrary
                    {
                        P_ID = 2,
                        P_Name = "短袖襯衫",
-                       P_ProductType = ProductType.文青風格,
+                       P_ProductType = ProductType.其他,
                        P_Price = 499,
                        P_Image = "2.jpg",
                        P_Describe = "Regular Fit棉麻短袖襯衫",
