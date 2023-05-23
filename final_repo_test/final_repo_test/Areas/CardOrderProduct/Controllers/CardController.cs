@@ -1,5 +1,6 @@
 ﻿using ClassLibrary;
 using ClassLibrary.Models;
+using final_repo_test.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,11 +11,14 @@ namespace final_repo_test.Areas.CardOrderProduct.Controllers
     {
         public readonly ChickenDbContext _context;
         private readonly IWebHostEnvironment _env;
+        //圖片設定
+        private readonly IPhotoService _photoService;
 
-        public CardController(ChickenDbContext context, IWebHostEnvironment env)
+        public CardController(ChickenDbContext context, IWebHostEnvironment env, IPhotoService photoService)
         {
             _context = context;
             _env = env;
+            _photoService = photoService;
         }
 
         public async Task<IActionResult> Index(int id = 1)
@@ -165,12 +169,14 @@ namespace final_repo_test.Areas.CardOrderProduct.Controllers
             //{
             if (file1 != null)
             {
-                string PictureName = UploadFile(file1);
+                //string PictureName = UploadFile(file1);
+                var result = await _photoService.AddPhotoAsync(file1);
+                string PictureName = result.Url.ToString();
                 product.CA_Image = PictureName;
             }
             else
             {
-                product.CA_Image = "No_Image_Available.jpg";
+                product.CA_Image = "https://res.cloudinary.com/dolqf5dmn/image/upload/v1684857337/No_Image_Available_upbegy.jpg";
             }
             //SetPicture(product);
             _context.Add(product);
@@ -213,7 +219,9 @@ namespace final_repo_test.Areas.CardOrderProduct.Controllers
 
                 if (file1 != null)
                 {
-                    string PictureName = UploadFile(file1);
+                    //string PictureName = UploadFile(file1);
+                    var result = await _photoService.AddPhotoAsync(file1);
+                    string PictureName = result.Url.ToString();
                     product.CA_Image = PictureName;
                     _context.Update(product);
                 }
