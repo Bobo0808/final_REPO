@@ -7,19 +7,29 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ClassLibrary;
+using ClassLibrary.Enum;
+using CloudinaryDotNet.Actions;
+using CloudinaryDotNet;
+using ClassLibrary.ViewModels;
+using final_repo_test.Interfaces;
 
 namespace final_repo_test.Areas.OrderProduct.Controllers
 {
     [Area(areaName: "OrderProduct")]
     public class ProductsController : Controller
     {
-        
+
         public readonly ChickenDbContext _context;
         private readonly IWebHostEnvironment _env;
-        public ProductsController(ChickenDbContext context, IWebHostEnvironment env)
+        //圖片設定
+        private readonly IPhotoService _photoService;
+
+
+        public ProductsController(ChickenDbContext context, IWebHostEnvironment env, IPhotoService photoService)
         {
             _context = context;
             _env = env;
+            _photoService = photoService;
         }
         public async Task<IActionResult> Index(int id = 1)
         {
@@ -153,21 +163,61 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
+            //ViewData["A_ID"] = new SelectList(_context.Accounts, "A_ID", "A_Name");
+            //ViewData["P_ProductType"] = new SelectList(Enum.GetValues(typeof(ProductType))
+            //                                .Cast<ProductType>()
+            //ViewData["A_ID"] = Enum.GetValues(typeof(ProductType))
+            //                        .Cast<ProductType>()
+            //                        .Select(t => new { Value = (int)t, Text = t.ToString() })
+            //                        .ToList();
+
+            var productTypes = Enum.GetValues(typeof(ProductType))
+                                    .Cast<ProductType>()
+                                    .Select(t => new { Value = (int)t, Text = t.ToString() })
+                                    .ToList();
+
+            ViewBag.P_ProductType = new SelectList(productTypes, "Value", "Text");
             return View("~/Areas/OrderProduct/Views/Products/Create.cshtml");
         }
 
         // POST: Products/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Create([Bind("P_ID,P_Name,P_ProductType,P_Price,P_Image,P_Describe,P_Instock,P_Date,P_Discount,P_Discontinuted")] Product product, IFormFile file1)
+        //{
+        //    //if (ModelState.IsValid)
+        //    //{
+        //    if (file1 != null)
+        //    {
+        //        string PictureName = UploadFile(file1);
+        //        product.P_Image = PictureName;
+        //    }
+        //    else
+        //    {
+        //        product.P_Image = "No_Image_Available.jpg";
+        //    }
+        //    //SetPicture(product);
+        //    _context.Add(product);
+        //    await _context.SaveChangesAsync();
+        //    return RedirectToAction(nameof(Index));
+        //    //}
+        //    //return View("~/Areas/OrderProduct/Views/Products/Index.cshtml", product);
+        //}
+
+        //Cloudinary
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("P_ID,P_Name,P_ProductType,P_Price,P_Image,P_Describe,P_Instock,P_Date,P_Discount,P_Discontinuted")] Product product, IFormFile file1)
         {
             //if (ModelState.IsValid)
             //{
+
             if (file1 != null)
             {
-                string PictureName = UploadFile(file1);
+                var result = await _photoService.AddPhotoAsync(file1);
+                string PictureName = result.Url.ToString();
                 product.P_Image = PictureName;
             }
             else
@@ -181,6 +231,8 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
             //}
             //return View("~/Areas/OrderProduct/Views/Products/Index.cshtml", product);
         }
+
+
         // GET: Products/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -214,7 +266,10 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
 
                 if (file1 != null)
                 {
-                    string PictureName = UploadFile(file1);
+                    //string PictureName = UploadFile(file1);
+                    //product.P_Image = PictureName;
+                    var result = await _photoService.AddPhotoAsync(file1);
+                    string PictureName = result.Url.ToString();
                     product.P_Image = PictureName;
                     _context.Update(product);
                 }

@@ -30,7 +30,8 @@
             </div>
             <div class="form-group col-md-6">
                 <label asp-for="P_ProductType" class="control-label gray"></label>
-                <input asp-for="P_ProductType" class="form-control" />
+                <select asp-for="P_ProductType" class="form-control" asp-items="ViewBag.P_ProductType"></select>
+                @*<input asp-for="P_ProductType" class="form-control" />*@
                 <span asp-validation-for="P_ProductType" class="text-danger"></span>
             </div>
             <div class="form-group col-md-6">
