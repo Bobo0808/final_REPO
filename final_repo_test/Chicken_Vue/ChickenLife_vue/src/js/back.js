@@ -573,7 +573,7 @@ class gameStart extends Phaser.Scene {
                     break
                 case "Movement":
                     //訊息屬性是Movement
-                    console.log(result)
+                    // console.log(result)
                     this.setDirection(result);
 
 
@@ -589,6 +589,7 @@ class gameStart extends Phaser.Scene {
                     btnLeave.style.visibility = 'visible';
                     waitingLog.style.visibility = 'hidden';
                     LoadMap(result);
+                    console.log(result);
                     this.player.destroy();
                     cleanAllPlayers();
                     for (let i = 0; i < result.client.length; i++) {

@@ -50,16 +50,7 @@ namespace ChickenLife.Controllers
                 }
                 catch (Exception ex)
                 {
-                    DebugLog debugLogtemp = new DebugLog()
-                    {
-                        A_ID = maps.MapDirectory[publicMap].client[webSocket].id,
-                        D_time = DateTime.Now,
-                        D_event = ex.ToString(),
-                        D_isSolved = false,
-                    };
-                    await _context.AddAsync(debugLogtemp);
-                    await _context.SaveChangesAsync();
-                    throw;
+                    Console.WriteLine(ex.ToString());
                 }
 
             }
@@ -95,8 +86,8 @@ namespace ChickenLife.Controllers
                         case "Connect":
                             try
                             {
-                                PlayerRef player = new PlayerRef();//生成新玩家
                                 idtemp++;
+                                PlayerRef player = new PlayerRef();//生成新玩家
                                 maps.MapDirectory[publicMap].client.Add(webSocket, player);
                                 maps.MapDirectory[publicMap].client[webSocket].type = "Connect";
                                 maps.MapDirectory[publicMap].client[webSocket].id = idtemp;
@@ -134,7 +125,6 @@ namespace ChickenLife.Controllers
                                 };
                                 await _context.AddAsync(debugLogtemp);
                                 await _context.SaveChangesAsync();
-                                throw;
                             }
                             break;
                         case "Chat":
@@ -159,7 +149,6 @@ namespace ChickenLife.Controllers
                                 };
                                 await _context.AddAsync(debugLogtemp);
                                 await _context.SaveChangesAsync();
-                                throw;
                             }
 
                             break;
@@ -194,7 +183,7 @@ namespace ChickenLife.Controllers
                                 };
                                 await _context.AddAsync(debugLogtemp);
                                 await _context.SaveChangesAsync();
-                                throw;
+                                //throw;
                             }
 
 
@@ -398,7 +387,6 @@ namespace ChickenLife.Controllers
                                 };
                                 await _context.AddAsync(debugLogtemp);
                                 await _context.SaveChangesAsync();
-                                throw;
                             }
 
                             break;
@@ -442,7 +430,6 @@ namespace ChickenLife.Controllers
                                 };
                                 await _context.AddAsync(debugLogtemp);
                                 await _context.SaveChangesAsync();
-                                throw;
                             }
 
                             break;
@@ -498,7 +485,6 @@ namespace ChickenLife.Controllers
                                 };
                                 await _context.AddAsync(debugLogtemp);
                                 await _context.SaveChangesAsync();
-                                throw;
                             }
                             break;
                     }
@@ -567,7 +553,6 @@ namespace ChickenLife.Controllers
                 };
                 await _context.AddAsync(debugLogtemp);
                 await _context.SaveChangesAsync();
-                throw;
             }
 
         }
