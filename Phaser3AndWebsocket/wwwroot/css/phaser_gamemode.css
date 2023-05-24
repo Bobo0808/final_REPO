@@ -2,3 +2,229 @@
     width: 100%;
     height: 100%;
 }
+
+#fixBtnDiv {
+    position: absolute;
+    top: 80px;
+    left: 300px;
+    padding: 10px;
+    width: 82%;
+    height: 8%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftSideBtn {
+    width: 50%;
+    height: 50px;
+}
+
+.rightSideBtn {
+    position: absolute;
+    top: 90px;
+    right: 10px;
+    width: 10%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+#waypoint {
+    background-image: url('../img/phaser/StartBtn.png');
+    background-color: transparent;
+    width: 150px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: filter 0.3s ease;
+    border: none;
+}
+
+#waypoint:hover {
+    filter: brightness(150%);
+}
+
+#waypoint:active {
+    filter: brightness(50%);
+}
+
+#moneypoint {
+    background-image: url('../img/phaser/MoneyBtn.png');
+    background-color: transparent;
+    width: 150px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: filter 0.3s ease;
+    border: none;
+}
+
+#moneypoint:hover {
+    filter: brightness(150%);
+}
+
+#moneypoint:active {
+    filter: brightness(50%);
+}
+
+#elecpoint {
+    background-image: url('../img/phaser/EleBtn.png');
+    background-color: transparent;
+    width: 150px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: filter 0.3s ease;
+    border: none;
+}
+
+#elecpoint:hover {
+    filter: brightness(150%);
+}
+
+#elecpoint:active {
+    filter: brightness(50%);
+}
+
+#sportspoint {
+    background-image: url('../img/phaser/SprotsBtn.png');
+    background-color: transparent;
+    width: 150px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: filter 0.3s ease;
+    border: none;
+}
+
+#sportspoint:hover {
+    filter: brightness(150%);
+}
+
+#sportspoint:active {
+    filter: brightness(50%);
+}
+
+#lifepoint {
+    background-image: url('../img/phaser/LifeBtn.png');
+    background-color: transparent;
+    width: 150px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: filter 0.3s ease;
+    border: none;
+}
+
+#lifepoint:hover {
+    filter: brightness(150%);
+}
+
+#lifepoint:active {
+    filter: brightness(50%);
+}
+
+
+#joinBtn {
+    background-image: url('../img/phaser/join-01.png');
+    background-color: transparent;
+    width: 150px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: filter 0.3s ease;
+    border: none;
+}
+
+#joinBtn:hover {
+    filter: brightness(150%);
+}
+
+#joinBtn:active {
+    filter: brightness(50%);
+}
+
+#btnLeave {
+    background-image: url('../img/phaser/leave-01.png');
+    background-color: transparent;
+    width: 150px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: filter 0.3s ease;
+    border: none;
+}
+
+#btnLeave:hover {
+    filter: brightness(150%);
+}
+
+#btnLeave:active {
+    filter: brightness(50%);
+}
+
+#btnCamera {
+    background-image: url('../img/phaser/camera-01.png');
+    background-color: transparent;
+    width: 150px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: filter 0.3s ease;
+    border: none;
+}
+
+#btnCamera:hover {
+    filter: brightness(150%);
+}
+
+#btnCamera:active {
+    filter: brightness(50%);
+}
+
+#btnMic {
+    background-image: url('../img/phaser/mic-01.png');
+    background-color: transparent;
+    width: 150px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: filter 0.3s ease;
+    border: none;
+}
+
+#btnMic:hover {
+    filter: brightness(150%);
+}
+
+#btnMic:active {
+    filter: brightness(50%);
+}
+
+/* 對話框上方 */
+/* .dialog-header {} */
+
+.border-bottom {
+    background-image: url('../img/phaser/yellow.png');
+}
+
+.div-sidebar {
+    background-image: linear-gradient(120deg, #F5B75B 0%, #fda085 100%);
+}
+
+.sideyellow {
+    /* background-image: url('../img/phaser/or.jpg'); */
+    background-image: linear-gradient(120deg, #F5B75B 0%, #fda085 100%);
+}
