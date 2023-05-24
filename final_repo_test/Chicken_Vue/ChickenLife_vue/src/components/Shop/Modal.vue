@@ -5,6 +5,7 @@ import { onMounted, ref, watch } from 'vue';
 import Product from '../Product/Product.vue';
 import Card from '../Product/Card.vue';
 import Slide from './Slide.vue';
+import { playerRefs } from "../../main.js";
 import CardAndOrder from '../Order/CardAndOrder.vue';
 // const baseAddress = "https://localhost:7097";
 const backdropClick = (event) => {
@@ -56,6 +57,10 @@ onMounted(() => {
     modalpoints.value = props.memberpoints;
     // isDialogOpenWatch
 });
+//監控會員點數
+watch(() => {
+    playerRefs.value.coins
+})
 
 
 const emit = defineEmits();
@@ -101,7 +106,8 @@ const CardupdatetoModal = (CardPoints) => {
                                 {{ header }}
                             </div>
                             <div class="center-column">
-                                點數: {{ modalpoints }}
+                                <!-- 點數: {{ modalpoints }} -->
+                                點數: {{ playerRefs.coins }}
                             </div>
 
                             <button v-if="closeable" @click='$emit("update:modelValue", false)'
@@ -147,7 +153,7 @@ const CardupdatetoModal = (CardPoints) => {
             </div>
         </transition>
         <!-- 遮罩層 -->
-        <div v-if="isDialogOpenWatch" class="backdrop"></div>
+        <div v-if="isDialogOpenWatch" class=".dialog-overlay"></div>
     </teleport>
 </template>
 
@@ -172,6 +178,7 @@ const CardupdatetoModal = (CardPoints) => {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     /* 設定透明度 */
+    overflow: hidden;
     z-index: 999;
     /* 設定疊加順序，需高於其他元素 */
 }

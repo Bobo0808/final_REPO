@@ -1,5 +1,6 @@
 ﻿using ChickenLife.Models.OrderProduct.DTO;
 using ClassLibrary;
+using ClassLibrary.Enum;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -81,6 +82,33 @@ namespace ChickenLife.Controllers
                     P_Discount = product.P_Discount,
                 });
         }
+
+        ////// 篩選
+        ////// POST: api/Employees (會發現動詞與下面的POST相同而衝突)
+        ////// 需增加參數POST:改為api/Employees/Filter 而url不同區別
+        [HttpPost("FilterProductType")]
+        public async Task<IEnumerable<ProductDTO>> FilterProductType([FromBody] ProductDTO productDTO)
+        {
+            var productType = (ProductType)productDTO.P_ProductType;
+
+            return _context.Products
+                .Where(product => ((product.P_ProductType == productType) && (product.P_Discontinuted == false)))
+                .Select(product => new ProductDTO
+                {
+                    P_ID = product.P_ID,
+                    P_Name = product.P_Name,
+                    P_ProductType = (int)product.P_ProductType,
+                    P_Price = product.P_Price,
+                    P_Image = product.P_Image,
+                    P_Describe = product.P_Describe,
+                    P_Instock = product.P_Instock,
+                    P_Date = product.P_Date,
+                    P_Discount = product.P_Discount,
+                });
+        }
+
+
+
 
         private bool ProductsExists(int id)
         {
