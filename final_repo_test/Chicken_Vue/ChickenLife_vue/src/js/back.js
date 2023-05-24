@@ -290,7 +290,7 @@ class gameStart extends Phaser.Scene {
             this.player.setDepth(1);
             this.cameras.main.startFollow(this.player);
 
-            // this.physics.world.addCollider(this.player, layer_collision);
+            this.physics.world.addCollider(this.player, layer_collision);
         }
         players[data.id] = {
             id: data.id,
@@ -816,3 +816,5 @@ watchEffect(() => {
     }
 
 });
+
+

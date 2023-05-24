@@ -75,7 +75,7 @@ const getPlay = () => {
       <input type="text" id="dialog-input" placeholder="請輸入訊息">
       <button id="dialog-send-btn">發送</button>
     </div>
-  </div>
+</div>
   </div>
   
 </template>

@@ -159,6 +159,11 @@ const CardupdatetoModal = (CardPoints) => {
 
 
 <style scoped>
+
+.modal1-dialog{
+    display: flex;
+    justify-content: center;
+}
 .backdrop {
     position: fixed;
     top: 0;
