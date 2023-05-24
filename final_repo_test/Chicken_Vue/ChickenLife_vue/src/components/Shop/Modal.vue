@@ -159,6 +159,7 @@ const CardupdatetoModal = (CardPoints) => {
 
 
 <style scoped>
+
 .centerformodal {
     display: flex;
     justify-content: center;
