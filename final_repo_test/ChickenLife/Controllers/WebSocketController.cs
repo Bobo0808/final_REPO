@@ -158,7 +158,7 @@ namespace ChickenLife.Controllers
                             {
                                 DebugLog debugLogtemp = new DebugLog()
                                 {
-                                    A_ID = maps.MapDirectory[publicMap].client[webSocket].id,
+                                    A_ID = maps.MapDirectory[id].client[webSocket].id,
                                     D_time = DateTime.Now,
                                     D_event = ex.ToString(),
                                     D_isSolved = false,
@@ -193,7 +193,7 @@ namespace ChickenLife.Controllers
                             {
                                 DebugLog debugLogtemp = new DebugLog()
                                 {
-                                    A_ID = maps.MapDirectory[publicMap].client[webSocket].id,
+                                    A_ID = maps.MapDirectory[id].client[webSocket].id,
                                     D_time = DateTime.Now,
                                     D_event = ex.ToString(),
                                     D_isSolved = false,
@@ -397,7 +397,7 @@ namespace ChickenLife.Controllers
                             {
                                 DebugLog debugLogtemp = new DebugLog()
                                 {
-                                    A_ID = maps.MapDirectory[publicMap].client[webSocket].id,
+                                    A_ID = maps.MapDirectory[id].client[webSocket].id,
                                     D_time = DateTime.Now,
                                     D_event = ex.ToString(),
                                     D_isSolved = false,
@@ -441,7 +441,7 @@ namespace ChickenLife.Controllers
                             {
                                 DebugLog debugLogtemp = new DebugLog()
                                 {
-                                    A_ID = maps.MapDirectory[publicMap].client[webSocket].id,
+                                    A_ID = maps.MapDirectory[id].client[webSocket].id,
                                     D_time = DateTime.Now,
                                     D_event = ex.ToString(),
                                     D_isSolved = false,
@@ -453,10 +453,10 @@ namespace ChickenLife.Controllers
 
                             break;
                         case "Leave":
+                       
                             try
                             {
                                 id = jsontemp.Value<string>("mapid");
-
                                 MapDirectoriesDTO mapDTO = new MapDirectoriesDTO() { type = "Load", id = publicMap, Src = maps.MapDirectory[publicMap].Src, MinX = maps.MapDirectory[publicMap].MinX, MinY = maps.MapDirectory[publicMap].MinY, MaxX = maps.MapDirectory[publicMap].MaxX, MaxY = maps.MapDirectory[publicMap].MaxY, BlockedSpaces = maps.MapDirectory[publicMap].BlockedSpaces, client = maps.MapDirectory[publicMap].client.Values.ToList() };
                                 var Loadtemp = JsonSerializer.Serialize(mapDTO);
                                 var Load = Encoding.UTF8.GetBytes(Loadtemp);
@@ -497,7 +497,7 @@ namespace ChickenLife.Controllers
                             {
                                 DebugLog debugLogtemp = new DebugLog()
                                 {
-                                    A_ID = maps.MapDirectory[publicMap].client[webSocket].id,
+                                    A_ID = maps.MapDirectory[id].client[webSocket].id,
                                     D_time = DateTime.Now,
                                     D_event = ex.ToString(),
                                     D_isSolved = false,
