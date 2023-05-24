@@ -189,14 +189,14 @@ const handleKeyPress = (event) => {
             </div>
 
             <div class="phaser_area">
-                <div :style="{ zIndex: closeableModal ? 0 : 999 }" v-show="!closeableModal">
+                <!-- <div :style="{ zIndex: closeableModal ? 0 : 999 }" v-show="!closeableModal">
                     <video width="200" height="200" autoplay id="myVideo" muted playsinline
                         :style="{ zIndex: closeableModal ? 0 : 999 }" v-show="!closeableModal"></video>
 
                     <video width="500" height="500" autoplay id="remoteVideo" playsinline
                         :style="{ zIndex: closeableModal ? 0 : 999 }" v-show="!closeableModal"></video>
-                </div>
-                <div class="game-container"></div>
+                </div> -->
+                <!-- <div class="game-container"></div> -->
 
 
                 <div class="phaser_gamearea " id="gameArea">

@@ -38,6 +38,21 @@ const getPlay = () => {
 
 <template lang="">
     <div>
+        
+        <div class="phaser_area">
+                <div :style="{ zIndex: closeableModal ? 0 : 999 }" v-show="!closeableModal">
+                    <video width="200" height="200" autoplay id="myVideo" muted playsinline
+                        style=" z-index: 999 " v-show="!closeableModal"></video>
+                    <video width="500" height="500" autoplay id="remoteVideo" playsinline
+                        style="z-index: 999 " v-show="!closeableModal"></video>
+                </div>
+                <div class="game-container"></div>
+
+
+                <div class="phaser_gamearea " id="gameArea">
+                    <component :is="currentBody"></component>
+                </div>
+            </div>
         <div class="phaser_gamearea" id="gameArea"></div>
     </div>
 </template>
