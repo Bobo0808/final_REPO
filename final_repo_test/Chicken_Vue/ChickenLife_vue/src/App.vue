@@ -8,11 +8,9 @@ import Sandy from "./components/Sandy.vue";
 import profilePic from './img/625157.jpg';
 // import './js/dialogue';
 import Account from "./components/Account.vue"
-<<<<<<< Updated upstream
-const currentBody = ref(Sandy);
-=======
+
 const currentBody = ref(Phaser);
->>>>>>> Stashed changes
+
 
 const isSussess = ref(false);
 onMounted(() => {
@@ -121,12 +119,12 @@ const handleKeyPress = (event) => {
                 <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                     <svg class="bi me-2" width="40" height="32">
                         <use xlink:href="#bootstrap" />
-                    </svg>
-                    <span class="fs-4">Sidebar</span>
-                </a>
-                <hr>
-                <ul class="nav nav-pills flex-column mb-auto">
-                    <li class="nav-item" id="waypoint">
+                </svg>
+                <span class="fs-4">Sidebar</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item" id="waypoint">
                         <a href="#" class="nav-link active" aria-current="page">
                             <svg class="bi me-2" width="16" height="16">
                                 <use xlink:href="#home" />
@@ -195,15 +193,15 @@ const handleKeyPress = (event) => {
 
             <div class="phaser_area">
                 <!-- <div :style="{ zIndex: closeableModal ? 0 : 999 }" v-show="!closeableModal">
-                    <video width="200" height="200" autoplay id="myVideo" muted playsinline
-                        :style="{ zIndex: closeableModal ? 0 : 999 }" v-show="!closeableModal"></video>
+                            <video width="200" height="200" autoplay id="myVideo" muted playsinline
+                                :style="{ zIndex: closeableModal ? 0 : 999 }" v-show="!closeableModal"></video>
 
-                    <video width="500" height="500" autoplay id="remoteVideo" playsinline
-                        :style="{ zIndex: closeableModal ? 0 : 999 }" v-show="!closeableModal"></video>
-                </div> -->
+                            <video width="500" height="500" autoplay id="remoteVideo" playsinline
+                                :style="{ zIndex: closeableModal ? 0 : 999 }" v-show="!closeableModal"></video>
+                        </div> -->
                 <!-- <div class="game-container"></div> -->
 
-       
+
                 <div class="phaser_gamearea " id="gameArea">
                     <component :is="currentBody"></component>
                 </div>
