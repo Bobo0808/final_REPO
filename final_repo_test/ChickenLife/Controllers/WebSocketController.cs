@@ -144,10 +144,10 @@ namespace ChickenLife.Controllers
                             }
                             break;
                         case "Chat":
-                            var data = jsontemp.GetValue("data");
-                            id = jsontemp.Value<string>("id");
                             try
                             {
+                                var data = jsontemp.GetValue("data");
+                                id = jsontemp.Value<string>("id");
                                 ChatContent Chattemp = new ChatContent { type = "Chat", client = maps.MapDirectory[id].client[webSocket], content = data.Value<string>() };
                                 var chatJson = JsonSerializer.Serialize(Chattemp);
                                 buffer = Encoding.UTF8.GetBytes(chatJson);
@@ -170,14 +170,14 @@ namespace ChickenLife.Controllers
 
                             break;
                         case "Movement":
-                            var dataMovement = JsonSerializer.Deserialize<MovementDTO?>(message);
-                            if (dataMovement == null)
-                            {
-                                break;
-                            }
-                            id = jsontemp.Value<string>("mapid");
                             try
                             {
+                                var dataMovement = JsonSerializer.Deserialize<MovementDTO?>(message);
+                                if (dataMovement == null)
+                                {
+                                    break;
+                                }
+                                id = jsontemp.Value<string>("mapid");
                                 MovementDTO _temp = new MovementDTO();
                                 _temp = dataMovement;
                                 maps.MapDirectory[id].client[webSocket].direction = _temp.data.direction;
@@ -202,11 +202,14 @@ namespace ChickenLife.Controllers
                                 await _context.SaveChangesAsync();
                                 throw;
                             }
+
+
+
                             break;
                         case "Queue":
-                            id = jsontemp.Value<string>("mapid");
                             try
                             {
+                                id = jsontemp.Value<string>("mapid");
                                 if (maps.MapDirectory[id].client[webSocket].gender == 1)
                                 {
                                     queue_M.Queue.Add(new KeyValuePair<WebSocket, PlayerRef>(webSocket, maps.MapDirectory[publicMap].client[webSocket]));
@@ -406,9 +409,9 @@ namespace ChickenLife.Controllers
 
                             break;
                         case "Description":
-                            id = jsontemp.Value<string>("mapid");
                             try
                             {
+                                id = jsontemp.Value<string>("mapid");
                                 string descriptiontemp;
                                 string candidatetemp;
                                 PeerDTO peertemp = new PeerDTO();
@@ -450,9 +453,10 @@ namespace ChickenLife.Controllers
 
                             break;
                         case "Leave":
-                            id = jsontemp.Value<string>("mapid");
+                       
                             try
                             {
+                                id = jsontemp.Value<string>("mapid");
                                 MapDirectoriesDTO mapDTO = new MapDirectoriesDTO() { type = "Load", id = publicMap, Src = maps.MapDirectory[publicMap].Src, MinX = maps.MapDirectory[publicMap].MinX, MinY = maps.MapDirectory[publicMap].MinY, MaxX = maps.MapDirectory[publicMap].MaxX, MaxY = maps.MapDirectory[publicMap].MaxY, BlockedSpaces = maps.MapDirectory[publicMap].BlockedSpaces, client = maps.MapDirectory[publicMap].client.Values.ToList() };
                                 var Loadtemp = JsonSerializer.Serialize(mapDTO);
                                 var Load = Encoding.UTF8.GetBytes(Loadtemp);
