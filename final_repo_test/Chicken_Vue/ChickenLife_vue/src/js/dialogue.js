@@ -1,9 +1,10 @@
 const dialogBox = document.getElementById('dialog-box');
-const dialogTitle = dialogBox.querySelector('.dialog-title');
-const dialogCloseBtn = dialogBox.querySelector('.dialog-close-btn');
-const dialogBody = dialogBox.querySelector('.dialog-body');
-const dialogInput = dialogBox.querySelector('#dialog-input');
-const dialogSendBtn = dialogBox.querySelector('#dialog-send-btn');
+const dialogTitle = document.getElementsByClassName('.dialog-title');
+const dialogCloseBtn = document.getElementsByClassName('.dialog-close-btn');
+const dialogBody = document.getElementsByClassName('.dialog-body');
+const dialogInput = document.getElementById('dialog-input');
+const dialogSendBtn = document.getElementById('dialog-send-btn');
+
 let IsShowedDialog = false;
 
 function ShowDialog() {

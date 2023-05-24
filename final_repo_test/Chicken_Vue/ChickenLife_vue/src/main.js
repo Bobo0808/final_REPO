@@ -35,11 +35,6 @@ export const getAxios = async (route, data) => {
   });
 }
 
-<<<<<<< Updated upstream
-export const postAxiosObj = async (route, data, res) => {
-  await axios.post(baseAddress + route, data.value).then(response => {
-    return res.value = response.data;
-=======
 export const getAxiosNoData = (route, data) => {
   axios.get(baseAddress + route).then(response => {
     data.value = response.data;
@@ -50,7 +45,6 @@ export const getAxiosNoData = (route, data) => {
 export const postAxiosObj = (route, data, res) => {
   axios.post(baseAddress + route, data.value).then(response => {
     res.value = response.data;
->>>>>>> Stashed changes
   });
 }
 
