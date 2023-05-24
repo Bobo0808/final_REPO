@@ -1,7 +1,7 @@
 <script setup>
 
 import { onMounted, ref, watch, inject, toRaw } from 'vue';
-import { playerRefs, getAxios, postAxiosString, postAxiosObjNodata } from '../../main';
+import { playerRefs, getAxios, postAxiosString, postAxiosObjNodata } from '../../main.js';
 // import { playerRefs } from "../../main.js";
 // const baseAddress = "https://localhost:7097";
 const baseAddress = "https://localhost:7093";
@@ -48,7 +48,7 @@ const props = defineProps({
 
 const getEmployeeDTOes = () => {
     getAxios("/api/Products", employeeDTOes);
-    //console.log(employeeDTOes);
+    console.log(employeeDTOes);
 
     //原本axios呼叫指令碼
     // axios.get(`${baseAddress}/api/Products`).then(response => {
