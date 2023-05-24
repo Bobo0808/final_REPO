@@ -75,8 +75,8 @@
 
     <div class="phaser_area">
       <div style="z-index: 999;">
-        <video width="200" height="200" autoplay id="myVideo" muted playsinline style="z-index: 999;"></video>
-        <video width="500" height="500" autoplay id="remoteVideo" playsinline style="z-index: 999;"></video>
+        <video autoplay id="myVideo" muted playsinline></video>
+        <video autoplay id="remoteVideo" playsinline></video>
       </div>
       <div class="game-container"></div>
       <div class="phaser_gamearea " id="gameArea"></div>
@@ -91,9 +91,12 @@
       </div>
       <div class="rightSideBtn">
         <button id="joinBtn"></button>
-        <button id="btnLeave"></button>
-        <button id="btnCamera"></button>
-        <button id="btnMic"></button>
+        <button id="waitingLog"></button>
+        <div id="extendBtnContainer">
+          <button id="btnLeave"></button>
+          <button id="btnCamera"></button>
+          <button id="btnMic"></button>
+        </div>
       </div>
     </div>
 
