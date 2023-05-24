@@ -9,17 +9,18 @@ using ClassLibrary.Models;
 
 namespace ChickenLife.Controllers
 {
-
     [ApiExplorerSettings(IgnoreApi = true)]
     [Route("api/[controller]")]
     [ApiController]
     public class WebSocketController : Controller
     {
         private readonly ChickenDbContext _context;
+
         public WebSocketController(ChickenDbContext context)
         {
             _context = context;
         }
+
         public static MapData maps = new MapData();
         public static Queue_F queue_F = new Queue_F();
         public static Queue_M queue_M = new Queue_M();
@@ -28,13 +29,10 @@ namespace ChickenLife.Controllers
         public static string[] playerColors = { "blue", "red", "orange", "yellow", "green", "purple" };
         public static int idtemp = 0;
 
-
-
         // WebSocketServer wssv = new WebSocketServer("ws://127.0.0.1:7890");
         [Route("/[controller]")]
         public async Task Get()
         {
-
             //是否為webSocket請求 如果是則加入等待
             if (HttpContext.WebSockets.IsWebSocketRequest)
             {
@@ -61,7 +59,6 @@ namespace ChickenLife.Controllers
                     await _context.SaveChangesAsync();
                     throw;
                 }
-
             }
             else
             {
@@ -137,6 +134,7 @@ namespace ChickenLife.Controllers
                                 throw;
                             }
                             break;
+
                         case "Chat":
                             try
                             {
@@ -163,6 +161,7 @@ namespace ChickenLife.Controllers
                             }
 
                             break;
+
                         case "Movement":
                             try
                             {
@@ -185,21 +184,20 @@ namespace ChickenLife.Controllers
                             }
                             catch (Exception ex)
                             {
-                                DebugLog debugLogtemp = new DebugLog()
-                                {
-                                    A_ID = maps.MapDirectory[id].client[webSocket].id,
-                                    D_time = DateTime.Now,
-                                    D_event = ex.ToString(),
-                                    D_isSolved = false,
-                                };
-                                await _context.AddAsync(debugLogtemp);
-                                await _context.SaveChangesAsync();
-                                throw;
+                                //DebugLog debugLogtemp = new DebugLog()
+                                //{
+                                //    A_ID = maps.MapDirectory[id].client[webSocket].id,
+                                //    D_time = DateTime.Now,
+                                //    D_event = ex.ToString(),
+                                //    D_isSolved = false,
+                                //};
+                                //await _context.AddAsync(debugLogtemp);
+                                //await _context.SaveChangesAsync();
+                                //throw;
                             }
 
-
-
                             break;
+
                         case "Queue":
                             try
                             {
@@ -281,7 +279,6 @@ namespace ChickenLife.Controllers
                                             buffer = Encoding.UTF8.GetBytes(dcdtotemp);
                                             SendToAll(buffer, publicMap);
                                         }
-
                                     }
                                     else if (queue_F.Queue.Count > 0 && queue_F.Queue.First().Key.State != System.Net.WebSockets.WebSocketState.Open)
                                     {
@@ -348,13 +345,10 @@ namespace ChickenLife.Controllers
                                         maps.MapDirectory[PrivateMapid].client.Add(maletemp.Key, malevalue);
                                         maps.MapDirectory[PrivateMapid].client.Add(femaletemp.Key, femalevalue);
 
-
-
                                         MapDirectoriesDTO pairtemp = new MapDirectoriesDTO() { type = "Match", id = PrivateMapid, Src = maps.MapDirectory[publicMap].Src, MinX = maps.MapDirectory[publicMap].MinX, MinY = maps.MapDirectory[publicMap].MinY, MaxX = maps.MapDirectory[publicMap].MaxX, MaxY = maps.MapDirectory[publicMap].MaxY, BlockedSpaces = maps.MapDirectory[publicMap].BlockedSpaces, client = new List<PlayerRef>() { malevalue, femalevalue } };
                                         var matchJson = JsonSerializer.Serialize(pairtemp);
                                         buffer = Encoding.UTF8.GetBytes(matchJson);
                                         SendToPeer(buffer, maletemp.Key, femaletemp.Key);
-
 
                                         maps.MapDirectory[publicMap].client.Remove(maletemp.Key);
                                         maps.MapDirectory[publicMap].client.Remove(femaletemp.Key);
@@ -402,6 +396,7 @@ namespace ChickenLife.Controllers
                             }
 
                             break;
+
                         case "Description":
                             try
                             {
@@ -446,8 +441,9 @@ namespace ChickenLife.Controllers
                             }
 
                             break;
+
                         case "Leave":
-                       
+
                             try
                             {
                                 id = jsontemp.Value<string>("mapid");
@@ -474,7 +470,6 @@ namespace ChickenLife.Controllers
                                 var leavetemp = JsonSerializer.Serialize(maps.MapDirectory[publicMap].client[webSocket]);
                                 buffer = Encoding.UTF8.GetBytes(leavetemp);
                                 SendToAll(buffer, publicMap);
-
 
                                 DiscconnectDTO leavedto = new DiscconnectDTO();
                                 leavedto.type = "Disconnect";
@@ -506,16 +501,9 @@ namespace ChickenLife.Controllers
                     receiveBuffer.Clear();
                 }
 
-
-
-
-
-
-
                 //繼續等待接收訊息
                 receiveResult = await webSocket.ReceiveAsync(
                     new ArraySegment<byte>(buffer), CancellationToken.None);
-
             }
             //關閉連線
             try
@@ -555,7 +543,6 @@ namespace ChickenLife.Controllers
                     receiveResult.CloseStatus.Value,
                     receiveResult.CloseStatusDescription, CancellationToken.None);
             }
-
             catch (Exception ex)
             {
                 DebugLog debugLogtemp = new DebugLog()
@@ -569,12 +556,12 @@ namespace ChickenLife.Controllers
                 await _context.SaveChangesAsync();
                 throw;
             }
-
         }
+
         public static int generateID()
         {
             Random rand = new Random();
-            return rand.Next(1,1000);
+            return rand.Next(1, 1000);
         }
 
         public static string randomFromArray(string[] arr)
@@ -595,7 +582,6 @@ namespace ChickenLife.Controllers
                 await con.Key.SendAsync(
                new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
             }
-
         }
 
         public static async void SendToPeer(byte[] buffer, WebSocket maleSocket, WebSocket femaleSocket)
@@ -605,7 +591,7 @@ namespace ChickenLife.Controllers
                 await maleSocket.SendAsync(
               new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
             }
-           if(femaleSocket.State==WebSocketState.Open)
+            if (femaleSocket.State == WebSocketState.Open)
             {
                 await femaleSocket.SendAsync(
         new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
@@ -615,7 +601,7 @@ namespace ChickenLife.Controllers
 
         public static async void SendToOne(byte[] buffer, WebSocket webSocket)
         {
-            if(webSocket.State != WebSocketState.Open)
+            if (webSocket.State != WebSocketState.Open)
             {
                 return;
             }
@@ -623,6 +609,4 @@ namespace ChickenLife.Controllers
                new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
         }
     }
-
-
 }
