@@ -98,7 +98,7 @@ namespace ChickenLife.Controllers
                                 PlayerRef player = new PlayerRef();//生成新玩家
                                 maps.MapDirectory[publicMap].client.Add(webSocket, player);
                                 maps.MapDirectory[publicMap].client[webSocket].type = "Connect";
-                                maps.MapDirectory[publicMap].client[webSocket].id = 1;
+                                maps.MapDirectory[publicMap].client[webSocket].id = generateID();
                                 /*  maps.MapDirectory[publicMap].client[webSocket].id = generateID();*/ //隨機生產ID 之後從ms sql取
                                 if (isMale == true) //性別
                                 {
@@ -120,14 +120,7 @@ namespace ChickenLife.Controllers
                                 Console.WriteLine(maps.MapDirectory[publicMap].client[webSocket].name + " Has Connected");
                                 var connectJson = JsonSerializer.Serialize(maps.MapDirectory[publicMap].client[webSocket]);
                                 buffer = Encoding.UTF8.GetBytes(connectJson);
-                                foreach (KeyValuePair<WebSocket, PlayerRef> con in maps.MapDirectory[publicMap].client)
-                                {
-                                    if (con.Key.State != WebSocketState.Open)
-                                    {
-                                        continue;
-                                    }
-                                    await con.Key.SendAsync(new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
-                                }
+                                SendToAll(buffer, publicMap);
                             }
                             catch (Exception ex)
                             {
@@ -546,7 +539,7 @@ namespace ChickenLife.Controllers
                             }
                             maps.MapDirectory[map].client.Remove(con.Key);
                             Disconnect.PlayerRef = con.Value;
-                            if (maps.MapDirectory[map].client.Count < 1)
+                            if (maps.MapDirectory[map].client.Count < 1 && map != publicMap)
                             {
                                 maps.MapDirectory.Remove(map);
                                 continue;
