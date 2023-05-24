@@ -546,7 +546,7 @@ namespace ChickenLife.Controllers
                             }
                             maps.MapDirectory[map].client.Remove(con.Key);
                             Disconnect.PlayerRef = con.Value;
-                            if (maps.MapDirectory[map].client.Count < 1&&map!= publicMap)
+                            if (maps.MapDirectory[map].client.Count < 1)
                             {
                                 maps.MapDirectory.Remove(map);
                                 continue;
