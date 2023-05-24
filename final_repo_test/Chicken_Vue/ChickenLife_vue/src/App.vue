@@ -8,7 +8,11 @@ import Sandy from "./components/Sandy.vue";
 import profilePic from './img/625157.jpg';
 // import './js/dialogue';
 import Account from "./components/Account.vue"
+<<<<<<< Updated upstream
 const currentBody = ref(Sandy);
+=======
+const currentBody = ref(Phaser);
+>>>>>>> Stashed changes
 
 const isSussess = ref(false);
 onMounted(() => {

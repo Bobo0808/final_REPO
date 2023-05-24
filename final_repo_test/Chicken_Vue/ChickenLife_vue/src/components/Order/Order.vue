@@ -1,7 +1,7 @@
 
 <script setup>
 import { onMounted, ref, inject } from 'vue';
-import { getAxios, getDate } from '../../main';
+import { playerRefs, getAxios, getDate, postAxiosObjNodata, putAxiosString, putAxiosStringNodata } from '../../main';
 // const baseAddress = "https://localhost:7097";
 const baseAddress = "https://localhost:7093";
 
@@ -28,11 +28,14 @@ const getOrderDTOes = (A_ID) => {
     //console.log("request=>",request);
 
     //原本axios呼叫指令碼
-    axios.post(`${baseAddress}/api/Order/Show`, request).then(response => {
-        //alert(JSON.stringify(response.data));
-        OrderDTOes.value = response.data;
-        // console.log("OrderDTOes.value=>", OrderDTOes.value);
-    });
+    // axios.post(`${baseAddress}/api/Order/Show`, request).then(response => {
+    //     //alert(JSON.stringify(response.data));
+    //     OrderDTOes.value = response.data;
+    //     // console.log("OrderDTOes.value=>", OrderDTOes.value);
+    // });
+    postAxiosObjNodata(`/api/Order/Show`, request, OrderDTOes);
+    // console.log("OrderDTOes.value=>", OrderDTOes);
+
 };
 
 const getdatefilter = (datefilter) => {
@@ -41,8 +44,8 @@ const getdatefilter = (datefilter) => {
 }
 
 onMounted(() => {
-    getOrderDTOes(props.accountA_ID);
-    console.log("props.accountA_ID=>", props.accountA_ID);
+    getOrderDTOes(playerRefs.value.id);
+    // console.log("props.accountA_ID=>", props.accountA_ID);
 });
 
 // 按鈕日期
@@ -56,15 +59,18 @@ const isButtonDisabled = (date, iscanceled) => {
 };
 
 // 取消訂單
-const cancelOrder = (O_ID) => {
-    console.log("O_ID=>", O_ID);
+const cancelOrder = async (O_ID) => {
+    // console.log("O_ID=>", O_ID);
+    var test = {};
     var request = {};
     request.O_ID = isNaN(Number(O_ID)) ? -1 : Number(O_ID);
     request.O_Cancle = true;
     request.productName = "";
-    axios.put(`${baseAddress}/api/Order/Cancel/${O_ID}`, request).then(response => {
-        getOrderDTOes(props.accountA_ID);
-    });
+    await putAxiosStringNodata(`/api/Order/Cancel/${O_ID}`, request, test);
+    getOrderDTOes(playerRefs.value.id);
+    // axios.put(`${baseAddress}/api/Order/Cancel/${O_ID}`, request).then(response => {
+    //     getOrderDTOes(props.accountA_ID);
+    // });
 };
 
 
