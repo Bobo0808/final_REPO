@@ -22,12 +22,15 @@ var musicStore;
 var musicBridge;
 var musicIsland;
 var musicLilRoom;
+const waitingLog = document.getElementById('waitingLog');
 const gameContainer = document.querySelector(".game-container");
 const myVideo = document.getElementById("myVideo");
 const remoteVideo = document.getElementById("remoteVideo");
 const btnCamera = document.getElementById('btnCamera');
 const btnMic = document.getElementById('btnMic');
 const btnLeave = document.getElementById('btnLeave');
+const btnStart = document.getElementById('joinBtn');
+const extendBtnContainer = document.getElementById('extendBtnContainer');
 btnCamera.addEventListener('click', muteCam);
 btnMic.addEventListener('click', muteMic);
 btnLeave.addEventListener('click', leaveRoom);
@@ -101,6 +104,7 @@ function isSolid(x, y) {
     )
 }
 async function sendQueueRequest() {
+    btnStart.style.visibility = 'hidden';
     if (!isQueue) {
         let data = {
             "type": "Queue",
@@ -148,6 +152,7 @@ function muteCam() {
 }
 
 function leaveRoom() {
+    btnStart.style.visibility = 'visible';
     try {
         stream.getTracks().forEach(track => track.stop());
         remoteVideo.srcObject = null;
@@ -519,6 +524,8 @@ class gameStart extends Phaser.Scene {
                     btnCamera.style.visibility = 'hidden';
                     btnMic.style.visibility = 'hidden';
                     btnLeave.style.visibility = 'hidden';
+                    waitingLog.style.visibility = 'hidden';
+                    extendBtnContainer.style.visibility = 'hidden'
                     if (this.player) {
                         this.player.destroy();
                     }
@@ -569,18 +576,15 @@ class gameStart extends Phaser.Scene {
 
                     break
                 case "Match":
-                    // alert("配對成功")
-                    //** */
                     isQueue = false;
-                    alert("別再操你媽了");
+                    alert("配對成功!");
+                    extendBtnContainer.visibility = 'visible';
                     myVideo.style.visibility = 'visible';
                     remoteVideo.style.visibility = 'visible';
                     btnCamera.style.visibility = 'visible';
                     btnMic.style.visibility = 'visible';
                     btnLeave.style.visibility = 'visible';
-                    // this.sound.stopAll();
-                    // this.sound.add(musicLilRoom).play({ volume: 0.3, loop: true });
-                    console.log(result);
+                    waitingLog.style.visibility = 'hidden';
                     LoadMap(result);
                     this.player.destroy();
                     cleanAllPlayers();
@@ -597,7 +601,7 @@ class gameStart extends Phaser.Scene {
 
                     break
                 case "Wait":
-                    console.log("等待配對")
+                    waitingLog.style.visibility = 'visible';
                     isQueue = true;
                     break
                 case "Peer":
