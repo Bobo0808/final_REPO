@@ -545,6 +545,7 @@ class gameStart extends Phaser.Scene {
                     break;
                 case "Chat":
                     //訊息屬性Chat
+
                     const content = document.getElementById("dialog");
                     const timecontent = document.getElementById("dialog-time");
                     var today = new Date();
@@ -572,6 +573,7 @@ class gameStart extends Phaser.Scene {
                     break
                 case "Movement":
                     //訊息屬性是Movement
+                    console.log(result)
                     this.setDirection(result);
 
 
@@ -691,7 +693,7 @@ class gameStart extends Phaser.Scene {
                 this.player.flipX = false;
             }
             else {
-                this.handleArrowPress(0, 0);
+                // this.handleArrowPress(0, 0);
                 this.player.anims.play('stand_anim', true);
             }
 
