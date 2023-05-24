@@ -42,18 +42,18 @@ const props = defineProps({
 })
 
 const getCardDTOes = () => {
-    getAxios("/api/Cards", CardDTOes);
+    // getAxios("/api/Cards", CardDTOes);
 
-    //axios.get(`${baseAddress}/api/Cards`).then(response => {
-    //alert(JSON.stringify(response.data));
-    //CardDTOes.value = response.data;
-    // console.log(CardDTOes.value);
-    //});
+    axios.get(`${baseAddress}/api/Cards`).then(response => {
+        // alert(JSON.stringify(response.data));
+        CardDTOes.value = response.data;
+        // console.log(CardDTOes.value);
+    });
 };
 
 onMounted(() => {
     getCardDTOes();
-    CheckPoints();
+    // CheckPoints();
     // SpriteForP();
 });
 watch(() => {
@@ -71,59 +71,32 @@ const imageUrl = (url) => {
     // console.log(imgUrl);
     return url;
 };
-
-// 選取所有的 .sprite 元素
-// Sprite
-const sprites = document.querySelectorAll('.sprite');
-const interval = 100;
-const SpriteForP = () => {
-    // position = 96; // 調整每次移動的像素值
-
-    // 設定初始的 backgroundPosition
-    // sprites.forEach(sprite => {
-    //     sprite.style.backgroundPosition = `-${position}px 0px`;
-    //     // console.log("position=>", position);
-    // });
-
-    setInterval(() => {
-        //sprites.forEach(sprite => {
-        // 判斷是否超出精靈圖的寬度，若超出則重置為起始位置
-        // if (position.value < 2500) {
-        //     position.value += 357.143;
-        //     // console.log("position=>", position);
-        // } else {
-        //     position.value = 357.143;
-        // }
-        // sprite.style.backgroundPosition = `-${position}px 0px`;
-        //});
-        // console.log("5=>", selectedCardProduct.value);
-    }, interval);
-
-    // requestAnimationFrame(SpriteForP);
-};
-
-
+const product = ref([]);
 // 購買商品
-const openDialog = async (cd) => {
-    //console.log(pt.target.id);
+const openDialog = async (ID) => {
+    console.log(ID);
     try {
-        const product = {};
-        getAxios(`/api/Cards/${cd.target.id}`, selectedCardProduct)
 
+        // getAxios(`/api/Cards/${cd.target.id}`, selectedCardProduct)
+        await axios.get(`${baseAddress}/api/Cards/${ID}`).then(response => {
+            // alert(JSON.stringify(response.data));
+
+            selectedCardProduct.value = response.data;
+            // console.log(CardDTOes.value);
+        });
         // 從後端獲取商品資料
-        // const response = await axios.get(`${baseAddress}/api/Cards/${cd.target.id}`); // 假設商品 ID 為 123
-        // const product = response.data;
+        // const response = axios.get(`${baseAddress}/api/Cards/${ID}`); // 假設商品 ID 為 123
+        // product.value = response.data;
 
-        // await getAxios(`/api/Cards/${cd.target.id}`, product);
+        // getAxios(`/api/Cards/${ID}`, product);
+        // console.log("product.value=>", product.value);
         // console.log("product=>", product);
 
-        CheckPoints();
-
         // 設定選中的商品
-        selectedCardProduct.value = product;
+        // selectedCardProduct.value = product;
 
         isDialogOpen.value = true;
-        // console.log(selectedCardProduct.value);
+        console.log("selectedCardProduct.value=>", selectedCardProduct.value);
 
         return selectedCardProduct
     } catch (error) {
@@ -139,7 +112,7 @@ const confirmPurchase = (ID, Price, Name) => {
     // 點數足夠，執行購買邏輯
     console.log('購買商品:', Price);
 
-    CheckPoints();
+    // CheckPoints();
 
     CardAdd(ID, Price);
     // 加點數
@@ -147,19 +120,13 @@ const confirmPurchase = (ID, Price, Name) => {
     // console.log("Name.substring(5, 8)=>", Name.substring(5, 8));
     const parts = parseInt(Name.substring(5, 8));
     // console.log("parts=>", parts);
-    // CardPoints.value += parts;
     playerRefs.value.coins += parts;
 
     ChangeAccountCoins(playerRefs.value.coins);
-    //memberPoints.value -= selectedCardProduct.value.cA_Price;
-    emit('updatepoint', CardPoints);
 
     // 購買完成後關閉彈出視窗
     closeDialog();
-    // } else {
-    // 點數不足，顯示提示框
-    // showInsufficientPoints.value = true;
-    // }
+
 };
 
 //修改會員點數
@@ -175,10 +142,7 @@ const ChangeAccountCoins = (coins) => {
 const closeInsufficientPointsDialog = () => {
     showInsufficientPoints.value = false;
 };
-const CheckPoints = () => {
-    CardPoints.value = props.memberpoints;
-    // console.log("1=>", selectedCardProduct.value);
-}
+
 const CardAdd = (ID, Price) => {
     var test = {};
     var request = {};
@@ -191,14 +155,14 @@ const CardAdd = (ID, Price) => {
     request.CO_Sum = Price;
     request.CO_Cancel = false;
     request.CO_Quantity = 1;
-    postAxiosObjNodata(`/api/CardOrders`, request, test);
+    // postAxiosObjNodata(`/api/CardOrders`, request, test);
 
-    getCardOrderDTOes();
     // console.log(request);
-    // axios.post(`${baseAddress}/api/CardOrders`, request).then(response => {
-    //     console.log("success");
-    //     console.log("response.data", response.data);
-    // });
+    axios.post(`${baseAddress}/api/CardOrders`, request).then(response => {
+        console.log("success");
+        getCardOrderDTOes();
+        // console.log("response.data", response.data);
+    });
 }
 const CardOrderDTOes = ref([]);
 const getCardOrderDTOes = () => {
@@ -206,12 +170,12 @@ const getCardOrderDTOes = () => {
     var request = {};
     request.A_ID = playerRefs.value.id;
     request.CA_Name = "";
-    // axios.post(`${baseAddress}/api/CardOrders/Show`, request).then(response => {
-    //     // alert(JSON.stringify(response.data));
-    //     CardOrderDTOes.value = response.data;
-    //     // console.log(CardOrderDTOes.value);
-    // });
-    postAxiosObjNodata(`/api/CardOrders/Show`, request, CardOrderDTOes);
+    axios.post(`${baseAddress}/api/CardOrders/Show`, request).then(response => {
+        // alert(JSON.stringify(response.data));
+        CardOrderDTOes.value = response.data;
+        // console.log(CardOrderDTOes.value);
+    });
+    // postAxiosObjNodata(`/api/CardOrders/Show`, request, CardOrderDTOes);
 };
 
 const PayMentForLinePay = async () => {
@@ -303,7 +267,7 @@ const PayMentForNewWebPay = async () => {
                                 <!-- <button :id="item.cA_ID" type="button" class="btn btn-primary"
                                     @click="showBuyDetail(item.cA_ID)">購買</button> -->
                                     <button :id="item.cA_ID" type="button" class="btn btn-primary"
-                                    @click="openDialog">詳細</button>
+                                    @click="openDialog(item.cA_ID)">詳細</button>
                             </div>
                         </div>
                     </div>
@@ -382,10 +346,10 @@ const PayMentForNewWebPay = async () => {
     </div>
 
     <!-- 點數不足提示框 -->
-    <div v-if="showInsufficientPoints" class="dialog">
+    <!-- <div v-if="showInsufficientPoints" class="dialog">
       <p>點數不足，無法購買該商品。</p>
       <button class="btn btn-info" @click="closeInsufficientPointsDialog">關閉</button>
-    </div>
+    </div> -->
 
 <!-- 遮罩層 -->
 <div v-if="isDialogOpen || showInsufficientPoints" class="dialog-overlay"></div>

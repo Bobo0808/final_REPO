@@ -17,14 +17,14 @@ onMounted(() => {
     // dialog
 });
 
-const memberpoints = ref(1000);
-const accountA_ID = ref(1);
+// const memberpoints = ref(1000);
+// const accountA_ID = ref(1);
 
 const closeableModal = ref(false);
 
-const updatePoints = (modalpoints) => {
-    memberpoints.value = modalpoints.value;
-}
+// const updatePoints = (modalpoints) => {
+//     memberpoints.value = modalpoints.value;
+// }
 
 // 原先讀取會員資訊，若沒有可以砍掉
 const getAccountDTOes = () => {
@@ -83,9 +83,8 @@ const handleKeyPress = (event) => {
                 <ul class=" nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <ul><a @click="Change" type="button" class="nav-link px-2 rounded-2">遊戲王</a></ul>
                     <li><a href="#" class="nav-link px-2 link-secondary rounded-2">首頁</a></li>
-                    <li><a @click="closeableModal = true" type="button" class="nav-link px-2 rounded-2 ">商城</a>
-                        <Modal :accountA_ID="accountA_ID" :memberpoints="memberpoints" v-model="closeableModal" closeable
-                            header="商城" @update-points="updatePoints">
+                    <li><a @click="Checkshow" type="button" class="nav-link px-2 rounded-2 ">商城</a>
+                        <Modal v-model="closeableModal" closeable header="商城">
                         </Modal>
                     </li>
                     <!-- <li><a href="#" class="nav-link px-2 link-secondary">首頁</a></li> -->
@@ -121,17 +120,17 @@ const handleKeyPress = (event) => {
                 <span class="fs-4">好友</span>
             </a>
             <!-- <li id="lifepoint">
-          <a href="#" class="nav-link text-white">
-            <svg class="bi me-2" width="16" height="16">
-              <use xlink:href="#people-circle" />
-            </svg>
-            生活板
-          </a>
-        </li> -->
+                          <a href="#" class="nav-link text-white">
+                            <svg class="bi me-2" width="16" height="16">
+                              <use xlink:href="#people-circle" />
+                            </svg>
+                            生活板
+                          </a>
+                        </li> -->
 
             <hr>
         </div>
-        <component :is="currentBody"></component>
+        <component :is="currentBody" :closeableModal="closeableModal"></component>
 
     </div>
 </template>
@@ -140,5 +139,5 @@ const handleKeyPress = (event) => {
 <style src="./css/sidebars.css"></style>
 <style src="./css/style.css"></style>
 <style src="../public/css/phaser_gamemode.css"></style>
-<style src="./css/dialogue.css"></style>
+<!-- <style src="./css/dialogue.css"></style> -->
 <style scoped></style>

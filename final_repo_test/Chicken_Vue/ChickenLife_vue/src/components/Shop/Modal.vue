@@ -40,21 +40,11 @@ const props = defineProps({
         type: String,
         required: false,
         default: null
-    },
-    memberpoints: {
-        type: Number,
-        required: false,
-        default: 0
-    },
-    accountA_ID: {
-        type: Number,
-        required: true,
-        default: 0
     }
 })
 
 onMounted(() => {
-    modalpoints.value = props.memberpoints;
+    // modalpoints.value = props.memberpoints;
     // isDialogOpenWatch
 });
 //監控會員點數
@@ -81,14 +71,14 @@ const modalpoints = ref(0);
 // }
 
 
-const ProductupdatetoModal = (ProductPoints) => {
-    modalpoints.value = ProductPoints.value;
-    emit("update-points", modalpoints)
-};
-const CardupdatetoModal = (CardPoints) => {
-    modalpoints.value = CardPoints.value;
-    emit("update-points", modalpoints)
-};
+// const ProductupdatetoModal = (ProductPoints) => {
+//     modalpoints.value = ProductPoints.value;
+//     emit("update-points", modalpoints)
+// };
+// const CardupdatetoModal = (CardPoints) => {
+//     modalpoints.value = CardPoints.value;
+//     emit("update-points", modalpoints)
+// };
 
 
 </script>
@@ -130,19 +120,17 @@ const CardupdatetoModal = (CardPoints) => {
                                 </div>
                                 <div v-show="cur == 1">
                                     <slot>
-                                        <Product :accountA_ID="props.accountA_ID" :memberpoints="props.memberpoints"
-                                            @updatepoint="ProductupdatetoModal" />
+                                        <Product />
                                     </slot>
                                 </div>
                                 <div v-show="cur == 2">
                                     <slot>
-                                        <Card :accountA_ID="props.accountA_ID" :memberpoints="props.memberpoints"
-                                            @updatepoint="CardupdatetoModal" />
+                                        <Card />
                                     </slot>
                                 </div>
                                 <div v-show="cur == 3">
                                     <slot>
-                                        <CardAndOrder :accountA_ID="accountA_ID" />
+                                        <CardAndOrder />
                                     </slot>
                                 </div>
                             </div>
@@ -159,7 +147,6 @@ const CardupdatetoModal = (CardPoints) => {
 
 
 <style scoped>
-
 .centerformodal {
     display: flex;
     justify-content: center;

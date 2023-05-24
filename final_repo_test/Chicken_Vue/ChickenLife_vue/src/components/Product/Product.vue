@@ -16,8 +16,7 @@ const selectedProduct = ref(null);
 
 // 關掉
 const showInsufficientPoints = ref(false);
-//會員點數
-const ProductPoints = ref(0);
+
 
 // 取orderID
 const OrderID = ref(0);
@@ -34,33 +33,22 @@ const props = defineProps({
         required: true,
         default: false
     },
-    memberpoints: {
-        type: Number,
-        required: false,
-        default: 0
-    },
-    accountA_ID: {
-        type: Number,
-        required: true,
-        default: 0
-    }
 })
 
 const getEmployeeDTOes = () => {
-    getAxios("/api/Products", employeeDTOes);
-    console.log(employeeDTOes);
+    // getAxios("/api/Products", employeeDTOes);
+    // console.log(employeeDTOes);
 
     //原本axios呼叫指令碼
-    // axios.get(`${baseAddress}/api/Products`).then(response => {
-    //     //alert(JSON.stringify(response.data));
-    //     employeeDTOes.value = response.data;
-    //     // console.log(employeeDTOes.value);
-    // });
+    axios.get(`${baseAddress}/api/Products`).then(response => {
+        //alert(JSON.stringify(response.data));
+        employeeDTOes.value = response.data;
+        // console.log(employeeDTOes.value);
+    });
 };
 
 onMounted(() => {
     getEmployeeDTOes();
-    CheckPoints();
     SpriteForP();
 
 });
@@ -73,14 +61,6 @@ const OpenorClose = () => {
     }
 };
 
-//讀取圖片
-// const imageUrl = (url) => {
-//     // console.log(url);
-//     const imgPath = `/src/assets/img/producttest/${url}`;
-//     const imgUrl = new URL(imgPath, import.meta.url).href;
-//     // console.log(imgUrl);
-//     return imgUrl;
-// };
 const imageUrl = (url) => {
     // console.log(url);
     // const imgPath = `/src/assets/img/producttest/${url}`;
@@ -94,13 +74,6 @@ const imageUrl = (url) => {
 const sprites = document.querySelectorAll('.sprite');
 const interval = 100;
 const SpriteForP = () => {
-    // position = 96; // 調整每次移動的像素值
-
-    // 設定初始的 backgroundPosition
-    // sprites.forEach(sprite => {
-    //     sprite.style.backgroundPosition = `-${position}px 0px`;
-    //     // console.log("position=>", position);
-    // });
 
     setInterval(() => {
         //sprites.forEach(sprite => {
@@ -129,12 +102,12 @@ const openDialog = async (pt) => {
     //console.log(pt.target.id);
     try {
         //fuck();
-        const product = {};
+        // const product = {};
         // 從後端獲取商品資料
-        // const response = await axios.get(`${baseAddress}/api/Products/${pt.target.id}`); // 假設商品 ID 為 123
-        await getAxios(`/api/Products/${pt.target.id}`, product); // 假設商品 ID 為 123
-        CheckPoints();
-        // const product = response.data;
+        const response = await axios.get(`${baseAddress}/api/Products/${pt.target.id}`); // 假設商品 ID 為 123
+        // await getAxios(`/api/Products/${pt.target.id}`, product); // 假設商品 ID 為 123
+        // CheckPoints();
+        const product = response.data;
 
         // 設定選中的商品
         selectedProduct.value = product;
@@ -157,7 +130,7 @@ const confirmPurchase = (ID, Price, img) => {
         //console.log('購買商品:', selectedProduct.value);
         // console.log('Price', Price);
 
-        CheckPoints();
+        // CheckPoints();
         OrderAdd(ID, Price);
         //OrderDetailAdd(ID, Price);
         // 扣除點數
@@ -169,7 +142,7 @@ const confirmPurchase = (ID, Price, img) => {
         // console.log(playerRefs.value.clothes);
         // console.log("playerRefs.value.coins=>", playerRefs.value.coins)
         // console.log('ProductPoints=>', ProductPoints.value);
-        emit('updatepoint', ProductPoints);
+        // emit('updatepoint', ProductPoints);
         // memberPoints.value -= selectedProduct.value.price;
 
         // 購買完成後關閉彈出視窗
@@ -193,9 +166,9 @@ const ChangeAccountCoins = (coins) => {
 const closeInsufficientPointsDialog = () => {
     showInsufficientPoints.value = false;
 };
-const CheckPoints = () => {
-    ProductPoints.value = props.memberpoints;
-};
+// const CheckPoints = () => {
+//     ProductPoints.value = props.memberpoints;
+// };
 const OrderAdd = (ID, Price) => {
     //Order
     var request = {};
@@ -209,8 +182,8 @@ const OrderAdd = (ID, Price) => {
     //postAxios(`/api/Order`, request);
     // console.log(request);
     axios.post(`${baseAddress}/api/Order`, request).then(response => {
-        console.log("success");
-        console.log("response.data", response.data);
+        // console.log("success");
+        console.log("response.data=>", response.data);
         axios.get(`${baseAddress}/api/Order/GET/${playerRefs.value.id}`)
             .then(response => {
                 OrderID.value = response.data;
@@ -233,7 +206,8 @@ const OrderAdd = (ID, Price) => {
 const TypeChange = (num) => {
     employeeDTOes.value = [];
     if (num == -1) {
-        getAxios("/api/Products", employeeDTOes);
+        // getAxios("/api/Products", employeeDTOes);
+        getEmployeeDTOes();
     } else {
         var request = {};
         request.P_ID = 0;
@@ -248,8 +222,8 @@ const TypeChange = (num) => {
         request.P_Discontinuted = false;
         postAxiosObjNodata("/api/Products/FilterProductType", request, employeeDTOes);
     }
-    console.log("employeeDTOes=>", employeeDTOes);
-    console.log("employeeDTOes.value=>", employeeDTOes.value);
+    // console.log("employeeDTOes=>", employeeDTOes);
+    // console.log("employeeDTOes.value=>", employeeDTOes.value);
 }
 
 </script>
@@ -316,14 +290,14 @@ const TypeChange = (num) => {
 <!-- 購買資訊 -->
     <div v-if="isDialogOpen" class="dialog buywidth bd-blue-200">
         <div class="container ">
-        <div v-for="item in selectedProduct" :key="item.p_ID">
+        <!-- <div v-for="item in selectedProduct" :key="item.p_ID"> -->
             <div class="row product-block border rounded-1 ms-1">
                 <div class=" product-images  col ">
                     <!-- Product Image thumbnails START -->
                     <div class="thumbnails">
                         <div class="product-image">
                             <a class="thumbnail" title="magni dolores eosquies">
-                                <p class="sprite ms-5 mt-4 ms-0" :style="`background-image: url(${imageUrl(item.p_Image)}); background-position: ${position}px 0;`" />
+                                <p class="sprite ms-5 mt-4 ms-0" :style="`background-image: url(${imageUrl(selectedProduct.p_Image)}); background-position: ${position}px 0;`" />
                                 <!-- <img src="static/picture/05-800x800.jpg" title="magni dolores eosquies"
                                     data-zoom-image="https://demo.templatetrip.com/Opencart/OPC02/OPC040/OPC15/image/cache/catalog/demo/product/05-800x800.jpg"
                                     alt="magni dolores eosquies"> -->
@@ -335,12 +309,12 @@ const TypeChange = (num) => {
 
                     <div class=" product-details  col border p-2">
                         <h1>商品名稱: </h1>
-                        <h2 class="product-name">{{ item.p_Name }} </h2>
+                        <h2 class="product-name">{{ selectedProduct.p_Name }} </h2>
 
                         <table class="product-info">
                             <tr>商品介紹: </tr>
                             <tr>
-                                <td>{{ item.p_Describe }}</td>
+                                <td>{{ selectedProduct.p_Describe }}</td>
                                 <!-- <td class="product-info-value"><a
                                         href="index-productmanufacturerinfo_8.html">Apple</a></td> -->
                             </tr>
@@ -360,13 +334,13 @@ const TypeChange = (num) => {
 
                         <ul class="list-unstyled product-price">
                             <li>
-                                <h2>價格: {{ DiscountMoney(item.p_Price, item.p_Discount)}}</h2>
+                                <h2>價格: {{ DiscountMoney(selectedProduct.p_Price, selectedProduct.p_Discount)}}</h2>
                             </li>
                         </ul>
                         <!-- Product Options START -->
                         <div id="product" class="product-options">
                             <div class="form-group product-quantity">
-                                <button class="btn btn-primary m-1 btn-lg btn-block" @click="confirmPurchase(item.p_ID,item.p_Price,item.p_Image)">購買</button>
+                                <button class="btn btn-primary m-1 btn-lg btn-block" @click="confirmPurchase(selectedProduct.p_ID,selectedProduct.p_Price,selectedProduct.p_Image)">購買</button>
                                 <button class="btn btn-secondary" @click="closeDialog">關閉</button> 
                             </div>
                         </div>
@@ -382,7 +356,7 @@ const TypeChange = (num) => {
                <button class="btn btn-primary m-1" @click="confirmPurchase(item.p_ID,item.p_Price)">購買</button>
                 <button class="btn btn-secondary" @click="closeDialog">關閉</button> 
             </div> -->
-        </div>
+        <!-- </div> -->
     </div>
     </div>
 
