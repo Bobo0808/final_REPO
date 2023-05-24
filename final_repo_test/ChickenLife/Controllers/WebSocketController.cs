@@ -26,7 +26,7 @@ namespace ChickenLife.Controllers
         public static bool isMale = true;
         public static string publicMap = "測試服";
         public static string[] playerColors = { "blue", "red", "orange", "yellow", "green", "purple" };
-
+        public static int idtemp = 0;
 
 
 
@@ -96,9 +96,10 @@ namespace ChickenLife.Controllers
                             try
                             {
                                 PlayerRef player = new PlayerRef();//生成新玩家
+                                idtemp++;
                                 maps.MapDirectory[publicMap].client.Add(webSocket, player);
                                 maps.MapDirectory[publicMap].client[webSocket].type = "Connect";
-                                maps.MapDirectory[publicMap].client[webSocket].id = generateID();
+                                maps.MapDirectory[publicMap].client[webSocket].id = idtemp;
                                 /*  maps.MapDirectory[publicMap].client[webSocket].id = generateID();*/ //隨機生產ID 之後從ms sql取
                                 if (isMale == true) //性別
                                 {
