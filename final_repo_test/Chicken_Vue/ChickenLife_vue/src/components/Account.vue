@@ -1,21 +1,22 @@
 <script setup>
 import { ref } from "vue";
 import { postAxiosObj } from "../main.js";
-
+import { playerRefs } from "../main.js";
 const Account = ref({
-  "email": "wang32625171@gmail.com",
-  "password": "123456",
+  "email": "user@example.com",
+  "password": "111111",
 });
-const user = ref({});
-
-const CheckAccount = () => {
-  postAxiosObj("/api/User/login", Account, user);
-  console.log(user)
-  console.log(Account)
+const user = ref();
+let route = "https://localhost:7093/api/User/login"
+const CheckAccount = async() => {
+  await postAxiosObj("/api/User/login", Account, user);
+  
+  printValue(user)  
 }
 
-
-
+function printValue(value){
+  console.log(value.value)
+}
 
 
 

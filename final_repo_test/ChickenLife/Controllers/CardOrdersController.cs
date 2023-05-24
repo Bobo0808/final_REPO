@@ -97,6 +97,31 @@ namespace webAPIforTest.Controllers
                 });
         }
 
+        [HttpPost("FilterAccount")]
+        public async Task<IEnumerable<CardOrderDTO>> FilterAccountCardOrder([FromBody] CardOrderDTO orderDTO)
+        {
+            return _context.CardOrders
+                .Where(o => (o.A_ID == orderDTO.A_ID) &&
+                            (o.CO_Date.Month == orderDTO.CO_Date.Month ||
+                            o.CO_Cancel == false))
+                .Join(_context.Cards,
+                co => co.CA_ID,
+                cp => cp.CA_ID,
+                (co, cp) => new CardOrderDTO
+                {
+                    CO_ID = co.CO_ID,
+                    A_ID = co.A_ID,
+                    CA_ID = co.CA_ID,
+                    CT_ID = co.CT_ID,
+                    CO_Sum = co.CO_Sum,
+                    CO_Date = co.CO_Date,
+                    CO_Cancel = co.CO_Cancel,
+                    CO_Quantity = co.CO_Quantity,
+                    CA_Name = cp.CA_Name,
+                });
+        }
+
+
         // 顯示金流訂單
         // POST: api/CardOrders (會發現動詞與下面的POST相同而衝突)
         // 需增加參數POST:改為api/CardOrders/Show 而url不同區別

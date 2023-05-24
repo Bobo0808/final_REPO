@@ -24,10 +24,20 @@ const updatePoints = (modalpoints) => {
     memberpoints.value = modalpoints.value;
 }
 
+// 原先讀取會員資訊，若沒有可以砍掉
 const getAccountDTOes = () => {
 
 }
 
+//確認商城開啟關掉鏡頭
+const Checkshow = () => {
+    if (closeableModal.value == false) {
+        closeableModal.value = true;
+    }
+    else {
+        closeableModal.value = false;
+    }
+}
 
 // 顯示遊戲介面
 const Change = () => {
@@ -179,12 +189,14 @@ const handleKeyPress = (event) => {
             </div>
 
             <div class="phaser_area">
-                <div style="z-index: 999;">
-                    <video width="200" height="200" autoplay id="myVideo" muted playsinline style="z-index: 999;"></video>
+                <!-- <div :style="{ zIndex: closeableModal ? 0 : 999 }" v-show="!closeableModal">
+                    <video width="200" height="200" autoplay id="myVideo" muted playsinline
+                        :style="{ zIndex: closeableModal ? 0 : 999 }" v-show="!closeableModal"></video>
 
-                    <video width="500" height="500" autoplay id="remoteVideo" playsinline style="z-index: 999;"></video>
-                </div>
-                <div class="game-container"></div>
+                    <video width="500" height="500" autoplay id="remoteVideo" playsinline
+                        :style="{ zIndex: closeableModal ? 0 : 999 }" v-show="!closeableModal"></video>
+                </div> -->
+                <!-- <div class="game-container"></div> -->
 
 
                 <div class="phaser_gamearea " id="gameArea">
