@@ -35,15 +35,15 @@ export const getAxios = async (route, data) => {
   });
 }
 
-export const getAxiosNoData = (route, data) => {
-  axios.get(baseAddress + route).then(response => {
+export const getAxiosNoData = async (route, data) => {
+  await axios.get(baseAddress + route).then(response => {
     data.value = response.data;
   });
   return data
 }
 
-export const postAxiosObj = (route, data, res) => {
-  axios.post(baseAddress + route, data.value).then(response => {
+export const postAxiosObj = async (route, data, res) => {
+  await axios.post(baseAddress + route, data.value).then(response => {
     res.value = response.data;
   });
 }
@@ -78,8 +78,8 @@ export const putAxiosString = async (route, data, res) => {
   return res;
 }
 
-export const putAxiosStringNodata = (route, data, res) => {
-  axios.put(baseAddress + route, data).then(response => {
+export const putAxiosStringNodata = async (route, data, res) => {
+  await axios.put(baseAddress + route, data).then(response => {
     res.value = response;
   });
   return res;
