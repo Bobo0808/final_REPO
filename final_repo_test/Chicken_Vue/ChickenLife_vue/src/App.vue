@@ -4,10 +4,11 @@ import { reactive, ref, onMounted, } from "vue";
 import Phaser from './components/Phaser.vue';
 import Modal from './components/Shop/Modal.vue'
 import { fuck, playerRefs } from "./main.js";
+import Sandy from "./components/Sandy.vue";
 import profilePic from './img/625157.jpg';
 // import './js/dialogue';
 import Account from "./components/Account.vue"
-const currentBody = ref(Account);
+const currentBody = ref(Sandy);
 
 const isSussess = ref(false);
 onMounted(() => {
@@ -46,7 +47,7 @@ const Change = () => {
         playerRefs.value.isPlay = true;
     } else {
         playerRefs.value.isPlay = false;
-        currentBody.value = Account;
+        currentBody.value = Sandy;
     }
 }
 const isss = playerRefs.value.isPlay;
@@ -198,7 +199,7 @@ const handleKeyPress = (event) => {
                 </div> -->
                 <!-- <div class="game-container"></div> -->
 
-
+       
                 <div class="phaser_gamearea " id="gameArea">
                     <component :is="currentBody"></component>
                 </div>
