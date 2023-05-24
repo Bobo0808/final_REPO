@@ -5,40 +5,40 @@ import { playerRefs } from "../main.js";
 
 const emit = defineEmits();
 const props = defineProps({
-    LoginStatus: {
-        type: Boolean,
-        required: true,
-        default: false
-    },
-    memberpoints: {
-        type: Number,
-        required: false,
-        default: 0
-    },
-    accountA_ID: {
-        type: Number,
-        required: true,
-        default: 0
-    }
+  LoginStatus: {
+    type: Boolean,
+    required: true,
+    default: false
+  },
+  memberpoints: {
+    type: Number,
+    required: false,
+    default: 0
+  },
+  closeableModal: {
+    type: Boolean,
+    default: false,
+  }
 })
 onMounted(() => {
-    getPlay();
-    // phaserArcade();
-    // phaser();
-    // backgame();
-    // SpriteForP();
+  getPlay();
+  // phaserArcade();
+  // phaser();
+  // backgame();
+  // SpriteForP();
 });
 
 const getPlay = () => {
-    // const value = playerRef.value.isPlay; // 獲取需要傳遞的值
-    // startGame(value); // 傳遞值給遊戲啟動函式
+  // const value = playerRef.value.isPlay; // 獲取需要傳遞的值
+  // startGame(value); // 傳遞值給遊戲啟動函式
 }
 
 </script>
 
 <template lang="">
      <div class="phaser_area">
-      <div style="z-index: 999;">
+      <!-- <div style="z-index: 999;"> -->
+      <div :style="{ zIndex: !closeableModal ? '999' : '0' }" v-show="!props.closeableModal">
         <video autoplay id="myVideo" muted playsinline></video>
         <video autoplay id="remoteVideo" playsinline></video>
       </div>
@@ -83,4 +83,99 @@ const getPlay = () => {
 <style src="../css/sidebars.css"></style>
 <style src="../css/style.css"></style>
 <style src="../../public/css/phaser_gamemode.css"></style>
-<style></style>
+<style scoped>
+#dialog-box {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0;
+  left: 285px;
+  width: 35%;
+  height: 25%;
+  background-color: white;
+  border: 1px solid gray;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  opacity: 100%;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #1d3461;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.dialog-close-btn {
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.dialog {
+  overflow-y: auto;
+  margin: 0px;
+  padding: 10px;
+  height: 100%;
+}
+
+.dialog-body {
+  float: left;
+}
+
+.dialog-time {
+  float: right;
+}
+
+
+.dialog-footer {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid gray;
+}
+
+#dialog-input {
+  flex: 1;
+  margin-right: 10px;
+  padding: 5px;
+  border: none;
+  border-bottom: 2px solid #1d3461;
+  outline: none;
+  font-size: 16px;
+}
+
+#dialog-send-btn {
+  padding: 5px 10px;
+  background-color: #1d3461;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.dialog-message {
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.dialog-message-self {
+  background-color: #1d3461;
+  color: white;
+  align-self: flex-end;
+}
+
+.dialog-message-other {
+  background-color: #f2f2f2;
+  color: black;
+  align-self: flex-start;
+}
+</style>
