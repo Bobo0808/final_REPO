@@ -98,7 +98,7 @@ const CardupdatetoModal = (CardPoints) => {
         <transition name="fade">
             <div v-if="modelValue" class="pt-5 position-fixed top-0 start-0 h-100 w-100 shop"
                 style="background-color: rgba(0, 0, 0, 0.25)">
-                <div id="backdrop" @click="backdropClick" class="modal1-dialog ">
+                <div id="backdrop" @click="backdropClick" class="centerformodal ">
                     <div class="card px-0" :class="(container == null) ? 'container' : `container-${container}`"
                         :style="(maxwidth != null) ? `max-width: ${maxwidth}` : null">
                         <div class="card-header h2 test">
@@ -160,10 +160,11 @@ const CardupdatetoModal = (CardPoints) => {
 
 <style scoped>
 
-.modal1-dialog{
+.centerformodal {
     display: flex;
     justify-content: center;
 }
+
 .backdrop {
     position: fixed;
     top: 0;

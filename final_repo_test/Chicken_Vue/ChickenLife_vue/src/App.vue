@@ -4,9 +4,11 @@ import { reactive, ref, onMounted, } from "vue";
 import Phaser from './components/Phaser.vue';
 import Modal from './components/Shop/Modal.vue'
 import { fuck, playerRefs } from "./main.js";
+import Sandy from "./components/Sandy.vue";
 import profilePic from './img/625157.jpg';
 // import './js/dialogue.js';
 import Account from "./components/Account.vue"
+
 const currentBody = ref(Phaser);
 
 const isSussess = ref(false);
@@ -46,7 +48,7 @@ const Change = () => {
         playerRefs.value.isPlay = true;
     } else {
         playerRefs.value.isPlay = false;
-        currentBody.value = Account;
+        currentBody.value = Sandy;
     }
 }
 const isss = playerRefs.value.isPlay;
@@ -132,20 +134,6 @@ const handleKeyPress = (event) => {
 <component :is="currentBody"></component>
 
 </div>
-<!-- <div id="dialog-box">
-    <div class="dialog-header">
-      <span class="dialog-title">對話視窗</span>
-      <span class="dialog-close-btn">x</span>
-    </div>
-    <div class="dialog">
-      <div id="dialog" class="dialog-body"></div>
-      <div id="dialog-time" class="dialog-time"></div>
-    </div>
-    <div class="dialog-footer">
-      <input type="text" id="dialog-input" placeholder="請輸入訊息">
-      <button id="dialog-send-btn">發送</button>
-    </div>
-</div> -->
 </template>
   
 <style src="./css/index.css"></style>

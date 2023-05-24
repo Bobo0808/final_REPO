@@ -28,44 +28,58 @@ export const fuck = () => {
   return app.config.globalProperties;
 };
 
-export const getAxios = async(route, data) => {
-  await axios.get(baseAddress + route).then(response => {
+export const getAxios = async (route, data) => {
+  await axios.get(baseAddress + route.value).then(response => {
+    console.log(route.value)
+    return data.value = response.data;
+  });
+}
+
+export const getAxiosNoData = (route, data) => {
+  axios.get(baseAddress + route).then(response => {
     data.value = response.data;
   });
   return data
 }
 
-export const postAxiosObj = async(route, data, res) => {
-  await axios.post(baseAddress + route, data.value).then(response => {
-    return res.value = response.data;
+export const postAxiosObj = (route, data, res) => {
+  axios.post(baseAddress + route, data.value).then(response => {
+    res.value = response.data;
   });
 }
 
-export const postAxiosString = async(route, data, res) => {
+export const postAxiosString = async (route, data, res) => {
   await axios.post(baseAddress + route, data.value).then(response => {
     res = response;
   });
   return res
 }
 
-export const putAxiosObj = async(route, data, res) => {
+export const putAxiosObj = async (route, data, res) => {
   await axios.put(baseAddress + route, data.value).then(response => {
     res.value = response.data;
   });
   return res;
 }
 
-export const postAxiosObjNodata = async(route, data, res) => {
+export const postAxiosObjNodata = async (route, data, res) => {
   await axios.post(baseAddress + route, data).then(response => {
     res.value = response.data;
-    console.log("res=>", res)
-    console.log("response.data=>", response.data)
+    // console.log("res=>", res)
+    // console.log("response.data=>", response.data)
   });
   return res
 }
 
-export const putAxiosString = async(route, data, res) => {
+export const putAxiosString = async (route, data, res) => {
   await axios.put(baseAddress + route, data.value).then(response => {
+    res.value = response;
+  });
+  return res;
+}
+
+export const putAxiosStringNodata = (route, data, res) => {
+  axios.put(baseAddress + route, data).then(response => {
     res.value = response;
   });
   return res;
