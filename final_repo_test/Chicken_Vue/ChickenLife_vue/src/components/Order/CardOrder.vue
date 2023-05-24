@@ -1,7 +1,7 @@
 
 <script setup>
 import { onMounted, ref } from 'vue';
-import { getDate } from '../../main';
+import { playerRefs, getDate, putAxiosStringNodata, postAxiosObjNodata } from '../../main';
 // const baseAddress = "https://localhost:7097";
 const baseAddress = "https://localhost:7093";
 
@@ -20,11 +20,12 @@ const getCardOrderDTOes = (A_ID) => {
     var request = {};
     request.A_ID = isNaN(Number(A_ID)) ? -1 : Number(A_ID);
     request.CA_Name = "";
-    axios.post(`${baseAddress}/api/CardOrders/Show`, request).then(response => {
-        // alert(JSON.stringify(response.data));
-        CardOrderDTOes.value = response.data;
-        // console.log(CardOrderDTOes.value);
-    });
+    // axios.post(`${baseAddress}/api/CardOrders/Show`, request).then(response => {
+    //     // alert(JSON.stringify(response.data));
+    //     CardOrderDTOes.value = response.data;
+    //     // console.log(CardOrderDTOes.value);
+    // });
+    postAxiosObjNodata(`/api/CardOrders/Show`, request, CardOrderDTOes);
 };
 
 const getdatefilter = (datefilter) => {
@@ -33,7 +34,7 @@ const getdatefilter = (datefilter) => {
 };
 
 onMounted(() => {
-    getCardOrderDTOes(props.accountA_ID);
+    getCardOrderDTOes(playerRefs.value.id);
 });
 
 //按鈕日期
@@ -46,15 +47,19 @@ const isButtonDisabled = (date, iscanceled) => {
     return threeDaysLater <= today || iscanceled;
 }
 // 取消
-const cancelOrder = (CO_ID) => {
+const cancelOrder = async (CO_ID) => {
+    var test = {};
     var request = {};
     request.CO_ID = isNaN(Number(CO_ID)) ? -1 : Number(CO_ID);
     request.CO_Cancel = true;
     request.CA_Name = "";
     // console.log("request=>", request);
-    axios.put(`${baseAddress}/api/CardOrders/Cancel/${CO_ID}`, request).then(response => {
-        getCardOrderDTOes(props.accountA_ID);
-    });
+    // axios.put(`${baseAddress}/api/CardOrders/Cancel/${CO_ID}`, request).then(response => {
+    //     getCardOrderDTOes(props.accountA_ID);
+    // });
+
+    await putAxiosStringNodata(`/api/CardOrders/Cancel/${CO_ID}`, request, test);
+    getCardOrderDTOes(playerRefs.value.id);
 }
 
 
