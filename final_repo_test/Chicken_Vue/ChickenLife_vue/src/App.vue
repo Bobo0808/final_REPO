@@ -7,7 +7,7 @@ import { fuck, playerRefs } from "./main.js";
 import profilePic from './img/625157.jpg';
 // import './js/dialogue';
 import Account from "./components/Account.vue"
-const currentBody = ref(Account);
+const currentBody = ref(Phaser);
 
 const isSussess = ref(false);
 onMounted(() => {
@@ -28,7 +28,7 @@ const updatePoints = (modalpoints) => {
 const getAccountDTOes = () => {
 
 }
-
+playerRefs.value.isPlay = true;
 //確認商城開啟關掉鏡頭
 const Checkshow = () => {
     if (closeableModal.value == false) {
@@ -73,7 +73,6 @@ const handleKeyPress = (event) => {
     <div>
         <Account v-if="isSussess" />
     </div>
-    <div>
         <header class="border-bottom">
             <div class="container">
                 <div class="div-nav d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -112,117 +111,31 @@ const handleKeyPress = (event) => {
         </header>
         <div class="div-sidebar">
 
-            <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
-                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <svg class="bi me-2" width="40" height="32">
-                        <use xlink:href="#bootstrap" />
-                    </svg>
-                    <span class="fs-4">Sidebar</span>
-                </a>
-                <hr>
-                <ul class="nav nav-pills flex-column mb-auto">
-                    <li class="nav-item" id="waypoint">
-                        <a href="#" class="nav-link active" aria-current="page">
-                            <svg class="bi me-2" width="16" height="16">
-                                <use xlink:href="#home" />
-                            </svg>
-                            出生點
-                        </a>
-                    </li>
-                    <li id="moneypoint">
-                        <a href="#" class="nav-link text-white">
-                            <svg class="bi me-2" width="16" height="16">
-                                <use xlink:href="#speedometer2" />
-                            </svg>
-                            金融板
-                        </a>
-                    </li>
-                    <li id="elecpoint">
-                        <a href="#" class="nav-link text-white">
-                            <svg class="bi me-2" width="16" height="16">
-                                <use xlink:href="#table" />
-                            </svg>
-                            電子板
-                        </a>
-                    </li>
-                    <li id="sportspoint">
-                        <a href="#" class="nav-link text-white">
-                            <svg class="bi me-2" width="16" height="16">
-                                <use xlink:href="#grid" />
-                            </svg>
-                            體育板
-                        </a>
-                    </li>
-                    <li id="lifepoint">
-                        <a href="#" class="nav-link text-white">
-                            <svg class="bi me-2" width="16" height="16">
-                                <use xlink:href="#people-circle" />
-                            </svg>
-                            生活板
-                        </a>
-                    </li>
-                    <label for="player-name">Your Name</label>
-                    <input id="player-name" maxlength="10" type="text" />
-                    <button id="player-color">Change Color</button>
-                    <button id="joinBtn">JoinQueue</button>
-                    <button id="btnLeave">Leave Room</button>
-                    <button id="btnCamera">CameraOn</button>
-                    <button id="btnMic">MicOn</button>
-                </ul>
-                <hr>
-                <div class="dropdown">
-                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-                        id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img :src="profilePic" alt="" width="32" height="32" class="rounded-circle me-2">
-                        <strong>mdo</strong>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-white text-small shadow" aria-labelledby="dropdownUser1">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
-                    </ul>
-                </div>
-            </div>
+<div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sideyellow" style="width: 280px;">
+  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+    <svg class="bi me-2" width="40" height="32">
+      <use xlink:href="#bootstrap" />
+    </svg>
+    <span class="fs-4">好友</span>
+  </a>
+  <!-- <li id="lifepoint">
+      <a href="#" class="nav-link text-white">
+        <svg class="bi me-2" width="16" height="16">
+          <use xlink:href="#people-circle" />
+        </svg>
+        生活板
+      </a>
+    </li> -->
 
-            <div class="phaser_area">
-                <!-- <div :style="{ zIndex: closeableModal ? 0 : 999 }" v-show="!closeableModal">
-                    <video width="200" height="200" autoplay id="myVideo" muted playsinline
-                        :style="{ zIndex: closeableModal ? 0 : 999 }" v-show="!closeableModal"></video>
+  <hr>
+</div>
+<component :is="currentBody"></component>
 
-                    <video width="500" height="500" autoplay id="remoteVideo" playsinline
-                        :style="{ zIndex: closeableModal ? 0 : 999 }" v-show="!closeableModal"></video>
-                </div> -->
-                <!-- <div class="game-container"></div> -->
-
-
-                <div class="phaser_gamearea " id="gameArea">
-                    <component :is="currentBody"></component>
-                </div>
-            </div>
-        </div>
-        <div id="dialog-box" :style="{ display: showDialog ? 'flex' : 'none' }">
-            <div class="dialog-header">
-                <span class="dialog-title">對話視窗</span>
-                <span class="dialog-close-btn" @click="hideDialog">x</span>
-            </div>
-            <div class="dialog">
-                <div id="dialog" class="dialog-body"></div>
-                <div id="dialog-time" class="dialog-time"></div>
-            </div>
-            <div class="dialog-footer">
-                <input type="text" id="dialog-input" @keypress.enter="handleKeyPress" placeholder="請輸入訊息">
-                <button id="dialog-send-btn">發送</button>
-            </div>
-        </div>
-    </div>
+</div>
 </template>
   
 <style src="./css/index.css"></style>
 <style src="./css/sidebars.css"></style>
 <style src="./css/style.css"></style>
-<style src="./css/phaser_gamemode.css"></style>
+<style src="../public/css/phaser_gamemode.css"></style>
 <style scoped></style>

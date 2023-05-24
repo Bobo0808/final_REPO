@@ -6,6 +6,15 @@ import helpMe from '../tiled/HELPME.json';
 import npcStand from '../img/phaser/NPC01_stand.png';
 import npcWalk from '../img/phaser/NPC01_walk.png';
 import mapAni from "../tiled/mapani.png";
+
+import Nurtured from '../music/Nurtured_in_Contemplation.mp3'
+import wind from '../music/wind.mp3'
+import froestSunWater from '../music/froestSunWater.mp3'
+import water from '../music/water.mp3'
+import lollipop from '../music/lollipop.mp3'
+import mirror from '../music/mirror.mp3'
+
+
 const w = window.innerWidth;
 const h = window.innerHeight;
 // var server = 'wss://chickenlife20230522194335.azurewebsites.net/';
@@ -29,17 +38,28 @@ var musicStore;
 var musicBridge;
 var musicIsland;
 var musicLilRoom;
+const waitingLog = document.getElementById('waitingLog');
 const gameContainer = document.querySelector(".game-container");
 const myVideo = document.getElementById("myVideo");
 const remoteVideo = document.getElementById("remoteVideo");
 const btnCamera = document.getElementById('btnCamera');
 const btnMic = document.getElementById('btnMic');
 const btnLeave = document.getElementById('btnLeave');
+const btnStart = document.getElementById('joinBtn');
+const extendBtnContainer = document.getElementById('extendBtnContainer');
 btnCamera.addEventListener('click', muteCam);
 btnMic.addEventListener('click', muteMic);
 btnLeave.addEventListener('click', leaveRoom);
 var P_PubMap = "";
-
+// fetch('https://localhost:7093/api/Ads/AdsGet')
+//     .then(response => response.json())
+//     .then(data => {
+//         ads = data;
+//         console.log(data);
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//     });
 function sendMsg() {
     var txtMsg = document.getElementById("dialog-input").value;
     if (txtMsg) {
@@ -84,22 +104,8 @@ function isCompleteMessage(message) {
     }
 }
 
-function isSolid(x, y) {
-    let blockedNextSpace = false;
-    for (let i = 0; i < mapData.BlockedSpaces.length; i++) {
-        if (x == mapData.BlockedSpaces[i].x && y == mapData.BlockedSpaces[i].y) {
-            blockedNextSpace = true;
-        }
-    }
-    return (
-        blockedNextSpace ||
-        x >= mapData.MaxX ||
-        x < mapData.MinX ||
-        y >= mapData.MaxY ||
-        y < mapData.MinY
-    )
-}
 async function sendQueueRequest() {
+    btnStart.style.visibility = 'hidden';
     if (!isQueue) {
         let data = {
             "type": "Queue",
@@ -147,6 +153,7 @@ function muteCam() {
 }
 
 function leaveRoom() {
+    btnStart.style.visibility = 'visible';
     try {
         stream.getTracks().forEach(track => track.stop());
         remoteVideo.srcObject = null;
@@ -282,7 +289,6 @@ class gameStart extends Phaser.Scene {
             this.player.setSize(128, 128);
             this.player.setDepth(1);
             this.cameras.main.startFollow(this.player);
-            this.checkMusicOverlap();
 
             // this.physics.world.addCollider(this.player, layer_collision);
         }
@@ -374,48 +380,44 @@ class gameStart extends Phaser.Scene {
 
         this.sendDirection();
     }
-    checkMusicOverlap() {
-
-        this.physics.overlap(this.player, this.musicObjects, (player, musicObject) => {
-            console.log("musicObjects");
-            console.log(this.musicObjects);
-            const musicKey = getMusicKey(musicObject);
-            if (musicKey !== currentMusicKey) {
-                stopCurrentMusic();
-                currentMusicKey = musicKey;
-            }
-            switch (musicKey) {
-                case 'musicStart':
-                    musicStart.play();
-                    break;
-                case 'musicSnow':
-                    musicSnow.play();
-                    break;
-                case 'musicStore':
-                    musicStore.play();
-                    break;
-                case 'musicBridge':
-                    musicBridge.play();
-                    break;
-                case 'musicIsland':
-                    musicIsland.play();
-                    break;
-                case 'musicLilRoom':
-                    musicLilRoom.play();
-                    break;
-            }
-        }, null, this);
-
+    getMusicKey(musicObject) {
+        console.log("musicObject");
+        console.log(musicObject);
+        if (musicObject.properties.music_start) {
+            currentMusicKey = 'music_start';
+            return 'music_start';
+        } else if (musicObject.properties.music_snow) {
+            currentMusicKey = 'music_snow';
+            return 'music_snow';
+        }
+        else if (musicObject.properties.music_store) {
+            currentMusicKey = 'music_store';
+            return 'music_store';
+        }
+        else if (musicObject.properties.music_bridge) {
+            currentMusicKey = 'music_bridge';
+            return 'music_bridge';
+        }
+        else if (musicObject.properties.music_island) {
+            currentMusicKey = 'music_island';
+            return 'music_island';
+        }
+        else if (musicObject.properties.music_lilroom) {
+            currentMusicKey = 'music_lilroom';
+            return 'music_lilroom';
+        }
+        return '';
     }
+
     preload() {
         this.load.image("tiles", mapAni);
         this.load.tilemapTiledJSON('map', helpMe);
-        this.load.audio('musicStart', '../music/Nurtured_in_Contemplation.mp3');
-        this.load.audio('musicSnow', '../music/wind.mp3');
-        this.load.audio('musicStore', '../music/froestSunWater.mp3');
-        this.load.audio('musicBridge', '../music/water.mp3');
-        this.load.audio('musicIsland', '../music/lollipop.mp3');
-        this.load.audio('musicLilRoom', '../music/mirror.mp3');
+        this.load.audio('musicStart', Nurtured);
+        this.load.audio('musicSnow', wind);
+        this.load.audio('musicStore', froestSunWater);
+        this.load.audio('musicBridge', water);
+        this.load.audio('musicIsland', lollipop);
+        this.load.audio('musicLilRoom', mirror);
         this.load.spritesheet('stand', spriteStand, {
             frameWidth: 128, frameHeight: 128
         });
@@ -458,6 +460,7 @@ class gameStart extends Phaser.Scene {
         }.bind(this));
     }
     create() {
+        this.sound.add('musicStart').play({ volume: 0.3, loop: true });
         const map = this.make.tilemap({ key: "map", tileWidth: 32, tileHeight: 32 });
         const tileset = map.addTilesetImage("mapani", "tiles", 32, 32, 0, 0);
         const layer_sea = map.createLayer("sea", tileset, 0, 0);
@@ -466,15 +469,12 @@ class gameStart extends Phaser.Scene {
         const layer_04 = map.createLayer("04", tileset, 0, 0);
         const layer_Detph1 = map.createLayer("Detph1", tileset, 0, 0);
         const layer_Detph2 = map.createLayer("Detph2", tileset, 0, 0);
-        const ObjectLayer_music = map.getObjectLayer("music");
-        const musicObjects = ObjectLayer_music.objects;
         musicStart = this.sound.add('musicStart');
         musicSnow = this.sound.add('musicSnow');
         musicStore = this.sound.add('musicStore');
         musicBridge = this.sound.add('musicBridge');
         musicIsland = this.sound.add('musicIsland');
         musicLilRoom = this.sound.add('musicLilRoom');
-        // musicStart.play();
 
 
         layer_collision = map.createLayer("collision", tileset, 0, 0);
@@ -525,6 +525,8 @@ class gameStart extends Phaser.Scene {
                     btnCamera.style.visibility = 'hidden';
                     btnMic.style.visibility = 'hidden';
                     btnLeave.style.visibility = 'hidden';
+                    waitingLog.style.visibility = 'hidden';
+                    extendBtnContainer.style.visibility = 'hidden'
                     if (this.player) {
                         this.player.destroy();
                     }
@@ -575,17 +577,15 @@ class gameStart extends Phaser.Scene {
 
                     break
                 case "Match":
-                    // alert("配對成功")
-                    //** */
                     isQueue = false;
-                    alert("別再操你媽了");
+                    alert("配對成功!");
+                    extendBtnContainer.visibility = 'visible';
                     myVideo.style.visibility = 'visible';
                     remoteVideo.style.visibility = 'visible';
                     btnCamera.style.visibility = 'visible';
                     btnMic.style.visibility = 'visible';
                     btnLeave.style.visibility = 'visible';
-
-                    console.log(result);
+                    waitingLog.style.visibility = 'hidden';
                     LoadMap(result);
                     this.player.destroy();
                     cleanAllPlayers();
@@ -602,7 +602,7 @@ class gameStart extends Phaser.Scene {
 
                     break
                 case "Wait":
-                    console.log("等待配對")
+                    waitingLog.style.visibility = 'visible';
                     isQueue = true;
                     break
                 case "Peer":
@@ -638,77 +638,6 @@ class gameStart extends Phaser.Scene {
         var teleportlife = document.getElementById('lifepoint');
         teleportlife.addEventListener('click', function () { teleport.call(this, 'life'); }.bind(this));
 
-
-        function getMusicKey(musicObject) {
-            console.log("musicObject");
-            console.log(musicObject);
-            if (musicObject.properties.music_start) {
-                currentMusicKey = 'music_start';
-                return 'music_start';
-            } else if (musicObject.properties.music_snow) {
-                currentMusicKey = 'music_snow';
-                return 'music_snow';
-            }
-            else if (musicObject.properties.music_store) {
-                currentMusicKey = 'music_store';
-                return 'music_store';
-            }
-            else if (musicObject.properties.music_bridge) {
-                currentMusicKey = 'music_bridge';
-                return 'music_bridge';
-            }
-            else if (musicObject.properties.music_island) {
-                currentMusicKey = 'music_island';
-                return 'music_island';
-            }
-            else if (musicObject.properties.music_lilroom) {
-                currentMusicKey = 'music_lilroom';
-                return 'music_lilroom';
-            }
-            return '';
-        }
-        function stopCurrentMusic() {
-
-            switch (currentMusicKey) {
-                case 'music_start':
-                    musicStart.stop();
-                    break;
-                case 'music_snow':
-                    musicSnow.stop();
-                    break;
-                case 'music_store':
-                    musicStore.stop();
-                    break;
-                case 'music_bridge':
-                    musicBridge.stop();
-                    break;
-                case 'music_island':
-                    musicIsland.stop();
-                    break;
-                case 'music_lilroom':
-                    musicLilRoom.stop();
-                    break;
-
-            }
-        }
-
-        //吊橋
-        // this.player = this.physics.add.sprite(4576, 6816, 'stand');
-
-        //雪地
-        // this.player = this.physics.add.sprite(5248, 11520, 'stand');
-
-
-        //商店街
-        // this.player = this.physics.add.sprite(4576, 2496, 'stand');
-
-        //群島
-        // this.player = this.physics.add.sprite(9568, 2400, 'stand');
-
-        //出生點
-        // this.player = this.physics.add.sprite(9728,6912,'stand');
-
-
         //創建粉紅熊熊NPC
         this.Npc01 = this.physics.add.sprite(9728, 6912, 'Npc01Stand');
         this.Npc01.anims.play('Npc01Stand_anim', true);
@@ -718,6 +647,7 @@ class gameStart extends Phaser.Scene {
 
         cursors = this.input.keyboard.createCursorKeys();
     }
+
     update() {
         if (this.player != null) {
             this.player.setVelocityY(0);
@@ -821,11 +751,16 @@ function teleport(target) {
         // lilRoom2: { x: 8735, y: 10810 }
         // 45
     };
+    var musicbase = {
+        start: 'musicStart',
+        money: 'musicSnow',
+        elec: 'musicStore',
+        sports: 'musicBridge',
+        life: 'musicIsland',
+    }
     var waypoint = points[target];
+    var musicPlay = musicbase[target];
     if (waypoint) {
-        var duration = 500;
-
-
         this.mask = this.add.graphics();
         this.mask.fillStyle(0x000000, 1);
         this.mask.fillRect(0, 0, w, h);
@@ -838,6 +773,8 @@ function teleport(target) {
             onComplete: function () {
                 this.player.x = waypoint.x;
                 this.player.y = waypoint.y;
+                this.sound.stopAll();
+                this.sound.add(musicPlay).play({ volume: 0.3, loop: true });
                 this.tweens.add({
                     targets: this.mask,
                     alpha: 0,
