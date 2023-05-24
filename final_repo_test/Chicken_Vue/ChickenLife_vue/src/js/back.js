@@ -693,7 +693,7 @@ class gameStart extends Phaser.Scene {
                 this.player.flipX = false;
             }
             else {
-                // this.handleArrowPress(0, 0);
+                this.handleArrowPress(0, 0);
                 this.player.anims.play('stand_anim', true);
             }
 
