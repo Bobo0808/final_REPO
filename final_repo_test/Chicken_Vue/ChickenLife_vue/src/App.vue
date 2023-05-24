@@ -11,25 +11,9 @@ import Account from "./components/Account.vue"
 
 const currentBody = ref(Phaser);
 
-const isSussess = ref(false);
-onMounted(() => {
-    getAccountDTOes();
-    // dialog
-});
-
-// const memberpoints = ref(1000);
-// const accountA_ID = ref(1);
 
 const closeableModal = ref(false);
 
-// const updatePoints = (modalpoints) => {
-//     memberpoints.value = modalpoints.value;
-// }
-
-// 原先讀取會員資訊，若沒有可以砍掉
-const getAccountDTOes = () => {
-
-}
 playerRefs.value.isPlay = true;
 //確認商城開啟關掉鏡頭
 const Checkshow = () => {
@@ -51,7 +35,7 @@ const Change = () => {
         currentBody.value = Sandy;
     }
 }
-const isss = playerRefs.value.isPlay;
+
 const showDialog = ref(true);
 
 const showDialogBool = () => {
@@ -72,9 +56,6 @@ const handleKeyPress = (event) => {
 </script>
 
 <template>
-    <div>
-        <Account v-if="isSussess" />
-    </div>
     <header class="border-bottom">
         <div class="container">
             <div class="div-nav d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -120,18 +101,18 @@ const handleKeyPress = (event) => {
                 <span class="fs-4">好友</span>
             </a>
             <!-- <li id="lifepoint">
-                          <a href="#" class="nav-link text-white">
-                            <svg class="bi me-2" width="16" height="16">
-                              <use xlink:href="#people-circle" />
-                            </svg>
-                            生活板
-                          </a>
-                        </li> -->
+        <a href="#" class="nav-link text-white">
+            <svg class="bi me-2" width="16" height="16">
+                <use xlink:href="#people-circle" />
+            </svg>
+            生活板
+        </a>
+        </li> -->
 
             <hr>
         </div>
-        <component :is="currentBody" :closeableModal="closeableModal"></component>
-
+        <Phaser></Phaser>
+        <!-- <component :is="currentBody" :closeableModal="closeableModal"></component> -->
     </div>
 </template>
   
