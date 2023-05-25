@@ -1,9 +1,9 @@
 
 <script setup>
 import { onMounted, ref, inject } from 'vue';
-import { playerRefs, getAxios, getDate, postAxiosObjNodata, putAxiosString, putAxiosStringNodata } from '../../main';
+import { playerRefs, baseAddress, getAxios, getDate, postAxiosObjNodata, putAxiosString, putAxiosStringNodata } from '../../main';
 // const baseAddress = "https://localhost:7097";
-const baseAddress = "https://localhost:7093";
+// const baseAddress = "https://localhost:7093";
 
 const props = defineProps({
     accountA_ID: {
@@ -59,7 +59,7 @@ const isButtonDisabled = (date, iscanceled) => {
 };
 
 // 取消訂單
-const cancelOrder = async (O_ID) => {
+const cancelOrder = async (O_ID, Price) => {
     // console.log("O_ID=>", O_ID);
     var test = {};
     var request = {};
@@ -67,6 +67,9 @@ const cancelOrder = async (O_ID) => {
     request.O_Cancle = true;
     request.productName = "";
     await putAxiosStringNodata(`/api/Order/Cancel/${O_ID}`, request, test);
+
+    playerRefs.value.coins += Price;
+
     getOrderDTOes(playerRefs.value.id);
     // axios.put(`${baseAddress}/api/Order/Cancel/${O_ID}`, request).then(response => {
     //     getOrderDTOes(props.accountA_ID);
@@ -124,7 +127,7 @@ const cancelOrder = async (O_ID) => {
                 </td>
                 <td>
                     <div class="d-flex order-actions">
-                        <button v-if="!isButtonDisabled(item.o_Date,item.o_Cancle)" :disabled="isButtonDisabled(item.o_Date,item.o_Cancle)" class="btn btn-danger" @click="cancelOrder(item.o_ID)">取消</button>
+                        <button v-if="!isButtonDisabled(item.o_Date,item.o_Cancle)" :disabled="isButtonDisabled(item.o_Date,item.o_Cancle)" class="btn btn-danger" @click="cancelOrder(item.o_ID,item.o_TotalPrice)">取消</button>
                         
                     </div>
                 </td>

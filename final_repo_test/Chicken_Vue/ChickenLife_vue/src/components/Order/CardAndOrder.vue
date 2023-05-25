@@ -3,6 +3,7 @@
 import { onMounted, ref } from 'vue';
 import CardOrder from '../Order/CardOrder.vue';
 import Order from '../Order/Order.vue';
+import { playerRefs, baseAddress } from '../../main.js';
 
 const props = defineProps({
   accountA_ID: {
@@ -24,7 +25,7 @@ const props = defineProps({
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
       <div class="accordion-body h-50">
-        <CardOrder :accountA_ID="accountA_ID" />
+        <CardOrder  />
       </div>
     </div>
   </div>
@@ -36,7 +37,7 @@ const props = defineProps({
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
       <div class="accordion-body h-50">
-        <Order :accountA_ID="accountA_ID" />
+        <Order  />
       </div>
     </div>
   </div>

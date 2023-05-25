@@ -70,7 +70,7 @@
                         <span asp-validation-for="E_Phone" class="text-danger"></span>
                     </dt>
                     <dt>
-                        生   日：<input type="date" asp-for="E_Birthday" />
+                        生   日：<input type="date" asp-for="E_Birthday" onchange="validateBirthday(this.value)" />
                         <br />
                         <span asp-validation-for="E_Birthday" class="text-danger"></span>
                     </dt>
@@ -85,7 +85,14 @@
                         <span asp-validation-for="E_Address" class="text-danger"></span>
                     </dt>
                     <dt>
-                        權   限：<input asp-for="E_Permission" />
+                        權限：
+                        <select asp-for="E_Permission">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
                         <br />
                         <span asp-validation-for="E_Permission" class="text-danger"></span>
                     </dt>
@@ -105,3 +112,23 @@
         </div>
     </form>
 </div>
+@section Script{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+
+    <script>
+        function validateBirthday(birthday) {
+            var selectedDate = new Date(birthday);
+            var currentYear = new Date().getFullYear();
+            var requiredYear = currentYear - 2003;
+
+            if (currentYear - selectedDate.getFullYear() < requiredYear) {
+                alert("生日必須是現在的年份減2003大於等於20");
+                document.getElementById("E_Birthday").value = "";
+            }
+        }
+    </script>
+
+}

@@ -11,32 +11,34 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 
-const modules=[Autoplay, Pagination, Navigation]
+const modules = [Autoplay, Pagination, Navigation]
 </script>
 
 <template>
-    <div class="test">
-        <swiper
-        :spaceBetween="30"
-    :centeredSlides="true"
-    :autoplay="{
+  <div class="test">
+    <swiper :spaceBetween="30" :centeredSlides="true" :autoplay="{
       delay: 2500,
       disableOnInteraction: false,
-    }"
-    :pagination="{
-      clickable: true,
-    }"
-    :navigation="true"
-    :modules="modules"
-    class="mySwiper"
-  >
-    <swiper-slide>Slide 1</swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide><swiper-slide>Slide 3</swiper-slide>
-    <swiper-slide>Slide 4</swiper-slide><swiper-slide>Slide 5</swiper-slide>
-    <swiper-slide>Slide 6</swiper-slide><swiper-slide>Slide 7</swiper-slide>
-    <swiper-slide>Slide 8</swiper-slide><swiper-slide>Slide 9</swiper-slide>
-  </swiper>
-    </div>
+    }" :pagination="{
+  clickable: true,
+}" :navigation="true" :modules="modules" class="mySwiper">
+      <swiper-slide><img
+          src="https://res.cloudinary.com/dolqf5dmn/image/upload/v1684986188/pexels-darya-sannikova-2422404_bdw26z.jpg"></swiper-slide>
+      <swiper-slide><img
+          src="https://res.cloudinary.com/dolqf5dmn/image/upload/v1684986188/pexels-vincent-ma-janssen-1310788_gywlnv.jpg"></swiper-slide>
+      <swiper-slide><img
+          src="https://res.cloudinary.com/dolqf5dmn/image/upload/v1684986188/pexels-meruyert-gonullu-6152258_l2cjx0.jpg"></swiper-slide>
+      <swiper-slide><img
+          src="https://res.cloudinary.com/dolqf5dmn/image/upload/v1684986188/pexels-ali-cuhadaroglu-13120127_jfuudd.jpg"></swiper-slide>
+      <swiper-slide><img
+          src="https://res.cloudinary.com/dolqf5dmn/image/upload/v1684986189/pexels-sevenstorm-juhaszimrus-704767_pwj3my.jpg"></swiper-slide>
+      <swiper-slide><img
+          src="https://res.cloudinary.com/dolqf5dmn/image/upload/v1684986190/pexels-jose-francisco-fernandez-saura-802024_r3l718.jpg"></swiper-slide>
+      <!-- <swiper-slide>Slide 7</swiper-slide>
+      <swiper-slide>Slide 8</swiper-slide>
+      <swiper-slide>Slide 9</swiper-slide> -->
+    </swiper>
+  </div>
 </template>
 
 <style scoped>
@@ -56,9 +58,10 @@ body {
   margin: 0;
   padding: 0;
 } */
-.test{
-    height: 550px;
+.test {
+  height: 550px;
 }
+
 .swiper {
   width: 100%;
   height: 100%;
