@@ -25,36 +25,6 @@
 
 </section>
 <section class="tables">
-	@*<fieldset class="CreateNew_form">
-		<legend>修改廣告紀錄</legend>
-		<div class="CreateForm_title">
-			<span style="width: 100px;">
-				<span class="label">廠商名稱</span>
-				<input type="text" required="required" style="width: 100%" name="PartnerName" id="partnerName">
-			</span>
-			<span style="width: 100px;">
-				<span class="label">聯絡人</span>
-				<input type="text" required="required" style="width: 100%" name="Contact" id="contact">
-			</span>
-			<span style="width: 150px;">
-				<span class="label">e-mail</span>
-				<input type="text" required="required" style="width: 100%" name="Email" id="email">
-			</span>
-			<span style="width: 150px;">
-				<span class="label">電話</span>
-				<input type="text" required="required" style="width: 100%" name="Phone" id="phone">
-			</span>
-			<span style="width: 500px;">
-				<span class="label">備註</span>
-				<input type="text" style="width: 100%" name="Note" id="note">
-			</span>
-			<span class="checkbtn_span" style="width: 100px;">
-				<span class="label" style="color:transparent;">確認</span>
-				<button type="button" class="addPartnerBtn btncheck btn btn-light">新增</button>
-			</span>
-		</div>
-	</fieldset>*@
-
 	<section class="Dtable_body" id="partnerTable">
 		<table class="Detail_table" >
 			<thead>
@@ -94,7 +64,7 @@
 						<td>@ads.Ad_Description</td>
 						<td>@ads.Ad_ImageURL</td>
 						<td>@ads.Ad_TargetURL</td>
-						<td><i class="fa-solid fa-trash-can" onclick=""></i></td>
+						<td><a class="btn btn-outline-light" href="@Url.Action("DeleteAds", "ADDetail_Home", new { id = @ads.Ad_ID })">刪除</a></td>
 					</tr>
 				}
 			</tbody>

@@ -22,17 +22,32 @@ namespace final_repo_test.Areas.AD.Controllers
 			var viewModel = new ADDetailViewModel { AdsList = ads };
 			return View(viewModel);
 		}
-		//[HttpGet]
-		//[Route("AD/Case/{id}")]
-		//public async Task<IActionResult> GetModel(int id)
-		//{
-		//	var model = new ADDetailViewModel
-		//	{
+        public async Task<IActionResult> DeleteAds(int id)
+        {
+            var model = new ADDetailViewModel
+            {
+                AdsList = _dbContext.Ads.ToList()
+            };
+            var AdsTable = _dbContext.Ads.Find(id);
+            if (AdsTable == null)
+            {
+                return View("Index", model);
+            }
+            _dbContext.Ads.Remove(AdsTable);
+            _dbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        //[HttpGet]
+        //[Route("AD/Case/{id}")]
+        //public async Task<IActionResult> GetModel(int id)
+        //{
+        //	var model = new ADDetailViewModel
+        //	{
 
-		//		SelectedCase = _dbContext.CaseTables.FirstOrDefault(x => x.Case_ID == id),
-		//		AdsList =  _dbContext.Ads.ToList()
-		//	};
-		//	return View("Index", model);
-		//}
-	}
+        //		SelectedCase = _dbContext.CaseTables.FirstOrDefault(x => x.Case_ID == id),
+        //		AdsList =  _dbContext.Ads.ToList()
+        //	};
+        //	return View("Index", model);
+        //}
+    }
 }

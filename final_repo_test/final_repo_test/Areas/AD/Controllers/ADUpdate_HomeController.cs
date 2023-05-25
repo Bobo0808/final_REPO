@@ -157,16 +157,16 @@ namespace final_repo_test.Areas.AD.Controllers
             return RedirectToAction("Index");
         }
 
-        public string UploadFile(IFormFile ADImg)
-        {
-            string ImgFilePath = _env.ContentRootPath + @"wwwroot\img\AD\";
-            var ImgFileName = ADImg.FileName;
-            using (var Stream = System.IO.File.Create(ImgFilePath + ImgFileName))
-            {
-                ADImg.CopyTo(Stream);
-            }
-            return ImgFileName;
-        }
+        //public string UploadFile(IFormFile ADImg)
+        //{
+        //    string ImgFilePath = _env.ContentRootPath + @"wwwroot\img\AD\";
+        //    var ImgFileName = ADImg.FileName;
+        //    using (var Stream = System.IO.File.Create(ImgFilePath + ImgFileName))
+        //    {
+        //        ADImg.CopyTo(Stream);
+        //    }
+        //    return ImgFileName;
+        //}
     }
 
     //public IActionResult Delete()

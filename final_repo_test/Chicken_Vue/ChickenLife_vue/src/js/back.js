@@ -41,6 +41,14 @@ var musicBridge;
 var musicIsland;
 var musicLilRoom;
 var playerName;
+var ads;
+var ADList = [];
+var ADImageStart = null;
+var ADImageMoney = null;
+var ADImageEle = null;
+var ADImageSports = null;
+var ADImageLife = null;
+var ADImageLil = null;
 const waitingLog = document.getElementById('waitingLog');
 const gameContainer = document.querySelector(".game-container");
 const myVideo = document.getElementById("myVideo");
@@ -54,13 +62,28 @@ btnCamera.addEventListener('click', muteCam);
 btnMic.addEventListener('click', muteMic);
 btnLeave.addEventListener('click', leaveRoom);
 var P_PubMap = "";
-fetch('https://localhost:7093/api/Ads')
-    .then(response => response.json())
-    .then(data => {
-        var ads = data;
-    })
-    .catch(error => {
-    });
+// fetch('https://localhost:7093/api/Ads')
+//     .then(response => response.json())
+//     .then(data => {
+//         ads = data;
+//         console.log("data");
+//         console.log(data);
+//         ads.forEach(function (adimg) {
+//             if (adimg.ad_ID > 29) {
+//                 ADList.push(adimg.ad_ImageURL);
+//                 if (ADList[0]) { ADImageStart = ADList[0]; }
+//                 if (ADList[1]) { ADImageMoney = ADList[1]; }
+//                 if (ADList[2]) { ADImageEle = ADList[2]; }
+//                 if (ADList[3]) { ADImageSports = ADList[3]; }
+//                 if (ADList[4]) { ADImageLife = ADList[4]; }
+//                 if (ADList[5]) { ADImageLil = ADList[5]; }
+//             }
+//         });
+//         console.log("ADList");
+//         console.log(ADList);
+//     })
+//     .catch(error => {
+//     });
 
 const closeableModal = ref(false);
 const dialogBox = ref(null);
@@ -445,6 +468,35 @@ class gameStart extends Phaser.Scene {
     }
 
     preload() {
+        fetch('https://localhost:7093/api/Ads')
+            .then(response => response.json())
+            .then(data => {
+                ads = data;
+                console.log("data");
+                console.log(data);
+                ads.forEach(function (adimg) {
+                    // if (adimg.ad_ID > 29) {
+                    //     ADList.push(adimg.ad_ImageURL);
+                    //     if (ADList[0]) { ADImageStart = ADList[0]; }
+                    //     if (ADList[1]) { ADImageMoney = ADList[1]; }
+                    //     if (ADList[2]) { ADImageEle = ADList[2]; }
+                    //     if (ADList[3]) { ADImageSports = ADList[3]; }
+                    //     if (ADList[4]) { ADImageLife = ADList[4]; }
+                    //     if (ADList[5]) { ADImageLil = ADList[5]; }
+                    //     if (ADImageStart) {
+                    //         console.log("222ADImageStart");
+                    //         console.log(ADImageStart);
+                    //         this.load.image("ADImageStart", ADImageStart);
+                    //         console.log("333ADImageStart");
+                    //     }
+                    // }
+                });
+                // console.log("ADList");
+                // console.log(ADList);
+            })
+            .catch(error => {
+            });
+
         this.load.image("tiles", mapAni);
         this.load.tilemapTiledJSON('map', helpMe);
         this.load.audio('musicStart', Nurtured);
