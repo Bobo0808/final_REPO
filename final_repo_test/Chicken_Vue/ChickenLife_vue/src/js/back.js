@@ -6,6 +6,7 @@ import helpMe from '../tiled/HELPME.json';
 import npcStand from '../img/phaser/NPC01_stand.png';
 import npcWalk from '../img/phaser/NPC01_walk.png';
 import mapAni from "../tiled/mapani.png";
+import arrow from "../img/phaser/J_Ur_u.png";
 
 import Nurtured from '../music/Nurtured_in_Contemplation.mp3'
 import wind from '../music/wind.mp3'
@@ -31,6 +32,7 @@ let messageBuffer = '';
 let mapData = {};
 let isQueue = false;
 let polite;
+var playerName = {};
 var layer_collision = "";
 var musicStart;
 var musicSnow;
@@ -38,6 +40,7 @@ var musicStore;
 var musicBridge;
 var musicIsland;
 var musicLilRoom;
+var playerName;
 const waitingLog = document.getElementById('waitingLog');
 const gameContainer = document.querySelector(".game-container");
 const myVideo = document.getElementById("myVideo");
@@ -51,15 +54,62 @@ btnCamera.addEventListener('click', muteCam);
 btnMic.addEventListener('click', muteMic);
 btnLeave.addEventListener('click', leaveRoom);
 var P_PubMap = "";
-// fetch('https://localhost:7093/api/Ads/AdsGet')
-//     .then(response => response.json())
-//     .then(data => {
-//         ads = data;
-//         console.log(data);
-//     })
-//     .catch(error => {
-//         console.error('Error:', error);
-//     });
+fetch('https://localhost:7093/api/Ads')
+    .then(response => response.json())
+    .then(data => {
+        var ads = data;
+    })
+    .catch(error => {
+    });
+
+const closeableModal = ref(false);
+const dialogBox = ref(null);
+const dialogBody = ref(null);
+let isShowedDialog = false;
+
+const showDialog = () => {
+    if (dialogBox.value) {
+        dialogBox.value.style.display = 'flex';
+        isShowedDialog = true;
+    }
+};
+
+function hideDialog() {
+    if (dialogBox.value) {
+        dialogBox.value.style.display = 'none';
+        isShowedDialog = false;
+    }
+    console.log(dialogBox.value)
+};
+
+const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+        if (isShowedDialog) {
+            hideDialog();
+        } else {
+            showDialog();
+        }
+    }
+};
+
+const sendMessage = () => {
+    sendMsg();
+};
+document.addEventListener('keypress', handleKeyPress);
+dialogBox.value = document.getElementById('dialog-box');
+const dialogCloseBtn = document.getElementById('dialog-close-btn');
+dialogCloseBtn.addEventListener('click', hideDialog);
+
+const dialogInput = document.getElementById('dialog-input');
+dialogInput.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        sendMessage();
+    }
+});
+
+
+
+
 function sendMsg() {
     var txtMsg = document.getElementById("dialog-input").value;
     if (txtMsg) {
@@ -71,11 +121,6 @@ function sendMsg() {
         vWebSocket.send(JSON.stringify(data));
     }
 }
-
-
-
-
-
 function LoadMap(result) {
     mapData = {
         id: result.id,
@@ -91,7 +136,6 @@ function LoadMap(result) {
 function dcPlayer(data) {
     players[data.id].destroy();
     delete players[data.id];
-    console.log(players[data.id]);
 }
 
 function isCompleteMessage(message) {
@@ -99,7 +143,6 @@ function isCompleteMessage(message) {
         JSON.parse(message);
         return true;
     } catch (error) {
-        console.log('false');
         return false;
     }
 }
@@ -289,7 +332,6 @@ class gameStart extends Phaser.Scene {
             this.player.setSize(128, 128);
             this.player.setDepth(1);
             this.cameras.main.startFollow(this.player);
-
             this.physics.world.addCollider(this.player, layer_collision);
         }
         players[data.id] = {
@@ -307,12 +349,7 @@ class gameStart extends Phaser.Scene {
             players[data.id].setScale(0.5);
             players[data.id].setSize(128, 128);
             players[data.id].setDepth(1);
-            console.log('==========================================================');
-            console.log("platers[data.id]=");
-            console.log(players[data.id]);
             wantdelplayers.push(players[data.id]);
-            console.log("wantdelplayers=");
-            console.log(wantdelplayers);
         }
     }
     sendDirection() {
@@ -381,8 +418,6 @@ class gameStart extends Phaser.Scene {
         this.sendDirection();
     }
     getMusicKey(musicObject) {
-        console.log("musicObject");
-        console.log(musicObject);
         if (musicObject.properties.music_start) {
             currentMusicKey = 'music_start';
             return 'music_start';
@@ -531,22 +566,16 @@ class gameStart extends Phaser.Scene {
                         this.player.destroy();
                     }
                     cleanAllPlayers();
-
-                    console.log("--");
-
-
                     for (let i = 0; i < result.client.length; i++) {
                         this.AddPlayer(result.client[i]);
                     }
-
-                    console.log(result);
                     LoadMap(result);
                     P_PubMap = mapData.src;
                     break;
                 case "Chat":
                     //訊息屬性Chat
 
-                    const content = document.getElementById("dialog");
+                    const content = document.getElementById("dialog-body");
                     const timecontent = document.getElementById("dialog-time");
                     var today = new Date();
                     var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
@@ -554,10 +583,10 @@ class gameStart extends Phaser.Scene {
                     var dateTime = date + ' ' + time;
                     let message = `${result.client.id}: ${result.content}`;
                     timecontent.innerText = timecontent.innerText + '\r\n' + dateTime;
+                    console.log(content)
                     content.innerText = content.innerText + '\r\n' + message;
                     break;
                 case "Connect":
-                    console.log(result);
                     //訊息屬性是Connect
                     if (IDempty) {
                         playerRef.id = result.id;
@@ -572,8 +601,6 @@ class gameStart extends Phaser.Scene {
                     dcPlayer(result.PlayerRef)
                     break
                 case "Movement":
-                    //訊息屬性是Movement
-                    // console.log(result)
                     this.setDirection(result);
 
 
@@ -589,7 +616,6 @@ class gameStart extends Phaser.Scene {
                     btnLeave.style.visibility = 'visible';
                     waitingLog.style.visibility = 'hidden';
                     LoadMap(result);
-                    console.log(result);
                     this.player.destroy();
                     cleanAllPlayers();
                     for (let i = 0; i < result.client.length; i++) {
@@ -621,15 +647,7 @@ class gameStart extends Phaser.Scene {
             IDempty = true;
             console.log("connection closed");
         });
-
-
-
-        console.log('=======================')
-        console.log(layer_collision);
-        console.log('=======================')
-
         this.cameras.main.centerOn(1600, 1600);
-
         var teleportStart = document.getElementById('waypoint');
         teleportStart.addEventListener('click', function () { teleport.call(this, 'start'); }.bind(this));
         var teleportMoney = document.getElementById('moneypoint');
@@ -640,6 +658,9 @@ class gameStart extends Phaser.Scene {
         teleportSports.addEventListener('click', function () { teleport.call(this, 'sports'); }.bind(this));
         var teleportlife = document.getElementById('lifepoint');
         teleportlife.addEventListener('click', function () { teleport.call(this, 'life'); }.bind(this));
+
+
+
 
         //創建粉紅熊熊NPC
         this.Npc01 = this.physics.add.sprite(9728, 6912, 'Npc01Stand');
@@ -784,7 +805,6 @@ function teleport(target) {
                     duration: 500,
                     onComplete: function () {
                         this.mask.destroy();
-                        console.log("Teleportation complete!");
                     }.bind(this)
                 });
             }.bind(this)
@@ -813,7 +833,6 @@ const config = {
 };
 var game;
 watchEffect(() => {
-    console.log("playerRefs.value.isPlay in js =>", playerRefs.value.isPlay)
     if (playerRefs.value.isPlay) {
         game = new Phaser.Game(config);
     }

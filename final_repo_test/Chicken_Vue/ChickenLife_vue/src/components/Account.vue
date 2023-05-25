@@ -35,16 +35,15 @@ export default {
 <template>
   <div class="ALL">
     <header>
-      {{ Account }}
       <h2 class="logo">ChickenLife</h2>
-      <nav class="navigation">
+      <!-- <nav class="navigation">
         <a href="#">Home</a>
         <a href="#">TEST</a>
         <a href="#">TEST</a>
         <a href="#">TEST</a>
         <a href="#">TEST</a>
         <button @click="changeView(1)" class="btnLogin-popup">Login</button>
-      </nav>
+      </nav> -->
     </header>
     <div class="wrapper">
       <span class="icon-close">
@@ -118,6 +117,8 @@ export default {
   background: url("src/background3.jpg") no-repeat;
   background-size: cover;
   background-position: center;
+  width: 100%;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
 }
 
 header {
@@ -126,7 +127,7 @@ header {
   left: 0;
   width: 100%;
   padding: 20px 100px;
-  /* background-color: brown; */
+  background-color: rgb(39, 37, 36);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -205,10 +206,9 @@ header {
   padding: 40px;
 }
 
-.wrapper .form-box.register {
+/* .wrapper .form-box.register {
   /* position: absolute;
-  transform: translateX(400px); */
-}
+  transform: translateX(400px); }*/ 
 
 .wrapper .icon-close {
   position: absolute;

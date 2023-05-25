@@ -9,6 +9,7 @@ import profilePic from './img/625157.jpg';
 // import './js/dialogue.js';
 import Account from "./components/Account.vue"
 
+// const currentBody = ref(Phaser);
 const currentBody = ref(Phaser);
 
 
@@ -96,11 +97,10 @@ const handleKeyPress = (event) => {
     <div class="div-sidebar">
 
         <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sideyellow" style="width: 280px;">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <a  class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                 <svg class="bi me-2" width="40" height="32">
-                    <use xlink:href="#bootstrap" />
                 </svg>
-                <span class="fs-4">好友</span>
+                <span style="color:black; font-weight: 600; font-size:larger;">好友</span>
             </a>
             <!-- <li id="lifepoint">
         <a href="#" class="nav-link text-white">
@@ -110,11 +110,11 @@ const handleKeyPress = (event) => {
             生活板
         </a>
         </li> -->
-
             <hr>
+            <div class="friend_area"><div><p>版權免責聲明<br>本網站使用的部分圖片和音樂素材可能受到版權保護，並且可能未經過所有者的授權使用。我們已經儘力確保在網站上使用的素材符合相關法律和法規。<br>對於本網站上使用的素材的版權歸屬情況，我們無法提供任何明示或暗示的擔保。如果您是素材的版權所有者並認為我們的使用侵犯了您的權益，請與我們聯繫，我們將立即采取相應的措施予以改正。<br>我們鼓勵所有使用本網站的用戶遵守相關的版權法律和法規。在使用本網站提供的素材之前，請您確保您已獲得所有必要的權利、許可和授權，以避免侵犯他人的版權。<br>如有任何疑問，請與我們聯繫。<br><br>ChickenLive<br>Chickenlive@gmail.com</p></div></div>
         </div>
-        <Phaser></Phaser>
-        <!-- <component :is="currentBody" :closeableModal="closeableModal"></component> -->
+        <!-- <Phaser></Phaser> -->
+        <component :is="currentBody" :closeableModal="closeableModal"></component>
     </div>
 </template>
   
