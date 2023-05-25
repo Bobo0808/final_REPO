@@ -1,10 +1,10 @@
 <script setup>
 
 import { onMounted, ref, watch, inject, toRaw } from 'vue';
-import { playerRefs, getAxios, postAxiosString, postAxiosObjNodata } from '../../main.js';
+import { playerRefs, baseAddress, getAxios, postAxiosString, postAxiosObjNodata } from '../../main.js';
 // import { playerRefs } from "../../main.js";
 // const baseAddress = "https://localhost:7097";
-const baseAddress = "https://localhost:7093";
+// const baseAddress = "https://localhost:7093";
 const employeeDTOes = ref([]);
 
 

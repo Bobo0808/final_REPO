@@ -1,12 +1,12 @@
 
 <script setup>
 import { onMounted, ref, watch, toRaw } from 'vue';
-import { playerRefs, getAxios, postAxiosString, postAxiosObjNodata } from '../../main.js';
+import { playerRefs, baseAddress, getAxios, postAxiosString, postAxiosObjNodata } from '../../main.js';
 import CardAndOrder from '../Order/CardAndOrder.vue';
 // import { playerRefs,postAxiosObjNodata } from "../../main.js";
 
 // const baseAddress = "https://localhost:7097";
-const baseAddress = "https://localhost:7093";
+// const baseAddress = "https://localhost:7093";
 
 const CardDTOes = ref([]);
 
@@ -96,7 +96,7 @@ const openDialog = async (ID) => {
         // selectedCardProduct.value = product;
 
         isDialogOpen.value = true;
-        console.log("selectedCardProduct.value=>", selectedCardProduct.value);
+        // console.log("selectedCardProduct.value=>", selectedCardProduct.value);
 
         return selectedCardProduct
     } catch (error) {

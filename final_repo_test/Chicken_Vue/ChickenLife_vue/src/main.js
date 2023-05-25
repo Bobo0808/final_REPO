@@ -4,7 +4,9 @@ import App from './App.vue'
 // import { response } from 'express';
 // import Account from "./components/Account.vue"
 import { register } from 'swiper/element/bundle';
-const baseAddress = "https://localhost:7093";
+export const baseAddress = "https://localhost:7093";
+
+
 
 const app = createApp(App);
 app.config.globalProperties.playerRef = ref({
