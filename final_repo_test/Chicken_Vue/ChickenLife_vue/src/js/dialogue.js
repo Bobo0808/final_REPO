@@ -1,7 +1,7 @@
 const dialogBox = document.getElementById('dialog-box');
-const dialogTitle = document.getElementsByClassName('.dialog-title');
-const dialogCloseBtn = document.getElementsByClassName('.dialog-close-btn');
-const dialogBody = document.getElementsByClassName('.dialog-body');
+const dialogTitle = document.getElementById('dialog-title');
+const dialogCloseBtn = document.getElementById('dialog-close-btn');
+const dialogBody = document.getElementById('dialog');
 const dialogInput = document.getElementById('dialog-input');
 const dialogSendBtn = document.getElementById('dialog-send-btn');
 

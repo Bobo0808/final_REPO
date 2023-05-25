@@ -62,20 +62,20 @@ const getPlay = () => {
           <button id="btnMic"></button>
         </div>
     </div>
-    <div id="dialog-box">
-    <div class="dialog-header">
-      <span class="dialog-title">對話視窗</span>
-      <span class="dialog-close-btn">x</span>
+    <div id="dialog-box" ref="dialogBox">
+      <div class="dialog-header">
+        <span class="dialog-title">對話視窗</span>
+        <span class="dialog-close-btn" id="dialog-close-btn" >x</span>
+      </div>
+      <div class="dialog">
+        <div class="dialog-body" id="dialog-body" ref="dialogBody"></div>
+        <div class="dialog-time" id="dialog-time"></div>
+      </div>
+      <div class="dialog-footer">
+        <input type="text" id="dialog-input" placeholder="請輸入訊息" @keydown.enter="handleKeyPress">
+        <button id="dialog-send-btn" @click="sendMessage">發送</button>
+      </div>
     </div>
-    <div class="dialog">
-      <div id="dialog" class="dialog-body"></div>
-      <div id="dialog-time" class="dialog-time"></div>
-    </div>
-    <div class="dialog-footer">
-      <input type="text" id="dialog-input" placeholder="請輸入訊息">
-      <button id="dialog-send-btn">發送</button>
-    </div>
-</div>
   </div>
   
 </template>

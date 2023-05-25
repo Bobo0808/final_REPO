@@ -15,7 +15,8 @@ namespace ChickenLife.Controllers
         {
             _context = context;
         }
-        [HttpGet("AdsGet")]
+        //[HttpGet("AdsGet")]
+        [HttpGet]
         public IEnumerable<Ads> AdsGet()
         {
             //return await _context.Products.ToListAsync();
