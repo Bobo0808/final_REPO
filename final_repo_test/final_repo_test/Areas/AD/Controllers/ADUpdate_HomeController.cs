@@ -9,6 +9,8 @@ using System.Xml.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using final_repo_test.Interfaces;
+using final_repo_test.Services;
 
 namespace final_repo_test.Areas.AD.Controllers
 {
@@ -17,11 +19,13 @@ namespace final_repo_test.Areas.AD.Controllers
     {
         private readonly ChickenDbContext _dbContext;
         private readonly IWebHostEnvironment _env;
+        private readonly IPhotoService _photoService;
 
-        public ADUpdate_HomeController(ChickenDbContext dbContext, IWebHostEnvironment env)
+        public ADUpdate_HomeController(ChickenDbContext dbContext, IWebHostEnvironment env, IPhotoService photoService)
         {
             _dbContext = dbContext;
             _env = env;
+            _photoService = photoService;
         }
 
         public IActionResult Index()
@@ -122,7 +126,7 @@ namespace final_repo_test.Areas.AD.Controllers
 
         //[HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult AddAD(string P_Name, string Case_Name, DateTime Ad_StartTime, DateTime Ad_EndTime, IFormFile ADImg, string Ad_TargetURL, string Ad_Description, DateTime Ad_PaymentDueDate)
+        public async Task<IActionResult> AddAD(string P_Name, string Case_Name, DateTime Ad_StartTime, DateTime Ad_EndTime, IFormFile ADImg, string Ad_TargetURL, string Ad_Description, DateTime Ad_PaymentDueDate)
         {
             var Partner = _dbContext.Partners.FirstOrDefault(x => x.P_Name == P_Name);
             var CaseName = _dbContext.CaseTables.FirstOrDefault(x => x.Case_Name == Case_Name);
@@ -140,7 +144,8 @@ namespace final_repo_test.Areas.AD.Controllers
             };
             if (ADImg != null)
             {
-                string ADImgName = UploadFile(ADImg);
+                var result = await _photoService.AddPhotoAsync(ADImg);
+                string ADImgName = result.Url.ToString();
                 ads.Ad_ImageURL = ADImgName;
             }
             else
