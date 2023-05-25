@@ -453,18 +453,27 @@ class gameStart extends Phaser.Scene {
         this.load.audio('musicBridge', water);
         this.load.audio('musicIsland', lollipop);
         this.load.audio('musicLilRoom', mirror);
-        this.load.spritesheet('stand', spriteStand, {
+        this.load.spritesheet('stand', '../img/phaser/Sprite_stand.png', {
             frameWidth: 128, frameHeight: 128
         });
-        this.load.spritesheet('walk', spriteWalk, {
+        this.load.spritesheet('walk', '../img/phaser/Sprite_walk.png', {
             frameWidth: 128, frameHeight: 128
         });
-        this.load.spritesheet('Npc01Stand', npcStand, {
+        this.load.spritesheet('Npc01Stand', '../img/phaser/NPC01_stand.png', {
             frameWidth: 128, frameHeight: 128
         });
-        this.load.spritesheet('Npc01Walk', npcWalk, {
+        this.load.spritesheet('Npc01Walk', '../img/phaser/NPC01_walk.png', {
             frameWidth: 128, frameHeight: 128
         });
+        this.add.image(0, 0, 'stand', 0)
+        this.add.image(0, 0, 'walk', 0)
+        this.add.image(0, 0, 'Npc01Stand', 0)
+        this.add.image(0, 0, 'Npc01Walk', 0)
+        // this.textures.addBase64('stand', spriteStand);
+        // this.textures.addBase64('walk', spriteWalk);
+        // this.textures.addBase64('Npc01Stand', npcStand);
+        // this.textures.addBase64('Npc01Walk', npcWalk);
+        console.log(spriteStand)
 
         this.load.on('complete', function () {
             this.anims.create({
