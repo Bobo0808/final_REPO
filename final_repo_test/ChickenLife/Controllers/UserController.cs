@@ -50,11 +50,9 @@ namespace ChickenLife.Controllers
                 VerifycationToken = user.VerifycationToken
             };
 
-            return Ok(new { Message = $"使用者成功創建!以下是您的註冊驗證碼:{userOutput.VerifycationToken}" });
-
-
-
+            //return Ok(new { Message = $"使用者成功創建!以下是您的註冊驗證碼:{userOutput.VerifycationToken}" });
             //return Ok("使用者成功創建!");
+            return Ok(new { Token = userOutput.VerifycationToken,Message = "註冊成功" });
         }
 
         [HttpPost("login")]
