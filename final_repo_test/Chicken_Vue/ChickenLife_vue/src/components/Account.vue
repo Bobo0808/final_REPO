@@ -3,34 +3,31 @@ import { ref } from "vue";
 import { postAxiosObj } from "../main.js";
 import { playerRefs } from "../main.js";
 const Account = ref({
-  "email": "user@example.com",
-  "password": "111111",
+  email: "user@example.com",
+  password: "string",
 });
 const user = ref();
-let route = "https://localhost:7093/api/User/login"
-const CheckAccount = async() => {
+let route = "https://localhost:7093/api/User/login";
+
+const CheckAccount = async () => {
   await postAxiosObj("/api/User/login", Account, user);
-  
-  printValue(user)  
+
+  printValue(user);
+};
+
+function printValue(value) {
+  console.log(value.value);
 }
-
-function printValue(value){
-  console.log(value.value)
-}
-
-
 
 const view = ref(1);
 const changeView = (index) => {
   view.value = index;
 };
-
 </script>
 <script>
 export default {
   name: "App",
 };
-
 </script>
 <template>
   <div class="ALL">
@@ -69,7 +66,12 @@ export default {
           <button type="submit" class="btn" @click="CheckAccount">Login</button>
           <div class="login-register">
             <p>
-              還沒有帳號?<a @click="changeView(2)" href="#" class="register-link">註冊</a>
+              還沒有帳號?<a
+                @click="changeView(2)"
+                href="#"
+                class="register-link"
+                >註冊</a
+              >
             </p>
           </div>
         </form>
@@ -98,7 +100,9 @@ export default {
           <button type="submit" class="btn">Register</button>
           <div class="login-register">
             <p>
-              已經有帳號了?<a @click="changeView(1)" href="#" class="login-link">登入</a>
+              已經有帳號了?<a @click="changeView(1)" href="#" class="login-link"
+                >登入</a
+              >
             </p>
           </div>
         </form>
@@ -208,7 +212,7 @@ header {
 
 /* .wrapper .form-box.register {
   /* position: absolute;
-  transform: translateX(400px); }*/ 
+  transform: translateX(400px); }*/
 
 .wrapper .icon-close {
   position: absolute;
@@ -253,8 +257,8 @@ header {
   transition: 0.5s;
 }
 
-.input-box input:focus~label,
-.input-box input:valid~label {
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
   top: -5px;
 }
 
