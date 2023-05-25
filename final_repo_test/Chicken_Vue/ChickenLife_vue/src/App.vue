@@ -32,7 +32,7 @@ const Change = () => {
         playerRefs.value.isPlay = true;
     } else {
         playerRefs.value.isPlay = false;
-        currentBody.value = Sandy;
+        currentBody.value = Account;
     }
 }
 
@@ -71,7 +71,9 @@ const handleKeyPress = (event) => {
                     <!-- <li><a href="#" class="nav-link px-2 link-secondary">首頁</a></li> -->
                     <!-- <li><a href="#" class="nav-link px-2 link-dark">商城</a></li> -->
                     <!-- <li><a href="#" class="nav-link px-2 link-dark">衣櫥</a></li> -->
-                    <li><a type="button" class="nav-link px-2 rounded-2 ">衣櫥</a></li>
+                    <li><a @click="Change" type="button" class="nav-link px-2 rounded-2 ">衣櫥</a>
+                        <sandy class="sandy" style="background-color: white;position: absolute;top: 1%;z-index: 999999999999;"></sandy>
+                    </li>
                 </ul>
 
                 <div class="ms-auto dropdown text-end">
@@ -116,6 +118,28 @@ const handleKeyPress = (event) => {
     </div>
 </template>
   
+
+<script>
+export default {
+  data() {
+    return {
+      isPopupVisible: false
+    };
+  },
+  methods: {
+    showPopup() {
+      this.isPopupVisible = true;
+    }
+  }
+};
+</script>
+
+<style>
+.sandy{
+    margin-left: 400px;
+}
+</style>
+
 <style src="./css/index.css"></style>
 <style src="./css/sidebars.css"></style>
 <style src="./css/style.css"></style>
