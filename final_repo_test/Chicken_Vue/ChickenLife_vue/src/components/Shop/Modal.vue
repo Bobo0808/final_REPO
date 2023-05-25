@@ -5,7 +5,7 @@ import { onMounted, ref, watch } from 'vue';
 import Product from '../Product/Product.vue';
 import Card from '../Product/Card.vue';
 import Slide from './Slide.vue';
-import { playerRefs } from "../../main.js";
+import { playerRefs, baseAddress } from "../../main.js";
 import CardAndOrder from '../Order/CardAndOrder.vue';
 // const baseAddress = "https://localhost:7097";
 const backdropClick = (event) => {

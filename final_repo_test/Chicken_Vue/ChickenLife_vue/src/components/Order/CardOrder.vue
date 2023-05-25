@@ -1,9 +1,9 @@
 
 <script setup>
 import { onMounted, ref } from 'vue';
-import { playerRefs, getDate, putAxiosStringNodata, postAxiosObjNodata } from '../../main';
+import { playerRefs, baseAddress, getDate, putAxiosStringNodata, postAxiosObjNodata } from '../../main';
 // const baseAddress = "https://localhost:7097";
-const baseAddress = "https://localhost:7093";
+// const baseAddress = "https://localhost:7093";
 
 const props = defineProps({
     accountA_ID: {
@@ -37,6 +37,7 @@ onMounted(() => {
     getCardOrderDTOes(playerRefs.value.id);
 });
 
+
 //按鈕日期
 const isButtonDisabled = (date, iscanceled) => {
     const threeDaysLater = new Date(date);
@@ -47,7 +48,7 @@ const isButtonDisabled = (date, iscanceled) => {
     return threeDaysLater <= today || iscanceled;
 }
 // 取消
-const cancelOrder = async (CO_ID) => {
+const cancelOrder = async (CO_ID, CO_Name) => {
     var test = {};
     var request = {};
     request.CO_ID = isNaN(Number(CO_ID)) ? -1 : Number(CO_ID);
@@ -59,6 +60,10 @@ const cancelOrder = async (CO_ID) => {
     // });
 
     await putAxiosStringNodata(`/api/CardOrders/Cancel/${CO_ID}`, request, test);
+    const parts = parseInt(CO_Name.substring(5, 8));
+    // console.log("parts=>", parts);
+    playerRefs.value.coins -= parts;
+
     getCardOrderDTOes(playerRefs.value.id);
 }
 
@@ -103,7 +108,7 @@ const cancelOrder = async (CO_ID) => {
                 </td>
                 <td>
                     <div class="d-flex order-actions">
-                        <button v-if="!isButtonDisabled(item.cO_Date,item.cO_Cancel)" :disabled="isButtonDisabled(item.o_Date,item.cO_Cancel)"  class="btn btn-danger" @click="cancelOrder(item.cO_ID)">取消</button>
+                        <button v-if="!isButtonDisabled(item.cO_Date,item.cO_Cancel)" :disabled="isButtonDisabled(item.o_Date,item.cO_Cancel)"  class="btn btn-danger" @click="cancelOrder(item.cO_ID,item.cA_Name)">取消</button>
                         
                     </div>
                 </td>
