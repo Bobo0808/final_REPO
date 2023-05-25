@@ -20,7 +20,9 @@ namespace ClassLibrary.Models
         [Required(ErrorMessage = "別名不可為空")]
         public string E_UserName { get; set; } = default!;
 
-        [Required(ErrorMessage = "密碼不可為空")]
+        [Required(ErrorMessage = "請輸入密碼")]
+        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$", ErrorMessage = "密碼長度必須為6字以上且須包含大小寫英文和數字")]
+        [StringLength(100, MinimumLength = 6, ErrorMessage = "密碼長度必須為6字以上")]
         public string E_Pwd { get; set; } = default!;
         [Required(ErrorMessage = "信箱不可為空")]
         [EmailAddress(ErrorMessage = "信箱格式有誤")]
@@ -31,7 +33,9 @@ namespace ClassLibrary.Models
         [EnumDataType(typeof(Title), ErrorMessage = "Invalid Title value")]
         public Title E_Title { get; set; }
 
-        [Required(ErrorMessage = "手機不可為空")]
+        [Required(ErrorMessage = "請輸入手機號碼")]
+        [RegularExpression(@"^09\d{8}$", ErrorMessage = "手機格式必須為09開頭的10位數字")]
+        [StringLength(10, ErrorMessage = "手機號碼不能超過10個字元")]
         public string E_Phone { get; set; } = default!;
 
         [Column(TypeName = "Date")]
