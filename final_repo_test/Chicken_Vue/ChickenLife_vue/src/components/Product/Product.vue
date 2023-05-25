@@ -51,6 +51,11 @@ onMounted(() => {
     getEmployeeDTOes();
     SpriteForP();
 
+    // 獲取按鈕元素
+  const radioButton = document.getElementById('btnradio1');
+  // 設置 checked 屬性
+  radioButton.checked = true;
+
 });
 watch(() => {
     playerRefs.value.coins
@@ -122,7 +127,7 @@ const closeDialog = () => {
     isDialogOpen.value = false;
     selectedProduct.value = null;
 };
-const confirmPurchase = (ID, Price, img) => {
+const confirmPurchase = (ID, Price,Discount, img) => {
     // console.log("playerRefs.coins=>", playerRefs.coins)
     // console.log("Price=>", Price)
     if (playerRefs.value.coins >= Price) {
@@ -131,7 +136,7 @@ const confirmPurchase = (ID, Price, img) => {
         // console.log('Price', Price);
 
         // CheckPoints();
-        OrderAdd(ID, Price);
+        OrderAdd(ID, Price,Discount);
         //OrderDetailAdd(ID, Price);
         // 扣除點數
         // ProductPoints.value -= Price;
@@ -169,14 +174,15 @@ const closeInsufficientPointsDialog = () => {
 // const CheckPoints = () => {
 //     ProductPoints.value = props.memberpoints;
 // };
-const OrderAdd = (ID, Price) => {
+const OrderAdd = (ID, Price,Discount) => {
     //Order
     var request = {};
     var requestdetail = {};
+    const finalPrice=DiscountMoney(Price,Discount)
     request.O_ID = 0;
     request.A_ID = playerRefs.value.id;
     request.O_Date = new Date();
-    request.O_TotalPrice = Price;
+    request.O_TotalPrice = finalPrice;
     request.O_Cancle = false;
     request.ProductName = "";
     //postAxios(`/api/Order`, request);
@@ -191,8 +197,8 @@ const OrderAdd = (ID, Price) => {
                 requestdetail.Od_ID = 0;
                 requestdetail.O_ID = OrderID.value;
                 requestdetail.P_ID = ID;
-                requestdetail.Od_UnitPrice = Price;
-                requestdetail.Od_Sum = Price;
+                requestdetail.Od_UnitPrice = finalPrice;
+                requestdetail.Od_Sum = finalPrice;
                 requestdetail.Od_Quantity = 1;
                 // console.log("OrderDetail=>", requestdetail);
                 axios.post(`${baseAddress}/api/OrderDetails`, requestdetail).then(test => {
@@ -224,7 +230,7 @@ const TypeChange = (num) => {
     }
     // console.log("employeeDTOes=>", employeeDTOes);
     // console.log("employeeDTOes.value=>", employeeDTOes.value);
-}
+};
 
 </script>
 <template lang="">
@@ -340,7 +346,7 @@ const TypeChange = (num) => {
                         <!-- Product Options START -->
                         <div id="product" class="product-options">
                             <div class="form-group product-quantity">
-                                <button class="btn btn-primary m-1 btn-lg btn-block" @click="confirmPurchase(selectedProduct.p_ID,selectedProduct.p_Price,selectedProduct.p_Image)">購買</button>
+                                <button class="btn btn-primary m-1 btn-lg btn-block" @click="confirmPurchase(selectedProduct.p_ID,selectedProduct.p_Price,selectedProduct.p_Discount,selectedProduct.p_Image)">購買</button>
                                 <button class="btn btn-secondary" @click="closeDialog">關閉</button> 
                             </div>
                         </div>
