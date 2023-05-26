@@ -1,11 +1,24 @@
 <script setup>
-import { ref } from "vue";
+import { reactive, ref } from "vue";
 import { postAxiosObj } from "../main.js";
 import { playerRefs } from "../main.js";
+
 const Account = ref({
   email: "user@example.com",
   password: "string",
 });
+
+const register = ref({
+  email: "",
+  password: "",
+  confirmPassword: "",
+});
+const Ruser = ref();
+const hadlesubmit = async () => {
+  await postAxiosObj("/api/User/register", register, Ruser);
+  console.log(Ruser.value);
+};
+
 const user = ref();
 let route = "https://localhost:7093/api/User/login";
 
@@ -48,7 +61,7 @@ export default {
       </span>
       <div class="form-box login" v-if="view === 1">
         <h2>Login</h2>
-        <form action="#" @submit.prevent="login">
+        <form action="#">
           <div class="input-box">
             <span class="icon"><ion-icon name="mail"></ion-icon></span>
             <input type="text" v-model="Account.email" required />
@@ -76,28 +89,35 @@ export default {
           </div>
         </form>
       </div>
+
       <div class="form-box register" v-if="view === 2">
         <h2>Registerion</h2>
         <form action="#">
           <div class="input-box">
-            <span class="icon"><ion-icon name="person"></ion-icon></span>
-            <input type="text" required />
-            <label for=""> Username</label>
-          </div>
-          <div class="input-box">
             <span class="icon"><ion-icon name="mail"></ion-icon></span>
-            <input type="email" required />
+            <input type="text" v-model="register.email" required />
             <label for=""> Email</label>
           </div>
           <div class="input-box">
             <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input type="password" required />
+            <input type="password" v-model="register.password" required />
             <label for=""> Password</label>
+          </div>
+          <div class="input-box">
+            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+            <input
+              type="password"
+              v-model="register.confirmPassword"
+              required
+            />
+            <label for=""> confirmPassword</label>
           </div>
           <div class="remember-forget">
             <label><input type="checkbox" />我同意此項條款</label>
           </div>
-          <button type="submit" class="btn">Register</button>
+          <button @click="hadlesubmit" type="submit" class="btn">
+            Register
+          </button>
           <div class="login-register">
             <p>
               已經有帳號了?<a @click="changeView(1)" href="#" class="login-link"
@@ -271,7 +291,7 @@ header {
   font-size: 1em;
   color: #162938;
   font-weight: 600;
-  padding: 0 35px 0 5px;
+  padding: 0 25px 0 5px;
 }
 
 .input-box .icon {
