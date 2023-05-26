@@ -54,6 +54,9 @@ export const postAxiosString = async (route, data, res) => {
   await axios.post(baseAddress + route, data.value).then(response => {
     res = response;
   });
+  // .catch((error)=> {
+  //   console.log(error);
+  // });
   return res
 }
 

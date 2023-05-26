@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Cors;
+using System.Text.RegularExpressions;
 
 namespace ChickenLife.Controllers
 {
@@ -26,9 +27,15 @@ namespace ChickenLife.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserRegisterRequest request)
         {
+            if (!IsValidEmail(request.Email))
+            {
+                ModelState.AddModelError("Email", "無效的Email格式");
+                return BadRequest(ModelState);
+            }
+
             if (_context.Accounts.Any(u => u.A_Email== request.Email))
             {
-                return BadRequest("使用者已退出");
+                return BadRequest("使用者已存在");
             }
             CreatePasswordHash(request.Password,
                 out byte[] passwordHash,
@@ -53,6 +60,15 @@ namespace ChickenLife.Controllers
             //return Ok(new { Message = $"使用者成功創建!以下是您的註冊驗證碼:{userOutput.VerifycationToken}" });
             //return Ok("使用者成功創建!");
             return Ok(new { Token = userOutput.VerifycationToken,Message = "註冊成功" });
+        }
+        private bool IsValidEmail(string email)
+        {
+            // 使用自定義的驗證邏輯檢查Email格式
+
+            // 此處僅示範一個簡單的檢查，您可以根據需要進一步擴展
+            // 例如，使用正則表達式檢查Email格式
+            var regex = new Regex(@"^[\w\.-]+@([\w-]+\.)+[\w-]{2,4}$");
+            return regex.IsMatch(email);
         }
 
         [HttpPost("login")]
