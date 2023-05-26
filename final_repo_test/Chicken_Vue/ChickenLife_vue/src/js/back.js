@@ -49,6 +49,12 @@ var ADImageEle = null;
 var ADImageSports = null;
 var ADImageLife = null;
 var ADImageLil = null;
+const leftSideBtn = document.getElementById('leftSideBtn');
+const waypoint = document.getElementById('waypoint');
+const moneypoint = document.getElementById('moneypoint');
+const elecpoint = document.getElementById('elecpoint');
+const lifepoint = document.getElementById('lifepoint');
+const sportspoint = document.getElementById('sportspoint');
 const waitingLog = document.getElementById('waitingLog');
 const gameContainer = document.querySelector(".game-container");
 const myVideo = document.getElementById("myVideo");
@@ -616,6 +622,12 @@ class gameStart extends Phaser.Scene {
             switch (result.type) {
                 case "Load":
                     console.log("Load");
+                    // leftSideBtn.visibility = 'visible';
+                    // waypoint.visibility = 'visible';
+                    // moneypoint.visibility = 'visible';
+                    // elecpoint.visibility = 'visible';
+                    // lifepoint.visibility = 'visible';
+                    // sportspoint.visibility = 'visible';
                     myVideo.style.visibility = 'hidden';
                     remoteVideo.style.visibility = 'hidden';
                     btnCamera.style.visibility = 'hidden';
@@ -669,6 +681,12 @@ class gameStart extends Phaser.Scene {
                 case "Match":
                     isQueue = false;
                     alert("配對成功!");
+                    // leftSideBtn.visibility = 'hidden';
+                    // waypoint.visibility = 'hidden';
+                    // moneypoint.visibility = 'hidden';
+                    // elecpoint.visibility = 'hidden';
+                    // lifepoint.visibility = 'hidden';
+                    // sportspoint.visibility = 'hidden';
                     extendBtnContainer.visibility = 'visible';
                     myVideo.style.visibility = 'visible';
                     remoteVideo.style.visibility = 'visible';
