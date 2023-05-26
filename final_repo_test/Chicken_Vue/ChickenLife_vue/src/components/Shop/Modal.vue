@@ -89,7 +89,7 @@ const modalpoints = ref(0);
             <div v-if="modelValue" class="pt-5 position-fixed top-0 start-0 h-100 w-100 shop"
                 style="background-color: rgba(0, 0, 0, 0.25)">
                 <div id="backdrop" @click="backdropClick" class="centerformodal ">
-                    <div class="card px-0" :class="(container == null) ? 'container' : `container-${container}`"
+                    <div class="card px-0 bkcolor" :class="(container == null) ? 'container' : `container-${container}`"
                         :style="(maxwidth != null) ? `max-width: ${maxwidth}` : null">
                         <div class="card-header h2 test">
                             <div class="float-start">
@@ -101,10 +101,12 @@ const modalpoints = ref(0);
                             </div>
 
                             <button v-if="closeable" @click='$emit("update:modelValue", false)'
-                                class="btn btn-text float-end"><strong>X</strong></button>
+                                class="btn btn-text float-end">
+                                <strong>X</strong>
+                            </button>
                         </div>
                         <div>
-                            <ul class="tab-tilte">
+                            <ul class="tab-tilte p-0" >
                                 <li @click="cur = 0" :class="{ active: cur == 0 }">廣告</li>
                                 <li @click="cur = 1" :class="{ active: cur == 1 }">商品</li>
                                 <li @click="cur = 2" :class="{ active: cur == 2 }">點數</li>
@@ -150,6 +152,7 @@ const modalpoints = ref(0);
 .centerformodal {
     display: flex;
     justify-content: center;
+
 }
 
 .backdrop {
@@ -194,11 +197,13 @@ ul li {
 }
 
 .tab-tilte {
-    width: 90%;
+    /* width: 90%; */
+    border: 1px solid black;
 }
 
 .tab-tilte li {
     float: left;
+    justify-content:center;
     width: 25%;
     padding: 10px 0;
     text-align: center;
@@ -223,7 +228,7 @@ text-align: center;
     /* height: 80%; */
     /* height: 800px; */
     overflow: hidden;
-
+    
 }
 
 .center-column {
@@ -245,4 +250,9 @@ text-align: center;
     /* height: 80%; */
     /* overflow: auto; */
 }
+
+.bkcolor{
+    background-color: #EDEDED;
+}
+
 </style>
