@@ -16,7 +16,13 @@ const register = ref({
 const Ruser = ref();
 const hadlesubmit = async () => {
   await postAxiosObj("/api/User/register", register, Ruser);
+  successFn();
   console.log(Ruser.value);
+};
+const isReg = ref(false);
+const successFn = () => {
+  alert("註冊成功");
+  isReg.value = true;
 };
 
 const user = ref();
@@ -44,9 +50,10 @@ export default {
 </script>
 <template>
   <div class="ALL">
-    <header>
-      <h2 class="logo">ChickenLife</h2>
-      <!-- <nav class="navigation">
+    <div v-if="!isreg">
+      <header>
+        <h2 class="logo">ChickenLife</h2>
+        <!-- <nav class="navigation">
         <a href="#">Home</a>
         <a href="#">TEST</a>
         <a href="#">TEST</a>
@@ -54,78 +61,87 @@ export default {
         <a href="#">TEST</a>
         <button @click="changeView(1)" class="btnLogin-popup">Login</button>
       </nav> -->
-    </header>
-    <div class="wrapper">
-      <span class="icon-close">
-        <ion-icon name="close"></ion-icon>
-      </span>
-      <div class="form-box login" v-if="view === 1">
-        <h2>Login</h2>
-        <form action="#">
-          <div class="input-box">
-            <span class="icon"><ion-icon name="mail"></ion-icon></span>
-            <input type="text" v-model="Account.email" required />
-            <label for=""> Email</label>
-          </div>
-          <div class="input-box">
-            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input type="password" v-model="Account.password" required />
-            <label for=""> Password</label>
-          </div>
-          <div class="remember-forget">
-            <label><input type="checkbox" />記住我</label>
-            <a href="#">忘記密碼?</a>
-          </div>
-          <button type="submit" class="btn" @click="CheckAccount">Login</button>
-          <div class="login-register">
-            <p>
-              還沒有帳號?<a
-                @click="changeView(2)"
-                href="#"
-                class="register-link"
-                >註冊</a
-              >
-            </p>
-          </div>
-        </form>
-      </div>
+      </header>
+      <div class="wrapper">
+        <span class="icon-close">
+          <ion-icon name="close"></ion-icon>
+        </span>
+        <div class="form-box login" v-if="view === 1">
+          <h2>Login</h2>
+          <form action="#">
+            <div class="input-box">
+              <span class="icon"><ion-icon name="mail"></ion-icon></span>
+              <input type="text" v-model="Account.email" required />
+              <label for=""> Email</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+              <input type="password" v-model="Account.password" required />
+              <label for=""> Password</label>
+            </div>
+            <div class="remember-forget">
+              <label><input type="checkbox" />記住我</label>
+              <a href="#">忘記密碼?</a>
+            </div>
+            <button type="submit" class="btn" @click="CheckAccount">
+              Login
+            </button>
+            <div class="login-register">
+              <p>
+                還沒有帳號?<a
+                  @click="changeView(2)"
+                  href="#"
+                  class="register-link"
+                  >註冊</a
+                >
+              </p>
+            </div>
+          </form>
+        </div>
 
-      <div class="form-box register" v-if="view === 2">
-        <h2>Registerion</h2>
-        <form action="#">
-          <div class="input-box">
-            <span class="icon"><ion-icon name="mail"></ion-icon></span>
-            <input type="text" v-model="register.email" required />
-            <label for=""> Email</label>
-          </div>
-          <div class="input-box">
-            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input type="password" v-model="register.password" required />
-            <label for=""> Password</label>
-          </div>
-          <div class="input-box">
-            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input
-              type="password"
-              v-model="register.confirmPassword"
-              required
-            />
-            <label for=""> confirmPassword</label>
-          </div>
-          <div class="remember-forget">
-            <label><input type="checkbox" />我同意此項條款</label>
-          </div>
-          <button @click="hadlesubmit" type="submit" class="btn">
-            Register
-          </button>
-          <div class="login-register">
-            <p>
-              已經有帳號了?<a @click="changeView(1)" href="#" class="login-link"
-                >登入</a
-              >
-            </p>
-          </div>
-        </form>
+        <div class="form-box register" v-if="view === 2">
+          <h2>Registerion</h2>
+          <form action="#">
+            <div class="input-box">
+              <span class="icon"><ion-icon name="mail"></ion-icon></span>
+              <input type="text" v-model="register.email" required />
+              <label for=""> Email</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+              <input type="password" v-model="register.password" required />
+              <label for=""> Password</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+              <input
+                type="password"
+                v-model="register.confirmPassword"
+                required
+              />
+              <label for=""> confirmPassword</label>
+            </div>
+            <div class="remember-forget">
+              <label><input type="checkbox" />我同意此項條款</label>
+            </div>
+            <button @click="hadlesubmit" type="submit" class="btn">
+              Register
+            </button>
+            <div class="login-register">
+              <p>
+                已經有帳號了?<a
+                  @click="changeView(1)"
+                  href="#"
+                  class="login-link"
+                  >登入</a
+                >
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div v-if="isreg">
+        <h3>註冊成功</h3>
       </div>
     </div>
   </div>
@@ -212,8 +228,8 @@ header {
 
 .wrapper {
   position: relative;
-  width: 400px;
-  height: 440px;
+  width: 450px;
+  height: 500px;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
