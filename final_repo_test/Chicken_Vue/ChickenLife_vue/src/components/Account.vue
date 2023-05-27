@@ -2,7 +2,10 @@
 import { reactive, ref } from "vue";
 import { postAxiosObj } from "../main.js";
 import { playerRefs } from "../main.js";
-
+import { inject } from "vue";
+import { setMemberData } from "../js/userdata.js";
+// const memberData = getMemberData();
+// console.log(memberData);
 const Account = ref({
   email: "user@example.com",
   password: "string",
@@ -13,6 +16,13 @@ const register = ref({
   password: "",
   confirmPassword: "",
 });
+const error_message = ref({});
+
+const Handerror = (err) => {
+  Object.key(err).forEach((erro) => (error_message[erro] = err[erro]));
+  console.log(error_message);
+};
+
 const Ruser = ref();
 const hadlesubmit = async () => {
   await postAxiosObj("/api/User/register", register, Ruser);
@@ -28,9 +38,10 @@ const successFn = () => {
 const user = ref();
 let route = "https://localhost:7093/api/User/login";
 
+//1
 const CheckAccount = async () => {
   await postAxiosObj("/api/User/login", Account, user);
-
+  setMemberData(user);
   printValue(user);
 };
 
@@ -52,7 +63,7 @@ export default {
   <div class="ALL">
     <div v-if="!isreg">
       <header>
-        <h2 class="logo">ChickenLife</h2>
+        <h2 class="logo">ChickenLive</h2>
         <!-- <nav class="navigation">
         <a href="#">Home</a>
         <a href="#">TEST</a>
