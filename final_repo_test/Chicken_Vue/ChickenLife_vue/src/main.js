@@ -51,13 +51,17 @@ export const postAxiosObj = async (route, data, res) => {
 }
 
 export const postAxiosString = async (route, data, res) => {
-  await axios.post(baseAddress + route, data.value).then(response => {
-    res = response;
-  });
-  // .catch((error)=> {
-  //   console.log(error);
-  // });
-  return res
+  try {
+    await axios.post(baseAddress + route, data.value).then(response => {
+      res = response;
+      return res
+    })
+  }
+
+  catch (error) {
+    console.log(error);
+  };
+
 }
 
 export const putAxiosObj = async (route, data, res) => {
@@ -100,6 +104,11 @@ export const getDate = (databasedate) => {
   return date
 };
 
+//處理登入回應資料的地方
+
+
+
+
 
 
 //登入的icon
@@ -117,6 +126,7 @@ document.head.appendChild(script2);
 export default app.config.globalProperties.playerRef;
 
 // app.component("Account", Account)
+
 app.use(register);
 app.provide
 app.mount('#app')
