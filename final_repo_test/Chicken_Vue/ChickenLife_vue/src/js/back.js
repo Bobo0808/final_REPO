@@ -24,7 +24,8 @@ export const phas = () => {
     const w = window.innerWidth;
     const h = window.innerHeight;
     // var server = 'wss://chickenlife20230522194335.azurewebsites.net/';
-    var server = 'wss://localhost:7093';
+    var server = 'wss://chickenlife.azurewebsites.net/';
+    // var server = 'wss://localhost:7093';
     var vWebSocket = null;
     var cursors;
     var AniLayer;
@@ -484,34 +485,34 @@ export const phas = () => {
         }
 
         preload() {
-            fetch('https://localhost:7093/api/Ads')
-                .then(response => response.json())
-                .then(data => {
-                    ads = data;
-                    console.log("data");
-                    console.log(data);
-                    ads.forEach(function (adimg) {
-                        // if (adimg.ad_ID > 29) {
-                        //     ADList.push(adimg.ad_ImageURL);
-                        //     if (ADList[0]) { ADImageStart = ADList[0]; }
-                        //     if (ADList[1]) { ADImageMoney = ADList[1]; }
-                        //     if (ADList[2]) { ADImageEle = ADList[2]; }
-                        //     if (ADList[3]) { ADImageSports = ADList[3]; }
-                        //     if (ADList[4]) { ADImageLife = ADList[4]; }
-                        //     if (ADList[5]) { ADImageLil = ADList[5]; }
-                        //     if (ADImageStart) {
-                        //         console.log("222ADImageStart");
-                        //         console.log(ADImageStart);
-                        //         this.load.image("ADImageStart", ADImageStart);
-                        //         console.log("333ADImageStart");
-                        //     }
-                        // }
-                    });
-                    // console.log("ADList");
-                    // console.log(ADList);
-                })
-                .catch(error => {
-                });
+            // fetch('https://localhost:7093/api/Ads')
+            //     .then(response => response.json())
+            //     .then(data => {
+            //         ads = data;
+            //         console.log("data");
+            //         console.log(data);
+            //         ads.forEach(function (adimg) {
+            // if (adimg.ad_ID > 29) {
+            //     ADList.push(adimg.ad_ImageURL);
+            //     if (ADList[0]) { ADImageStart = ADList[0]; }
+            //     if (ADList[1]) { ADImageMoney = ADList[1]; }
+            //     if (ADList[2]) { ADImageEle = ADList[2]; }
+            //     if (ADList[3]) { ADImageSports = ADList[3]; }
+            //     if (ADList[4]) { ADImageLife = ADList[4]; }
+            //     if (ADList[5]) { ADImageLil = ADList[5]; }
+            //     if (ADImageStart) {
+            //         console.log("222ADImageStart");
+            //         console.log(ADImageStart);
+            //         this.load.image("ADImageStart", ADImageStart);
+            //         console.log("333ADImageStart");
+            //     }
+            // }
+            // });
+            // console.log("ADList");
+            // console.log(ADList);
+            // })
+            // .catch(error => {
+            // });
 
             this.load.image("tiles", mapAni);
             this.load.tilemapTiledJSON('map', helpMe);
