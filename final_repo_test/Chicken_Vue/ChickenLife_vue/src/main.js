@@ -51,7 +51,7 @@ export const getAxiosNoData = async (route, data) => {
 
 export const postAxiosObj = async (route, data, res) => {
   await axios.post(baseAddress + route, data.value).then(response => {
-    res.value = response.data;
+    return res.value = response.data;
   });
 }
 

@@ -36,14 +36,12 @@ const successFn = () => {
   isReg.value = true;
 };
 
-const user = ref();
 let route = "https://localhost:7093/api/User/login";
 
 //1
 const CheckAccount = async () => {
-  await postAxiosObj("/api/User/login", Account, user);
-  setMemberData(user);
-  printValue(user);
+  await postAxiosObj("/api/User/login", Account, playerRefs);
+  printValue(playerRefs);
   currentBody.value = Phaser;
 };
 
