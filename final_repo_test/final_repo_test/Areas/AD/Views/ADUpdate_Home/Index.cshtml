@@ -29,16 +29,16 @@
             <!-- 修改方案 -->
             <div class="form_UpdateCase">
                 <h5 class="card-title">修改方案</h5>
-
                 <form method="post" asp-controller="ADUpdate_Home" asp-action="UpdateCase">
+                    @Html.AntiForgeryToken()
                     <div class="form-floating mb-3">
                         <input type="hidden" name="id" value="@Model.SelectedCase?.Case_ID" />
-                        <input type="text" class="form-control" id="caseName" placeholder="name" name="caseName" required value="@Model.SelectedCase?.Case_Name">
+                        <input type="text" class="form-control" id="caseName" placeholder="name" name="caseName" required value="@Model.SelectedCase?.Case_Name" required>
                         <label for="caseName">方案名稱</label>
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input type="number" step="1" class="form-control" id="casePrice" placeholder="Price" required name="casePrice" value="@Model.SelectedCase?.Case_PricePerDay">
+                        <input type="number" step="1" class="form-control" id="casePrice" placeholder="Price" required name="casePrice" value="@Model.SelectedCase?.Case_PricePerDay" required>
                         <label for="casePrice">單日價格</label>
                     </div>
 
@@ -51,7 +51,8 @@
 
             <div class="form_CreateCase">
                 <h5 class="card-title">新增方案</h5>
-                <form method="post" asp-controller="ADUpdate_Home" asp-action="AddCase">
+                <form method="post" asp-controller="ADUpdate_Home" asp-action="AddCase" >
+                    @Html.AntiForgeryToken()
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="caseName" placeholder="name" name="caseName" required>
                         <label for="floatingInput">方案名稱</label>
@@ -74,7 +75,8 @@
             </div>
         </div>
         <!-- 上架廣告表單 -->
-        <form class="form_AD row gx-2" method="post" asp-controller="ADUpdate_Home" asp-action="AddAD" enctype="multipart/form-data">
+        <form class="form_AD row gx-2" method="post" id="form_AD" asp-controller="ADUpdate_Home" asp-action="AddAD" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
             <h4>廣告上架</h4>
             <div class="col-md-3 mx-3">
                 <label for="inputState" class="form-label">廠商名稱</label>
@@ -100,18 +102,14 @@
             <div class="clearfix"></div>
             <div class="col-md-3 StartDate mx-3">
                 <label for="start">開始日期</label>
-
-                <input type="date" id="start" name="Ad_StartTime" value="2023-04-18" min="2023-01-01"
-                    max="2053-12-31">
-
+                <input type="date" id="startDate" name="Ad_StartTime" max="2053-12-31">
+                <span id="endDateError" class="text-danger" style="display: none;">開始日期不能早於今日。</span>
             </div>
-
             <div class="col-md-3 EndDate mx-3">
                 <label for="start">結束日期</label>
 
-                <input type="date" id="start" name="Ad_EndTime" value="2023-04-18" min="2023-01-01"
-                    max="2053-12-31">
-
+                <input type="date" id="endDate" name="Ad_EndTime"max="2053-12-31">
+                <span id="dateError" class="text-danger" style="display: none;">結束日期不能早於開始日期。</span>
             </div>
 
             <div class="col-md-1 mx-3">
@@ -137,7 +135,7 @@
 
             <div class="col-md-3 PayDay mx-3">
                 <label for="Pay">應付款日</label>
-                <input type="date" id="Pay" name="Ad_PaymentDueDate" value="2023-04-18" min="2023-01-01"
+                <input type="date" id="Pay" name="Ad_PaymentDueDate"
                     max="2053-12-31">
 
             </div>
@@ -147,3 +145,7 @@
         </form>
     </div>
 </div>
+<div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 11"></div>
+@section Script{
+  <script src="~/js/ad/updateadscript.js"></script>
+}

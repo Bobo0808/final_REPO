@@ -111,6 +111,15 @@ namespace final_repo_test.Areas.AD.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult AddCase(string caseName, int? casePrice)
         {
+            if (caseName == null || casePrice == null)
+            {
+                return RedirectToAction("Index");
+            }
+            int price;
+            if (!int.TryParse(casePrice.ToString(), out price))
+            {
+                return RedirectToAction("Index");
+            }
             var caseTable = new CaseTable()
             {
                 Case_Name = caseName,
@@ -124,10 +133,19 @@ namespace final_repo_test.Areas.AD.Controllers
             return RedirectToAction("Index");
         }
 
-        //[HttpPost]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddAD(string P_Name, string Case_Name, DateTime Ad_StartTime, DateTime Ad_EndTime, IFormFile ADImg, string Ad_TargetURL, string Ad_Description, DateTime Ad_PaymentDueDate)
         {
+            if (string.IsNullOrEmpty(P_Name) || P_Name == "選擇廠商...")
+            {
+                return RedirectToAction("Index");
+            }
+            if (string.IsNullOrEmpty(Case_Name) || Case_Name == "選擇方案...")
+            {
+                return RedirectToAction("Index");
+            }
+
             var Partner = _dbContext.Partners.FirstOrDefault(x => x.P_Name == P_Name);
             var CaseName = _dbContext.CaseTables.FirstOrDefault(x => x.Case_Name == Case_Name);
 

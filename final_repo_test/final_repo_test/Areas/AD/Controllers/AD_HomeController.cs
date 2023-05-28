@@ -46,6 +46,7 @@ namespace final_repo_test.Areas.AD.Controllers
 		}
 
 		[HttpPost]
+		[ValidateAntiForgeryToken]
 		public JsonResult AddPartner(string PartnerName, string Contact, string Email, string Phone, string Note)
 		{
 			try
