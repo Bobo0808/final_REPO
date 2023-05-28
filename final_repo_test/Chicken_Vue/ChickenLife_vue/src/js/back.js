@@ -63,6 +63,7 @@ const btnCamera = document.getElementById('btnCamera');
 const btnMic = document.getElementById('btnMic');
 const btnLeave = document.getElementById('btnLeave');
 const btnStart = document.getElementById('joinBtn');
+const dialogBoo = document.getElementById('dialogBoo');
 const extendBtnContainer = document.getElementById('extendBtnContainer');
 btnCamera.addEventListener('click', muteCam);
 btnMic.addEventListener('click', muteMic);
@@ -128,7 +129,6 @@ document.addEventListener('keypress', handleKeyPress);
 dialogBox.value = document.getElementById('dialog-box');
 const dialogCloseBtn = document.getElementById('dialog-close-btn');
 dialogCloseBtn.addEventListener('click', hideDialog);
-
 const dialogInput = document.getElementById('dialog-input');
 dialogInput.addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
@@ -141,13 +141,23 @@ dialogInput.addEventListener('keypress', (event) => {
 
 function sendMsg() {
     var txtMsg = document.getElementById("dialog-input").value;
-    if (txtMsg) {
+    if (txtMsg && txtMsg.length < 50) {
         let data = {
             "type": "Chat",
             "id": mapData.id,
             "data": txtMsg
         };
         vWebSocket.send(JSON.stringify(data));
+        document.getElementById("dialog-input").value = "";
+        setTimeout(function () {
+            dialogBoo.scrollTop = dialogBoo.scrollHeight;
+        }, 100);
+    }
+    else if (txtMsg.length === 0) {
+        alert('聊天訊息不可以為空');
+    }
+    else {
+        alert('不可超過50字');
     }
 }
 function LoadMap(result) {
@@ -517,22 +527,8 @@ class gameStart extends Phaser.Scene {
         this.load.spritesheet('walk', '../img/phaser/Sprite_walk.png', {
             frameWidth: 128, frameHeight: 128
         });
-        this.load.spritesheet('Npc01Stand', '../img/phaser/NPC01_stand.png', {
-            frameWidth: 128, frameHeight: 128
-        });
-        this.load.spritesheet('Npc01Walk', '../img/phaser/NPC01_walk.png', {
-            frameWidth: 128, frameHeight: 128
-        });
         this.add.image(0, 0, 'stand', 0)
         this.add.image(0, 0, 'walk', 0)
-        this.add.image(0, 0, 'Npc01Stand', 0)
-        this.add.image(0, 0, 'Npc01Walk', 0)
-        // this.textures.addBase64('stand', spriteStand);
-        // this.textures.addBase64('walk', spriteWalk);
-        // this.textures.addBase64('Npc01Stand', npcStand);
-        // this.textures.addBase64('Npc01Walk', npcWalk);
-        console.log(spriteStand)
-
         this.load.on('complete', function () {
             this.anims.create({
                 key: 'stand_anim',
@@ -544,18 +540,6 @@ class gameStart extends Phaser.Scene {
             this.anims.create({
                 key: 'walk_anim',
                 frames: this.anims.generateFrameNumbers('walk', { start: 0, end: 7 }),
-                frameRate: 10,
-                repeat: -1
-            });
-            this.anims.create({
-                key: 'Npc01Stand_anim',
-                frames: this.anims.generateFrameNumbers('Npc01Stand', { start: 0, end: 7 }),
-                frameRate: 10,
-                repeat: -1
-            });
-            this.anims.create({
-                key: 'Npc01Walk_anim',
-                frames: this.anims.generateFrameNumbers('Npc01Walk', { start: 0, end: 7 }),
                 frameRate: 10,
                 repeat: -1
             });
@@ -602,8 +586,6 @@ class gameStart extends Phaser.Scene {
         //如果連線成功
         vWebSocket.addEventListener('open', (e) => {
             console.log('connection start ...');
-            console.log(e);
-            console.log(vWebSocket);
             let data = {
                 "type": "Connect",
             };
@@ -651,12 +633,12 @@ class gameStart extends Phaser.Scene {
                     const content = document.getElementById("dialog-body");
                     const timecontent = document.getElementById("dialog-time");
                     var today = new Date();
-                    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+                    // var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+                    var date = today.getDate();
                     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
                     var dateTime = date + ' ' + time;
                     let message = `${result.client.id}: ${result.content}`;
                     timecontent.innerText = timecontent.innerText + '\r\n' + dateTime;
-                    console.log(content)
                     content.innerText = content.innerText + '\r\n' + message;
                     break;
                 case "Connect":
@@ -737,17 +719,6 @@ class gameStart extends Phaser.Scene {
         teleportSports.addEventListener('click', function () { teleport.call(this, 'sports'); }.bind(this));
         var teleportlife = document.getElementById('lifepoint');
         teleportlife.addEventListener('click', function () { teleport.call(this, 'life'); }.bind(this));
-
-
-
-
-        //創建粉紅熊熊NPC
-        this.Npc01 = this.physics.add.sprite(9728, 6912, 'Npc01Stand');
-        this.Npc01.anims.play('Npc01Stand_anim', true);
-        this.Npc01.setScale(0.5);
-        this.Npc01.setSize(128, 128);
-
-
         cursors = this.input.keyboard.createCursorKeys();
     }
 
@@ -755,9 +726,6 @@ class gameStart extends Phaser.Scene {
         if (this.player != null) {
             this.player.setVelocityY(0);
             this.player.setVelocityX(0);
-            this.Npc01.setVelocityY(0);
-            this.Npc01.setVelocityX(0);
-
             var keyW = this.input.keyboard.addKey('W');
             var keyS = this.input.keyboard.addKey('S');
             var keyA = this.input.keyboard.addKey('A');
@@ -797,47 +765,7 @@ class gameStart extends Phaser.Scene {
                 this.handleArrowPress(0, 0);
                 this.player.anims.play('stand_anim', true);
             }
-
-
-
-            if (keyW.isDown) {
-                this.Npc01.setVelocityY(-800);
-                if (this.Npc01.anims.currentAnim !== this.anims.get('Npc01Walk_anim')) {
-                    this.Npc01.anims.play('Npc01Walk_anim');
-                }
-            }
-            else if (keyS.isDown) {
-                this.Npc01.setVelocityY(+400);
-
-                if (this.Npc01.anims.currentAnim !== this.anims.get('Npc01Walk_anim')) {
-                    this.Npc01.anims.play('Npc01Walk_anim');
-                }
-            }
-            else if (keyA.isDown) {
-                this.Npc01.setVelocityX(-400);
-
-                if (this.Npc01.anims.currentAnim !== this.anims.get('Npc01Walk_anim')) {
-                    this.Npc01.anims.play('Npc01Walk_anim');
-                }
-                this.Npc01.flipX = true;
-            }
-            else if (keyD.isDown) {
-                this.Npc01.setVelocityX(+400);
-
-                if (this.Npc01.anims.currentAnim !== this.anims.get('Npc01Walk_anim')) {
-                    this.Npc01.anims.play('Npc01Walk_anim');
-                }
-                this.Npc01.flipX = false;
-            }
-            else {
-                this.Npc01.anims.play('Npc01Stand_anim', true);
-            }
-
         }
-
-
-
-
     }
     render() {
         this.debug.cameraInfo(this.cameras.main, 32, 32);
