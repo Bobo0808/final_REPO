@@ -1,7 +1,8 @@
 <script setup>
 import { reactive, ref } from "vue";
 import { postAxiosObj } from "../main.js";
-import { playerRefs } from "../main.js";
+import { playerRefs, currentBody } from "../main.js";
+import Phaser from "./Phaser.vue";
 import { inject } from "vue";
 import { setMemberData } from "../js/userdata.js";
 // const memberData = getMemberData();
@@ -43,6 +44,7 @@ const CheckAccount = async () => {
   await postAxiosObj("/api/User/login", Account, user);
   setMemberData(user);
   printValue(user);
+  currentBody.value = Phaser;
 };
 
 function printValue(value) {
