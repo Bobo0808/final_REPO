@@ -3,17 +3,14 @@
 import { reactive, ref, onMounted } from "vue";
 import Phaser from "./components/Phaser.vue";
 import Modal from "./components/Shop/Modal.vue";
-import { fuck, playerRefs } from "./main.js";
+import { fuck, playerRefs, currentBody } from "./main.js";
 import Sandy from "./components/Sandy.vue";
 import profilePic from "./img/625157.jpg";
 // import './js/dialogue.js';
 import Account from "./components/Account.vue";
 
-// const currentBody = ref(Phaser);
-const currentBody = ref(Phaser);
-
 const closeableModal = ref(false);
-
+currentBody.value = Account;
 playerRefs.value.isPlay = true;
 //確認商城開啟關掉鏡頭
 const Checkshow = () => {
@@ -21,17 +18,6 @@ const Checkshow = () => {
     closeableModal.value = true;
   } else {
     closeableModal.value = false;
-  }
-};
-
-// 顯示遊戲介面
-const Change = () => {
-  if (playerRefs.value.isPlay == false) {
-    currentBody.value = Phaser;
-    playerRefs.value.isPlay = true;
-  } else {
-    playerRefs.value.isPlay = false;
-    currentBody.value = Account;
   }
 };
 
@@ -86,15 +72,7 @@ const handleKeyPress = (event) => {
             <a @click="Change" type="button" class="nav-link px-2 rounded-2"
               >衣櫥</a
             >
-            <sandy
-              class="sandy"
-              style="
-                background-color: white;
-                position: absolute;
-                top: 1%;
-                z-index: 999999999999;
-              "
-            ></sandy>
+            <Sandy></Sandy>
           </li>
         </ul>
 
@@ -175,12 +153,6 @@ export default {
   },
 };
 </script>
-
-<style>
-.sandy {
-  margin-left: 400px;
-}
-</style>
 
 <style src="./css/index.css"></style>
 <style src="./css/sidebars.css"></style>

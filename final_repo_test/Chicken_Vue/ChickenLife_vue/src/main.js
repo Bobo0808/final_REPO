@@ -9,6 +9,10 @@ export const baseAddress = "https://localhost:7093";
 
 
 const app = createApp(App);
+
+// const currentBody = ref(Phaser);
+export const currentBody = ref();
+
 app.config.globalProperties.playerRef = ref({
   id: 1,
   name: ['shit', 'fuck', 'bitch', 'suck', 'cock'],
@@ -29,6 +33,7 @@ export const fuck = () => {
   alert('hello world');
   return app.config.globalProperties;
 };
+
 
 export const getAxios = async (route, data) => {
   await axios.get(baseAddress + route.value).then(response => {
