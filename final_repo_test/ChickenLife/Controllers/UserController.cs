@@ -111,7 +111,7 @@ namespace ChickenLife.Controllers
                 return null ;
                 }
 
-                // 创建一个包含所需数据的对象
+                // 創建一個包含所需數據的對象
                 var userOutput = new UserOutput
                 {
                     A_Email = user.A_Email,
