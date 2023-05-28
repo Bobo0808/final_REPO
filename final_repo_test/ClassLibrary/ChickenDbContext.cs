@@ -13,7 +13,7 @@ namespace ClassLibrary
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlServer(@"Data Source=.;Initial Catalog=ChickenLife;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
-            optionsBuilder.UseSqlServer(@"Data Source=.;Initial Catalog=ChickenLife;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+            optionsBuilder.UseSqlServer(@"Server=tcp:chdb0.database.windows.net,1433;Initial Catalog=ChickenLife;Persist Security Info=False;User ID=bobowang;Password=Wang0963915586;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=100");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

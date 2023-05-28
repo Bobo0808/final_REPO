@@ -26,26 +26,32 @@
                     <div class="input-box">
                         <span class="details">全名</span>
                         <input type="text" placeholder="Enter your name" required asp-for="A_Name">
+                        <span asp-validation-for="A_Name" class="text-danger"></span>
                     </div>
                     <div class="input-box">
                         <span class="details">暱稱</span>
                         <input type="text" placeholder="Enter your NickName" required asp-for="A_NickName">
+                        <span asp-validation-for="A_NickName" class="text-danger"></span>
                     </div>
                     <div class="input-box">
                         <span class="details">使用者名稱</span>
                         <input type="text" placeholder="Enter your username" required asp-for="UserName">
+                        <span asp-validation-for="UserName" class="text-danger"></span>
                     </div>
                     <div class="input-box">
                         <span class="details">Email</span>
                         <input type="text" placeholder="Enter your email" required asp-for="A_Email">
+                        <span asp-validation-for="A_Email" class="text-danger"></span>
                     </div>
                     <div class="input-box">
                         <span class="details">密碼</span>
                         <input type="text" placeholder="Enter your password" required asp-for="UserPWD">
+                        <span asp-validation-for="UserPWD" class="text-danger"></span>
                     </div>
                     <div class="input-box">
                         <span class="details">電話號碼</span>
                         <input type="text" placeholder="Enter your number" required asp-for="A_Phone">
+                        <span asp-validation-for="A_Phone" class="text-danger"></span>
                     </div>
                     <div class="input-box">
                         <span class="birthday">生日</span>
@@ -54,6 +60,7 @@
                     <div class="input-box">
                         <span class="details">地址</span>
                         <input type="text" placeholder="Enter your address" required asp-for="A_add">
+                        <span asp-validation-for="A_add" class="text-danger"></span>
                     </div>
                     <div class="input-box">
                         <span class="details">Coin</span>
@@ -75,6 +82,7 @@
                     <input type="radio" asp-for="A_Gender" id="dot-1" value="@((int)Gender.男)" checked="@((Model?.A_Gender == Gender.男) ? "checked" : null)">
                     <input type="radio" asp-for="A_Gender" id="dot-2" value="@((int)Gender.女)" checked="@((Model?.A_Gender == Gender.女) ? "checked" : null)">
                     <input type="radio" asp-for="A_Gender" id="dot-3" value="@((int)Gender.其他)" checked="@((Model?.A_Gender == Gender.其他) ? "checked" : null)">
+                    <span asp-validation-for="A_Gender" class="text-danger"></span>
                     <span class="gender-title">性別</span>
                     <div class="category">
                         <label for="dot-1">
@@ -100,3 +108,11 @@
         </div>
     </div>
 </body>
+
+
+
+@section Script{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

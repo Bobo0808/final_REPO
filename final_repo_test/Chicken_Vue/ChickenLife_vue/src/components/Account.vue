@@ -1,7 +1,8 @@
 <script setup>
 import { reactive, ref } from "vue";
 import { postAxiosObj } from "../main.js";
-import { playerRefs } from "../main.js";
+import { playerRefs, currentBody } from "../main.js";
+import Phaser from "./Phaser.vue";
 import { inject } from "vue";
 import { setMemberData } from "../js/userdata.js";
 // const memberData = getMemberData();
@@ -35,14 +36,13 @@ const successFn = () => {
   isReg.value = true;
 };
 
-const user = ref();
 let route = "https://localhost:7093/api/User/login";
 
 //1
 const CheckAccount = async () => {
-  await postAxiosObj("/api/User/login", Account, user);
-  setMemberData(user);
-  printValue(user);
+  await postAxiosObj("/api/User/login", Account, playerRefs);
+  printValue(playerRefs);
+  currentBody.value = Phaser;
 };
 
 function printValue(value) {

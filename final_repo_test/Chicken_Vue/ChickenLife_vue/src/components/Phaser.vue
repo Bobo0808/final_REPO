@@ -1,40 +1,35 @@
 
 <script setup>
-import { onMounted, ref, watch, toRaw } from 'vue';
+import { onMounted, ref, watch, toRaw } from "vue";
 import { playerRefs } from "../main.js";
-
+import { phas } from "../js/back.js";
 const emit = defineEmits();
 const props = defineProps({
   LoginStatus: {
     type: Boolean,
     required: true,
-    default: false
+    default: false,
   },
   memberpoints: {
     type: Number,
     required: false,
-    default: 0
+    default: 0,
   },
   closeableModal: {
     type: Boolean,
     default: false,
-  }
-})
+  },
+});
+
 onMounted(() => {
-  getPlay();
-  // phaserArcade();
-  // phaser();
-  // backgame();
-  // SpriteForP();
+  phas();
 });
 
 const getPlay = () => {
   // const value = playerRef.value.isPlay; // 獲取需要傳遞的值
   // startGame(value); // 傳遞值給遊戲啟動函式
-}
-
+};
 </script>
-
 <template lang="">
      <div class="phaser_area">
       <!-- <div style="z-index: 999;"> -->
@@ -67,7 +62,7 @@ const getPlay = () => {
         <span class="dialog-title">對話視窗</span>
         <span class="dialog-close-btn" id="dialog-close-btn" >x</span>
       </div>
-      <div class="dialog">
+      <div class="dialog" id="dialogBoo">
         <div class="dialog-body" id="dialog-body" ref="dialogBody"></div>
         <div class="dialog-time" id="dialog-time"></div>
       </div>
@@ -91,9 +86,10 @@ const getPlay = () => {
   bottom: 0;
   left: 285px;
   width: 35%;
-  height: 25%;
-  background-color: white;
+  height: 30%;
+  background-color: rgba(0, 0, 0, 0.553);
   border: 1px solid gray;
+  color: snow;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 9999;
   opacity: 100%;
@@ -105,7 +101,7 @@ const getPlay = () => {
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  background-color: #1d3461;
+  background-color: #5d2d00b8;
   color: white;
   font-size: 20px;
   font-weight: bold;
@@ -124,6 +120,28 @@ const getPlay = () => {
   height: 100%;
 }
 
+/* 隱藏滾動條的預設樣式 */
+.dialog::-webkit-scrollbar {
+  width: 8px;
+  background-color: #00000054;
+}
+
+/* 設置滾動條軌道的樣式 */
+.dialog::-webkit-scrollbar-track {
+  border-radius: 4px;
+}
+
+/* 設置滾動條的樣式 */
+.dialog::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(254, 254, 254, 0.808)afa;
+}
+
+/* 滑鼠懸停在滾動條上時的樣式 */
+.dialog::-webkit-scrollbar-thumb:hover {
+  background-color: #dadada88;
+}
+
 .dialog-body {
   float: left;
 }
@@ -131,7 +149,6 @@ const getPlay = () => {
 .dialog-time {
   float: right;
 }
-
 
 .dialog-footer {
   display: flex;
@@ -145,6 +162,7 @@ const getPlay = () => {
   margin-right: 10px;
   padding: 5px;
   border: none;
+  background-color: #ffffffcd;
   border-bottom: 2px solid #1d3461;
   outline: none;
   font-size: 16px;
@@ -152,12 +170,13 @@ const getPlay = () => {
 
 #dialog-send-btn {
   padding: 5px 10px;
-  background-color: #1d3461;
+  background-color: #5d2d00b8;
   color: white;
   border: none;
   border-radius: 3px;
   cursor: pointer;
   font-size: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .dialog-message {
