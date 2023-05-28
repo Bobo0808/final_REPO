@@ -13,7 +13,7 @@ namespace ClassLibrary
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlServer(@"Data Source=.;Initial Catalog=ChickenLife;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
-            optionsBuilder.UseSqlServer(@"Server=tcp:chdb0.database.windows.net,1433;Initial Catalog=ChickenLife;Persist Security Info=False;User ID=bobowang;Password=Wang0963915586;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=100;");
+            optionsBuilder.UseSqlServer(@"Data Source=.;Initial Catalog=ChickenLife;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -952,178 +952,178 @@ namespace ClassLibrary
                     Email = "apple@gmail.com",
                     Phone = "0912345678",
                     P_Note = "好合作",
+                },
+                new Partner()
+                {
+                    P_ID = 2,
+                    P_Name = "Google",
+                    Contact = "陳大名",
+                    Email = "google@gmail.com",
+                    Phone = "0923456789",
+                    P_Note = "溝通良好",
+                },
+                new Partner()
+                {
+                    P_ID = 3,
+                    P_Name = "Amazon",
+                    Contact = "王小美",
+                    Email = "amazon@gmail.com",
+                    Phone = "0934567890",
+                    P_Note = "產品品質不錯",
+                },
+                new Partner()
+                {
+                    P_ID = 4,
+                    P_Name = "Microsoft",
+                    Contact = "李志明",
+                    Email = "microsoft@gmail.com",
+                    Phone = "0912345678",
+                    P_Note = "合作愉快",
+                },
+                new Partner()
+                {
+                    P_ID = 5,
+                    P_Name = "Facebook",
+                    Contact = "蔡佳玲",
+                    Email = "facebook@gmail.com",
+                    Phone = "0923456789",
+                    P_Note = "回覆速度快",
+                },
+                new Partner()
+                {
+                    P_ID = 6,
+                    P_Name = "Netflix",
+                    Contact = "林小華",
+                    Email = "netflix@gmail.com",
+                    Phone = "0934567890",
+                    P_Note = "服務很好",
+                },
+                new Partner()
+                {
+                    P_ID = 7,
+                    P_Name = "Tesla",
+                    Contact = "陳小明",
+                    Email = "tesla@gmail.com",
+                    Phone = "0912345678",
+                    P_Note = "值得信賴",
+                },
+                new Partner()
+                {
+                    P_ID = 8,
+                    P_Name = "Twitter",
+                    Contact = "蔡小玲",
+                    Email = "twitter@gmail.com",
+                    Phone = "0923456789",
+                    P_Note = "溝通良好",
+                },
+                new Partner()
+                {
+                    P_ID = 9,
+                    P_Name = "Uber",
+                    Contact = "李小明",
+                    Email = "uber@gmail.com",
+                    Phone = "0934567890",
+                    P_Note = "好合作",
+                },
+                new Partner()
+                {
+                    P_ID = 10,
+                    P_Name = "Airbnb",
+                    Contact = "林小美",
+                    Email = "airbnb@gmail.com",
+                    Phone = "0912345678",
+                    P_Note = "服務很好",
+                },
+                new Partner()
+                {
+                    P_ID = 11,
+                    P_Name = "LinkedIn",
+                    Contact = "陳大名",
+                    Email = "linkedin@gmail.com",
+                    Phone = "0923456789",
+                    P_Note = "回覆速度快",
+                },
+                new Partner()
+                {
+                    P_ID = 12,
+                    P_Name = "Dropbox",
+                    Contact = "王小華",
+                    Email = "dropbox@gmail.com",
+                    Phone = "0934567890",
+                    P_Note = "值得信賴",
+                },
+                new Partner()
+                {
+                    P_ID = 13,
+                    P_Name = "Twitter",
+                    Contact = "蔡小玲",
+                    Email = "twitter@gmail.com",
+                    Phone = "0923456789",
+                    P_Note = "溝通良好",
+                },
+                new Partner()
+                {
+                    P_ID = 14,
+                    P_Name = "Salesforce",
+                    Contact = "陳小明",
+                    Email = "salesforce@gmail.com",
+                    Phone = "0912345678",
+                    P_Note = "產品品質不錯",
+                },
+                new Partner()
+                {
+                    P_ID = 15,
+                    P_Name = "Adobe",
+                    Contact = "蔡佳玲",
+                    Email = "adobe@gmail.com",
+                    Phone = "0923456789",
+                    P_Note = "回覆速度快",
+                },
+                new Partner()
+                {
+                    P_ID = 16,
+                    P_Name = "PayPal",
+                    Contact = "林小華",
+                    Email = "paypal@gmail.com",
+                    Phone = "0934567890",
+                    P_Note = "合作愉快",
+                },
+                new Partner()
+                {
+                    P_ID = 17,
+                    P_Name = "Oracle",
+                    Contact = "陳小明",
+                    Email = "oracle@gmail.com",
+                    Phone = "0912345678",
+                    P_Note = "回覆速度快",
+                },
+                new Partner()
+                {
+                    P_ID = 18,
+                    P_Name = "IBM",
+                    Contact = "蔡小玲",
+                    Email = "ibm@gmail.com",
+                    Phone = "0923456789",
+                    P_Note = "好合作",
+                },
+                new Partner()
+                {
+                    P_ID = 19,
+                    P_Name = "Intel",
+                    Contact = "李小明",
+                    Email = "intel@gmail.com",
+                    Phone = "0934567890",
+                    P_Note = "值得信賴",
+                },
+                new Partner()
+                {
+                    P_ID = 20,
+                    P_Name = "HP",
+                    Contact = "林小美",
+                    Email = "hp@gmail.com",
+                    Phone = "0912345678",
+                    P_Note = "溝通良好",
                 }
-                //new Partner()
-                //{
-                //    P_ID = 2,
-                //    P_Name = "Google",
-                //    Contact = "陳大名",
-                //    Email = "google@gmail.com",
-                //    Phone = "0923456789",
-                //    P_Note = "溝通良好",
-                //},
-                //new Partner()
-                //{
-                //    P_ID = 3,
-                //    P_Name = "Amazon",
-                //    Contact = "王小美",
-                //    Email = "amazon@gmail.com",
-                //    Phone = "0934567890",
-                //    P_Note = "產品品質不錯",
-                //},
-                //new Partner()
-                //{
-                //    P_ID = 4,
-                //    P_Name = "Microsoft",
-                //    Contact = "李志明",
-                //    Email = "microsoft@gmail.com",
-                //    Phone = "0912345678",
-                //    P_Note = "合作愉快",
-                //},
-                //new Partner()
-                //{
-                //    P_ID = 5,
-                //    P_Name = "Facebook",
-                //    Contact = "蔡佳玲",
-                //    Email = "facebook@gmail.com",
-                //    Phone = "0923456789",
-                //    P_Note = "回覆速度快",
-                //},
-                //new Partner()
-                //{
-                //    P_ID = 6,
-                //    P_Name = "Netflix",
-                //    Contact = "林小華",
-                //    Email = "netflix@gmail.com",
-                //    Phone = "0934567890",
-                //    P_Note = "服務很好",
-                //},
-                //new Partner()
-                //{
-                //    P_ID = 7,
-                //    P_Name = "Tesla",
-                //    Contact = "陳小明",
-                //    Email = "tesla@gmail.com",
-                //    Phone = "0912345678",
-                //    P_Note = "值得信賴",
-                //},
-                //new Partner()
-                //{
-                //    P_ID = 8,
-                //    P_Name = "Twitter",
-                //    Contact = "蔡小玲",
-                //    Email = "twitter@gmail.com",
-                //    Phone = "0923456789",
-                //    P_Note = "溝通良好",
-                //},
-                //new Partner()
-                //{
-                //    P_ID = 9,
-                //    P_Name = "Uber",
-                //    Contact = "李小明",
-                //    Email = "uber@gmail.com",
-                //    Phone = "0934567890",
-                //    P_Note = "好合作",
-                //},
-                //new Partner()
-                //{
-                //    P_ID = 10,
-                //    P_Name = "Airbnb",
-                //    Contact = "林小美",
-                //    Email = "airbnb@gmail.com",
-                //    Phone = "0912345678",
-                //    P_Note = "服務很好",
-                //},
-                //new Partner()
-                //{
-                //    P_ID = 11,
-                //    P_Name = "LinkedIn",
-                //    Contact = "陳大名",
-                //    Email = "linkedin@gmail.com",
-                //    Phone = "0923456789",
-                //    P_Note = "回覆速度快",
-                //},
-                //new Partner()
-                //{
-                //    P_ID = 12,
-                //    P_Name = "Dropbox",
-                //    Contact = "王小華",
-                //    Email = "dropbox@gmail.com",
-                //    Phone = "0934567890",
-                //    P_Note = "值得信賴",
-                //},
-                //new Partner()
-                //{
-                //    P_ID = 13,
-                //    P_Name = "Twitter",
-                //    Contact = "蔡小玲",
-                //    Email = "twitter@gmail.com",
-                //    Phone = "0923456789",
-                //    P_Note = "溝通良好",
-                //},
-                //new Partner()
-                //{
-                //    P_ID = 14,
-                //    P_Name = "Salesforce",
-                //    Contact = "陳小明",
-                //    Email = "salesforce@gmail.com",
-                //    Phone = "0912345678",
-                //    P_Note = "產品品質不錯",
-                //},
-                //new Partner()
-                //{
-                //    P_ID = 15,
-                //    P_Name = "Adobe",
-                //    Contact = "蔡佳玲",
-                //    Email = "adobe@gmail.com",
-                //    Phone = "0923456789",
-                //    P_Note = "回覆速度快",
-                //},
-                //new Partner()
-                //{
-                //    P_ID = 16,
-                //    P_Name = "PayPal",
-                //    Contact = "林小華",
-                //    Email = "paypal@gmail.com",
-                //    Phone = "0934567890",
-                //    P_Note = "合作愉快",
-                //},
-                //new Partner()
-                //{
-                //    P_ID = 17,
-                //    P_Name = "Oracle",
-                //    Contact = "陳小明",
-                //    Email = "oracle@gmail.com",
-                //    Phone = "0912345678",
-                //    P_Note = "回覆速度快",
-                //},
-                //new Partner()
-                //{
-                //    P_ID = 18,
-                //    P_Name = "IBM",
-                //    Contact = "蔡小玲",
-                //    Email = "ibm@gmail.com",
-                //    Phone = "0923456789",
-                //    P_Note = "好合作",
-                //},
-                //new Partner()
-                //{
-                //    P_ID = 19,
-                //    P_Name = "Intel",
-                //    Contact = "李小明",
-                //    Email = "intel@gmail.com",
-                //    Phone = "0934567890",
-                //    P_Note = "值得信賴",
-                //},
-                //new Partner()
-                //{
-                //    P_ID = 20,
-                //    P_Name = "HP",
-                //    Contact = "林小美",
-                //    Email = "hp@gmail.com",
-                //    Phone = "0912345678",
-                //    P_Note = "溝通良好",
-                //}
                 );
 
             modelBuilder.Entity<Ads_OrderStatus>().HasData(
