@@ -16,10 +16,14 @@ import lollipop from '../music/lollipop.mp3'
 import mirror from '../music/mirror.mp3'
 
 export const phas = () => {
+
+    const closeableModal = ref(false);
+    const dialogBox = ref(null);
+    const dialogBody = ref(null);
+    let isShowedDialog = false;
     const w = window.innerWidth;
     const h = window.innerHeight;
     // var server = 'wss://chickenlife20230522194335.azurewebsites.net/';
-    // var server = 'wss://chickenlife.azurewebsites.net';
     var server = 'wss://localhost:7093';
     var vWebSocket = null;
     var cursors;
@@ -64,6 +68,7 @@ export const phas = () => {
     const btnMic = document.getElementById('btnMic');
     const btnLeave = document.getElementById('btnLeave');
     const btnStart = document.getElementById('joinBtn');
+    const dialogBoo = document.getElementById('dialogBoo');
     const extendBtnContainer = document.getElementById('extendBtnContainer');
     btnCamera.addEventListener('click', muteCam);
     btnMic.addEventListener('click', muteMic);
@@ -91,11 +96,6 @@ export const phas = () => {
     //     })
     //     .catch(error => {
     //     });
-
-    const closeableModal = ref(false);
-    const dialogBox = ref(null);
-    const dialogBody = ref(null);
-    let isShowedDialog = false;
 
     const showDialog = () => {
         if (dialogBox.value) {

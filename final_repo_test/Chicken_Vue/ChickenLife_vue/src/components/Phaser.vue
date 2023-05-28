@@ -62,7 +62,7 @@ const getPlay = () => {
         <span class="dialog-title">對話視窗</span>
         <span class="dialog-close-btn" id="dialog-close-btn" >x</span>
       </div>
-      <div class="dialog">
+      <div class="dialog" id="dialogBoo">
         <div class="dialog-body" id="dialog-body" ref="dialogBody"></div>
         <div class="dialog-time" id="dialog-time"></div>
       </div>
@@ -86,9 +86,10 @@ const getPlay = () => {
   bottom: 0;
   left: 285px;
   width: 35%;
-  height: 25%;
-  background-color: white;
+  height: 30%;
+  background-color: rgba(0, 0, 0, 0.553);
   border: 1px solid gray;
+  color: snow;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 9999;
   opacity: 100%;
@@ -100,7 +101,7 @@ const getPlay = () => {
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  background-color: #1d3461;
+  background-color: #5d2d00b8;
   color: white;
   font-size: 20px;
   font-weight: bold;
@@ -117,6 +118,28 @@ const getPlay = () => {
   margin: 0px;
   padding: 10px;
   height: 100%;
+}
+
+/* 隱藏滾動條的預設樣式 */
+.dialog::-webkit-scrollbar {
+  width: 8px;
+  background-color: #00000054;
+}
+
+/* 設置滾動條軌道的樣式 */
+.dialog::-webkit-scrollbar-track {
+  border-radius: 4px;
+}
+
+/* 設置滾動條的樣式 */
+.dialog::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(254, 254, 254, 0.808)afa;
+}
+
+/* 滑鼠懸停在滾動條上時的樣式 */
+.dialog::-webkit-scrollbar-thumb:hover {
+  background-color: #dadada88;
 }
 
 .dialog-body {
@@ -139,6 +162,7 @@ const getPlay = () => {
   margin-right: 10px;
   padding: 5px;
   border: none;
+  background-color: #ffffffcd;
   border-bottom: 2px solid #1d3461;
   outline: none;
   font-size: 16px;
@@ -146,12 +170,13 @@ const getPlay = () => {
 
 #dialog-send-btn {
   padding: 5px 10px;
-  background-color: #1d3461;
+  background-color: #5d2d00b8;
   color: white;
   border: none;
   border-radius: 3px;
   cursor: pointer;
   font-size: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .dialog-message {
