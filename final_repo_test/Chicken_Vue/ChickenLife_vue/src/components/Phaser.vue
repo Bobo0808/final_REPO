@@ -1,40 +1,35 @@
 
 <script setup>
-import { onMounted, ref, watch, toRaw } from 'vue';
+import { onMounted, ref, watch, toRaw } from "vue";
 import { playerRefs } from "../main.js";
-
+import { phas } from "../js/back.js";
 const emit = defineEmits();
 const props = defineProps({
   LoginStatus: {
     type: Boolean,
     required: true,
-    default: false
+    default: false,
   },
   memberpoints: {
     type: Number,
     required: false,
-    default: 0
+    default: 0,
   },
   closeableModal: {
     type: Boolean,
     default: false,
-  }
-})
+  },
+});
+
 onMounted(() => {
-  getPlay();
-  // phaserArcade();
-  // phaser();
-  // backgame();
-  // SpriteForP();
+  phas();
 });
 
 const getPlay = () => {
   // const value = playerRef.value.isPlay; // 獲取需要傳遞的值
   // startGame(value); // 傳遞值給遊戲啟動函式
-}
-
+};
 </script>
-
 <template lang="">
      <div class="phaser_area">
       <!-- <div style="z-index: 999;"> -->
@@ -131,7 +126,6 @@ const getPlay = () => {
 .dialog-time {
   float: right;
 }
-
 
 .dialog-footer {
   display: flex;

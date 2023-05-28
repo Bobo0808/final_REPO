@@ -1,5 +1,4 @@
 <script setup>
-// import HelloWorld from "./components/HelloWorld.vue";
 import { reactive, ref, onMounted } from "vue";
 import Phaser from "./components/Phaser.vue";
 import Modal from "./components/Shop/Modal.vue";
