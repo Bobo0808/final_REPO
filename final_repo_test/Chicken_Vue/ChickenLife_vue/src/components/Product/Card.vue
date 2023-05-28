@@ -57,7 +57,8 @@ onMounted(() => {
     // SpriteForP();
 });
 watch(() => {
-    playerRefs.value.coins
+    // playerRefs.value.coins;
+    playerRefs.value.user.a_Coin;
 });
 const OpenorClose = () => {
     if (props.modelValue === true) {
@@ -74,7 +75,7 @@ const imageUrl = (url) => {
 const product = ref([]);
 // 購買商品
 const openDialog = async (ID) => {
-    console.log(ID);
+    // console.log(ID);
     try {
 
         // getAxios(`/api/Cards/${cd.target.id}`, selectedCardProduct)
@@ -120,9 +121,10 @@ const confirmPurchase = (ID, Price, Name) => {
     // console.log("Name.substring(5, 8)=>", Name.substring(5, 8));
     const parts = parseInt(Name.substring(5, 8));
     // console.log("parts=>", parts);
-    playerRefs.value.coins += parts;
+    // playerRefs.value.coins += parts;
+    playerRefs.value.user.a_Coin += parts;
 
-    ChangeAccountCoins(playerRefs.value.coins);
+    ChangeAccountCoins(playerRefs.value.user.a_Coin);
 
     // 購買完成後關閉彈出視窗
     closeDialog();
@@ -133,9 +135,9 @@ const confirmPurchase = (ID, Price, Name) => {
 const ChangeAccountCoins = (coins) => {
     var test = {};
     var request = {};
-    request.A_ID = playerRefs.value.id;
+    request.A_ID = playerRefs.value.user.a_ID;
     request.A_Coin = coins;
-    postAxiosObjNodata(`/api/User/Update/${playerRefs.value.id}`, request, test);
+    postAxiosObjNodata(`/api/User/Update/${playerRefs.value.user.a_ID}`, request, test);
 }
 
 
@@ -147,7 +149,7 @@ const CardAdd = (ID, Price) => {
     var test = {};
     var request = {};
     request.CO_ID = 0;
-    request.A_ID = playerRefs.value.id;
+    request.A_ID = playerRefs.value.user.a_ID;
     request.CA_ID = ID;
     request.CA_Name = "";
     request.CT_ID = 1;
@@ -159,7 +161,7 @@ const CardAdd = (ID, Price) => {
 
     // console.log(request);
     axios.post(`${baseAddress}/api/CardOrders`, request).then(response => {
-        console.log("success");
+        // console.log("success");
         getCardOrderDTOes();
         // console.log("response.data", response.data);
     });
@@ -168,7 +170,7 @@ const CardOrderDTOes = ref([]);
 const getCardOrderDTOes = () => {
     CardOrderDTOes.value = [];
     var request = {};
-    request.A_ID = playerRefs.value.id;
+    request.A_ID = playerRefs.value.user.a_ID;
     request.CA_Name = "";
     axios.post(`${baseAddress}/api/CardOrders/Show`, request).then(response => {
         // alert(JSON.stringify(response.data));
@@ -185,7 +187,7 @@ const PayMentForLinePay = async () => {
 const PayMentForNewWebPay = async () => {
     var request = {};
     request.MerchantID = 0;
-    request.MerchantOrderNo = playerRefs.value.id;
+    request.MerchantOrderNo = playerRefs.value.user.a_ID;
     request.ItemDesc = ID;
     request.Amt = "";
     request.ExpireDate = 1;

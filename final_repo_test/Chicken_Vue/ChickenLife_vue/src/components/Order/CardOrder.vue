@@ -38,7 +38,7 @@ const getdatefilter = (datefilter) => {
 };
 
 onMounted(() => {
-    getCardOrderDTOes(playerRefs.value.id);
+    getCardOrderDTOes(playerRefs.value.user.a_ID);
 });
 
 
@@ -77,7 +77,9 @@ const CheckCancel= async (CO_ID,Name)=>{
 
 // 取消
 const cancelOrder = async (CO_ID, CO_Name) => {
-    var test = {};
+    const parts = parseInt(CO_Name.substring(5, 8));
+    if (playerRefs.value.user.a_Coin>parts){
+        var test = {};
     var request = {};
     request.CO_ID = isNaN(Number(CO_ID)) ? -1 : Number(CO_ID);
     request.CO_Cancel = true;
@@ -88,11 +90,15 @@ const cancelOrder = async (CO_ID, CO_Name) => {
     // });
 
     await putAxiosStringNodata(`/api/CardOrders/Cancel/${CO_ID}`, request, test);
-    const parts = parseInt(CO_Name.substring(5, 8));
+    
     // console.log("parts=>", parts);
-    playerRefs.value.coins -= parts;
-
-    getCardOrderDTOes(playerRefs.value.id);
+    playerRefs.value.user.a_Coin -= parts;
+    ChangeAccountCoins(playerRefs.value.user.a_Coin);
+    getCardOrderDTOes(playerRefs.value.user.a_ID);
+    }
+    else{
+        alert("你無法取消訂單");
+    }
 
     // 購買完成後關閉彈出視窗
     closeDialog();
@@ -103,15 +109,25 @@ const closeDialog = () => {
     selectedCardOrder.value = null;
 };
 
+//修改會員點數
+const ChangeAccountCoins = (coins) => {
+    var test = {};
+    var request = {};
+    request.A_ID = playerRefs.value.user.a_ID;
+    request.A_Coin = coins;
+    postAxiosObjNodata(`/api/User/Update/${playerRefs.value.user.a_ID}`, request, test);
+}
+
+
 // 切換全部/當月
 const ShowCardOrder=(num)=>{
     CardOrderDTOes.value=[];
     if(num==0){
-        getCardOrderDTOes(playerRefs.value.id);
+        getCardOrderDTOes(playerRefs.value.user.a_ID);
     }else {
         var request = {};
         request.CO_ID = 0;
-        request.A_ID = isNaN(Number(playerRefs.value.id)) ? -1 : Number(playerRefs.value.id);
+        request.A_ID = isNaN(Number(playerRefs.value.user.a_ID)) ? -1 : Number(playerRefs.value.user.a_ID);
         request.CA_ID = 1;
         request.CA_Name = "";
         request.CO_Date = new Date();
@@ -134,7 +150,7 @@ const ShowCardOrder=(num)=>{
         <label class="btn btn-outline-primary" for="btnradio1" @click="ShowCardOrder(0)">全部</label>
 
         <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-        <label class="btn btn-outline-primary" for="btnradio2" @click="ShowCardOrder(0)">當月購買</label>
+        <label class="btn btn-outline-primary" for="btnradio2" @click="ShowCardOrder(1)">當月購買</label>
 
         <!-- <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
         <label class="btn btn-outline-primary" for="btnradio3">Radio 3</label> -->
