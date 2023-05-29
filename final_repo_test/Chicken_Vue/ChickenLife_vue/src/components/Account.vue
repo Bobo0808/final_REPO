@@ -8,8 +8,8 @@ import { setMemberData } from "../js/userdata.js";
 // const memberData = getMemberData();
 // console.log(memberData);
 const Account = ref({
-  email: "user3@example.com",
-  password: "123456",
+  email: "user@example.com",
+  password: "string",
 });
 
 const register = ref({
@@ -65,13 +65,13 @@ export default {
       <header>
         <h2 class="logo">ChickenLive</h2>
         <!-- <nav class="navigation">
-          <a href="#">Home</a>
-          <a href="#">TEST</a>
-          <a href="#">TEST</a>
-          <a href="#">TEST</a>
-          <a href="#">TEST</a>
-          <button @click="changeView(1)" class="btnLogin-popup">Login</button>
-        </nav> -->
+            <a href="#">Home</a>
+            <a href="#">TEST</a>
+            <a href="#">TEST</a>
+            <a href="#">TEST</a>
+            <a href="#">TEST</a>
+            <button @click="changeView(1)" class="btnLogin-popup">Login</button>
+          </nav> -->
       </header>
       <div class="wrapper">
         <span class="icon-close">

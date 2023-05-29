@@ -39,11 +39,11 @@ app.UseWebSockets(webSocketOptions);
 // </snippet_UseWebSockets>
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+//}
 // 套用CORS策略(這邊是影響所有的controllers)
 // app.UseCors(MyAllowSpecificOrigins);
 // 套用但須各個controllers去指定策略
