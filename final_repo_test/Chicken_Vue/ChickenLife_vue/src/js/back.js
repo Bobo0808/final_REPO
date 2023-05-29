@@ -196,6 +196,7 @@ export const phas = () => {
             }
             vWebSocket.send(JSON.stringify(data))
             isQueue = true;
+            console.log("wqwe");
         }
         else {
             alert("你已經在配對中")
