@@ -83,23 +83,15 @@ namespace ChickenLife.Controllers
                         case "Connect":
                             try
                             {
-                                idtemp++;
+                                int userid = jsontemp.Value<int>("id");
                                 PlayerRef player = new PlayerRef();//生成新玩家
                                 maps.MapDirectory[publicMap].client.Add(webSocket, player);
                                 maps.MapDirectory[publicMap].client[webSocket].type = "Connect";
-                                maps.MapDirectory[publicMap].client[webSocket].id = idtemp;
+                                maps.MapDirectory[publicMap].client[webSocket].id = userid;
+                                var user = _context.Accounts.Where(a=>a.A_ID == userid).FirstOrDefault();
                                 /*  maps.MapDirectory[publicMap].client[webSocket].id = generateID();*/ //隨機生產ID 之後從ms sql取
-                                if (isMale == true) //性別
-                                {
-                                    maps.MapDirectory[publicMap].client[webSocket].gender = 1;
-                                    isMale = false;
-                                }
-                                else if (isMale == false)
-                                {
-                                    maps.MapDirectory[publicMap].client[webSocket].gender = 2;
-                                    isMale = true;
-                                }
-                                maps.MapDirectory[publicMap].client[webSocket].name = "Test"; //姓名
+                                 maps.MapDirectory[publicMap].client[webSocket].gender = (int)user.A_Gender;
+                                maps.MapDirectory[publicMap].client[webSocket].name = user.A_NickName; //姓名
                                 maps.MapDirectory[publicMap].client[webSocket].direction = "right"; //角色方向
                                 maps.MapDirectory[publicMap].client[webSocket].color = randomFromArray(playerColors); //角色顏色or外觀
                                 maps.MapDirectory[publicMap].client[webSocket].x = 9728; //x
@@ -196,24 +188,8 @@ namespace ChickenLife.Controllers
                                     queue_M.Queue.Add(new KeyValuePair<WebSocket, PlayerRef>(webSocket, maps.MapDirectory[publicMap].client[webSocket]));
                                     if (queue_F.Queue.Count > 0 && queue_M.Queue.First().Key.State == WebSocketState.Open && queue_F.Queue.First().Key.State == WebSocketState.Open)
                                     {
-                                        string PrivateMapid = webSocket.ToString();
-                                        maps.MapDirectory.Add(PrivateMapid, new MapDirectories()
-                                        {
-                                            id = "小房間",
-                                            Src = "./images/map.png",
-                                            MinX = 1,
-                                            MinY = 4,
-                                            MaxX = 14,
-                                            MaxY = 12,
-                                            BlockedSpaces = new List<BlockedSpaces>() { new BlockedSpaces { x = 7, y = 4 }, new BlockedSpaces { x = 1, y = 11 }, new BlockedSpaces { x = 12, y = 10 }, new BlockedSpaces { x = 4, y = 7 }, new BlockedSpaces { x = 5, y = 7 }, new BlockedSpaces { x = 6, y = 7 }, new BlockedSpaces { x = 8, y = 6 }, new BlockedSpaces { x = 9, y = 6 }, new BlockedSpaces { x = 10, y = 6 }, new BlockedSpaces { x = 7, y = 9 }, new BlockedSpaces { x = 10, y = 6 }, new BlockedSpaces { x = 7, y = 9 }, new BlockedSpaces { x = 8, y = 9 }, new BlockedSpaces { x = 9, y = 9 } },
-                                        }
-                                        );
-                                        //把配對方跟小房間丟給client
                                         KeyValuePair<WebSocket, PlayerRef> maletemp = queue_M.Queue.First();
                                         KeyValuePair<WebSocket, PlayerRef> femaletemp = queue_F.Queue.First();
-                                        queue_M.Queue.RemoveAt(0);
-                                        queue_F.Queue.RemoveAt(0);
-
                                         PlayerRef malevalue = new PlayerRef()
                                         {
                                             type = maletemp.Value.type,
@@ -237,6 +213,24 @@ namespace ChickenLife.Controllers
                                             x = 8735,
                                             y = 10810
                                         };
+                                        string PrivateMapid = malevalue.name;
+                                        maps.MapDirectory.Add(PrivateMapid, new MapDirectories()
+                                        {
+                                            id = "小房間",
+                                            Src = "./images/map.png",
+                                            MinX = 1,
+                                            MinY = 4,
+                                            MaxX = 14,
+                                            MaxY = 12,
+                                            BlockedSpaces = new List<BlockedSpaces>() { new BlockedSpaces { x = 7, y = 4 }, new BlockedSpaces { x = 1, y = 11 }, new BlockedSpaces { x = 12, y = 10 }, new BlockedSpaces { x = 4, y = 7 }, new BlockedSpaces { x = 5, y = 7 }, new BlockedSpaces { x = 6, y = 7 }, new BlockedSpaces { x = 8, y = 6 }, new BlockedSpaces { x = 9, y = 6 }, new BlockedSpaces { x = 10, y = 6 }, new BlockedSpaces { x = 7, y = 9 }, new BlockedSpaces { x = 10, y = 6 }, new BlockedSpaces { x = 7, y = 9 }, new BlockedSpaces { x = 8, y = 9 }, new BlockedSpaces { x = 9, y = 9 } },
+                                        }
+                                        );
+                                        //把配對方跟小房間丟給client
+  
+                                        queue_M.Queue.RemoveAt(0);
+                                        queue_F.Queue.RemoveAt(0);
+
+                                        
 
                                         maps.MapDirectory[PrivateMapid].client.Add(maletemp.Key, malevalue);
                                         maps.MapDirectory[PrivateMapid].client.Add(femaletemp.Key, femalevalue);
@@ -318,7 +312,10 @@ namespace ChickenLife.Controllers
                                             x = 8735,
                                             y = 10810
                                         };
-                                        string PrivateMapid = webSocket.ToString();
+
+                                        string PrivateMapid = femalevalue.name;
+                                        maps.MapDirectory[PrivateMapid].client.Add(maletemp.Key, malevalue);
+                                        maps.MapDirectory[PrivateMapid].client.Add(femaletemp.Key, femalevalue);
                                         maps.MapDirectory.Add(PrivateMapid, new MapDirectories()
                                         {
                                             id = "小房間",
@@ -331,8 +328,7 @@ namespace ChickenLife.Controllers
                                         }
                                         );
 
-                                        maps.MapDirectory[PrivateMapid].client.Add(maletemp.Key, malevalue);
-                                        maps.MapDirectory[PrivateMapid].client.Add(femaletemp.Key, femalevalue);
+                                        
 
                                         MapDirectoriesDTO pairtemp = new MapDirectoriesDTO() { type = "Match", id = PrivateMapid, Src = maps.MapDirectory[publicMap].Src, MinX = maps.MapDirectory[publicMap].MinX, MinY = maps.MapDirectory[publicMap].MinY, MaxX = maps.MapDirectory[publicMap].MaxX, MaxY = maps.MapDirectory[publicMap].MaxY, BlockedSpaces = maps.MapDirectory[publicMap].BlockedSpaces, client = new List<PlayerRef>() { malevalue, femalevalue } };
                                         var matchJson = JsonSerializer.Serialize(pairtemp);

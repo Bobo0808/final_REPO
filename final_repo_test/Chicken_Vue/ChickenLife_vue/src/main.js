@@ -4,11 +4,16 @@ import App from './App.vue'
 // import { response } from 'express';
 // import Account from "./components/Account.vue"
 import { register } from 'swiper/element/bundle';
-export const baseAddress = "https://localhost:7093";
+// export const baseAddress = "https://localhost:7093";
+export const baseAddress = "https://chickenlife.azurewebsites.net";
 
 
 
 const app = createApp(App);
+
+// const currentBody = ref(Phaser);
+export const currentBody = ref();
+
 app.config.globalProperties.playerRef = ref({
   id: 1,
   name: ['shit', 'fuck', 'bitch', 'suck', 'cock'],
@@ -30,6 +35,7 @@ export const fuck = () => {
   return app.config.globalProperties;
 };
 
+
 export const getAxios = async (route, data) => {
   await axios.get(baseAddress + route.value).then(response => {
     console.log(route.value)
@@ -46,15 +52,22 @@ export const getAxiosNoData = async (route, data) => {
 
 export const postAxiosObj = async (route, data, res) => {
   await axios.post(baseAddress + route, data.value).then(response => {
-    res.value = response.data;
+    return res.value = response.data;
   });
 }
 
 export const postAxiosString = async (route, data, res) => {
-  await axios.post(baseAddress + route, data.value).then(response => {
-    res = response;
-  });
-  return res
+  try {
+    await axios.post(baseAddress + route, data.value).then(response => {
+      res = response;
+      return res
+    })
+  }
+
+  catch (error) {
+    console.log(error);
+  };
+
 }
 
 export const putAxiosObj = async (route, data, res) => {
@@ -97,6 +110,11 @@ export const getDate = (databasedate) => {
   return date
 };
 
+//處理登入回應資料的地方
+
+
+
+
 
 
 //登入的icon
@@ -114,6 +132,7 @@ document.head.appendChild(script2);
 export default app.config.globalProperties.playerRef;
 
 // app.component("Account", Account)
+
 app.use(register);
 app.provide
 app.mount('#app')

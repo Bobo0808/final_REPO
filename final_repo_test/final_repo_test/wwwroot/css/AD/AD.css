@@ -71,7 +71,7 @@
 .Detail_table td {
     padding: 1rem;
     border-collapse: collapse;
-    text-align: left;
+     text-align: left;
 }
 
 .Detail_table {
@@ -121,7 +121,6 @@
     top: 0;
     left: 0;
     /* background-color: rgba(23, 30, 41, 0.623); */
-
     background-color: #353c44
 }
 

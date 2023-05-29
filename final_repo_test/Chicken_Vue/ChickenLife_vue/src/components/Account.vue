@@ -1,42 +1,70 @@
 <script setup>
-import { ref } from "vue";
+import { reactive, ref } from "vue";
 import { postAxiosObj } from "../main.js";
-import { playerRefs } from "../main.js";
+import { playerRefs, currentBody } from "../main.js";
+import Phaser from "./Phaser.vue";
+import { inject } from "vue";
+import { setMemberData } from "../js/userdata.js";
+// const memberData = getMemberData();
+// console.log(memberData);
 const Account = ref({
-  "email": "user@example.com",
-  "password": "111111",
+  email: "user@example.com",
+  password: "string",
 });
-const user = ref();
-let route = "https://localhost:7093/api/User/login"
-const CheckAccount = async() => {
-  await postAxiosObj("/api/User/login", Account, user);
-  
-  printValue(user)  
+
+const register = ref({
+  email: "",
+  password: "",
+  confirmPassword: "",
+});
+const error_message = ref({});
+
+const Handerror = (err) => {
+  Object.key(err).forEach((erro) => (error_message[erro] = err[erro]));
+  console.log(error_message);
+};
+
+const Ruser = ref();
+const hadlesubmit = async () => {
+  await postAxiosObj("/api/User/register", register, Ruser);
+  successFn();
+  console.log(Ruser.value);
+};
+const isReg = ref(false);
+const successFn = () => {
+  alert("註冊成功");
+  isReg.value = true;
+};
+
+let route = "https://localhost:7093/api/User/login";
+
+//1
+const CheckAccount = async () => {
+  await postAxiosObj("/api/User/login", Account, playerRefs);
+  printValue(playerRefs);
+  currentBody.value = Phaser;
+};
+
+function printValue(value) {
+  console.log(value.value);
 }
-
-function printValue(value){
-  console.log(value.value)
-}
-
-
 
 const view = ref(1);
 const changeView = (index) => {
   view.value = index;
 };
-
 </script>
 <script>
 export default {
   name: "App",
 };
-
 </script>
 <template>
   <div class="ALL">
-    <header>
-      <h2 class="logo">ChickenLife</h2>
-      <!-- <nav class="navigation">
+    <div v-if="!isreg">
+      <header>
+        <h2 class="logo">ChickenLive</h2>
+        <!-- <nav class="navigation">
         <a href="#">Home</a>
         <a href="#">TEST</a>
         <a href="#">TEST</a>
@@ -44,64 +72,87 @@ export default {
         <a href="#">TEST</a>
         <button @click="changeView(1)" class="btnLogin-popup">Login</button>
       </nav> -->
-    </header>
-    <div class="wrapper">
-      <span class="icon-close">
-        <ion-icon name="close"></ion-icon>
-      </span>
-      <div class="form-box login" v-if="view === 1">
-        <h2>Login</h2>
-        <form action="#" @submit.prevent="login">
-          <div class="input-box">
-            <span class="icon"><ion-icon name="mail"></ion-icon></span>
-            <input type="text" v-model="Account.email" required />
-            <label for=""> Email</label>
-          </div>
-          <div class="input-box">
-            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input type="password" v-model="Account.password" required />
-            <label for=""> Password</label>
-          </div>
-          <div class="remember-forget">
-            <label><input type="checkbox" />記住我</label>
-            <a href="#">忘記密碼?</a>
-          </div>
-          <button type="submit" class="btn" @click="CheckAccount">Login</button>
-          <div class="login-register">
-            <p>
-              還沒有帳號?<a @click="changeView(2)" href="#" class="register-link">註冊</a>
-            </p>
-          </div>
-        </form>
+      </header>
+      <div class="wrapper">
+        <span class="icon-close">
+          <ion-icon name="close"></ion-icon>
+        </span>
+        <div class="form-box login" v-if="view === 1">
+          <h2>Login</h2>
+          <form action="#">
+            <div class="input-box">
+              <span class="icon"><ion-icon name="mail"></ion-icon></span>
+              <input type="text" v-model="Account.email" required />
+              <label for=""> Email</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+              <input type="password" v-model="Account.password" required />
+              <label for=""> Password</label>
+            </div>
+            <div class="remember-forget">
+              <label><input type="checkbox" />記住我</label>
+              <a href="#">忘記密碼?</a>
+            </div>
+            <button type="submit" class="btn" @click="CheckAccount">
+              Login
+            </button>
+            <div class="login-register">
+              <p>
+                還沒有帳號?<a
+                  @click="changeView(2)"
+                  href="#"
+                  class="register-link"
+                  >註冊</a
+                >
+              </p>
+            </div>
+          </form>
+        </div>
+
+        <div class="form-box register" v-if="view === 2">
+          <h2>Registerion</h2>
+          <form action="#">
+            <div class="input-box">
+              <span class="icon"><ion-icon name="mail"></ion-icon></span>
+              <input type="text" v-model="register.email" required />
+              <label for=""> Email</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+              <input type="password" v-model="register.password" required />
+              <label for=""> Password</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+              <input
+                type="password"
+                v-model="register.confirmPassword"
+                required
+              />
+              <label for=""> confirmPassword</label>
+            </div>
+            <div class="remember-forget">
+              <label><input type="checkbox" />我同意此項條款</label>
+            </div>
+            <button @click="hadlesubmit" type="submit" class="btn">
+              Register
+            </button>
+            <div class="login-register">
+              <p>
+                已經有帳號了?<a
+                  @click="changeView(1)"
+                  href="#"
+                  class="login-link"
+                  >登入</a
+                >
+              </p>
+            </div>
+          </form>
+        </div>
       </div>
-      <div class="form-box register" v-if="view === 2">
-        <h2>Registerion</h2>
-        <form action="#">
-          <div class="input-box">
-            <span class="icon"><ion-icon name="person"></ion-icon></span>
-            <input type="text" required />
-            <label for=""> Username</label>
-          </div>
-          <div class="input-box">
-            <span class="icon"><ion-icon name="mail"></ion-icon></span>
-            <input type="email" required />
-            <label for=""> Email</label>
-          </div>
-          <div class="input-box">
-            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input type="password" required />
-            <label for=""> Password</label>
-          </div>
-          <div class="remember-forget">
-            <label><input type="checkbox" />我同意此項條款</label>
-          </div>
-          <button type="submit" class="btn">Register</button>
-          <div class="login-register">
-            <p>
-              已經有帳號了?<a @click="changeView(1)" href="#" class="login-link">登入</a>
-            </p>
-          </div>
-        </form>
+      <div v-if="isreg">
+        <h3>註冊成功</h3>
       </div>
     </div>
   </div>
@@ -188,8 +239,8 @@ header {
 
 .wrapper {
   position: relative;
-  width: 400px;
-  height: 440px;
+  width: 450px;
+  height: 500px;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
@@ -208,7 +259,7 @@ header {
 
 /* .wrapper .form-box.register {
   /* position: absolute;
-  transform: translateX(400px); }*/ 
+  transform: translateX(400px); }*/
 
 .wrapper .icon-close {
   position: absolute;
@@ -253,8 +304,8 @@ header {
   transition: 0.5s;
 }
 
-.input-box input:focus~label,
-.input-box input:valid~label {
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
   top: -5px;
 }
 
@@ -267,7 +318,7 @@ header {
   font-size: 1em;
   color: #162938;
   font-weight: 600;
-  padding: 0 35px 0 5px;
+  padding: 0 25px 0 5px;
 }
 
 .input-box .icon {
