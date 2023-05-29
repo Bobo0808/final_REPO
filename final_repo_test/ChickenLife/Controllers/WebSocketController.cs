@@ -500,11 +500,11 @@ namespace ChickenLife.Controllers
                             Disconnect.type = "Disconnect";
                             Console.WriteLine(con.Value.id + " has discoonected");
 
-                            if (con.Value.gender == 1)
+                            if (con.Value.gender == 0)
                             {
                                 queue_M.Queue.Remove(con);
                             }
-                            else if (con.Value.gender == 2)
+                            else if (con.Value.gender == 1)
                             {
                                 queue_F.Queue.Remove(con);
                             }

@@ -8,8 +8,8 @@ import { setMemberData } from "../js/userdata.js";
 // const memberData = getMemberData();
 // console.log(memberData);
 const Account = ref({
-  email: "user@example.com",
-  password: "string",
+  email: "user3@example.com",
+  password: "123456",
 });
 
 const register = ref({
@@ -65,13 +65,13 @@ export default {
       <header>
         <h2 class="logo">ChickenLive</h2>
         <!-- <nav class="navigation">
-        <a href="#">Home</a>
-        <a href="#">TEST</a>
-        <a href="#">TEST</a>
-        <a href="#">TEST</a>
-        <a href="#">TEST</a>
-        <button @click="changeView(1)" class="btnLogin-popup">Login</button>
-      </nav> -->
+          <a href="#">Home</a>
+          <a href="#">TEST</a>
+          <a href="#">TEST</a>
+          <a href="#">TEST</a>
+          <a href="#">TEST</a>
+          <button @click="changeView(1)" class="btnLogin-popup">Login</button>
+        </nav> -->
       </header>
       <div class="wrapper">
         <span class="icon-close">
@@ -99,12 +99,7 @@ export default {
             </button>
             <div class="login-register">
               <p>
-                還沒有帳號?<a
-                  @click="changeView(2)"
-                  href="#"
-                  class="register-link"
-                  >註冊</a
-                >
+                還沒有帳號?<a @click="changeView(2)" href="#" class="register-link">註冊</a>
               </p>
             </div>
           </form>
@@ -125,11 +120,7 @@ export default {
             </div>
             <div class="input-box">
               <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-              <input
-                type="password"
-                v-model="register.confirmPassword"
-                required
-              />
+              <input type="password" v-model="register.confirmPassword" required />
               <label for=""> confirmPassword</label>
             </div>
             <div class="remember-forget">
@@ -140,12 +131,7 @@ export default {
             </button>
             <div class="login-register">
               <p>
-                已經有帳號了?<a
-                  @click="changeView(1)"
-                  href="#"
-                  class="login-link"
-                  >登入</a
-                >
+                已經有帳號了?<a @click="changeView(1)" href="#" class="login-link">登入</a>
               </p>
             </div>
           </form>
@@ -304,8 +290,8 @@ header {
   transition: 0.5s;
 }
 
-.input-box input:focus ~ label,
-.input-box input:valid ~ label {
+.input-box input:focus~label,
+.input-box input:valid~label {
   top: -5px;
 }
 
