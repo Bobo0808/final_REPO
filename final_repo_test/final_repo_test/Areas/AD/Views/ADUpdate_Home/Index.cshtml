@@ -80,7 +80,7 @@
             <h4>廣告上架</h4>
             <div class="col-md-3 mx-3">
                 <label for="inputState" class="form-label">廠商名稱</label>
-                <select id="inputState" class="form-select" name="P_Name">
+                <select id="inputStateBrand" class="form-select" name="P_Name">
                     <option selected>選擇廠商...</option>
                     @foreach (var item in Model.PartnersList)
                     {
@@ -91,7 +91,7 @@
 
             <div class="col-md-3 mx-3">
                 <label for="inputState" class="form-label">方案</label>
-                <select id="inputState" class="form-select" name="Case_Name">
+                <select id="inputStateCase" class="form-select" name="Case_Name">
                     <option selected>選擇方案...</option>
                     @foreach (var item in Model.CaseTablesList)
                     {
