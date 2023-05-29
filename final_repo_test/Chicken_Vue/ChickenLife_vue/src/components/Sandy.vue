@@ -1,7 +1,11 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import { getAxios } from "../main.js";
-
+const backdropClick = (event) => {
+  if (event.target.id == "backdrop" && props.closeable == true) {
+    emit("update:modelValue", false);
+  }
+};
 const userdata = ref([]);
 const userId = ref("");
 let route = ref();
@@ -13,12 +17,23 @@ const getData = async () => {
   console.log(userdata.value);
   await getAxios(route, userdata);
 };
+const deleteData = async () => {
+
+};
+// import {ref} from "vue";
+
+const showModel = ref(false)
+
 </script>
 
 <template>
-  <div>
+<main>
+  <div v-show="showModel" class="overlay">
+
+    <div class="modal">
+      <div>
     <input type="text" v-model="userId" placeholder="輸入 User ID" />
-    <button @click="getData">詳細資料</button>
+    <!-- <button @click="getData">詳細資料</button> -->
     <div v-if="{ userdata }">
       <div v-for="(user, i) in userdata.userID" :key="user[i]">
         <div>使用者:{{ user }}</div>
@@ -73,106 +88,111 @@ const getData = async () => {
     </div>
     <div v-else>Loading...</div>
   </div>
+      <!-- <button>Add Note</button> -->
+      <button @click="getData">詳細資料</button>
+      <button class="close" @click="showModel=false">Close</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- <header> -->
+      <!-- <button @click="showModel=true" style="">衣櫥</button> -->
+    <h4 @click="showModel=true">衣櫥</h4>
+    <!-- </header> -->
+  </div>
+
+</main>
 </template>
 
 <style scoped>
-.centerformodal {
-  display: flex;
-  justify-content: center;
+h4{
+color: black;
+font-size: 18px;
+font-weight:bold;
 }
 
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.25);
-  pointer-events: none;
-  /* 禁用點擊事件 */
+main{
+  height: 100vh;
+  width: 100vw;
 }
+  .container{
+    max-width: 1000px;
+    padding: 10px;
+    margin: 0 auto;
+  }
+  header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  h1{
+    font-weight: bold;
+    margin-bottom: 25px;
+    font-size: 75px;
+  }
+  header button{
+    border: none;
+    padding: 10px ;
+    width: 80px;
+    height: 50px;
+    cursor: pointer;
+    /* background-color:rgb(21, 20, 20); */
+    border-radius: 100%;
+    color: black;
+    font-size: 20px;
+  }
+  .card{
+    width: 225px;
+    height: 225px;
+    /* background-color: rgb(237, 182,  44); */
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  .date{
+    font-size: 12.5px;
+    font-weight: bold ;
+  }
+  .cards-container{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.77);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-.dialog-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  /* 設定透明度 */
-  overflow: hidden;
-  /* 設定疊加順序，需高於其他元素 */
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-
-ul li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.tab-tilte {
-  width: 90%;
-}
-
-.tab-tilte li {
-  float: left;
-  width: 25%;
-  padding: 10px 0;
-  text-align: center;
-  background-color: #f4f4f4;
-  cursor: pointer;
-}
-
-.tab-tilte .active {
-  background-color: #09f;
-  color: #fff;
-}
-
-/* .tab-content div{
-float: left;
-width: 25%;
-line-height: 100px;
-text-align: center;
-}  */
-
-.shop {
-  /* overflow: auto; */
-  /* height: 80%; */
-  /* height: 800px; */
-  overflow: hidden;
-}
-
-.center-column {
-  /* 中間欄位的樣式 */
-  margin: 0 auto;
-  /* 將元素置於水平中間 */
-  font-size: 20px;
-}
-
-.test {
-  display: flex;
-  justify-content: space-between;
-  /* 將元素平均分佈在容器中 */
-}
-
-.tabwidth {
-  height: 600px;
-  overflow-y: auto;
-  /* height: 80%; */
-  /* overflow: auto; */
-}
-.table {
-  margin-top: 50px;
+  .modal{
+    width: 750px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .modal button{
+    padding:10px 20px ;
+    font-size: 20px;
+    width: 100%;
+    background-color: blueviolet;
+    border:none;
+    color:white;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+.modal .close{
+  background-color: rgb(193, 15, 15) ;
+  margin-top: 7px;
 }
 </style>
-
