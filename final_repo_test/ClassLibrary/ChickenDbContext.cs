@@ -298,11 +298,12 @@ namespace ClassLibrary
                 Random SRnd = new Random();
                 Random ERnd = new Random();
 
-                DateTime StartDate = new DateTime(2022, 1, 1);
+                DateTime StartDate = new DateTime(2002, 1, 1);
+                DateTime endDate = new DateTime(2022, 1, 1);
                 int StartDaysToAdd = SRnd.Next(365);
                 int EndDaysToAdd = ERnd.Next(7, 25);
                 DateTime StartTime = StartDate.AddDays(StartDaysToAdd);
-                DateTime EndTime = StartTime.AddDays(EndDaysToAdd);
+                DateTime EndTime = endDate.AddDays(EndDaysToAdd);
 
                 Random random = new Random();
                 Random r_Work = new Random();
@@ -316,20 +317,32 @@ namespace ClassLibrary
                 int length = random.Next(6, 12); // Random length between 6 and 11
                 string email = "";
                 string pwd = "";
+                string username = "";
                 for (int jj = 0; jj < length; jj++)
                 {
                     int index = random.Next(0, characters.Length);
                     email += characters[index];
-                    pwd += characters[index];
                 }
                 email += "@gmail.com";
+
+                for (int kk = 0; kk < length; kk++)
+                {
+                    int index = random.Next(0, characters.Length);
+                    pwd += characters[index];
+                }
+
+                for (int ii = 0; ii < length; ii++)
+                {
+                    int index = random.Next(0, characters.Length);
+                    username += characters[index];
+                }
 
                 modelBuilder.Entity<Employee>().HasData(new Employee()
                 {
                     E_ID = i,
-                    E_Name = i.ToString(),
+                    E_Name = username,
                     E_Gender = (Employee.Gender)random.Next(0, 2),
-                    E_UserName = i.ToString(),
+                    E_UserName = username,
                     E_Pwd = pwd,
                     E_Email = email,
                     E_Title = (Employee.Title)random.Next(0, 2),

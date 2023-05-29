@@ -37,10 +37,11 @@
                         <span asp-validation-for="E_UserName" class="text-danger"></span>
                     </dt>
                     <dt>
-                        密     碼：<input asp-for="E_Pwd" />
+                        密     碼：<input asp-for="E_Pwd" type="password" id="passwordInput" />  <button class="btn btn-info btn-lg" type="button" id="togglePasswordBtn">顯示密碼</button>
                         <br />
                         <span asp-validation-for="E_Pwd" class="text-danger"></span>
                     </dt>
+                    
                     <dt>
                         信     箱：<input asp-for="E_Email" />
                         <br />
@@ -125,10 +126,25 @@
             var requiredYear = currentYear - 2003;
 
             if (currentYear - selectedDate.getFullYear() < requiredYear) {
-                alert("生日必須是現在的年份減2003大於等於20");
+                alert("年齡必須滿20歲");
                 document.getElementById("E_Birthday").value = "";
             }
         }
+
+
+        //顯示密碼
+        var togglePasswordBtn = document.getElementById('togglePasswordBtn');
+        var passwordInput = document.getElementById('passwordInput');
+
+        togglePasswordBtn.addEventListener('click', function () {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                togglePasswordBtn.textContent = '隱藏密碼';
+            } else {
+                passwordInput.type = 'password';
+                togglePasswordBtn.textContent = '顯示密碼';
+            }
+        });
     </script>
 
 }
