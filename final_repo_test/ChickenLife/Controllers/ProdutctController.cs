@@ -24,7 +24,7 @@ namespace ChickenLife.Controllers
         public IEnumerable<ProductDTO> GetProducts()
         {
             //return await _context.Products.ToListAsync();
-            return _context.Products.Select(product => new ProductDTO
+            return _context.Products.Where(product => product.P_Discontinuted == false).Select(product => new ProductDTO
             {
                 P_ID = product.P_ID,
                 P_Name = product.P_Name,

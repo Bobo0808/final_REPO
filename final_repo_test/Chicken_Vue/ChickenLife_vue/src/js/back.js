@@ -24,7 +24,8 @@ export const phas = () => {
     const w = window.innerWidth;
     const h = window.innerHeight;
     // var server = 'wss://chickenlife20230522194335.azurewebsites.net/';
-    var server = 'wss://localhost:7093';
+    var server = 'wss://chickenlife.azurewebsites.net/';
+    // var server = 'wss://localhost:7093';
     var vWebSocket = null;
     var cursors;
     var AniLayer;
@@ -129,7 +130,6 @@ export const phas = () => {
     dialogBox.value = document.getElementById('dialog-box');
     const dialogCloseBtn = document.getElementById('dialog-close-btn');
     dialogCloseBtn.addEventListener('click', hideDialog);
-
     const dialogInput = document.getElementById('dialog-input');
     dialogInput.addEventListener('keypress', (event) => {
         if (event.key === 'Enter') {
@@ -142,13 +142,23 @@ export const phas = () => {
 
     function sendMsg() {
         var txtMsg = document.getElementById("dialog-input").value;
-        if (txtMsg) {
+        if (txtMsg && txtMsg.length < 50) {
             let data = {
                 "type": "Chat",
                 "id": mapData.id,
                 "data": txtMsg
             };
             vWebSocket.send(JSON.stringify(data));
+            document.getElementById("dialog-input").value = "";
+            setTimeout(function () {
+                dialogBoo.scrollTop = dialogBoo.scrollHeight;
+            }, 100);
+        }
+        else if (txtMsg.length === 0) {
+            alert('聊天訊息不可以為空');
+        }
+        else {
+            alert('不可超過50字');
         }
     }
     function LoadMap(result) {
@@ -186,6 +196,7 @@ export const phas = () => {
             }
             vWebSocket.send(JSON.stringify(data))
             isQueue = true;
+            console.log("wqwe");
         }
         else {
             alert("你已經在配對中")
@@ -475,34 +486,34 @@ export const phas = () => {
         }
 
         preload() {
-            fetch('https://localhost:7093/api/Ads')
-                .then(response => response.json())
-                .then(data => {
-                    ads = data;
-                    console.log("data");
-                    console.log(data);
-                    ads.forEach(function (adimg) {
-                        // if (adimg.ad_ID > 29) {
-                        //     ADList.push(adimg.ad_ImageURL);
-                        //     if (ADList[0]) { ADImageStart = ADList[0]; }
-                        //     if (ADList[1]) { ADImageMoney = ADList[1]; }
-                        //     if (ADList[2]) { ADImageEle = ADList[2]; }
-                        //     if (ADList[3]) { ADImageSports = ADList[3]; }
-                        //     if (ADList[4]) { ADImageLife = ADList[4]; }
-                        //     if (ADList[5]) { ADImageLil = ADList[5]; }
-                        //     if (ADImageStart) {
-                        //         console.log("222ADImageStart");
-                        //         console.log(ADImageStart);
-                        //         this.load.image("ADImageStart", ADImageStart);
-                        //         console.log("333ADImageStart");
-                        //     }
-                        // }
-                    });
-                    // console.log("ADList");
-                    // console.log(ADList);
-                })
-                .catch(error => {
-                });
+            // fetch('https://localhost:7093/api/Ads')
+            //     .then(response => response.json())
+            //     .then(data => {
+            //         ads = data;
+            //         console.log("data");
+            //         console.log(data);
+            //         ads.forEach(function (adimg) {
+            // if (adimg.ad_ID > 29) {
+            //     ADList.push(adimg.ad_ImageURL);
+            //     if (ADList[0]) { ADImageStart = ADList[0]; }
+            //     if (ADList[1]) { ADImageMoney = ADList[1]; }
+            //     if (ADList[2]) { ADImageEle = ADList[2]; }
+            //     if (ADList[3]) { ADImageSports = ADList[3]; }
+            //     if (ADList[4]) { ADImageLife = ADList[4]; }
+            //     if (ADList[5]) { ADImageLil = ADList[5]; }
+            //     if (ADImageStart) {
+            //         console.log("222ADImageStart");
+            //         console.log(ADImageStart);
+            //         this.load.image("ADImageStart", ADImageStart);
+            //         console.log("333ADImageStart");
+            //     }
+            // }
+            // });
+            // console.log("ADList");
+            // console.log(ADList);
+            // })
+            // .catch(error => {
+            // });
 
             this.load.image("tiles", mapAni);
             this.load.tilemapTiledJSON('map', helpMe);
@@ -518,20 +529,8 @@ export const phas = () => {
             this.load.spritesheet('walk', '../img/phaser/Sprite_walk.png', {
                 frameWidth: 128, frameHeight: 128
             });
-            this.load.spritesheet('Npc01Stand', '../img/phaser/NPC01_stand.png', {
-                frameWidth: 128, frameHeight: 128
-            });
-            this.load.spritesheet('Npc01Walk', '../img/phaser/NPC01_walk.png', {
-                frameWidth: 128, frameHeight: 128
-            });
             this.add.image(0, 0, 'stand', 0)
             this.add.image(0, 0, 'walk', 0)
-            this.add.image(0, 0, 'Npc01Stand', 0)
-            this.add.image(0, 0, 'Npc01Walk', 0)
-            // this.textures.addBase64('stand', spriteStand);
-            // this.textures.addBase64('walk', spriteWalk);
-            // this.textures.addBase64('Npc01Stand', npcStand);
-            // this.textures.addBase64('Npc01Walk', npcWalk);
             console.log(spriteStand)
 
             this.load.on('complete', function () {
@@ -545,18 +544,6 @@ export const phas = () => {
                 this.anims.create({
                     key: 'walk_anim',
                     frames: this.anims.generateFrameNumbers('walk', { start: 0, end: 7 }),
-                    frameRate: 10,
-                    repeat: -1
-                });
-                this.anims.create({
-                    key: 'Npc01Stand_anim',
-                    frames: this.anims.generateFrameNumbers('Npc01Stand', { start: 0, end: 7 }),
-                    frameRate: 10,
-                    repeat: -1
-                });
-                this.anims.create({
-                    key: 'Npc01Walk_anim',
-                    frames: this.anims.generateFrameNumbers('Npc01Walk', { start: 0, end: 7 }),
                     frameRate: 10,
                     repeat: -1
                 });
@@ -653,7 +640,7 @@ export const phas = () => {
                         const content = document.getElementById("dialog-body");
                         const timecontent = document.getElementById("dialog-time");
                         var today = new Date();
-                        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+                        var date = today.getDate();
                         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
                         var dateTime = date + ' ' + time;
                         let message = `${result.client.name}: ${result.content}`;
@@ -739,17 +726,6 @@ export const phas = () => {
             teleportSports.addEventListener('click', function () { teleport.call(this, 'sports'); }.bind(this));
             var teleportlife = document.getElementById('lifepoint');
             teleportlife.addEventListener('click', function () { teleport.call(this, 'life'); }.bind(this));
-
-
-
-
-            //創建粉紅熊熊NPC
-            this.Npc01 = this.physics.add.sprite(9728, 6912, 'Npc01Stand');
-            this.Npc01.anims.play('Npc01Stand_anim', true);
-            this.Npc01.setScale(0.5);
-            this.Npc01.setSize(128, 128);
-
-
             cursors = this.input.keyboard.createCursorKeys();
         }
 
@@ -757,9 +733,6 @@ export const phas = () => {
             if (this.player != null) {
                 this.player.setVelocityY(0);
                 this.player.setVelocityX(0);
-                this.Npc01.setVelocityY(0);
-                this.Npc01.setVelocityX(0);
-
                 var keyW = this.input.keyboard.addKey('W');
                 var keyS = this.input.keyboard.addKey('S');
                 var keyA = this.input.keyboard.addKey('A');
@@ -799,47 +772,7 @@ export const phas = () => {
                     this.handleArrowPress(0, 0);
                     this.player.anims.play('stand_anim', true);
                 }
-
-
-
-                if (keyW.isDown) {
-                    this.Npc01.setVelocityY(-800);
-                    if (this.Npc01.anims.currentAnim !== this.anims.get('Npc01Walk_anim')) {
-                        this.Npc01.anims.play('Npc01Walk_anim');
-                    }
-                }
-                else if (keyS.isDown) {
-                    this.Npc01.setVelocityY(+400);
-
-                    if (this.Npc01.anims.currentAnim !== this.anims.get('Npc01Walk_anim')) {
-                        this.Npc01.anims.play('Npc01Walk_anim');
-                    }
-                }
-                else if (keyA.isDown) {
-                    this.Npc01.setVelocityX(-400);
-
-                    if (this.Npc01.anims.currentAnim !== this.anims.get('Npc01Walk_anim')) {
-                        this.Npc01.anims.play('Npc01Walk_anim');
-                    }
-                    this.Npc01.flipX = true;
-                }
-                else if (keyD.isDown) {
-                    this.Npc01.setVelocityX(+400);
-
-                    if (this.Npc01.anims.currentAnim !== this.anims.get('Npc01Walk_anim')) {
-                        this.Npc01.anims.play('Npc01Walk_anim');
-                    }
-                    this.Npc01.flipX = false;
-                }
-                else {
-                    this.Npc01.anims.play('Npc01Stand_anim', true);
-                }
-
             }
-
-
-
-
         }
         render() {
             this.debug.cameraInfo(this.cameras.main, 32, 32);

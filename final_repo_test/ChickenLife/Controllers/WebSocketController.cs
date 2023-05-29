@@ -183,7 +183,7 @@ namespace ChickenLife.Controllers
                             try
                             {
                                 id = jsontemp.Value<string>("mapid");
-                                if (maps.MapDirectory[id].client[webSocket].gender == 1)
+                                if (maps.MapDirectory[id].client[webSocket].gender == 0)
                                 {
                                     queue_M.Queue.Add(new KeyValuePair<WebSocket, PlayerRef>(webSocket, maps.MapDirectory[publicMap].client[webSocket]));
                                     if (queue_F.Queue.Count > 0 && queue_M.Queue.First().Key.State == WebSocketState.Open && queue_F.Queue.First().Key.State == WebSocketState.Open)
@@ -281,7 +281,7 @@ namespace ChickenLife.Controllers
                                         SendToOne(buffer, webSocket);
                                     }
                                 }
-                                else if (maps.MapDirectory[id].client[webSocket].gender == 2)
+                                else if (maps.MapDirectory[id].client[webSocket].gender == 1)
                                 {
                                     queue_F.Queue.Add(new KeyValuePair<WebSocket, PlayerRef>(webSocket, maps.MapDirectory[publicMap].client[webSocket]));
                                     if (queue_M.Queue.Count > 0)
@@ -500,11 +500,11 @@ namespace ChickenLife.Controllers
                             Disconnect.type = "Disconnect";
                             Console.WriteLine(con.Value.id + " has discoonected");
 
-                            if (con.Value.gender == 1)
+                            if (con.Value.gender == 0)
                             {
                                 queue_M.Queue.Remove(con);
                             }
-                            else if (con.Value.gender == 2)
+                            else if (con.Value.gender == 1)
                             {
                                 queue_F.Queue.Remove(con);
                             }
