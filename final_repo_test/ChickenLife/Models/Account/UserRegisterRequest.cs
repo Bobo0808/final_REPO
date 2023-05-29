@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using ClassLibrary.Enum;
 
 namespace ChickenLife.Models.Account
 {
@@ -15,12 +16,16 @@ namespace ChickenLife.Models.Account
         [Required, Compare("Password")]
         public string ConfirmPassword { get; set; } = string.Empty;
 
+        public Gender Gender { get; set; } = default!;
 
+        public string? Phone { get; set; }
 
+        public string? add { get; set; }
 
+        public string? NickName { get; set; }
 
-
-
+        public string Name { get; set; } 
+        //public string UserName { get; set; } = "admin";
 
 
 

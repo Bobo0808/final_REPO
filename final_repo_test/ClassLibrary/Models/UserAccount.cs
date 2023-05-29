@@ -24,7 +24,7 @@ namespace ClassLibrary.Models
         [Column(TypeName = "Date")]
         public DateTime A_RegisteredAt { get; set; } =DateTime.Now;
         public string? A_NickName { get; set; } = "";
-        public int A_Coin { get; set; } = 300;
+        public int A_Coin { get; set; } = 3000;
 
 
         public string? VerifycationToken { get; set; }
