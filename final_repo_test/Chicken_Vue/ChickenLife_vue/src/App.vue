@@ -68,11 +68,13 @@ const handleKeyPress = (event) => {
           <!-- <li><a href="#" class="nav-link px-2 link-dark">商城</a></li> -->
           <!-- <li><a href="#" class="nav-link px-2 link-dark">衣櫥</a></li> -->
           <li>
-            <a @click="Change" type="button" class="nav-link px-2 rounded-2"
+            <!-- <a @click="Change" type="button" class="nav-link px-2 rounded-2"
               >衣櫥</a
-            >
-            <Sandy></Sandy>
+            > -->
+            
+            <Sandy style="position: absolute;top: 13px; right: 6%;"></Sandy>
           </li>
+
         </ul>
 
         <div class="ms-auto dropdown text-end">
