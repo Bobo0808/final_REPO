@@ -46,7 +46,7 @@ const getdatefilter = (datefilter) => {
 }
 
 onMounted(() => {
-    getOrderDTOes(playerRefs.value.id);
+    getOrderDTOes(playerRefs.value.user.a_ID);
     // console.log("props.accountA_ID=>", props.accountA_ID);
 });
 
@@ -91,9 +91,9 @@ const cancelOrder = async (O_ID, Price) => {
     request.productName = "";
     await putAxiosStringNodata(`/api/Order/Cancel/${O_ID}`, request, test);
 
-    playerRefs.value.coins += Price;
-
-    getOrderDTOes(playerRefs.value.id);
+    playerRefs.value.user.a_Coin += Price;
+    ChangeAccountCoins(playerRefs.value.user.a_Coin);
+    getOrderDTOes(playerRefs.value.user.a_ID);
     // axios.put(`${baseAddress}/api/Order/Cancel/${O_ID}`, request).then(response => {
     //     getOrderDTOes(props.accountA_ID);
     // });
@@ -107,16 +107,26 @@ const closeDialog = () => {
     selectedOrder.value = null;
 };
 
+//修改會員點數
+const ChangeAccountCoins = (coins) => {
+    var test = {};
+    var request = {};
+    request.A_ID = playerRefs.value.user.a_ID;
+    request.A_Coin = coins;
+    postAxiosObjNodata(`/api/User/Update/${playerRefs.value.user.a_ID}`, request, test);
+}
+
+
 // 切換全部/當月
 const ShowOrder=(num)=>{
 
     OrderDTOes.value=[];
     if(num==0){
-        getOrderDTOes(playerRefs.value.id);
+        getOrderDTOes(playerRefs.value.user.a_ID);
     }else {
         var request = {};
         request.O_ID = 0;
-        request.A_ID = isNaN(Number(playerRefs.value.id)) ? -1 : Number(playerRefs.value.id);
+        request.A_ID = isNaN(Number(playerRefs.value.user.a_ID)) ? -1 : Number(playerRefs.value.user.a_ID);
         request.O_O_Date = new Date();
         request.O_Cancle = false;
         request.productName = "";
@@ -138,7 +148,7 @@ const ShowOrder=(num)=>{
         <label class="btn btn-outline-primary" for="btnradio1" @click="ShowOrder(0)">全部</label>
 
         <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-        <label class="btn btn-outline-primary" for="btnradio2" @click="ShowOrder(0)">當月購買</label>
+        <label class="btn btn-outline-primary" for="btnradio2" @click="ShowOrder(1)">當月購買</label>
 
         <!-- <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
         <label class="btn btn-outline-primary" for="btnradio3">Radio 3</label> -->
