@@ -25,7 +25,8 @@
 
 </section>
 <section class="tables">
-	<fieldset class="CreateNew_form">
+	<form class="CreateNew_form" id="CreateNew_form">
+		@Html.AntiForgeryToken()
 		<legend>新增廠商</legend>
 		<div class="CreateForm_title">
 			<span style="width: 100px;">
@@ -38,11 +39,12 @@
 			</span>
 			<span style="width: 150px;">
 				<span class="label">e-mail</span>
-				<input type="text" required="required" style="width: 100%" name="Email" id="email">
+				<input type="email" required="required" style="width: 100%" name="Email" id="email">
 			</span>
 			<span style="width: 150px;">
 				<span class="label">電話</span>
-				<input type="text" required="required" style="width: 100%" name="Phone" id="phone">
+				<input type="tel" required="required" style="width: 100%" name="Phone" id="phone" class="hide-arrows">
+				<span id="telError" class="text-danger" style="display: none;">電話號碼格式錯誤</span>
 			</span>
 			<span style="width: 500px;">
 				<span class="label">備註</span>
@@ -50,10 +52,10 @@
 			</span>
 			<span class="checkbtn_span" style="width: 100px;">
 				<span class="label"style="color:transparent;">確認</span>
-				<button type="button" class="addPartnerBtn btncheck btn btn-light">新增</button>
+				<button type="submit" class="addPartnerBtn btncheck btn btn-light">新增</button>
 			</span>
 		</div>
-	</fieldset>
+	</form>
 
 	<section class="Dtable_body" id="partnerTable">
 		<table class="Detail_table">
