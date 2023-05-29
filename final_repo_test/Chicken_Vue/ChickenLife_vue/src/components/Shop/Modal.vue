@@ -49,7 +49,8 @@ onMounted(() => {
 });
 //監控會員點數
 watch(() => {
-  playerRefs.value.coins;
+  // playerRefs.value.coins;
+  //  playerRefs.value.user.a_Coin;
 });
 
 const emit = defineEmits();

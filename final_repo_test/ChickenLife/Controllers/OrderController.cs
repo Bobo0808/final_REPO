@@ -112,6 +112,16 @@ namespace webAPIforTest.Controllers
                 });
         }
 
+        [HttpPost("FilterAPID")]
+        public async Task<bool> FilterAccountProductOrder([FromBody] CheckDTO chk)
+        {
+            bool hasProductOrder = await _context.Orders
+                .AnyAsync(o => o.A_ID == chk.A_ID && o.O_Cancle == false &&
+                               o.OrderDetails.Any(d => d.P_ID == chk.P_ID));
+
+            return hasProductOrder;
+        }
+
 
         // 顯示訂單
         // POST: api/Orders (會發現動詞與下面的POST相同而衝突)
