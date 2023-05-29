@@ -39,8 +39,8 @@ const props = defineProps({
 const getEmployeeDTOes = () => {
   // getAxios("/api/Products", employeeDTOes);
   // console.log(employeeDTOes);
-  console.log(playerRefs.value.user.a_Coin);
-  console.log(playerRefs.value);
+  // console.log("playerRefs.value.user.a_Coin=>",playerRefs.value.user.a_Coin);
+  // console.log(playerRefs.value);
   //原本axios呼叫指令碼
   axios.get(`${baseAddress}/api/Products`).then((response) => {
     //alert(JSON.stringify(response.data));
@@ -59,7 +59,8 @@ onMounted(() => {
   radioButton.checked = true;
 });
 watch(() => {
-  playerRefs.value.coins;
+  // playerRefs.value.coins;
+  playerRefs.value.user.a_Coin;
 });
 const OpenorClose = () => {
   if (props.modelValue === true) {
@@ -104,7 +105,7 @@ const DiscountMoney = (Price, Discount) => {
 
 // 購買商品
 const openDialog = async (pt) => {
-  //console.log(pt.target.id);
+  // console.log("pt.target.id=>",pt.target.id);
   try {
     //fuck();
     // const product = {};
@@ -129,59 +130,71 @@ const closeDialog = () => {
   isDialogOpen.value = false;
   selectedProduct.value = null;
 };
-const confirmPurchase = (ID, Price, Discount, img) => {
-  // console.log("playerRefs.coins=>", playerRefs.coins)
-  // console.log("Price=>", Price)
-  if (playerRefs.value.coins >= Price) {
-    // 點數足夠，執行購買邏輯
-    //console.log('購買商品:', selectedProduct.value);
-    // console.log('Price', Price);
 
-    // CheckPoints();
-    OrderAdd(ID, Price, Discount);
-    //OrderDetailAdd(ID, Price);
-    // 扣除點數
-    // ProductPoints.value -= Price;
-    playerRefs.value.coins -= Price;
+const Product=ref(true);
+const confirmPurchase = async(ID, Price, Discount, img) => {
+  // console.log("Product.value2=>",Product.value);
+  // console.log("bool=>",CheckAccountProduct(ID,playerRefs.value.user.a_ID))
+  if(await CheckAccountProduct(ID,playerRefs.value.user.a_ID)==false){
+      if (playerRefs.value.user.a_Coin >= Price) {
+      // 點數足夠，執行購買邏輯
+      OrderAdd(ID, Price, Discount);
 
-    ChangeAccountCoins(playerRefs.value.coins);
-    playerRefs.value.clothes.push(img);
-    // console.log(playerRefs.value.clothes);
-    // console.log("playerRefs.value.coins=>", playerRefs.value.coins)
-    // console.log('ProductPoints=>', ProductPoints.value);
-    // emit('updatepoint', ProductPoints);
-    // memberPoints.value -= selectedProduct.value.price;
+      // 扣除點數
+      playerRefs.value.user.a_Coin-= Price;
 
-    // 購買完成後關閉彈出視窗
-    closeDialog();
-  } else {
-    // 點數不足，顯示提示框
-    showInsufficientPoints.value = true;
+      // 更新點數
+      ChangeAccountCoins(playerRefs.value.user.a_Coin);
+
+      // 購買完成後關閉彈出視窗
+      closeDialog();
+    } else {
+      // 點數不足，顯示提示框
+      showInsufficientPoints.value = true;
+    }
+  }else{
+    alert("你已買過此商品");
   }
+  
 };
+// 確認此會員是否重複購買訂單衣服
+const  CheckAccountProduct= async(P_ID,A_ID)=>{
+  var request = {};
+  request.A_ID = A_ID;
+  request.P_ID = P_ID;
+  await axios.post(`${baseAddress}/api/Order/FilterAPID`, request).then((response) => {
+    Product.value=response.data;
+    console.log("Product.value=>",Product.value);
+    // console.log("Product=>",Product);
+  });
+
+  return Product.value;
+
+
+}
+
 
 //修改會員點數
 const ChangeAccountCoins = (coins) => {
   var test = {};
   var request = {};
-  request.A_ID = playerRefs.value.id;
+  // request.A_ID = playerRefs.value.id;
+  request.A_ID = playerRefs.value.user.a_ID;
   request.A_Coin = coins;
-  postAxiosObjNodata(`/api/User/Update/${playerRefs.value.id}`, request, test);
+  postAxiosObjNodata(`/api/User/Update/${playerRefs.value.user.a_ID}`, request, test);
 };
 
 const closeInsufficientPointsDialog = () => {
   showInsufficientPoints.value = false;
 };
-// const CheckPoints = () => {
-//     ProductPoints.value = props.memberpoints;
-// };
+
 const OrderAdd = (ID, Price, Discount) => {
   //Order
   var request = {};
   var requestdetail = {};
   const finalPrice = DiscountMoney(Price, Discount);
   request.O_ID = 0;
-  request.A_ID = playerRefs.value.id;
+  request.A_ID = playerRefs.value.user.a_ID;
   request.O_Date = new Date();
   request.O_TotalPrice = finalPrice;
   request.O_Cancle = false;
@@ -190,9 +203,9 @@ const OrderAdd = (ID, Price, Discount) => {
   // console.log(request);
   axios.post(`${baseAddress}/api/Order`, request).then((response) => {
     // console.log("success");
-    console.log("response.data=>", response.data);
+    // console.log("response.data=>", response.data);
     axios
-      .get(`${baseAddress}/api/Order/GET/${playerRefs.value.id}`)
+      .get(`${baseAddress}/api/Order/GET/${playerRefs.value.user.a_ID}`)
       .then((response) => {
         OrderID.value = response.data;
         //console.log("OrderID.value=>", OrderID.value);
