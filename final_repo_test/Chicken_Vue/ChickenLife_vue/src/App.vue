@@ -42,53 +42,39 @@ const handleKeyPress = (event) => {
 <template>
   <header class="border-bottom">
     <div class="container">
-      <div
-        class="div-nav d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
-      >
+      <div class="div-nav d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <i class="fa-solid fa-kiwi-bird fa-shake fa-xl"></i>
 
-        <ul
-          class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
-        >
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <ul>
-            <a @click="Change" type="button" class="nav-link px-2 rounded-2"
-              >遊戲王</a
-            >
-          </ul>
-          <li>
-            <a href="#" class="nav-link px-2 link-secondary rounded-2">首頁</a>
-          </li>
-          <li>
-            <a @click="Checkshow" type="button" class="nav-link px-2 rounded-2"
-              >商城</a
-            >
-            <Modal v-model="closeableModal" closeable header="商城"> </Modal>
+            <a @click="Change" type="button" class="nav-link px-2 rounded-2">遊戲王</a>
+        </ul>
+        <li>
+          <a href="#" class="nav-link px-2 link-secondary rounded-2">首頁</a>
+        </li>
+        <li>
+          <a @click="Checkshow" type="button" class="nav-link px-2 rounded-2">商城</a>
+          <Modal v-model="closeableModal" closeable header="商城"> </Modal>
           </li>
           <!-- <li><a href="#" class="nav-link px-2 link-secondary">首頁</a></li> -->
           <!-- <li><a href="#" class="nav-link px-2 link-dark">商城</a></li> -->
           <!-- <li><a href="#" class="nav-link px-2 link-dark">衣櫥</a></li> -->
           <li>
-            <a @click="Change" type="button" class="nav-link px-2 rounded-2"
+            <!-- <a @click="Change" type="button" class="nav-link px-2 rounded-2"
               >衣櫥</a
-            >
-            <Sandy></Sandy>
+            > -->
+            
+            <Sandy style="position: absolute;top: 13px; right: 6%;"></Sandy>
+            <!-- <a @click="Change" type="button" class="nav-link px-2 rounded-2">衣櫥</a> -->
+            <!-- <Sandy style="position: absolute;top: 10px; right: 30%;"></Sandy> -->
           </li>
+
         </ul>
 
         <div class="ms-auto dropdown text-end">
-          <a
-            href="#"
-            class="d-block link-dark text-decoration-none dropdown-toggle"
-            id="dropdownUser1"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <img
-              :src="profilePic"
-              width="32"
-              height="32"
-              class="rounded-circle"
-            />
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <img :src="profilePic" width="32" height="32" class="rounded-circle" />
           </a>
           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
             <li><a class="dropdown-item" href="#">帳戶設定</a></li>
@@ -103,26 +89,19 @@ const handleKeyPress = (event) => {
     </div>
   </header>
   <div class="div-sidebar">
-    <div
-      class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sideyellow"
-      style="width: 280px"
-    >
-      <a
-        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
-      >
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sideyellow" style="width: 280px">
+      <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         <svg class="bi me-2" width="40" height="32"></svg>
-        <span style="color: black; font-weight: 600; font-size: larger"
-          >好友</span
-        >
+        <span style="color: black; font-weight: 600; font-size: larger">好友</span>
       </a>
       <!-- <li id="lifepoint">
-        <a href="#" class="nav-link text-white">
-            <svg class="bi me-2" width="16" height="16">
-                <use xlink:href="#people-circle" />
-            </svg>
-            生活板
-        </a>
-        </li> -->
+                              <a href="#" class="nav-link text-white">
+                                  <svg class="bi me-2" width="16" height="16">
+                                      <use xlink:href="#people-circle" />
+                                  </svg>
+                                  生活板
+                              </a>
+                              </li> -->
       <hr />
       <div class="friend_area">
         <div>
