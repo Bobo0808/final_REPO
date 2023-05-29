@@ -636,13 +636,18 @@ namespace ClassLibrary
                                     {
                                         CT_ID = 2,
                                         CT_Name = "LinePay",
+                                    },
+                                    new CardType()
+                                    {
+                                        CT_ID = 3,
+                                        CT_Name = "藍新",
                                     });
             modelBuilder.Entity<CardOrder>().HasData(
                         new CardOrder()
                         {
                             CO_ID = 1,
                             A_ID = 1,
-                            CT_ID = 1,
+                            CT_ID = 3,
                             CA_ID = 1,
                             CO_Sum = 100,
                             CO_Date = DateTime.Now,
@@ -653,12 +658,12 @@ namespace ClassLibrary
                         {
                             CO_ID = 2,
                             A_ID = 1,
-                            CT_ID = 2,
+                            CT_ID = 3,
                             CA_ID = 2,
                             CO_Sum = 400,
                             CO_Date = DateTime.Now,
                             CO_Cancel = false,
-                            CO_Quantity = 2,
+                            CO_Quantity = 1,
                         });
 
             modelBuilder.Entity<Card>().HasData(
@@ -1206,7 +1211,7 @@ namespace ClassLibrary
                            {
                                Od_ID = j,
                                O_ID = i,
-                               P_ID = 1,
+                               P_ID = rnd.Next(1, 10),
                                Od_UnitPrice = 699,
                                Od_Sum = 699,
                                Od_Quantity = 1,
