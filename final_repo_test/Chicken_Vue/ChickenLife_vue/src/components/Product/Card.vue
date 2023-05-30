@@ -224,7 +224,7 @@ const PayMentForNewWebPay = async () => {
             title: `${error.response.status} ${error.response.statusText}\n${error.response.data}`
         })
     }
-}
+};
 
 
 
@@ -266,9 +266,9 @@ const PayMentForNewWebPay = async () => {
                                 </p>
                             </div>
                             <div class="d-flex align-items-center mt-3 fs-6">
-                                <!-- <button :id="item.cA_ID" type="button" class="btn btn-primary"
+                                <!-- <button :id="item.cA_ID" type="button" class="custom-btn btn-1"
                                     @click="showBuyDetail(item.cA_ID)">購買</button> -->
-                                    <button :id="item.cA_ID" type="button" class="btn btn-primary"
+                                    <button :id="item.cA_ID" type="button" class="custom-btn btn-1"
                                     @click="openDialog(item.cA_ID)">詳細</button>
                             </div>
                         </div>
@@ -319,11 +319,11 @@ const PayMentForNewWebPay = async () => {
                         </ul>
                         <!-- Product Options START -->
                         <div id="product" class="product-options">
-                            <div class="form-group product-quantity">
-                                <button class="btn btn-primary m-1" @click="PayMentForNewWebPay">Visa</button>
+                            <div class="form-group">
+                                <!-- <button class="btn btn-primary m-1" @click="PayMentForNewWebPay">Visa</button> -->
                                 <!-- <button class="btn btn-primary m-1" @click="">LinePay</button> -->
-                                <button class="btn btn-primary m-1 btn-lg btn-block" @click="confirmPurchase(selectedCardProduct.cA_ID,selectedCardProduct.cA_Price,selectedCardProduct.cA_Name)">購買</button>
-                                <button class="btn btn-secondary" @click="closeDialog">關閉</button> 
+                                <button class="custom-btn2 btn-1" @click="confirmPurchase(selectedCardProduct.cA_ID,selectedCardProduct.cA_Price,selectedCardProduct.cA_Name)">購買</button>
+                                <button class="custom-btn2 btn-1" @click="closeDialog">關閉</button> 
                             </div>
                         </div>
                         <!-- Product Options END -->
@@ -347,14 +347,9 @@ const PayMentForNewWebPay = async () => {
 
     </div>
 
-    <!-- 點數不足提示框 -->
-    <!-- <div v-if="showInsufficientPoints" class="dialog">
-      <p>點數不足，無法購買該商品。</p>
-      <button class="btn btn-info" @click="closeInsufficientPointsDialog">關閉</button>
-    </div> -->
 
 <!-- 遮罩層 -->
-<div v-if="isDialogOpen || showInsufficientPoints" class="dialog-overlay"></div>
+    <div v-if="isDialogOpen || showInsufficientPoints" class="dialog-overlay"></div>
 
 </template>
 
@@ -383,20 +378,56 @@ const PayMentForNewWebPay = async () => {
     /* 設定疊加順序，需高於其他元素 */
 }
 
-/* .sprite {
-    width: 357.143px;
-    height: 400px;
-
+.custom-btn {
+  width: 100%;
+  height: 40px;
+  /* color: #fff; */
+  color: #000;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+.custom-btn2{
+    width: 50%;
+  height: 40px;
+  /* color: #fff; */
+  color: #000;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
 }
 
-.scale {
-    transform: scale(0.6);
-    transform-origin: top left;
-}
 
-.productHeight {
-    height: 50%;
-} */
+/* 1 */
+.btn-1 {
+  background: rgb(6,14,131);
+  background: linear-gradient(0deg, rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);
+  border: none;
+}
+.btn-1:hover {
+   background: rgb(0,3,255);
+background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
+}
 
 .bd-blue-200 {
     color: #000;

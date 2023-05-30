@@ -1,5 +1,6 @@
 <script setup>
 import { onMounted, ref, watch, inject, toRaw } from "vue";
+import success from "../Success/success.vue"
 import {
   playerRefs,
   baseAddress,
@@ -26,6 +27,9 @@ const OrderID = ref(0);
 const OrderDTO = ref(null);
 // 圖片移動像素值
 const position = ref(96);
+
+// 通知訊息
+const forsuccess=ref(false);
 
 const emit = defineEmits();
 const props = defineProps({
@@ -140,6 +144,8 @@ const confirmPurchase = async(ID, Price, Discount, img) => {
       // 點數足夠，執行購買邏輯
       OrderAdd(ID, Price, Discount);
 
+      forsuccess.value=true;
+      console.log("forsuccess=>",forsuccess.value);
       // 扣除點數
       playerRefs.value.user.a_Coin-= Price;
 
@@ -164,7 +170,7 @@ const  CheckAccountProduct= async(P_ID,A_ID)=>{
   request.P_ID = P_ID;
   await axios.post(`${baseAddress}/api/Order/FilterAPID`, request).then((response) => {
     Product.value=response.data;
-    console.log("Product.value=>",Product.value);
+    // console.log("Product.value=>",Product.value);
     // console.log("Product=>",Product);
   });
 
@@ -219,7 +225,8 @@ const OrderAdd = (ID, Price, Discount) => {
         axios
           .post(`${baseAddress}/api/OrderDetails`, requestdetail)
           .then((test) => {
-            alert(test.data);
+            console.log(test.data);
+            
           });
       });
   });
@@ -253,26 +260,27 @@ const TypeChange = (num) => {
 };
 </script>
 <template lang="">
+  
 <div class="page-wrapper">
     <div class="page-content row">
         <div class="col-md-1 col-12">
-            <div class="btn-group-vertical " role="group" aria-label="Basic radio toggle button group">
+            <div class="btngroupvertical " role="group" aria-label="Basic radio toggle button group">
                 <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                <label @click="TypeChange(-1)" class="btn btn-outline-primary" for="btnradio1">全部</label>
+                <label @click="TypeChange(-1)" class="custom-btn btn-9" for="btnradio1">全部</label>
 
                 <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                <label @click="TypeChange(2)" class="btn btn-outline-primary" for="btnradio2">動物</label>
+                <label @click="TypeChange(2)" class="custom-btn btn-9" for="btnradio2">動物</label>
 
                 <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                <label @click="TypeChange(0)" class="btn btn-outline-primary" for="btnradio3">東方</label>
+                <label @click="TypeChange(0)" class="custom-btn btn-9" for="btnradio3">東方</label>
 
                 <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
-                <label @click="TypeChange(3)" class="btn btn-outline-primary" for="btnradio4">其他</label>
+                <label @click="TypeChange(3)" class="custom-btn btn-9" for="btnradio4">其他</label>
             </div>
         </div>
         <div class="col-11">
             <div class="row test row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 product-grid">
-
+              
                 <div v-for="item in employeeDTOes" :key="item.p_ID">
                     <div class="col">
                         <div class="position-relative border rounded popover-body bg-info">
@@ -300,7 +308,7 @@ const TypeChange = (num) => {
                                 <div class="d-flex align-items-center mt-3 fs-6">
                                     <!-- <button :id="item.id" type="button" class="btn btn-primary"
                                         @click="showBuyDetail(item.p_ID)">購買</button> -->
-                                        <button :id="item.p_ID" type="button" class="btn btn-primary"
+                                        <button :id="item.p_ID" type="button" class="custom-btn btn-1"
                                         @click="openDialog">詳細</button>
                                 </div>
                             </div>
@@ -313,87 +321,65 @@ const TypeChange = (num) => {
 </div>
 <div>
 <!-- 購買資訊 -->
-    <div v-if="isDialogOpen" class="dialog buywidth bd-blue-200">
-        <div class="container ">
-        <!-- <div v-for="item in selectedProduct" :key="item.p_ID"> -->
-            <div class="row product-block border rounded-1 ms-1">
-                <div class=" product-images  col ">
-                    <!-- Product Image thumbnails START -->
-                    <div class="thumbnails">
-                        <div class="product-image">
-                            <a class="thumbnail" title="magni dolores eosquies">
-                                <p class="sprite ms-5 mt-4 ms-0" :style="`background-image: url(${imageUrl(selectedProduct.p_Image)}); background-position: ${position}px 0;`" />
-                                <!-- <img src="static/picture/05-800x800.jpg" title="magni dolores eosquies"
-                                    data-zoom-image="https://demo.templatetrip.com/Opencart/OPC02/OPC040/OPC15/image/cache/catalog/demo/product/05-800x800.jpg"
-                                    alt="magni dolores eosquies"> -->
-                            </a>
-                        </div>
-                        <!-- Product Image thumbnails END -->
-                    </div>
-                </div>
-
-                    <div class=" product-details  col border p-2">
-                        <h1>商品名稱: </h1>
-                        <h2 class="product-name">{{ selectedProduct.p_Name }} </h2>
-
-                        <table class="product-info">
-                            <tr>商品介紹: </tr>
-                            <tr>
-                                <td>{{ selectedProduct.p_Describe }}</td>
-                                <!-- <td class="product-info-value"><a
-                                        href="index-productmanufacturerinfo_8.html">Apple</a></td> -->
-                            </tr>
-                            <!-- <tr>
-                                <td>Product Code:</td>
-                                <td class="product-info-value">Product 14</td>
-                            </tr>
-                            <tr>
-                                <td>Availability:</td>
-                                <td class="product-info-value">In Stock</td>
-                            </tr> -->
-                        </table>
-
-                        <!-- Product Rating START -->
-
-                        <!-- Product Rating END -->
-
-                        <ul class="list-unstyled product-price">
-                            <li>
-                                <h2>價格: {{ DiscountMoney(selectedProduct.p_Price, selectedProduct.p_Discount)}}</h2>
-                            </li>
-                        </ul>
-                        <!-- Product Options START -->
-                        <div id="product" class="product-options">
-                            <div class="form-group product-quantity">
-                                <button class="btn btn-primary m-1 btn-lg btn-block" @click="confirmPurchase(selectedProduct.p_ID,selectedProduct.p_Price,selectedProduct.p_Discount,selectedProduct.p_Image)">購買</button>
-                                <button class="btn btn-secondary" @click="closeDialog">關閉</button> 
-                            </div>
-                        </div>
-                        <!-- Product Options END -->
-                    </div>
-                    <!-- Product option details END -->
-                </div>
-            <!-- <div  class="border rounded-3 my-4">
-                <h4>購買商品: {{ item.p_Name }}</h4>
-                <h3>價格: {{ DiscountMoney(item.p_Price, item.p_Discount)}}</h3>
+  <div v-if="isDialogOpen" class="dialog buywidth bd-blue-200">
+    <div class="container ">
+    <!-- <div v-for="item in selectedProduct" :key="item.p_ID"> -->
+      <div class="row product-block border rounded-1 ms-1">
+        <div class=" product-images  col ">
+          <!-- Product Image thumbnails START -->
+          <div class="thumbnails">
+            <div class="product-image">
+              <a class="thumbnail" title="magni dolores eosquies">
+                <p class=" ms-5 mt-5 ms-0 detail" :style="`background-image: url(${imageUrl(selectedProduct.p_Image)}); background-position: ${position}px 0;`" />
+                <!-- <img src="static/picture/05-800x800.jpg" title="magni dolores eosquies" data-zoom-image="https://demo.templatetrip.com/Opencart/OPC02/OPC040/OPC15/image/cache/catalog/demo/product/05-800x800.jpg" alt="magni dolores eosquies"> -->
+              </a>
             </div>
-            <div class="border rounded-3 m-auto">
-               <button class="btn btn-primary m-1" @click="confirmPurchase(item.p_ID,item.p_Price)">購買</button>
-                <button class="btn btn-secondary" @click="closeDialog">關閉</button> 
-            </div> -->
-        <!-- </div> -->
+          <!-- Product Image thumbnails END -->
+          </div>
+        </div>
+
+        <div class=" product-details  col border p-2">
+          <h1>商品名稱: </h1>
+          <h2 class="product-name">{{ selectedProduct.p_Name }} </h2>
+          <table class="product-info">
+              <tr>商品介紹: </tr>
+              <tr>
+                  <td>{{ selectedProduct.p_Describe }}</td>
+              </tr>
+          </table>
+
+          <ul class="list-unstyled product-price">
+              <li>
+                  <h2>價格: {{ DiscountMoney(selectedProduct.p_Price, selectedProduct.p_Discount)}}</h2>
+              </li>
+          </ul>
+            <!-- Product Options START -->
+          <div id="product" class="product-options">
+            <div class="form-group ">
+              <button class="custom-btn2 btn-14" @click="confirmPurchase(selectedProduct.p_ID,selectedProduct.p_Price,selectedProduct.p_Discount,selectedProduct.p_Image)">購買</button>
+              <button class="custom-btn2 btn-14" @click="closeDialog">關閉</button> 
+              <success v-show="forsuccess" @close-modal="forsuccess = false" />
+              
+            </div>
+          </div>
+        <!-- Product Options END -->
+      </div>
+      <!-- Product option details END -->
     </div>
-    </div>
+  </div>
+</div>
 
     <!-- 點數不足提示框 -->
     <div v-if="showInsufficientPoints" class="dialog">
       <p>點數不足，無法購買該商品。</p>
-      <button class="btn btn-info" @click="closeInsufficientPointsDialog">關閉</button>
+      <button class="custom-btn btn-14" @click="closeInsufficientPointsDialog">關閉</button>
     </div>
   </div>
 
 <!-- 遮罩層 -->
 <div v-if="isDialogOpen || showInsufficientPoints" class="dialog-overlay"></div>
+
+
 </template>
 
 <style scoped>
@@ -408,7 +394,16 @@ const TypeChange = (num) => {
   border-radius: 5px;
   z-index: 1040;
 }
-
+.btngroupvertical{
+  position: relative;
+  /* display: inline-flex; */
+  vertical-align: middle;
+}
+.btn-group > .btn,
+.btngroupvertical > .btn {
+  position: relative;
+  flex: 1 1 auto;
+}
 .dialog-overlay {
   position: fixed;
   top: 0;
@@ -428,6 +423,12 @@ const TypeChange = (num) => {
   transform-origin: top left;
 }
 
+.detail{
+  width: 96px;
+  height: 96px;
+  transform: scale(2);
+  transform-origin: top left;
+}
 .bd-blue-200 {
   color: #000;
   background-color: #9ec5fe;
@@ -440,6 +441,125 @@ const TypeChange = (num) => {
 .buywidth {
   width: 700px;
 }
+
+.custom-btn {
+  width: 100%;
+  height: 40px;
+  /* color: #fff; */
+  color: #000;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+.custom-btn2{
+    width: 50%;
+  height: 40px;
+  /* color: #fff; */
+  color: #000;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+/* 1 */
+.btn-1 {
+  background: rgb(6,14,131);
+  background: linear-gradient(0deg, rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);
+  border: none;
+}
+.btn-1:hover {
+   background: rgb(0,3,255);
+background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
+}
+
+/* 9 */
+.btn-9 {
+  border: none;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.btn-9:after {
+  position: absolute;
+  content: " ";
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+   background-color: #1fd1f9;
+  background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+  transition: all 0.3s ease;
+}
+.btn-9:hover {
+  background: transparent;
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+  color: #9ec5fe;
+}
+.btn-9:hover:after {
+  -webkit-transform: scale(2) rotate(180deg);
+  transform: scale(2) rotate(180deg);
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+}
+
+/* 14 */
+.btn-14 {
+  background: rgb(255,151,0);
+  border: none;
+  z-index: 1;
+}
+.btn-14:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 5px;
+  background-color: #eaf818;
+  background-image: linear-gradient(315deg, #eaf818 0%, #f6fc9c 74%);
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5);
+  transition: all 0.3s ease;
+}
+.btn-14:hover {
+  color: #000;
+}
+.btn-14:hover:after {
+  top: auto;
+  bottom: 0;
+  height: 100%;
+}
+.btn-14:active {
+  top: 2px;
+}
+
+
+/* button end */
 
 /*product-page */
 .product-product #content .row {
