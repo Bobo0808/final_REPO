@@ -225,8 +225,8 @@ const OrderAdd = (ID, Price, Discount) => {
         axios
           .post(`${baseAddress}/api/OrderDetails`, requestdetail)
           .then((test) => {
-            console.log(test.data);
-            
+            // console.log(test.data);
+            alert(test.data);
           });
       });
   });
