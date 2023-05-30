@@ -42,8 +42,12 @@ namespace ChickenLife.Controllers
                 out byte[] passwordSalt);
             var user = new UserAccount
             {
-                //UserName=request.UserName,
+                A_Gender = request.Gender,
+                A_add=request.add,
+                A_NickName = request.NickName,
+                A_Phone = request.Phone,
                 A_Email = request.Email,
+                A_Name = request.Name,
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt,
                 VerifycationToken = CreateRandomToken()
