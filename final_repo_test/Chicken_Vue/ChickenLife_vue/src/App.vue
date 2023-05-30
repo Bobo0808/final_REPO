@@ -7,7 +7,7 @@ import Sandy from "./components/Sandy.vue";
 import profilePic from "./img/625157.jpg";
 // import './js/dialogue.js';
 import Account from "./components/Account.vue";
-
+const C_Show=ref(false);
 const closeableModal = ref(false);
 currentBody.value = Account;
 playerRefs.value.isPlay = true;
@@ -19,6 +19,14 @@ const Checkshow = () => {
     closeableModal.value = false;
   }
 };
+const ClothShow=()=>{
+  if(C_Show.value==false){
+    C_Show.value==true;
+  }
+  else{
+    C_Show.value==false;
+  }
+}
 
 const showDialog = ref(true);
 
@@ -55,7 +63,11 @@ const handleKeyPress = (event) => {
         <li>
           <a @click="Checkshow" type="button" class="nav-link px-2 rounded-2">商城</a>
           <Modal v-model="closeableModal" closeable header="商城"> </Modal>
-          </li>
+        </li>
+        <!-- <li>
+          <a @click="Checkshow" type="button" class="nav-link px-2 rounded-2">衣櫥</a>
+          <Modal v-model="closeableModal" closeable header="衣櫥"> </Modal>
+        </li> -->
           <!-- <li><a href="#" class="nav-link px-2 link-secondary">首頁</a></li> -->
           <!-- <li><a href="#" class="nav-link px-2 link-dark">商城</a></li> -->
           <!-- <li><a href="#" class="nav-link px-2 link-dark">衣櫥</a></li> -->
@@ -64,7 +76,7 @@ const handleKeyPress = (event) => {
               >衣櫥</a
             > -->
             
-            <Sandy style="position: absolute;top: 13px; right: 6%;"></Sandy>
+            <Sandy style="position: absolute;top: 13px; right: 30%; width: 700px; height: 600px;"></Sandy>
             <!-- <a @click="Change" type="button" class="nav-link px-2 rounded-2">衣櫥</a> -->
             <!-- <Sandy style="position: absolute;top: 10px; right: 30%;"></Sandy> -->
           </li>
@@ -115,7 +127,6 @@ const handleKeyPress = (event) => {
     <component :is="currentBody" :closeableModal="closeableModal"></component>
   </div>
 </template>
-  
 
 <script>
 export default {
