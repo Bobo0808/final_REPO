@@ -26,7 +26,6 @@
 </section>
 <section class="tables">
 	<form class="CreateNew_form" id="CreateNew_form">
-		@Html.AntiForgeryToken()
 		<legend>新增廠商</legend>
 		<div class="CreateForm_title">
 			<span style="width: 100px;">
@@ -52,7 +51,7 @@
 			</span>
 			<span class="checkbtn_span" style="width: 100px;">
 				<span class="label"style="color:transparent;">確認</span>
-				<button type="submit" class="addPartnerBtn btncheck btn btn-light">新增</button>
+				<button type="button" class="addPartnerBtn btncheck btn btn-light">新增</button>
 			</span>
 		</div>
 	</form>
