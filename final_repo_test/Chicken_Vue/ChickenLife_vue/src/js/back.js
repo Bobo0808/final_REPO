@@ -24,8 +24,8 @@ export const phas = () => {
     const w = window.innerWidth;
     const h = window.innerHeight;
     // var server = 'wss://chickenlife20230522194335.azurewebsites.net/';
-    var server = 'wss://chickenlife.azurewebsites.net/';
-    // var server = 'wss://localhost:7093';
+    // var server = 'wss://chickenlife.azurewebsites.net/';
+    var server = 'wss://localhost:7093';
     var vWebSocket = null;
     var cursors;
     var AniLayer;

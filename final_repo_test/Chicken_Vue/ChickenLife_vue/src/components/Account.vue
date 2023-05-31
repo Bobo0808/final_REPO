@@ -1,6 +1,6 @@
 <script setup>
 import { reactive, ref } from "vue";
-import { postAxiosObj } from "../main.js";
+import { postAxiosObj, putAxiosString } from "../main.js";
 import { playerRefs, currentBody } from "../main.js";
 import Phaser from "./Phaser.vue";
 import { inject } from "vue";
@@ -16,9 +16,14 @@ const register = ref({
   email: "",
   password: "",
   confirmPassword: "",
-  gender: 1,
+  gender: 0,
   nickName: "",
 });
+
+const Token = ref({
+  token: "",
+});
+
 const error_message = ref();
 
 const Handerror = (err) => {
@@ -30,7 +35,7 @@ const Ruser = ref();
 const hadlesubmit = async () => {
   await postAxiosObj("/api/User/register", register, Ruser);
   successFn();
-  console.log(Ruser.value);
+  // console.log(Ruser.value);
 };
 const isReg = ref(false);
 // const successFn = () => {
@@ -40,7 +45,7 @@ const isReg = ref(false);
 const successFn = () => {
   console.log("註冊成功");
   console.log(Ruser.value);
-  alert("註冊成功");
+  alert("註冊成功，請前往驗證");
   isReg.value = true;
 };
 
@@ -48,15 +53,20 @@ let route = "https://localhost:7093/api/User/login";
 
 //1
 const CheckAccount = async () => {
-  await postAxiosObj("/api/User/login", Account, playerRefs);
+  await putAxiosString("/api/User/login", Account, playerRefs);
   printValue(playerRefs);
   currentBody.value = Phaser;
+};
+const Stoken = ref();
+const SubmitToken = async () => {
+  await postAxiosObj("/api/User/verify", Token, Stoken);
+  console.log(Stoken);
 };
 
 function printValue(value) {
   console.log(value.value);
 }
-
+const showModal = ref(false);
 const view = ref(1);
 const changeView = (index) => {
   view.value = index;
@@ -69,11 +79,17 @@ export default {
 </script>
 <template>
   <div class="ALL">
-    <!-- <div v-if="!isreg"> -->
+    <div class="overlay" v-if="view === 3">
+      <div class="modal">
+        <textarea name="note" id="note" cols="30" rows="10"></textarea>
+        <button @click="SubmitToken">送出</button>
+        <button class="close" @click="changeView(1)">Close</button>
+      </div>
+    </div>
     <header>
       <h2 class="logo">ChickenLive</h2>
       <nav class="navigation">
-        <a href="#">驗證</a>
+        <a href="#" @click="changeView(3)">驗證</a>
         <!-- <a href="#">TEST</a>
             <a href="#">TEST</a>
             <a href="#">TEST</a>
@@ -456,6 +472,42 @@ header {
 
 .login-register p a:hover {
   text-decoration: underline;
+}
+
+/* 彈窗 */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  /* background-color: rgba(0, 0, 0, 0.77); */
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  width: 500px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.modal button {
+  padding: 10px 20px;
+  font-size: 20px;
+  width: 100%;
+  background-color: rgb(37, 138, 204);
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 15px;
+}
+.modal .close {
+  background-color: rgb(181, 45, 45);
+  margin-top: 7px;
 }
 </style>
 
