@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted, ref } from "vue";
-import { getAxios } from "../main.js";
+import { getAxios, playerRefs } from "../main.js";
 const backdropClick = (event) => {
   if (event.target.id == "backdrop" && props.closeable == true) {
     emit("update:modelValue", false);
@@ -10,12 +10,42 @@ const userdata = ref([]);
 const userId = ref("");
 let route = ref();
 const router = "/api/wardrobe/details/";
+
+
+
+
+const position = ref(96);
+const sprites = document.querySelectorAll(".sprite");
+const interval = 100;
+const SpriteForP = () => {
+  setInterval(() => {
+    //sprites.forEach(sprite => {
+    // 判斷是否超出精靈圖的寬度，若超出則重置為起始位置
+    if (position.value < 384) {
+      position.value += 96;
+      // console.log("position=>", position);
+    } else {
+      position.value = 96;
+    }
+    // sprite.style.backgroundPosition = `-${position}px 0px`;
+    //});
+  }, interval);
+
+  // requestAnimationFrame(SpriteForP);
+};
+
+onMounted(() => {
+  SpriteForP();
+});
+
 const getData = async () => {
-  route.value = router + userId.value;
+  route.value = router + playerRefs.value.user.a_ID;
+  // route.value = router + userId.value;
+  await getAxios(route, userdata);
   console.log(userId.value);
   console.log(route.value);
+  console.log('userdata.value');
   console.log(userdata.value);
-  await getAxios(route, userdata);
 };
 const deleteData = async () => {
 
@@ -32,12 +62,12 @@ const showModel = ref(false)
 
     <div class="modal">
       <div>
-    <input type="text" v-model="userId" placeholder="輸入 User ID" />
+    <!-- <input type="text" v-model="userId" placeholder="輸入 User ID" /> -->
     <!-- <button @click="getData">詳細資料</button> -->
-    <div v-if="{ userdata }">
-      <div v-for="(user, i) in userdata.userID" :key="user[i]">
+    <!-- <div v-if="{ userdata }"> -->
+      <!-- <div v-for="(user,i) in userdata" :key="userdata[i]"> -->
         <div>使用者:{{ user }}</div>
-
+        <button @click="getData">詳細資料</button>
         <table class="table">
           <thead>
             <tr>
@@ -73,11 +103,12 @@ const showModel = ref(false)
                   :key="m"
                 >
                   <div v-if="m === j">
-                    <img
+                    <!-- <img
                       :src="productimage"
                       alt=""
                       style="width: 200px; height: 150px"
-                    />
+                    /> -->
+                    <p class="sprite ms-sm-4 ms-0" :style="`background-image: url(${productimage}); background-position: ${position}px 0;`" />
                   </div>
                 </div>
               </td>
@@ -85,11 +116,11 @@ const showModel = ref(false)
           </tbody>
         </table>
       </div>
-    </div>
-    <div v-else>Loading...</div>
-  </div>
+    <!-- </div> -->
+    <!-- <div v-else>Loading...</div> -->
+  <!-- </div> -->
       <!-- <button>Add Note</button> -->
-      <button @click="getData">詳細資料</button>
+      <!-- <button @click="getData">詳細資料</button> -->
       <button class="close" @click="showModel=false">Close</button>
     </div>
   </div>
@@ -105,10 +136,22 @@ const showModel = ref(false)
 </template>
 
 <style scoped>
+td{
+  height: 200px;
+}
+.sprite {
+  width: 96px;
+  height: 96px;
+  transform: scale(1.5);
+  transform-origin: top left;
+}
 h4{
 color: black;
 font-size: 18px;
 font-weight:bold;
+width: 300px;
+margin: 0;
+padding: 0;
 }
 
 main{
@@ -116,9 +159,8 @@ main{
   width: 100vw;
 }
   .container{
-    max-width: 1000px;
+    max-width: 100px;
     padding: 10px;
-    margin: 0 auto;
   }
   header{
     display: flex;
@@ -137,7 +179,7 @@ main{
     height: 50px;
     cursor: pointer;
     /* background-color:rgb(21, 20, 20); */
-    border-radius: 100%;
+    /* border-radius: 100%; */
     color: black;
     font-size: 20px;
   }
@@ -165,7 +207,7 @@ main{
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.77);
+    /* background-color: rgba(0, 0, 0, 0.77); */
     z-index: 10;
     display: flex;
     align-items: center;
@@ -175,16 +217,32 @@ main{
   .modal{
     width: 750px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 30px;
     position: relative;
     display: flex;
     flex-direction: column;
+    overflow: auto;
   }
+  .modal::-webkit-scrollbar {
+  width: 8px; /* 滚动条宽度 */
+}
+
+.modal::-webkit-scrollbar-track {
+  background-color: #8a8a8a; /* 滚动条背景颜色 */
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background-color: #dddddd; /* 滚动条滑块颜色 */
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+  background-color: #292929; /* 滚动条滑块鼠标悬停颜色 */
+}
   .modal button{
     padding:10px 20px ;
     font-size: 20px;
-    width: 100%;
+    width: 150px;
     background-color: blueviolet;
     border:none;
     color:white;

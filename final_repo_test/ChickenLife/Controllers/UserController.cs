@@ -43,11 +43,11 @@ namespace ChickenLife.Controllers
             var user = new UserAccount
             {
                 A_Gender = request.Gender,
-                A_add=request.add,
+                
                 A_NickName = request.NickName,
-                A_Phone = request.Phone,
+                
                 A_Email = request.Email,
-                A_Name = request.Name,
+               
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt,
                 VerifycationToken = CreateRandomToken()

@@ -1,6 +1,6 @@
 <script setup>
 import { reactive, ref } from "vue";
-import { postAxiosObj } from "../main.js";
+import { postAxiosObj, putAxiosString } from "../main.js";
 import { playerRefs, currentBody } from "../main.js";
 import Phaser from "./Phaser.vue";
 import { inject } from "vue";
@@ -16,8 +16,15 @@ const register = ref({
   email: "",
   password: "",
   confirmPassword: "",
+  gender: 0,
+  nickName: "",
 });
-const error_message = ref({});
+
+const Token = ref({
+  token: "",
+});
+
+const error_message = ref();
 
 const Handerror = (err) => {
   Object.key(err).forEach((erro) => (error_message[erro] = err[erro]));
@@ -28,11 +35,17 @@ const Ruser = ref();
 const hadlesubmit = async () => {
   await postAxiosObj("/api/User/register", register, Ruser);
   successFn();
-  console.log(Ruser.value);
+  // console.log(Ruser.value);
 };
 const isReg = ref(false);
+// const successFn = () => {
+//   alert("註冊成功");
+//   isReg.value = true;
+// };
 const successFn = () => {
-  alert("註冊成功");
+  console.log("註冊成功");
+  console.log(Ruser.value);
+  alert("註冊成功，請前往驗證");
   isReg.value = true;
 };
 
@@ -40,15 +53,20 @@ let route = "https://localhost:7093/api/User/login";
 
 //1
 const CheckAccount = async () => {
-  await postAxiosObj("/api/User/login", Account, playerRefs);
+  await putAxiosString("/api/User/login", Account, playerRefs);
   printValue(playerRefs);
   currentBody.value = Phaser;
+};
+const Stoken = ref();
+const SubmitToken = async () => {
+  await postAxiosObj("/api/User/verify", Token, Stoken);
+  console.log(Stoken);
 };
 
 function printValue(value) {
   console.log(value.value);
 }
-
+const showModal = ref(false);
 const view = ref(1);
 const changeView = (index) => {
   view.value = index;
@@ -61,87 +79,134 @@ export default {
 </script>
 <template>
   <div class="ALL">
-    <div v-if="!isreg">
-      <header>
-        <h2 class="logo">ChickenLive</h2>
-        <!-- <nav class="navigation">
-            <a href="#">Home</a>
-            <a href="#">TEST</a>
-            <a href="#">TEST</a>
-            <a href="#">TEST</a>
-            <a href="#">TEST</a>
-            <button @click="changeView(1)" class="btnLogin-popup">Login</button>
-          </nav> -->
-      </header>
-      <div class="wrapper">
-        <span class="icon-close">
-          <ion-icon name="close"></ion-icon>
-        </span>
-        <div class="form-box login" v-if="view === 1">
-          <h2>Login</h2>
-          <form action="#">
-            <div class="input-box">
-              <span class="icon"><ion-icon name="mail"></ion-icon></span>
-              <input type="text" v-model="Account.email" required />
-              <label for=""> Email</label>
-            </div>
-            <div class="input-box">
-              <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-              <input type="password" v-model="Account.password" required />
-              <label for=""> Password</label>
-            </div>
-            <div class="remember-forget">
-              <label><input type="checkbox" />記住我</label>
-              <a href="#">忘記密碼?</a>
-            </div>
-            <button type="submit" class="btn" @click="CheckAccount">
-              Login
-            </button>
-            <div class="login-register">
-              <p>
-                還沒有帳號?<a @click="changeView(2)" href="#" class="register-link">註冊</a>
-              </p>
-            </div>
-          </form>
-        </div>
-
-        <div class="form-box register" v-if="view === 2">
-          <h2>Registerion</h2>
-          <form action="#">
-            <div class="input-box">
-              <span class="icon"><ion-icon name="mail"></ion-icon></span>
-              <input type="text" v-model="register.email" required />
-              <label for=""> Email</label>
-            </div>
-            <div class="input-box">
-              <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-              <input type="password" v-model="register.password" required />
-              <label for=""> Password</label>
-            </div>
-            <div class="input-box">
-              <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-              <input type="password" v-model="register.confirmPassword" required />
-              <label for=""> confirmPassword</label>
-            </div>
-            <div class="remember-forget">
-              <label><input type="checkbox" />我同意此項條款</label>
-            </div>
-            <button @click="hadlesubmit" type="submit" class="btn">
-              Register
-            </button>
-            <div class="login-register">
-              <p>
-                已經有帳號了?<a @click="changeView(1)" href="#" class="login-link">登入</a>
-              </p>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div v-if="isreg">
-        <h3>註冊成功</h3>
+    <div class="overlay" v-if="view === 3">
+      <div class="modal">
+        <textarea name="note" id="note" cols="30" rows="10"></textarea>
+        <button @click="SubmitToken">送出</button>
+        <button class="close" @click="changeView(1)">Close</button>
       </div>
     </div>
+    <header>
+      <h2 class="logo">ChickenLive</h2>
+      <nav class="navigation">
+        <a href="#" @click="changeView(3)">驗證</a>
+        <!-- <a href="#">TEST</a>
+            <a href="#">TEST</a>
+            <a href="#">TEST</a>
+            <a href="#">TEST</a> -->
+        <button @click="changeView(1)" class="btnLogin-popup">Login</button>
+      </nav>
+    </header>
+    <div class="wrapper">
+      <span class="icon-close">
+        <ion-icon name="close"></ion-icon>
+      </span>
+      <div class="form-box login" v-if="view === 1">
+        <h2>Login</h2>
+        <form action="#">
+          <div class="input-box">
+            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+            <input type="text" v-model="Account.email" required />
+            <label for=""> Email</label>
+          </div>
+          <div class="input-box">
+            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+            <input type="password" v-model="Account.password" required />
+            <label for=""> Password</label>
+          </div>
+          <div class="remember-forget">
+            <label><input type="checkbox" />記住我</label>
+            <a href="#">忘記密碼?</a>
+          </div>
+          <button type="submit" class="btn" @click="CheckAccount">Login</button>
+          <div class="login-register">
+            <p>
+              還沒有帳號?<a
+                @click="changeView(2)"
+                href="#"
+                class="register-link"
+                >註冊</a
+              >
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <div class="form-box register" v-if="view === 2">
+        <h2>Registerion</h2>
+        <form action="#">
+          <div class="input-box">
+            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+            <input type="text" v-model="register.email" required />
+            <label for=""> Email</label>
+          </div>
+          <div class="input-box">
+            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+            <input type="text" v-model="register.nickName" required />
+            <label for=""> 暱稱</label>
+          </div>
+          <div class="input-box">
+            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+            <input type="password" v-model="register.password" required />
+            <label for=""> Password</label>
+          </div>
+          <div class="input-box">
+            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+            <input
+              type="password"
+              v-model="register.confirmPassword"
+              required
+            />
+            <label for=""> confirmPassword</label>
+          </div>
+          <div class="gender-details">
+            <input
+              type="radio"
+              name="gender"
+              id="dot-1"
+              :value="0"
+              v-model="register.gender"
+            />
+            <input
+              type="radio"
+              name="gender"
+              id="dot-2"
+              :value="1"
+              v-model="register.gender"
+            />
+            <span class="gender-title">性別</span>
+            <div class="category">
+              <label for="dot-1">
+                <span class="dot one"></span>
+                <span class="gender">男性</span>
+              </label>
+              <label for="dot-2">
+                <span class="dot two"></span>
+                <span class="gender">女性</span>
+              </label>
+            </div>
+          </div>
+          <div class="remember-forget">
+            <label><input type="checkbox" />我同意此項條款</label>
+          </div>
+          <button @click="hadlesubmit" type="submit" class="btn">
+            Register
+          </button>
+          <div class="login-register">
+            <p>
+              已經有帳號了?<a @click="changeView(1)" href="#" class="login-link"
+                >登入</a
+              >
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- <div v-if="isreg">
+        <h3>註冊成功</h3>
+      </div> -->
   </div>
+  <!-- </div> -->
 </template>
 
 
@@ -225,8 +290,8 @@ header {
 
 .wrapper {
   position: relative;
-  width: 450px;
-  height: 500px;
+  width: 600px;
+  height: 650px;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
@@ -243,6 +308,46 @@ header {
   padding: 40px;
 }
 
+.form-box .gender-details .gender-title {
+  color: black;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.form-box .category {
+  color: black;
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
+}
+
+.form-box .category label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.form-box .category label .dot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three {
+  background: #9b59b6;
+  border-color: #d9d9d9;
+}
+
+.form-box input[type="radio"] {
+  display: none;
+}
 /* .wrapper .form-box.register {
   /* position: absolute;
   transform: translateX(400px); }*/
@@ -290,8 +395,8 @@ header {
   transition: 0.5s;
 }
 
-.input-box input:focus~label,
-.input-box input:valid~label {
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
   top: -5px;
 }
 
@@ -367,6 +472,42 @@ header {
 
 .login-register p a:hover {
   text-decoration: underline;
+}
+
+/* 彈窗 */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  /* background-color: rgba(0, 0, 0, 0.77); */
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  width: 500px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.modal button {
+  padding: 10px 20px;
+  font-size: 20px;
+  width: 100%;
+  background-color: rgb(37, 138, 204);
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 15px;
+}
+.modal .close {
+  background-color: rgb(181, 45, 45);
+  margin-top: 7px;
 }
 </style>
 

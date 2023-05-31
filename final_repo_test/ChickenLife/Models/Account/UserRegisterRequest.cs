@@ -18,13 +18,13 @@ namespace ChickenLife.Models.Account
 
         public Gender Gender { get; set; } = default!;
 
-        public string? Phone { get; set; }
+        //public string? Phone { get; set; }
 
-        public string? add { get; set; }
+        //public string? add { get; set; }
 
         public string? NickName { get; set; }
 
-        public string Name { get; set; } 
+        //public string Name { get; set; } 
         //public string UserName { get; set; } = "admin";
 
 
