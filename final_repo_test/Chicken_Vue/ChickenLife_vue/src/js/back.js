@@ -440,28 +440,29 @@ export const phas = () => {
         }
 
         handleArrowPress(xChange = 0, yChange = 0) {
-            this.player.setVelocityX(500 * xChange);
-            this.player.setVelocityY(500 * yChange);
-            playerRef.x = this.player.x;
-            playerRef.y = this.player.y;
-            if (xChange === 1) {
-                playerRef.direction = "right";
-            }
-            else if (xChange === -1) {
-                playerRef.direction = "left";
-            }
-            else if (yChange === 1) {
-                playerRef.direction = "down";
-            }
-            else if (yChange === -1) {
-                playerRef.direction = "up";
-            }
-            else if (this.player.body.velocity.x === 0 && this.player.body.velocity.y === 0) {
-                playerRef.direction = "stop";
+            if (this.player != null) {
+                this.player.setVelocityX(500 * xChange);
+                this.player.setVelocityY(500 * yChange);
+                playerRef.x = this.player.x;
+                playerRef.y = this.player.y;
+                if (xChange === 1) {
+                    playerRef.direction = "right";
+                }
+                else if (xChange === -1) {
+                    playerRef.direction = "left";
+                }
+                else if (yChange === 1) {
+                    playerRef.direction = "down";
+                }
+                else if (yChange === -1) {
+                    playerRef.direction = "up";
+                }
+                else if (this.player.body.velocity.x === 0 && this.player.body.velocity.y === 0) {
+                    playerRef.direction = "stop";
+                }
+                this.sendDirection();
             }
 
-
-            this.sendDirection();
         }
         getMusicKey(musicObject) {
             if (musicObject.properties.music_start) {
