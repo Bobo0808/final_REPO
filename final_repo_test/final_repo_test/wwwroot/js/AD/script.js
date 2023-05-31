@@ -19,6 +19,7 @@
 
 $(document).ready(function () {
     $('.btncheck').click(function () {
+        console.log('sa');
         $.ajax({
             type: 'POST',
             url: '/AD/AD_Home/AddPartner',
