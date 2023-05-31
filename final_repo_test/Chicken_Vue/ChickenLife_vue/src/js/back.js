@@ -240,7 +240,8 @@ export const phas = () => {
         btnStart.style.visibility = 'visible';
         try {
             stream.getTracks().forEach(track => track.stop());
-            remoteVideo.srcObject = null;
+
+            // myVideo.srcObject = null;
         }
         finally {
 
@@ -248,14 +249,14 @@ export const phas = () => {
                 "type": "Leave",
                 "mapid": mapData.id,
             }
-            vWebSocket.send(JSON.stringify(data))
+            vWebSocket.send(JSON.stringify(data));
+            remoteVideo.srcObject = null;
         }
 
     }
 
     async function mediaOn() {
         try {
-
             stream = await navigator.mediaDevices.getUserMedia(constraints);
             for (const track of stream.getTracks()) {
                 peerChanel.addTrack(track, stream);
@@ -696,7 +697,7 @@ export const phas = () => {
                             polite = true;
                         }
                         mediaOn();
-
+                        console.log(peerChanel.connectionState);
                         break
                     case "Wait":
                         waitingLog.style.visibility = 'visible';

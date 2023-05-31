@@ -35,7 +35,7 @@ const getPlay = () => {
       <!-- <div style="z-index: 999;"> -->
       <div :style="{ zIndex: !closeableModal ? '999' : '0' }" v-show="!props.closeableModal">
         <video autoplay id="myVideo" muted playsinline></video>
-        <video autoplay id="remoteVideo" playsinline></video>
+        <video autoplay id="remoteVideo" muted playsinline></video>
       </div>
       <div class="game-container"></div>
       <div class="phaser_gamearea " id="gameArea"></div>
