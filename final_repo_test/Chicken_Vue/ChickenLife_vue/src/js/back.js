@@ -309,16 +309,19 @@ export const phas = () => {
     async function MatchPlayer(data) {
         try {
             if (data.description) {
-                const offerCollision = (data.description.type == "offer") &&
+                const offerCollision = (data.description["type"] == "offer") &&
                     (makingOffer || peerChanel.signalingState != "stable");
 
                 ignoreOffer = !polite && offerCollision;
                 if (ignoreOffer) {
+                    console.log(data.description["type"].trim());
                     return;
                 }
 
                 await peerChanel.setRemoteDescription(data.description);
-                if (data.description.type == "offer") {
+                if (data.description["type"].trim() == "offer") {
+                    console.log("sent peer");
+
                     await peerChanel.setLocalDescription();
                     let datatemp = {
                         "type": "Description",
@@ -327,6 +330,7 @@ export const phas = () => {
                         "candidate": ""
                     }
                     vWebSocket.send(JSON.stringify(datatemp))
+
                 }
             } else if (data.candidate) {
                 try {
@@ -669,6 +673,7 @@ export const phas = () => {
 
                         break
                     case "Match":
+
                         isQueue = false;
                         alert("配對成功!");
                         // leftSideBtn.visibility = 'hidden';
@@ -690,10 +695,10 @@ export const phas = () => {
                         for (let i = 0; i < result.client.length; i++) {
                             this.AddPlayer(result.client[i]);
                         }
-                        if (playerRef.gender == 1) {
+                        if (playerRef.gender == 0) {
                             polite = false;
                         }
-                        else if (playerRef.gender == 2) {
+                        else if (playerRef.gender == 1) {
                             polite = true;
                         }
                         mediaOn();
@@ -704,8 +709,10 @@ export const phas = () => {
                         isQueue = true;
                         break
                     case "Peer":
+
                         result.description = JSON.parse(result.description);
                         result.candidate = JSON.parse(result.candidate);
+                        console.log(result);
                         MatchPlayer(result);
                         break
                 }
