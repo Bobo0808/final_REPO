@@ -214,7 +214,7 @@ namespace ChickenLife.Controllers
                                             y = 10810
                                         };
                                         string PrivateMapid = malevalue.name;
-                                        if (maps.MapDirectory[PrivateMapid] != null)
+                                        if (maps.MapDirectory.ContainsKey(PrivateMapid))
                                         {
                                             maps.MapDirectory.Remove(PrivateMapid);
                                         }
@@ -318,7 +318,7 @@ namespace ChickenLife.Controllers
                                         };
 
                                         string PrivateMapid = femalevalue.name;
-                                        if (maps.MapDirectory[PrivateMapid] != null)
+                                        if (maps.MapDirectory.ContainsKey(PrivateMapid))
                                         {
                                             maps.MapDirectory.Remove(PrivateMapid);
                                         }
