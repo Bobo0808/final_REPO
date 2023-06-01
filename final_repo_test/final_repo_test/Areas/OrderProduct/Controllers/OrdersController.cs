@@ -99,7 +99,7 @@ namespace final_repo_test.Areas.OrderProduct.Controllers
                     {   //======== 分頁功能（上一頁 / 下一頁）=========start===                
                         sbPageList.Append("<a href='?id=" + (id - 1) + "'>[<<<上一頁]</a>");
                     }
-                    sbPageList.Append("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href='https://backsite.azurewebsites.net/OrderProduct/Orders'>[首頁]</a></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+                    sbPageList.Append("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href='https://backsite2.azurewebsites.net/OrderProduct/Orders'>[首頁]</a></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
                     if (id < Pages)
                     {
                         sbPageList.Append("<a href='?id=" + (id + 1) + "'>[下一頁>>>]</a>");
