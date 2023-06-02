@@ -24,8 +24,8 @@ export const phas = () => {
     const w = window.innerWidth;
     const h = window.innerHeight;
     // var server = 'wss://chickenlife20230522194335.azurewebsites.net/';
-    // var server = 'wss://chickenlife.azurewebsites.net/';
-    var server = 'wss://localhost:7093';
+    var server = 'wss://chickenlife.azurewebsites.net/';
+    // var server = 'wss://localhost:7093';
     var vWebSocket = null;
     var cursors;
     var AniLayer;
@@ -240,7 +240,8 @@ export const phas = () => {
         btnStart.style.visibility = 'visible';
         try {
             stream.getTracks().forEach(track => track.stop());
-            remoteVideo.srcObject = null;
+
+            // myVideo.srcObject = null;
         }
         finally {
 
@@ -248,14 +249,14 @@ export const phas = () => {
                 "type": "Leave",
                 "mapid": mapData.id,
             }
-            vWebSocket.send(JSON.stringify(data))
+            vWebSocket.send(JSON.stringify(data));
+            remoteVideo.srcObject = null;
         }
 
     }
 
     async function mediaOn() {
         try {
-
             stream = await navigator.mediaDevices.getUserMedia(constraints);
             for (const track of stream.getTracks()) {
                 peerChanel.addTrack(track, stream);
@@ -308,16 +309,19 @@ export const phas = () => {
     async function MatchPlayer(data) {
         try {
             if (data.description) {
-                const offerCollision = (data.description.type == "offer") &&
+                const offerCollision = (data.description["type"] == "offer") &&
                     (makingOffer || peerChanel.signalingState != "stable");
 
                 ignoreOffer = !polite && offerCollision;
                 if (ignoreOffer) {
+                    console.log(data.description["type"].trim());
                     return;
                 }
 
                 await peerChanel.setRemoteDescription(data.description);
-                if (data.description.type == "offer") {
+                if (data.description["type"].trim() == "offer") {
+                    console.log("sent peer");
+
                     await peerChanel.setLocalDescription();
                     let datatemp = {
                         "type": "Description",
@@ -326,6 +330,7 @@ export const phas = () => {
                         "candidate": ""
                     }
                     vWebSocket.send(JSON.stringify(datatemp))
+
                 }
             } else if (data.candidate) {
                 try {
@@ -435,28 +440,29 @@ export const phas = () => {
         }
 
         handleArrowPress(xChange = 0, yChange = 0) {
-            this.player.setVelocityX(500 * xChange);
-            this.player.setVelocityY(500 * yChange);
-            playerRef.x = this.player.x;
-            playerRef.y = this.player.y;
-            if (xChange === 1) {
-                playerRef.direction = "right";
-            }
-            else if (xChange === -1) {
-                playerRef.direction = "left";
-            }
-            else if (yChange === 1) {
-                playerRef.direction = "down";
-            }
-            else if (yChange === -1) {
-                playerRef.direction = "up";
-            }
-            else if (this.player.body.velocity.x === 0 && this.player.body.velocity.y === 0) {
-                playerRef.direction = "stop";
+            if (this.player != null) {
+                this.player.setVelocityX(500 * xChange);
+                this.player.setVelocityY(500 * yChange);
+                playerRef.x = this.player.x;
+                playerRef.y = this.player.y;
+                if (xChange === 1) {
+                    playerRef.direction = "right";
+                }
+                else if (xChange === -1) {
+                    playerRef.direction = "left";
+                }
+                else if (yChange === 1) {
+                    playerRef.direction = "down";
+                }
+                else if (yChange === -1) {
+                    playerRef.direction = "up";
+                }
+                else if (this.player.body.velocity.x === 0 && this.player.body.velocity.y === 0) {
+                    playerRef.direction = "stop";
+                }
+                this.sendDirection();
             }
 
-
-            this.sendDirection();
         }
         getMusicKey(musicObject) {
             if (musicObject.properties.music_start) {
@@ -668,6 +674,7 @@ export const phas = () => {
 
                         break
                     case "Match":
+
                         isQueue = false;
                         alert("配對成功!");
                         // leftSideBtn.visibility = 'hidden';
@@ -689,22 +696,24 @@ export const phas = () => {
                         for (let i = 0; i < result.client.length; i++) {
                             this.AddPlayer(result.client[i]);
                         }
-                        if (playerRef.gender == 1) {
+                        if (playerRef.gender == 0) {
                             polite = false;
                         }
-                        else if (playerRef.gender == 2) {
+                        else if (playerRef.gender == 1) {
                             polite = true;
                         }
                         mediaOn();
-
+                        console.log(peerChanel.connectionState);
                         break
                     case "Wait":
                         waitingLog.style.visibility = 'visible';
                         isQueue = true;
                         break
                     case "Peer":
+
                         result.description = JSON.parse(result.description);
                         result.candidate = JSON.parse(result.candidate);
+                        console.log(result);
                         MatchPlayer(result);
                         break
                 }
