@@ -1,4 +1,4 @@
-#後臺系統(Background)
+#後臺系統(Background) .Net Core 6 MVC
 =====
 ![image](https://github.com/Bobo0808/final_REPO/assets/96458633/64854bc1-413b-4e95-8c3f-77d84dd1a6cb)
 ![image](https://github.com/Bobo0808/final_REPO/assets/96458633/dcc47d99-c120-4cee-abd1-9688a350335e)
@@ -15,5 +15,5 @@
 ![image](https://github.com/Bobo0808/final_REPO/assets/96458633/4e89dc14-2390-4d6f-a49f-c5d05fe89036)
 ![image](https://github.com/Bobo0808/final_REPO/assets/96458633/670a63ad-5378-445a-b193-b51974c13d76)
 ====
-#前台(client side)
+#前台(client side) WebAPI+Vue3+Vite+Composition API
 ====
